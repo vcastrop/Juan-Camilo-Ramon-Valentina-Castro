@@ -1,10 +1,10 @@
-# ContractRisk — Clasificación de contratos públicos colombianos
+# ContractRisk — 
 
-ContractRisk clasifica automáticamente descripciones de contratos públicos
-colombianos según su tipo de contrato, como primer componente de una plataforma
-de apoyo a la revisión y priorización de contratación pública.
+ContractRisk 
 
 ## Integrantes
+Juan Camilo Ramón Pérez
+Valentina Castro Pineda
 
 ## Contexto del proyecto
 
