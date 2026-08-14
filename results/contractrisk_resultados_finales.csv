@@ -1,0 +1,4 @@
+﻿modelo,accuracy,macro_f1
+Clase mayoritaria,0.7786,0.4378
+TF-IDF + Logistic Regression,0.8571,0.8018
+RoBERTalex + LoRA,0.8571428571428571,0.7485632183908046
