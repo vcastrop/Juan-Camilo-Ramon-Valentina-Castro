@@ -1,0 +1,15 @@
+{
+  "shared": 100,
+  "agreements": 87,
+  "disagreements": 13,
+  "agreement_rate": 0.87,
+  "expected_agreement": 0.59,
+  "cohen_kappa": 0.6829268292682927,
+  "expanded_unique": 650,
+  "final_usable": 699,
+  "discarded_expanded": 0,
+  "final_distribution": {
+    "SUFICIENTE": 544,
+    "REQUIERE_REVISION": 155
+  }
+}
