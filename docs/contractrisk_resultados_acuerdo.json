@@ -1,0 +1,18 @@
+{
+  "n": 50,
+  "acuerdos": 50,
+  "desacuerdos": 0,
+  "acuerdo_porcentual": 1.0,
+  "acuerdo_esperado": 0.6728000000000001,
+  "cohen_kappa": 1.0,
+  "distribucion_anotador_1": {
+    "SUFICIENTE": 40,
+    "REQUIERE_REVISION": 9,
+    "DESCARTAR": 1
+  },
+  "distribucion_anotador_2": {
+    "SUFICIENTE": 40,
+    "REQUIERE_REVISION": 9,
+    "DESCARTAR": 1
+  }
+}
