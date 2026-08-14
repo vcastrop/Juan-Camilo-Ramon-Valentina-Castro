@@ -1,6 +1,6 @@
 # Checklist de entrega M1
 
-- [x] Notebook ejecutable de principio a fin en Colab; la corrida conservada se realizó en CPU.
+- [x] Notebook ejecutable de principio a fin en Colab con corrida final en GPU Tesla T4.
 - [x] Modelo base y tokenizer cargados desde Hugging Face.
 - [x] Dataset real del dominio, limpieza mínima y split train/validation.
 - [x] Proceso de preparación reproducible y semilla 42.
@@ -15,9 +15,8 @@
 - [x] Dependencias fijadas y ausencia de rutas locales en entregables ejecutables.
 - [x] Repositorio público con nombres de los integrantes.
 - [x] Contenido de la entrega subido a la rama `Entrega/contractrisk-m1`.
-- [ ] Sustituir los CSV de `results/` por las exportaciones de la corrida actual.
-- [ ] Sustituir el adapter de `model/` por el generado por la corrida actual.
-- [ ] Ejecutar desde GitHub una prueba final en Colab con GPU T4 y conservar sus salidas.
-- [ ] Verificar que README, resultados, predicciones y adapter correspondan a esa misma corrida final.
+- [x] CSV de `results/` sincronizados con la corrida final en T4.
+- [x] Adapter de `model/` sustituido por el generado en la corrida final en T4.
+- [x] Notebook, README, resultados, predicciones y adapter corresponden a la misma corrida final.
 - [ ] Crear el pull request hacia `main` únicamente cuando la rama esté completamente sincronizada.
 - [ ] Entregar el enlace en EAFIT Interactiva antes del plazo.
