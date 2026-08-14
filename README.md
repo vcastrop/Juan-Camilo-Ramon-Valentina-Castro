@@ -62,7 +62,7 @@ Configuración LoRA:
 | `target_modules` | `query`, `value` | Proyecciones de atención |
 | `modules_to_save` | `classifier` | Entrenar y conservar la cabeza binaria |
 
-Se entrenaron 887.042 parámetros de 126.866.692 (0.699 %). Trainer evaluó cada época, guardó el mejor Macro F1 y aplicó early stopping. En la corrida conservada, ejecutada en CPU, el mejor checkpoint se obtuvo en la época 3 y el entrenamiento terminó en la época 5 después de dos evaluaciones sin mejora. Para documentar estrictamente el entorno previsto por la entrega todavía debe conservarse una corrida final en GPU T4.
+Se entrenaron 887.042 parámetros de 126.866.692 (0.699 %). La corrida final se ejecutó en una GPU Tesla T4. Trainer evaluó cada época y conservó el checkpoint con mejor Macro F1. El mejor resultado se obtuvo en la época 7 (`0.748563`); el entrenamiento completó 136 pasos en aproximadamente 20,2 segundos.
 
 ## Resultados
 
@@ -72,16 +72,16 @@ Macro F1 es la métrica principal porque pondera por igual ambas clases y evita 
 |---|---:|---:|---:|---:|
 | Clase mayoritaria | 0.779 | 0.389 | 0.500 | 0.438 |
 | TF-IDF + Logistic Regression | **0.886** | 0.831 | **0.846** | **0.838** |
-| RoBERTalex + LoRA | 0.879 | **0.883** | 0.749 | 0.790 |
+| RoBERTalex + LoRA | 0.857 | **0.843** | 0.712 | 0.749 |
 
-El Transformer superó ampliamente el punto trivial, pero **no superó el baseline TF-IDF**: su delta de Macro F1 fue `0.789734 - 0.837963 = -0.048229`. La matriz de confusión de RoBERTalex fue:
+El Transformer superó ampliamente el punto trivial, pero **no superó el baseline TF-IDF**: su delta de Macro F1 fue `0.748563 - 0.837963 = -0.089400`. La matriz de confusión de RoBERTalex fue:
 
 | | Pred. revisión | Pred. suficiente |
 |---|---:|---:|
-| Real revisión | 16 | 15 |
-| Real suficiente | 2 | 107 |
+| Real revisión | 14 | 17 |
+| Real suficiente | 3 | 106 |
 
-El modelo alcanzó recall 0.982 en `SUFICIENTE` y 0.516 en `REQUIERE_REVISION`. Detectó 16 de 31 descripciones que requerían revisión y dejó escapar 15; estos falsos negativos constituyen el principal riesgo para un sistema de priorización. Cuando generó una alerta de revisión, su precisión fue 0.889.
+El modelo alcanzó recall 0.972 en `SUFICIENTE` y 0.452 en `REQUIERE_REVISION`. Detectó 14 de 31 descripciones que requerían revisión y dejó escapar 17; estos falsos negativos constituyen el principal riesgo para un sistema de priorización. Cuando generó una alerta de revisión, su precisión fue 0.824.
 
 ## Ejemplos cualitativos
 
@@ -112,7 +112,7 @@ Para reproducir exactamente el split congelado desde el dataset consensuado:
 python prepare_dataset.py
 ```
 
-El notebook exporta el adapter como `contractrisk_robertalex_lora_adapter.zip`. El archivo que actualmente se encuentra en `model/` pertenece a la corrida anterior y debe sustituirse por el adapter generado por la corrida final antes de cerrar la entrega; no debe utilizarse para atribuirle las métricas actuales.
+El notebook exporta el adapter como `contractrisk_robertalex_lora_adapter.zip`. El archivo incluido en `model/` corresponde a la corrida final en GPU T4 y contiene la configuración LoRA, los pesos del adapter, la cabeza clasificadora y el tokenizer necesarios para reutilizar el modelo junto con `BSC-LT/RoBERTalex`.
 
 Dependencias principales: Python 3, PyTorch, Transformers 4.48.1, Datasets 3.2.0, PEFT 0.14.0, Accelerate 1.2.1 y scikit-learn 1.5.2.
 
