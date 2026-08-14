@@ -6,10 +6,10 @@ Este documento completa la plantilla de definición del proyecto integrador con 
 
 - **Nombre del equipo:** ContractRisk Colombia.
 - **Integrantes:** Juan Camilo Ramón Pérez y Valentina Castro.
-- **Correos:** por confirmar por los integrantes antes de la entrega formal.
+- **Correos:** jcramonp@eafit.edu.co // vcastrop1@eafit.edu.co .
 - **Integrante de contacto con el profesor:** por confirmar por el equipo.
-- **Coordinación del código:** GitHub, repositorio [Juan-Camilo-Ramon-Valentina-Castro](https://github.com/vcastrop/Juan-Camilo-Ramon-Valentina-Castro), rama `Entrega/contractrisk-m1`.
-- **Reunión semanal fuera de clase:** día y hora por confirmar por el equipo. Se recomienda reservar al menos una sesión semanal para revisar código, resultados, documentación y siguientes hitos.
+- **Coordinación del código:** GitHub, repositorio [Juan-Camilo-Ramon-Valentina-Castro](https://github.com/vcastrop/Juan-Camilo-Ramon-Valentina-Castro) .
+- **Reunión semanal fuera de clase:** Jueves 2:00 pm.
 
 ## 1 · Tema y proyecto
 
@@ -71,7 +71,7 @@ Se compararon tres encoders candidatos:
 | `dccuchile/bert-base-spanish-wwm-cased` | Español general | BETO con whole-word masking. |
 | `FacebookAI/xlm-roberta-base` | Multilingüe | Capacidad multilingüe innecesaria para un corpus solo en español. |
 
-Se eligió `BSC-LT/RoBERTalex`, un encoder de la familia RoBERTa preentrenado en español jurídico. La comparación auxiliar de tokenización sobre seis expresiones contractuales produjo una fragmentación media de 3,33 subtokens para RoBERTalex, 4,00 para BETO y 4,67 para XLM-R. Esta evidencia no demuestra por sí sola superioridad predictiva, pero complementa la selección por idioma, dominio, arquitectura y viabilidad computacional.
+Se eligió `BSC-LT/RoBERTalex`, un encoder de la familia RoBERTa preentrenado en español jurídico. La comparación auxiliar de tokenización sobre seis expresiones contractuales produjo una fragmentación media de 3,33 subtokens para RoBERTalex, 4,00 para BETO y 4,67 para XLM-R. Esta evidencia no demuestra por sí sola superioridad predictiva, pero complementa la selección de este modelo junto a demas caracteristicas que presentaba a favor como idioma español, dominio de lenguaje juridico y viabilidad computacional.
 
 El ajuste se realizó mediante LoRA sobre las proyecciones `query` y `value`, con `r=8`, `alpha=16`, `dropout=0.10` y conservación de la cabeza `classifier`. Se entrenaron 887.042 de 126.866.692 parámetros, aproximadamente el 0,699 % del modelo.
 
@@ -207,25 +207,7 @@ No hay evidencia suficiente para afirmar diferencias de desempeño entre grupos 
 - Conservar trazabilidad de dataset, guía, versión del modelo, semilla, métricas y predicciones.
 - Permitir correcciones humanas y utilizarlas únicamente mediante un protocolo controlado de actualización.
 
-## Checklist rápido antes de cerrar
-
-- [x] El proyecto utiliza texto real de un dominio contractual colombiano.
-- [x] El usuario está definido como analista o auditor de contratación pública.
-- [x] La decisión concreta es priorizar descripciones insuficientes para revisión.
-- [x] La fuente SECOP II está identificada y enlazada.
-- [x] La tarea input → output está definida.
-- [x] Existe una guía de anotación y evidencia de acuerdo entre anotadores.
-- [x] El dataset final y el split son reproducibles.
-- [x] Macro F1 está definida como métrica principal.
-- [x] Existen dos baselines reproducibles.
-- [x] El Transformer y LoRA fueron entrenados y comparados honestamente.
-- [x] Se documentaron errores, sesgos, limitaciones y riesgos éticos.
-- [x] Existe un plan inicial para el componente visual M4.
-- [ ] Confirmar correos, contacto con el profesor y horario semanal del equipo.
-- [ ] Conservar una corrida final en GPU T4 para cerrar la evidencia del entorno solicitado.
-
 ## Recursos del proyecto
 
 - [Repositorio de GitHub](https://github.com/vcastrop/Juan-Camilo-Ramon-Valentina-Castro)
-- [Pull request de la entrega M1](https://github.com/vcastrop/Juan-Camilo-Ramon-Valentina-Castro/pull/2)
 - [Fuente SECOP II — Contratos Electrónicos](https://www.datos.gov.co/Estad-sticas-Nacionales/SECOP-II-Contratos-Electr-nicos/jbjy-vk9h/data_preview)
