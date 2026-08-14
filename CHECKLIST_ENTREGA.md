@@ -14,7 +14,7 @@
 - [x] Justificación de familia encoder y modelo base.
 - [x] Adapter afinado incluido.
 - [x] Dependencias fijadas y ausencia de rutas locales en entregables ejecutables.
-- [ ] Crear repositorio público con nombres de los integrantes.
-- [ ] Subir el contenido del paquete final al repositorio.
-- [ ] Abrir el notebook desde GitHub en un Colab nuevo y ejecutar una última prueba.
+- [x] Crear repositorio público con nombres de los integrantes.
+- [x] Subir el contenido del paquete final al repositorio.
+- [x] Abrir el notebook desde GitHub en un Colab nuevo y ejecutar una última prueba.
 - [ ] Entregar el enlace en EAFIT Interactiva antes del plazo.
