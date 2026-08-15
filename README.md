@@ -62,7 +62,7 @@ Configuración LoRA:
 | `target_modules` | `query`, `value` | Proyecciones de atención |
 | `modules_to_save` | `classifier` | Entrenar y conservar la cabeza binaria |
 
-Se entrenaron 887.042 parámetros de 126.866.692 (0.699 %). La corrida final se ejecutó en una GPU Tesla T4. Trainer evaluó cada época y conservó el checkpoint con mejor Macro F1. El mejor resultado se obtuvo en la época 7 (`0.748563`); el entrenamiento completó 136 pasos en aproximadamente 20,2 segundos.
+Se entrenaron 887.042 parámetros de 126.866.692 (0.699 %). La corrida final se ejecutó en una GPU Tesla T4. Trainer evaluó cada época y conservó el checkpoint con mejor Macro F1. El mejor resultado se obtuvo en la época 7 (`0.748563`); el entrenamiento completó 136 pasos en aproximadamente 29,3 segundos.
 
 ## Resultados
 
