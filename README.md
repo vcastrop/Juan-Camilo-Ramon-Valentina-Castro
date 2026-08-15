@@ -1,8 +1,8 @@
 # ContractRisk Colombia
 
-ContractRisk ayuda a analistas y auditores a priorizar contratos públicos cuya descripción no permite comprender claramente qué se está contratando.
+ContractRisk Colombia es una herramienta de inteligencia artificial orientada a apoyar a analistas y auditores en la detección y priorización de contratos públicos de SECOP II que puedan presentar señales de riesgo o comportamientos potencialmente sospechosos y que, por tanto, merezcan una revisión humana más detallada.
 
-**Integrantes:** Juan Camilo Ramón y Valentina Castro.
+El objetivo final es integrar distintas señales de análisis contractual para generar alertas de priorización. Estas alertas no constituyen una acusación ni una determinación automática de fraude, corrupción o ilegalidad; la interpretación final corresponde siempre a una persona experta. M1 implementa la primera señal del sistema: evaluar si la descripción contractual es suficientemente informativa.
 
 ## Objetivo M1
 
@@ -62,31 +62,31 @@ Configuración LoRA:
 | `target_modules` | `query`, `value` | Proyecciones de atención |
 | `modules_to_save` | `classifier` | Entrenar y conservar la cabeza binaria |
 
-Se entrenaron 887.042 parámetros de 126.866.692 (0.699 %). Trainer evaluó cada época, guardó el mejor Macro F1 y aplicó early stopping; el entrenamiento terminó después de siete épocas en una Tesla T4.
+Se entrenaron 887.042 parámetros de 126.866.692 (0.699 %). La corrida final se ejecutó en una GPU Tesla T4. Trainer evaluó cada época y conservó el checkpoint con mejor Macro F1. El mejor resultado se obtuvo en la época 7 (`0.748563`); el entrenamiento completó 136 pasos en aproximadamente 29,3 segundos.
 
 ## Resultados
 
 Macro F1 es la métrica principal porque pondera por igual ambas clases y evita que la mayoría `SUFICIENTE` oculte un rendimiento pobre en `REQUIERE_REVISION`.
 
-| Modelo | Accuracy | Macro F1 |
-|---|---:|---:|
-| Clase mayoritaria | 0.779 | 0.438 |
-| TF-IDF + Logistic Regression | 0.857 | **0.802** |
-| RoBERTalex + LoRA | 0.857 | 0.749 |
+| Modelo | Accuracy | Macro Precision | Macro Recall | Macro F1 |
+|---|---:|---:|---:|---:|
+| Clase mayoritaria | 0.779 | 0.389 | 0.500 | 0.438 |
+| TF-IDF + Logistic Regression | **0.886** | 0.831 | **0.846** | **0.838** |
+| RoBERTalex + LoRA | 0.857 | **0.843** | 0.712 | 0.749 |
 
-El Transformer superó ampliamente el punto trivial, pero **no superó el baseline TF-IDF**: su delta de Macro F1 fue -0.053. La matriz de confusión de RoBERTalex fue:
+El Transformer superó ampliamente el punto trivial, pero **no superó el baseline TF-IDF**: su delta de Macro F1 fue `0.748563 - 0.837963 = -0.089400`. La matriz de confusión de RoBERTalex fue:
 
 | | Pred. revisión | Pred. suficiente |
 |---|---:|---:|
 | Real revisión | 14 | 17 |
 | Real suficiente | 3 | 106 |
 
-El modelo logra recall 0.972 en `SUFICIENTE`, pero solo 0.452 en `REQUIERE_REVISION`. Los 17 falsos negativos son el problema principal para un sistema de priorización.
+El modelo alcanzó recall 0.972 en `SUFICIENTE` y 0.452 en `REQUIERE_REVISION`. Detectó 14 de 31 descripciones que requerían revisión y dejó escapar 17; estos falsos negativos constituyen el principal riesgo para un sistema de priorización. Cuando generó una alerta de revisión, su precisión fue 0.824.
 
 ## Ejemplos cualitativos
 
 - Acierto `REQUIERE_REVISION`: “Apoyo a la gestión ... como auxiliar en enfermería dentro de la estrategia EBS”. El cargo y contexto no concretan una función.
-- Acierto `SUFICIENTE`: “Mantenimiento de la infraestructura física del almacén municipal...”. Acción y objeto son explícitos.
+- Acierto `SUFICIENTE`: “Fortalecer el programa de vigilancia de calidad del agua mediante análisis microbiológicos y fisicoquímicos...”. La actividad, el objeto y la finalidad son explícitos.
 - Fallo: “Servicios profesionales especializados para fortalecer actividades propias de la Superintendencia...”. El modelo predijo `SUFICIENTE`, aunque “actividades propias” no explica la actividad contratada.
 
 ## Sesgos y limitaciones
@@ -112,7 +112,7 @@ Para reproducir exactamente el split congelado desde el dataset consensuado:
 python prepare_dataset.py
 ```
 
-El adapter entrenado está incluido como `model/contractrisk_robertalex_lora_adapter.zip`. Aunque la descarga original de Colab conservó `roberta_bne` en el nombre, `adapter_config.json` confirma que su modelo base es `BSC-LT/RoBERTalex`; el archivo de entrega fue renombrado para evitar ambigüedad.
+El notebook exporta el adapter como `contractrisk_robertalex_lora_adapter.zip`. El archivo incluido en `model/` corresponde a la corrida final en GPU T4 y contiene la configuración LoRA, los pesos del adapter, la cabeza clasificadora y el tokenizer necesarios para reutilizar el modelo junto con `BSC-LT/RoBERTalex`.
 
 Dependencias principales: Python 3, PyTorch, Transformers 4.48.1, Datasets 3.2.0, PEFT 0.14.0, Accelerate 1.2.1 y scikit-learn 1.5.2.
 
