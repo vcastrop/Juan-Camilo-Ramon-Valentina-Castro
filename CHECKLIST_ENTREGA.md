@@ -13,10 +13,7 @@
 - [x] Fuente, tamaño, idioma, licencia, tarea, sesgos y limitaciones.
 - [x] Justificación de familia encoder y modelo base.
 - [x] Dependencias fijadas y ausencia de rutas locales en entregables ejecutables.
-- [x] Repositorio público con nombres de los integrantes.
-- [x] Contenido de la entrega subido a la rama `Entrega/contractrisk-m1`.
-- [x] CSV de `results/` sincronizados con la corrida final en T4.
-- [x] Adapter de `model/` sustituido por el generado en la corrida final en T4.
-- [x] Notebook, README, resultados, predicciones y adapter corresponden a la misma corrida final.
-- [ ] Crear el pull request hacia `main` únicamente cuando la rama esté completamente sincronizada.
+- [x] Crear repositorio público con nombres de los integrantes.
+- [x] Subir el contenido del paquete final al repositorio.
+- [x] Abrir el notebook desde GitHub en un Colab nuevo y ejecutar una última prueba.
 - [ ] Entregar el enlace en EAFIT Interactiva antes del plazo.
