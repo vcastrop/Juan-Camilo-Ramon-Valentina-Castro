@@ -297,7 +297,7 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
 def parse_judge_response(text: str) -> dict[str, Any]:
     """Analiza JSON estricto y usa una extracción acotada como respaldo."""
 
-    cleaned = text.strip()
+    cleaned = "\n".join(line.rstrip() for line in text.strip().splitlines())
     fenced = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", cleaned, flags=re.DOTALL)
     candidates = [fenced.group(1)] if fenced else []
     object_match = re.search(r"\{.*\}", cleaned, flags=re.DOTALL)

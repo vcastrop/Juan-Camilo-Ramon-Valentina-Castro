@@ -10,9 +10,11 @@
   "judge_pass_rate": 0.8,
   "judge_parse_success_rate": 1.0,
   "judge_guardrail_rate": 1.0,
-  "judge_raw_mean_correct": 3.875,
+  "judge_raw_mean_correct": 4.125,
   "judge_raw_mean_incorrect": 2.0,
+  "domain_compliance_rate": 0.8,
   "contract_review_utility": 0.8,
+  "frontier_domain_compliance_rate": 0.5555555555555556,
   "frontier_accuracy": 0.5555555555555556,
   "regular_accuracy": 1.0,
   "frontier_count": 9,
@@ -29,7 +31,5 @@
       0,
       13
     ]
-  ],
-  "domain_compliance_rate": 0.8,
-  "frontier_domain_compliance_rate": 0.5555555555555556
+  ]
 }

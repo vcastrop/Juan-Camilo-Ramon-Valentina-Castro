@@ -92,6 +92,16 @@ def main() -> None:
         "transformers_version": importlib.metadata.version("transformers"),
         "peft_version": importlib.metadata.version("peft"),
         "device": torch.cuda.get_device_name(0) if torch.cuda.is_available() else "CPU",
+        "result_sha256": {
+            name: sha256(output_dir / name)
+            for name in (
+                "scorecard_baseline.csv",
+                "metrics_baseline.json",
+                "predictions_baseline.csv",
+                "judge_bias_probe.json",
+                "bias_check.csv",
+            )
+        },
     }
     with (output_dir / "run_metadata.json").open("w", encoding="utf-8") as handle:
         json.dump(metadata, handle, ensure_ascii=False, indent=2)

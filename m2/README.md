@@ -70,7 +70,7 @@ Indicadores complementarios:
 | F1 de `REQUIERE_REVISION` | 0,600 |
 | Tasa de aprobación del juez, nivel >= 4 | 0,800 |
 | Parsing exitoso del juez | 1,000 |
-| Promedio bruto del juez en aciertos | 3,875 |
+| Promedio bruto del juez en aciertos | 4,125 |
 | Promedio bruto del juez en errores | 2,000 |
 | Accuracy en casos frontera | 0,556 |
 | Accuracy en casos regulares | 1,000 |
@@ -91,7 +91,7 @@ El baseline acertó 16 de 20 casos, pero solo detectó 3 de las 7 descripciones 
 
 Se controló el sesgo de verbosidad, por el cual un juez puede favorecer una respuesta larga sin que sea más correcta. Todas las salidas usan el mismo esquema, las explicaciones se limitan a 80 palabras y la rúbrica indica expresamente que la longitud no aumenta el nivel. La prueba controlada presentó la misma decisión en versión concisa y verbosa: ambas recibieron 5, con diferencia absoluta 0. Este resultado respalda la mitigación para ese ejemplo, pero no demuestra que el sesgo haya desaparecido en cualquier texto.
 
-Durante el desarrollo también se detectaron dos fallos del juez: el modelo de 0,5B violó las anclas y un ejemplo numérico del formato indujo respuestas constantes. Ambos pilotos se conservaron en `evidence/`, se excluyeron del scorecard y motivaron la rúbrica v1.2. En la corrida final, el puntaje bruto promedio fue 3,875 para aciertos y 2,000 para errores, por lo que el juez sí distinguió ambos grupos antes de aplicar la salvaguarda.
+Durante el desarrollo también se detectaron dos fallos del juez: el modelo de 0,5B violó las anclas y un ejemplo numérico del formato indujo respuestas constantes. Ambos pilotos se conservaron en `evidence/`, se excluyeron del scorecard y motivaron la rúbrica v1.2. En la corrida final con el prompt corregido, el puntaje bruto promedio fue 4,125 para aciertos y 2,000 para errores, por lo que el juez sí distinguió ambos grupos antes de aplicar la salvaguarda.
 
 ## Reproducción en Colab
 
