@@ -40,6 +40,8 @@ La métrica principal es **Macro F1**. Se calcula el F1 de cada clase y luego se
 
 El juez predeterminado es `Qwen/Qwen2.5-0.5B-Instruct`, un modelo instruct abierto y suficientemente pequeño para Colab gratuito. Recibe el texto contractual, la etiqueta gold, el criterio gold y la salida normalizada del sistema. Devuelve exclusivamente un puntaje entero de 1 a 5 y una justificación breve conforme a `rubrics/judge_rubric_v1.json`.
 
+El analizador acepta JSON directo o dentro de un bloque de código. Si la primera respuesta no puede analizarse, solicita una reparación en formato JSON. Tras dos respuestas inválidas aplica un respaldo determinista coherente con la rúbrica y registra `judge_parse_ok=False`; por eso el scorecard informa también la tasa de análisis exitoso y no oculta fallos del juez.
+
 Los indicadores de esta dimensión serán:
 
 - promedio del puntaje 1–5;
