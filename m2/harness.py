@@ -381,7 +381,13 @@ La primera empieza con PUNTAJE= y contiene un nivel permitido.
 La segunda empieza con RAZON= y contiene una justificación de máximo 40 palabras.
 """
         messages = [
-            {"role": "system", "content": "Sigue la rúbrica literalmente y responde solo JSON."},
+            {
+                "role": "system",
+                "content": (
+                    "Sigue la rúbrica literalmente y responde únicamente en las dos "
+                    "líneas solicitadas: PUNTAJE= y RAZON=."
+                ),
+            },
             {"role": "user", "content": prompt},
         ]
         first_response = self._generate(messages)

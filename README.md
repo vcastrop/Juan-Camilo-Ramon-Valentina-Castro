@@ -18,6 +18,20 @@ Se construyó un eval set nuevo de 20 casos, con 45 % de casos frontera, doble a
 
 El modelo detectó 3 de los 7 textos `REQUIERE_REVISION`; sus cuatro errores fueron falsos negativos y todos ocurrieron en casos frontera. La implementación, la rúbrica 1-5, el control del sesgo de verbosidad, el scorecard y la lectura completa están en [`m2/README.md`](m2/README.md).
 
+### Rúbrica del LLM como juez
+
+El juez aplica una rúbrica explícita y versionada. La etiqueta se compara con el gold y la explicación se evalúa contra el criterio particular del caso; una respuesta más larga no recibe más puntos por ese solo hecho.
+
+| Nivel | Ancla |
+|---:|---|
+| 5 | Etiqueta correcta y explicación concreta, correcta y sin afirmaciones no sustentadas. |
+| 4 | Etiqueta correcta, pero explicación ausente, parcial o general. |
+| 3 | Etiqueta correcta con una ambigüedad o contradicción relevante, o decisión correcta no extraíble con seguridad. |
+| 2 | Etiqueta incorrecta, pero la explicación reconoce parte del criterio o la ambigüedad del caso. |
+| 1 | Etiqueta incorrecta sin justificación útil o con razonamiento incompatible con el criterio. |
+
+La especificación completa, incluida la regla obligatoria de puntajes y el formato de salida, está en [`m2/rubrics/judge_rubric_v1_2.md`](m2/rubrics/judge_rubric_v1_2.md).
+
 ## Objetivo M1
 
 El sistema recibe `descripcion_del_proceso` de SECOP II y produce una clasificación binaria:
