@@ -12,7 +12,8 @@
 - [x] Rúbrica explícita, anclada y versionada en el repositorio.
 - [x] Parsing robusto con reparación y registro de salvaguardas.
 - [x] El juez bruto distingue aciertos de errores en la corrida final.
-- [x] Dimensión 3: utilidad de revisión contractual.
+- [x] Dimensión 3: tasa de cumplimiento por etiqueta correcta y juez >= 4.
+- [x] Utilidad asimétrica de revisión contractual como indicador complementario.
 - [x] Scorecard de las tres dimensiones generado por el harness.
 - [x] Predicciones y métricas fila por fila conservadas.
 - [x] Sesgo de verbosidad reconocido, probado y mitigado.

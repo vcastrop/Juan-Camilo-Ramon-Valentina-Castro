@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import argparse
+import csv
+from datetime import datetime, timezone
 import hashlib
 import importlib.metadata
 import json
@@ -64,6 +66,10 @@ def main() -> None:
     with (output_dir / "judge_bias_probe.json").open("w", encoding="utf-8") as handle:
         json.dump(bias_probe, handle, ensure_ascii=False, indent=2)
         handle.write("\n")
+    with (output_dir / "bias_check.csv").open("w", encoding="utf-8-sig", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(bias_probe))
+        writer.writeheader()
+        writer.writerow(bias_probe)
 
     def sha256(path: str) -> str:
         return hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -71,6 +77,7 @@ def main() -> None:
     import torch
 
     metadata = {
+        "execution_utc": datetime.now(timezone.utc).isoformat(),
         "seed": args.seed,
         "eval_set": args.eval_set,
         "eval_set_sha256": sha256(args.eval_set),

@@ -1,0 +1,2 @@
+﻿bias,concise_score,verbose_score,absolute_difference,mitigation_effective_threshold,within_threshold
+verbosity,5,5,0,1,True

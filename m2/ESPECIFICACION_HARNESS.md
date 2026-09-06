@@ -51,9 +51,11 @@ Los indicadores de esta dimensión serán:
 
 La corrida final solo se acepta si el puntaje bruto promedio de los aciertos es mayor que el de los errores. Esta comprobación evita presentar como funcional un juez cuyo formato sea válido pero que no distinga respuestas buenas de pobres.
 
-## Dimensión 3: utilidad de revisión contractual
+## Dimensión 3: cumplimiento del criterio del dominio
 
-La medida propia del dominio asigna utilidad por caso:
+`domain_pass` exige simultáneamente que la etiqueta coincida con el gold y que el juez asigne un nivel mayor o igual a 4. `domain_compliance_rate` es la proporción de los 20 ejemplos que cumple ambas condiciones. También se calcula por separado sobre los casos frontera.
+
+Como indicador complementario, la utilidad de revisión contractual asigna:
 
 | Resultado | Utilidad |
 |---|---:|
@@ -61,7 +63,7 @@ La medida propia del dominio asigna utilidad por caso:
 | Texto `SUFICIENTE` enviado innecesariamente a revisión | 0,5 |
 | Texto `REQUIERE_REVISION` dejado pasar como suficiente | 0,0 |
 
-El promedio se denomina `contract_review_utility`. La asimetría refleja el objetivo operativo: un falso positivo consume revisión humana, mientras que un falso negativo deja pasar una descripción insuficiente sin alerta. Junto con esta utilidad se reportan el recall de `REQUIERE_REVISION` y el desempeño separado en casos frontera.
+El promedio se denomina `contract_review_utility`. La asimetría refleja el objetivo operativo: un falso positivo consume revisión humana, mientras que un falso negativo deja pasar una descripción insuficiente sin alerta. Esta utilidad complementa, pero no reemplaza, la tasa principal de cumplimiento del dominio. También se reportan el recall de `REQUIERE_REVISION` y el desempeño separado en casos frontera.
 
 ## Control del sesgo del juez
 

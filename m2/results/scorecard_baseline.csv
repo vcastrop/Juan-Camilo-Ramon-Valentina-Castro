@@ -1,4 +1,4 @@
 ﻿dimension,metric,score,scale
 Métrica clásica automática,macro_f1,0.7333333333333333,0-1; mayor es mejor
 LLM-as-a-judge,judge_mean_1_5,3.4,1-5; mayor es mejor
-Cumplimiento del dominio,contract_review_utility,0.8,"0-1; FN revisión=0, FP revisión=0.5, acierto=1"
+Cumplimiento del dominio,domain_compliance_rate,0.8,0-1; etiqueta correcta y juez >= 4

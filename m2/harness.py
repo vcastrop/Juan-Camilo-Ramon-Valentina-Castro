@@ -194,6 +194,12 @@ def harness(
                 "judge_guardrail_applied": bool(
                     judge_result.get("rubric_guardrail_applied", False)
                 ),
+                "judge_raw_response": judge_result.get("raw_response", ""),
+                "domain_pass": bool(
+                    example["expected"] == prediction["label"]
+                    and score is not None
+                    and int(score) >= config.judge_pass_threshold
+                ),
                 "domain_utility": utility,
             }
         )
@@ -235,7 +241,11 @@ def harness(
         ),
         "judge_raw_mean_correct": safe_mean(raw_correct_scores),
         "judge_raw_mean_incorrect": safe_mean(raw_error_scores),
+        "domain_compliance_rate": safe_mean(row["domain_pass"] for row in detail_rows),
         "contract_review_utility": safe_mean(row["domain_utility"] for row in detail_rows),
+        "frontier_domain_compliance_rate": safe_mean(
+            row["domain_pass"] for row in frontier_rows
+        ),
         "frontier_accuracy": safe_mean(row["correct"] for row in frontier_rows),
         "regular_accuracy": safe_mean(row["correct"] for row in regular_rows),
         "frontier_count": len(frontier_rows),
@@ -258,9 +268,9 @@ def harness(
         },
         {
             "dimension": "Cumplimiento del dominio",
-            "metric": "contract_review_utility",
-            "score": metrics["contract_review_utility"],
-            "scale": "0-1; FN revisión=0, FP revisión=0.5, acierto=1",
+            "metric": "domain_compliance_rate",
+            "score": metrics["domain_compliance_rate"],
+            "scale": "0-1; etiqueta correcta y juez >= 4",
         },
     ]
 
@@ -298,7 +308,12 @@ def parse_judge_response(text: str) -> dict[str, Any]:
             data = json.loads(candidate)
             score = int(data["score"])
             if score in range(1, 6):
-                return {"score": score, "reason": str(data.get("reason", "")), "parse_ok": True}
+                return {
+                    "score": score,
+                    "reason": str(data.get("reason", "")),
+                    "parse_ok": True,
+                    "raw_response": cleaned,
+                }
         except (KeyError, TypeError, ValueError, json.JSONDecodeError):
             continue
 
@@ -309,6 +324,7 @@ def parse_judge_response(text: str) -> dict[str, Any]:
             "score": int(score_match.group(1)),
             "reason": (reason_match.group(1).strip() if reason_match else cleaned)[:500],
             "parse_ok": True,
+            "raw_response": cleaned,
         }
     raise ValueError(f"No se pudo extraer un puntaje 1-5 del juez: {cleaned[:200]!r}")
 
@@ -387,13 +403,13 @@ La segunda empieza con RAZON= y contiene una justificación de máximo 40 palabr
                     example, prediction, parse_judge_response(second_response)
                 )
             except ValueError:
-                fallback_score = 4 if prediction["label"] == example["expected"] else 1
                 return {
-                    "score": fallback_score,
-                    "reason": "Respaldo determinista tras dos respuestas no analizables del juez.",
+                    "score": None,
+                    "reason": "Dos respuestas no analizables del juez; el caso queda sin puntaje.",
                     "parse_ok": False,
                     "raw_score": None,
-                    "rubric_guardrail_applied": True,
+                    "rubric_guardrail_applied": False,
+                    "raw_response": second_response,
                 }
 
     def _generate(self, messages: list[dict[str, str]]) -> str:
@@ -452,11 +468,19 @@ def run_verbosity_bias_probe(judge: Judge, example: dict[str, str]) -> dict[str,
     }
     concise_result = judge.evaluate(example, concise)
     verbose_result = judge.evaluate(example, verbose)
+    scores_available = (
+        concise_result.get("score") is not None and verbose_result.get("score") is not None
+    )
+    difference = (
+        abs(concise_result["score"] - verbose_result["score"])
+        if scores_available
+        else None
+    )
     return {
         "bias": "verbosity",
-        "concise_score": concise_result["score"],
-        "verbose_score": verbose_result["score"],
-        "absolute_difference": abs(concise_result["score"] - verbose_result["score"]),
+        "concise_score": concise_result.get("score"),
+        "verbose_score": verbose_result.get("score"),
+        "absolute_difference": difference,
         "mitigation_effective_threshold": 1,
-        "within_threshold": abs(concise_result["score"] - verbose_result["score"]) <= 1,
+        "within_threshold": scores_available and difference <= 1,
     }

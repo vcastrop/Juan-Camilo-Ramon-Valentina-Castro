@@ -102,6 +102,7 @@ class HarnessTests(unittest.TestCase):
                 HarnessConfig(seed=42),
             )
             self.assertEqual(result["metrics"]["macro_f1"], 1 / 3)
+            self.assertEqual(result["metrics"]["domain_compliance_rate"], 0.5)
             self.assertEqual(result["metrics"]["contract_review_utility"], 0.75)
             self.assertEqual(result["metrics"]["judge_mean_1_5"], 2.5)
             self.assertTrue((Path(directory) / "scorecard_baseline.csv").exists())

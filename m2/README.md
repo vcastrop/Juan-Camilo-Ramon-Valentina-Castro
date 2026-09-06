@@ -40,7 +40,9 @@ La regla objetiva permite 3-5 cuando las etiquetas coinciden y 1-2 cuando difier
 
 ### 3. Cumplimiento del dominio
 
-`contract_review_utility` refleja que los dos tipos de error no cuestan lo mismo:
+`domain_compliance_rate` mide la proporción de casos que satisface simultáneamente dos condiciones: la etiqueta coincide con el gold y el juez asigna al menos 4. En la corrida final fue 0,800; en los casos frontera fue 0,556.
+
+Como indicador complementario, `contract_review_utility` refleja que los dos tipos de error no cuestan lo mismo:
 
 | Resultado | Utilidad |
 |---|---:|
@@ -56,7 +58,7 @@ La medida penaliza con mayor severidad un falso negativo porque deja pasar una d
 |---|---|---:|
 | Métrica clásica | Macro F1 | 0,733 |
 | LLM como juez | Promedio 1-5 | 3,400 |
-| Cumplimiento del dominio | `contract_review_utility` | 0,800 |
+| Cumplimiento del dominio | `domain_compliance_rate` | 0,800 |
 
 Indicadores complementarios:
 
@@ -72,6 +74,7 @@ Indicadores complementarios:
 | Promedio bruto del juez en errores | 2,000 |
 | Accuracy en casos frontera | 0,556 |
 | Accuracy en casos regulares | 1,000 |
+| Utilidad de revisión contractual | 0,800 |
 
 La matriz de confusión usa filas reales y columnas predichas en el orden `[REQUIERE_REVISION, SUFICIENTE]`:
 
@@ -115,9 +118,12 @@ La semilla es 42. El scorecard se genera durante la ejecución y no contiene res
 - `systems.py`: adaptador del modelo M1.
 - `run_baseline.py`: ejecución del baseline y exportación.
 - `eval/contractrisk_m2_eval_gold.csv`: eval set congelado.
+- `eval/eval_set.json`: representación requerida con input, esperado, criterio y marca adversarial.
 - `rubrics/judge_rubric_v1_2.json`: rúbrica final del juez.
+- `rubrics/judge_rubric_v1_2.md`: versión legible de la rúbrica final.
 - `results/scorecard_baseline.csv`: scorecard final.
 - `results/predictions_baseline.csv`: evidencia fila por fila.
+- `results/bias_check.csv`: prueba del sesgo de verbosidad.
 - `results/run_metadata.json`: modelos, semilla, entorno y hashes de la corrida final.
 - `evidence/`: acuerdo humano, adjudicaciones y pilotos descartados del juez.
 

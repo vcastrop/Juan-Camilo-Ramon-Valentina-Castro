@@ -14,7 +14,7 @@ Se construyó un eval set nuevo de 20 casos, con 45 % de casos frontera, doble a
 |---|---|---:|
 | Métrica clásica | Macro F1 | 0,733 |
 | LLM como juez | Promedio 1-5 | 3,400 |
-| Cumplimiento del dominio | Utilidad de revisión contractual | 0,800 |
+| Cumplimiento del dominio | Etiqueta correcta y juez >= 4 | 0,800 |
 
 El modelo detectó 3 de los 7 textos `REQUIERE_REVISION`; sus cuatro errores fueron falsos negativos y todos ocurrieron en casos frontera. La implementación, la rúbrica 1-5, el control del sesgo de verbosidad, el scorecard y la lectura completa están en [`m2/README.md`](m2/README.md).
 

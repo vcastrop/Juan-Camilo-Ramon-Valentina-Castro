@@ -4,16 +4,23 @@
   "code_revision_used": "b45608e",
   "seed": 42,
   "eval_set": "m2/eval/contractrisk_m2_eval_gold.csv",
+  "eval_set_sha256": "4601732a4dcfb728e64e63e66024c64deb81dc648d549e6681f7c0b3744d45d6",
+  "eval_set_json_sha256": "c42b3084a7329632640f47166032f40e32ec9adbd5127dde32c44867389c9070",
   "base_model": "BSC-LT/RoBERTalex",
   "adapter": "model/contractrisk_robertalex_lora_adapter.zip",
+  "adapter_sha256": "869a45076bf2244917883970a00c966ba93c8b43a32fceb8c0a15b5d7efb387c",
   "judge_model": "Qwen/Qwen2.5-1.5B-Instruct",
   "rubric": "m2/rubrics/judge_rubric_v1_2.json",
+  "rubric_sha256": "3afba90ee3265ac9876e3ea9bbb257a653f6e5de9d0d925d345a75c16c35a0ae",
   "execution_environment": "Google Colab GPU Tesla T4",
   "result_sha256": {
-    "scorecard_baseline.csv": "d196cfd5a9953bf53d07d02aa40fa3bbee37ef22f4e1c0b11a60256e3fe70d1a",
-    "metrics_baseline.json": "2141b31d7fd54afd81615c803608f39ad204f76a956d2a00b6793718e634f993",
-    "predictions_baseline.csv": "2526f9435412da12e809a686d8b490000b5ee8ee4fef6bc6b9dfaaaa3ce12ca6",
-    "judge_bias_probe.json": "70cd594d187db14278c45aae595be63c5908e4525f2d7ed808b82b33bed56d16"
+    "scorecard_baseline.csv": "fca81dcbe22e0a40340aa11c9b1c91247a971419bdb5230534b33a2ee7dd2285",
+    "metrics_baseline.json": "f5d192befe519647c2f39b6fe6ea0532717fa276acaceb205d22deac4a284a69",
+    "predictions_baseline.csv": "026f3c98642f0d8d98ff18c499d6079f25611b6406394dbbb8151916b7f773e1",
+    "judge_bias_probe.json": "70cd594d187db14278c45aae595be63c5908e4525f2d7ed808b82b33bed56d16",
+    "bias_check.csv": "98d94b5ee7083911f7270f36e41ab6587172790d1deb185fa7c499e967d36f7e"
   },
-  "note": "Metadata añadida después de verificar la corrida conservando los hashes de los cuatro archivos recibidos. Las ejecuciones futuras la exportan automáticamente."
+  "note": "Metadata añadida después de verificar la corrida; conserva los hashes de los archivos recibidos y de los insumos congelados. Las ejecuciones futuras la exportan automáticamente.",
+  "execution_date": "2026-09-05",
+  "deterministic_postprocessing": "domain_pass y domain_compliance_rate se derivaron de expected, predicted y judge_score de la corrida verificada; no requirieron nueva inferencia."
 }
