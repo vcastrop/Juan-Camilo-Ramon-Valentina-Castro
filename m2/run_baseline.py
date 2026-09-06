@@ -20,9 +20,9 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--eval-set", default="m2/eval/contractrisk_m2_eval_gold.csv")
     parser.add_argument("--adapter", default="model/contractrisk_robertalex_lora_adapter.zip")
-    parser.add_argument("--rubric", default="m2/rubrics/judge_rubric_v1.json")
+    parser.add_argument("--rubric", default="m2/rubrics/judge_rubric_v1_1.json")
     parser.add_argument("--output-dir", default="m2/results")
-    parser.add_argument("--judge-model", default="Qwen/Qwen2.5-0.5B-Instruct")
+    parser.add_argument("--judge-model", default="Qwen/Qwen2.5-1.5B-Instruct")
     parser.add_argument("--seed", type=int, default=42)
     return parser.parse_args()
 

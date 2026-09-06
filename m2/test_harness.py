@@ -8,7 +8,13 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from harness import HarnessConfig, classification_metrics, harness, parse_judge_response
+from harness import (
+    HarnessConfig,
+    apply_rubric_guardrail,
+    classification_metrics,
+    harness,
+    parse_judge_response,
+)
 
 
 class FakeSystem:
@@ -64,6 +70,22 @@ class HarnessTests(unittest.TestCase):
         result = parse_judge_response('```json\n{"score": 4, "reason": "Correcto"}\n```')
         self.assertEqual(result["score"], 4)
         self.assertTrue(result["parse_ok"])
+
+    def test_guardrail_enforces_rubric_anchors(self):
+        wrong = apply_rubric_guardrail(
+            {"expected": "REQUIERE_REVISION"},
+            {"label": "SUFICIENTE", "explanation": ""},
+            {"score": 4, "reason": "Incompatible", "parse_ok": True},
+        )
+        correct = apply_rubric_guardrail(
+            {"expected": "SUFICIENTE"},
+            {"label": "SUFICIENTE", "explanation": ""},
+            {"score": 1, "reason": "Incompatible", "parse_ok": True},
+        )
+        self.assertEqual(wrong["score"], 1)
+        self.assertEqual(correct["score"], 4)
+        self.assertTrue(wrong["rubric_guardrail_applied"])
+        self.assertTrue(correct["rubric_guardrail_applied"])
 
     def test_end_to_end_with_controlled_components(self):
         with tempfile.TemporaryDirectory() as directory:

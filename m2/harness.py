@@ -190,6 +190,10 @@ def harness(
                 "judge_score": score,
                 "judge_reason": judge_result.get("reason", ""),
                 "judge_parse_ok": bool(judge_result.get("parse_ok", False)),
+                "judge_raw_score": judge_result.get("raw_score", score),
+                "judge_guardrail_applied": bool(
+                    judge_result.get("rubric_guardrail_applied", False)
+                ),
                 "domain_utility": utility,
             }
         )
@@ -297,7 +301,7 @@ class TransformersRubricJudge:
     def __init__(
         self,
         rubric_path: str | Path,
-        model_id: str = "Qwen/Qwen2.5-0.5B-Instruct",
+        model_id: str = "Qwen/Qwen2.5-1.5B-Instruct",
         device: str | None = None,
         seed: int = 42,
     ) -> None:
@@ -317,8 +321,14 @@ class TransformersRubricJudge:
         levels = "\n".join(
             f"{level}: {description}" for level, description in self.rubric["levels"].items()
         )
+        labels_match = prediction["label"] == example["expected"]
+        allowed_scores = "3, 4 o 5" if labels_match else "1 o 2"
         prompt = f"""Eres un juez de calidad para clasificación contractual.
-Evalúa exactitud y aplicación del criterio, no longitud ni estilo. No infieras fraude o ilegalidad.
+La etiqueta esperada es {example['expected']}.
+La etiqueta del sistema es {prediction['label']}.
+¿Coinciden exactamente?: {'SI' if labels_match else 'NO'}.
+REGLA OBLIGATORIA: el puntaje solo puede ser {allowed_scores}.
+Evalúa después la explicación. No premies longitud ni estilo. No infieras fraude o ilegalidad.
 
 RÚBRICA:
 {levels}
@@ -342,7 +352,9 @@ Responde únicamente JSON válido: {{"score": 1, "reason": "máximo 40 palabras"
         ]
         first_response = self._generate(messages)
         try:
-            return parse_judge_response(first_response)
+            return apply_rubric_guardrail(
+                example, prediction, parse_judge_response(first_response)
+            )
         except ValueError:
             repair_messages = messages + [
                 {"role": "assistant", "content": first_response},
@@ -353,13 +365,17 @@ Responde únicamente JSON válido: {{"score": 1, "reason": "máximo 40 palabras"
             ]
             second_response = self._generate(repair_messages)
             try:
-                return parse_judge_response(second_response)
+                return apply_rubric_guardrail(
+                    example, prediction, parse_judge_response(second_response)
+                )
             except ValueError:
                 fallback_score = 4 if prediction["label"] == example["expected"] else 1
                 return {
                     "score": fallback_score,
                     "reason": "Respaldo determinista tras dos respuestas no analizables del juez.",
                     "parse_ok": False,
+                    "raw_score": None,
+                    "rubric_guardrail_applied": True,
                 }
 
     def _generate(self, messages: list[dict[str, str]]) -> str:
@@ -375,6 +391,30 @@ Responde únicamente JSON válido: {{"score": 1, "reason": "máximo 40 palabras"
         )
         generated = output[0, inputs["input_ids"].shape[1] :]
         return self.tokenizer.decode(generated, skip_special_tokens=True)
+
+
+def apply_rubric_guardrail(
+    example: dict[str, str], prediction: dict[str, Any], result: dict[str, Any]
+) -> dict[str, Any]:
+    """Impide niveles incompatibles con las anclas objetivas de la rúbrica."""
+
+    raw_score = int(result["score"])
+    labels_match = prediction["label"] == example["expected"]
+    has_explanation = bool(str(prediction.get("explanation") or "").strip())
+    if labels_match and not has_explanation:
+        score = 4
+    elif not labels_match and not has_explanation:
+        score = 1
+    elif labels_match:
+        score = min(5, max(3, raw_score))
+    else:
+        score = min(2, max(1, raw_score))
+    return {
+        **result,
+        "score": score,
+        "raw_score": raw_score,
+        "rubric_guardrail_applied": score != raw_score,
+    }
 
 
 def run_verbosity_bias_probe(judge: Judge, example: dict[str, str]) -> dict[str, Any]:

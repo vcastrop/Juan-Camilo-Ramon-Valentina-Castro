@@ -1,0 +1,35 @@
+{
+  "rubric_id": "contractrisk_label_judge_v1_1",
+  "version": "1.1.0",
+  "language": "es",
+  "task": "Evaluar si la salida de un sistema aplica correctamente la clasificación de suficiencia descriptiva contractual.",
+  "allowed_labels": ["SUFICIENTE", "REQUIERE_REVISION"],
+  "judge_model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "mandatory_decision_rule": {
+    "matching_labels": "Si la etiqueta del sistema coincide exactamente con la etiqueta esperada, el puntaje permitido es 3, 4 o 5.",
+    "different_labels": "Si las etiquetas son diferentes, el puntaje permitido es 1 o 2.",
+    "no_explanation": "Una etiqueta correcta sin explicación recibe 4; una etiqueta incorrecta sin explicación recibe 1."
+  },
+  "levels": {
+    "5": "La etiqueta coincide con la referencia, la explicación aplica de forma concreta y correcta el criterio del caso, y no introduce afirmaciones incompatibles o no sustentadas.",
+    "4": "La etiqueta coincide con la referencia y no existe contradicción material, pero la explicación está ausente, es parcial o es demasiado general. Una respuesta breve puede obtener este nivel; no se premia la longitud.",
+    "3": "La etiqueta coincide, pero la explicación contiene una ambigüedad o contradicción relevante; o la etiqueta no puede extraerse con seguridad aunque el razonamiento apunte claramente a la decisión correcta.",
+    "2": "La etiqueta no coincide con la referencia, pero la explicación reconoce parte del criterio relevante, la ambigüedad o el carácter fronterizo del caso.",
+    "1": "La etiqueta no coincide con la referencia y la salida no aporta una justificación útil, contradice el criterio o no permite identificar una decisión válida."
+  },
+  "pass_threshold": 4,
+  "output_schema": {
+    "score": "integer entre 1 y 5",
+    "reason": "justificación breve basada en la etiqueta esperada y el criterio gold"
+  },
+  "bias_control": {
+    "known_bias": "preferencia por longitud o verbosidad",
+    "mitigation": [
+      "Presentar todas las respuestas con el mismo esquema de etiqueta, confianza y explicación.",
+      "Limitar la explicación candidata a 80 palabras antes de enviarla al juez.",
+      "Indicar en la rúbrica que una respuesta más extensa no merece mayor puntuación por ese hecho.",
+      "Ejecutar una prueba de control con versiones concisa y verbosa de la misma decisión y reportar la diferencia."
+    ]
+  },
+  "change_note": "La versión 1.0 mostró violaciones de anclas con el juez de 0.5B. Esta versión explicita primero la comparación de etiquetas, usa el juez abierto de 1.5B y valida que el nivel emitido sea compatible con la rúbrica."
+}
