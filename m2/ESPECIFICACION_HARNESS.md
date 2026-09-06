@@ -38,7 +38,7 @@ La métrica principal es **Macro F1**. Se calcula el F1 de cada clase y luego se
 
 ## Dimensión 2: LLM como juez
 
-El juez predeterminado es `Qwen/Qwen2.5-1.5B-Instruct`, un modelo instruct abierto recomendado como referencia de tamaño en la guía y apto para Colab gratuito cuando se carga después de liberar el clasificador. Recibe el texto contractual, la etiqueta gold, el criterio gold y la salida normalizada del sistema. Devuelve exclusivamente un puntaje entero de 1 a 5 y una justificación breve conforme a `rubrics/judge_rubric_v1_1.json`.
+El juez predeterminado es `Qwen/Qwen2.5-1.5B-Instruct`, un modelo instruct abierto recomendado como referencia de tamaño en la guía y apto para Colab gratuito cuando se carga después de liberar el clasificador. Recibe el texto contractual, la etiqueta gold, el criterio gold y la salida normalizada del sistema. Devuelve un puntaje entero de 1 a 5 y una justificación breve conforme a `rubrics/judge_rubric_v1_2.json`.
 
 El analizador acepta JSON directo o dentro de un bloque de código. Si la primera respuesta no puede analizarse, solicita una reparación en formato JSON. Tras dos respuestas inválidas aplica un respaldo determinista coherente con la rúbrica y registra `judge_parse_ok=False`; por eso el scorecard informa también la tasa de análisis exitoso y no oculta fallos del juez. Además, una salvaguarda valida las anclas objetivas: una etiqueta diferente solo puede recibir 1-2, una coincidente 3-5, una coincidencia sin explicación recibe 4 y un error sin explicación recibe 1. Se guardan tanto el puntaje bruto como el puntaje validado.
 
@@ -47,6 +47,9 @@ Los indicadores de esta dimensión serán:
 - promedio del puntaje 1–5;
 - porcentaje de casos con puntaje mayor o igual a 4;
 - porcentaje de respuestas del juez que pudieron analizarse sin recurrir a un valor de respaldo.
+- promedio bruto separado para predicciones correctas e incorrectas, y tasa de aplicación de la salvaguarda.
+
+La corrida final solo se acepta si el puntaje bruto promedio de los aciertos es mayor que el de los errores. Esta comprobación evita presentar como funcional un juez cuyo formato sea válido pero que no distinga respuestas buenas de pobres.
 
 ## Dimensión 3: utilidad de revisión contractual
 
@@ -73,7 +76,7 @@ Se reconoce el sesgo de verbosidad: algunos jueces tienden a favorecer respuesta
 
 - Semilla global: `42`.
 - Eval set congelado: `eval/contractrisk_m2_eval_gold.csv`.
-- Rúbrica versionada: `rubrics/judge_rubric_v1_1.json`; la versión 1.0 se conserva como trazabilidad del piloto.
+- Rúbrica versionada: `rubrics/judge_rubric_v1_2.json`; las versiones anteriores se conservan como trazabilidad de los pilotos.
 - Modelo evaluado por defecto: adapter LoRA M1 sobre `BSC-LT/RoBERTalex`.
 - Juez por defecto: `Qwen/Qwen2.5-1.5B-Instruct`.
 - El harness no contiene métricas esperadas escritas manualmente; todos los resultados deben provenir de la ejecución.

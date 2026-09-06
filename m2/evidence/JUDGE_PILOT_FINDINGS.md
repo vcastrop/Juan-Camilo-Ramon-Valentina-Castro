@@ -25,3 +25,9 @@ La versión `judge_rubric_v1_1.json`:
 5. mantiene el control de verbosidad y la tasa de parsing como resultados visibles.
 
 Los archivos de la primera corrida se conservan en `evidence/judge_pilot_v1_0/` únicamente para trazabilidad y no constituyen el scorecard final.
+
+## Segundo diagnóstico: anclaje del formato
+
+La siguiente corrida utilizó el modelo de 1,5B y la salvaguarda de anclas. Los puntajes validados distinguieron los 16 aciertos de los cuatro errores, pero el juez produjo un puntaje bruto de 1 en los 20 casos. La causa fue el ejemplo de formato JSON incluido en el prompt, que mostraba literalmente `score: 1`; el juez copió ese número incluso cuando la etiqueta coincidía.
+
+La rúbrica v1.2 elimina cualquier ejemplo numérico del formato de respuesta. Solicita `PUNTAJE=` y `RAZON=` sin sugerir un nivel particular, y el parser reconoce ambos campos. Los archivos de esta corrida se conservan en `evidence/judge_pilot_v1_1/`. Sus métricas automáticas siguen siendo válidas, pero su dimensión de juez tampoco se utiliza como scorecard definitivo.

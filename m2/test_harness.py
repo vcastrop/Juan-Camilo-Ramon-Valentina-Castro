@@ -71,6 +71,11 @@ class HarnessTests(unittest.TestCase):
         self.assertEqual(result["score"], 4)
         self.assertTrue(result["parse_ok"])
 
+        lines = parse_judge_response("PUNTAJE=4\nRAZON=La etiqueta coincide.")
+        self.assertEqual(lines["score"], 4)
+        self.assertEqual(lines["reason"], "La etiqueta coincide.")
+        self.assertTrue(lines["parse_ok"])
+
     def test_guardrail_enforces_rubric_anchors(self):
         wrong = apply_rubric_guardrail(
             {"expected": "REQUIERE_REVISION"},

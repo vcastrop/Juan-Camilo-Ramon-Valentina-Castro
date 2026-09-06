@@ -202,6 +202,16 @@ def harness(
     y_pred = [row["predicted"] for row in detail_rows]
     classic = classification_metrics(y_true, y_pred)
     judge_scores = [float(row["judge_score"]) for row in detail_rows if row["judge_score"] is not None]
+    raw_correct_scores = [
+        float(row["judge_raw_score"])
+        for row in detail_rows
+        if row["correct"] and row["judge_raw_score"] is not None
+    ]
+    raw_error_scores = [
+        float(row["judge_raw_score"])
+        for row in detail_rows
+        if not row["correct"] and row["judge_raw_score"] is not None
+    ]
     frontier_rows = [row for row in detail_rows if row["caso_frontera"] == "SI"]
     regular_rows = [row for row in detail_rows if row["caso_frontera"] == "NO"]
 
@@ -220,6 +230,11 @@ def harness(
         "judge_parse_success_rate": safe_mean(
             row["judge_parse_ok"] for row in detail_rows if row["judge_score"] is not None
         ),
+        "judge_guardrail_rate": safe_mean(
+            row["judge_guardrail_applied"] for row in detail_rows
+        ),
+        "judge_raw_mean_correct": safe_mean(raw_correct_scores),
+        "judge_raw_mean_incorrect": safe_mean(raw_error_scores),
         "contract_review_utility": safe_mean(row["domain_utility"] for row in detail_rows),
         "frontier_accuracy": safe_mean(row["correct"] for row in frontier_rows),
         "regular_accuracy": safe_mean(row["correct"] for row in regular_rows),
@@ -289,10 +304,11 @@ def parse_judge_response(text: str) -> dict[str, Any]:
 
     score_match = re.search(r"(?:score|puntaje)\s*[:=]\s*([1-5])\b", cleaned, flags=re.I)
     if score_match:
+        reason_match = re.search(r"(?:reason|raz[oó]n)\s*[:=]\s*(.+)", cleaned, flags=re.I | re.DOTALL)
         return {
             "score": int(score_match.group(1)),
-            "reason": cleaned[:500],
-            "parse_ok": False,
+            "reason": (reason_match.group(1).strip() if reason_match else cleaned)[:500],
+            "parse_ok": True,
         }
     raise ValueError(f"No se pudo extraer un puntaje 1-5 del juez: {cleaned[:200]!r}")
 
@@ -344,7 +360,9 @@ Etiqueta: {prediction['label']}
 Confianza: {prediction.get('confidence')}
 Explicación: {prediction.get('explanation') or '[sin explicación]'}
 
-Responde únicamente JSON válido: {{"score": 1, "reason": "máximo 40 palabras"}}.
+No copies frases de estas instrucciones. Responde exactamente en dos líneas.
+La primera empieza con PUNTAJE= y contiene un nivel permitido.
+La segunda empieza con RAZON= y contiene una justificación de máximo 40 palabras.
 """
         messages = [
             {"role": "system", "content": "Sigue la rúbrica literalmente y responde solo JSON."},
@@ -360,7 +378,7 @@ Responde únicamente JSON válido: {{"score": 1, "reason": "máximo 40 palabras"
                 {"role": "assistant", "content": first_response},
                 {
                     "role": "user",
-                    "content": "Reescribe tu veredicto como JSON válido con score entero 1-5 y reason breve.",
+                    "content": "Reescribe el veredicto en dos líneas: PUNTAJE= con un nivel permitido y RAZON= con una justificación breve. No copies esta instrucción.",
                 },
             ]
             second_response = self._generate(repair_messages)
