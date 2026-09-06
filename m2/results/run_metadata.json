@@ -1,0 +1,19 @@
+{
+  "status": "final_verified",
+  "source_archive": "contractrisk_m2_resultados (3).zip",
+  "code_revision_used": "b45608e",
+  "seed": 42,
+  "eval_set": "m2/eval/contractrisk_m2_eval_gold.csv",
+  "base_model": "BSC-LT/RoBERTalex",
+  "adapter": "model/contractrisk_robertalex_lora_adapter.zip",
+  "judge_model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "rubric": "m2/rubrics/judge_rubric_v1_2.json",
+  "execution_environment": "Google Colab GPU Tesla T4",
+  "result_sha256": {
+    "scorecard_baseline.csv": "d196cfd5a9953bf53d07d02aa40fa3bbee37ef22f4e1c0b11a60256e3fe70d1a",
+    "metrics_baseline.json": "2141b31d7fd54afd81615c803608f39ad204f76a956d2a00b6793718e634f993",
+    "predictions_baseline.csv": "2526f9435412da12e809a686d8b490000b5ee8ee4fef6bc6b9dfaaaa3ce12ca6",
+    "judge_bias_probe.json": "70cd594d187db14278c45aae595be63c5908e4525f2d7ed808b82b33bed56d16"
+  },
+  "note": "Metadata añadida después de verificar la corrida conservando los hashes de los cuatro archivos recibidos. Las ejecuciones futuras la exportan automáticamente."
+}

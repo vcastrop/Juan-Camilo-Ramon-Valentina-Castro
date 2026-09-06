@@ -1,0 +1,8 @@
+{
+  "bias": "verbosity",
+  "concise_score": 5,
+  "verbose_score": 5,
+  "absolute_difference": 0,
+  "mitigation_effective_threshold": 1,
+  "within_threshold": true
+}

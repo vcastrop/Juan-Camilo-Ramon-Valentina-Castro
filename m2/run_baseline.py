@@ -3,7 +3,10 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
+import importlib.metadata
 import json
+import platform
 from pathlib import Path
 
 from harness import (
@@ -60,6 +63,31 @@ def main() -> None:
     output_dir = Path(args.output_dir)
     with (output_dir / "judge_bias_probe.json").open("w", encoding="utf-8") as handle:
         json.dump(bias_probe, handle, ensure_ascii=False, indent=2)
+        handle.write("\n")
+
+    def sha256(path: str) -> str:
+        return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+    import torch
+
+    metadata = {
+        "seed": args.seed,
+        "eval_set": args.eval_set,
+        "eval_set_sha256": sha256(args.eval_set),
+        "adapter": args.adapter,
+        "adapter_sha256": sha256(args.adapter),
+        "base_model": "BSC-LT/RoBERTalex",
+        "judge_model": args.judge_model,
+        "rubric": args.rubric,
+        "rubric_sha256": sha256(args.rubric),
+        "python_version": platform.python_version(),
+        "torch_version": torch.__version__,
+        "transformers_version": importlib.metadata.version("transformers"),
+        "peft_version": importlib.metadata.version("peft"),
+        "device": torch.cuda.get_device_name(0) if torch.cuda.is_available() else "CPU",
+    }
+    with (output_dir / "run_metadata.json").open("w", encoding="utf-8") as handle:
+        json.dump(metadata, handle, ensure_ascii=False, indent=2)
         handle.write("\n")
 
     print(json.dumps({"metrics": result["metrics"], "bias_probe": bias_probe}, indent=2))

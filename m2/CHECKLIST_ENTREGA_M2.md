@@ -1,0 +1,23 @@
+# Checklist de la Entrega M2
+
+- [x] Eval set con al menos 10 ejemplos gold.
+- [x] Cada caso contiene input, esperado y criterio.
+- [x] Casos curados por el equipo y separados de train/validation de M1.
+- [x] Al menos 20 % de casos adversariales o de borde: 9 de 20, 45 %.
+- [x] Doble anotación documentada: 90 % de acuerdo y Kappa 0,765.
+- [x] Harness ejecutable de principio a fin en Colab gratuito con GPU T4.
+- [x] Función reutilizable para sustituir el sistema en M3.
+- [x] Dimensión 1: Macro F1 reproducible.
+- [x] Dimensión 2: LLM como juez abierto con rúbrica 1-5.
+- [x] Rúbrica explícita, anclada y versionada en el repositorio.
+- [x] Parsing robusto con reparación y registro de salvaguardas.
+- [x] El juez bruto distingue aciertos de errores en la corrida final.
+- [x] Dimensión 3: utilidad de revisión contractual.
+- [x] Scorecard de las tres dimensiones generado por el harness.
+- [x] Predicciones y métricas fila por fila conservadas.
+- [x] Sesgo de verbosidad reconocido, probado y mitigado.
+- [x] Pilotos inválidos del juez identificados y excluidos del scorecard final.
+- [x] Lectura honesta de errores y casos frontera en `m2/README.md`.
+- [x] Semilla 42 y versiones de dependencias fijadas.
+- [x] Notebook sin rutas locales y con celdas ordenadas.
+- [x] `main` sin modificar durante el desarrollo.
