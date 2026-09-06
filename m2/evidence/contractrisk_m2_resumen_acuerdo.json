@@ -1,0 +1,24 @@
+{
+  "total_casos": 20,
+  "acuerdos": 18,
+  "desacuerdos": 2,
+  "acuerdo_observado": 0.9,
+  "acuerdo_esperado": 0.5750000000000001,
+  "cohen_kappa": 0.7647058823529412,
+  "adjudicaciones": {
+    "m2_008": {
+      "expected": "REQUIERE_REVISION",
+      "reason": "La expresión 'apoyo administrativo combinado y de oficina' y la dependencia indican un ámbito general, pero no concretan las actividades contratadas."
+    },
+    "m2_012": {
+      "expected": "REQUIERE_REVISION",
+      "reason": "El perfil de tecnólogo en imágenes diagnósticas es identificable, pero la fórmula 'actividades propias de su perfil' no describe tareas contractuales concretas."
+    }
+  },
+  "distribucion_gold": {
+    "REQUIERE_REVISION": 7,
+    "SUFICIENTE": 13
+  },
+  "casos_frontera_gold": 9,
+  "regla_caso_frontera": "SI cuando al menos uno de los dos anotadores marcó SI."
+}

@@ -4,6 +4,34 @@ ContractRisk Colombia es una herramienta de inteligencia artificial orientada a 
 
 El objetivo final es integrar distintas señales de análisis contractual para generar alertas de priorización. Estas alertas no constituyen una acusación ni una determinación automática de fraude, corrupción o ilegalidad; la interpretación final corresponde siempre a una persona experta. M1 implementa la primera señal del sistema: evaluar si la descripción contractual es suficientemente informativa.
 
+## Entrega M2: harness de evaluación
+
+El harness de ContractRisk evalúa si un sistema distingue descripciones contractuales suficientemente informativas de aquellas que necesitan revisión humana. Una buena respuesta asigna la etiqueta correcta y evita dejar pasar textos insuficientes sin convertir la alerta en una acusación de fraude o ilegalidad.
+
+Se construyó un eval set nuevo de 20 casos, con 45 % de casos frontera, doble anotación, 90 % de acuerdo y Cohen's Kappa 0,765. El baseline RoBERTalex + LoRA obtuvo:
+
+| Dimensión | Métrica | Resultado |
+|---|---|---:|
+| Métrica clásica | Macro F1 | 0,733 |
+| LLM como juez | Promedio 1-5 | 3,400 |
+| Cumplimiento del dominio | Etiqueta correcta y juez >= 4 | 0,800 |
+
+El modelo detectó 3 de los 7 textos `REQUIERE_REVISION`; sus cuatro errores fueron falsos negativos y todos ocurrieron en casos frontera. La implementación, la rúbrica 1-5, el control del sesgo de verbosidad, el scorecard y la lectura completa están en [`m2/README.md`](m2/README.md).
+
+### Rúbrica del LLM como juez
+
+El juez aplica una rúbrica explícita y versionada. La etiqueta se compara con el gold y la explicación se evalúa contra el criterio particular del caso; una respuesta más larga no recibe más puntos por ese solo hecho.
+
+| Nivel | Ancla |
+|---:|---|
+| 5 | Etiqueta correcta y explicación concreta, correcta y sin afirmaciones no sustentadas. |
+| 4 | Etiqueta correcta, pero explicación ausente, parcial o general. |
+| 3 | Etiqueta correcta con una ambigüedad o contradicción relevante, o decisión correcta no extraíble con seguridad. |
+| 2 | Etiqueta incorrecta, pero la explicación reconoce parte del criterio o la ambigüedad del caso. |
+| 1 | Etiqueta incorrecta sin justificación útil o con razonamiento incompatible con el criterio. |
+
+La especificación completa, incluida la regla obligatoria de puntajes y el formato de salida, está en [`m2/rubrics/judge_rubric_v1_2.md`](m2/rubrics/judge_rubric_v1_2.md).
+
 ## Objetivo M1
 
 El sistema recibe `descripcion_del_proceso` de SECOP II y produce una clasificación binaria:

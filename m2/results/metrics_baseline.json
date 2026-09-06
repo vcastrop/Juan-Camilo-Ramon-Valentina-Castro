@@ -1,0 +1,35 @@
+{
+  "total_examples": 20,
+  "seed": 42,
+  "accuracy": 0.8,
+  "macro_f1": 0.7333333333333333,
+  "recall_requiere_revision": 0.42857142857142855,
+  "precision_requiere_revision": 1.0,
+  "f1_requiere_revision": 0.6,
+  "judge_mean_1_5": 3.4,
+  "judge_pass_rate": 0.8,
+  "judge_parse_success_rate": 1.0,
+  "judge_guardrail_rate": 1.0,
+  "judge_raw_mean_correct": 4.125,
+  "judge_raw_mean_incorrect": 2.0,
+  "domain_compliance_rate": 0.8,
+  "contract_review_utility": 0.8,
+  "frontier_domain_compliance_rate": 0.5555555555555556,
+  "frontier_accuracy": 0.5555555555555556,
+  "regular_accuracy": 1.0,
+  "frontier_count": 9,
+  "confusion_labels": [
+    "REQUIERE_REVISION",
+    "SUFICIENTE"
+  ],
+  "confusion_matrix": [
+    [
+      3,
+      4
+    ],
+    [
+      0,
+      13
+    ]
+  ]
+}
