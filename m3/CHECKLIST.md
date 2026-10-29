@@ -8,7 +8,7 @@ Plan inicial: 28 de octubre de 2026. Estado actual: gold humano congelado y comp
 
 - [x] Recibir y preservar ZIP y notebook v3 ejecutado; verificar hashes y fuentes.
 - [x] Separar éxito técnico de calidad: documentar fallos de generación, abstención y controlador.
-- [ ] Corregir serialización compacta, formatos inequívocos del controlador y registro de terminación; probar sobre trazas v3.
+- [x] Corregir serialización compacta, formatos inequívocos del controlador y registro de terminación; probar sobre trazas v3. Implementación v4, 50 pruebas locales; [cambios y límites](CORRECCIONES_V4.md). Pendiente validar eficacia con modelo real.
 - [ ] Repetir desarrollo y demostrar dos respuestas válidas con herramienta y una decisión válida sin llamada.
 
 Evidencia: [análisis y artefactos originales](evidence/development_v2/ANALISIS.md). Las notas de avances anteriores que siguen son HISTÓRICAS: sus pendientes ya resueltos no sustituyen este estado ni las casillas actualizadas.
