@@ -15,7 +15,7 @@ Evidencia: [README de M3 con tablas y lectura honesta](README.md#resultados), [a
 - [ ] Publicar la rama (push) y entregar el enlace en Interactiva; los autores conservan el comprobante.
 - [x] Revisión del equipo y del profesor incorporada: `m3-harness-1.1` corrige los defectos deterministas y recalifica las respuestas guardadas sin regenerarlas (`results/final_m3_rescore_v1_1/`). El reporte deja de presentar la dim. 1 como accuracy y la dim. 3 como aptitud, y separa localización de documento de recuperación del dato.
 - [x] RAGAS 1.1 implementado (segmentación corregida; variante exacta del laboratorio y adaptación por separado) con su notebook.
-- [ ] Ejecutar RAGAS 1.1 en Colab T4 y conservarlo junto a 1.0.
+- [x] RAGAS 1.1 ejecutado en Colab T4 y conservado junto a 1.0 (`results/final_m3_ragas_v1_1/`). La adaptación se reproduce idéntica; la context precision del laboratorio es inútil (el juez dice «No» a todo) y el context recall del laboratorio coincide con el chequeo determinista en 28/30.
 - [ ] Integrar con las evidencias v6 del equipo (no presentes en esta rama) antes del PR.
 - [ ] Fallos abiertos, documentados y sin corregir: válvula 0/2 en avanzado y final (m3_012 inventa una auditoría), falso pase de dominio en m3_009, juez RAGAS 3B poco fiable a nivel de chunk y divisor de afirmaciones que parte los IDs.
 

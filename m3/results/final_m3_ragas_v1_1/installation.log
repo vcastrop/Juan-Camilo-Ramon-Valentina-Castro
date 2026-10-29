@@ -1,0 +1,261 @@
+Collecting transformers==4.57.6 (from -r m3/requirements-development-v2.txt (line 3))
+  Downloading transformers-4.57.6-py3-none-any.whl.metadata (43 kB)
+Collecting sentence-transformers==3.4.1 (from -r m3/requirements-development-v2.txt (line 4))
+  Downloading sentence_transformers-3.4.1-py3-none-any.whl.metadata (10 kB)
+Collecting chromadb==0.6.3 (from -r m3/requirements-development-v2.txt (line 5))
+  Downloading chromadb-0.6.3-py3-none-any.whl.metadata (6.8 kB)
+Requirement already satisfied: numpy==2.1.3 in /usr/local/lib/python3.13/dist-packages (from -r m3/requirements-development-v2.txt (line 6)) (2.1.3)
+Collecting rank-bm25==0.2.2 (from -r m3/requirements-development-v2.txt (line 7))
+  Downloading rank_bm25-0.2.2-py3-none-any.whl.metadata (3.2 kB)
+Collecting sentencepiece==0.2.1 (from -r m3/requirements-development-v2.txt (line 8))
+  Downloading sentencepiece-0.2.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (10 kB)
+Collecting pysqlite3-binary==0.5.4.post2 (from -r m3/requirements-development-v2.txt (line 9))
+  Downloading pysqlite3_binary-0.5.4.post2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (922 bytes)
+Requirement already satisfied: filelock in /usr/local/lib/python3.13/dist-packages (from transformers==4.57.6->-r m3/requirements-development-v2.txt (line 3)) (4.2.4)
+Collecting huggingface-hub<1.0,>=0.34.0 (from transformers==4.57.6->-r m3/requirements-development-v2.txt (line 3))
+  Downloading huggingface_hub-0.36.2-py3-none-any.whl.metadata (15 kB)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.13/dist-packages (from transformers==4.57.6->-r m3/requirements-development-v2.txt (line 3)) (26.3)
+Requirement already satisfied: pyyaml>=5.1 in /usr/local/lib/python3.13/dist-packages (from transformers==4.57.6->-r m3/requirements-development-v2.txt (line 3)) (6.0.3)
+Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.13/dist-packages (from transformers==4.57.6->-r m3/requirements-development-v2.txt (line 3)) (2025.11.3)
+Requirement already satisfied: requests in /usr/local/lib/python3.13/dist-packages (from transformers==4.57.6->-r m3/requirements-development-v2.txt (line 3)) (2.32.4)
+Collecting tokenizers<=0.23.0,>=0.22.0 (from transformers==4.57.6->-r m3/requirements-development-v2.txt (line 3))
+  Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+Requirement already satisfied: safetensors>=0.4.3 in /usr/local/lib/python3.13/dist-packages (from transformers==4.57.6->-r m3/requirements-development-v2.txt (line 3)) (0.8.0)
+Requirement already satisfied: tqdm>=4.27 in /usr/local/lib/python3.13/dist-packages (from transformers==4.57.6->-r m3/requirements-development-v2.txt (line 3)) (4.67.3)
+Requirement already satisfied: torch>=1.11.0 in /usr/local/lib/python3.13/dist-packages (from sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (2.11.0+cu130)
+Requirement already satisfied: scikit-learn in /usr/local/lib/python3.13/dist-packages (from sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (1.6.1)
+Requirement already satisfied: scipy in /usr/local/lib/python3.13/dist-packages (from sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (1.16.3)
+Requirement already satisfied: Pillow in /usr/local/lib/python3.13/dist-packages (from sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (11.3.0)
+Collecting build>=1.0.3 (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading build-1.6.1-py3-none-any.whl.metadata (5.6 kB)
+Requirement already satisfied: pydantic>=1.9 in /usr/local/lib/python3.13/dist-packages (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (2.14.1)
+Collecting chroma-hnswlib==0.7.6 (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading chroma_hnswlib-0.7.6.tar.gz (32 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: fastapi>=0.95.2 in /usr/local/lib/python3.13/dist-packages (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (0.141.1)
+Requirement already satisfied: uvicorn>=0.18.3 in /usr/local/lib/python3.13/dist-packages (from uvicorn[standard]>=0.18.3->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (0.54.0)
+Collecting posthog>=2.4.0 (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading posthog-7.80.3-py3-none-any.whl.metadata (7.0 kB)
+Requirement already satisfied: typing_extensions>=4.5.0 in /usr/local/lib/python3.13/dist-packages (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (4.16.0)
+Collecting onnxruntime>=1.14.1 (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading onnxruntime-1.31.1-cp313-cp313-manylinux_2_28_x86_64.whl.metadata (5.8 kB)
+Requirement already satisfied: opentelemetry-api>=1.2.0 in /usr/local/lib/python3.13/dist-packages (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (1.42.1)
+Collecting opentelemetry-exporter-otlp-proto-grpc>=1.2.0 (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading opentelemetry_exporter_otlp_proto_grpc-1.45.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-fastapi>=0.41b0 (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading opentelemetry_instrumentation_fastapi-0.66b2-py3-none-any.whl.metadata (2.2 kB)
+Requirement already satisfied: opentelemetry-sdk>=1.2.0 in /usr/local/lib/python3.13/dist-packages (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (1.42.1)
+Collecting pypika>=0.48.9 (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading pypika-0.51.1-py2.py3-none-any.whl.metadata (51 kB)
+Collecting overrides>=7.3.1 (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading overrides-7.7.0-py3-none-any.whl.metadata (5.8 kB)
+Collecting importlib-resources (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading importlib_resources-7.1.0-py3-none-any.whl.metadata (4.0 kB)
+Requirement already satisfied: grpcio>=1.58.0 in /usr/local/lib/python3.13/dist-packages (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (1.84.1)
+Collecting bcrypt>=4.0.1 (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading bcrypt-5.0.0-cp39-abi3-manylinux_2_34_x86_64.whl.metadata (10 kB)
+Requirement already satisfied: typer>=0.9.0 in /usr/local/lib/python3.13/dist-packages (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (0.27.3)
+Collecting kubernetes>=28.1.0 (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading kubernetes-37.0.1-py2.py3-none-any.whl.metadata (1.9 kB)
+Requirement already satisfied: tenacity>=8.2.3 in /usr/local/lib/python3.13/dist-packages (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (9.1.4)
+Requirement already satisfied: mmh3>=4.0.1 in /usr/local/lib/python3.13/dist-packages (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (5.3.1)
+Requirement already satisfied: orjson>=3.9.12 in /usr/local/lib/python3.13/dist-packages (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (3.13.0)
+Requirement already satisfied: httpx>=0.27.0 in /usr/local/lib/python3.13/dist-packages (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (0.28.1)
+Requirement already satisfied: rich>=10.11.0 in /usr/local/lib/python3.13/dist-packages (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (13.9.4)
+Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.13/dist-packages (from huggingface-hub<1.0,>=0.34.0->transformers==4.57.6->-r m3/requirements-development-v2.txt (line 3)) (2025.12.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in /usr/local/lib/python3.13/dist-packages (from huggingface-hub<1.0,>=0.34.0->transformers==4.57.6->-r m3/requirements-development-v2.txt (line 3)) (1.7.0)
+Collecting pyproject_hooks (from build>=1.0.3->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading pyproject_hooks-1.3.3-py3-none-any.whl.metadata (1.3 kB)
+Requirement already satisfied: starlette>=0.46.0 in /usr/local/lib/python3.13/dist-packages (from fastapi>=0.95.2->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (1.9.0)
+Requirement already satisfied: typing-inspection>=0.4.2 in /usr/local/lib/python3.13/dist-packages (from fastapi>=0.95.2->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (0.4.4)
+Requirement already satisfied: annotated-doc>=0.0.2 in /usr/local/lib/python3.13/dist-packages (from fastapi>=0.95.2->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (0.0.5)
+Requirement already satisfied: anyio in /usr/local/lib/python3.13/dist-packages (from httpx>=0.27.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (4.15.1)
+Requirement already satisfied: certifi in /usr/local/lib/python3.13/dist-packages (from httpx>=0.27.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (2026.10.23)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.13/dist-packages (from httpx>=0.27.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (1.0.9)
+Requirement already satisfied: idna in /usr/local/lib/python3.13/dist-packages (from httpx>=0.27.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (3.20)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.13/dist-packages (from httpcore==1.*->httpx>=0.27.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (0.16.0)
+Requirement already satisfied: python-dateutil>=2.8.2 in /usr/local/lib/python3.13/dist-packages (from kubernetes>=28.1.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (2.9.0.post0)
+Requirement already satisfied: websocket-client!=0.40.0,!=0.41.*,!=0.42.*,>=0.32.0 in /usr/local/lib/python3.13/dist-packages (from kubernetes>=28.1.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (1.9.2)
+Requirement already satisfied: requests-oauthlib in /usr/local/lib/python3.13/dist-packages (from kubernetes>=28.1.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (2.0.0)
+Collecting urllib3<3.0.0,>=2.8.0 (from kubernetes>=28.1.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting durationpy>=0.11 (from kubernetes>=28.1.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading durationpy-0.11-py3-none-any.whl.metadata (474 bytes)
+Requirement already satisfied: aiohttp<4.0.0,>=3.14.3 in /usr/local/lib/python3.13/dist-packages (from kubernetes>=28.1.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (3.14.5)
+Collecting aiohttp-retry>=2.9.1 (from kubernetes>=28.1.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading aiohttp_retry-2.9.1-py3-none-any.whl.metadata (8.8 kB)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /usr/local/lib/python3.13/dist-packages (from aiohttp<4.0.0,>=3.14.3->kubernetes>=28.1.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (2.7.1)
+Requirement already satisfied: aiosignal>=1.4.0 in /usr/local/lib/python3.13/dist-packages (from aiohttp<4.0.0,>=3.14.3->kubernetes>=28.1.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.13/dist-packages (from aiohttp<4.0.0,>=3.14.3->kubernetes>=28.1.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (26.1.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /usr/local/lib/python3.13/dist-packages (from aiohttp<4.0.0,>=3.14.3->kubernetes>=28.1.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (1.8.0)
+Requirement already satisfied: multidict<8.0,>=4.5 in /usr/local/lib/python3.13/dist-packages (from aiohttp<4.0.0,>=3.14.3->kubernetes>=28.1.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (7.2.0)
+Requirement already satisfied: propcache>=0.2.0 in /usr/local/lib/python3.13/dist-packages (from aiohttp<4.0.0,>=3.14.3->kubernetes>=28.1.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (0.5.4)
+Requirement already satisfied: yarl<2.0,>=1.25.1 in /usr/local/lib/python3.13/dist-packages (from aiohttp<4.0.0,>=3.14.3->kubernetes>=28.1.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (1.25.1)
+Requirement already satisfied: flatbuffers in /usr/local/lib/python3.13/dist-packages (from onnxruntime>=1.14.1->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (25.12.19)
+Requirement already satisfied: protobuf>=4.25.8 in /usr/local/lib/python3.13/dist-packages (from onnxruntime>=1.14.1->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (6.33.6)
+Requirement already satisfied: googleapis-common-protos~=1.57 in /usr/local/lib/python3.13/dist-packages (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (1.76.0)
+Collecting opentelemetry-exporter-otlp-common==0.66b2 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading opentelemetry_exporter_otlp_common-0.66b2-py3-none-any.whl.metadata (1.9 kB)
+Collecting opentelemetry-exporter-otlp-proto-common==1.45.2 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading opentelemetry_exporter_otlp_proto_common-1.45.2-py3-none-any.whl.metadata (1.8 kB)
+Collecting opentelemetry-proto==1.45.2 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading opentelemetry_proto-1.45.2-py3-none-any.whl.metadata (2.3 kB)
+Collecting opentelemetry-sdk>=1.2.0 (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading opentelemetry_sdk-1.45.2-py3-none-any.whl.metadata (1.6 kB)
+Collecting opentelemetry-api>=1.2.0 (from chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+Collecting opentelemetry-semantic-conventions==0.66b2 (from opentelemetry-sdk>=1.2.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading opentelemetry_semantic_conventions-0.66b2-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-instrumentation-asgi==0.66b2 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading opentelemetry_instrumentation_asgi-0.66b2-py3-none-any.whl.metadata (2.0 kB)
+Collecting opentelemetry-instrumentation==0.66b2 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading opentelemetry_instrumentation-0.66b2-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-util-http==0.66b2 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading opentelemetry_util_http-0.66b2-py3-none-any.whl.metadata (2.6 kB)
+Requirement already satisfied: wrapt<3.0.0,>=1.0.0 in /usr/local/lib/python3.13/dist-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (2.5.1)
+Collecting asgiref~=3.0 (from opentelemetry-instrumentation-asgi==0.66b2->opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading asgiref-3.13.0-py3-none-any.whl.metadata (12 kB)
+Collecting backoff>=1.10.0 (from posthog>=2.4.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5))
+  Downloading backoff-2.2.1-py3-none-any.whl.metadata (14 kB)
+Requirement already satisfied: distro>=1.5.0 in /usr/local/lib/python3.13/dist-packages (from posthog>=2.4.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (1.9.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.13/dist-packages (from requests->transformers==4.57.6->-r m3/requirements-development-v2.txt (line 3)) (3.4.9)
+Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.13/dist-packages (from pydantic>=1.9->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (0.8.0)
+Requirement already satisfied: pydantic-core==2.50.1 in /usr/local/lib/python3.13/dist-packages (from pydantic>=1.9->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (2.50.1)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.13/dist-packages (from python-dateutil>=2.8.2->kubernetes>=28.1.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (1.17.0)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /usr/local/lib/python3.13/dist-packages (from rich>=10.11.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (4.2.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /usr/local/lib/python3.13/dist-packages (from rich>=10.11.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (2.21.0)
+Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.13/dist-packages (from markdown-it-py>=2.2.0->rich>=10.11.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (0.1.2)
+Requirement already satisfied: setuptools<82 in /usr/local/lib/python3.13/dist-packages (from torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (80.10.2)
+Requirement already satisfied: sympy>=1.13.3 in /usr/local/lib/python3.13/dist-packages (from torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in /usr/local/lib/python3.13/dist-packages (from torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (3.7)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.13/dist-packages (from torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (3.1.6)
+Requirement already satisfied: cuda-toolkit==13.0.2 in /usr/local/lib/python3.13/dist-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (13.0.2)
+Requirement already satisfied: cuda-bindings<14,>=13.0.3 in /usr/local/lib/python3.13/dist-packages (from torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (13.0.3)
+Requirement already satisfied: nvidia-cudnn-cu13==9.19.0.56 in /usr/local/lib/python3.13/dist-packages (from torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (9.19.0.56)
+Requirement already satisfied: nvidia-cusparselt-cu13==0.8.0 in /usr/local/lib/python3.13/dist-packages (from torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (0.8.0)
+Requirement already satisfied: nvidia-nccl-cu13==2.28.9 in /usr/local/lib/python3.13/dist-packages (from torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (2.28.9)
+Requirement already satisfied: nvidia-nvshmem-cu13==3.4.5 in /usr/local/lib/python3.13/dist-packages (from torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (3.4.5)
+Requirement already satisfied: triton==3.6.0 in /usr/local/lib/python3.13/dist-packages (from torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (3.6.0)
+Requirement already satisfied: nvidia-cublas==13.1.0.3.* in /usr/local/lib/python3.13/dist-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (13.1.0.3)
+Requirement already satisfied: nvidia-cuda-runtime==13.0.96.* in /usr/local/lib/python3.13/dist-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (13.0.96)
+Requirement already satisfied: nvidia-cufft==12.0.0.61.* in /usr/local/lib/python3.13/dist-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (12.0.0.61)
+Requirement already satisfied: nvidia-cufile==1.15.1.6.* in /usr/local/lib/python3.13/dist-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (1.15.1.6)
+Requirement already satisfied: nvidia-cuda-cupti==13.0.85.* in /usr/local/lib/python3.13/dist-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (13.0.85)
+Requirement already satisfied: nvidia-curand==10.4.0.35.* in /usr/local/lib/python3.13/dist-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (10.4.0.35)
+Requirement already satisfied: nvidia-cusolver==12.0.4.66.* in /usr/local/lib/python3.13/dist-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (12.0.4.66)
+Requirement already satisfied: nvidia-cusparse==12.6.3.3.* in /usr/local/lib/python3.13/dist-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (12.6.3.3)
+Requirement already satisfied: nvidia-nvjitlink==13.0.88.* in /usr/local/lib/python3.13/dist-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (13.0.88)
+Requirement already satisfied: nvidia-cuda-nvrtc==13.0.88.* in /usr/local/lib/python3.13/dist-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (13.0.88)
+Requirement already satisfied: nvidia-nvtx==13.0.85.* in /usr/local/lib/python3.13/dist-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (13.0.85)
+Requirement already satisfied: cuda-pathfinder~=1.1 in /usr/local/lib/python3.13/dist-packages (from cuda-bindings<14,>=13.0.3->torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (1.8.4)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.13/dist-packages (from sympy>=1.13.3->torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (1.3.0)
+Requirement already satisfied: shellingham>=1.3.0 in /usr/local/lib/python3.13/dist-packages (from typer>=0.9.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (1.5.4)
+Requirement already satisfied: click>=7.0 in /usr/local/lib/python3.13/dist-packages (from uvicorn>=0.18.3->uvicorn[standard]>=0.18.3->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (8.5.0)
+Requirement already satisfied: httptools>=0.8.0 in /usr/local/lib/python3.13/dist-packages (from uvicorn[standard]>=0.18.3->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (0.9.0)
+Requirement already satisfied: python-dotenv>=0.13 in /usr/local/lib/python3.13/dist-packages (from uvicorn[standard]>=0.18.3->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (1.2.4)
+Requirement already satisfied: uvloop>=0.15.1 in /usr/local/lib/python3.13/dist-packages (from uvicorn[standard]>=0.18.3->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (0.23.0)
+Requirement already satisfied: watchfiles>=0.20 in /usr/local/lib/python3.13/dist-packages (from uvicorn[standard]>=0.18.3->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (1.3.0)
+Requirement already satisfied: websockets>=13.0 in /usr/local/lib/python3.13/dist-packages (from uvicorn[standard]>=0.18.3->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (15.0.1)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.13/dist-packages (from jinja2->torch>=1.11.0->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (3.0.4)
+Requirement already satisfied: oauthlib>=3.0.0 in /usr/local/lib/python3.13/dist-packages (from requests-oauthlib->kubernetes>=28.1.0->chromadb==0.6.3->-r m3/requirements-development-v2.txt (line 5)) (3.3.1)
+Requirement already satisfied: joblib>=1.2.0 in /usr/local/lib/python3.13/dist-packages (from scikit-learn->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (1.6.0)
+Requirement already satisfied: threadpoolctl>=3.1.0 in /usr/local/lib/python3.13/dist-packages (from scikit-learn->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (3.7.0)
+Requirement already satisfied: cloudpickle>=3.0 in /usr/local/lib/python3.13/dist-packages (from joblib>=1.2.0->scikit-learn->sentence-transformers==3.4.1->-r m3/requirements-development-v2.txt (line 4)) (3.1.2)
+Downloading transformers-4.57.6-py3-none-any.whl (12.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 28.9 MB/s  0:00:00
+Downloading sentence_transformers-3.4.1-py3-none-any.whl (275 kB)
+Downloading chromadb-0.6.3-py3-none-any.whl (611 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 611.1/611.1 kB 27.2 MB/s  0:00:00
+Downloading rank_bm25-0.2.2-py3-none-any.whl (8.6 kB)
+Downloading sentencepiece-0.2.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (1.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 42.0 MB/s  0:00:00
+Downloading pysqlite3_binary-0.5.4.post2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 75.3 MB/s  0:00:00
+Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 27.3 MB/s  0:00:00
+Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 77.8 MB/s  0:00:00
+Downloading bcrypt-5.0.0-cp39-abi3-manylinux_2_34_x86_64.whl (278 kB)
+Downloading build-1.6.1-py3-none-any.whl (31 kB)
+Downloading kubernetes-37.0.1-py2.py3-none-any.whl (7.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.5/7.5 MB 100.9 MB/s  0:00:00
+Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+Downloading aiohttp_retry-2.9.1-py3-none-any.whl (10.0 kB)
+Downloading durationpy-0.11-py3-none-any.whl (4.1 kB)
+Downloading onnxruntime-1.31.1-cp313-cp313-manylinux_2_28_x86_64.whl (23.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 23.8/23.8 MB 138.3 MB/s  0:00:00
+Downloading opentelemetry_exporter_otlp_proto_grpc-1.45.2-py3-none-any.whl (19 kB)
+Downloading opentelemetry_exporter_otlp_common-0.66b2-py3-none-any.whl (12 kB)
+Downloading opentelemetry_exporter_otlp_proto_common-1.45.2-py3-none-any.whl (15 kB)
+Downloading opentelemetry_proto-1.45.2-py3-none-any.whl (72 kB)
+Downloading opentelemetry_sdk-1.45.2-py3-none-any.whl (141 kB)
+Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+Downloading opentelemetry_semantic_conventions-0.66b2-py3-none-any.whl (206 kB)
+Downloading opentelemetry_instrumentation_fastapi-0.66b2-py3-none-any.whl (14 kB)
+Downloading opentelemetry_instrumentation-0.66b2-py3-none-any.whl (36 kB)
+Downloading opentelemetry_instrumentation_asgi-0.66b2-py3-none-any.whl (15 kB)
+Downloading opentelemetry_util_http-0.66b2-py3-none-any.whl (8.4 kB)
+Downloading asgiref-3.13.0-py3-none-any.whl (27 kB)
+Downloading overrides-7.7.0-py3-none-any.whl (17 kB)
+Downloading posthog-7.80.3-py3-none-any.whl (1.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 38.5 MB/s  0:00:00
+Downloading backoff-2.2.1-py3-none-any.whl (15 kB)
+Downloading pypika-0.51.1-py2.py3-none-any.whl (60 kB)
+Downloading importlib_resources-7.1.0-py3-none-any.whl (37 kB)
+Downloading pyproject_hooks-1.3.3-py3-none-any.whl (10 kB)
+Building wheels for collected packages: chroma-hnswlib
+  Building wheel for chroma-hnswlib (pyproject.toml): started
+  Building wheel for chroma-hnswlib (pyproject.toml): finished with status 'done'
+  Created wheel for chroma-hnswlib: filename=chroma_hnswlib-0.7.6-cp313-cp313-linux_x86_64.whl size=2684145 sha256=117015b1978dabb5c6418121e10d692555592db0fe337dd5907ebf27ef91ead9
+  Stored in directory: /root/.cache/pip/wheels/e4/de/05/47d2e8cd71d86b683765286c3308516ddcb7e8bf7db44fa69f
+Successfully built chroma-hnswlib
+Installing collected packages: pysqlite3-binary, pypika, durationpy, urllib3, sentencepiece, rank-bm25, pyproject_hooks, overrides, opentelemetry-util-http, opentelemetry-proto, opentelemetry-api, onnxruntime, importlib-resources, chroma-hnswlib, bcrypt, backoff, asgiref, opentelemetry-semantic-conventions, opentelemetry-exporter-otlp-proto-common, build, posthog, opentelemetry-sdk, opentelemetry-instrumentation, huggingface-hub, aiohttp-retry, tokenizers, opentelemetry-instrumentation-asgi, opentelemetry-exporter-otlp-common, kubernetes, transformers, opentelemetry-instrumentation-fastapi, opentelemetry-exporter-otlp-proto-grpc, sentence-transformers, chromadb
+  Attempting uninstall: urllib3
+    Found existing installation: urllib3 2.5.0
+    Uninstalling urllib3-2.5.0:
+      Successfully uninstalled urllib3-2.5.0
+  Attempting uninstall: sentencepiece
+    Found existing installation: sentencepiece 0.2.2
+    Uninstalling sentencepiece-0.2.2:
+      Successfully uninstalled sentencepiece-0.2.2
+  Attempting uninstall: opentelemetry-api
+    Found existing installation: opentelemetry-api 1.42.1
+    Uninstalling opentelemetry-api-1.42.1:
+      Successfully uninstalled opentelemetry-api-1.42.1
+  Attempting uninstall: opentelemetry-semantic-conventions
+    Found existing installation: opentelemetry-semantic-conventions 0.63b1
+    Uninstalling opentelemetry-semantic-conventions-0.63b1:
+      Successfully uninstalled opentelemetry-semantic-conventions-0.63b1
+  Attempting uninstall: opentelemetry-sdk
+    Found existing installation: opentelemetry-sdk 1.42.1
+    Uninstalling opentelemetry-sdk-1.42.1:
+      Successfully uninstalled opentelemetry-sdk-1.42.1
+  Attempting uninstall: huggingface-hub
+    Found existing installation: huggingface_hub 1.33.0
+    Uninstalling huggingface_hub-1.33.0:
+      Successfully uninstalled huggingface_hub-1.33.0
+  Attempting uninstall: tokenizers
+    Found existing installation: tokenizers 0.23.3
+    Uninstalling tokenizers-0.23.3:
+      Successfully uninstalled tokenizers-0.23.3
+  Attempting uninstall: transformers
+    Found existing installation: transformers 5.20.2
+    Uninstalling transformers-5.20.2:
+      Successfully uninstalled transformers-5.20.2
+  Attempting uninstall: sentence-transformers
+    Found existing installation: sentence-transformers 5.7.0
+    Uninstalling sentence-transformers-5.7.0:
+      Successfully uninstalled sentence-transformers-5.7.0
+
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+google-adk 2.7.1 requires opentelemetry-api<=1.42.1,>=1.39, but you have opentelemetry-api 1.45.2 which is incompatible.
+google-adk 2.7.1 requires opentelemetry-sdk<=1.42.1,>=1.39, but you have opentelemetry-sdk 1.45.2 which is incompatible.
+gradio 6.30.0 requires huggingface-hub<3.0,>=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.
+gradio-client 2.7.2 requires huggingface-hub<3.0,>=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.
+diffusers 0.42.0 requires huggingface-hub<3.0,>=1.32.0, but you have huggingface-hub 0.36.2 which is incompatible.
+Successfully installed aiohttp-retry-2.9.1 asgiref-3.13.0 backoff-2.2.1 bcrypt-5.0.0 build-1.6.1 chroma-hnswlib-0.7.6 chromadb-0.6.3 durationpy-0.11 huggingface-hub-0.36.2 importlib-resources-7.1.0 kubernetes-37.0.1 onnxruntime-1.31.1 opentelemetry-api-1.45.2 opentelemetry-exporter-otlp-common-0.66b2 opentelemetry-exporter-otlp-proto-common-1.45.2 opentelemetry-exporter-otlp-proto-grpc-1.45.2 opentelemetry-instrumentation-0.66b2 opentelemetry-instrumentation-asgi-0.66b2 opentelemetry-instrumentation-fastapi-0.66b2 opentelemetry-proto-1.45.2 opentelemetry-sdk-1.45.2 opentelemetry-semantic-conventions-0.66b2 opentelemetry-util-http-0.66b2 overrides-7.7.0 posthog-7.80.3 pypika-0.51.1 pyproject_hooks-1.3.3 pysqlite3-binary-0.5.4.post2 rank-bm25-0.2.2 sentence-transformers-3.4.1 sentencepiece-0.2.1 tokenizers-0.22.2 transformers-4.57.6 urllib3-2.8.0

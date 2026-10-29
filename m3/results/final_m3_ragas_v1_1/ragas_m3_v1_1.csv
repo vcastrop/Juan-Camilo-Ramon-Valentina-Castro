@@ -1,0 +1,4 @@
+variant,label,cases,faithfulness,faithfulness_n,answer_relevancy,answer_relevancy_n,context_precision_lab,context_precision_lab_n,context_recall_lab,context_recall_lab_n,context_precision_rank,context_precision_rank_n,context_recall_segment,context_recall_segment_n,judge_calls,judge_parse_failures,ragas_version
+rag_ingenuo,RAG ingenuo (S07): denso top-3,12,0.696969696969697,11,0.5008088529109955,10,0.0,10,0.2,10,0.03333333333333333,10,0.16666666666666666,10,129,0,m3-ragas-lab-1.1
+rag_avanzado,RAG avanzado: híbrido BM25+denso RRF con filtro de ID + reranking,12,0.5694444444444444,12,0.31748015582561495,10,0.0,10,0.5,10,0.35,10,0.5916666666666667,10,129,0,m3-ragas-lab-1.1
+sistema_final,Sistema final: avanzado + herramienta (agente acotado),12,0.6527777777777778,12,0.33030050843954084,10,0.0,10,0.7,10,0.3825,10,0.7916666666666666,10,135,0,m3-ragas-lab-1.1

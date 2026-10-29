@@ -66,4 +66,4 @@ Fecha: 29/10/2026. Revisión técnica asistida por Claude Code; no sustituye la 
 Se confirmaron, y se corrigen sin modificar ningún archivo original de esta corrida, los siguientes puntos:
 - Defectos deterministas de `m3-harness-1.0`: una cifra aceptada dentro de otra mayor, una mención negada contada como presencia y una acusación atenuada sin detectar. Se recalificó con `m3-harness-1.1` en `../final_m3_rescore_v1_1/`. Solo cambia el dominio de m3_009 (avanzado y final).
 - La «ficha gold entregada 10/10» no implica recuperación del dato. En m3_007 y m3_008 el avanzado no trae los campos de valor, y en m3_004 y m3_006 falta parte de la descripción.
-- RAGAS 1.0 tiene segmentación defectuosa, y su precision/recall es una adaptación, no la variante del laboratorio; con el juez 3B sus diferencias entre filas no son concluyentes. Se preparó RAGAS 1.1 (`../../rerun_ragas_m3.py`), pendiente de ejecutar en GPU.
+- RAGAS 1.0 tiene segmentación defectuosa, y su precision/recall es una adaptación, no la variante del laboratorio; con el juez 3B sus diferencias entre filas no son concluyentes. RAGAS 1.1 ya se ejecutó: ver `../final_m3_ragas_v1_1/ANALISIS.md`.

@@ -2,7 +2,7 @@
 
 **En palabras sencillas:** ContractRisk responde preguntas de un analista sobre fichas públicas de contratos estatales colombianos (SECOP II), por ejemplo «¿qué se contrata y quién lo contrata?» o «¿cuánto difieren los valores de estos dos contratos?», y siempre dice de qué ficha sacó el dato. Una buena respuesta es correcta, cita la ficha exacta y, si el dato no está en las fichas, lo dice en vez de inventarlo. No decide si un contrato es fraudulento: ayuda a una persona a revisar.
 
-Estado: corrida final sobre el gold ejecutada en Colab T4 y auditada; métricas deterministas recalificadas con `m3-harness-1.1` sobre las mismas respuestas; RAGAS 1.1 preparado y pendiente de ejecutar. **La válvula de escape falla en el sistema final (0/2).** Resultados y lectura honesta: [Resultados](#resultados). Historial de versiones de desarrollo v1–v5: [HISTORIAL_README.md](HISTORIAL_README.md), [CHECKLIST.md](CHECKLIST.md).
+Estado: corrida final sobre el gold ejecutada en Colab T4 y auditada; métricas deterministas recalificadas con `m3-harness-1.1` sobre las mismas respuestas; RAGAS 1.1 ejecutado sobre las mismas respuestas. **La válvula de escape falla en el sistema final (0/2).** Resultados y lectura honesta: [Resultados](#resultados). Historial de versiones de desarrollo v1–v5: [HISTORIAL_README.md](HISTORIAL_README.md), [CHECKLIST.md](CHECKLIST.md).
 
 ## Pipeline
 
@@ -126,7 +126,7 @@ Que la ficha correcta llegue (10/10) demuestra que se **localizó el documento**
 - En m3_004 y m3_006 la descripción larga queda partida en chunks que no entran completos en el top-3.
 - En el final, la herramienta aporta los dos operandos y la operación; ese es el paso de 6/10 a 8/10.
 
-### RAGAS 1.0 (diagnóstico provisional; juez Qwen2.5-3B local)
+### RAGAS 1.0 (versión original, conservada; juez Qwen2.5-3B local)
 
 | Sistema | Faithfulness | Answer relevancy | Context precision (rango, adaptación) | Context recall (segmentos, adaptación) |
 |---|---:|---:|---:|---:|
@@ -140,7 +140,21 @@ Faithfulness excluye abstenciones; las otras tres excluyen las 2 preguntas sin r
 - **El juez 3B se equivoca a nivel de fragmento:** dijo «no» a chunks con el dato literal (m3_001, m3_010) y a fechas presentes en la ficha (m3_009). Como sus errores pueden afectar de forma distinta a cada sistema, no se puede asegurar que las diferencias entre filas reflejen tendencias reales.
 - **La answer relevancy menor del avanzado no indica peores respuestas.** El ingenuo responde frases genéricas parecidas a la pregunta; el avanzado da respuestas cortas («Mínima cuantía») de las que el juez regenera preguntas desviadas.
 
-**RAGAS 1.1** ([`ragas_m3_v11.py`](ragas_m3_v11.py), [notebook](ContractRisk_M3_RAGAS_v1_1_Colab.ipynb)) corrige la segmentación y reporta por separado la variante exacta del laboratorio y la adaptación, sobre las mismas respuestas guardadas. *Requiere GPU; resultado pendiente de ejecutar en Colab y de conservar junto a 1.0.*
+### RAGAS 1.1 (segmentación corregida; mismas respuestas guardadas)
+
+Corrida en Colab T4, código `1575907`; evidencia y auditoría en [`results/final_m3_ragas_v1_1/`](results/final_m3_ragas_v1_1/) ([ANALISIS.md](results/final_m3_ragas_v1_1/ANALISIS.md)).
+
+| Sistema | Faithfulness | Answer relevancy | Context precision (lab S10) | Context recall (lab S10) | Context precision (rango, adaptación) | Context recall (segmentos, adaptación) |
+|---|---:|---:|---:|---:|---:|---:|
+| RAG ingenuo | 0,697 (n=11) | 0,501 (n=10) | 0,000 (n=10) | 0,200 (n=10) | 0,033 (n=10) | 0,167 (n=10) |
+| RAG avanzado | 0,569 (n=12) | 0,317 (n=10) | 0,000 (n=10) | 0,500 (n=10) | 0,350 (n=10) | 0,592 (n=10) |
+| Sistema final | 0,653 (n=12) | 0,330 (n=10) | 0,000 (n=10) | 0,700 (n=10) | 0,383 (n=10) | 0,792 (n=10) |
+
+Juez: Qwen2.5-3B-Instruct local, 393 llamadas, 0 sin parsear. Cómo leerla:
+- **Reproducible:** las tres métricas con los mismos prompts que la 1.0 dieron valores idénticos en los 36 casos.
+- **Context precision del laboratorio = 0 no mide la recuperación.** El juez dijo «No» a los 94 pasajes, incluso a los que contienen literalmente lo pedido. Es un fallo del juez con ese prompt.
+- **Context recall del laboratorio es la métrica RAGAS más confiable aquí.** Coincide en 28/30 casos con el chequeo determinista de hechos en el contexto (los 2 desacuerdos son falsos negativos del juez). Confirma el orden ingenuo 0,2 < avanzado 0,5 < final 0,7.
+- **Faithfulness:** al corregir la segmentación, el avanzado y el final quedan por debajo del ingenuo. La aparente mejora de 1.0 era en parte artefacto, y el juez sigue cometiendo errores en ambos sentidos. **No se puede concluir que el sistema final sea más fiel al contexto.**
 
 ### Lectura honesta
 
@@ -169,7 +183,7 @@ Faithfulness excluye abstenciones; las otras tres excluyen las 2 preguntas sin r
   - en m3_009, «sugiere una posible irregularidad», contra el criterio.
   - En m3_004 y m3_006 la respuesta además confunde el tipo de contrato con el objeto, de modo que se suman recuperación parcial y generación.
 - **Medición:** jueces 3B poco fiables; las reglas automáticas, corregidas en 1.1, siguen siendo aproximaciones (por ejemplo, la tolerancia a paráfrasis no controla la negación).
-- El contraste con RAGAS va en la misma dirección: el ingenuo tiene context recall bajo (0,17) con faithfulness 0,64, es decir, sigue un contexto que es de otra ficha. Pero con el juez actual esto es indicativo, no concluyente.
+- **Lo que RAGAS permite separar.** El context recall del laboratorio (0,2 / 0,5 / 0,7), consistente con el chequeo determinista, confirma que la recuperación mejora pero sigue incompleta: en 3/10 respondibles del final el juez no encuentra lo necesario en el contexto. Faithfulness no sirve para aislar un problema de generación «con buen contexto»: el juez 3B se equivoca en ambos sentidos y su orden entre filas cambió al corregir la segmentación. Los fallos de generación de arriba se identificaron por revisión caso a caso, no por RAGAS.
 
 **4. ¿Qué pasó con las preguntas sin respuesta en el corpus?** **La válvula no funciona en el sistema final: 0/2.**
 - Sin RAG se abstuvo en 2/2, pero se abstiene casi siempre (también en 3 respondibles).
