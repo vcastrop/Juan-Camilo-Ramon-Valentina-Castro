@@ -2,7 +2,22 @@
 
 Plan inicial: 28 de octubre de 2026. Actualizado: 29 de octubre de 2026, tras auditar integración v5 y calibración en T4.
 
-## Estado vigente — integración v5 auditada
+## Estado vigente — corrida final sobre el gold ejecutada y auditada (29/10/2026)
+
+Evidencia: [README de M3 con tablas y lectura honesta](README.md#resultados), [auditoría de la corrida final](results/final_m3/ANALISIS.md), `results/final_m3/scorecard_m3.csv` y `ragas_m3.csv`.
+
+- [x] Harness `m3-harness-1.0`: tres dimensiones, latencia mediana, N/A y denominadores fijados antes de correr el gold (`harness_m3.py`).
+- [x] RAGAS del laboratorio S10, con las cuatro métricas y juez Qwen2.5-3B local, sobre ingenuo, avanzado y final (`ragas_m3.py`).
+- [x] Cuatro filas más dos ablaciones sobre las 12 preguntas gold, con el mismo generador, prompt y harness; 72 respuestas y 72 juicios válidos.
+- [x] Herramienta usada en los 2 cálculos y no usada en 9/10 preguntas no aritméticas; la llamada innecesaria de m3_009 queda reportada.
+- [x] Reporte con frase sencilla, diagrama, decisiones, tablas, lectura de las cuatro preguntas y Uso de IA.
+- [ ] El equipo confirma en Uso de IA qué revisó o modificó personalmente.
+- [ ] Publicar la rama (push) y entregar el enlace en Interactiva; los autores conservan el comprobante.
+- [ ] Fallos abiertos, documentados y sin corregir: válvula 0/2 en avanzado y final (m3_012 inventa una auditoría), falso pase de dominio en m3_009, juez RAGAS 3B poco fiable a nivel de chunk y divisor de afirmaciones que parte los IDs.
+
+Las casillas de las fases A–L siguientes son históricas. Donde contradigan este bloque, prevalece este bloque.
+
+## Estado anterior — integración v5 auditada
 
 **Actualización: v6 auditada, no adoptada completa.** [Evidencia](evidence/correction_v6/ANALISIS.md): mejora parcial de abstención, regresión de controlador y juez aún no fiable. 30/32 formatos válidos; 48/48 transcripciones del juez no literales. Corpus/gold no modificados. Implementado [núcleo candidato del harness QA](HARNESS_QA.md) con tests sintéticos; faltan juez aprobado, RAGAS, runner final y corrida gold. Se mantiene avance aproximado de 60%: no confundir código nuevo con evaluación cerrada.
 

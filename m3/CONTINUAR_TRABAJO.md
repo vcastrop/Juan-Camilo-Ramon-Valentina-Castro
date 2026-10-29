@@ -2,6 +2,10 @@
 
 Actualización: 29 de octubre de 2026. Rama de trabajo: `Entrega/contractrisk-m3`. No trabajar directamente en `main`. Estado de código y evidencia auditado: `f64ae5b`; los commits posteriores de este traspaso añaden documentación, no cambian el modelo.
 
+## Actualización: corrida final hecha
+
+La evaluación final sobre el gold ya se ejecutó y está auditada: ver [README](README.md#resultados) y [results/final_m3/ANALISIS.md](results/final_m3/ANALISIS.md). Pendientes: confirmar Uso de IA, publicar y entregar. Fallos conocidos para M4/M5: válvula de escape con contexto pertinente, explicaciones de cálculo, juez 3B. Lo que sigue en este archivo describe el estado anterior a la corrida final.
+
 ## Leer primero
 
 1. [Checklist canónico](CHECKLIST.md): estado vigente al principio y fases A–L. Avance estimado 60% de M3; NO es una calificación ni un cierre.
