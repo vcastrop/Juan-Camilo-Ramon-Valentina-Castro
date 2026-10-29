@@ -1,0 +1,73 @@
+variant,eval_id,kind,valid_output,coverage,v10_accuracy,facts_missing,judge_score,domain_pass,v10_domain_pass,domain_reasons,m2_compatible_pass,evidence_retrieved,evidence_with_tool,latency_seconds
+sin_rag,m3_001,factual,False,0.0,0.0,"[""AEROCIVIL"", ""CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU""]",1,False,False,"[""salida_invalida""]",False,0.0,0.0,8.546151458000054
+sin_rag,m3_002,factual,False,0.0,0.0,"[""AEROCIVIL"", ""ADQUIRIR ELEMENTOS DE PROTECCIÓN PERSONAL PARA LOS SERVIDORES DE LA REGIONAL NORTE DE SANTANDER""]",1,False,False,"[""salida_invalida""]",False,0.0,0.0,6.860797627000011
+sin_rag,m3_003,factual,False,0.0,0.0,"[""Central administrativa regional Usaquen"", ""ADQUISICION DE EQUIPO DE INVESTIGACION CON DESTINO A LA ESCUELA DE INFANTERIA; UNIDAD CENTRALIZADA POR LA CENTRAL ADMINISTRATIVA Y CONTABLE REGIONAL USAQUÉN; VIGENCIA 2020""]",1,False,False,"[""salida_invalida""]",False,0.0,0.0,6.7524458890000005
+sin_rag,m3_004,factual,False,0.0,0.0,"[""INSTITUTO DE FINANCIAMIENTO; PROMOCION Y DESARROLLO DE CALDAS"", ""intermediación de seguros para asesorar a Infi-Caldas en la contratación y administración de su programa de seguros""]",1,False,False,"[""salida_invalida""]",False,0.0,0.0,6.718179790000022
+sin_rag,m3_005,factual,False,0.0,0.0,"[""AGENCIA LOGISTICA DE LAS FUERZAS MILITARES"", ""ARRENDAMIENTO BODEGA SITUADA EN LA CLLE 13 # 11-25 DE LA CIUDAD DE LETICIA""]",1,False,False,"[""salida_invalida""]",False,0.0,0.0,6.724350888000004
+sin_rag,m3_006,factual,False,0.0,0.0,"[""AEROCIVIL"", ""CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS)  Y LAS MERCEDES DE PLATO""]",1,False,False,"[""salida_invalida""]",False,0.0,0.0,6.840588516999901
+sin_rag,m3_007,calculation,False,0.0,0.0,"[""250000000"", ""82000000"", ""168000000""]",1,False,False,"[""salida_invalida""]",False,0.0,0.0,19.257013717000063
+sin_rag,m3_008,calculation,True,0.0,0.0,"[""64992574"", ""49605150"", ""15387424""]",1,False,False,"[""abstencion_indebida"", ""hechos_incompletos"", ""falta_cita_requerida""]",False,0.0,0.0,5.045971751000025
+sin_rag,m3_009,inconsistency,True,0.0,0.0,"[""2019-09-10"", ""2024-03-27""]",5,False,False,"[""hechos_incompletos"", ""falta_cita_requerida""]",False,0.0,0.0,2.5296535699999367
+sin_rag,m3_010,factual,True,0.0,0.0,"[""Mínima cuantía""]",5,False,False,"[""abstencion_indebida"", ""hechos_incompletos"", ""falta_cita_requerida""]",False,0.0,0.0,6.486753842999974
+sin_rag,m3_011,unanswerable,True,1.0,1.0,[],5,True,True,[],True,,,3.9060321280001062
+sin_rag,m3_012,unanswerable,True,1.0,1.0,[],5,True,True,[],True,,,3.093152130999897
+rag_ingenuo,m3_001,factual,True,0.0,0.0,"[""AEROCIVIL"", ""CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU""]",3,False,False,"[""hechos_incompletos"", ""falta_cita_requerida"", ""cita_ficha_ajena""]",False,0.0,0.0,8.895049287000006
+rag_ingenuo,m3_002,factual,True,0.0,0.0,"[""AEROCIVIL"", ""ADQUIRIR ELEMENTOS DE PROTECCIÓN PERSONAL PARA LOS SERVIDORES DE LA REGIONAL NORTE DE SANTANDER""]",4,False,False,"[""hechos_incompletos"", ""falta_cita_requerida"", ""cita_ficha_ajena""]",False,0.0,0.0,5.681733648999966
+rag_ingenuo,m3_003,factual,True,0.0,0.0,"[""Central administrativa regional Usaquen"", ""ADQUISICION DE EQUIPO DE INVESTIGACION CON DESTINO A LA ESCUELA DE INFANTERIA; UNIDAD CENTRALIZADA POR LA CENTRAL ADMINISTRATIVA Y CONTABLE REGIONAL USAQUÉN; VIGENCIA 2020""]",2,False,False,"[""hechos_incompletos"", ""falta_cita_requerida"", ""cita_ficha_ajena""]",False,0.0,0.0,11.03179740500002
+rag_ingenuo,m3_004,factual,True,0.0,0.0,"[""INSTITUTO DE FINANCIAMIENTO; PROMOCION Y DESARROLLO DE CALDAS"", ""intermediación de seguros para asesorar a Infi-Caldas en la contratación y administración de su programa de seguros""]",3,False,False,"[""hechos_incompletos"", ""falta_cita_requerida"", ""cita_ficha_ajena""]",False,0.0,0.0,12.136856548999958
+rag_ingenuo,m3_005,factual,True,0.0,0.0,"[""AGENCIA LOGISTICA DE LAS FUERZAS MILITARES"", ""ARRENDAMIENTO BODEGA SITUADA EN LA CLLE 13 # 11-25 DE LA CIUDAD DE LETICIA""]",4,False,False,"[""hechos_incompletos"", ""falta_cita_requerida"", ""cita_ficha_ajena""]",False,0.0,0.0,11.254980909999972
+rag_ingenuo,m3_006,factual,True,0.0,0.0,"[""AEROCIVIL"", ""CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS)  Y LAS MERCEDES DE PLATO""]",2,False,False,"[""hechos_incompletos"", ""falta_cita_requerida"", ""cita_ficha_ajena""]",False,0.0,0.0,7.658957732999966
+rag_ingenuo,m3_007,calculation,True,0.0,0.0,"[""250000000"", ""82000000"", ""168000000""]",2,False,False,"[""hechos_incompletos"", ""falta_cita_requerida"", ""cita_ficha_ajena""]",False,0.0,0.0,10.311463824999919
+rag_ingenuo,m3_008,calculation,True,0.0,0.0,"[""64992574"", ""49605150"", ""15387424""]",2,False,False,"[""hechos_incompletos"", ""falta_cita_requerida"", ""cita_ficha_ajena""]",False,0.0,0.0,8.335148569000012
+rag_ingenuo,m3_009,inconsistency,True,1.0,1.0,[],4,True,True,[],True,1.0,1.0,5.761940570999968
+rag_ingenuo,m3_010,factual,True,1.0,1.0,[],4,True,True,[],True,1.0,1.0,5.0174822269999595
+rag_ingenuo,m3_011,unanswerable,True,0.0,0.0,[],2,False,False,"[""no_se_abstiene""]",False,,,5.542083789000003
+rag_ingenuo,m3_012,unanswerable,True,1.0,1.0,[],4,True,True,[],True,,,4.9026213559999405
+rag_avanzado,m3_001,factual,True,1.0,1.0,[],5,True,True,[],True,1.0,1.0,8.087511801000005
+rag_avanzado,m3_002,factual,True,1.0,1.0,[],4,True,True,[],True,1.0,1.0,8.387454956999932
+rag_avanzado,m3_003,factual,True,0.5,0.5,"[""ADQUISICION DE EQUIPO DE INVESTIGACION CON DESTINO A LA ESCUELA DE INFANTERIA; UNIDAD CENTRALIZADA POR LA CENTRAL ADMINISTRATIVA Y CONTABLE REGIONAL USAQUÉN; VIGENCIA 2020""]",5,False,False,"[""hechos_incompletos""]",False,1.0,1.0,8.662009189999935
+rag_avanzado,m3_004,factual,True,0.5,0.5,"[""intermediación de seguros para asesorar a Infi-Caldas en la contratación y administración de su programa de seguros""]",4,False,False,"[""hechos_incompletos""]",False,0.5,0.5,8.812955070000044
+rag_avanzado,m3_005,factual,True,0.5,0.5,"[""AGENCIA LOGISTICA DE LAS FUERZAS MILITARES""]",4,False,False,"[""hechos_incompletos""]",False,1.0,1.0,6.687732781000022
+rag_avanzado,m3_006,factual,True,0.5,0.5,"[""CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS)  Y LAS MERCEDES DE PLATO""]",4,False,False,"[""hechos_incompletos""]",False,0.5,0.5,8.345592045999979
+rag_avanzado,m3_007,calculation,True,0.0,0.0,"[""250000000"", ""82000000"", ""168000000""]",2,False,False,"[""hechos_incompletos"", ""falta_cita_requerida""]",False,0.0,0.0,10.559487274000048
+rag_avanzado,m3_008,calculation,True,0.0,0.0,"[""64992574"", ""49605150"", ""15387424""]",4,False,False,"[""hechos_incompletos""]",False,0.0,0.0,9.007600035999985
+rag_avanzado,m3_009,inconsistency,True,1.0,1.0,[],4,False,True,"[""menciona_irregularidad""]",True,1.0,1.0,5.901856283999905
+rag_avanzado,m3_010,factual,True,1.0,1.0,[],4,True,True,[],True,1.0,1.0,6.131451857000002
+rag_avanzado,m3_011,unanswerable,True,0.0,0.0,[],4,False,False,"[""no_se_abstiene""]",False,,,8.973164366999981
+rag_avanzado,m3_012,unanswerable,True,0.0,0.0,[],4,False,False,"[""no_se_abstiene""]",False,,,6.756124763000116
+sistema_final,m3_001,factual,True,1.0,1.0,[],5,True,True,[],True,1.0,1.0,7.9066551920000165
+sistema_final,m3_002,factual,True,1.0,1.0,[],4,True,True,[],True,1.0,1.0,8.831923102000019
+sistema_final,m3_003,factual,True,0.5,0.5,"[""ADQUISICION DE EQUIPO DE INVESTIGACION CON DESTINO A LA ESCUELA DE INFANTERIA; UNIDAD CENTRALIZADA POR LA CENTRAL ADMINISTRATIVA Y CONTABLE REGIONAL USAQUÉN; VIGENCIA 2020""]",5,False,False,"[""hechos_incompletos""]",False,1.0,1.0,8.890920455000014
+sistema_final,m3_004,factual,True,0.5,0.5,"[""intermediación de seguros para asesorar a Infi-Caldas en la contratación y administración de su programa de seguros""]",4,False,False,"[""hechos_incompletos""]",False,0.5,0.5,9.094242757999837
+sistema_final,m3_005,factual,True,0.5,0.5,"[""AGENCIA LOGISTICA DE LAS FUERZAS MILITARES""]",4,False,False,"[""hechos_incompletos""]",False,1.0,1.0,7.097632473999965
+sistema_final,m3_006,factual,True,0.5,0.5,"[""CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS)  Y LAS MERCEDES DE PLATO""]",4,False,False,"[""hechos_incompletos""]",False,0.5,0.5,8.822926160999941
+sistema_final,m3_007,calculation,True,0.3333333333333333,0.3333333333333333,"[""250000000"", ""82000000""]",4,False,False,"[""hechos_incompletos""]",False,0.0,1.0,14.052581166999971
+sistema_final,m3_008,calculation,True,1.0,1.0,[],4,True,True,[],True,0.0,1.0,11.37358177200008
+sistema_final,m3_009,inconsistency,True,1.0,1.0,[],4,False,True,"[""menciona_irregularidad""]",True,1.0,1.0,12.666542489999983
+sistema_final,m3_010,factual,True,1.0,1.0,[],4,True,True,[],True,1.0,1.0,6.630956116999869
+sistema_final,m3_011,unanswerable,True,0.0,0.0,[],4,False,False,"[""no_se_abstiene""]",False,,,9.481973319999952
+sistema_final,m3_012,unanswerable,True,0.0,0.0,[],4,False,False,"[""no_se_abstiene""]",False,,,7.205576999999948
+ablacion_solo_hibrido,m3_001,factual,True,0.5,0.5,"[""CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU""]",4,False,False,"[""hechos_incompletos""]",False,0.5,0.5,4.884821395000017
+ablacion_solo_hibrido,m3_002,factual,True,0.5,0.5,"[""AEROCIVIL""]",4,False,False,"[""hechos_incompletos""]",False,1.0,1.0,6.724671398000055
+ablacion_solo_hibrido,m3_003,factual,True,0.5,0.5,"[""ADQUISICION DE EQUIPO DE INVESTIGACION CON DESTINO A LA ESCUELA DE INFANTERIA; UNIDAD CENTRALIZADA POR LA CENTRAL ADMINISTRATIVA Y CONTABLE REGIONAL USAQUÉN; VIGENCIA 2020""]",4,False,False,"[""hechos_incompletos""]",False,1.0,1.0,9.72628514400003
+ablacion_solo_hibrido,m3_004,factual,True,0.5,0.5,"[""INSTITUTO DE FINANCIAMIENTO; PROMOCION Y DESARROLLO DE CALDAS""]",4,False,False,"[""hechos_incompletos""]",False,1.0,1.0,7.462483023999994
+ablacion_solo_hibrido,m3_005,factual,True,0.5,0.5,"[""ARRENDAMIENTO BODEGA SITUADA EN LA CLLE 13 # 11-25 DE LA CIUDAD DE LETICIA""]",4,False,False,"[""hechos_incompletos""]",False,0.5,0.5,7.760757165999848
+ablacion_solo_hibrido,m3_006,factual,True,0.5,0.5,"[""CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS)  Y LAS MERCEDES DE PLATO""]",4,False,False,"[""hechos_incompletos""]",False,0.5,0.5,13.072965623000073
+ablacion_solo_hibrido,m3_007,calculation,True,0.0,0.0,"[""250000000"", ""82000000"", ""168000000""]",3,False,False,"[""hechos_incompletos""]",False,0.0,0.0,11.60485088900009
+ablacion_solo_hibrido,m3_008,calculation,True,0.0,0.0,"[""64992574"", ""49605150"", ""15387424""]",4,False,False,"[""hechos_incompletos""]",False,0.0,0.0,12.795726748999869
+ablacion_solo_hibrido,m3_009,inconsistency,True,1.0,1.0,[],4,True,True,[],True,1.0,1.0,5.75729730199987
+ablacion_solo_hibrido,m3_010,factual,True,1.0,1.0,[],4,True,True,[],True,1.0,1.0,4.975099449000027
+ablacion_solo_hibrido,m3_011,unanswerable,True,0.0,0.0,[],4,False,False,"[""no_se_abstiene""]",False,,,8.689204935000134
+ablacion_solo_hibrido,m3_012,unanswerable,True,1.0,1.0,[],4,True,True,[],True,,,4.093673850000187
+ablacion_denso_rerank,m3_001,factual,True,0.0,0.0,"[""AEROCIVIL"", ""CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU""]",3,False,False,"[""hechos_incompletos"", ""cita_ficha_ajena""]",False,0.0,0.0,6.761090714000147
+ablacion_denso_rerank,m3_002,factual,True,0.0,0.0,"[""AEROCIVIL"", ""ADQUIRIR ELEMENTOS DE PROTECCIÓN PERSONAL PARA LOS SERVIDORES DE LA REGIONAL NORTE DE SANTANDER""]",4,False,False,"[""hechos_incompletos"", ""falta_cita_requerida"", ""cita_ficha_ajena""]",False,0.0,0.0,7.07942717800006
+ablacion_denso_rerank,m3_003,factual,True,0.0,0.0,"[""Central administrativa regional Usaquen"", ""ADQUISICION DE EQUIPO DE INVESTIGACION CON DESTINO A LA ESCUELA DE INFANTERIA; UNIDAD CENTRALIZADA POR LA CENTRAL ADMINISTRATIVA Y CONTABLE REGIONAL USAQUÉN; VIGENCIA 2020""]",3,False,False,"[""hechos_incompletos"", ""falta_cita_requerida"", ""cita_ficha_ajena""]",False,0.0,0.0,8.313735910999867
+ablacion_denso_rerank,m3_004,factual,True,0.0,0.0,"[""INSTITUTO DE FINANCIAMIENTO; PROMOCION Y DESARROLLO DE CALDAS"", ""intermediación de seguros para asesorar a Infi-Caldas en la contratación y administración de su programa de seguros""]",3,False,False,"[""hechos_incompletos"", ""falta_cita_requerida"", ""cita_ficha_ajena""]",False,0.0,0.0,9.469291816999885
+ablacion_denso_rerank,m3_005,factual,True,0.0,0.0,"[""AGENCIA LOGISTICA DE LAS FUERZAS MILITARES"", ""ARRENDAMIENTO BODEGA SITUADA EN LA CLLE 13 # 11-25 DE LA CIUDAD DE LETICIA""]",3,False,False,"[""hechos_incompletos"", ""cita_ficha_ajena""]",False,0.0,0.0,9.818914444000029
+ablacion_denso_rerank,m3_006,factual,True,0.0,0.0,"[""AEROCIVIL"", ""CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS)  Y LAS MERCEDES DE PLATO""]",3,False,False,"[""hechos_incompletos"", ""falta_cita_requerida"", ""cita_ficha_ajena""]",False,0.0,0.0,10.020063964999963
+ablacion_denso_rerank,m3_007,calculation,True,0.3333333333333333,0.3333333333333333,"[""82000000"", ""168000000""]",4,False,False,"[""hechos_incompletos""]",False,0.6666666666666666,0.6666666666666666,12.499563880000096
+ablacion_denso_rerank,m3_008,calculation,False,0.0,0.0,"[""64992574"", ""49605150"", ""15387424""]",1,False,False,"[""salida_invalida""]",False,0.3333333333333333,0.3333333333333333,43.52664695499993
+ablacion_denso_rerank,m3_009,inconsistency,True,1.0,1.0,[],4,True,True,[],True,1.0,1.0,6.643860747999952
+ablacion_denso_rerank,m3_010,factual,True,1.0,1.0,[],4,True,True,[],True,1.0,1.0,5.455507616999967
+ablacion_denso_rerank,m3_011,unanswerable,True,1.0,1.0,[],4,True,True,[],True,,,4.385320032999971
+ablacion_denso_rerank,m3_012,unanswerable,True,0.0,0.0,[],2,False,False,"[""no_se_abstiene"", ""afirma_cifras""]",False,,,7.573823776999916

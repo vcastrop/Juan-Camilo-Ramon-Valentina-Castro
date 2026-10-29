@@ -1,0 +1,57 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793310404.862006    1292 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793310407.363831    1292 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+`torch_dtype` is deprecated! Use `dtype` instead!
+
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Fetching 2 files:  50%|█████     | 1/2 [00:56<00:56, 56.07s/it]
+Fetching 2 files: 100%|██████████| 2/2 [00:56<00:00, 28.03s/it]
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:16<00:16, 16.29s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:25<00:00, 11.96s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:25<00:00, 12.61s/it]
+RAGAS 1.1 rag_ingenuo m3_001
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+RAGAS 1.1 rag_ingenuo m3_002
+RAGAS 1.1 rag_ingenuo m3_003
+RAGAS 1.1 rag_ingenuo m3_004
+RAGAS 1.1 rag_ingenuo m3_005
+RAGAS 1.1 rag_ingenuo m3_006
+RAGAS 1.1 rag_ingenuo m3_007
+RAGAS 1.1 rag_ingenuo m3_008
+RAGAS 1.1 rag_ingenuo m3_009
+RAGAS 1.1 rag_ingenuo m3_010
+RAGAS 1.1 rag_ingenuo m3_011
+RAGAS 1.1 rag_ingenuo m3_012
+RAGAS 1.1 rag_avanzado m3_001
+RAGAS 1.1 rag_avanzado m3_002
+RAGAS 1.1 rag_avanzado m3_003
+RAGAS 1.1 rag_avanzado m3_004
+RAGAS 1.1 rag_avanzado m3_005
+RAGAS 1.1 rag_avanzado m3_006
+RAGAS 1.1 rag_avanzado m3_007
+RAGAS 1.1 rag_avanzado m3_008
+RAGAS 1.1 rag_avanzado m3_009
+RAGAS 1.1 rag_avanzado m3_010
+RAGAS 1.1 rag_avanzado m3_011
+RAGAS 1.1 rag_avanzado m3_012
+RAGAS 1.1 sistema_final m3_001
+RAGAS 1.1 sistema_final m3_002
+RAGAS 1.1 sistema_final m3_003
+RAGAS 1.1 sistema_final m3_004
+RAGAS 1.1 sistema_final m3_005
+RAGAS 1.1 sistema_final m3_006
+RAGAS 1.1 sistema_final m3_007
+RAGAS 1.1 sistema_final m3_008
+RAGAS 1.1 sistema_final m3_009
+RAGAS 1.1 sistema_final m3_010
+RAGAS 1.1 sistema_final m3_011
+RAGAS 1.1 sistema_final m3_012
+| Sistema | Faithfulness | Answer relevancy | Context precision (lab) | Context recall (lab) | Context precision (rango) | Context recall (segmentos) |
+|---|---:|---:|---:|---:|---:|---:|
+| RAG ingenuo (S07): denso top-3 | 0.697 (n=11) | 0.501 (n=10) | 0.000 (n=10) | 0.200 (n=10) | 0.033 (n=10) | 0.167 (n=10) |
+| RAG avanzado: híbrido BM25+denso RRF con filtro de ID + reranking | 0.569 (n=12) | 0.317 (n=10) | 0.000 (n=10) | 0.500 (n=10) | 0.350 (n=10) | 0.592 (n=10) |
+| Sistema final: avanzado + herramienta (agente acotado) | 0.653 (n=12) | 0.330 (n=10) | 0.000 (n=10) | 0.700 (n=10) | 0.383 (n=10) | 0.792 (n=10) |

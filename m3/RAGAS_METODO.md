@@ -1,5 +1,7 @@
 # RAGAS didáctico: adaptación explícita de S10
 
+> **Antecedente/candidato, no ruta vigente de entrega.** Consultar [RUTA_ENTREGA.md](RUTA_ENTREGA.md) y [CHECKLIST.md](CHECKLIST.md). La reevaluación RAGAS 1.1 del compañero ya se ejecutó; este documento no la reemplaza.
+
 Estado: código candidato `ragas_course.py`, probado con dobles sintéticos, pendiente integrar y ejecutar con modelos calibrados. No son resultados ni equivalencia numérica con la librería oficial `ragas`.
 
 Fuente metodológica: laboratorio aportado por el equipo `S10_Lab_Agentic_RAG_RAGAS_RESUELTO.ipynb`, bloque Lab C, celdas de faithfulness/context precision/context recall/answer relevancy. Se revisaron directamente sus definiciones antes de implementar.

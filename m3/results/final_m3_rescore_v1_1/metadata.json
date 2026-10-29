@@ -1,0 +1,18 @@
+{
+  "harness_version": "m3-harness-1.1",
+  "rules": {
+    "dimension_1": "Cobertura automática de hechos requeridos 0-1 (no es accuracy por respuesta): fracción de required_facts (fechas ISO del esperado en inconsistency) encontrados en respuesta+explicacion normalizadas. Coincidencia exacta con límites de número y sin negación en las 3 palabras previas, o >=80% de las palabras de 3+ letras del hecho (paráfrasis; sin control de negación). Abstenerse vale 0 salvo en inconsistency. No respondible: 1 si abstencion=true. Salida inválida: 0. Se informa aparte el número de respuestas con cobertura completa.",
+    "dimension_2": "Igual que 1.0: notas brutas del juez m3-judge-1.0 guardadas en la corrida; no se vuelve a juzgar.",
+    "dimension_3": "Chequeo automático de dominio (no certifica aptitud): respondible = cobertura completa, cita todas las fichas requeridas, no cita fichas ajenas y no menciona irregularidad/fraude/sobrecosto salvo negado en la misma cláusula. No respondible = abstencion=true, sin cifras afirmadas y sin esa mención.",
+    "evidence_in_context": "Diagnóstico de recuperación: fracción de hechos requeridos presentes en los fragmentos recuperados (sin tool_value) y en todo lo entregado al generador (fragmentos, campos tool_value y operación calculada por la herramienta)."
+  },
+  "created_utc": "2026-10-29T21:01:00.903607+00:00",
+  "source_run": "results/final_m3",
+  "source_sha256": "0966955b8df2968182b0813fcd645e76f00df6494523ca99ac5ed46767ca306e",
+  "regenerated_answers": false,
+  "regenerated_judgements": false,
+  "changed_vs_v1_0": [
+    "rag_avanzado/m3_009",
+    "sistema_final/m3_009"
+  ]
+}

@@ -1,0 +1,106 @@
+test_agent_real_function_stub_model_trace (test_agent.AgentTests.test_agent_real_function_stub_model_trace) ... ok
+test_bad_decisions_bounded_and_preserved (test_agent.AgentTests.test_bad_decisions_bounded_and_preserved) ... ok
+test_development_cases_separate_from_gold (test_agent.AgentTests.test_development_cases_separate_from_gold) ... ok
+test_exact_decimal_and_source_offsets (test_agent.AgentTests.test_exact_decimal_and_source_offsets) ... ok
+test_fence_allowed_but_ambiguity_rejected (test_agent.AgentTests.test_fence_allowed_but_ambiguity_rejected) ... ok
+test_invalid_final_answer_not_repaired_to_success (test_agent.AgentTests.test_invalid_final_answer_not_repaired_to_success) ... ok
+test_large_decimal_does_not_round (test_agent.AgentTests.test_large_decimal_does_not_round) ... ok
+test_missing_ambiguous_amount_no_fallback (test_agent.AgentTests.test_missing_ambiguous_amount_no_fallback) ... ok
+test_model_can_choose_no_tool (test_agent.AgentTests.test_model_can_choose_no_tool) ... ok
+test_rejects_unknown_tool_ids_extra_args (test_agent.AgentTests.test_rejects_unknown_tool_ids_extra_args) ... ok
+test_repeated_call_blocked (test_agent.AgentTests.test_repeated_call_blocked) ... ok
+test_steps_configuration (test_agent.AgentTests.test_steps_configuration) ... ok
+test_timeout_records_failure (test_agent.AgentTests.test_timeout_records_failure) ... ok
+test_tool_error_does_not_create_evidence (test_agent.AgentTests.test_tool_error_does_not_create_evidence) ... ok
+test_excludes_historical_ids_and_normalized_text (test_corpus.CorpusTests.test_excludes_historical_ids_and_normalized_text) ... ok
+test_forbids_unselected_personal_fields (test_corpus.CorpusTests.test_forbids_unselected_personal_fields) ... ok
+test_missing_group_does_not_get_fabricated (test_corpus.CorpusTests.test_missing_group_does_not_get_fabricated) ... ok
+test_preserves_source_text_and_does_not_invent_missing_fields (test_corpus.CorpusTests.test_preserves_source_text_and_does_not_invent_missing_fields) ... ok
+test_snapshot_integrity_and_portable_line_endings (test_corpus.CorpusTests.test_snapshot_integrity_and_portable_line_endings) ... ok
+test_draft_is_not_claimed_as_approved (test_eval_draft.EvalDraftTests.test_draft_is_not_claimed_as_approved) ... ok
+test_sources_and_minimum_coverage (test_eval_draft.EvalDraftTests.test_sources_and_minimum_coverage) ... ok
+test_abstention_on_answerable_scores_zero (test_final_m3.HarnessRuleTests.test_abstention_on_answerable_scores_zero) ... ok
+test_accusation_unless_negated (test_final_m3.HarnessRuleTests.test_accusation_unless_negated) ... ok
+test_calculation_with_thousand_separators_and_both_sources (test_final_m3.HarnessRuleTests.test_calculation_with_thousand_separators_and_both_sources) ... ok
+test_foreign_contract_citation_fails_domain (test_final_m3.HarnessRuleTests.test_foreign_contract_citation_fails_domain) ... ok
+test_gold_frozen_with_two_unanswerable (test_final_m3.HarnessRuleTests.test_gold_frozen_with_two_unanswerable) ... ok
+test_invalid_output (test_final_m3.HarnessRuleTests.test_invalid_output) ... ok
+test_paraphrase_tolerance_m3_004_but_numbers_exact (test_final_m3.HarnessRuleTests.test_paraphrase_tolerance_m3_004_but_numbers_exact) ... ok
+test_unanswerable_abstention_and_amount_contradiction (test_final_m3.HarnessRuleTests.test_unanswerable_abstention_and_amount_contradiction) ... ok
+test_wrong_number_and_missing_citation (test_final_m3.HarnessRuleTests.test_wrong_number_and_missing_citation) ... ok
+test_scorecard_all_missing_judges (test_final_m3.HarnessRunTests.test_scorecard_all_missing_judges) ... ok
+test_system_receives_only_question_and_failures_are_counted (test_final_m3.HarnessRunTests.test_system_receives_only_question_and_failures_are_counted) ... x: 1/3 m3_010
+x: 2/3 m3_011
+x: 3/3 m3_001
+ok
+test_metrics_and_na (test_final_m3.RagasTests.test_metrics_and_na) ... ok
+test_parse_failures_excluded_and_counted (test_final_m3.RagasTests.test_parse_failures_excluded_and_counted) ... ok
+test_split_keeps_numbers (test_final_m3.RagasTests.test_split_keeps_numbers) ... ok
+test_strict_yes_no (test_final_m3.RagasTests.test_strict_yes_no) ... ok
+test_tool_operation_is_part_of_context (test_final_m3.RagasTests.test_tool_operation_is_part_of_context) ... ok
+test_variants_share_prompt_and_report_recomputes (test_final_m3.SystemsAndReportTests.test_variants_share_prompt_and_report_recomputes) ... sin_rag: 1/2 m3_010
+sin_rag: 2/2 m3_011
+rag_ingenuo: 1/2 m3_010
+rag_ingenuo: 2/2 m3_011
+rag_avanzado: 1/2 m3_010
+rag_avanzado: 2/2 m3_011
+sistema_final: 1/2 m3_010
+sistema_final: 2/2 m3_011
+ablacion_solo_hibrido: 1/2 m3_010
+ablacion_solo_hibrido: 2/2 m3_011
+ablacion_denso_rerank: 1/2 m3_010
+ablacion_denso_rerank: 2/2 m3_011
+ok
+test_chunks_preserve_source_and_cover_all_characters (test_ingest_gold.IngestGoldTests.test_chunks_preserve_source_and_cover_all_characters) ... ok
+test_gold_integrity (test_ingest_gold.IngestGoldTests.test_gold_integrity) ... ok
+test_rejects_invalid_configuration (test_ingest_gold.IngestGoldTests.test_rejects_invalid_configuration) ... ok
+test_48_judgements_independent_and_never_adjusted (test_integration_v5.IntegrationTests.test_48_judgements_independent_and_never_adjusted) ... ok
+test_bias_counts_missing_pairs_not_zero (test_integration_v5.IntegrationTests.test_bias_counts_missing_pairs_not_zero) ... ok
+test_candidate_tool_success_same_provenance (test_integration_v5.IntegrationTests.test_candidate_tool_success_same_provenance) ... ok
+test_development_cases_unchanged (test_integration_v5.IntegrationTests.test_development_cases_unchanged) ... ok
+test_response_prompt_identical_across_systems (test_integration_v5.IntegrationTests.test_response_prompt_identical_across_systems) ... ok
+test_twelve_equivalent_pairs_no_gold_or_score_payload (test_integration_v5.IntegrationTests.test_twelve_equivalent_pairs_no_gold_or_score_payload) ... ok
+test_all_fail_missing_not_three_or_zero (test_judge.JudgeTests.test_all_fail_missing_not_three_or_zero) ... ok
+test_formats_and_bounds (test_judge.JudgeTests.test_formats_and_bounds) ... ok
+test_generation_error_explicit (test_judge.JudgeTests.test_generation_error_explicit) ... ok
+test_independent_tool_evidence (test_judge.JudgeTests.test_independent_tool_evidence) ... ok
+test_missing_explanation_not_fabricated (test_judge.JudgeTests.test_missing_explanation_not_fabricated) ... ok
+test_no_correctness_leak (test_judge.JudgeTests.test_no_correctness_leak) ... ok
+test_partial_denominator (test_judge.JudgeTests.test_partial_denominator) ... ok
+test_retry_only_format_and_preserve_attempts (test_judge.JudgeTests.test_retry_only_format_and_preserve_attempts) ... ok
+test_score_never_overridden_by_correctness (test_judge.JudgeTests.test_score_never_overridden_by_correctness) ... ok
+test_absence_flag_not_semantic_proof (test_protocol_probe.ProbeTests.test_absence_flag_not_semantic_proof) ... ok
+test_repair_full_schema_previous_response_no_gold (test_protocol_probe.ProbeTests.test_repair_full_schema_previous_response_no_gold) ... ok
+test_route_rejects_invented_id_even_valid_json (test_protocol_probe.ProbeTests.test_route_rejects_invented_id_even_valid_json) ... ok
+test_schema_no_placeholder_citation (test_protocol_probe.ProbeTests.test_schema_no_placeholder_citation) ... ok
+test_synthetic_separate_gold (test_protocol_probe.ProbeTests.test_synthetic_separate_gold) ... ok
+test_wrong_number_not_marked_pass (test_protocol_probe.ProbeTests.test_wrong_number_not_marked_pass) ... ok
+test_abstention_requires_explanation (test_rag_basic.RagTests.test_abstention_requires_explanation) ... ok
+test_inference_interface_and_parse_failure_preserved (test_rag_basic.RagTests.test_inference_interface_and_parse_failure_preserved) ... ok
+test_unknown_citation_rejected (test_rag_basic.RagTests.test_unknown_citation_rejected) ... ok
+test_abstention_true_empty_citations_valid (test_retrieval_advanced.AdvancedTests.test_abstention_true_empty_citations_valid) ... ok
+test_explicit_id_filter_and_unknown_id (test_retrieval_advanced.AdvancedTests.test_explicit_id_filter_and_unknown_id) ... ok
+test_rerank_only_reorders_candidates (test_retrieval_advanced.AdvancedTests.test_rerank_only_reorders_candidates) ... ok
+test_rrf_duplicate_not_double_counted (test_retrieval_advanced.AdvancedTests.test_rrf_duplicate_not_double_counted) ... ok
+test_sqlite_capability_probe (test_retrieval_advanced.AdvancedTests.test_sqlite_capability_probe) ... ok
+test_whole_identifiers_and_accents (test_retrieval_advanced.AdvancedTests.test_whole_identifiers_and_accents) ... ok
+test_evidence_diagnostic_separates_document_from_field (test_v11.HarnessV11Tests.test_evidence_diagnostic_separates_document_from_field) ... ok
+test_gold_expected_answers_pass_v11 (test_v11.HarnessV11Tests.test_gold_expected_answers_pass_v11) ... ok
+test_hedged_irregularity_is_flagged_negated_is_not (test_v11.HarnessV11Tests.test_hedged_irregularity_is_flagged_negated_is_not) ... ok
+test_reported_false_positives_fixed (test_v11.HarnessV11Tests.test_reported_false_positives_fixed) ... ok
+test_rescore_saved_run_never_changes_judge_or_answers (test_v11.HarnessV11Tests.test_rescore_saved_run_never_changes_judge_or_answers) ... ok
+test_lab_and_adapted_metrics_reported_with_na (test_v11.RagasV11Tests.test_lab_and_adapted_metrics_reported_with_na) ... ok
+test_split_keeps_identifiers (test_v11.RagasV11Tests.test_split_keeps_identifiers) ... ok
+test_agent_stops_after_success_no_duplicate_tool_payload (test_v4.V4Tests.test_agent_stops_after_success_no_duplicate_tool_payload) ... ok
+test_compact_evidence_has_no_nested_metadata (test_v4.V4Tests.test_compact_evidence_has_no_nested_metadata) ... ok
+test_control_same_protocol_empty_context (test_v4.V4Tests.test_control_same_protocol_empty_context) ... ok
+test_no_tool_decision_stays_model_selected (test_v4.V4Tests.test_no_tool_decision_stays_model_selected) ... ok
+test_observed_alias_only (test_v4.V4Tests.test_observed_alias_only) ... ok
+test_one_retry_format_not_semantic (test_v4.V4Tests.test_one_retry_format_not_semantic) ... ok
+test_real_v3_trace_formats (test_v4.V4Tests.test_real_v3_trace_formats) ... ok
+test_repeated_and_invalid_calls_stay_bounded (test_v4.V4Tests.test_repeated_and_invalid_calls_stay_bounded) ... ok
+
+----------------------------------------------------------------------
+Ran 86 tests in 0.405s
+
+OK

@@ -1,5 +1,7 @@
 # Núcleo de harness QA — candidato 0.1
 
+> **Antecedente/candidato, no ruta vigente de entrega.** Consultar [RUTA_ENTREGA.md](RUTA_ENTREGA.md) y [CHECKLIST.md](CHECKLIST.md). La reevaluación RAGAS 1.1 del compañero ya se ejecutó; este documento no la reemplaza.
+
 Implementado y probado con dobles sintéticos; NO ejecutado sobre el gold. No es el scorecard final. El juez no está aprobado y RAGAS todavía no está integrado. No publicar sus pruebas como resultados del modelo.
 
 ## Interfaz

@@ -8,7 +8,7 @@ El objetivo final es integrar distintas señales de análisis contractual para g
 
 **En palabras sencillas:** ContractRisk M3 responde preguntas de un analista sobre fichas públicas de contratos de SECOP II, cita la ficha de donde sale cada dato, calcula diferencias de valor con una herramienta y dice «no tengo esa información» cuando el dato no está en las fichas. No decide si un contrato es irregular.
 
-Reporte completo (diagrama, decisiones, tabla evolutiva, RAGAS, lectura honesta y Uso de IA): [`m3/README.md`](m3/README.md). Resultados: `m3/results/final_m3/` (`scorecard_m3.csv`, `ragas_m3.csv`).
+Reporte completo: [`m3/README.md`](m3/README.md). Para identificar qué ejecutar y qué tabla corresponde a cada versión, comenzar por [`m3/RUTA_ENTREGA.md`](m3/RUTA_ENTREGA.md). Resultados vigentes: harness en `m3/results/final_m3_rescore_v1_1/` y RAGAS en `m3/results/final_m3_ragas_v1_1/`. La corrida original 1.0 se conserva en `m3/results/final_m3/`. Pendientes de cierre: [`m3/CHECKLIST.md`](m3/CHECKLIST.md).
 
 ## Entrega M2: harness de evaluación
 

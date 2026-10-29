@@ -1,5 +1,7 @@
 # Cierre auditado tras integrar el trabajo del compañero
 
+> **Antecedente/candidato, no ruta vigente de entrega.** Consultar [RUTA_ENTREGA.md](RUTA_ENTREGA.md) y [CHECKLIST.md](CHECKLIST.md). La reevaluación RAGAS 1.1 del compañero ya se ejecutó; este documento no la reemplaza.
+
 ## Qué está integrado y qué evidencia sigue vigente
 
 Los cuatro commits del bundle se integraron conservando el historial local v6 y sin modificar main. La corrida final corresponde al código `6026ac4`; sus 28 hashes de fuentes coinciden. Sus respuestas, notebook, logs, métricas y auditoría permanecen intactos en `results/final_m3/`. V6 es un candidato de desarrollo no adoptado, no una mejora final demostrada.
