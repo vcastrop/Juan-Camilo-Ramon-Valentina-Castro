@@ -6,6 +6,12 @@ Este componente ayudará a consultar información pública de contratación y ex
 
 ## Ruta y evidencia disponibles
 
+- [Gold QA v1 revisado](eval/gold_v1/eval_set.json): 12 casos, revisión de Juan Camilo Ramon Perez del 28/10/2026 y corrección condicionada incorporada en m3_004. [Evidencia original](eval/gold_v1/evidence/REVISION_HUMANA_QA.md) preservada byte por byte; hashes en su manifiesto. El borrador anterior permanece intacto.
+- [Fragmentación inicial](indexing/manifest.json): 24 fichas, 40 chunks, máximo 800 caracteres y solapamiento objetivo de 100 caracteres, con cortes preferentes por líneas/palabras. Es configuración inicial, no óptima demostrada. No es todavía un índice vectorial.
+- Diez pruebas locales aprobadas: integridad, revisión, referencias y cobertura completa del texto bajo dos tamaños de fragmentación. No prueban calidad de inferencia ni funcionamiento en Colab.
+
+La revisión humana del gold ya no está pendiente. El siguiente bloque técnico es construir embeddings/Chroma, el generador y el RAG ingenuo, seguido del evaluador corregido y su calibración. No se usarán preguntas gold para ajustar prompts o escoger configuraciones por sus resultados finales.
+
 - [Checklist completa](CHECKLIST.md): requisitos, correcciones de M2 y condiciones de cierre.
 - [Decisiones iniciales](DECISIONES_INICIALES.md): alcance, materiales del curso, comparación adaptada y tareas humanas pendientes.
 - [Corpus candidato](corpus/README.md): 24 fichas reales, fuente y límites.

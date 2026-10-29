@@ -1,0 +1,10 @@
+{
+  "documents": 24,
+  "chunks": 40,
+  "units": "characters_not_tokens",
+  "max_chars": 800,
+  "overlap_chars": 100,
+  "corpus_sha256": "7c179b53b87103e6b2992ffda49775bce6118f1ab577c991c4ab5fbb4d234505",
+  "chunks_sha256": "6ffdd12dc677310f35121f2e31795391ca911d093551c127956dc7dd5cceb74e",
+  "status": "chunking_only_not_embedding_index"
+}
