@@ -9,6 +9,8 @@ Plan inicial: 28 de octubre de 2026. Estado actual: gold humano congelado y comp
 - [x] Ejecutar y auditar las tres condiciones de la prueba sintética, incluidas explicaciones y decisiones.
 - [x] Documentar elección del candidato 3B/v5 y sus limitaciones, sin ocultar regresión de 1.5B/v5.
 - [ ] Integrar candidato en las cuatro variantes y validar con desarrollo real; mantener mismo modelo/protocolo por fila.
+- [x] Implementar integración 3B/v5 con protocolo común y preservar trazas; 62 pruebas locales aprobadas. [Bloque de integración/calibración](INTEGRACION_V5.md). La casilla superior sigue abierta hasta validar la corrida real.
+- [x] Preparar 12 pares sintéticos de calibración/verbosidad, 48 juicios antes/después, sin comunicar expectativas al juez ni ajustar sus notas. Pendiente ejecución y revisión de razones.
 - [ ] Calibrar juez independiente y verbosidad multicaso; completar dominio/RAGAS antes de evaluación final.
 
 **Última evidencia: v4 auditada, sin aprobación de calidad.** [Análisis v4](evidence/development_v4/ANALISIS.md): 10/32 salidas válidas inicialmente, 16/32 finalmente; ninguno de los 54 intentos alcanzó el límite de tokens. Dos cálculos ejecutados correctamente, pero salida final inválida y ninguna decisión válida sin herramienta. Prueba controlada de protocolo/generador pendiente antes del gold; no repetir v4 sin cambios. Los estados v2/v3 siguientes son antecedentes.
