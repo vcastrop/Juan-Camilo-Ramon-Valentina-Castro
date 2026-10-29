@@ -6,6 +6,8 @@ Este componente ayudará a consultar información pública de contratación y ex
 
 ## Estado vigente
 
+Prueba de protocolo ya ejecutada: [resultados y revisión de contenido](evidence/protocol_probe/ANALISIS.md). 3B/v5 se adopta como candidato de integración (6/6 formatos válidos desde el primer intento, 4/4 decisiones correctas); conserva un error de clausulado y una reserva sobre redacción de abstención. Aún no es la comparación final sobre contratos reales. Las notas siguientes corresponden a etapas anteriores.
+
 Próximo experimento preparado: [prueba controlada de protocolo y modelo](PRUEBA_PROTOCOLO.md), [notebook](ContractRisk_M3_Prueba_Protocolo_Colab.ipynb). Compara tres condiciones sobre diez casos sintéticos sin ejecutar gold; 56 pruebas locales pasan. Todavía no hay resultados de inferencia de esta prueba.
 
 Actualización más reciente: [v4 ejecutada y auditada](evidence/development_v4/ANALISIS.md), con regresión de validez (16/32 frente a 18/32 en v3). No alcanzó el límite de tokens; persisten omisiones de campos, citas copiadas del ejemplo y errores semánticos. No está aprobada como configuración final. Las notas de preparación de versiones siguientes son históricas.

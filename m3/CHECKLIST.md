@@ -4,6 +4,13 @@ Plan inicial: 28 de octubre de 2026. Estado actual: gold humano congelado y comp
 
 ## Estado vigente — corrida de desarrollo v2
 
+**Última evidencia: prueba de protocolo completada.** [Análisis](evidence/protocol_probe/ANALISIS.md): candidato 3B/v5 con 6/6 formatos iniciales válidos, 5/6 controles mecánicos y 4/4 decisiones correctas. Persiste fallo de clausulado y reserva semántica en abstención de auditoría. Seleccionado solo para integración; no aprobado como sistema final.
+
+- [x] Ejecutar y auditar las tres condiciones de la prueba sintética, incluidas explicaciones y decisiones.
+- [x] Documentar elección del candidato 3B/v5 y sus limitaciones, sin ocultar regresión de 1.5B/v5.
+- [ ] Integrar candidato en las cuatro variantes y validar con desarrollo real; mantener mismo modelo/protocolo por fila.
+- [ ] Calibrar juez independiente y verbosidad multicaso; completar dominio/RAGAS antes de evaluación final.
+
 **Última evidencia: v4 auditada, sin aprobación de calidad.** [Análisis v4](evidence/development_v4/ANALISIS.md): 10/32 salidas válidas inicialmente, 16/32 finalmente; ninguno de los 54 intentos alcanzó el límite de tokens. Dos cálculos ejecutados correctamente, pero salida final inválida y ninguna decisión válida sin herramienta. Prueba controlada de protocolo/generador pendiente antes del gold; no repetir v4 sin cambios. Los estados v2/v3 siguientes son antecedentes.
 
 - [x] Preservar y auditar notebook y ZIP v4; comprobar hashes, fuentes y logs.
