@@ -1,5 +1,7 @@
 import sys
 import unittest
+import hashlib
+import json
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -12,6 +14,14 @@ def row(identity, kind, text=None):
 
 
 class CorpusTests(unittest.TestCase):
+    def test_snapshot_integrity_and_portable_line_endings(self):
+        corpus = Path(__file__).resolve().parents[1] / 'corpus'
+        manifest = json.loads((corpus / 'manifest.json').read_text(encoding='utf-8'))
+        for name, expected in manifest['files'].items():
+            data = (corpus / name).read_bytes()
+            self.assertNotIn(b'\r\n', data)
+            self.assertEqual(hashlib.sha256(data).hexdigest(), expected)
+
     def test_preserves_source_text_and_does_not_invent_missing_fields(self):
         source = row('TEST-1', 'Obra')
         doc = documents([source])[0]

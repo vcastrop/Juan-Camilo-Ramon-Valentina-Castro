@@ -1,0 +1,2 @@
+corpus/*.json text eol=lf
+corpus/*.jsonl text eol=lf

@@ -162,8 +162,8 @@ def main():
     if len({d['doc_id'] for d in docs}) != len(docs):
         raise ValueError('Duplicate document identifiers')
     out.mkdir(parents=True, exist_ok=True)
-    (out / 'source_snapshot.json').write_text(canonical(capture), encoding='utf-8')
-    (out / 'documents.jsonl').write_text(''.join(json.dumps(d, ensure_ascii=False, sort_keys=True) + '\n' for d in docs), encoding='utf-8')
+    (out / 'source_snapshot.json').write_text(canonical(capture), encoding='utf-8', newline='\n')
+    (out / 'documents.jsonl').write_text(''.join(json.dumps(d, ensure_ascii=False, sort_keys=True) + '\n' for d in docs), encoding='utf-8', newline='\n')
     manifest = {
         'status': 'candidate_corpus_pending_team_review', 'documents': len(docs),
         'historical_id_or_exact_normalized_description_overlap': overlap,
@@ -175,7 +175,7 @@ def main():
                        'No fraud/irregularity ground truth.', 'Purposive small sample, not population-representative.',
                        'Source missing/placeholder fields are not verified facts.'],
     }
-    (out / 'manifest.json').write_text(canonical(manifest), encoding='utf-8')
+    (out / 'manifest.json').write_text(canonical(manifest), encoding='utf-8', newline='\n')
     print(canonical(manifest))
 
 

@@ -4,7 +4,7 @@ Plan inicial: 28 de octubre de 2026. Estado actualizado: preparación iniciada; 
 
 Plazo comunicado por el equipo: **29 de octubre de 2026, 23:59, America/Bogota**. No verificado de forma independiente en Interactiva.
 
-Avance del 28 de octubre: materiales del curso inventariados y código relevante inspeccionado; rama local `Entrega/contractrisk-m3` en checkout separado `repo-m3`, desde main verificado; 24 fichas públicas candidatas, manifiesto con fuentes/hashes y reconstrucción offline idéntica; cuatro pruebas unitarias aprobadas. No hay todavía índice, gold QA humano, corrida RAG ni scorecard M3. Main y la rama experimental M2 no se modificaron.
+Avance del 28 de octubre: materiales del curso inventariados y código relevante inspeccionado; rama local `Entrega/contractrisk-m3` en checkout separado `repo-m3`, desde main verificado; 24 fichas públicas candidatas, manifiesto con fuentes/hashes y reconstrucción offline idéntica; cinco pruebas unitarias aprobadas. No hay todavía índice, gold QA humano, corrida RAG ni scorecard M3. Main y la rama experimental M2 no se modificaron.
 
 ## Fuentes y punto de partida
 

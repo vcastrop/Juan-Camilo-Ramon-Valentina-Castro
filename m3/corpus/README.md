@@ -44,4 +44,4 @@ El corpus sirve para consultar objetos, entidades y campos de fichas y estudiar 
 
 ## Verificación inicial
 
-Se ejecutaron cuatro pruebas unitarias y una reconstrucción offline. Los SHA-256 del snapshot y documentos reconstruidos coinciden con los del manifiesto. Esto comprueba la preparación de datos, no el funcionamiento del RAG: todavía no se ha construido el índice ni ejecutado el modelo de M3.
+Se ejecutaron cinco pruebas unitarias y una reconstrucción offline. Los SHA-256 del snapshot y documentos reconstruidos coinciden con los del manifiesto. Esto comprueba la preparación de datos, no el funcionamiento del RAG: todavía no se ha construido el índice ni ejecutado el modelo de M3.
