@@ -6,6 +6,8 @@ Este componente ayudará a consultar información pública de contratación y ex
 
 ## Ruta y evidencia disponibles
 
+Actualización tras la primera corrida real: [diagnóstico y evidencia](evidence/smoke_dense_v1/ANALISIS.md). SQLite resuelto en Colab mediante backend alternativo, pero recuperación 0/4 contratos y salida inválida 4/4. Se preparó `run_development_v2.py` para comparar denso, híbrido con filtro explícito de ID y el mismo híbrido con reranking. El prompt v2 es común, sin autocorrección de respuestas. La nueva comparación aún requiere ejecución real. El guard de SQLite se integra antes de importar Chroma, y registra backend y versión.
+
 Prueba inicial: `ContractRisk_M3_Prueba_RAG_Colab.ipynb` y `run_smoke.py`. Implementan índice denso Chroma y generación Qwen sobre cuatro preguntas de desarrollo. Trece pruebas locales aprobadas; inferencia real y compatibilidad de dependencias pendientes de Colab. No hay scorecard nuevo. Se generan chunks de 280 caracteres para esta prueba y se comprueba el límite real del tokenizer, sin truncamiento silencioso. La propuesta exploratoria de 800 caracteres permanece como evidencia, no como configuración final. Las revisiones de modelos se resuelven y registran durante esta primera corrida; después deben fijarse para la comparación definitiva.
 
 Referencias técnicas consultadas: [Chroma, incorporación de embeddings](https://docs.trychroma.com/docs/collections/add-data), [modelo de embeddings del curso](https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2), [generador Qwen](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct). Los tests con dobles sintéticos verifican el flujo, no la calidad de estos modelos.
