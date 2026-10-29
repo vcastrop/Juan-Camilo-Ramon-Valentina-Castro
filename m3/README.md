@@ -2,7 +2,15 @@
 
 Este componente ayudará a consultar información pública de contratación y explicar sus respuestas con fuentes verificables. No determina por sí solo si un contrato es irregular.
 
-**Estado: en construcción.** Todavía no existe una corrida de RAG ni resultados M3. La entrega histórica de M2 permanece intacta.
+**Estado: en construcción, con comparación de desarrollo ejecutada.** Hay resultados reales de RAG, pero no scorecard final de M3. La entrega histórica de M2 permanece intacta.
+
+## Estado vigente
+
+Agente v3 implementado y probado localmente: [herramienta, límites y prueba preparada](AGENTE_DESARROLLO.md), [notebook Colab](ContractRisk_M3_Desarrollo_v3_Agente_Colab.ipynb). 33 pruebas locales pasan; no son evidencia de calidad de decisiones del modelo. Pendiente ejecución real del agente, juez independiente, RAGAS y comparación final. El prompt v3 candidato conserva v2 sin sobrescribirlo.
+
+[Corrida de desarrollo v2, notebook y diagnóstico](evidence/development_v2/ANALISIS.md): denso 0/4, híbrido con filtro ID 3/4, híbrido con filtro ID y reranking 3/4 respuestas correctas. El reranking recuperó evidencia en 4/4, pero el generador confundió tipo y modalidad en un caso. 15/15 salidas válidas en formato; abstención correcta solo probada con contexto vacío. Gold humano de 12 casos congelado. Agente, juez corregido, RAGAS y evaluación final pendientes. Véase [checklist vigente](CHECKLIST.md).
+
+Las notas de preparación siguientes son históricas; «pendiente» en ellas describe aquel hito, no reemplaza este estado.
 
 ## Ruta y evidencia disponibles
 
@@ -36,4 +44,4 @@ W&B y DSPy no bloquean este alcance: son extras del material. Todos los mínimos
 
 ## Uso de IA
 
-ChatGPT/Codex asistió en la inspección de materiales, planificación y programación inicial. El equipo proporcionó materiales y requisitos. La revisión humana de corpus, código y gold QA está pendiente y no se declara como realizada. El detalle inicial está en [Decisiones](DECISIONES_INICIALES.md#uso-de-ia-durante-esta-preparación).
+ChatGPT/Codex asistió en la inspección de materiales, planificación y programación inicial. El equipo proporcionó materiales y requisitos. El gold QA fue revisado por Juan Camilo Ramon Perez según la evidencia preservada. No se afirma una revisión humana completa del código ni de los juicios finales pendientes. El detalle inicial está en [Decisiones](DECISIONES_INICIALES.md#uso-de-ia-durante-esta-preparación).

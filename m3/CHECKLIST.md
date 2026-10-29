@@ -1,6 +1,22 @@
 # ContractRisk Colombia: ruta de trabajo M3 y correcciones de M2
 
-Plan inicial: 28 de octubre de 2026. Estado actualizado: preparación iniciada; corpus candidato descargado y probado, no implementación terminada.
+Plan inicial: 28 de octubre de 2026. Estado actual: gold humano congelado y comparación de desarrollo v2 ejecutada y auditada en T4. Agente implementado y probado localmente, pendiente prueba real; juez corregido y evaluación final pendientes.
+
+## Estado vigente — corrida de desarrollo v2
+
+Evidencia: [análisis y artefactos originales](evidence/development_v2/ANALISIS.md). Las notas de avances anteriores que siguen son HISTÓRICAS: sus pendientes ya resueltos no sustituyen este estado ni las casillas actualizadas.
+
+- [x] Conservar ZIP y notebook ejecutado sin alterar sus salidas.
+- [x] Auditar 15 salidas: formato válido; cuatro preguntas por variante y prueba adicional de contexto vacío.
+- [x] Comprobar correspondencia de código ejecutado con el paquete entregado y fragmentos con corpus.
+- [x] Medir denso (0/4), híbrido con filtro ID (3/4) e híbrido con filtro ID y reranking (3/4).
+- [x] Documentar que reranking recupera evidencia en 4/4, pero no mejora aciertos finales frente al híbrido en esta muestra.
+- [ ] Validar abstención ante evidencia irrelevante: solo se superó la prueba de contexto vacío.
+- [ ] Completar agente, juez independiente, métricas finales y RAGAS; ejecutar las cuatro filas sobre gold.
+
+Estas casillas no certifican calidad general ni cierre de M3. Main permanece intacto.
+
+## Historial de preparación (no estado vigente)
 
 Plazo comunicado por el equipo: **29 de octubre de 2026, 23:59, America/Bogota**. No verificado de forma independiente en Interactiva.
 
@@ -66,7 +82,7 @@ El objetivo no es garantizar mejores números, sino construir una comparación v
 La guía permite escribir preguntas nuevas cuando M1 era clasificación. Sin embargo, también pide una fila «línea base del Módulo 2 (sin RAG)» y mantener generador y prompt base. RoBERTalex clasifica, pero no responde preguntas ni produce explicaciones. Esta diferencia debe resolverse explícitamente antes de programar la tabla final.
 
 - [ ] Mantener el benchmark histórico de 20 contratos y su scorecard como referencia separada, sin reutilizar sus cifras como resultados de preguntas nuevas.
-- [ ] Diseñar un benchmark de preguntas sobre el corpus real para M3, con posibilidad de abstención.
+- [x] Diseñar un benchmark de preguntas sobre el corpus real para M3, con posibilidad de abstención.
 - [x] Documentar la propuesta de comparación en `m3/DECISIONES_INICIALES.md`: generador sin recuperación, RAG ingenuo, RAG avanzado y RAG avanzado con herramienta, todos con el mismo generador y prompt base. Rotulación final pendiente.
 - [ ] Consultar/confirmar con el profesor cómo rotular la primera fila adaptada: no llamarla «RoBERTalex de M2» si utiliza un generador nuevo. Si requiere literalmente M2, acordar una adaptación compatible o una tabla adicional común de clasificación.
 - [ ] Si se conserva una señal de RoBERTalex como parte del sistema, mantenerla igual en todas las variantes que se comparen; no añadirla solo a una fila sin declararlo.
@@ -108,26 +124,26 @@ La guía permite escribir preguntas nuevas cuando M1 era clasificación. Sin emb
 - [ ] No afirmar permiso de redistribución sin comprobarlo; cuando corresponda, guardar muestra permitida y script de descarga.
 - [x] Guardar snapshot reproducible y hashes del corpus candidato; verificar reconstrucción offline idéntica.
 - [ ] Excluir información personal innecesaria, credenciales y archivos privados no autorizados.
-- [ ] Implementar ingestión y limpieza sin eliminar cláusulas, cifras o identificadores relevantes.
-- [ ] Separar texto original y metadatos; conservar doc_id, fuente, sección/página y chunk_id para citar.
-- [ ] Excluir del índice las etiquetas gold, criterios, respuestas de referencia, evaluaciones y documentos de resultados. El corpus fuente que contiene los hechos sí debe ser recuperable.
+- [x] Implementar ingestión y limpieza sin eliminar cláusulas, cifras o identificadores relevantes.
+- [x] Separar texto original y metadatos; conservar doc_id, fuente, sección/página y chunk_id para citar.
+- [x] Excluir del índice las etiquetas gold, criterios, respuestas de referencia, evaluaciones y documentos de resultados. El corpus fuente que contiene los hechos sí debe ser recuperable.
 - [ ] Medir longitudes y estructura de documentos; elegir tamaño y solapamiento con esa evidencia.
 - [ ] Elegir embeddings adecuados al idioma/corpus y probar memoria/tiempo en T4; fijar identificador y revisión.
-- [ ] Implementar `ingest -> chunk -> embed -> store` usando Chroma por defecto; justificar otra base si se usa.
+- [x] Implementar `ingest -> chunk -> embed -> store` usando Chroma por defecto; justificar otra base si se usa.
 - [ ] Justificar top-k con preguntas de desarrollo y cobertura observada, no con una frase genérica.
 - [ ] Reportar número de documentos y chunks, versiones, tiempo de indexación y almacenamiento.
-- [ ] Comprobar reconstrucción del índice desde cero.
+- [x] Comprobar reconstrucción del índice desde cero.
 
 **Cierre D:** índice reconstruible, corpus real trazable y tres decisiones justificadas con sus características.
 
 ## E. Eval set M3 y reglas de medición congeladas
 
-- [ ] Escribir al menos 10 preguntas gold; objetivo inicial de trabajo: 16-20 si el corpus y el tiempo lo permiten.
-- [ ] Incluir al menos 2 preguntas cuya respuesta realmente no está en el corpus completo, no solo fuera del top-k.
-- [ ] Incluir preguntas de datos concretos, interpretación sustentada, ambigüedad y búsqueda de identificadores; evitar un set solo fácil.
+- [x] Escribir al menos 10 preguntas gold; objetivo inicial de trabajo: 16-20 si el corpus y el tiempo lo permiten.
+- [x] Incluir al menos 2 preguntas cuya respuesta realmente no está en el corpus completo, no solo fuera del top-k.
+- [x] Incluir preguntas de datos concretos, interpretación sustentada, ambigüedad y búsqueda de identificadores; evitar un set solo fácil.
 - [ ] Incluir al menos dos casos que requieran la herramienta y uno que no, identificados con criterio previo.
 - [ ] Para cada pregunta guardar input, respuesta esperada, criterio, answerable, referencias documentales y necesidad esperada de herramienta.
-- [ ] Revisar las respuestas y fuentes por el equipo. Los borradores asistidos por IA no cuentan como anotación humana independiente sin revisión real.
+- [x] Revisar las respuestas y fuentes por el equipo. Los borradores asistidos por IA no cuentan como anotación humana independiente sin revisión real.
 - [ ] Separar ejemplos de desarrollo/calibración de los finales; registrar qué se ha usado para diagnosticar o ajustar.
 - [ ] Congelar eval set, corpus, rúbrica y configuración antes de las corridas comparativas.
 - [ ] Elegir una métrica automática apropiada a preguntas: por ejemplo, exactitud de hechos/campos verificables con normalización y evaluación de abstención. No reutilizar Macro F1 de etiquetas como si midiera toda una respuesta generativa.
@@ -140,15 +156,15 @@ La guía permite escribir preguntas nuevas cuando M1 era clasificación. Sin emb
 
 ## F. Generador sin RAG y RAG ingenuo
 
-- [ ] Seleccionar un generador instruct abierto que pueda ejecutarse en Colab gratuito y fijar revisión, semilla y parámetros.
+- [x] Seleccionar un generador instruct abierto que pueda ejecutarse en Colab gratuito y fijar revisión, semilla y parámetros.
 - [ ] Congelar el prompt base de respuesta/explicación/citas/abstención para todas las variantes.
 - [ ] Implementar el control sin recuperación conforme a la decisión de la fase B.
-- [ ] Implementar `sistema_rag(pregunta)`: búsqueda dense top-k, contexto delimitado y generación con fuentes.
+- [x] Implementar `sistema_rag(pregunta)`: búsqueda dense top-k, contexto delimitado y generación con fuentes.
 - [ ] Implementar válvula de escape explícita cuando la respuesta no está en el contexto.
 - [ ] Distinguir «no hay evidencia disponible» de «el contrato tiene una irregularidad».
 - [ ] Registrar pregunta, respuesta, explicación, chunks, IDs citados, abstención, tokens si disponibles y latencia.
-- [ ] Medir al menos una corrida real del ingenuo sobre consultas de desarrollo.
-- [ ] Conservar el ingenuo como implementación independiente y fila de referencia; no sobrescribirlo con la versión avanzada.
+- [x] Medir al menos una corrida real del ingenuo sobre consultas de desarrollo.
+- [x] Conservar el ingenuo como implementación independiente y fila de referencia; no sobrescribirlo con la versión avanzada.
 
 **Cierre F:** baseline operativo y lista de fallos observados con fuentes recuperadas.
 
@@ -156,31 +172,33 @@ La guía permite escribir preguntas nuevas cuando M1 era clasificación. Sin emb
 
 Opciones de la guía: búsqueda híbrida BM25 + dense con RRF; reranking con cross-encoder; transformación de consulta (multi-query, HyDE, step-back o descomposición).
 
-- [ ] Registrar consultas fallidas del ingenuo y clasificar: falta el chunk, mala ordenación, ambigüedad de consulta, contexto ignorado o respuesta ausente del corpus.
+- [x] Registrar consultas fallidas del ingenuo y clasificar: falta el chunk, mala ordenación, ambigüedad de consulta, contexto ignorado o respuesta ausente del corpus.
 - [ ] Elegir dos técnicas en función de esos fallos. Hipótesis inicial, NO decisión cerrada: híbrida para términos/IDs exactos y reranking para documentos similares con distinta pertinencia.
-- [ ] Documentar por técnica la consulta afectada, evidencia y mecanismo esperado de mejora.
-- [ ] Implementar las técnicas sin cambiar simultáneamente el generador o el prompt base.
-- [ ] Mantener el presupuesto de contexto y top-k final comparables; declarar pools de candidatos adicionales.
-- [ ] Implementar `sistema_rag_avanzado(pregunta)` con la misma interfaz.
+- [x] Documentar por técnica la consulta afectada, evidencia y mecanismo esperado de mejora.
+- [x] Implementar las técnicas sin cambiar simultáneamente el generador o el prompt base.
+- [x] Mantener el presupuesto de contexto y top-k final comparables; declarar pools de candidatos adicionales.
+- [x] Implementar `sistema_rag_avanzado(pregunta)` con la misma interfaz.
 - [ ] Medir calidad y latencia de cada técnica. Preferir ablaciones: ingenuo, técnica A, técnica B y A+B.
-- [ ] Si no se hacen ablaciones, aportar análisis por casos y reconocer que no se aisló numéricamente el efecto individual.
-- [ ] Conservar degradaciones y casos no resueltos; no afirmar que toda técnica mejora.
+- [x] Si no se hacen ablaciones, aportar análisis por casos y reconocer que no se aisló numéricamente el efecto individual.
+- [x] Conservar degradaciones y casos no resueltos; no afirmar que toda técnica mejora.
 
 **Cierre G:** dos técnicas integradas, motivadas por diagnóstico y con efecto observado.
 
 ## H. Capa agéntica con una herramienta útil
 
-Propuesta inicial: `consultar_ficha_contrato(id_contrato)` sobre un snapshot público verificado, para recuperar campos exactos cuando la pregunta los requiera. Se confirma su utilidad después de revisar el corpus. Alternativa permitida: retriever como herramienta, si la decisión de uso es real y se documenta.
+Implementación y 33 pruebas locales aprobadas (incluyen 14 del bloque agente). [Diseño, límites y ejecución](AGENTE_DESARROLLO.md). Las casillas de implementación no certifican decisiones correctas de Qwen: trazas reales y calidad siguen pendientes. Herramienta elegida: diferencia de valores de dos fichas, con consulta de operandos, cálculo Decimal, fuentes y errores explícitos. Notebook de desarrollo v3 preparado, aún no ejecutado en T4.
 
-- [ ] Elegir una herramienta que resuelva una necesidad observada; no añadir una llamada ornamental.
-- [ ] Definir nombre, descripción, parámetros, tipos, valores admitidos y esquema de retorno.
-- [ ] Hacer que el modelo pueda solicitarla o responder sin usarla; registrar la decisión real.
-- [ ] Implementar parseo JSON tolerante pero no ambiguo; rechazar nombres desconocidos y argumentos fuera de esquema.
-- [ ] Establecer máximo de pasos y reintentos de reparación; propuesta inicial: tres pasos, a validar por tarea.
-- [ ] Manejar ID inexistente, retorno vacío, timeout y error sin inventar datos.
-- [ ] Limitar herramientas a operaciones permitidas y de lectura; no ejecutar código, rutas o URLs arbitrarias propuestos por el modelo.
-- [ ] Tratar instrucciones dentro del corpus/resultados de herramientas como datos, no como órdenes del sistema.
-- [ ] Mantener la instrucción base de respuesta; documentar por separado el controlador agéntico y sus prompts.
+Propuesta inicial reemplazada por `diferencia_valores_contratos(id_a, id_b)`: consulta dos campos del snapshot y realiza la diferencia absoluta. El agente decide su uso; no se dispara por etiquetas del gold. Presupuesto cooperativo local de dos segundos, hasta tres decisiones y una respuesta final; llamadas repetidas bloqueadas.
+
+- [x] Elegir una herramienta que resuelva una necesidad observada; no añadir una llamada ornamental.
+- [x] Definir nombre, descripción, parámetros, tipos, valores admitidos y esquema de retorno.
+- [x] Hacer que el modelo pueda solicitarla o responder sin usarla; registrar la decisión real.
+- [x] Implementar parseo JSON tolerante pero no ambiguo; rechazar nombres desconocidos y argumentos fuera de esquema.
+- [x] Establecer máximo de pasos y reintentos de reparación; propuesta inicial: tres pasos, a validar por tarea.
+- [x] Manejar ID inexistente, retorno vacío, timeout y error sin inventar datos.
+- [x] Limitar herramientas a operaciones permitidas y de lectura; no ejecutar código, rutas o URLs arbitrarias propuestos por el modelo.
+- [x] Tratar instrucciones dentro del corpus/resultados de herramientas como datos, no como órdenes del sistema.
+- [x] Mantener la instrucción base de respuesta; documentar por separado el controlador agéntico y sus prompts.
 - [ ] Mostrar dos consultas reales que requieren y activan la herramienta, con argumentos/resultados, y una que no la requiere.
 - [ ] Medir llamadas innecesarias, omisiones y latencia adicional; no ocultar que el agente pueda no mejorar.
 
@@ -279,11 +297,15 @@ m3/
 
 1. Fecha recibida: 29/10/2026 23:59 Colombia. Confirmar solo si Interactiva establece alguna condición adicional.
 2. Materiales de las sesiones 7, 8 y 10 recibidos. S10 incluye implementación didáctica propia de RAGAS; no confundirla con la librería.
-3. El equipo indicó que no tenía corpus elegido. Se inició uno candidato con 24 fichas públicas, pendiente de revisión humana y diagnóstico.
-4. Revisión humana de preguntas, respuestas y fuentes. Se entregarán archivos e instrucciones para facilitarla.
+3. Corpus de 24 fichas utilizado en desarrollo; conservar sus límites: no contiene contratos completos.
+4. Revisión humana del gold recibida y congelada; pendiente revisión de respuestas y juicios finales.
 5. Interpretación del baseline sin RAG al pasar de clasificación a preguntas, conforme a fase B.
 6. Aportes humanos reales para la declaración de IA. No se completarán por suposición.
 
 ## Próximo bloque de trabajo
 
-Revisar las 24 fichas candidatas y preparar preguntas QA con referencias citables para revisión humana, reservando preguntas de desarrollo. Resolver la rotulación del baseline adaptado, implementar ingestión/índice y corregir/calibrar el evaluador. Después construir el RAG ingenuo. La justificación definitiva de las técnicas avanzadas requiere observar sus fallos, no inventarlos.
+1. Reforzar interpretación de campos y abstención mediante desarrollo, sin ajustar contra el gold.
+2. Ejecutar el desarrollo v3 en T4 y revisar llamadas útiles, decisiones sin llamada y abstención. Implementación, parser y pruebas locales ya disponibles.
+3. Implementar/calibrar juez independiente, dominio y RAGAS, sin transformar accuracy en puntuaciones del juez.
+4. Congelar configuración y evaluar cuatro variantes con el mismo gold, generador y prompt base.
+5. Completar reporte, declaración de IA y revisión antes de publicar/mergear. Confirmar rotulación del baseline adaptado.
