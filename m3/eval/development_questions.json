@@ -1,0 +1,33 @@
+{
+  "purpose": "development_only_not_final_scorecard",
+  "cases": [
+    {
+      "input": "¿Qué modalidad registra CO1.PCCNTR.1180445?",
+      "expected": "Mínima cuantía",
+      "source_ids": [
+        "CO1.PCCNTR.1180445"
+      ]
+    },
+    {
+      "input": "¿Qué modalidad registra CO1.PCCNTR.1637043?",
+      "expected": "Mínima cuantía",
+      "source_ids": [
+        "CO1.PCCNTR.1637043"
+      ]
+    },
+    {
+      "input": "¿Qué modalidad registra CO1.PCCNTR.3156756?",
+      "expected": "Contratación directa",
+      "source_ids": [
+        "CO1.PCCNTR.3156756"
+      ]
+    },
+    {
+      "input": "¿Qué modalidad registra CO1.PCCNTR.5484069?",
+      "expected": "Concurso de méritos abierto",
+      "source_ids": [
+        "CO1.PCCNTR.5484069"
+      ]
+    }
+  ]
+}

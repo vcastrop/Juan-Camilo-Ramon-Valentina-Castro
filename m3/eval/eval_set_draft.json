@@ -1,0 +1,201 @@
+{
+  "version": "m3-qa-draft-0.1",
+  "status": "pending_human_review",
+  "authorship": "AI-assisted draft grounded in frozen SECOP records; no human approval yet",
+  "cases": [
+    {
+      "eval_id": "m3_001",
+      "input": "Según la ficha CO1.PCCNTR.1088236, ¿qué se contrata y qué entidad lo contrata?",
+      "expected": "Entidad: AEROCIVIL. Descripción registrada: CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU",
+      "criterion": "Identificar entidad y actividad/objeto sin añadir obligaciones ausentes; justificar con la ficha citada.",
+      "source_ids": [
+        "CO1.PCCNTR.1088236"
+      ],
+      "kind": "factual",
+      "required_facts": [
+        "AEROCIVIL",
+        "CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU"
+      ],
+      "review_status": "pending",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "eval_id": "m3_002",
+      "input": "Según la ficha CO1.PCCNTR.1083652, ¿qué se contrata y qué entidad lo contrata?",
+      "expected": "Entidad: AEROCIVIL. Descripción registrada: ADQUIRIR ELEMENTOS DE PROTECCIÓN PERSONAL PARA LOS SERVIDORES DE LA REGIONAL NORTE DE SANTANDER",
+      "criterion": "Identificar entidad y actividad/objeto sin añadir obligaciones ausentes; justificar con la ficha citada.",
+      "source_ids": [
+        "CO1.PCCNTR.1083652"
+      ],
+      "kind": "factual",
+      "required_facts": [
+        "AEROCIVIL",
+        "ADQUIRIR ELEMENTOS DE PROTECCIÓN PERSONAL PARA LOS SERVIDORES DE LA REGIONAL NORTE DE SANTANDER"
+      ],
+      "review_status": "pending",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "eval_id": "m3_003",
+      "input": "Según la ficha CO1.PCCNTR.2079117, ¿qué se contrata y qué entidad lo contrata?",
+      "expected": "Entidad: Central administrativa regional Usaquen. Descripción registrada: ADQUISICION DE EQUIPO DE INVESTIGACION CON DESTINO A LA ESCUELA DE INFANTERIA; UNIDAD CENTRALIZADA POR LA CENTRAL ADMINISTRATIVA Y CONTABLE REGIONAL USAQUÉN; VIGENCIA 2020",
+      "criterion": "Identificar entidad y actividad/objeto sin añadir obligaciones ausentes; justificar con la ficha citada.",
+      "source_ids": [
+        "CO1.PCCNTR.2079117"
+      ],
+      "kind": "factual",
+      "required_facts": [
+        "Central administrativa regional Usaquen",
+        "ADQUISICION DE EQUIPO DE INVESTIGACION CON DESTINO A LA ESCUELA DE INFANTERIA; UNIDAD CENTRALIZADA POR LA CENTRAL ADMINISTRATIVA Y CONTABLE REGIONAL USAQUÉN; VIGENCIA 2020"
+      ],
+      "review_status": "pending",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "eval_id": "m3_004",
+      "input": "Según la ficha CO1.PCCNTR.3577214, ¿qué se contrata y qué entidad lo contrata?",
+      "expected": "Entidad: INSTITUTO DE FINANCIAMIENTO; PROMOCION Y DESARROLLO DE CALDAS. Descripción registrada: Intermediación de seguros para asesorar a Infi-Caldas en la contratación y administración del programa de seguros requerido para la adecuada protección de sus bienes e intereses patrimoniales y de aquellos por los cuales sea legalmente responsable; además de las condiciones técnicas mínimas estipula",
+      "criterion": "Identificar entidad y actividad/objeto sin añadir obligaciones ausentes; justificar con la ficha citada.",
+      "source_ids": [
+        "CO1.PCCNTR.3577214"
+      ],
+      "kind": "factual",
+      "required_facts": [
+        "INSTITUTO DE FINANCIAMIENTO; PROMOCION Y DESARROLLO DE CALDAS",
+        "Intermediación de seguros para asesorar a Infi-Caldas en la contratación y administración del programa de seguros requerido para la adecuada protección de sus bienes e intereses patrimoniales y de aquellos por los cuales sea legalmente responsable; además de las condiciones técnicas mínimas estipula"
+      ],
+      "review_status": "pending",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "eval_id": "m3_005",
+      "input": "Según la ficha CO1.PCCNTR.4359545, ¿qué se contrata y qué entidad lo contrata?",
+      "expected": "Entidad: AGENCIA LOGISTICA DE LAS FUERZAS MILITARES. Descripción registrada: ARRENDAMIENTO BODEGA SITUADA EN LA CLLE 13 # 11-25 DE LA CIUDAD DE LETICIA",
+      "criterion": "Identificar entidad y actividad/objeto sin añadir obligaciones ausentes; justificar con la ficha citada.",
+      "source_ids": [
+        "CO1.PCCNTR.4359545"
+      ],
+      "kind": "factual",
+      "required_facts": [
+        "AGENCIA LOGISTICA DE LAS FUERZAS MILITARES",
+        "ARRENDAMIENTO BODEGA SITUADA EN LA CLLE 13 # 11-25 DE LA CIUDAD DE LETICIA"
+      ],
+      "review_status": "pending",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "eval_id": "m3_006",
+      "input": "Según la ficha CO1.PCCNTR.1003124, ¿qué se contrata y qué entidad lo contrata?",
+      "expected": "Entidad: AEROCIVIL. Descripción registrada: CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS)  Y LAS MERCEDES DE PLATO",
+      "criterion": "Identificar entidad y actividad/objeto sin añadir obligaciones ausentes; justificar con la ficha citada.",
+      "source_ids": [
+        "CO1.PCCNTR.1003124"
+      ],
+      "kind": "factual",
+      "required_facts": [
+        "AEROCIVIL",
+        "CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS)  Y LAS MERCEDES DE PLATO"
+      ],
+      "review_status": "pending",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "eval_id": "m3_007",
+      "input": "¿Cuál es la diferencia absoluta entre los valores registrados de CO1.PCCNTR.1088236 y CO1.PCCNTR.1109703? Explica la operación y cita ambas fichas.",
+      "expected": "|250000000 - 82000000| = 168000000, usando los valores registrados en ambas fichas.",
+      "criterion": "Recuperar ambos valores, calcular la diferencia absoluta exacta, mostrar la operación y citar ambas fuentes. No inferir sobrecosto.",
+      "source_ids": [
+        "CO1.PCCNTR.1088236",
+        "CO1.PCCNTR.1109703"
+      ],
+      "kind": "calculation",
+      "required_facts": [
+        "250000000",
+        "82000000",
+        "168000000"
+      ],
+      "review_status": "pending",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "eval_id": "m3_008",
+      "input": "¿Cuál es la diferencia absoluta entre los valores registrados de CO1.PCCNTR.1083652 y CO1.PCCNTR.1092525? Explica la operación y cita ambas fichas.",
+      "expected": "|64992574 - 49605150| = 15387424, usando los valores registrados en ambas fichas.",
+      "criterion": "Recuperar ambos valores, calcular la diferencia absoluta exacta, mostrar la operación y citar ambas fuentes. No inferir sobrecosto.",
+      "source_ids": [
+        "CO1.PCCNTR.1083652",
+        "CO1.PCCNTR.1092525"
+      ],
+      "kind": "calculation",
+      "required_facts": [
+        "64992574",
+        "49605150",
+        "15387424"
+      ],
+      "review_status": "pending",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "eval_id": "m3_009",
+      "input": "¿Las fechas de firma e inicio registradas en CO1.PCCNTR.1088236 son cronológicamente consistentes? ¿Podemos concluir por eso que hubo una irregularidad?",
+      "expected": "La ficha registra firma 2024-03-27T11:30:19.253 e inicio 2019-09-10T12:00:00.000. El inicio figura antes de la firma registrada. La ficha sola no explica la discrepancia ni permite concluir una irregularidad.",
+      "criterion": "Citar ambas fechas, señalar su orden y la incertidumbre; no corregir fechas ni atribuir causas o acusaciones.",
+      "source_ids": [
+        "CO1.PCCNTR.1088236"
+      ],
+      "kind": "inconsistency",
+      "required_facts": [],
+      "review_status": "pending",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "eval_id": "m3_010",
+      "input": "¿Qué modalidad de contratación registra la ficha CO1.PCCNTR.1109703?",
+      "expected": "Mínima cuantía",
+      "criterion": "Responder la modalidad registrada y citar la ficha, sin explicación jurídica inventada.",
+      "source_ids": [
+        "CO1.PCCNTR.1109703"
+      ],
+      "kind": "factual",
+      "required_facts": [
+        "Mínima cuantía"
+      ],
+      "review_status": "pending",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "eval_id": "m3_011",
+      "input": "¿Cuál es el texto literal de la cláusula de multas del contrato CO1.PCCNTR.1088236?",
+      "expected": "No dispongo del texto de esa cláusula en estas fuentes. Se necesita consultar el documento contractual completo.",
+      "criterion": "Abstenerse de inventar cláusulas o porcentajes. Explicar que las fichas disponibles no incluyen el clausulado.",
+      "source_ids": [],
+      "kind": "unanswerable",
+      "required_facts": [],
+      "review_status": "pending",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "eval_id": "m3_012",
+      "input": "¿Qué concluyó la auditoría de ejecución física sobre el contrato CO1.PCCNTR.1083652?",
+      "expected": "Las fuentes disponibles no contienen un informe de auditoría de ejecución física. No puedo afirmar su conclusión.",
+      "criterion": "Abstenerse: no equiparar estado contractual o valor registrado con evidencia de ejecución física o auditoría.",
+      "source_ids": [],
+      "kind": "unanswerable",
+      "required_facts": [],
+      "review_status": "pending",
+      "reviewer": "",
+      "review_notes": ""
+    }
+  ]
+}

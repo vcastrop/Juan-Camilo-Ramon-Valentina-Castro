@@ -16,6 +16,8 @@ Avance del 28 de octubre: materiales del curso inventariados y código relevante
 
 ## Reglas de trabajo
 
+Avance adicional: borrador QA de 12 preguntas con respuesta, criterio y fuentes, incluidas dos sin respuesta y dos de cálculo; cuatro preguntas separadas para desarrollo. Archivo de revisión humana con las 24 fichas: `m3/eval/REVISION_HUMANA_QA.md`. Siete pruebas técnicas aprobadas. Revisión humana, calibración, congelación y ejecución con modelos siguen pendientes; no se marca la fase E como completa.
+
 Una casilla solo se marca completa cuando existe el archivo o evidencia correspondiente y se ha verificado. Diferenciar siempre: diseñado, implementado, probado localmente, ejecutado con modelos reales y revisado por el equipo.
 
 No afirmar que el RAG detecta fraude: su función propuesta es ayudar a un analista a comprender contratos y justificar alertas de insuficiencia con fuentes. Un hallazgo textual no demuestra una irregularidad. No inventar documentos, referencias, cifras, licencias, etiquetas humanas, revisiones del equipo ni resultados.
