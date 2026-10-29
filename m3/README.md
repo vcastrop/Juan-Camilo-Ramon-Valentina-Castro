@@ -6,6 +6,8 @@ Este componente ayudará a consultar información pública de contratación y ex
 
 ## Estado vigente
 
+Última ejecución real: [desarrollo v3](evidence/development_v3/ANALISIS.md), completada en T4, pero solo 18/32 salidas pasan el esquema. La herramienta calcula bien dos diferencias; el generador falla al presentarlas. Persisten llamadas innecesarias e invención de una conclusión de auditoría. Requiere corrección y nueva prueba antes del cierre. Las notas anteriores siguientes describen la preparación de esa corrida, no una validación de calidad.
+
 Agente v3 implementado y probado localmente: [herramienta, límites y prueba preparada](AGENTE_DESARROLLO.md), [notebook Colab](ContractRisk_M3_Desarrollo_v3_Agente_Colab.ipynb). 33 pruebas locales pasan; no son evidencia de calidad de decisiones del modelo. Pendiente ejecución real del agente, juez independiente, RAGAS y comparación final. El prompt v3 candidato conserva v2 sin sobrescribirlo.
 
 [Corrida de desarrollo v2, notebook y diagnóstico](evidence/development_v2/ANALISIS.md): denso 0/4, híbrido con filtro ID 3/4, híbrido con filtro ID y reranking 3/4 respuestas correctas. El reranking recuperó evidencia en 4/4, pero el generador confundió tipo y modalidad en un caso. 15/15 salidas válidas en formato; abstención correcta solo probada con contexto vacío. Gold humano de 12 casos congelado. Agente, juez corregido, RAGAS y evaluación final pendientes. Véase [checklist vigente](CHECKLIST.md).

@@ -4,6 +4,13 @@ Plan inicial: 28 de octubre de 2026. Estado actual: gold humano congelado y comp
 
 ## Estado vigente — corrida de desarrollo v2
 
+**Actualización posterior: desarrollo v3 ejecutado y auditado.** [Evidencia y diagnóstico](evidence/development_v3/ANALISIS.md). 32 registros, 18 salidas válidas de esquema. Herramienta ejecutada correctamente en dos cálculos, pero respuestas finales inválidas; cinco llamadas innecesarias rechazadas y ningún caso de decisión answer válida del controlador. No se cierra H ni la evaluación final. Estado v2 abajo conservado como antecedente.
+
+- [x] Recibir y preservar ZIP y notebook v3 ejecutado; verificar hashes y fuentes.
+- [x] Separar éxito técnico de calidad: documentar fallos de generación, abstención y controlador.
+- [ ] Corregir serialización compacta, formatos inequívocos del controlador y registro de terminación; probar sobre trazas v3.
+- [ ] Repetir desarrollo y demostrar dos respuestas válidas con herramienta y una decisión válida sin llamada.
+
 Evidencia: [análisis y artefactos originales](evidence/development_v2/ANALISIS.md). Las notas de avances anteriores que siguen son HISTÓRICAS: sus pendientes ya resueltos no sustituyen este estado ni las casillas actualizadas.
 
 - [x] Conservar ZIP y notebook ejecutado sin alterar sus salidas.
