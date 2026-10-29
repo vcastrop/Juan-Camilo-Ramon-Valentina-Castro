@@ -1,0 +1,514 @@
+{
+  "captured_at_utc": "2026-10-29T01:15:15.656185+00:00",
+  "dataset_metadata": {
+    "attribution": "Agencia Nacional de Contratación Pública - Colombia Compra Eficiente, Bogotá D.C.",
+    "attributionLink": "https://colombiacompra.gov.co",
+    "description": "Información de los contratos registrados en SECOP II desde su lanzamiento",
+    "license": {
+      "logoUrl": "images/licenses/cc30bysa.png",
+      "name": "Creative Commons Attribution | Share Alike 4.0 International",
+      "termsLink": "http://creativecommons.org/licenses/by-sa/4.0/legalcode"
+    },
+    "licenseId": "CC_40_BY_SA",
+    "name": "SECOP II - Contratos Electrónicos"
+  },
+  "metadata_url": "https://www.datos.gov.co/api/views/jbjy-vk9h.json",
+  "records": [
+    {
+      "ciudad": "No Definido",
+      "departamento": "Distrito Capital de Bogotá",
+      "descripcion_del_proceso": "CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU",
+      "duraci_n_del_contrato": "Dia(s)",
+      "estado_contrato": "terminado",
+      "fecha_de_fin_del_contrato": "2019-12-10T12:00:00.000",
+      "fecha_de_firma": "2024-03-27T11:30:19.253",
+      "fecha_de_inicio_del_contrato": "2019-09-10T12:00:00.000",
+      "id_contrato": "CO1.PCCNTR.1088236",
+      "modalidad_de_contratacion": "Selección Abreviada de Menor Cuantía",
+      "nombre_entidad": "AEROCIVIL",
+      "objeto_del_contrato": "CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU",
+      "referencia_del_contrato": "19001149 H4 2019",
+      "tipo_de_contrato": "Obra",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.901204&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "250000000"
+    },
+    {
+      "ciudad": "No Definido",
+      "departamento": "Distrito Capital de Bogotá",
+      "descripcion_del_proceso": "MANTENIMIENTO Y CONSERVACIÓN DE CANALES DEL ANTIGUO CENTRO DE CONTROL DEL AEROPUERTO ERNESTO CORTISSOZ DE BARRANQUILLA",
+      "duraci_n_del_contrato": "Dia(s)",
+      "estado_contrato": "Aprobado",
+      "fecha_de_fin_del_contrato": "2019-11-03T12:00:00.000",
+      "fecha_de_firma": "2024-05-23T10:44:03.644",
+      "fecha_de_inicio_del_contrato": "2019-09-20T12:00:00.000",
+      "id_contrato": "CO1.PCCNTR.1109703",
+      "modalidad_de_contratacion": "Mínima cuantía",
+      "nombre_entidad": "AEROCIVIL",
+      "objeto_del_contrato": "MANTENIMIENTO Y CONSERVACIÓN DE CANALES DEL ANTIGUO CENTRO DE CONTROL DEL AEROPUERTO ERNESTO CORTISSOZ DE BARRANQUILLA",
+      "referencia_del_contrato": "19001147 H4 2019",
+      "tipo_de_contrato": "Obra",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.922724&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "82000000"
+    },
+    {
+      "ciudad": "No Definido",
+      "departamento": "Distrito Capital de Bogotá",
+      "descripcion_del_proceso": "CONSTRUCCION DEL CERRAMIENTO DE LOS LOTES RESTITUIDOS DEL AEROPUERTO LAS MERCEDES DE PLATO MAGDALENA",
+      "duraci_n_del_contrato": "Dia(s)",
+      "estado_contrato": "terminado",
+      "fecha_de_fin_del_contrato": "2019-12-20T12:00:00.000",
+      "fecha_de_firma": "2024-03-27T11:30:01.262",
+      "fecha_de_inicio_del_contrato": "2019-11-11T12:00:00.000",
+      "id_contrato": "CO1.PCCNTR.1140823",
+      "modalidad_de_contratacion": "Mínima cuantía",
+      "nombre_entidad": "AEROCIVIL",
+      "objeto_del_contrato": "CONSTRUCCION DEL CERRAMIENTO DE LOS LOTES RESTITUIDOS DEL AEROPUERTO LAS MERCEDES DE PLATO MAGDALENA",
+      "referencia_del_contrato": "19001348 H4 2019",
+      "tipo_de_contrato": "Obra",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.941042&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "57079402"
+    },
+    {
+      "ciudad": "No Definido",
+      "departamento": "Distrito Capital de Bogotá",
+      "descripcion_del_proceso": "MANTENIMIENTO Y MEJORAMIENTO DE LAS OFICINAS AIM Y AERONAVEGACION DEL AEROPUERTO ERNESTO CORTISSOZ DE BARRANQUILLLA",
+      "duraci_n_del_contrato": "Dia(s)",
+      "estado_contrato": "Aprobado",
+      "fecha_de_fin_del_contrato": "2019-12-20T12:00:00.000",
+      "fecha_de_firma": "2024-03-27T11:28:50.755",
+      "fecha_de_inicio_del_contrato": "2019-11-15T12:00:00.000",
+      "id_contrato": "CO1.PCCNTR.1180445",
+      "modalidad_de_contratacion": "Mínima cuantía",
+      "nombre_entidad": "AEROCIVIL",
+      "objeto_del_contrato": "MANTENIMIENTO Y MEJORAMIENTO DE LAS OFICINAS AIM Y AERONAVEGACION DEL AEROPUERTO ERNESTO CORTISSOZ DE BARRANQUILLLA",
+      "referencia_del_contrato": "19001401 H4 2019",
+      "tipo_de_contrato": "Obra",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.964809&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "77000000"
+    },
+    {
+      "ciudad": "No Definido",
+      "departamento": "Distrito Capital de Bogotá",
+      "descripcion_del_proceso": "ADQUIRIR ELEMENTOS DE PROTECCIÓN PERSONAL PARA LOS SERVIDORES DE LA REGIONAL NORTE DE SANTANDER",
+      "duraci_n_del_contrato": "Dia(s)",
+      "estado_contrato": "Cerrado",
+      "fecha_de_fin_del_contrato": "2019-12-04T12:00:00.000",
+      "fecha_de_firma": "2024-03-27T10:54:06.735",
+      "fecha_de_inicio_del_contrato": "2019-09-04T12:00:00.000",
+      "id_contrato": "CO1.PCCNTR.1083652",
+      "modalidad_de_contratacion": "Mínima cuantía",
+      "nombre_entidad": "AEROCIVIL",
+      "objeto_del_contrato": "ADQUIRIR ELEMENTOS DE PROTECCIÓN PERSONAL PARA LOS SERVIDORES DE LA REGIONAL NORTE DE SANTANDER",
+      "referencia_del_contrato": "19000671 H1",
+      "tipo_de_contrato": "Suministros",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.885455&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "64992574"
+    },
+    {
+      "ciudad": "No Definido",
+      "departamento": "Distrito Capital de Bogotá",
+      "descripcion_del_proceso": "CONTRATAR LA ADQUISICIÓN DE HERRAMIENTAS PARA EL MANTENIMIENTO DE EQUIPOS; SISTEMAS MECÁNICOS; ELÉCTRICOS y ELECTRÓNICOS.",
+      "duraci_n_del_contrato": "Dia(s)",
+      "estado_contrato": "Aprobado",
+      "fecha_de_fin_del_contrato": "2019-12-12T12:00:00.000",
+      "fecha_de_firma": "2024-03-27T11:31:15.350",
+      "fecha_de_inicio_del_contrato": "2019-09-12T12:00:00.000",
+      "id_contrato": "CO1.PCCNTR.1092525",
+      "modalidad_de_contratacion": "Mínima cuantía",
+      "nombre_entidad": "AEROCIVIL",
+      "objeto_del_contrato": "CONTRATAR LA ADQUISICIÓN DE HERRAMIENTAS PARA EL MANTENIMIENTO DE EQUIPOS; SISTEMAS MECÁNICOS; ELÉCTRICOS y ELECTRÓNICOS.",
+      "referencia_del_contrato": "19001143A H1 2019",
+      "tipo_de_contrato": "Suministros",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.908914&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "49605150"
+    },
+    {
+      "ciudad": "No Definido",
+      "departamento": "No Definido",
+      "descripcion_del_proceso": "contratar la compra de estantería y elementos de aseo para el proyecto almacén expendio; con el fin de garantizar el buen funcionamiento del mismo; el cuales hace parte del EPMSC Santa Bárbara del Instituto Nacional Penitenciario y Carcelario - INPEC.",
+      "duraci_n_del_contrato": "Dia(s)",
+      "estado_contrato": "Aprobado",
+      "fecha_de_fin_del_contrato": "2019-12-13T12:00:00.000",
+      "fecha_de_firma": "2024-06-07T08:10:27.741",
+      "fecha_de_inicio_del_contrato": "2019-11-22T12:00:00.000",
+      "id_contrato": "CO1.PCCNTR.1193737",
+      "modalidad_de_contratacion": "Mínima cuantía",
+      "nombre_entidad": "ESTABLECIMIENTO PENITENCIARIO DE MEDIANA SEGURIDAD CARCELARIA DE SANTA BARBARA",
+      "objeto_del_contrato": "contratar la compra de estantería y elementos de aseo para el proyecto almacén expendio; con el fin de garantizar el buen funcionamiento del mismo; el cuales hace parte del EPMSC Santa Bárbara del Instituto Nacional Penitenciario y Carcelario - INPEC.",
+      "referencia_del_contrato": "CO1.PCCNTR.1193737",
+      "tipo_de_contrato": "Suministros",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.981202&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "1076363"
+    },
+    {
+      "ciudad": "No Definido",
+      "departamento": "Antioquia",
+      "descripcion_del_proceso": "ADQUISICIÓN DE PRODUCTOS DE CAFETERIA Y RESTAURANTE",
+      "duraci_n_del_contrato": "5 Mes(es)",
+      "estado_contrato": "Aprobado",
+      "fecha_de_fin_del_contrato": "2020-11-30T18:00:00.000",
+      "fecha_de_firma": "2024-07-14T15:44:06.082",
+      "id_contrato": "CO1.PCCNTR.1637043",
+      "modalidad_de_contratacion": "Mínima cuantía",
+      "nombre_entidad": "CENTRAL ADMINISTRATIVA Y CONTABLE MEDELLIN",
+      "objeto_del_contrato": "ADQUISICIÓN DE PRODUCTOS DE CAFETERIA Y RESTAURANTE",
+      "referencia_del_contrato": "065-CENACMED-2020",
+      "tipo_de_contrato": "Suministros",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.1269799&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "1766080"
+    },
+    {
+      "ciudad": "Bogotá",
+      "departamento": "Distrito Capital de Bogotá",
+      "descripcion_del_proceso": "ADQUISICION DE EQUIPO DE INVESTIGACION CON DESTINO A LA ESCUELA DE INFANTERIA; UNIDAD CENTRALIZADA POR LA CENTRAL ADMINISTRATIVA Y CONTABLE REGIONAL USAQUÉN; VIGENCIA 2020",
+      "duraci_n_del_contrato": "5 Dia(s)",
+      "estado_contrato": "Aprobado",
+      "fecha_de_fin_del_contrato": "2020-12-28T12:00:00.000",
+      "fecha_de_firma": "2024-10-02T21:04:23.708",
+      "id_contrato": "CO1.PCCNTR.2079117",
+      "modalidad_de_contratacion": "Mínima cuantía",
+      "nombre_entidad": "Central administrativa regional Usaquen",
+      "objeto_del_contrato": "ADQUISICION DE EQUIPO DE INVESTIGACION CON DESTINO A LA ESCUELA DE INFANTERIA; UNIDAD CENTRALIZADA POR LA CENTRAL ADMINISTRATIVA Y CONTABLE REGIONAL USAQUÉN; VIGENCIA 2020",
+      "referencia_del_contrato": "247-CENAC-REGIONAL-USAQUEN-2020",
+      "tipo_de_contrato": "Compraventa",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.1608149&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "11300000"
+    },
+    {
+      "ciudad": "Cali",
+      "departamento": "Valle del Cauca",
+      "descripcion_del_proceso": "El CONTRATISTA se obliga a la dotación de elementos a seis (6) laboratorios de robótica; uno por cada una de las sedes de la Universidad del Valle; ubicadas en el Distrito Especial de Santiago de Cali; Distrito Especial de Buenaventura; municipio de Buga; municipio de Tuluá; municipio de Cartago y e",
+      "duraci_n_del_contrato": "10 Mes(es)",
+      "estado_contrato": "Aprobado",
+      "fecha_de_fin_del_contrato": "2021-03-05T23:59:00.000",
+      "fecha_de_firma": "2024-08-30T16:42:29.675",
+      "id_contrato": "CO1.PCCNTR.2490844",
+      "modalidad_de_contratacion": "Contratación Directa (con ofertas)",
+      "nombre_entidad": "INSTITUTO FINANCIERO PARA EL DESARROLLO DEL VALLE-INFIVALLE",
+      "objeto_del_contrato": "El CONTRATISTA se obliga a la dotación de elementos a seis (6) laboratorios de robótica; uno por cada una de las sedes de la Universidad del Valle; ubicadas en el Distrito Especial de Santiago de Cali; Distrito Especial de Buenaventura; municipio de Buga; municipio de Tuluá; municipio de Cartago y el municipio de Palmira; requeridos para el desarrollo de competencias en SETM+A (VER CONTRATO)",
+      "referencia_del_contrato": "70-2021",
+      "tipo_de_contrato": "Compraventa",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.1953552&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "100000000"
+    },
+    {
+      "ciudad": "No Definido",
+      "departamento": "No Definido",
+      "descripcion_del_proceso": "compra de tóner originales y recargas para las impresoras y fotocopiadoras para la Gerencia Departamental del Quindío; en la ciudad de Armenia.",
+      "duraci_n_del_contrato": "5 Dia(s)",
+      "estado_contrato": "Aprobado",
+      "fecha_de_fin_del_contrato": "2021-12-30T12:00:00.000",
+      "fecha_de_firma": "2024-02-26T11:23:00.218",
+      "id_contrato": "CO1.PCCNTR.3129984",
+      "modalidad_de_contratacion": "Mínima cuantía",
+      "nombre_entidad": "CGR- GERENCIA DEPARTAMENTAL QUINDIO",
+      "objeto_del_contrato": "compra de tóner originales y recargas para las impresoras y fotocopiadoras para la Gerencia Departamental del Quindío; en la ciudad de Armenia.",
+      "referencia_del_contrato": "CO1.PCCNTR.3129984",
+      "tipo_de_contrato": "Compraventa",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.2462305&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "11795875"
+    },
+    {
+      "ciudad": "No Definido",
+      "departamento": "Huila",
+      "descripcion_del_proceso": "COMPRAVENTA DE LA OBRA MUSICAL ARTESANO DE ENSUEÑOS PARA DOTACIÓN DE BIBLIOTECAS PÚBLICAS; EN APOYO A LOS AUTORES Y GESTORES DEL DEPARTAMENTO DEL HUILA",
+      "duraci_n_del_contrato": "2 Dia(s)",
+      "estado_contrato": "Cerrado",
+      "fecha_de_fin_del_contrato": "2024-12-12T23:00:00.000",
+      "fecha_de_firma": "2024-12-12T16:58:17.518",
+      "fecha_de_inicio_del_contrato": "2024-12-12T17:00:00.000",
+      "id_contrato": "CO1.PCCNTR.3156756",
+      "modalidad_de_contratacion": "Contratación directa",
+      "nombre_entidad": "GOBERNACION DEL HUILA*",
+      "objeto_del_contrato": "COMPRAVENTA DE LA OBRA MUSICAL ARTESANO DE ENSUEÑOS PARA DOTACIÓN DE BIBLIOTECAS PÚBLICAS; EN APOYO A LOS AUTORES Y GESTORES DEL DEPARTAMENTO DEL HUILA",
+      "referencia_del_contrato": "1264 DE 2021",
+      "tipo_de_contrato": "Compraventa",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.2482378&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "4500000"
+    },
+    {
+      "ciudad": "Manizales",
+      "departamento": "Caldas",
+      "descripcion_del_proceso": "Intermediación de seguros para asesorar a Infi-Caldas en la contratación y administración del programa de seguros requerido para la adecuada protección de sus bienes e intereses patrimoniales y de aquellos por los cuales sea legalmente responsable; además de las condiciones técnicas mínimas estipula",
+      "duraci_n_del_contrato": "2 Año(s)",
+      "estado_contrato": "Cerrado",
+      "fecha_de_fin_del_contrato": "2024-03-15T11:59:00.000",
+      "fecha_de_firma": "2024-02-28T15:10:01.531",
+      "fecha_de_inicio_del_contrato": "2024-02-28T15:30:00.000",
+      "id_contrato": "CO1.PCCNTR.3577214",
+      "modalidad_de_contratacion": "Concurso de méritos abierto",
+      "nombre_entidad": "INSTITUTO DE FINANCIAMIENTO; PROMOCION Y DESARROLLO DE CALDAS",
+      "objeto_del_contrato": "Intermediación de seguros para asesorar a Infi-Caldas en la contratación y administración del programa de seguros requerido para la adecuada protección de sus bienes e intereses patrimoniales y de aquellos por los cuales sea legalmente responsable; además de las condiciones técnicas mínimas estipuladas en el contrato; de conformidad con el Pliego de Condiciones del concurso de méritos C.M07-2021 (en adelante el Pliego de Condiciones); la Propuesta del CONTRATISTA presentada (en adelante la Pr",
+      "referencia_del_contrato": "CO1.PCCNTR.3577214",
+      "tipo_de_contrato": "Consultoría",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.2536078&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "0"
+    },
+    {
+      "ciudad": "Medellín",
+      "departamento": "Antioquia",
+      "descripcion_del_proceso": "CONTRATAR UN CORREDOR DE SEGUROS PARA QUE ASESORE INTEGRALMENTE EL PROGRAMA DE SEGUROS DEL DEPARTAMENTO DE ANTIOQUIA Y LAS ENTIDADES DESCENTRALIZADAS QUE ASÍ LO REQUIERAN.",
+      "duraci_n_del_contrato": "24 Mes(es)",
+      "estado_contrato": "En ejecución",
+      "fecha_de_fin_del_contrato": "2026-11-01T00:00:00.000",
+      "fecha_de_firma": "2024-09-03T10:24:52.576",
+      "fecha_de_inicio_del_contrato": "2024-09-03T15:00:00.000",
+      "id_contrato": "CO1.PCCNTR.5193000",
+      "modalidad_de_contratacion": "Concurso de méritos abierto",
+      "nombre_entidad": "DEPARTAMENTO DE ANTIOQUIA//",
+      "objeto_del_contrato": "CONTRATAR UN CORREDOR DE SEGUROS PARA QUE ASESORE INTEGRALMENTE EL PROGRAMA DE SEGUROS DEL DEPARTAMENTO DE ANTIOQUIA Y LAS ENTIDADES DESCENTRALIZADAS QUE ASÍ LO REQUIERAN.",
+      "referencia_del_contrato": "23SS174H1072",
+      "tipo_de_contrato": "Consultoría",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.4440134&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "0"
+    },
+    {
+      "ciudad": "Bogotá",
+      "departamento": "Distrito Capital de Bogotá",
+      "descripcion_del_proceso": "Realizar el\ndiagnóstico y diseño para la actualización; integración e implementación del sistema de protección contra incendios para las\ninstalaciones de RTVC sede CAN.",
+      "duraci_n_del_contrato": "112 Dia(s)",
+      "estado_contrato": "Aprobado",
+      "fecha_de_fin_del_contrato": "2023-12-31T23:59:00.000",
+      "fecha_de_firma": "2024-04-02T12:11:55.892",
+      "id_contrato": "CO1.PCCNTR.5376297",
+      "modalidad_de_contratacion": "Concurso de méritos abierto",
+      "nombre_entidad": "INRAVISIÓN",
+      "objeto_del_contrato": "Realizar el\ndiagnóstico y diseño para la actualización; integración e implementación del sistema de protección contra incendios para las\ninstalaciones de RTVC sede CAN.",
+      "referencia_del_contrato": "2268-2023",
+      "tipo_de_contrato": "Consultoría",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.4855067&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "112454000"
+    },
+    {
+      "ciudad": "Copacabana",
+      "departamento": "Antioquia",
+      "descripcion_del_proceso": "INTERVENTORIA TECNICA; ADMINISTRATIVA; FINANCIERA; LEGAL Y AMBIENTAL PARA EL SOSTENIMIENTO Y MEJORAMIENTO DE LA VIA Y PUENTE DEL SECTOR DE METROMEZCLAS EN EL MUNICIPIO DE COPACABANA; PARA DAR CUMPLIMIENTO A LA ACCION POPULAR CON RADICADO NO. 05001 33 33 036 2020 00339 PROTECCION DE LOS DERECHOS E IN",
+      "duraci_n_del_contrato": "6 Mes(es)",
+      "estado_contrato": "Modificado",
+      "fecha_de_fin_del_contrato": "2025-04-11T11:59:00.000",
+      "fecha_de_firma": "2024-09-19T11:28:24.751",
+      "fecha_de_inicio_del_contrato": "2024-09-23T07:00:00.000",
+      "id_contrato": "CO1.PCCNTR.5484069",
+      "modalidad_de_contratacion": "Concurso de méritos abierto",
+      "nombre_entidad": "ALCADIA MUNICIPAL DE COPACABANA",
+      "objeto_del_contrato": "INTERVENTORIA TECNICA; ADMINISTRATIVA; FINANCIERA; LEGAL Y AMBIENTAL PARA EL SOSTENIMIENTO Y MEJORAMIENTO DE LA VIA Y PUENTE DEL SECTOR DE METROMEZCLAS EN EL MUNICIPIO DE COPACABANA; PARA DAR CUMPLIMIENTO A LA ACCION POPULAR CON RADICADO NO. 05001 33 33 036 2020 00339 PROTECCION DE LOS DERECHOS E INTERESES COLECTIVOS",
+      "referencia_del_contrato": "CM-02-2024",
+      "tipo_de_contrato": "Consultoría",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.4928269&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "231096000"
+    },
+    {
+      "ciudad": "Bogotá",
+      "departamento": "Distrito Capital de Bogotá",
+      "descripcion_del_proceso": "ARRENDAMIENTO BODEGA SITUADA EN LA CLLE 13 # 11-25 DE LA CIUDAD DE LETICIA",
+      "duraci_n_del_contrato": "6 Mes(es)",
+      "estado_contrato": "Cerrado",
+      "fecha_de_fin_del_contrato": "2024-10-29T13:57:00.000",
+      "fecha_de_firma": "2024-10-29T13:55:32.423",
+      "fecha_de_inicio_del_contrato": "2024-10-29T13:56:00.000",
+      "id_contrato": "CO1.PCCNTR.4359545",
+      "modalidad_de_contratacion": "Contratación directa",
+      "nombre_entidad": "AGENCIA LOGISTICA DE LAS FUERZAS MILITARES",
+      "objeto_del_contrato": "ARRENDAMIENTO BODEGA SITUADA EN LA CLLE 13 # 11-25 DE LA CIUDAD DE LETICIA",
+      "referencia_del_contrato": "J-004-005-2022",
+      "tipo_de_contrato": "Arrendamiento de inmuebles",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.3690390&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "22459876"
+    },
+    {
+      "ciudad": "No Definido",
+      "departamento": "Huila",
+      "descripcion_del_proceso": "ARRENDAMIENTO ESPACIO EN TORRE Y SALÓN DE EQUIPOS UBICADOS EN EL INMUEBLE ESTACIÓN CERRO NEIVA (MUNICIPIO DE NEIVA); PARA LA OPERACION Y FUNCIONAMIENTO DE LA RED DE COMUNICACIONES DE EMERGENCIAS Y SISTEMAS DE ALERTAS TEMPRANAS EN EL MARCO DEL SISTEMA DEPARTAMENTAL DE GESTION DEL RIESGO DE ACUERDO CO",
+      "duraci_n_del_contrato": "8 Mes(es)",
+      "estado_contrato": "Aprobado",
+      "fecha_de_fin_del_contrato": "2023-05-05T23:59:00.000",
+      "fecha_de_firma": "2024-04-09T14:22:17.854",
+      "id_contrato": "CO1.PCCNTR.4411139",
+      "modalidad_de_contratacion": "Contratación directa",
+      "nombre_entidad": "GOBERNACION DEL HUILA*",
+      "objeto_del_contrato": "ARRENDAMIENTO ESPACIO EN TORRE Y SALÓN DE EQUIPOS UBICADOS EN EL INMUEBLE ESTACIÓN CERRO NEIVA (MUNICIPIO DE NEIVA); PARA LA OPERACION Y FUNCIONAMIENTO DE LA RED DE COMUNICACIONES DE EMERGENCIAS Y SISTEMAS DE ALERTAS TEMPRANAS EN EL MARCO DEL SISTEMA DEPARTAMENTAL DE GESTION DEL RIESGO DE ACUERDO CON LA DECLARATORIA DE CALAMIDAD PUBLICA QUE CONTIENE EL DECRETO DEPARTAMENTAL No. 059 DEL 9 DE MARZO DE 2022 PRORROGADO MEDIANTE DECRETO N° 299 DEL 07 DE SEPTIEMBRE DE 2022.",
+      "referencia_del_contrato": "CONTRATO FDGRD N° 37 DE 2022",
+      "tipo_de_contrato": "Arrendamiento de inmuebles",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.3768527&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "6664000"
+    },
+    {
+      "ciudad": "Medellín",
+      "departamento": "Antioquia",
+      "descripcion_del_proceso": "ARRENDAMIENTO BAJO LA MODALIDAD DE COWORKING DE OFICINAS Y SALA DE JUNTAS PARA EL DESARROLLO DE LA FUNCIÓN PÚBLICA A CARGO DE LA PROVINCIA ADMINISTRATIVA Y DE PLANIFICACIÓN -PAP- CARTAMA",
+      "duraci_n_del_contrato": "11 Mes(es)",
+      "estado_contrato": "Aprobado",
+      "fecha_de_fin_del_contrato": "2023-12-31T12:00:00.000",
+      "fecha_de_firma": "2024-04-05T06:47:19.136",
+      "id_contrato": "CO1.PCCNTR.4551725",
+      "modalidad_de_contratacion": "Contratación directa",
+      "nombre_entidad": "PROVINCIA ADMINISTRATIVA Y DE PLANIFICACIÓN CARTAMA",
+      "objeto_del_contrato": "ARRENDAMIENTO BAJO LA MODALIDAD DE COWORKING DE OFICINAS Y SALA DE JUNTAS PARA EL DESARROLLO DE LA FUNCIÓN PÚBLICA A CARGO DE LA PROVINCIA ADMINISTRATIVA Y DE PLANIFICACIÓN -PAP- CARTAMA",
+      "referencia_del_contrato": "CO1.PCCNTR.4551725",
+      "tipo_de_contrato": "Arrendamiento de inmuebles",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.3918865&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "20384000"
+    },
+    {
+      "ciudad": "No Definido",
+      "departamento": "Valle del Cauca",
+      "descripcion_del_proceso": "Contratación para el arrendamiento del local No. 1 que funciona como venta de productos alimenticios ubicado en el estadero de estudiantes de la Escuela de Policía Simón Bolívar",
+      "duraci_n_del_contrato": "12 Mes(es)",
+      "estado_contrato": "terminado",
+      "fecha_de_fin_del_contrato": "2024-03-15T00:01:00.000",
+      "fecha_de_firma": "2024-03-02T09:41:20.661",
+      "fecha_de_inicio_del_contrato": "2024-03-02T09:50:00.000",
+      "id_contrato": "CO1.PCCNTR.4592539",
+      "modalidad_de_contratacion": "Contratación directa",
+      "nombre_entidad": "ESCUELA DE POLICIA SIMON BOLIVAR",
+      "objeto_del_contrato": "Contratación para el arrendamiento del local No. 1 que funciona como venta de productos alimenticios ubicado en el estadero de estudiantes de la Escuela de Policía Simón Bolívar",
+      "referencia_del_contrato": "CO1.PCCNTR.4592539",
+      "tipo_de_contrato": "Arrendamiento de inmuebles",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.3875516&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "17400000"
+    },
+    {
+      "ciudad": "No Definido",
+      "departamento": "Distrito Capital de Bogotá",
+      "descripcion_del_proceso": "CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS)  Y LAS MERCEDES DE PLATO",
+      "duraci_n_del_contrato": "Dia(s)",
+      "estado_contrato": "Aprobado",
+      "fecha_de_fin_del_contrato": "2019-12-21T12:00:00.000",
+      "fecha_de_firma": "2024-03-27T11:31:01.324",
+      "fecha_de_inicio_del_contrato": "2019-06-21T12:00:00.000",
+      "id_contrato": "CO1.PCCNTR.1003124",
+      "modalidad_de_contratacion": "Mínima cuantía",
+      "nombre_entidad": "AEROCIVIL",
+      "objeto_del_contrato": "CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS)  Y LAS MERCEDES DE PLATO",
+      "referencia_del_contrato": "19000506 H3",
+      "tipo_de_contrato": "Prestación de servicios",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.846419&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "60600750"
+    },
+    {
+      "ciudad": "No Definido",
+      "departamento": "Distrito Capital de Bogotá",
+      "descripcion_del_proceso": "CONTRATAR EL MANTENIMIENTO Y CONSERVACIÓN DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS BARACOA DE MAGANGUÉ Y GOLFO DE MORROSQUILLO DE TOLÚ",
+      "duraci_n_del_contrato": "Dia(s)",
+      "estado_contrato": "Aprobado",
+      "fecha_de_fin_del_contrato": "2019-12-30T12:00:00.000",
+      "fecha_de_firma": "2024-03-27T11:30:47.406",
+      "fecha_de_inicio_del_contrato": "2019-07-04T12:00:00.000",
+      "id_contrato": "CO1.PCCNTR.1016214",
+      "modalidad_de_contratacion": "Mínima cuantía",
+      "nombre_entidad": "AEROCIVIL",
+      "objeto_del_contrato": "CONTRATAR EL MANTENIMIENTO Y CONSERVACIÓN DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS BARACOA DE MAGANGUÉ Y GOLFO DE MORROSQUILLO DE TOLÚ",
+      "referencia_del_contrato": "19000507 H3",
+      "tipo_de_contrato": "Prestación de servicios",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.836110&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "47481000"
+    },
+    {
+      "ciudad": "No Definido",
+      "departamento": "Distrito Capital de Bogotá",
+      "descripcion_del_proceso": "MANTENER; RECUPERAR Y ACTUALIZAR LOS SISTEMAS DE METEOROLOGIA DE LA REGIONAL ANTIOQUIA",
+      "duraci_n_del_contrato": "Dia(s)",
+      "estado_contrato": "Cerrado",
+      "fecha_de_fin_del_contrato": "2019-12-12T23:59:00.000",
+      "fecha_de_firma": "2024-02-20T08:31:31.651",
+      "fecha_de_inicio_del_contrato": "2019-09-13T00:00:00.000",
+      "id_contrato": "CO1.PCCNTR.1095411",
+      "modalidad_de_contratacion": "Mínima cuantía",
+      "nombre_entidad": "AEROCIVIL",
+      "objeto_del_contrato": "MANTENER; RECUPERAR Y ACTUALIZAR LOS SISTEMAS DE METEOROLOGIA DE LA REGIONAL ANTIOQUIA",
+      "referencia_del_contrato": "19001243 H3",
+      "tipo_de_contrato": "Prestación de servicios",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.914828&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "71400000"
+    },
+    {
+      "ciudad": "No Definido",
+      "departamento": "Distrito Capital de Bogotá",
+      "descripcion_del_proceso": "MANTENIMIENTO Y CONSERVACION DEL TANQUE DE ALMACENAMIENTO DE AGUA POTABLE DEL AEROPUERTO HARICATAMA DE AGUACHICA",
+      "duraci_n_del_contrato": "Dia(s)",
+      "estado_contrato": "Aprobado",
+      "fecha_de_fin_del_contrato": "2019-12-22T12:00:00.000",
+      "fecha_de_firma": "2024-03-27T11:29:45.516",
+      "fecha_de_inicio_del_contrato": "2019-10-16T12:00:00.000",
+      "id_contrato": "CO1.PCCNTR.1140722",
+      "modalidad_de_contratacion": "Mínima cuantía",
+      "nombre_entidad": "AEROCIVIL",
+      "objeto_del_contrato": "MANTENIMIENTO Y CONSERVACION DEL TANQUE DE ALMACENAMIENTO DE AGUA POTABLE DEL AEROPUERTO HARICATAMA DE AGUACHICA",
+      "referencia_del_contrato": "19001145 H3 2019",
+      "tipo_de_contrato": "Prestación de servicios",
+      "urlproceso": {
+        "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.941133&isFromPublicArea=True&isModal=true&asPopupView=true"
+      },
+      "valor_del_contrato": "36025130"
+    }
+  ],
+  "schema_version": "1.0",
+  "selection": {
+    "excluded_historical_ids_count": 719,
+    "method": "First usable unique records by id within each type; purposive, not representative",
+    "per_type": 4,
+    "queries": [
+      "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24select=id_contrato%2Cnombre_entidad%2Cdepartamento%2Cciudad%2Creferencia_del_contrato%2Cdescripcion_del_proceso%2Cobjeto_del_contrato%2Ctipo_de_contrato%2Cmodalidad_de_contratacion%2Cestado_contrato%2Cfecha_de_firma%2Cfecha_de_inicio_del_contrato%2Cfecha_de_fin_del_contrato%2Cduraci_n_del_contrato%2Cvalor_del_contrato%2Curlproceso&%24where=tipo_de_contrato%3D%27Obra%27+AND+fecha_de_firma+%3E%3D+%272024-01-01T00%3A00%3A00%27+AND+fecha_de_firma+%3C+%272025-01-01T00%3A00%3A00%27&%24order=id_contrato+ASC&%24limit=80",
+      "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24select=id_contrato%2Cnombre_entidad%2Cdepartamento%2Cciudad%2Creferencia_del_contrato%2Cdescripcion_del_proceso%2Cobjeto_del_contrato%2Ctipo_de_contrato%2Cmodalidad_de_contratacion%2Cestado_contrato%2Cfecha_de_firma%2Cfecha_de_inicio_del_contrato%2Cfecha_de_fin_del_contrato%2Cduraci_n_del_contrato%2Cvalor_del_contrato%2Curlproceso&%24where=tipo_de_contrato%3D%27Suministros%27+AND+fecha_de_firma+%3E%3D+%272024-01-01T00%3A00%3A00%27+AND+fecha_de_firma+%3C+%272025-01-01T00%3A00%3A00%27&%24order=id_contrato+ASC&%24limit=80",
+      "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24select=id_contrato%2Cnombre_entidad%2Cdepartamento%2Cciudad%2Creferencia_del_contrato%2Cdescripcion_del_proceso%2Cobjeto_del_contrato%2Ctipo_de_contrato%2Cmodalidad_de_contratacion%2Cestado_contrato%2Cfecha_de_firma%2Cfecha_de_inicio_del_contrato%2Cfecha_de_fin_del_contrato%2Cduraci_n_del_contrato%2Cvalor_del_contrato%2Curlproceso&%24where=tipo_de_contrato%3D%27Compraventa%27+AND+fecha_de_firma+%3E%3D+%272024-01-01T00%3A00%3A00%27+AND+fecha_de_firma+%3C+%272025-01-01T00%3A00%3A00%27&%24order=id_contrato+ASC&%24limit=80",
+      "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24select=id_contrato%2Cnombre_entidad%2Cdepartamento%2Cciudad%2Creferencia_del_contrato%2Cdescripcion_del_proceso%2Cobjeto_del_contrato%2Ctipo_de_contrato%2Cmodalidad_de_contratacion%2Cestado_contrato%2Cfecha_de_firma%2Cfecha_de_inicio_del_contrato%2Cfecha_de_fin_del_contrato%2Cduraci_n_del_contrato%2Cvalor_del_contrato%2Curlproceso&%24where=tipo_de_contrato%3D%27Consultor%C3%ADa%27+AND+fecha_de_firma+%3E%3D+%272024-01-01T00%3A00%3A00%27+AND+fecha_de_firma+%3C+%272025-01-01T00%3A00%3A00%27&%24order=id_contrato+ASC&%24limit=80",
+      "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24select=id_contrato%2Cnombre_entidad%2Cdepartamento%2Cciudad%2Creferencia_del_contrato%2Cdescripcion_del_proceso%2Cobjeto_del_contrato%2Ctipo_de_contrato%2Cmodalidad_de_contratacion%2Cestado_contrato%2Cfecha_de_firma%2Cfecha_de_inicio_del_contrato%2Cfecha_de_fin_del_contrato%2Cduraci_n_del_contrato%2Cvalor_del_contrato%2Curlproceso&%24where=tipo_de_contrato%3D%27Arrendamiento+de+inmuebles%27+AND+fecha_de_firma+%3E%3D+%272024-01-01T00%3A00%3A00%27+AND+fecha_de_firma+%3C+%272025-01-01T00%3A00%3A00%27&%24order=id_contrato+ASC&%24limit=80",
+      "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24select=id_contrato%2Cnombre_entidad%2Cdepartamento%2Cciudad%2Creferencia_del_contrato%2Cdescripcion_del_proceso%2Cobjeto_del_contrato%2Ctipo_de_contrato%2Cmodalidad_de_contratacion%2Cestado_contrato%2Cfecha_de_firma%2Cfecha_de_inicio_del_contrato%2Cfecha_de_fin_del_contrato%2Cduraci_n_del_contrato%2Cvalor_del_contrato%2Curlproceso&%24where=tipo_de_contrato%3D%27Prestaci%C3%B3n+de+servicios%27+AND+fecha_de_firma+%3E%3D+%272024-01-01T00%3A00%3A00%27+AND+fecha_de_firma+%3C+%272025-01-01T00%3A00%3A00%27&%24order=id_contrato+ASC&%24limit=80"
+    ],
+    "types": [
+      "Obra",
+      "Suministros",
+      "Compraventa",
+      "Consultoría",
+      "Arrendamiento de inmuebles",
+      "Prestación de servicios"
+    ],
+    "year": 2024
+  }
+}

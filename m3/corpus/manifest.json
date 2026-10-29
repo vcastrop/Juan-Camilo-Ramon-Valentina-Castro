@@ -1,0 +1,27 @@
+{
+  "documents": 24,
+  "files": {
+    "documents.jsonl": "31c336ab807fbc6e0a12bc37fdd0ec29ea3e6ec2d97e02ab69e92a0fb584dfc5",
+    "source_snapshot.json": "0950f8db3f831cde05a8018b380ce54abfd0f3eb0fb116c6a24c03d4774c5339"
+  },
+  "historical_id_or_exact_normalized_description_overlap": [],
+  "limitations": [
+    "Data records, not full contracts or procurement annexes.",
+    "No fraud/irregularity ground truth.",
+    "Purposive small sample, not population-representative.",
+    "Source missing/placeholder fields are not verified facts."
+  ],
+  "status": "candidate_corpus_pending_team_review",
+  "types": {
+    "Arrendamiento de inmuebles": 4,
+    "Compraventa": 4,
+    "Consultoría": 4,
+    "Obra": 4,
+    "Prestación de servicios": 4,
+    "Suministros": 4
+  },
+  "word_counts": {
+    "max": 186,
+    "min": 70
+  }
+}
