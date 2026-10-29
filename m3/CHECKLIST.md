@@ -16,6 +16,8 @@ Avance del 28 de octubre: materiales del curso inventariados y código relevante
 
 ## Reglas de trabajo
 
+Bloque RAG básico: adaptadores Chroma/embeddings/Qwen e interfaz de respuesta con explicación/citas implementados; prueba Colab de cuatro preguntas de desarrollo preparada. Trece pruebas locales aprobadas. Corrida real pendiente: no marcar indexación con modelos, calidad, latencia, compatibilidad de dependencias o evaluación final como verificadas. Las dependencias de smoke usan rangos candidatos y deben congelarse después de verificar el entorno.
+
 Avance posterior a revisión humana: gold `m3-qa-gold-1.0` congelado con 12 preguntas; revisor y fecha tomados del documento del usuario, m3_004 corregido según aprobación condicionada. Evidencia original preservada con hash en `m3/eval/gold_v1/`. Ingestión determinista inicial: 40 chunks de 24 fichas, con offsets y fuentes. Diez pruebas locales aprobadas. Índice vectorial, inferencia real, calibración y métricas siguen pendientes. Estos avances reemplazan el estado anterior de «revisión humana pendiente» para las preguntas, pero no cierran toda la fase E ni certifican el corpus para todos los usos.
 
 Avance adicional: borrador QA de 12 preguntas con respuesta, criterio y fuentes, incluidas dos sin respuesta y dos de cálculo; cuatro preguntas separadas para desarrollo. Archivo de revisión humana con las 24 fichas: `m3/eval/REVISION_HUMANA_QA.md`. Siete pruebas técnicas aprobadas. Revisión humana, calibración, congelación y ejecución con modelos siguen pendientes; no se marca la fase E como completa.

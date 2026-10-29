@@ -1,0 +1,6 @@
+# Candidate compatibility ranges for the FIRST smoke run, not the final lockfile.
+# Colab supplies torch. Exact installed versions are captured in run metadata.
+transformers>=4.48.1,<5
+sentence-transformers>=3.4.1,<4
+chromadb>=0.6.3,<1
+numpy>=1.26,<3

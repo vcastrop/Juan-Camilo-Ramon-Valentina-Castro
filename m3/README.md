@@ -6,6 +6,10 @@ Este componente ayudará a consultar información pública de contratación y ex
 
 ## Ruta y evidencia disponibles
 
+Prueba inicial: `ContractRisk_M3_Prueba_RAG_Colab.ipynb` y `run_smoke.py`. Implementan índice denso Chroma y generación Qwen sobre cuatro preguntas de desarrollo. Trece pruebas locales aprobadas; inferencia real y compatibilidad de dependencias pendientes de Colab. No hay scorecard nuevo. Se generan chunks de 280 caracteres para esta prueba y se comprueba el límite real del tokenizer, sin truncamiento silencioso. La propuesta exploratoria de 800 caracteres permanece como evidencia, no como configuración final. Las revisiones de modelos se resuelven y registran durante esta primera corrida; después deben fijarse para la comparación definitiva.
+
+Referencias técnicas consultadas: [Chroma, incorporación de embeddings](https://docs.trychroma.com/docs/collections/add-data), [modelo de embeddings del curso](https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2), [generador Qwen](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct). Los tests con dobles sintéticos verifican el flujo, no la calidad de estos modelos.
+
 - [Gold QA v1 revisado](eval/gold_v1/eval_set.json): 12 casos, revisión de Juan Camilo Ramon Perez del 28/10/2026 y corrección condicionada incorporada en m3_004. [Evidencia original](eval/gold_v1/evidence/REVISION_HUMANA_QA.md) preservada byte por byte; hashes en su manifiesto. El borrador anterior permanece intacto.
 - [Fragmentación inicial](indexing/manifest.json): 24 fichas, 40 chunks, máximo 800 caracteres y solapamiento objetivo de 100 caracteres, con cortes preferentes por líneas/palabras. Es configuración inicial, no óptima demostrada. No es todavía un índice vectorial.
 - Diez pruebas locales aprobadas: integridad, revisión, referencias y cobertura completa del texto bajo dos tamaños de fragmentación. No prueban calidad de inferencia ni funcionamiento en Colab.
