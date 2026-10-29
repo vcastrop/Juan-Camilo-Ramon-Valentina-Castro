@@ -95,16 +95,18 @@ La guía permite escribir preguntas nuevas cuando M1 era clasificación. Sin emb
 
 ## C. Corregir los puntos señalados por el profesor
 
+Núcleo candidato implementado en `judge.py`, rúbrica en [JUEZ_M3.md](JUEZ_M3.md). Nueve pruebas unitarias del juez pasan (42 en total). Casillas marcadas aquí indican implementación y prueba sintética; NO calibración ni ejecución real. Faltan revisión semántica y prueba multicaso de verbosidad antes de congelar la versión.
+
 - [ ] Hacer que el RAG produzca su propia explicación breve, vinculada a la evidencia recuperada. La explicación del juez no sustituye la del sistema.
-- [ ] Eliminar el reemplazo de puntajes por «4 si acierta / 1 si falla» en la nueva evaluación.
-- [ ] No enviar al juez indicadores de coincidencia de etiquetas, veredictos de acierto/error ni instrucciones que restrinjan el puntaje según esos indicadores.
-- [ ] No mostrar al juez la confianza del clasificador como argumento de corrección.
-- [ ] Definir una rúbrica 1-5 que evalúe la respuesta y su explicación: sustento, pertinencia, citas y abstención adecuada. Anclar cada nivel.
+- [x] Eliminar el reemplazo de puntajes por «4 si acierta / 1 si falla» en la nueva evaluación.
+- [x] No enviar al juez indicadores de coincidencia de etiquetas, veredictos de acierto/error ni instrucciones que restrinjan el puntaje según esos indicadores.
+- [x] No mostrar al juez la confianza del clasificador como argumento de corrección.
+- [x] Definir una rúbrica 1-5 que evalúe la respuesta y su explicación: sustento, pertinencia, citas y abstención adecuada. Anclar cada nivel.
 - [ ] Probar que respuestas diferentes pueden recibir puntajes distintos aun cuando compartan la misma etiqueta.
-- [ ] No inventar una explicación cuando el sistema no la entrega; registrar explícitamente esa ausencia.
-- [ ] Corregir el parser con formatos inequívocos de una o dos líneas/JSON, sin aceptar puntajes múltiples, valores fuera de rango o razones ausentes.
-- [ ] Conservar salida original, resultado analizado, errores y todos los intentos. Nunca elegir entre intentos por obtener mejor puntuación.
-- [ ] Corregir la tasa de parsing para incluir TODOS los casos en el denominador; distinguir valores ausentes de ceros reales.
+- [x] No inventar una explicación cuando el sistema no la entrega; registrar explícitamente esa ausencia.
+- [x] Corregir el parser con formatos inequívocos de una o dos líneas/JSON, sin aceptar puntajes múltiples, valores fuera de rango o razones ausentes.
+- [x] Conservar salida original, resultado analizado, errores y todos los intentos. Nunca elegir entre intentos por obtener mejor puntuación.
+- [x] Corregir la tasa de parsing para incluir TODOS los casos en el denominador; distinguir valores ausentes de ceros reales.
 - [ ] Añadir pruebas con las respuestas reales que fallaron en v2.0, incluidas comas, acentos, preámbulos y contradicciones.
 - [ ] Calibrar orientación y calidad del juez con ejemplos separados del conjunto final; dejar explícito si son sintéticos.
 - [ ] Revisar que una respuesta de abstención justificada no sea penalizada por carecer de información inexistente.
