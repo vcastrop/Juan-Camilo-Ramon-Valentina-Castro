@@ -1,0 +1,7 @@
+variant,label,cases,valid_outputs,dim1_fact_coverage,dim1_complete_answers,dim2_judge_mean,dim2_judge_valid,dim3_domain_passed,dim3_domain_rate,m2_compatible_rate,unanswerable_abstained,unanswerable_total,evidence_retrieved_mean,evidence_retrieved_complete,evidence_with_tool_complete,answerable_total,latency_median_seconds,system_errors,harness_version
+sin_rag,Línea base sin RAG (mismo generador; adaptación de M2),12,5,0.16666666666666666,2,2.3333333333333335,12,2,0.16666666666666666,0.16666666666666666,2,2,0.0,0,0,10,6.721265339000013,0,m3-harness-1.1
+rag_ingenuo,RAG ingenuo (S07): denso top-3,12,12,0.25,3,3,12,3,0.25,0.25,1,2,0.2,2,2,10,7.997053150999989,0,m3-harness-1.1
+rag_avanzado,RAG avanzado: híbrido BM25+denso RRF con filtro de ID + reranking,12,12,0.5,4,4,12,3,0.25,0.3333333333333333,0,2,0.7,6,6,10,8.366523501499955,0,m3-harness-1.1
+sistema_final,Sistema final: avanzado + herramienta (agente acotado),12,12,0.6111111111111112,5,4.166666666666667,12,4,0.3333333333333333,0.4166666666666667,0,2,0.7,6,8,10,8.861421778500016,0,m3-harness-1.1
+ablacion_solo_hibrido,"Ablación: híbrido RRF con filtro de ID, sin reranking",12,12,0.5,3,3.9166666666666665,12,3,0.25,0.25,1,2,0.65,5,5,10,7.611620094999921,0,m3-harness-1.1
+ablacion_denso_rerank,"Ablación: denso + reranking, sin híbrido",12,11,0.2777777777777778,3,3.1666666666666665,12,3,0.25,0.25,1,2,0.3,2,2,10,7.9437798439998915,0,m3-harness-1.1

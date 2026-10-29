@@ -13,6 +13,10 @@ Evidencia: [README de M3 con tablas y lectura honesta](README.md#resultados), [a
 - [x] Reporte con frase sencilla, diagrama, decisiones, tablas, lectura de las cuatro preguntas y Uso de IA.
 - [ ] El equipo confirma en Uso de IA qué revisó o modificó personalmente.
 - [ ] Publicar la rama (push) y entregar el enlace en Interactiva; los autores conservan el comprobante.
+- [x] Revisión del equipo y del profesor incorporada: `m3-harness-1.1` corrige los defectos deterministas y recalifica las respuestas guardadas sin regenerarlas (`results/final_m3_rescore_v1_1/`). El reporte deja de presentar la dim. 1 como accuracy y la dim. 3 como aptitud, y separa localización de documento de recuperación del dato.
+- [x] RAGAS 1.1 implementado (segmentación corregida; variante exacta del laboratorio y adaptación por separado) con su notebook.
+- [ ] Ejecutar RAGAS 1.1 en Colab T4 y conservarlo junto a 1.0.
+- [ ] Integrar con las evidencias v6 del equipo (no presentes en esta rama) antes del PR.
 - [ ] Fallos abiertos, documentados y sin corregir: válvula 0/2 en avanzado y final (m3_012 inventa una auditoría), falso pase de dominio en m3_009, juez RAGAS 3B poco fiable a nivel de chunk y divisor de afirmaciones que parte los IDs.
 
 Las casillas de las fases A–L siguientes son históricas. Donde contradigan este bloque, prevalece este bloque.

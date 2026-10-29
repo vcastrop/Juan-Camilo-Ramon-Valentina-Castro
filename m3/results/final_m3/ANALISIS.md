@@ -4,7 +4,7 @@ Fecha: 29/10/2026. Revisión técnica asistida por Claude Code; no sustituye la 
 
 ## Integridad
 
-- Colab Tesla T4, inicio 2026-10-29T18:06:35Z, `status: completed`, código `6026ac4` (`commit.txt`). Los 23 hashes de `metadata.json` coinciden con los archivos del repositorio; hashes de corpus y gold verificados por el script antes de correr.
+- Colab Tesla T4, inicio 2026-10-29T18:06:35Z, `status: completed`, código `6026ac4` (`commit.txt`). Los 28 hashes de `metadata.json` coinciden (corregido tras la revisión; decía 23 por error) con los archivos del repositorio; hashes de corpus y gold verificados por el script antes de correr.
 - `tests.log`: 79 pruebas aprobadas. Índice reconstruido desde cero: 24 fichas, 133 chunks, 16,6 s.
 - 72 respuestas (6 variantes × 12), 72 juicios válidos al primer o segundo intento, 36 casos RAGAS con 300 llamadas al juez y 0 respuestas sí/no sin parsear.
 - `report_m3.py` ejecutado localmente sobre `harness_rows.jsonl` y `ragas.jsonl` reproduce `tablas_m3.md` byte a byte.
@@ -60,3 +60,10 @@ Fecha: 29/10/2026. Revisión técnica asistida por Claude Code; no sustituye la 
 | sistema_final | m3_010 | 1.00 | 4 | sí | Mínima cuantía |
 | sistema_final | m3_011 | 0.00 | 4 | no: no_se_abstiene | No se encontró la cláusula de multas en el contrato CO1.PCCNTR.1088236. |
 | sistema_final | m3_012 | 0.00 | 4 | no: no_se_abstiene | La auditoría de ejecución física concluyó que el contrato CO1.PCCNTR.1083652 tiene una dur |
+
+## Revisión posterior del equipo y del profesor (29/10/2026)
+
+Se confirmaron, y se corrigen sin modificar ningún archivo original de esta corrida, los siguientes puntos:
+- Defectos deterministas de `m3-harness-1.0`: una cifra aceptada dentro de otra mayor, una mención negada contada como presencia y una acusación atenuada sin detectar. Se recalificó con `m3-harness-1.1` en `../final_m3_rescore_v1_1/`. Solo cambia el dominio de m3_009 (avanzado y final).
+- La «ficha gold entregada 10/10» no implica recuperación del dato. En m3_007 y m3_008 el avanzado no trae los campos de valor, y en m3_004 y m3_006 falta parte de la descripción.
+- RAGAS 1.0 tiene segmentación defectuosa, y su precision/recall es una adaptación, no la variante del laboratorio; con el juez 3B sus diferencias entre filas no son concluyentes. Se preparó RAGAS 1.1 (`../../rerun_ragas_m3.py`), pendiente de ejecutar en GPU.
