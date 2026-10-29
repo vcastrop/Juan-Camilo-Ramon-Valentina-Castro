@@ -6,6 +6,8 @@ Este componente ayudará a consultar información pública de contratación y ex
 
 ## Estado vigente
 
+Actualización posterior: [v6 auditada](evidence/correction_v6/ANALISIS.md), no adoptada completa por regresiones de controlador/juez. Implementados [harness QA candidato](HARNESS_QA.md) y [RAGAS didáctico S10](RAGAS_METODO.md), 86 pruebas locales aprobadas; pendiente evaluador calibrado, integración final y corrida gold. No hay scorecard final nuevo. Las notas anteriores de preparación que siguen son antecedentes.
+
 Próximo diagnóstico preparado: [corrección v6](CORRECCION_V6.md), [notebook](ContractRisk_M3_Correccion_v6_Colab.ipynb). 70 pruebas locales aprobadas; pendiente ejecución T4. Reutiliza contextos de desarrollo v5 para aislar instrucciones, no es una corrida final ni valida todavía eficacia.
 
 **Para continuar el trabajo: [guía de traspaso](CONTINUAR_TRABAJO.md) y [checklist vigente](CHECKLIST.md).** Avance estimado de M3: 60%, no calificación académica.

@@ -4,6 +4,14 @@ Plan inicial: 28 de octubre de 2026. Actualizado: 29 de octubre de 2026, tras au
 
 ## Estado vigente — integración v5 auditada
 
+**Actualización: v6 auditada, no adoptada completa.** [Evidencia](evidence/correction_v6/ANALISIS.md): mejora parcial de abstención, regresión de controlador y juez aún no fiable. 30/32 formatos válidos; 48/48 transcripciones del juez no literales. Corpus/gold no modificados. Implementado [núcleo candidato del harness QA](HARNESS_QA.md) con tests sintéticos; faltan juez aprobado, RAGAS, runner final y corrida gold. Se mantiene avance aproximado de 60%: no confundir código nuevo con evaluación cerrada.
+
+- [x] Preservar ZIP/notebook v6 y documentar mejoras/regresiones sin adoptar automáticamente la versión más reciente.
+- [x] Implementar núcleo genérico `harness(eval_set, sistema, juez)` con aislamiento de gold, errores, denominadores y latencia mediana.
+- [ ] Congelar las métricas candidatas: F1 lexical no mide verdad y trazabilidad estructural no demuestra sustento semántico.
+- [x] Implementar adaptación didáctica S10 de cuatro métricas RAGAS, con originales, errores nulos y N/A explícitos. [Definiciones y límites](RAGAS_METODO.md). 86 tests locales totales aprobados; NO ejecución ni validación del evaluador.
+- [ ] Integrar runner/exportación, calibrar evaluador y ejecutar harness/RAGAS sobre gold después de congelar configuración.
+
 **Siguiente bloque preparado:** [corrección candidata v6](CORRECCION_V6.md), con reproducción de contextos de desarrollo y juez que cita/contrasta la respuesta antes de puntuar. Código y pruebas locales no certifican mejora real: pendiente corrida T4 y revisión. No cambia el porcentaje por anticipar resultados; gold y evidencias v5 intactos.
 
 - [x] Añadir regresiones de contrato para fallos v5, aislamiento de referencias, preservación de notas y reintentos solo de formato.
@@ -276,8 +284,8 @@ Propuesta inicial reemplazada por `diferencia_valores_contratos(id_a, id_b)`: co
 
 ## J. RAGAS
 
-- [ ] Elegir y documentar la implementación: laboratorio de sesión 10 o librería `ragas` con LLM local. Si se usa el laboratorio, obtener su material y no suponer su contenido.
-- [ ] Verificar las definiciones/API de la versión elegida antes de implementar. No llamar RAGAS a cuatro métricas sustitutas arbitrarias.
+- [x] Elegir y documentar la implementación: adaptación didáctica S10, no librería oficial. Véase RAGAS_METODO.md; pendiente corrida real.
+- [x] Verificar las definiciones/API de la versión elegida antes de implementar. Leído bloque Lab C del laboratorio S10; variantes y diferencias declaradas.
 - [ ] Identificar y fijar modelos del evaluador y embeddings; no requerir claves pagas.
 - [ ] Preparar por caso pregunta, respuesta final, contextos efectivamente entregados al generador y referencia.
 - [ ] Calcular faithfulness del sistema final: sustento de afirmaciones en evidencia disponible.
@@ -286,7 +294,7 @@ Propuesta inicial reemplazada por `diferencia_valores_contratos(id_a, id_b)`: co
 - [ ] Calcular context recall del sistema final: cobertura de información necesaria de la referencia.
 - [ ] Idealmente calcular también las cuatro métricas del ingenuo para localizar mejoras.
 - [ ] Incorporar de forma trazable el resultado de la herramienta si se usó como evidencia al generar; distinguirlo de los chunks del retriever.
-- [ ] Definir qué métricas son aplicables a preguntas no respondibles y contextos vacíos; registrar N/A con denominadores, no asignar 1 o 0 por conveniencia.
+- [x] Definir qué métricas son aplicables a preguntas no respondibles y contextos vacíos; registrar N/A con denominadores. Reglas candidatas documentadas en RAGAS_METODO.md, pendientes congelación conjunta.
 - [ ] Guardar salidas originales, parseos, fallos y número de casos válidos por métrica; revisar muestras de juicios.
 - [ ] Exportar `ragas_m3.csv` y detalle por consulta, junto con configuración del evaluador.
 
