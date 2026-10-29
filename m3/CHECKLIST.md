@@ -4,6 +4,18 @@ Plan inicial: 28 de octubre de 2026. Actualizado: 29 de octubre de 2026, tras au
 
 ## Estado vigente — corrida final sobre el gold ejecutada y auditada (29/10/2026)
 
+**Actualización posterior de integración:** [CIERRE_AUDITADO.md](CIERRE_AUDITADO.md) es la guía vigente. Se integró el bundle sin modificar main. 113 pruebas locales aprobadas.
+
+- [x] Conservar la corrida final original y las auditorías de desarrollo v6.
+- [x] Corregir y probar reglas deterministas de cifras, negaciones explícitas y acusación insinuada sin retocar gold ni respuestas.
+- [x] Recalcular las 72 respuestas con reglas 1.1 y registrar las dos diferencias: dominio avanzado 3/12 y final 4/12.
+- [x] Reparar divisor de afirmaciones de RAGAS y manejo de veredictos ambiguos/ausentes en módulo separado, con regresiones.
+- [x] Preparar reevaluación RAGAS sobre respuestas congeladas, sin repetir generación.
+- [ ] Ejecutar esa reevaluación en T4 y auditar nuevos juicios. El código probado localmente no prueba calidad semántica.
+- [ ] Confirmar contribuciones humanas de Uso de IA, revisar publicación y PR.
+
+Las tablas finales 1.0 que siguen se conservan como evidencia histórica; su falso pase de dominio no es el resultado auditado actual. La abstención y la fiabilidad del juez siguen siendo limitaciones abiertas.
+
 Evidencia: [README de M3 con tablas y lectura honesta](README.md#resultados), [auditoría de la corrida final](results/final_m3/ANALISIS.md), `results/final_m3/scorecard_m3.csv` y `ragas_m3.csv`.
 
 - [x] Harness `m3-harness-1.0`: tres dimensiones, latencia mediana, N/A y denominadores fijados antes de correr el gold (`harness_m3.py`).
