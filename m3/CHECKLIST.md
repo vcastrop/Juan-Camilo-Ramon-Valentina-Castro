@@ -4,6 +4,11 @@ Plan inicial: 28 de octubre de 2026. Estado actual: gold humano congelado y comp
 
 ## Estado vigente — corrida de desarrollo v2
 
+**Última evidencia: v4 auditada, sin aprobación de calidad.** [Análisis v4](evidence/development_v4/ANALISIS.md): 10/32 salidas válidas inicialmente, 16/32 finalmente; ninguno de los 54 intentos alcanzó el límite de tokens. Dos cálculos ejecutados correctamente, pero salida final inválida y ninguna decisión válida sin herramienta. Prueba controlada de protocolo/generador pendiente antes del gold; no repetir v4 sin cambios. Los estados v2/v3 siguientes son antecedentes.
+
+- [x] Preservar y auditar notebook y ZIP v4; comprobar hashes, fuentes y logs.
+- [ ] Validar una configuración candidata en prueba pequeña de esquema, abstención, cifras y selección de herramienta; congelar después, no antes.
+
 **Actualización posterior: desarrollo v3 ejecutado y auditado.** [Evidencia y diagnóstico](evidence/development_v3/ANALISIS.md). 32 registros, 18 salidas válidas de esquema. Herramienta ejecutada correctamente en dos cálculos, pero respuestas finales inválidas; cinco llamadas innecesarias rechazadas y ningún caso de decisión answer válida del controlador. No se cierra H ni la evaluación final. Estado v2 abajo conservado como antecedente.
 
 - [x] Recibir y preservar ZIP y notebook v3 ejecutado; verificar hashes y fuentes.
