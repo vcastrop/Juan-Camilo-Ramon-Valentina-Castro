@@ -1,6 +1,6 @@
 # Integración 3B/v5 y calibración del juez
 
-Estado: implementación y pruebas locales completas para este bloque. Corrida real de integración/calibración pendiente. No es cierre de M3.
+Estado: corrida real de integración/calibración ejecutada y auditada el 29/10/2026. [Resultados, originales y limitaciones](evidence/integration_v5/ANALISIS.md). Ejecución técnica completada, calidad no aprobada: fallos de abstención y del juez; mitigación sin mejora. No es cierre de M3. [Guía para continuar](CONTINUAR_TRABAJO.md).
 
 ## Sistema integrado
 

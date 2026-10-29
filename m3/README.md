@@ -6,7 +6,11 @@ Este componente ayudará a consultar información pública de contratación y ex
 
 ## Estado vigente
 
-Preparada la [integración 3B/v5 y calibración](INTEGRACION_V5.md): cuatro variantes con protocolo común y 12 pares de verbosidad antes/después (48 juicios crudos), todavía sin resultados reales de este bloque. 62 pruebas locales aprobadas. [Notebook](ContractRisk_M3_Integracion_v5_Calibracion_Colab.ipynb). Gold final y main intactos.
+**Para continuar el trabajo: [guía de traspaso](CONTINUAR_TRABAJO.md) y [checklist vigente](CHECKLIST.md).** Avance estimado de M3: 60%, no calificación académica.
+
+La [integración 3B/v5 y calibración](INTEGRACION_V5.md) ya fue ejecutada: [auditoría y originales](evidence/integration_v5/ANALISIS.md). 32 respuestas válidas de formato, dos cálculos correctos del agente, 48 juicios brutos y 62 pruebas aprobadas. Persisten errores de abstención y del juez; la mitigación de verbosidad no mejoró la medida. Pendientes harness final, RAGAS, corrida gold y reporte. [Notebook reproducible](ContractRisk_M3_Integracion_v5_Calibracion_Colab.ipynb). Gold final y main intactos.
+
+### Antecedentes históricos (no estado vigente)
 
 Prueba de protocolo ya ejecutada: [resultados y revisión de contenido](evidence/protocol_probe/ANALISIS.md). 3B/v5 se adopta como candidato de integración (6/6 formatos válidos desde el primer intento, 4/4 decisiones correctas); conserva un error de clausulado y una reserva sobre redacción de abstención. Aún no es la comparación final sobre contratos reales. Las notas siguientes corresponden a etapas anteriores.
 
