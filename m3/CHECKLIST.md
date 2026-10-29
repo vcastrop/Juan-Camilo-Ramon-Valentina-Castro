@@ -23,24 +23,24 @@ Esta es la única lista operativa. El plan inicial y sus fases A–L se conserva
 - [x] Establecer versión de referencia de cada tabla en [RUTA_ENTREGA.md](RUTA_ENTREGA.md).
 - [x] Separar documentación histórica y candidatos sin borrar archivos ni romper imports.
 - [x] Reemplazar instrucciones de traspaso desactualizadas por una ruta vigente.
-- [x] Verificar pruebas combinadas: 120 aprobadas; 19 enlaces nuevos comprobados y 22 archivos originales de corpus/gold/evidencia bruta preservados. Código y resultados del compañero coinciden con el bundle.
+- [x] Verificar pruebas combinadas: 120 aprobadas (128 tras añadir `test_limites_m3.py` en el cierre de los bloques 2 y 3); 19 enlaces nuevos comprobados y 22 archivos originales de corpus/gold/evidencia bruta preservados. Código y resultados del compañero coinciden con el bundle.
 - [ ] Publicar y comprobar el commit consolidado en la rama remota M3; no fusionar main.
 
 ## Bloque 2 — precisión del reporte
 
-- [ ] Acotar «más confiable» a concordancia observada con un diagnóstico automático, no validación humana independiente.
-- [ ] Acotar determinismo a coincidencia observada en las ejecuciones comparadas.
-- [ ] Distinguir cobertura automática 8/10 y veredicto del juez 7/10, sin afirmar tres ausencias reales de información.
-- [ ] Revisar que 0,611 se presente como cobertura media, no porcentaje de respuestas correctas.
-- [ ] Declarar correcciones post-hoc y que el gold ya fue inspeccionado.
-- [ ] Revisar que se distinga evidencia original de auditoría documental posterior.
+- [x] Acotar «más confiable» a concordancia observada con un diagnóstico automático, no validación humana independiente.
+- [x] Acotar determinismo a coincidencia observada en las ejecuciones comparadas.
+- [x] Distinguir cobertura automática 8/10 y veredicto del juez 7/10, sin afirmar tres ausencias reales de información (revisión manual: 2 ausencias parciales, m3_004 y m3_006; m3_002 es falso negativo del juez).
+- [x] Revisar que 0,611 se presente como cobertura media, no porcentaje de respuestas correctas.
+- [x] Declarar correcciones post-hoc y que el gold ya fue inspeccionado.
+- [x] Revisar que se distinga evidencia original de auditoría documental posterior (solo `results/final_m3/ANALISIS.md` cambió; datos brutos verificados sin cambios).
 
 ## Bloque 3 — límites del evaluador
 
-- [ ] Consolidar el diagnóstico de afirmaciones cortas omitidas, parser sí/no ambiguo, negación aproximada y datos faltantes.
-- [ ] Decidir y documentar qué controles se conservan como limitaciones y cuáles justifican una nueva versión/corrida.
-- [ ] No atribuir resultados existentes a reglas modificadas después de ejecutarlos.
-- [ ] No cambiar notas del juez por comprobaciones de acierto.
+- [x] Consolidar el diagnóstico de afirmaciones cortas omitidas, parser sí/no ambiguo, negación aproximada y datos faltantes: tabla «Qué comprueban y qué no» del README con el efecto medido en esta corrida (filtro corto: 6 casos; sí/no ambiguo: 0).
+- [x] Decidir y documentar qué controles se conservan como limitaciones y cuáles justifican una nueva versión/corrida: se conservan todos como limitaciones de 1.1, fijadas por `tests/test_limites_m3.py`; ninguna nueva versión antes de entregar.
+- [x] No atribuir resultados existentes a reglas modificadas después de ejecutarlos (no se cambiaron reglas en este cierre).
+- [x] No cambiar notas del juez por comprobaciones de acierto.
 
 ## Bloque 4 — juez alternativo (opcional, no bloquea el cierre)
 

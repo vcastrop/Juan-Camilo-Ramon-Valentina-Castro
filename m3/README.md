@@ -86,14 +86,16 @@ Desarrollo v2 (1.5B, mismas cuatro preguntas): denso 0/4, híbrido 3/4, híbrido
 Corrida final: Colab, Tesla T4, 29/10/2026 18:06–18:26 UTC, código `6026ac4`.
 - Los **28** hashes de fuentes registrados en `metadata.json` coinciden con el repositorio.
 - Se aprobaron 79 pruebas en la sesión y el índice se reconstruyó desde cero (24 fichas, 133 chunks, 16,6 s).
-- Evidencia original, conservada sin cambios, en [`results/final_m3/`](results/final_m3/): [`scorecard_m3.csv`](results/final_m3/scorecard_m3.csv), [`ragas_m3.csv`](results/final_m3/ragas_m3.csv), detalle por consulta, respuestas, trazas, juicios y [notebook ejecutado](results/final_m3/ContractRisk_M3_Final_Colab_Ejecutado.ipynb). Revisión caso por caso: [ANALISIS.md](results/final_m3/ANALISIS.md).
+- Evidencia original en [`results/final_m3/`](results/final_m3/). Las respuestas, juicios, métricas, logs y notebook no cambiaron desde la corrida; solo su `ANALISIS.md`, que es un documento de auditoría posterior, recibió una fe de erratas (23 → 28 hashes) y una sección de revisión. Contiene: [`scorecard_m3.csv`](results/final_m3/scorecard_m3.csv), [`ragas_m3.csv`](results/final_m3/ragas_m3.csv), detalle por consulta, respuestas, trazas, juicios y [notebook ejecutado](results/final_m3/ContractRisk_M3_Final_Colab_Ejecutado.ipynb). Revisión caso por caso: [ANALISIS.md](results/final_m3/ANALISIS.md).
 
 **Qué cambió tras la revisión.** La revisión del equipo y del profesor encontró defectos en las reglas automáticas de 1.0:
 - una cifra esperada se aceptaba dentro de otra mayor (`168000000` dentro de `1680000000`);
 - una mención negada contaba como presencia («no es mínima cuantía»);
 - una acusación atenuada no se detectaba («sugiere una posible irregularidad»).
 
-La versión `m3-harness-1.1` los corrige y **recalifica las 72 respuestas guardadas sin regenerarlas**. Las notas del juez son las originales, sin volver a juzgar. Resultado en [`results/final_m3_rescore_v1_1/`](results/final_m3_rescore_v1_1/). Los dos primeros defectos no alteraron ninguna cifra de esta corrida. El tercero cambia el dominio de m3_009 en el avanzado y el final.
+**Estas correcciones son post-hoc.** Las reglas 1.1 y RAGAS 1.1 se escribieron **después** de ejecutar la evaluación y de inspeccionar las respuestas y el gold, a partir de errores concretos encontrados en esa revisión. Por eso no constituyen una validación ciega: el gold ya no es un conjunto desconocido para el evaluador. Para limitar el sesgo, ningún cambio se eligió por su efecto en una cifra, se conservan ambas versiones y no se modificaron sistemas, prompts, respuestas ni notas del juez. Una evaluación independiente requeriría preguntas nuevas.
+
+La versión `m3-harness-1.1` corrige esos defectos y **recalifica las 72 respuestas guardadas sin regenerarlas**. Las notas del juez son las originales, sin volver a juzgar. Resultado en [`results/final_m3_rescore_v1_1/`](results/final_m3_rescore_v1_1/). Los dos primeros defectos no alteraron ninguna cifra de esta corrida. El tercero cambia el dominio de m3_009 en el avanzado y el final.
 
 ### Tabla evolutiva (12 preguntas gold, mismo generador, prompt base y respuestas)
 
@@ -113,7 +115,7 @@ Cómo leer la tabla:
 
 ### Recuperación: documento correcto frente a dato recuperado
 
-Diagnóstico determinista de `m3-harness-1.1` sobre las 10 preguntas respondibles:
+Diagnóstico determinista (léxico) de `m3-harness-1.1` sobre las 10 preguntas respondibles. Los casos incompletos del final, m3_004 y m3_006, se confirmaron revisando los chunks a mano:
 
 | Sistema | Ficha gold entregada | Todos los hechos requeridos en los fragmentos recuperados | … incluyendo lo que aporta la herramienta |
 |---|---:|---:|---:|
@@ -154,10 +156,26 @@ Corrida en Colab T4, código `1575907`; evidencia y auditoría en [`results/fina
 | Sistema final | 0,653 (n=12) | 0,330 (n=10) | 0,000 (n=10) | 0,700 (n=10) | 0,383 (n=10) | 0,792 (n=10) |
 
 Juez: Qwen2.5-3B-Instruct local, 393 llamadas, 0 sin parsear. Cómo leerla:
-- **Reproducible:** las tres métricas con los mismos prompts que la 1.0 dieron valores idénticos en los 36 casos.
+- **Coincidencia observada entre ejecuciones:** las tres métricas que usan los mismos prompts que la 1.0 dieron valores idénticos en los 36 casos, en dos sesiones de Colab T4 con las mismas versiones y decodificación greedy. No es una garantía general de determinismo en otros entornos.
 - **Context precision del laboratorio = 0 no mide la recuperación.** El juez dijo «No» a los 94 pasajes, incluso a los que contienen literalmente lo pedido. Es un fallo del juez con ese prompt.
-- **Context recall del laboratorio es la métrica RAGAS más confiable aquí.** Coincide en 28/30 casos con el chequeo determinista de hechos en el contexto (los 2 desacuerdos son falsos negativos del juez). Confirma el orden ingenuo 0,2 < avanzado 0,5 < final 0,7.
+- **Context recall del laboratorio tiene la mayor concordancia con nuestro diagnóstico automático en esta muestra:** coincide en 28/30 casos con el chequeo determinista de hechos en el contexto. No es una validación humana independiente. Los 2 desacuerdos (m3_002 en avanzado y final) se revisaron a mano y son falsos negativos del juez. Su orden es ingenuo 0,2 < avanzado 0,5 < final 0,7.
 - **Faithfulness:** al corregir la segmentación, el avanzado y el final quedan por debajo del ingenuo. La aparente mejora de 1.0 era en parte artefacto, y el juez sigue cometiendo errores en ambos sentidos. **No se puede concluir que el sistema final sea más fiel al contexto.**
+
+### Qué comprueban y qué no las reglas automáticas
+
+Estas reglas son expresiones regulares y preguntas sí/no a un juez local: aproximan los criterios del gold, no los verifican semánticamente. Las limitaciones siguientes se conservan **a propósito** en las versiones vigentes, `m3-harness-1.1` y `m3-ragas-lab-1.1`. Corregirlas exigiría una versión nueva con su propio recálculo, y no se debe atribuir a reglas modificadas resultados ya publicados. Cada limitación está fijada por una prueba en [`tests/test_limites_m3.py`](tests/test_limites_m3.py). La columna «Efecto observado» se midió sobre las respuestas guardadas.
+
+| Regla | Qué comprueba | Qué NO comprueba (limitación) | Efecto observado en esta corrida |
+|---|---|---|---|
+| Cobertura de hechos (dim. 1) | Que el hecho aparezca literal, con límites de número, o que aparezca el 80 % de sus palabras | La tolerancia a paráfrasis no controla negaciones («no se contrata el mantenimiento…» cuenta como presente). La negación solo se busca en las 3 palabras previas («no corresponde, según la ficha, a la Mínima cuantía» cuenta como presente). Una fecha escrita de otro modo («27 de marzo de 2024») no cuenta. | Revisión sistemática de las 72 respuestas: los únicos hechos aceptados en una frase con negación son las fechas de m3_009, donde «No» responde a «¿son consistentes?» y no niega la fecha; los 2 hechos aceptados por paráfrasis no tienen negación. No se descarta en otros datos |
+| Citas (dim. 3) | Que se citen todas las fichas requeridas y ninguna ajena | No comprueba que el chunk citado contenga la afirmación: es trazabilidad a nivel de ficha | m3_007 del final cita las fichas correctas con una explicación errónea |
+| Acusación (dim. 3) | Menciones de irregularidad, fraude, sobrecosto, corrupción, peculado o ilegalidad no negadas en su cláusula | Eufemismos fuera del léxico («posible desvío de recursos») no se detectan | Ninguno detectado en la revisión manual |
+| Cifras en no respondibles (dim. 3) | Que una abstención no afirme números de 4 o más dígitos (excluidos los IDs) | Marca también años («auditoría de 2024») | No ocurrió |
+| Juez (dim. 2) | Nota 1–5 del juez sin referencia ni indicador de acierto | Calidad semántica no validada; si el juez falla, la nota queda vacía y se excluye del promedio (se informa la cobertura) | 72/72 notas válidas; dio 4 a la auditoría inventada (m3_012) |
+| Segmentación RAGAS (faithfulness) | Afirmaciones separadas por puntuación de oración, conservando IDs y decimales | **Descarta afirmaciones de 12 caracteres o menos** | **Afectó 6 casos**: no se evaluaron «5687267» (ingenuo m3_007), «5147» (avanzado m3_007), «15387424 COP» (final m3_008) ni «No» (m3_009 en las tres filas). En varios es la respuesta central |
+| Parser sí/no RAGAS | Toma la primera palabra: «sí/si/yes» = 1, «no» = 0; otra cosa = sin veredicto, excluido del promedio y contado | «Sí, pero no lo respalda» y «Si el contexto lo dijera, sí» valen 1; «No sé» vale 0 | Las 363 respuestas sí/no fueron limpias («Sí», «No», «No.», «sí»): 0 ambiguas y 0 sin veredicto |
+| Faithfulness en abstenciones | — | N/A cuando `abstencion=true`; no verifica lo que afirma una abstención | Una abstención que afirmara datos no la detecta RAGAS (sí la dim. 3 si hay cifras) |
+| Context precision (laboratorio) | Pasaje «relevante» según el juez | El juez 3B respondió «No» a 94/94 pasajes | Métrica no informativa en esta corrida |
 
 ### Lectura honesta
 
@@ -186,7 +204,12 @@ Juez: Qwen2.5-3B-Instruct local, 393 llamadas, 0 sin parsear. Cómo leerla:
   - en m3_009, «sugiere una posible irregularidad», contra el criterio.
   - En m3_004 y m3_006 la respuesta además confunde el tipo de contrato con el objeto, de modo que se suman recuperación parcial y generación.
 - **Medición:** jueces 3B poco fiables; las reglas automáticas, corregidas en 1.1, siguen siendo aproximaciones (por ejemplo, la tolerancia a paráfrasis no controla la negación).
-- **Lo que RAGAS permite separar.** El context recall del laboratorio (0,2 / 0,5 / 0,7), consistente con el chequeo determinista, confirma que la recuperación mejora pero sigue incompleta: en 3/10 respondibles del final el juez no encuentra lo necesario en el contexto. Faithfulness no sirve para aislar un problema de generación «con buen contexto»: el juez 3B se equivoca en ambos sentidos y su orden entre filas cambió al corregir la segmentación. Los fallos de generación de arriba se identificaron por revisión caso a caso, no por RAGAS.
+- **Lo que RAGAS permite separar.** El context recall del laboratorio (0,2 / 0,5 / 0,7), consistente con el chequeo determinista, apunta a que la recuperación mejora pero sigue incompleta. En el sistema final hay que distinguir dos cifras:
+  - **Chequeo automático:** encuentra todos los hechos requeridos en el contexto en **8/10** respondibles.
+  - **Juez:** aprueba **7/10**.
+  - La diferencia es m3_002, donde el juez dice «no» aunque la entidad y el objeto están literalmente en los chunks entregados (revisado a mano).
+  - Las ausencias que sí confirmamos a mano son **2, ambas parciales**: en m3_004 no llegó el objeto («Intermediación de seguros…»), solo su final truncado; en m3_006 no llegó el inicio de la descripción («CONTRATAR EL MANTENIMIENTO…»).
+- **Faithfulness** no sirve para aislar un problema de generación «con buen contexto»: el juez 3B se equivoca en ambos sentidos y su orden entre filas cambió al corregir la segmentación. Además, el filtro de afirmaciones cortas excluyó la respuesta central en 6 casos. Los fallos de generación de arriba se identificaron por revisión caso a caso, no por RAGAS.
 
 **4. ¿Qué pasó con las preguntas sin respuesta en el corpus?** **La válvula no funciona en el sistema final: 0/2.**
 - Sin RAG se abstuvo en 2/2, pero se abstiene casi siempre (también en 3 respondibles).
