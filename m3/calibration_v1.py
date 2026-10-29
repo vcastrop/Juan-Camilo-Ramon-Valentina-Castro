@@ -72,12 +72,12 @@ def summarize_calibration(rows):
     return summaries
 
 
-def evaluate_calibration(generator, emit):
+def evaluate_calibration(generator, emit, judge_factory=None):
     from judge import IndependentJudge
     cases=calibration_cases()
     rows=[]
     for condition in ['before','after']:
-        judge=IndependentJudge(generator,mitigate_verbosity=(condition=='after'))
+        judge=(judge_factory or IndependentJudge)(generator,mitigate_verbosity=(condition=='after'))
         for i,case in enumerate(cases):
             # Alternate ordering; each judgement is independent, without conversation history.
             lengths=['concise','verbose'] if i%2==0 else ['verbose','concise']

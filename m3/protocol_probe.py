@@ -24,7 +24,7 @@ def answer_schema(contexts):
                 'abstencion':{'type':'boolean'}}}
 
 
-def answer_v5(generator, case):
+def answer_v5(generator, case, system=ANSWER_V5):
     contexts = case['contexts']
     payload = {'pregunta':case['question'], 'evidencia':compact_contexts(contexts),
                'calculos':[compact_tool(t) for t in case.get('tools',[])],
@@ -37,7 +37,7 @@ def answer_v5(generator, case):
             request['reparacion']={'error':attempts[-1]['parse_error'],
                                   'salida_anterior':attempts[-1]['raw_response'],
                                   'instruccion':'Corrige el formato: incluye respuesta, explicacion, citas y abstencion. Usa el esquema_salida completo y las citas_permitidas. No añadas hechos.'}
-        raw=generator.generate(ANSWER_V5,json.dumps(request,ensure_ascii=False))
+        raw=generator.generate(system,json.dumps(request,ensure_ascii=False))
         event={'raw_response':raw,'parse_error':None,'generation':dict(getattr(generator,'last_generation',{}))}
         try:
             output=checked_answer(raw,contexts)

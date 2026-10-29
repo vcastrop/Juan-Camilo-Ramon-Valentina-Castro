@@ -6,6 +6,8 @@ Este componente ayudará a consultar información pública de contratación y ex
 
 ## Estado vigente
 
+Próximo diagnóstico preparado: [corrección v6](CORRECCION_V6.md), [notebook](ContractRisk_M3_Correccion_v6_Colab.ipynb). 70 pruebas locales aprobadas; pendiente ejecución T4. Reutiliza contextos de desarrollo v5 para aislar instrucciones, no es una corrida final ni valida todavía eficacia.
+
 **Para continuar el trabajo: [guía de traspaso](CONTINUAR_TRABAJO.md) y [checklist vigente](CHECKLIST.md).** Avance estimado de M3: 60%, no calificación académica.
 
 La [integración 3B/v5 y calibración](INTEGRACION_V5.md) ya fue ejecutada: [auditoría y originales](evidence/integration_v5/ANALISIS.md). 32 respuestas válidas de formato, dos cálculos correctos del agente, 48 juicios brutos y 62 pruebas aprobadas. Persisten errores de abstención y del juez; la mitigación de verbosidad no mejoró la medida. Pendientes harness final, RAGAS, corrida gold y reporte. [Notebook reproducible](ContractRisk_M3_Integracion_v5_Calibracion_Colab.ipynb). Gold final y main intactos.

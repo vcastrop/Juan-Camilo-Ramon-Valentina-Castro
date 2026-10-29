@@ -4,6 +4,12 @@ Plan inicial: 28 de octubre de 2026. Actualizado: 29 de octubre de 2026, tras au
 
 ## Estado vigente — integración v5 auditada
 
+**Siguiente bloque preparado:** [corrección candidata v6](CORRECCION_V6.md), con reproducción de contextos de desarrollo y juez que cita/contrasta la respuesta antes de puntuar. Código y pruebas locales no certifican mejora real: pendiente corrida T4 y revisión. No cambia el porcentaje por anticipar resultados; gold y evidencias v5 intactos.
+
+- [x] Añadir regresiones de contrato para fallos v5, aislamiento de referencias, preservación de notas y reintentos solo de formato.
+- [x] Preparar notebook de diagnóstico v6 y conservar v5 como comparación histórica.
+- [ ] Ejecutar v6 y revisar semántica antes de congelar configuración; no marcar resuelta la abstención o calidad del juez por pasar tests.
+
 **Avance estimado de M3: aproximadamente 60% (rango orientativo 55–65%).** Es una estimación de trabajo completado y verificado, no una nota académica, probabilidad de éxito ni porcentaje del conjunto M1+M2+M3. No se calcula contando casillas: hay tareas de tamaños distintos y antecedentes repetidos. Corpus/gold y sistemas están muy avanzados; calibración está ejecutada pero revela fallos; harness final, RAGAS, corrida gold y entrega aún tienen trabajo sustancial.
 
 Evidencia: [auditoría v5 y originales](evidence/integration_v5/ANALISIS.md). 23 hashes de código coinciden, 62 pruebas aprobadas, notebook sin errores, resumen del juez recalculado desde detalle y coincidente.

@@ -39,6 +39,8 @@ Coordinar quién trabaja en cada archivo. Con permiso WRITE se puede publicar es
 
 ## Próximo trabajo, en orden
 
+Actualización posterior al traspaso inicial: pasos de implementación de la corrección acotada preparados en [v6](CORRECCION_V6.md); suite de 70 tests aprobada. Falta ejecutar su notebook T4 y auditar antes de decidir configuración final. La evidencia v5 sigue intacta.
+
 1. Añadir pruebas de regresión basadas en v5: cifras sin respaldo, abstención contradictoria, auditoría inexistente en las fuentes y juez que evalúa la evidencia en lugar de la respuesta propuesta.
 2. Probar ajustes acotados en desarrollo/calibración, preservando v5 intacta. No ajustar usando el gold final. No perseguir indefinidamente un resultado perfecto: documentar límites y decidir explícitamente la configuración que se congela.
 3. Completar/versionar el harness común: métrica automática apropiada a QA, juez bruto y cumplimiento de dominio con criterios distintos. Definir fallos, faltantes, N/A y denominadores antes de medir.

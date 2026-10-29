@@ -9,11 +9,13 @@ from systems_v5 import generate_candidate
 
 
 class CandidateAgent:
-    def __init__(self, retriever, generator, tools, top_k=3, max_steps=3):
+    def __init__(self, retriever, generator, tools, top_k=3, max_steps=3,
+                 router_system=ROUTER_V5, answer_fn=generate_candidate):
         if type(max_steps) is not int or not 1 <= max_steps <= 3:
             raise ValueError('Require 1..3 controller steps')
         self.retriever, self.generator, self.tools = retriever, generator, tools
         self.top_k, self.max_steps = top_k, max_steps
+        self.router_system, self.answer_fn = router_system, answer_fn
 
     def predict(self, question):
         if not isinstance(question,str) or not question.strip():
@@ -31,7 +33,7 @@ class CandidateAgent:
                        'herramienta': TOOL_SCHEMA, 'pasos_restantes': self.max_steps-step}
             if feedback:
                 payload['error_anterior'] = feedback
-            raw = self.generator.generate(ROUTER_V5, json.dumps(payload,ensure_ascii=False))
+            raw = self.generator.generate(self.router_system, json.dumps(payload,ensure_ascii=False))
             event = {'step':step+1,'raw_response':raw,'decision':None,'normalization':None,
                      'parse_error':None,'tool_result':None,
                      'generation':dict(getattr(self.generator,'last_generation',{}))}
@@ -62,7 +64,7 @@ class CandidateAgent:
                 termination='tool_success'
                 break
             feedback=result['error']
-        result=generate_candidate(self.generator,question,contexts,successes)
+        result=self.answer_fn(self.generator,question,contexts,successes)
         result.update(question=question, contexts=contexts,retrieved_contexts=retrieved,
                       retrieval_seconds=retrieval_seconds,latency_seconds=time.perf_counter()-start,
                       tool_trace=trace,termination=termination,tool_calls=calls)
