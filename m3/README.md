@@ -6,6 +6,8 @@ Este componente ayudará a consultar información pública de contratación y ex
 
 ## Estado vigente
 
+Próximo experimento preparado: [prueba controlada de protocolo y modelo](PRUEBA_PROTOCOLO.md), [notebook](ContractRisk_M3_Prueba_Protocolo_Colab.ipynb). Compara tres condiciones sobre diez casos sintéticos sin ejecutar gold; 56 pruebas locales pasan. Todavía no hay resultados de inferencia de esta prueba.
+
 Actualización más reciente: [v4 ejecutada y auditada](evidence/development_v4/ANALISIS.md), con regresión de validez (16/32 frente a 18/32 en v3). No alcanzó el límite de tokens; persisten omisiones de campos, citas copiadas del ejemplo y errores semánticos. No está aprobada como configuración final. Las notas de preparación de versiones siguientes son históricas.
 
 Corrección candidata v4 preparada: [cambios y explicación de fallos](CORRECCIONES_V4.md), [notebook v4](ContractRisk_M3_Desarrollo_v4_Colab.ipynb). 50 pruebas locales pasan, incluidas regresiones con trazas reales v3. No hay resultados de inferencia v4 todavía; no se declara resuelto el error semántico por modificar un prompt.

@@ -8,6 +8,7 @@ Plan inicial: 28 de octubre de 2026. Estado actual: gold humano congelado y comp
 
 - [x] Preservar y auditar notebook y ZIP v4; comprobar hashes, fuentes y logs.
 - [ ] Validar una configuración candidata en prueba pequeña de esquema, abstención, cifras y selección de herramienta; congelar después, no antes.
+- [x] Preparar prueba sintética controlada de protocolo/modelo, con expectativas fuera de inferencia y casos separados del gold. [Plan y límites](PRUEBA_PROTOCOLO.md), 56 pruebas locales aprobadas. Inferencia y revisión semántica pendientes.
 
 **Actualización posterior: desarrollo v3 ejecutado y auditado.** [Evidencia y diagnóstico](evidence/development_v3/ANALISIS.md). 32 registros, 18 salidas válidas de esquema. Herramienta ejecutada correctamente en dos cálculos, pero respuestas finales inválidas; cinco llamadas innecesarias rechazadas y ningún caso de decisión answer válida del controlador. No se cierra H ni la evaluación final. Estado v2 abajo conservado como antecedente.
 
