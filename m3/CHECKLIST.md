@@ -1,8 +1,34 @@
 # ContractRisk Colombia: ruta de trabajo M3 y correcciones de M2
 
-Plan inicial: 28 de octubre de 2026. Estado actual: gold humano congelado y comparación de desarrollo v2 ejecutada y auditada en T4. Agente implementado y probado localmente, pendiente prueba real; juez corregido y evaluación final pendientes.
+Plan inicial: 28 de octubre de 2026. Actualizado: 29 de octubre de 2026, tras auditar integración v5 y calibración en T4.
 
-## Estado vigente — corrida de desarrollo v2
+## Estado vigente — integración v5 auditada
+
+**Avance estimado de M3: aproximadamente 60% (rango orientativo 55–65%).** Es una estimación de trabajo completado y verificado, no una nota académica, probabilidad de éxito ni porcentaje del conjunto M1+M2+M3. No se calcula contando casillas: hay tareas de tamaños distintos y antecedentes repetidos. Corpus/gold y sistemas están muy avanzados; calibración está ejecutada pero revela fallos; harness final, RAGAS, corrida gold y entrega aún tienen trabajo sustancial.
+
+Evidencia: [auditoría v5 y originales](evidence/integration_v5/ANALISIS.md). 23 hashes de código coinciden, 62 pruebas aprobadas, notebook sin errores, resumen del juez recalculado desde detalle y coincidente.
+
+| Bloque | Estado real |
+|---|---|
+| Corpus e índice; gold humano | 24 fichas, 133 chunks en v5 y 12 preguntas finales revisadas; no se ha ejecutado el gold |
+| Cuatro sistemas de desarrollo | 32 respuestas válidas de formato; 31 al primer intento; no equivale a 32 respuestas correctas |
+| Recuperación avanzada | Cuatro modalidades correctas; siguen fallos de cálculo sin herramienta y de abstención |
+| Agente | Dos cálculos correctos y una modalidad sin herramienta demostrados; tres llamadas innecesarias rechazadas |
+| Juez y sesgo | 48 juicios brutos y 12 pares antes/después auditados; mitigación sin mejora y contradicciones semánticas |
+| Harness final y RAGAS | Pendientes de completar, definir/congelar métricas y ejecutar |
+| Reporte y entrega | Diagnósticos preservados; tablas finales, declaración de IA, revisión y publicación pendientes |
+
+- [x] Ejecutar integración de las cuatro variantes con mismo generador/protocolo sobre desarrollo.
+- [x] Ejecutar y revisar técnicamente los 48 juicios de calibración, sin sustituir sus notas por reglas.
+- [x] Registrar evidencia de dos cálculos con herramienta y una consulta respondida sin llamada.
+- [x] Medir antes/después el efecto de longitud y declarar que la mitigación no mejoró la medida (0,583 a 0,833 de diferencia absoluta media).
+- [ ] Resolver o delimitar explícitamente fallos de abstención y contradicciones del juez; revisión humana del equipo pendiente.
+- [ ] Completar harness de tres dimensiones y RAGAS; congelar reglas antes de evaluar gold.
+- [ ] Ejecutar cuatro filas sobre gold y completar reporte/reproducción/PR.
+
+Las casillas A–L distinguen implementación, ejecución y calidad. Los apartados históricos siguientes no son pendientes actuales ni deben sumarse de nuevo al avance. Main permanece intacto.
+
+## Historial de corridas v2–v4 y prueba de protocolo (no estado vigente)
 
 **Última evidencia: prueba de protocolo completada.** [Análisis](evidence/protocol_probe/ANALISIS.md): candidato 3B/v5 con 6/6 formatos iniciales válidos, 5/6 controles mecánicos y 4/4 decisiones correctas. Persiste fallo de clausulado y reserva semántica en abstención de auditoría. Seleccionado solo para integración; no aprobado como sistema final.
 
@@ -108,8 +134,8 @@ La guía permite escribir preguntas nuevas cuando M1 era clasificación. Sin emb
 - [x] Documentar la propuesta de comparación en `m3/DECISIONES_INICIALES.md`: generador sin recuperación, RAG ingenuo, RAG avanzado y RAG avanzado con herramienta, todos con el mismo generador y prompt base. Rotulación final pendiente.
 - [ ] Consultar/confirmar con el profesor cómo rotular la primera fila adaptada: no llamarla «RoBERTalex de M2» si utiliza un generador nuevo. Si requiere literalmente M2, acordar una adaptación compatible o una tabla adicional común de clasificación.
 - [ ] Si se conserva una señal de RoBERTalex como parte del sistema, mantenerla igual en todas las variantes que se comparen; no añadirla solo a una fila sin declararlo.
-- [ ] Establecer qué puede cambiar por fila: el contexto recuperado y la activación de la herramienta; conservar la instrucción base de respuesta y los parámetros de generación.
-- [ ] Definir una interfaz común: entrada pregunta; salida respuesta, explicación, fuentes citadas, abstención, contexto recuperado y trazas de herramientas/tiempos.
+- [x] Establecer qué puede cambiar por fila: el contexto recuperado y la activación de la herramienta; conservar la instrucción base de respuesta y los parámetros de generación. Integración v5; congelación final pendiente.
+- [x] Definir una interfaz común: entrada pregunta; salida respuesta, explicación, fuentes citadas, abstención, contexto recuperado y trazas de herramientas/tiempos. Implementada y ejecutada en v5.
 - [ ] Reutilizar el núcleo y contrato de evaluación de M2 mediante un adaptador documentado. No exigir a un clasificador que genere explicaciones inexistentes.
 - [ ] Versionar la corrección del harness ANTES de comparar sistemas y reevaluar todas las filas con esa misma versión.
 
@@ -117,7 +143,7 @@ La guía permite escribir preguntas nuevas cuando M1 era clasificación. Sin emb
 
 ## C. Corregir los puntos señalados por el profesor
 
-Núcleo candidato implementado en `judge.py`, rúbrica en [JUEZ_M3.md](JUEZ_M3.md). Nueve pruebas unitarias del juez pasan (42 en total). Casillas marcadas aquí indican implementación y prueba sintética; NO calibración ni ejecución real. Faltan revisión semántica y prueba multicaso de verbosidad antes de congelar la versión.
+Núcleo en `judge.py`, rúbrica en [JUEZ_M3.md](JUEZ_M3.md). Integración v5 ejecutó 48 juicios reales sobre 12 pares sintéticos. Revisión técnica completada; se detectan contradicciones y mitigación sin mejora. No está aprobada la calidad del juez ni congelada su configuración final. Revisión humana pendiente.
 
 - [ ] Hacer que el RAG produzca su propia explicación breve, vinculada a la evidencia recuperada. La explicación del juez no sustituye la del sistema.
 - [x] Eliminar el reemplazo de puntajes por «4 si acierta / 1 si falla» en la nueva evaluación.
@@ -132,9 +158,9 @@ Núcleo candidato implementado en `judge.py`, rúbrica en [JUEZ_M3.md](JUEZ_M3.m
 - [ ] Añadir pruebas con las respuestas reales que fallaron en v2.0, incluidas comas, acentos, preámbulos y contradicciones.
 - [ ] Calibrar orientación y calidad del juez con ejemplos separados del conjunto final; dejar explícito si son sintéticos.
 - [ ] Revisar que una respuesta de abstención justificada no sea penalizada por carecer de información inexistente.
-- [ ] Revisar cualitativamente las razones del juez; un JSON válido no demuestra una evaluación correcta.
-- [ ] Repetir verbosidad en varios pares con contenido equivalente y puntajes BRUTOS, incluyendo respuestas buenas, malas y abstenciones. Propuesta: al menos 12 pares.
-- [ ] Comparar antes/después del control de longitud con igual contenido y orden controlado; reportar diferencias y fallos, no presumir mitigación efectiva.
+- [x] Revisar cualitativamente las razones del juez; un JSON válido no demuestra una evaluación correcta. Revisión técnica asistida de 48 razones documentada en auditoría v5; revisión humana adicional pendiente.
+- [x] Repetir verbosidad en varios pares con contenido equivalente y puntajes BRUTOS, incluyendo respuestas buenas, malas y abstenciones: 12 pares sintéticos, 48 juicios.
+- [x] Comparar antes/después del control de longitud con igual contenido y orden controlado; reportar diferencias y fallos, no presumir mitigación efectiva. La medida empeoró en v5.
 - [ ] Preservar la corrida fallida v2.0 como diagnóstico, excluida del scorecard de M3.
 - [ ] Añadir sección Uso de IA para construcción del proyecto, no solo una lista de los modelos que ejecuta el sistema.
 
@@ -152,7 +178,7 @@ Núcleo candidato implementado en `judge.py`, rúbrica en [JUEZ_M3.md](JUEZ_M3.m
 - [x] Separar texto original y metadatos; conservar doc_id, fuente, sección/página y chunk_id para citar.
 - [x] Excluir del índice las etiquetas gold, criterios, respuestas de referencia, evaluaciones y documentos de resultados. El corpus fuente que contiene los hechos sí debe ser recuperable.
 - [ ] Medir longitudes y estructura de documentos; elegir tamaño y solapamiento con esa evidencia.
-- [ ] Elegir embeddings adecuados al idioma/corpus y probar memoria/tiempo en T4; fijar identificador y revisión.
+- [x] Elegir embeddings adecuados al idioma/corpus y probar memoria/tiempo en T4; fijar identificador y revisión. Multilingual MiniLM ejecutado; no confundir compatibilidad con buena recuperación densa: fallos documentados.
 - [x] Implementar `ingest -> chunk -> embed -> store` usando Chroma por defecto; justificar otra base si se usa.
 - [ ] Justificar top-k con preguntas de desarrollo y cobertura observada, no con una frase genérica.
 - [ ] Reportar número de documentos y chunks, versiones, tiempo de indexación y almacenamiento.
@@ -168,7 +194,7 @@ Núcleo candidato implementado en `judge.py`, rúbrica en [JUEZ_M3.md](JUEZ_M3.m
 - [ ] Incluir al menos dos casos que requieran la herramienta y uno que no, identificados con criterio previo.
 - [ ] Para cada pregunta guardar input, respuesta esperada, criterio, answerable, referencias documentales y necesidad esperada de herramienta.
 - [x] Revisar las respuestas y fuentes por el equipo. Los borradores asistidos por IA no cuentan como anotación humana independiente sin revisión real.
-- [ ] Separar ejemplos de desarrollo/calibración de los finales; registrar qué se ha usado para diagnosticar o ajustar.
+- [x] Separar ejemplos de desarrollo/calibración de los finales; registrar qué se ha usado para diagnosticar o ajustar. Ocho consultas de desarrollo y doce casos sintéticos del juez; gold final aún no ejecutado.
 - [ ] Congelar eval set, corpus, rúbrica y configuración antes de las corridas comparativas.
 - [ ] Elegir una métrica automática apropiada a preguntas: por ejemplo, exactitud de hechos/campos verificables con normalización y evaluación de abstención. No reutilizar Macro F1 de etiquetas como si midiera toda una respuesta generativa.
 - [ ] Si se usan similitud, F1 textual u otra métrica, justificar y fijar la definición; documentar límites ante paráfrasis.
@@ -182,11 +208,11 @@ Núcleo candidato implementado en `judge.py`, rúbrica en [JUEZ_M3.md](JUEZ_M3.m
 
 - [x] Seleccionar un generador instruct abierto que pueda ejecutarse en Colab gratuito y fijar revisión, semilla y parámetros.
 - [ ] Congelar el prompt base de respuesta/explicación/citas/abstención para todas las variantes.
-- [ ] Implementar el control sin recuperación conforme a la decisión de la fase B.
+- [x] Implementar el control sin recuperación conforme a la decisión de la fase B. Control generativo Qwen, NO RoBERTalex; confirmación de rotulación académica pendiente.
 - [x] Implementar `sistema_rag(pregunta)`: búsqueda dense top-k, contexto delimitado y generación con fuentes.
 - [ ] Implementar válvula de escape explícita cuando la respuesta no está en el contexto.
 - [ ] Distinguir «no hay evidencia disponible» de «el contrato tiene una irregularidad».
-- [ ] Registrar pregunta, respuesta, explicación, chunks, IDs citados, abstención, tokens si disponibles y latencia.
+- [x] Registrar pregunta, respuesta, explicación, chunks, IDs citados, abstención, tokens si disponibles y latencia. Evidencia de desarrollo v5 preservada.
 - [x] Medir al menos una corrida real del ingenuo sobre consultas de desarrollo.
 - [x] Conservar el ingenuo como implementación independiente y fila de referencia; no sobrescribirlo con la versión avanzada.
 
@@ -197,7 +223,7 @@ Núcleo candidato implementado en `judge.py`, rúbrica en [JUEZ_M3.md](JUEZ_M3.m
 Opciones de la guía: búsqueda híbrida BM25 + dense con RRF; reranking con cross-encoder; transformación de consulta (multi-query, HyDE, step-back o descomposición).
 
 - [x] Registrar consultas fallidas del ingenuo y clasificar: falta el chunk, mala ordenación, ambigüedad de consulta, contexto ignorado o respuesta ausente del corpus.
-- [ ] Elegir dos técnicas en función de esos fallos. Hipótesis inicial, NO decisión cerrada: híbrida para términos/IDs exactos y reranking para documentos similares con distinta pertinencia.
+- [x] Elegir dos técnicas en función de esos fallos: híbrida BM25/dense/RRF con filtro ID y reranking. Diagnóstico y desarrollo v2–v5 preservados; no atribuir toda mejora a una sola técnica.
 - [x] Documentar por técnica la consulta afectada, evidencia y mecanismo esperado de mejora.
 - [x] Implementar las técnicas sin cambiar simultáneamente el generador o el prompt base.
 - [x] Mantener el presupuesto de contexto y top-k final comparables; declarar pools de candidatos adicionales.
@@ -210,7 +236,7 @@ Opciones de la guía: búsqueda híbrida BM25 + dense con RRF; reranking con cro
 
 ## H. Capa agéntica con una herramienta útil
 
-Implementación y 33 pruebas locales aprobadas (incluyen 14 del bloque agente). [Diseño, límites y ejecución](AGENTE_DESARROLLO.md). Las casillas de implementación no certifican decisiones correctas de Qwen: trazas reales y calidad siguen pendientes. Herramienta elegida: diferencia de valores de dos fichas, con consulta de operandos, cálculo Decimal, fuentes y errores explícitos. Notebook de desarrollo v3 preparado, aún no ejecutado en T4.
+Implementación y trazas reales v5 auditadas; suite total de 62 pruebas aprobadas en la corrida. [Diseño](AGENTE_DESARROLLO.md) y [evidencia actual](evidence/integration_v5/ANALISIS.md). La herramienta obtiene valores del snapshot, calcula con Decimal y conserva fuentes. Demostrados dos cálculos correctos y una consulta sin llamada; persisten tres llamadas innecesarias rechazadas y fallos de abstención. No afirmar autonomía operativa.
 
 Propuesta inicial reemplazada por `diferencia_valores_contratos(id_a, id_b)`: consulta dos campos del snapshot y realiza la diferencia absoluta. El agente decide su uso; no se dispara por etiquetas del gold. Presupuesto cooperativo local de dos segundos, hasta tres decisiones y una respuesta final; llamadas repetidas bloqueadas.
 
@@ -223,8 +249,8 @@ Propuesta inicial reemplazada por `diferencia_valores_contratos(id_a, id_b)`: co
 - [x] Limitar herramientas a operaciones permitidas y de lectura; no ejecutar código, rutas o URLs arbitrarias propuestos por el modelo.
 - [x] Tratar instrucciones dentro del corpus/resultados de herramientas como datos, no como órdenes del sistema.
 - [x] Mantener la instrucción base de respuesta; documentar por separado el controlador agéntico y sus prompts.
-- [ ] Mostrar dos consultas reales que requieren y activan la herramienta, con argumentos/resultados, y una que no la requiere.
-- [ ] Medir llamadas innecesarias, omisiones y latencia adicional; no ocultar que el agente pueda no mejorar.
+- [x] Mostrar dos consultas reales que requieren y activan la herramienta, con argumentos/resultados, y una que no la requiere. V5: índices de desarrollo 4, 5 y 2, respectivamente.
+- [x] Medir llamadas innecesarias, omisiones y latencia adicional; no ocultar que el agente pueda no mejorar. V5: 3/6 consultas no aritméticas tienen llamada innecesaria rechazada; 0/2 cálculos omitidos; mediana 9,891 s frente a 7,574 s avanzado. Pendiente medición final gold.
 
 **Cierre H:** herramienta ejecutada por el flujo del agente, trazas verificables y bucles acotados.
 
@@ -329,7 +355,7 @@ m3/
 ## Próximo bloque de trabajo
 
 1. Reforzar interpretación de campos y abstención mediante desarrollo, sin ajustar contra el gold.
-2. Ejecutar el desarrollo v3 en T4 y revisar llamadas útiles, decisiones sin llamada y abstención. Implementación, parser y pruebas locales ya disponibles.
-3. Implementar/calibrar juez independiente, dominio y RAGAS, sin transformar accuracy en puntuaciones del juez.
+2. Añadir regresiones de los fallos v5 (cifras, abstención y confusión respuesta/evidencia del juez); probar ajustes acotados sobre desarrollo/calibración. No repetir v3 ni tocar el gold para ajustar prompts.
+3. Completar/calibrar juez, métricas automática/de dominio y RAGAS, sin transformar accuracy en puntuaciones del juez. La prueba multicaso ya se ejecutó: documentar su resultado negativo y verificar cualquier nueva mitigación.
 4. Congelar configuración y evaluar cuatro variantes con el mismo gold, generador y prompt base.
 5. Completar reporte, declaración de IA y revisión antes de publicar/mergear. Confirmar rotulación del baseline adaptado.
