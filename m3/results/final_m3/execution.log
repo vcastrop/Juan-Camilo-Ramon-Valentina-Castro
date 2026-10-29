@@ -1,0 +1,157 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793297209.389872    2255 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793297212.257678    2255 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+Building dense Chroma index from scratch...
+ERROR:chromadb.telemetry.product.posthog:Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+ERROR:chromadb.telemetry.product.posthog:Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+ERROR:chromadb.telemetry.product.posthog:Failed to send telemetry event CollectionAddEvent: capture() takes 1 positional argument but 3 were given
+Loading fixed-revision reranker...
+
+Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]
+Fetching 7 files:  14%|█▍        | 1/7 [00:00<00:01,  3.63it/s]
+Fetching 7 files:  29%|██▊       | 2/7 [00:07<00:20,  4.09s/it]
+Fetching 7 files:  43%|████▎     | 3/7 [00:08<00:10,  2.71s/it]
+Fetching 7 files: 100%|██████████| 7/7 [00:08<00:00,  1.16s/it]
+Loading generator...
+`torch_dtype` is deprecated! Use `dtype` instead!
+
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Fetching 2 files:  50%|█████     | 1/2 [01:08<01:08, 68.90s/it]
+Fetching 2 files: 100%|██████████| 2/2 [01:08<00:00, 34.45s/it]
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:16<00:16, 16.25s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:25<00:00, 11.90s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:25<00:00, 12.55s/it]
+sin_rag: 1/12 m3_001
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+sin_rag: 2/12 m3_002
+sin_rag: 3/12 m3_003
+sin_rag: 4/12 m3_004
+sin_rag: 5/12 m3_005
+sin_rag: 6/12 m3_006
+sin_rag: 7/12 m3_007
+sin_rag: 8/12 m3_008
+sin_rag: 9/12 m3_009
+sin_rag: 10/12 m3_010
+sin_rag: 11/12 m3_011
+sin_rag: 12/12 m3_012
+{"harness_version": "m3-harness-1.0", "cases": 12, "valid_outputs": 5, "dim1_accuracy": 0.16666666666666666, "dim2_judge_mean": 2.3333333333333335, "dim2_judge_valid": 12, "dim3_domain_rate": 0.16666666666666666, "dim3_domain_passed": 2, "m2_compatible_rate": 0.16666666666666666, "similarity_mean": 0.3540243834257126, "answerable_accuracy": 0.0, "unanswerable_abstained": 2, "unanswerable_total": 2, "latency_median_seconds": 6.721265339000013, "latency_cases": 12, "system_errors": 0, "variant": "sin_rag"}
+rag_ingenuo: 1/12 m3_001
+ERROR:chromadb.telemetry.product.posthog:Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+rag_ingenuo: 2/12 m3_002
+rag_ingenuo: 3/12 m3_003
+rag_ingenuo: 4/12 m3_004
+rag_ingenuo: 5/12 m3_005
+rag_ingenuo: 6/12 m3_006
+rag_ingenuo: 7/12 m3_007
+rag_ingenuo: 8/12 m3_008
+rag_ingenuo: 9/12 m3_009
+rag_ingenuo: 10/12 m3_010
+rag_ingenuo: 11/12 m3_011
+rag_ingenuo: 12/12 m3_012
+{"harness_version": "m3-harness-1.0", "cases": 12, "valid_outputs": 12, "dim1_accuracy": 0.25, "dim2_judge_mean": 3, "dim2_judge_valid": 12, "dim3_domain_rate": 0.25, "dim3_domain_passed": 3, "m2_compatible_rate": 0.25, "similarity_mean": 0.38625309492150944, "answerable_accuracy": 0.2, "unanswerable_abstained": 1, "unanswerable_total": 2, "latency_median_seconds": 7.997053150999989, "latency_cases": 12, "system_errors": 0, "variant": "rag_ingenuo"}
+rag_avanzado: 1/12 m3_001
+rag_avanzado: 2/12 m3_002
+rag_avanzado: 3/12 m3_003
+rag_avanzado: 4/12 m3_004
+rag_avanzado: 5/12 m3_005
+rag_avanzado: 6/12 m3_006
+rag_avanzado: 7/12 m3_007
+rag_avanzado: 8/12 m3_008
+rag_avanzado: 9/12 m3_009
+rag_avanzado: 10/12 m3_010
+rag_avanzado: 11/12 m3_011
+rag_avanzado: 12/12 m3_012
+{"harness_version": "m3-harness-1.0", "cases": 12, "valid_outputs": 12, "dim1_accuracy": 0.5, "dim2_judge_mean": 4, "dim2_judge_valid": 12, "dim3_domain_rate": 0.3333333333333333, "dim3_domain_passed": 4, "m2_compatible_rate": 0.3333333333333333, "similarity_mean": 0.49029503390192986, "answerable_accuracy": 0.6, "unanswerable_abstained": 0, "unanswerable_total": 2, "latency_median_seconds": 8.366523501499955, "latency_cases": 12, "system_errors": 0, "variant": "rag_avanzado"}
+sistema_final: 1/12 m3_001
+sistema_final: 2/12 m3_002
+sistema_final: 3/12 m3_003
+sistema_final: 4/12 m3_004
+sistema_final: 5/12 m3_005
+sistema_final: 6/12 m3_006
+sistema_final: 7/12 m3_007
+sistema_final: 8/12 m3_008
+sistema_final: 9/12 m3_009
+sistema_final: 10/12 m3_010
+sistema_final: 11/12 m3_011
+sistema_final: 12/12 m3_012
+{"harness_version": "m3-harness-1.0", "cases": 12, "valid_outputs": 12, "dim1_accuracy": 0.6111111111111112, "dim2_judge_mean": 4.166666666666667, "dim2_judge_valid": 12, "dim3_domain_rate": 0.4166666666666667, "dim3_domain_passed": 5, "m2_compatible_rate": 0.4166666666666667, "similarity_mean": 0.49139799798528355, "answerable_accuracy": 0.7333333333333333, "unanswerable_abstained": 0, "unanswerable_total": 2, "latency_median_seconds": 8.861421778500016, "latency_cases": 12, "system_errors": 0, "variant": "sistema_final"}
+ablacion_solo_hibrido: 1/12 m3_001
+ablacion_solo_hibrido: 2/12 m3_002
+ablacion_solo_hibrido: 3/12 m3_003
+ablacion_solo_hibrido: 4/12 m3_004
+ablacion_solo_hibrido: 5/12 m3_005
+ablacion_solo_hibrido: 6/12 m3_006
+ablacion_solo_hibrido: 7/12 m3_007
+ablacion_solo_hibrido: 8/12 m3_008
+ablacion_solo_hibrido: 9/12 m3_009
+ablacion_solo_hibrido: 10/12 m3_010
+ablacion_solo_hibrido: 11/12 m3_011
+ablacion_solo_hibrido: 12/12 m3_012
+{"harness_version": "m3-harness-1.0", "cases": 12, "valid_outputs": 12, "dim1_accuracy": 0.5, "dim2_judge_mean": 3.9166666666666665, "dim2_judge_valid": 12, "dim3_domain_rate": 0.25, "dim3_domain_passed": 3, "m2_compatible_rate": 0.25, "similarity_mean": 0.5634481472273668, "answerable_accuracy": 0.5, "unanswerable_abstained": 1, "unanswerable_total": 2, "latency_median_seconds": 7.611620094999921, "latency_cases": 12, "system_errors": 0, "variant": "ablacion_solo_hibrido"}
+ablacion_denso_rerank: 1/12 m3_001
+ablacion_denso_rerank: 2/12 m3_002
+ablacion_denso_rerank: 3/12 m3_003
+ablacion_denso_rerank: 4/12 m3_004
+ablacion_denso_rerank: 5/12 m3_005
+ablacion_denso_rerank: 6/12 m3_006
+ablacion_denso_rerank: 7/12 m3_007
+ablacion_denso_rerank: 8/12 m3_008
+ablacion_denso_rerank: 9/12 m3_009
+ablacion_denso_rerank: 10/12 m3_010
+ablacion_denso_rerank: 11/12 m3_011
+ablacion_denso_rerank: 12/12 m3_012
+{"harness_version": "m3-harness-1.0", "cases": 12, "valid_outputs": 11, "dim1_accuracy": 0.2777777777777778, "dim2_judge_mean": 3.1666666666666665, "dim2_judge_valid": 12, "dim3_domain_rate": 0.25, "dim3_domain_passed": 3, "m2_compatible_rate": 0.25, "similarity_mean": 0.3427901796319268, "answerable_accuracy": 0.23333333333333334, "unanswerable_abstained": 1, "unanswerable_total": 2, "latency_median_seconds": 7.9437798439998915, "latency_cases": 12, "system_errors": 0, "variant": "ablacion_denso_rerank"}
+RAGAS rag_ingenuo m3_001
+RAGAS rag_ingenuo m3_002
+RAGAS rag_ingenuo m3_003
+RAGAS rag_ingenuo m3_004
+RAGAS rag_ingenuo m3_005
+RAGAS rag_ingenuo m3_006
+RAGAS rag_ingenuo m3_007
+RAGAS rag_ingenuo m3_008
+RAGAS rag_ingenuo m3_009
+RAGAS rag_ingenuo m3_010
+RAGAS rag_ingenuo m3_011
+RAGAS rag_ingenuo m3_012
+RAGAS rag_avanzado m3_001
+RAGAS rag_avanzado m3_002
+RAGAS rag_avanzado m3_003
+RAGAS rag_avanzado m3_004
+RAGAS rag_avanzado m3_005
+RAGAS rag_avanzado m3_006
+RAGAS rag_avanzado m3_007
+RAGAS rag_avanzado m3_008
+RAGAS rag_avanzado m3_009
+RAGAS rag_avanzado m3_010
+RAGAS rag_avanzado m3_011
+RAGAS rag_avanzado m3_012
+RAGAS sistema_final m3_001
+RAGAS sistema_final m3_002
+RAGAS sistema_final m3_003
+RAGAS sistema_final m3_004
+RAGAS sistema_final m3_005
+RAGAS sistema_final m3_006
+RAGAS sistema_final m3_007
+RAGAS sistema_final m3_008
+RAGAS sistema_final m3_009
+RAGAS sistema_final m3_010
+RAGAS sistema_final m3_011
+RAGAS sistema_final m3_012
+| Sistema | Dim. 1 exactitud (0-1) | Dim. 2 juez (1-5, válidos) | Dim. 3 dominio | Latencia mediana (s) |
+|---|---:|---:|---:|---:|
+| Línea base sin RAG (mismo generador; adaptación de M2) | 0.167 | 2.333 (12/12) | 2/12 (0.167) | 6.72 |
+| RAG ingenuo (S07): denso top-3 | 0.250 | 3 (12/12) | 3/12 (0.250) | 8.00 |
+| RAG avanzado: híbrido BM25+denso RRF con filtro de ID + reranking | 0.500 | 4 (12/12) | 4/12 (0.333) | 8.37 |
+| Sistema final: avanzado + herramienta (agente acotado) | 0.611 | 4.167 (12/12) | 5/12 (0.417) | 8.86 |
+| Ablación: híbrido RRF con filtro de ID, sin reranking | 0.500 | 3.917 (12/12) | 3/12 (0.250) | 7.61 |
+| Ablación: denso + reranking, sin híbrido | 0.278 | 3.167 (12/12) | 3/12 (0.250) | 7.94 |
+
+| Sistema | Faithfulness | Answer relevancy | Context precision | Context recall | Fuente gold recuperada |
+|---|---:|---:|---:|---:|---:|
+| RAG ingenuo (S07): denso top-3 | 0.642 (n=11) | 0.501 (n=10) | 0.033 (n=10) | 0.167 (n=10) | 0.200 |
+| RAG avanzado: híbrido BM25+denso RRF con filtro de ID + reranking | 0.644 (n=12) | 0.317 (n=10) | 0.350 (n=10) | 0.592 (n=10) | 1.000 |
+| Sistema final: avanzado + herramienta (agente acotado) | 0.708 (n=12) | 0.330 (n=10) | 0.383 (n=10) | 0.792 (n=10) | 1.000 |

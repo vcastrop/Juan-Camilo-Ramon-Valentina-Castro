@@ -2,7 +2,7 @@
 
 **En palabras sencillas:** ContractRisk responde preguntas de un analista sobre fichas públicas de contratos estatales colombianos (SECOP II), por ejemplo «¿qué se contrata y quién lo contrata?» o «¿cuánto difieren los valores de estos dos contratos?», y siempre dice de qué ficha sacó el dato. Una buena respuesta es correcta, cita la ficha exacta y, si el dato no está en las fichas, lo dice en vez de inventarlo. No decide si un contrato es fraudulento: ayuda a una persona a revisar.
 
-Estado: sistema, harness, RAGAS y corrida final implementados y probados (79 pruebas locales). Resultados de la corrida final sobre el gold: ver [Resultados](#resultados). Historial de versiones de desarrollo v1–v5: [HISTORIAL_README.md](HISTORIAL_README.md), [CHECKLIST.md](CHECKLIST.md).
+Estado: sistema, harness, RAGAS y corrida final sobre el gold ejecutados en Colab T4 y auditados (79 pruebas). Resultados y lectura honesta: [Resultados](#resultados). Historial de versiones de desarrollo v1–v5: [HISTORIAL_README.md](HISTORIAL_README.md), [CHECKLIST.md](CHECKLIST.md).
 
 ## Pipeline
 
@@ -80,8 +80,72 @@ Desarrollo v2 (1.5B, mismas cuatro preguntas): denso 0/4, híbrido 3/4, híbrido
 
 ## Resultados
 
-<!-- RESULTADOS_FINALES: se completa con results/final_m3 de la corrida Colab T4 -->
-**Pendiente de la corrida final en Colab T4** ([notebook](ContractRisk_M3_Final_Colab.ipynb)). Las tablas se generan con `python m3/report_m3.py m3/results/final_m3` a partir del detalle por consulta.
+Corrida final: Colab, Tesla T4, 29/10/2026 18:06–18:26 UTC, código `6026ac4` (los 23 hashes de fuentes registrados coinciden con el repositorio), 79 pruebas aprobadas en la sesión, índice reconstruido desde cero (24 fichas, 133 chunks, 16,6 s). Evidencia completa en [`results/final_m3/`](results/final_m3/): [`scorecard_m3.csv`](results/final_m3/scorecard_m3.csv), [`ragas_m3.csv`](results/final_m3/ragas_m3.csv), detalle por consulta ([harness](results/final_m3/scorecard_casos_m3.csv), [RAGAS](results/final_m3/ragas_casos_m3.csv)), respuestas, trazas, juicios y [notebook ejecutado](results/final_m3/ContractRisk_M3_Final_Colab_Ejecutado.ipynb). Las tablas se recalcularon localmente desde el detalle con `report_m3.py` y coinciden byte a byte con las de Colab. Revisión caso por caso: [ANALISIS.md](results/final_m3/ANALISIS.md).
+
+### Tabla evolutiva (12 preguntas gold, mismo harness, generador y prompt base)
+
+| Sistema | Dim. 1 exactitud (0-1) | Dim. 2 juez (1-5) | Dim. 3 dominio | Latencia mediana (s) |
+|---|---:|---:|---:|---:|
+| Línea base sin RAG (mismo generador; adaptación de M2) | 0,167 | 2,33 | 2/12 | 6,72 |
+| RAG ingenuo (S07): denso top-3 | 0,250 | 3,00 | 3/12 | 8,00 |
+| RAG avanzado: híbrido + filtro de ID + reranking | 0,500 | 4,00 | 4/12 | 8,37 |
+| **Sistema final: avanzado + herramienta** | **0,611** | **4,17** | **5/12** | **8,86** |
+| *Ablación: solo híbrido (sin reranking)* | 0,500 | 3,92 | 3/12 | 7,61 |
+| *Ablación: denso + reranking (sin híbrido)* | 0,278 | 3,17 | 3/12 | 7,94 |
+
+Juez con 12/12 notas válidas en todas las filas. Ficha gold entregada al generador (chequeo determinista, 10 preguntas respondibles): sin RAG 0/10, ingenuo 2/10, denso+rerank 6/10, híbrido 10/10, avanzado 10/10, final 10/10.
+
+### RAGAS (laboratorio S10, juez Qwen2.5-3B local)
+
+| Sistema | Faithfulness | Answer relevancy | Context precision | Context recall |
+|---|---:|---:|---:|---:|
+| RAG ingenuo | 0,642 (n=11) | 0,501 (n=10) | 0,033 (n=10) | 0,167 (n=10) |
+| RAG avanzado | 0,644 (n=12) | 0,317 (n=10) | 0,350 (n=10) | 0,592 (n=10) |
+| **Sistema final** | **0,708** (n=12) | **0,330** (n=10) | **0,383** (n=10) | **0,792** (n=10) |
+
+n = casos válidos; faithfulness excluye abstenciones y las otras tres excluyen las 2 preguntas sin respuesta en el corpus. 0 respuestas sí/no sin parsear en 300 llamadas al juez.
+
+### Lectura honesta
+
+**1. ¿Qué movió qué?**
+- **El híbrido con filtro de ID es lo que más movió.** Pasa la ficha correcta de 2/10 a 10/10 y la exactitud de 0,25 a 0,50 (ablación «solo híbrido»). Ataca la falla diagnosticada: el denso no ancla el ID y responde con fichas ajenas (en m3_001–m3_006 el ingenuo citó contratos que no eran los pedidos; en m3_002 y m3_005 respondió «CGR – Gerencia Departamental Quindío»). RAGAS lo confirma: context recall 0,17 → 0,59 y context precision 0,03 → 0,35. No se separa BM25 del filtro de ID: van juntos.
+- **El reranking aportó poco y solo en dominio.** Sobre el híbrido: misma exactitud (0,50), juez 3,92 → 4,00, dominio 3 → 4/12. Sobre el denso, sin híbrido, apenas sube la exactitud (0,25 → 0,28) y la ficha llega en 6/10: reordenar no sirve si el candidato correcto no está en el pool. Cuesta unos 0,8 s de mediana.
+- **La herramienta movió las preguntas de cálculo.** Sin ella ningún sistema calculó bien (avanzado: «5147» y «19000671 H1 − 19001143A H1», es decir referencias tomadas como valores). Con ella, m3_007 y m3_008 dan 168.000.000 y 15.387.424 COP, exactos. m3_008 pasa dominio; m3_007 no, porque la explicación dice «sumando las diferencias» y no muestra los operandos. Exactitud 0,50 → 0,61, context recall 0,59 → 0,79. El router decidió `answer` sin herramienta en 9/10 preguntas no aritméticas. **Llamó de más en m3_009** (fechas, un solo ID): dos llamadas inválidas rechazadas y una tercera bloqueada por duplicada. Costó 6,8 s más en esa pregunta, aunque la respuesta final no cambió.
+- **Sin RAG** el generador inventa (por ejemplo, «servicio de consultoría técnica» para 1088236 o 51476.7 en el cálculo); el protocolo rechaza las respuestas sin cita (7/12 salidas inválidas) o el sistema se abstiene.
+
+**2. ¿Cuánto costó?** Medianas: sin RAG 6,7 s → ingenuo 8,0 s (+1,3 s por el contexto) → solo híbrido 7,6 s → avanzado 8,4 s (+0,8 s de reranking) → final 8,9 s (+0,5 s del router). En las preguntas que usan la herramienta el final tarda 14,1 y 11,4 s, frente a 10,6 y 9,0 s del avanzado. Para un analista que revisa fichas una a una, entre 1 y 2 s adicionales por una respuesta con la ficha correcta y una cifra exacta vale la pena. El reranking es el componente con peor relación costo/beneficio en este corpus. El agente es la única forma de responder bien los cálculos, pero hay que corregir las llamadas innecesarias.
+
+**3. ¿Qué falla queda y de qué tipo?**
+- **Recuperación: prácticamente resuelta** en el final (ficha gold 10/10, context recall 0,79).
+- **Generación: es la falla principal.** Con el contexto correcto, el modelo:
+  - parafrasea el objeto omitiendo partes (m3_003);
+  - responde el tipo («consultoría») en vez del objeto (m3_004);
+  - cambia «mantenimiento» por «prestación de servicios» (m3_006);
+  - omite la entidad (m3_005);
+  - explica mal un cálculo que es correcto (m3_007).
+
+  En el ingenuo el patrón es otro: context recall bajo (0,17) con faithfulness relativamente alto (0,64), es decir, el modelo sigue el contexto, pero el contexto es de otra ficha.
+- **Medición: los jueces tienen límites.**
+  - El juez de M3 dio 4 a la auditoría inventada (m3_012).
+  - El juez RAGAS (el mismo 3B) dijo «no» a chunks que contienen literalmente el dato pedido (context precision 0 con context recall 1 en m3_001 y m3_010), y «no» a fechas que sí están en la ficha (m3_009). Por eso los valores de RAGAS sirven para ver tendencias entre filas, no para afirmar calidad absoluta.
+  - La answer relevancy baja del avanzado (0,32 frente a 0,50 del ingenuo) no significa peores respuestas: el ingenuo responde con frases genéricas parecidas a la pregunta, y el avanzado da respuestas cortas («Mínima cuantía») de las que el juez regenera preguntas desviadas.
+  - Detectamos además un defecto propio: el divisor de afirmaciones parte en el punto de `CO1.PCCNTR` y crea fragmentos como «1109703::c003». Afecta los denominadores de faithfulness. No se corrigió después de la corrida, para no desalinear código y resultados.
+  - En m3_009 la explicación del avanzado y del final dice «sugiere una posible irregularidad», contra el criterio del gold. La regla de acusación del harness no lo detecta: es un falso pase de dominio.
+
+**4. ¿Qué pasó con las preguntas sin respuesta en el corpus?** **La válvula empeoró al mejorar la recuperación.**
+- Sin RAG se abstuvo en 2/2, pero se abstiene casi siempre: también en 3 respondibles.
+- El ingenuo se abstuvo en m3_012 de casualidad, porque recuperó fichas ajenas. En m3_011 respondió «registrada: 6 Mes(es)».
+- Avanzado y final se abstuvieron en **0/2**:
+  - En m3_011 dicen «No se encontró la cláusula de multas…» pero marcan `abstencion=false` y citan la ficha: contradicción de generación, no invención.
+  - **En m3_012 inventan:** «La auditoría de ejecución física concluyó que el contrato… tiene una duración de 4 días». Tomaron un campo de duración como si fuera una auditoría. Es el mismo fallo visto en desarrollo v5.
+
+  Al entregar la ficha correcta del contrato nombrado, el 3B se siente obligado a responder con ella. El prompt de la válvula no basta. Próximos pasos posibles:
+  - una comprobación posterior que obligue a `abstencion=true` cuando la respuesta niega disponer del dato;
+  - que el router reconozca tipos de documento que no existen en el corpus (cláusulas, auditorías).
+
+  Por ahora el sistema **no** es apto para uso sin revisión humana.
+
+**Por qué dejamos el agente:** mejora las tres dimensiones del harness y es la única fila que resuelve los cálculos, con +0,5 s de mediana. Su costo real son las llamadas innecesarias (1/10) y no cambia la falla de abstención.
 
 ## Reproducir
 
