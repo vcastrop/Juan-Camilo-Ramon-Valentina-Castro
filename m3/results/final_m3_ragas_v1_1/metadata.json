@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-29T21:46:32.879531+00:00",
+  "ragas_version": "m3-ragas-lab-1.1",
+  "applicability": {
+    "faithfulness": "Salida válida y abstencion=false.",
+    "answer_relevancy": "Salida válida en pregunta respondible.",
+    "context_precision_lab": "Respondible con contexto.",
+    "context_recall_lab": "Respondible con contexto.",
+    "context_precision_rank": "Respondible con contexto.",
+    "context_recall_segment": "Respondible con contexto."
+  },
+  "judge_model": [
+    "Qwen/Qwen2.5-3B-Instruct",
+    "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  ],
+  "embedding_model": [
+    "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "e8f8c211226b894fcb81acc59f3b34ba3efd5f42"
+  ],
+  "source_run": "m3/results/final_m3",
+  "source_sha256": "0966955b8df2968182b0813fcd645e76f00df6494523ca99ac5ed46767ca306e",
+  "regenerated_answers": false,
+  "gpu": "Tesla T4",
+  "wall_seconds": 114.548572148,
+  "finished_utc": "2026-10-29T21:50:19.750519+00:00"
+}

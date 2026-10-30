@@ -1,0 +1,9 @@
+# Versions observed in the completed Colab smoke run, plus two explicit additions.
+# Torch remains supplied by Colab; its actual version is recorded, not reinstalled.
+transformers==4.57.6
+sentence-transformers==3.4.1
+chromadb==0.6.3
+numpy==2.1.3
+rank-bm25==0.2.2
+sentencepiece==0.2.1
+pysqlite3-binary==0.5.4.post2; sys_platform == 'linux'

@@ -1,0 +1,19 @@
+x: 1/3 m3_010
+x: 2/3 m3_011
+x: 3/3 m3_001
+sin_rag: 1/2 m3_010
+sin_rag: 2/2 m3_011
+rag_ingenuo: 1/2 m3_010
+rag_ingenuo: 2/2 m3_011
+rag_avanzado: 1/2 m3_010
+rag_avanzado: 2/2 m3_011
+sistema_final: 1/2 m3_010
+sistema_final: 2/2 m3_011
+ablacion_solo_hibrido: 1/2 m3_010
+ablacion_solo_hibrido: 2/2 m3_011
+ablacion_denso_rerank: 1/2 m3_010
+ablacion_denso_rerank: 2/2 m3_011
+----------------------------------------------------------------------
+Ran 128 tests in 0.256s
+
+OK

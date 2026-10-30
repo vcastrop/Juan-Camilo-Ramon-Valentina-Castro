@@ -4,6 +4,12 @@ ContractRisk Colombia es una herramienta de inteligencia artificial orientada a 
 
 El objetivo final es integrar distintas señales de análisis contractual para generar alertas de priorización. Estas alertas no constituyen una acusación ni una determinación automática de fraude, corrupción o ilegalidad; la interpretación final corresponde siempre a una persona experta. M1 implementa la primera señal del sistema: evaluar si la descripción contractual es suficientemente informativa.
 
+## Entrega M3: RAG agéntico
+
+**En palabras sencillas:** ContractRisk M3 responde preguntas de un analista sobre fichas públicas de contratos de SECOP II, busca respaldarlas con citas y calcula diferencias de valor con una herramienta. Incluye una instrucción de abstención, pero en la evaluación el sistema final falló las dos preguntas sin respuesta en el corpus. No decide si un contrato es irregular ni sustituye revisión humana.
+
+Reporte completo: [`m3/README.md`](m3/README.md). Para identificar qué ejecutar y qué tabla corresponde a cada versión, comenzar por [`m3/RUTA_ENTREGA.md`](m3/RUTA_ENTREGA.md). Resultados vigentes: harness en `m3/results/final_m3_rescore_v1_1/` y RAGAS en `m3/results/final_m3_ragas_v1_1/`. La corrida original 1.0 se conserva en `m3/results/final_m3/`. Pendientes de cierre: [`m3/CHECKLIST.md`](m3/CHECKLIST.md).
+
 ## Entrega M2: harness de evaluación
 
 El harness de ContractRisk evalúa si un sistema distingue descripciones contractuales suficientemente informativas de aquellas que necesitan revisión humana. Una buena respuesta asigna la etiqueta correcta y evita dejar pasar textos insuficientes sin convertir la alerta en una acusación de fraude o ilegalidad.

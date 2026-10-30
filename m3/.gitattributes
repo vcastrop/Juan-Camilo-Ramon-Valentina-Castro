@@ -1,0 +1,6 @@
+corpus/*.json text eol=lf
+corpus/*.jsonl text eol=lf
+eval/gold_v1/*.json text eol=lf
+eval/gold_v1/evidence/* -text
+indexing/*.json text eol=lf
+indexing/*.jsonl text eol=lf

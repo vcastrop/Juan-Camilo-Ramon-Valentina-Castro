@@ -1,0 +1,11 @@
+{
+  "version": "m3-qa-gold-1.0",
+  "count": 12,
+  "reviewer": "JUAN CAMILO RAMON PEREZ",
+  "review_date": "2026-10-28",
+  "files": {
+    "eval_set.json": "bc4f8a7f74f2905576c34b559cc941df7d8d31d749227af78173136f8b361eca",
+    "evidence/REVISION_HUMANA_QA.md": "0774c8174127c0a121db111b1051167adccd1c80a06edb6f1a92474d8cab6865"
+  },
+  "corpus_sha256": "7c179b53b87103e6b2992ffda49775bce6118f1ab577c991c4ab5fbb4d234505"
+}
