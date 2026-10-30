@@ -13,7 +13,7 @@ Esta es la única lista operativa. El plan inicial y sus fases A–L se conserva
 - [x] Corrida original con 72 respuestas, harness, latencias y RAGAS preservada.
 - [x] Harness 1.1: recálculo sobre respuestas congeladas, sin regenerar ni sustituir notas del juez.
 - [x] RAGAS 1.1 del compañero ejecutado en T4: 36 casos, 393 llamadas, análisis de fallos del juez.
-- [x] Reporte con arquitectura, tablas, ejemplos y limitaciones. Todavía requiere los ajustes del bloque 2.
+- [x] Reporte con arquitectura, tablas, ejemplos y limitaciones; ajustes del bloque 2 incorporados.
 - [x] Auditoría de desarrollo v6 y controles adicionales conservados como antecedentes/candidatos.
 
 ## Bloque 1 — consolidar la versión definitiva
@@ -56,10 +56,10 @@ Decisión del equipo: no se intenta en M3. Queda como mejora futura, declarada a
 
 - [x] Auditar una copia limpia de GitHub: 128 pruebas, 49 enlaces locales, corpus/chunks reconstruidos, recálculo de tablas, sintaxis de notebooks, declaraciones de licencia y escaneo acotado de credenciales. [Registro y límites](REVISION_ENTREGA.md).
 - [x] Revisar tablas del README frente a evidencia: 6 filas harness, 6 recuperación, 3 RAGAS 1.0 y 3 RAGAS 1.1.
-- [ ] Confirmar por el equipo la revisión de privacidad del texto libre del corpus; no confundirla con revisión del gold.
+- [x] Confirmar por el equipo la revisión de privacidad del texto libre del corpus: Juan Camilo Ramón Pérez declaró haber revisado las 24 fichas el 29/10/2026 sin identificar datos personales ni delicados. [Constancia y alcance](evidence/REVISION_PRIVACIDAD_CORPUS.md); distinta de la revisión del gold.
 - Nueva ejecución integral T4 desde cero: no realizada en esta auditoría CPU; se conservan las corridas ejecutadas originales. No marcarla como prueba nueva.
-- [ ] Confirmar aportes humanos reales en Uso de IA y revisar coherencia con M1/M2.
-- [ ] Contrastar rúbrica: corpus, técnicas avanzadas, agente, harness, RAGAS y análisis.
+- [x] Incorporar la declaración de aportes humanos y uso de IA facilitada y confirmada por los autores el 29/10/2026: [detalle](USO_DE_IA.md). No reemplaza las declaraciones históricas de M1/M2.
+- [x] Contrastar rúbrica: corpus, técnicas avanzadas, agente, harness, RAGAS y análisis. [Cierre requisito por requisito y salvedades](CIERRE_REQUISITOS.md); revisión completada no equivale a cumplimiento conductual perfecto ni garantiza todos los puntos.
 - [ ] Revisar PR hacia main y fusionar solo con aprobación del equipo.
 - [ ] Entregar enlace y conservar comprobante en Interactiva.
 - [ ] Preparar explicación oral por ambos integrantes.

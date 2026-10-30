@@ -1,6 +1,6 @@
 # Corpus candidato: fichas públicas SECOP II
 
-Estado técnico actual: este snapshot se utilizó congelado en las corridas M3 y se reconstruyó offline durante la [revisión de entrega](../REVISION_ENTREGA.md). El manifiesto conserva el estado histórico de candidato para no alterar sus evidencias. Está documentada la revisión humana del gold; falta confirmar por el equipo la revisión específica de privacidad del texto libre.
+Estado técnico actual: este snapshot se utilizó congelado en las corridas M3 y se reconstruyó offline durante la [revisión de entrega](../REVISION_ENTREGA.md). El manifiesto conserva el estado histórico de candidato para no alterar sus evidencias. Además de la revisión del gold, Juan Camilo Ramón Pérez confirmó la revisión de privacidad de las 24 fichas el 29/10/2026, sin identificar datos personales ni delicados. Véase la [constancia y sus límites](../evidence/REVISION_PRIVACIDAD_CORPUS.md).
 
 ## Fuente y transformación
 
@@ -10,7 +10,7 @@ Estado técnico actual: este snapshot se utilizó congelado en las corridas M3 y
 - Licencia declarada por los metadatos consultados: Creative Commons Attribution Share Alike 4.0 International, `CC_40_BY_SA`. [Condiciones enlazadas por la fuente](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 - La captura, consultas exactas y metadatos de licencia están en `source_snapshot.json`. Los datos derivados se mantienen bajo la licencia de su fuente, con atribución y esta declaración de transformación; ello no licencia los materiales privados del curso.
 - Transformación: selección de campos públicos necesarios y representación determinista como líneas «campo: valor». No se generan narrativas ni se completan campos faltantes con un modelo.
-- Se excluyen de la selección números de identificación personal, cuentas bancarias, nombres de representantes y supervisores. Las descripciones públicas originales se conservan; falta revisión humana antes de publicar para detectar datos personales innecesarios dentro del texto libre.
+- Se excluyen de la selección números de identificación personal, cuentas bancarias, nombres de representantes y supervisores. Las descripciones públicas originales se conservan. La revisión humana del texto libre fue confirmada sin cambios solicitados; su alcance se limita a las 24 fichas y no certifica los documentos externos enlazados.
 
 ## Composición
 

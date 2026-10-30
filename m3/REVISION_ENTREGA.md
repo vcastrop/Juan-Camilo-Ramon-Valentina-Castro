@@ -34,7 +34,7 @@ Evidencia CPU: [auditoría estructurada](evidence/delivery_review_ae80777/audit.
 
 | Requisito | Evidencia | Límite o riesgo pendiente |
 |---|---|---|
-| Corpus, fuente, condiciones y decisiones de índice | corpus/, ingest.py, README secciones 1–2; reconstrucción offline y corrida T4 | Fichas, no contratos completos; confirmar revisión humana de privacidad del texto libre |
+| Corpus, fuente, condiciones y decisiones de índice | corpus/, ingest.py, README secciones 1–2; reconstrucción offline y corrida T4 | Fichas, no contratos completos; revisión humana de privacidad confirmada en [constancia](evidence/REVISION_PRIVACIDAD_CORPUS.md) |
 | RAG ingenuo conservado y válvula de escape | sistemas_m3.py, prompt y respuestas guardadas | Válvula implementada pero falla: avanzado/final 0/2. No certificar cumplimiento conductual perfecto |
 | Dos técnicas por diagnóstico | Híbrido/RRF/filtro ID, reranking, ablaciones y ejemplos | Recuperar la ficha no garantiza recuperar el dato |
 | Herramienta, esquema, parseo y límites | contract_tools.py, agent_v5.py, trazas de 2 cálculos y decisiones sin herramienta | Llamada innecesaria de m3_009 declarada |
@@ -42,14 +42,14 @@ Evidencia CPU: [auditoría estructurada](evidence/delivery_review_ae80777/audit.
 | Cuatro métricas RAGAS | ragas_m3_v11.py, resultados T4 y referencia/contexto por caso | Juez deficiente, métricas N/A según política y segmentación corta omitida; límites documentados, no resueltos |
 | Reporte y lectura honesta | README: diagrama, tablas, latencias, errores y abstención | No inferir calidad global de coincidencia léxica ni de un juez no validado |
 | Reproducibilidad | Versiones, seeds, commits, logs, notebooks y rutas | Verificación CPU nueva más corridas T4 históricas; no se promete identidad de inferencia entre entornos |
-| Uso de IA y entrega | Sección Uso de IA y CHECKLIST.md | Confirmación humana, PR y envío en Interactiva siguen pendientes |
+| Uso de IA y entrega | Sección Uso de IA, USO_DE_IA.md y CHECKLIST.md | Declaración aportada y confirmada; PR, fusión y envío en Interactiva no se dan por completados |
 
 La guía admite resultados imperfectos explicados, pero exige elementos funcionales. Esta matriz acredita evidencia disponible, no garantiza una calificación ni declara solucionada la abstención.
 
 ## Observaciones y decisiones
 
-1. `corpus/README.md` y el manifiesto conservan estados iniciales de candidato. Se aclara el estado técnico actual en el README sin alterar el manifiesto o los hashes. La revisión del gold no implica automáticamente una revisión humana de privacidad: el equipo debe confirmarla.
+1. `corpus/README.md` y el manifiesto conservan estados iniciales de candidato. Se aclara el estado técnico actual en el README sin alterar el manifiesto o los hashes. La revisión del gold no implica automáticamente una revisión humana de privacidad: esta última fue confirmada separadamente por Juan Camilo Ramón Pérez para las 24 fichas, con fecha 29/10/2026. [Constancia y límites](evidence/REVISION_PRIVACIDAD_CORPUS.md).
 2. Los notebooks pueden clonar una rama móvil. La ruta de entrega indica cómo reconstruir un commit en un clon separado. Mientras se usen esos notebooks, no borrar la rama M3. El notebook final produce 1.0; el recálculo y notebook RAGAS separado producen las tablas 1.1.
 3. El notebook RAGAS admite ZIP y clonación. Para la rama publicada, usar `USE_ZIP = False`, como indica RUTA_ENTREGA.md. No subir un ZIP de resultados como si fuera código.
 4. Las verificaciones no autorizan reescribir resultados ni cambiar las reglas. Juez alternativo pospuesto; no es necesario repetir corridas por cambios documentales.
-5. Quedan confirmación de contribuciones humanas, revisión humana de privacidad declarada pendiente, aprobación de PR y entrega. No marcar esos pasos a nombre del equipo.
+5. La declaración detallada de contribuciones humanas fue aportada y confirmada por los autores con fecha 29/10/2026; está enlazada desde el README. Quedan aprobación/fusión de PR y entrega. La revisión de privacidad cuenta con confirmación explícita del revisor; no marcar los demás pasos a nombre del equipo.
