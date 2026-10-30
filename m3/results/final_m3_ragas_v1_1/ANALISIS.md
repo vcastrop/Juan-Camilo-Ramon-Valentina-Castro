@@ -7,7 +7,7 @@ Fecha: 29/10/2026. Revisión técnica asistida por Claude Code, pendiente de rev
 - Colab Tesla T4, 21:46–21:50 UTC, `status: completed`, código `1575907` (`commit.txt`); 86 pruebas aprobadas (`tests.log`).
 - Fuente: `../final_m3/harness_rows.jsonl`, sha256 `0966955b…306e`, igual al archivo del repositorio. No se regeneraron respuestas (`regenerated_answers: false`).
 - 36 casos, 393 llamadas al juez, 0 respuestas sí/no sin parsear.
-- **Reproducibilidad:** answer relevancy, context precision por rango y context recall por segmentos usan los mismos prompts que la 1.0 y dieron valores **idénticos en los 36 casos**. Con decodificación greedy, el juez es determinista entre sesiones.
+- **Coincidencia observada entre dos ejecuciones:** answer relevancy, context precision por rango y context recall por segmentos usan los mismos prompts que la 1.0 y dieron valores **idénticos en los 36 casos**, en estas dos sesiones de Colab T4 con las mismas versiones y decodificación greedy. Esto no garantiza el mismo resultado en otros entornos, GPU o versiones.
 
 ## Hallazgos
 

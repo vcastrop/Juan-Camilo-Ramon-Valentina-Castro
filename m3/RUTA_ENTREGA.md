@@ -49,4 +49,4 @@ Se conservan en sus rutas para no romper imports, pruebas ni referencias histór
 
 ## Límites que esta consolidación no resuelve
 
-No modifica generador, métricas, prompts ni notas. Persisten errores del juez y de abstención. Los ajustes de redacción y controles pendientes se listan en CHECKLIST.md. El análisis documental original fue corregido por el compañero; las respuestas, métricas originales y logs no se modificaron. No describir toda la carpeta como byte a byte intacta si su ANALISIS.md recibió una fe de erratas.
+No modifica generador, métricas, prompts ni notas. Persisten errores del juez y de abstención. Los ajustes de redacción y los límites del evaluador se incorporaron en `2d315a3`; lo que queda de revisión y entrega está en CHECKLIST.md. El análisis documental original fue corregido por el compañero; las respuestas, métricas originales y logs no se modificaron. No describir toda la carpeta como byte a byte intacta si su ANALISIS.md recibió una fe de erratas.

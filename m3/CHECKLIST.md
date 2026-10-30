@@ -24,7 +24,8 @@ Esta es la única lista operativa. El plan inicial y sus fases A–L se conserva
 - [x] Separar documentación histórica y candidatos sin borrar archivos ni romper imports.
 - [x] Reemplazar instrucciones de traspaso desactualizadas por una ruta vigente.
 - [x] Verificar pruebas combinadas: 120 aprobadas (128 tras añadir `test_limites_m3.py` en el cierre de los bloques 2 y 3); 19 enlaces nuevos comprobados y 22 archivos originales de corpus/gold/evidencia bruta preservados. Código y resultados del compañero coinciden con el bundle.
-- [ ] Publicar y comprobar el commit consolidado en la rama remota M3; no fusionar main.
+- [x] Publicar el commit consolidado `f3d7ea8` en la rama remota M3 (push completado por el equipo); no fusionar main.
+- [ ] Integrar y publicar `2d315a3` (bloques 2 y 3) y su corrección documental posterior; no volver a publicar la consolidación completa.
 
 ## Bloque 2 — precisión del reporte
 
@@ -42,21 +43,24 @@ Esta es la única lista operativa. El plan inicial y sus fases A–L se conserva
 - [x] No atribuir resultados existentes a reglas modificadas después de ejecutarlos (no se cambiaron reglas en este cierre).
 - [x] No cambiar notas del juez por comprobaciones de acierto.
 
-## Bloque 4 — juez alternativo (opcional, no bloquea el cierre)
+## Bloque 4 — juez alternativo: POSPUESTO, no se ejecutará para esta entrega
 
-- [ ] Solo si se decide intentarlo: calibración separada del gold y criterios fijados antes de evaluar.
-- [ ] Probar recursos y comportamiento antes de prometer una corrida completa.
-- [ ] Repetir RAGAS sobre respuestas congeladas solo si la calibración resulta aceptable; conservar ambos resultados.
-- [ ] Si se omite, declararlo como mejora futura, no como componente ejecutado.
+Decisión del equipo: no se intenta en M3. Queda como mejora futura, declarada así en el README; no se presenta como componente ejecutado. Si se retoma (M4/M5), seguir estos pasos:
+
+- Calibración con ejemplos separados del gold y criterios de aceptación fijados antes de evaluar.
+- Probar memoria, tiempo y comportamiento antes de comprometer una corrida completa.
+- Repetir RAGAS sobre las respuestas congeladas solo si la calibración es aceptable, y conservar ambos resultados.
+- Identificarlo como evaluación distinta del juez de la dimensión 2 del harness.
 
 ## Bloque 5 — revisión y entrega
 
-- [ ] Comprobar instrucciones completas desde entorno limpio, enlaces, versiones, licencias y ausencia de secretos.
+- [ ] Comprobar instrucciones completas desde entorno limpio, enlaces, versiones, licencias y ausencia de secretos. Pasar las pruebas no demuestra esto: falta hacerlo y registrarlo.
+- [ ] Revisar la correspondencia entre cada tabla del README y su archivo de evidencia.
 - [ ] Confirmar aportes humanos reales en Uso de IA y revisar coherencia con M1/M2.
 - [ ] Contrastar rúbrica: corpus, técnicas avanzadas, agente, harness, RAGAS y análisis.
 - [ ] Revisar PR hacia main y fusionar solo con aprobación del equipo.
 - [ ] Entregar enlace y conservar comprobante en Interactiva.
 - [ ] Preparar explicación oral por ambos integrantes.
 
-Avance orientativo de M3: alrededor de 90 % (85–90 %), no una nota ni una tasa de respuestas correctas.
+Avance orientativo de M3: alrededor de 90–95 % de la entrega académica, no una nota, ni una tasa de respuestas correctas, ni madurez para uso real.
 No declarar el sistema apto para uso autónomo: conserva abstención 0/2 en avanzado/final y errores de generación y de juez.

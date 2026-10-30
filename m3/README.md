@@ -1,6 +1,6 @@
 # ContractRisk M3: un RAG que consulta fichas públicas de contratos, calcula y se evalúa
 
-> **Versión de entrega consolidada:** tablas de harness `m3-harness-1.1` y RAGAS `m3-ragas-lab-1.1` del bundle `bc93baa`. Consulta [RUTA_ENTREGA.md](RUTA_ENTREGA.md) para distinguir resultados vigentes, corrida original y candidatos. La auditoría RAGAS alternativa preparada previamente no es necesaria para reproducir estas tablas. Quedan pendientes los ajustes de interpretación y la revisión final indicados en [CHECKLIST.md](CHECKLIST.md).
+> **Versión de entrega consolidada:** tablas de harness `m3-harness-1.1` y RAGAS `m3-ragas-lab-1.1` del bundle `bc93baa`. Consulta [RUTA_ENTREGA.md](RUTA_ENTREGA.md) para distinguir resultados vigentes, corrida original y candidatos. La auditoría RAGAS alternativa preparada previamente no es necesaria para reproducir estas tablas. Los ajustes de interpretación y los límites del evaluador ya están incorporados (commit `2d315a3` y su corrección documental). Quedan la revisión final, la confirmación de «Uso de IA», la publicación y la entrega, indicadas en [CHECKLIST.md](CHECKLIST.md).
 
 
 **En palabras sencillas:** ContractRisk responde preguntas de un analista sobre fichas públicas de contratos estatales colombianos (SECOP II), por ejemplo «¿qué se contrata y quién lo contrata?» o «¿cuánto difieren los valores de estos dos contratos?», y siempre dice de qué ficha sacó el dato. Una buena respuesta es correcta, cita la ficha exacta y, si el dato no está en las fichas, lo dice en vez de inventarlo. No decide si un contrato es fraudulento: ayuda a una persona a revisar.
@@ -222,7 +222,7 @@ Estas reglas son expresiones regulares y preguntas sí/no a un juez local: aprox
   - una comprobación posterior que obligue a `abstencion=true` cuando la respuesta niega disponer del dato;
   - que el router reconozca tipos de documento que no existen en el corpus.
 
-**Conclusión.** Es un experimento completo y trazable que muestra mejoras medidas en localización de fichas y en cálculos. **No es un sistema funcional y seguro para uso sin revisión humana**: inventa en una de las dos preguntas sin respuesta y sus métricas automáticas y jueces tienen límites documentados.
+**Conclusión.** Es un experimento completo y trazable que muestra mejoras medidas en localización de fichas y en cálculos. **No es un sistema funcional y seguro para uso sin revisión humana**: inventa en una de las dos preguntas sin respuesta y sus métricas automáticas y jueces tienen límites documentados. Probar un juez alternativo, calibrado con ejemplos separados del gold, **no se ejecutó para esta entrega** y queda como mejora futura.
 
 **Por qué dejamos el agente:**
 - Es la única fila que obtiene correctamente los operandos y el resultado de los cálculos, y mejora las tres dimensiones con +0,5 s de mediana.
