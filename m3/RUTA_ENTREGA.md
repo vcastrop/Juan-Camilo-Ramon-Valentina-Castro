@@ -4,6 +4,8 @@
 
 La entrega consolidada toma como base el bundle del compañero `bc93baa`, integrado con las auditorías y pruebas locales. No sustituye main. El informe es [README.md](README.md) y la lista operativa es [CHECKLIST.md](CHECKLIST.md).
 
+Los cierres documentales `2d315a3` y `ae80777` están integrados y publicados. [Revisión desde clon limpio](REVISION_ENTREGA.md): comprobaciones realizadas, matriz de requisitos y límites de reproducción.
+
 | Etapa | Código que produjo la evidencia | Evidencia de referencia | Estado |
 |---|---|---|---|
 | Generación, harness y RAGAS originales | `6026ac4`; `run_final_m3.py`, `harness_m3.py`, `ragas_m3.py` | [final_m3](results/final_m3/ANALISIS.md) | Ejecutada, histórica 1.0 |

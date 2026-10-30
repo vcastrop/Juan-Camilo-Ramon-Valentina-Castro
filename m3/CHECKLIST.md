@@ -25,7 +25,7 @@ Esta es la única lista operativa. El plan inicial y sus fases A–L se conserva
 - [x] Reemplazar instrucciones de traspaso desactualizadas por una ruta vigente.
 - [x] Verificar pruebas combinadas: 120 aprobadas (128 tras añadir `test_limites_m3.py` en el cierre de los bloques 2 y 3); 19 enlaces nuevos comprobados y 22 archivos originales de corpus/gold/evidencia bruta preservados. Código y resultados del compañero coinciden con el bundle.
 - [x] Publicar el commit consolidado `f3d7ea8` en la rama remota M3 (push completado por el equipo); no fusionar main.
-- [ ] Integrar y publicar `2d315a3` (bloques 2 y 3) y su corrección documental posterior; no volver a publicar la consolidación completa.
+- [x] Integrar y publicar `2d315a3` y `ae80777`; clon remoto limpio verificado en `ae80777`, sin modificar main.
 
 ## Bloque 2 — precisión del reporte
 
@@ -54,8 +54,10 @@ Decisión del equipo: no se intenta en M3. Queda como mejora futura, declarada a
 
 ## Bloque 5 — revisión y entrega
 
-- [ ] Comprobar instrucciones completas desde entorno limpio, enlaces, versiones, licencias y ausencia de secretos. Pasar las pruebas no demuestra esto: falta hacerlo y registrarlo.
-- [ ] Revisar la correspondencia entre cada tabla del README y su archivo de evidencia.
+- [x] Auditar una copia limpia de GitHub: 128 pruebas, 49 enlaces locales, corpus/chunks reconstruidos, recálculo de tablas, sintaxis de notebooks, declaraciones de licencia y escaneo acotado de credenciales. [Registro y límites](REVISION_ENTREGA.md).
+- [x] Revisar tablas del README frente a evidencia: 6 filas harness, 6 recuperación, 3 RAGAS 1.0 y 3 RAGAS 1.1.
+- [ ] Confirmar por el equipo la revisión de privacidad del texto libre del corpus; no confundirla con revisión del gold.
+- Nueva ejecución integral T4 desde cero: no realizada en esta auditoría CPU; se conservan las corridas ejecutadas originales. No marcarla como prueba nueva.
 - [ ] Confirmar aportes humanos reales en Uso de IA y revisar coherencia con M1/M2.
 - [ ] Contrastar rúbrica: corpus, técnicas avanzadas, agente, harness, RAGAS y análisis.
 - [ ] Revisar PR hacia main y fusionar solo con aprobación del equipo.

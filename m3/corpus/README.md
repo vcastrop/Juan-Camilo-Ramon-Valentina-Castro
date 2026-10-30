@@ -1,6 +1,6 @@
 # Corpus candidato: fichas públicas SECOP II
 
-Estado: descargado y validado técnicamente; pendiente de revisión humana y congelación para evaluación.
+Estado técnico actual: este snapshot se utilizó congelado en las corridas M3 y se reconstruyó offline durante la [revisión de entrega](../REVISION_ENTREGA.md). El manifiesto conserva el estado histórico de candidato para no alterar sus evidencias. Está documentada la revisión humana del gold; falta confirmar por el equipo la revisión específica de privacidad del texto libre.
 
 ## Fuente y transformación
 
@@ -42,6 +42,6 @@ En `CO1.PCCNTR.1088236`, la fuente registra firma en 2024 e inicio/fin en 2019. 
 
 El corpus sirve para consultar objetos, entidades y campos de fichas y estudiar recuperación/citas/abstención. No contiene por sí mismo actas, cláusulas completas, ejecución física ni hallazgos de auditoría. No permite confirmar corrupción, incumplimientos o sobrecostos. Una pregunta que requiera esa evidencia debe producir abstención o indicar qué documentación falta.
 
-## Verificación inicial
+## Verificación inicial (histórica, anterior a las corridas)
 
 Se ejecutaron cinco pruebas unitarias y una reconstrucción offline. Los SHA-256 del snapshot y documentos reconstruidos coinciden con los del manifiesto. Esto comprueba la preparación de datos, no el funcionamiento del RAG: todavía no se ha construido el índice ni ejecutado el modelo de M3.

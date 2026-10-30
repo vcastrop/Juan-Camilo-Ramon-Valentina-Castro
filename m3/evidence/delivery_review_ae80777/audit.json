@@ -1,0 +1,45 @@
+{
+  "scope": "clean GitHub checkout; CPU audit only; no model inference or GPU installation",
+  "checks": {
+    "tests": "128",
+    "local_links": {
+      "checked": 49,
+      "broken": [],
+      "external_not_http_checked": [
+        "https://creativecommons.org/licenses/by-sa/4.0/legalcode",
+        "https://www.datos.gov.co/Estad-sticas-Nacionales/SECOP-II-Contratos-Electr-nicos/jbjy-vk9h",
+        "https://www.datos.gov.co/Estad-sticas-Nacionales/SECOP-II-Contratos-Electr-nicos/jbjy-vk9h/data_preview"
+      ]
+    },
+    "gold": {
+      "cases": 12,
+      "unanswerable": 2,
+      "responses": 72,
+      "reference_leak_check": "system called with question only; source inspected"
+    },
+    "rescore": "all 72 rows and exported tables reproduced; normalized line endings",
+    "ragas": {
+      "cases": 36,
+      "calls": 393,
+      "parse_failures": 0,
+      "aggregates_match": true
+    },
+    "readme_tables": "6 harness rows and 3 RAGAS 1.1 rows match detail-derived values and denominators",
+    "notebook_syntax": [
+      "ContractRisk_M3_Final_Colab.ipynb",
+      "ContractRisk_M3_RAGAS_v1_1_Colab.ipynb"
+    ],
+    "credential_pattern_scan": {
+      "files": 148,
+      "matches": [],
+      "scope": "M3 and root README, not complete Git history or binary ZIPs"
+    },
+    "machine_specific_entry_paths": [],
+    "models_and_licenses": "reviewed declarations, pinned model revisions and corpus source attribution; not legal certification"
+  },
+  "warnings": [
+    "No fresh GPU inference or pip installation performed locally.",
+    "Human contribution and corpus privacy review cannot be invented.",
+    "Known abstention and judge failures remain; tests do not prove semantic quality."
+  ]
+}
