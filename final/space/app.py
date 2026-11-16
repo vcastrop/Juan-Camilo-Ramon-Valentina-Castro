@@ -1,14 +1,14 @@
 """Infrastructure smoke only; no simulated contractual answers."""
+import spaces  # Must precede libraries that may initialize CUDA.
 from pathlib import Path
 import sys
 import time
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import telemetry
-from fastapi import FastAPI
 from fastapi.responses import JSONResponse
+from starlette.routing import Route
 import gradio as gr
-import spaces
 
 
 def health_payload():
@@ -28,36 +28,28 @@ def infrastructure_probe():
 
 @spaces.GPU(duration=20)
 def gpu_operation():
+    started = time.perf_counter()
     import torch
     if not torch.cuda.is_available():
         raise RuntimeError('GPU unavailable')
     value = (torch.ones(1, device='cuda') + 1).item()
-    return {'device': torch.cuda.get_device_name(0), 'tensor_check': value == 2}
+    return {'device': torch.cuda.get_device_name(0), 'tensor_check': value == 2,
+            'latency_seconds': time.perf_counter()-started}
 
 
-def gpu_probe():
-    started = time.perf_counter()
-    try:
-        output = gpu_operation()
-        success = bool(output['tensor_check'])
-    except Exception:
-        output = {'error': 'GPU no verificada; revisar cuota y configuración del Space.'}
-        success = False
-    payload = telemetry.event('gpu_smoke', time.perf_counter()-started, success, gpu=True)
+def gpu_probe(output):
+    # Runs on CPU after the GPU callback, without holding a GPU for W&B I/O.
+    success = bool(output.get('tensor_check', False))
+    payload = telemetry.event('gpu_smoke', output['latency_seconds'], success, gpu=True)
     return {'result': output, 'wandb_status': telemetry.send(payload),
             'models_loaded': False}
 
 
-api = FastAPI(title='ContractRisk infrastructure')
+def healthz(request):
+    return JSONResponse(health_payload())
 
 
-@api.get('/healthz')
-def healthz():
-    return health_payload()
-
-
-@api.get('/readyz')
-def readyz():
+def readyz(request):
     return JSONResponse(status_code=503, content=health_payload())
 
 
@@ -69,10 +61,21 @@ with gr.Blocks(title='ContractRisk Colombia') as demo:
     gr.Button('Consultar estado sin usar GPU').click(health_payload, outputs=gr.JSON())
     gr.Button('Registrar prueba técnica').click(infrastructure_probe, outputs=gr.JSON())
     gr.Markdown('La prueba siguiente consume cuota de ZeroGPU. No carga modelos.')
-    gr.Button('Probar asignación GPU').click(gpu_probe, outputs=gr.JSON())
+    gpu_result = gr.JSON()
+    gr.Button('Probar asignación GPU').click(
+        gpu_operation, outputs=gpu_result,
+    ).success(gpu_probe, inputs=gpu_result, outputs=gpu_result)
 
-app = gr.mount_gradio_app(api, demo.queue(max_size=4), path='/')
+HEALTH_ROUTES = [Route('/healthz', healthz), Route('/readyz', readyz)]
+
+
+def launch(server_port=7860, prevent_thread_lock=False):
+    # One server, started via Gradio so ZeroGPU can register its handlers.
+    return demo.queue(max_size=4).launch(
+        server_name='0.0.0.0', server_port=server_port,
+        prevent_thread_lock=prevent_thread_lock, ssr_mode=False,
+        app_kwargs={'routes': HEALTH_ROUTES},
+    )
 
 if __name__ == '__main__':
-    import uvicorn
-    uvicorn.run(app, host='0.0.0.0', port=7860, log_level='warning', access_log=False)
+    launch()

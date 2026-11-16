@@ -1,4 +1,5 @@
 import contextlib
+import ast
 import importlib.util
 import io
 import json
@@ -13,6 +14,21 @@ spec.loader.exec_module(telemetry)
 
 
 class InfrastructureTests(unittest.TestCase):
+    def test_native_launch_and_direct_gpu_callback(self):
+        tree = ast.parse((module_path.parent / 'app.py').read_text(encoding='utf-8'))
+        gpu_functions = {node.name for node in ast.walk(tree)
+            if isinstance(node, ast.FunctionDef) and any(
+                isinstance(d, ast.Call) and isinstance(d.func, ast.Attribute)
+                and isinstance(d.func.value, ast.Name) and d.func.value.id == 'spaces'
+                and d.func.attr == 'GPU' for d in node.decorator_list)}
+        callbacks = {node.args[0].id for node in ast.walk(tree)
+            if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute)
+            and node.func.attr == 'click' and node.args and isinstance(node.args[0], ast.Name)}
+        self.assertTrue(gpu_functions & callbacks)
+        self.assertFalse(any(isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute)
+            and isinstance(node.func.value, ast.Name) and node.func.value.id == 'uvicorn'
+            for node in ast.walk(tree)))
+
     def test_spaces_matches_observed_zerogpu_builder(self):
         requirements = (module_path.parent / 'requirements.txt').read_text(encoding='utf-8').splitlines()
         self.assertIn('spaces==0.51.3', requirements)
