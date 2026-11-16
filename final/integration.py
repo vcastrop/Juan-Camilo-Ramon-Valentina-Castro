@@ -3,6 +3,7 @@ import json
 import re
 import time
 import unicodedata
+from final.config import VERSION
 
 
 def normalized(text):
@@ -55,7 +56,7 @@ class IntegratedSystem:
         record = {'question': question, 'mode': mode, 'visual': None,
                   'classification': None, 'contexts': [], 'tool_trace': [],
                   'components': {'rag': False, 'tool': False, 'vision': False, 'classifier': False},
-                  'integration_version': 'final-integration-dev-0.1'}
+                  'integration_version': VERSION}
         def finish(output, guard=None):
             record.update(output=output, guard=guard, latency_seconds=time.perf_counter()-start)
             return record
@@ -73,6 +74,11 @@ class IntegratedSystem:
                 return finish(abstain('La imagen no es legible. Se necesita una captura más clara.'), 'unreadable')
             if contract_ids(question) and visual['id_contrato'] and visual['id_contrato'] not in contract_ids(question):
                 return finish(abstain('El ID de la pregunta y el leído en la imagen no coinciden.'), 'id_mismatch')
+            from final.visual_fields import requested_missing
+            missing = requested_missing(question, visual)
+            if mode == 'qa' and missing:
+                record['missing_visual_fields'] = missing
+                return finish(abstain('La lectura de la imagen no permite verificar todos los campos solicitados.'), 'missing_visual_fields')
         if mode == 'sufficiency':
             text = description if description is not None else (visual or {}).get('objeto')
             if not isinstance(text, str) or not text.strip():

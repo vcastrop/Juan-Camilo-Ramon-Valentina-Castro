@@ -4,7 +4,7 @@ Estado: preparación de infraestructura, no sistema final funcional. [Checklist]
 
 ## Próxima prueba: integración real en Colab
 
-[Notebook de integración 01](ContractRisk_Final_Integracion_01_Colab.ipynb) y [alcance/metodología](INTEGRACION_DESARROLLO.md). Código preparado y pruebas CPU aprobadas; ejecución real T4 pendiente. No subir estos archivos ni sus dependencias al Space inicial todavía.
+[Notebook vigente de corrección 02](ContractRisk_Final_Correccion_02_Colab.ipynb) y [cambios/metodología](CORRECCION_02.md). Código preparado y regresiones CPU aprobadas; nueva inferencia T4 pendiente. El [ensayo 01](evidence/integration_01/ANALISIS.md) ya se ejecutó y mostró fallos visuales que motivan esta corrección. No subir estos archivos ni sus dependencias al Space inicial todavía.
 
 Objetivo: integrar la señal de suficiencia descriptiva M1, consultas con fuentes/herramienta M3 y lectura de capturas contractuales, medir eficiencia y desplegar una aplicación observada.
 

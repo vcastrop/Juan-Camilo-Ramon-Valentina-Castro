@@ -6,5 +6,5 @@ MODELS = {
     'vision': ('Qwen/Qwen2-VL-2B-Instruct', '895c3a49bc3fa70a340399125c650a463535e71c'),
     'classifier': ('BSC-LT/RoBERTalex', '2a1c89fd468a362368463b4126751fdd51c4d847'),
 }
-VERSION = 'final-integration-dev-0.1'
+VERSION = 'final-integration-dev-0.2'
 SEED = 42

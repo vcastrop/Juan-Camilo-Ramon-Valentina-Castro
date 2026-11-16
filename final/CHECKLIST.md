@@ -62,6 +62,8 @@ Avance de preparación: se añadieron `integration.py`, `adapters.py`, `run_inte
 
 Actualización: integración 01 ejecutada en T4 con código `753e05e`, 14 filas y cero excepciones de caso. [Auditoría y hallazgos](evidence/integration_01/ANALISIS.md). Texto, cálculo y carga M1 comprobados en desarrollo; extracción visual válida 0/4 y preguntas visuales abstienen por formato. Calidad visual no aprobada, no sustituir Space ni marcar integración completa. La corrección de fuentes se ejecutó; siguen pendientes separación OCR/campos y restricción del router.
 
+Corrección 02 preparada: [protocolo y límites](CORRECCION_02.md), [notebook vigente](ContractRisk_Final_Correccion_02_Colab.ipynb). Se separó transcripción/campos, se agregó guard de píxeles uniformes y se restringió elegibilidad de herramienta. Las regresiones incluyen las salidas reales previas y campos faltantes; inferencia nueva T4 pendiente. No confundir replay estructural post-hoc con mejora visual demostrada.
+
 - [ ] Conectar el clasificador RoBERTalex+LoRA de M1 con un caso de uso real y visible; mantener sus etiquetas y límites.
 - [ ] Conectar corpus/indexación, recuperación híbrida, reranking y herramienta M3 en el mismo servicio.
 - [ ] Revisar recuperación de campos completos para cálculos y respuestas; ficha correcta no equivale a evidencia completa.
