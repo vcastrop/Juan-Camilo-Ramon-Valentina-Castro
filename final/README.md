@@ -2,6 +2,10 @@
 
 Estado: preparación de infraestructura, no sistema final funcional. [Checklist](CHECKLIST.md).
 
+## Próxima prueba: integración real en Colab
+
+[Notebook de integración 01](ContractRisk_Final_Integracion_01_Colab.ipynb) y [alcance/metodología](INTEGRACION_DESARROLLO.md). Código preparado y pruebas CPU aprobadas; ejecución real T4 pendiente. No subir estos archivos ni sus dependencias al Space inicial todavía.
+
 Objetivo: integrar la señal de suficiencia descriptiva M1, consultas con fuentes/herramienta M3 y lectura de capturas contractuales, medir eficiencia y desplegar una aplicación observada.
 
 Space objetivo: https://huggingface.co/spaces/Juanoff/contractrisk-colombia

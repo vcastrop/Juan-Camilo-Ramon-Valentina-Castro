@@ -58,6 +58,8 @@ Aceptación: URL accesible y flujo mínimo real. Un mock, un notebook enlazado o
 
 ## Fase 2 — integrar y corregir comportamiento sin alterar evidencia histórica
 
+Avance de preparación: se añadieron `integration.py`, `adapters.py`, `run_integration.py`, configuración con revisiones fijas y [notebook de integración 01](ContractRisk_Final_Integracion_01_Colab.ipynb). 18 pruebas final CPU y 128 heredadas aprobadas; sintaxis y generación de fixtures comprobadas. Los modelos reales no se han ejecutado en esta nueva integración. No marcar las casillas siguientes como verificadas hasta revisar el ZIP de T4. La orquestación visual de este ensayo reutiliza extracciones guardadas, no mide latencia multimodal fresca.
+
 - [ ] Conectar el clasificador RoBERTalex+LoRA de M1 con un caso de uso real y visible; mantener sus etiquetas y límites.
 - [ ] Conectar corpus/indexación, recuperación híbrida, reranking y herramienta M3 en el mismo servicio.
 - [ ] Revisar recuperación de campos completos para cálculos y respuestas; ficha correcta no equivale a evidencia completa.

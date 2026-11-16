@@ -17,3 +17,11 @@ Space: https://huggingface.co/spaces/Juanoff/contractrisk-colombia
 La asignación GPU de infraestructura está verificada. No se cargaron clasificador, generador, visión, embeddings, reranker ni índice del sistema integrado. La observabilidad de peticiones reales, los valores de métricas en W&B y el acceso del evaluador siguen pendientes.
 
 La visibilidad Team no garantiza acceso externo. La guía permite enlace o capturas para W&B: configurar acceso apropiado o conservar capturas legibles de métricas reales sin información personal. No convertir en públicos otros proyectos ni credenciales.
+
+## Confirmación posterior de métricas
+
+El usuario aportó el enlace https://forge.coreweave.com/wandb/jcramonp-eanit/contractrisk-final/runs/6z44eah1 y una captura del run `hardy-resonance-1`. Se observan dos puntos en `request/success` con valor 1 y una serie `request/latency_seconds` consistente con las pruebas de infraestructura. Los grupos de métricas de uso están presentes pero contraídos: no se certifican sus valores individuales desde esa captura.
+
+La ejecución figura `Crashed`. Eso no borra los datos recibidos ni demuestra que fallara la operación GPU. El logger actual mantiene un run abierto y no lo finaliza explícitamente; un reinicio del Space es una explicación posible, no una causa probada. Revisar cierre/sincronización del ciclo de observabilidad antes de la entrega; conservar este run como evidencia del intento inicial.
+
+El enlace no pudo leerse desde la herramienta web del agente; no se establece la causa (autenticación, accesibilidad o limitación de la herramienta) ni se da por comprobado el acceso público. El titular confirmó además haber actualizado `CONTRACTRISK_VERSION=cbe985a` y un build posterior sin errores. Esa confirmación no altera retroactivamente la metadata de los eventos antiguos.
