@@ -13,6 +13,11 @@ spec.loader.exec_module(telemetry)
 
 
 class InfrastructureTests(unittest.TestCase):
+    def test_spaces_matches_observed_zerogpu_builder(self):
+        requirements = (module_path.parent / 'requirements.txt').read_text(encoding='utf-8').splitlines()
+        self.assertIn('spaces==0.51.3', requirements)
+        self.assertNotIn('spaces==0.52.0', requirements)
+
     def test_allowlist_and_json(self):
         with contextlib.redirect_stdout(io.StringIO()) as captured:
             payload = telemetry.event('infrastructure_smoke', 0.1, True)
