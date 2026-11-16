@@ -1,0 +1,3 @@
+# Keep returned evidence byte-exact, including on Windows checkouts.
+executed.ipynb -text
+original_results.zip -text
