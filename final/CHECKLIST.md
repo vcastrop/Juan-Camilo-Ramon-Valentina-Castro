@@ -34,7 +34,7 @@ La técnica de eficiencia y el hardware de publicación se eligen tras perfilar 
 - [ ] Recibir cualquier trabajo de M4/M5 no publicado y comentarios adicionales relevantes.
 - [ ] Recibir los materiales/labs de sesiones 13 y 15 y, si existen, los de visión e invarianza de M4.
 - [x] Confirmar disponibilidad de Colab GPU para comparar antes/después: usuario confirma T4 el 16/11; acceso efectivo se registrará al ejecutar.
-- [ ] Confirmar cuentas/permisos de Hugging Face Spaces y W&B; presupuesto/hardware disponible, sin suponer pagos.
+- [x] Confirmar cuentas y acceso inicial: Space `Juanoff/contractrisk-colombia` ejecuta prueba real ZeroGPU; W&B `jcramonp-eanit/contractrisk-final` muestra una run. [Evidencia y límites](evidence/SPACE_SMOKE_CONFIRMADO.md). Acceso externo W&B y series de métricas pendientes; no se autorizaron pagos.
 - [ ] Acordar responsabilidades humanas y disponibilidad de ambos integrantes.
 - [x] Crear rama `Entrega/contractrisk-final` desde main remoto `afe4717`; entregas anteriores preservadas.
 - [ ] Inventariar modelos/adaptador, licencias, paquetes, corpus y evidencias existentes.
@@ -50,7 +50,7 @@ Aceptación: base identificada, sin cambios ajenos perdidos, inventario y respon
 - [ ] Definir interfaz común textual/visual y un único punto de entrada `sistema(...)` con resultado estructurado.
 - [ ] Definir modos: consulta, comparación numérica, suficiencia descriptiva y consulta con imagen.
 - [ ] Definir formato de citas, errores, incertidumbre y abstención.
-- [ ] Crear Space mínimo y comprobar acceso público pronto, antes de terminar la optimización.
+- [x] Crear Space mínimo y comprobar arranque de interfaz y operación GPU según capturas del usuario. [Prueba inicial](evidence/SPACE_SMOKE_CONFIRMADO.md). Todavía no ejecuta el pipeline contractual.
 - [ ] Probar instalación y carga en el hardware elegido; medir memoria y arranque.
 - [ ] Registrar la decisión si se requiere una versión reducida, con exclusiones exactas; no presentarla como idéntica al sistema completo.
 

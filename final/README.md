@@ -6,7 +6,7 @@ Objetivo: integrar la señal de suficiencia descriptiva M1, consultas con fuente
 
 Space objetivo: https://huggingface.co/spaces/Juanoff/contractrisk-colombia
 
-Equipo W&B: `jcramonp-eanit`; proyecto propuesto: `contractrisk-final`. No se ha verificado autenticación ni registro remoto.
+Equipo W&B: `jcramonp-eanit`; proyecto: `contractrisk-final`. Las capturas del usuario confirman una run y asignación GPU real. La visualización de métricas, acceso del evaluador y observabilidad de consultas reales están pendientes. [Evidencia y límites](evidence/SPACE_SMOKE_CONFIRMADO.md).
 
 ## Prueba inicial de despliegue
 
