@@ -1,0 +1,4 @@
+gradio==6.32.0
+wandb==0.31.0
+spaces==0.52.0
+torch==2.8.0
