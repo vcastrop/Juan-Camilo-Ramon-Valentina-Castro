@@ -1,0 +1,25 @@
+{
+  "source_archive_sha256": "4a1b1a2d3bfdfb21630863436dc0473635aea9711c16aa7d80fa33c976c29ca0",
+  "git_commit": "753e05efc3288bcfd399ecb2cbc70765e34194b3",
+  "source_hashes_verified": {
+    "final/adapters.py": true,
+    "final/__init__.py": true,
+    "final/config.py": true,
+    "final/integration.py": true,
+    "final/run_integration.py": true
+  },
+  "fixture_hashes_verified": 4,
+  "rows": 14,
+  "stage_counts": {
+    "classifier": 2,
+    "text": 4,
+    "visual_component": 4,
+    "visual_orchestration_cached": 4
+  },
+  "visual_schema_valid": 0,
+  "runtime_exceptions": 0,
+  "technical_completion": "completed_pending_human_review",
+  "quality_approved": false,
+  "wandb_run_id": "nt77qjbf",
+  "scan_scope": "Archive text members, selected credential patterns only; not a guarantee of absence."
+}
