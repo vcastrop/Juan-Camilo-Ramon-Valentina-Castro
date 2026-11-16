@@ -11,4 +11,5 @@ peft==0.17.1
 accelerate==1.10.1
 huggingface-hub==0.36.2
 pillow==11.3.0
+matplotlib==3.10.6
 wandb==0.31.0

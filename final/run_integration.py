@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 import gc
 import hashlib
 import importlib.metadata
+import importlib.util
 import json
 from pathlib import Path
 import platform
@@ -23,20 +24,22 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def fixture_font_path():
+    """Use the packaged Unicode font, not an assumed OS installation."""
+    spec = importlib.util.find_spec('matplotlib')
+    if spec is not None and spec.origin:
+        path = Path(spec.origin).parent/'mpl-data/fonts/ttf/DejaVuSans.ttf'
+        if path.is_file():
+            return path
+    raise RuntimeError('Install final/requirements-integration.txt: packaged DejaVu font missing')
+
+
 def create_fixtures(documents, folder):
     """Rasterized snapshot representations, not screenshots or legal documents."""
     from PIL import Image, ImageDraw, ImageFont, ImageEnhance
     folder.mkdir()
-    font = None
-    for candidate in ['DejaVuSans.ttf', '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
-                      'C:/Windows/Fonts/arial.ttf']:
-        try:
-            font = ImageFont.truetype(candidate, 24)
-            break
-        except OSError:
-            continue
-    if font is None:
-        raise RuntimeError('Install a Unicode DejaVu Sans font before creating visual fixtures')
+    font_path = fixture_font_path()
+    font = ImageFont.truetype(str(font_path), 24)
     fixtures = []
     for i, doc_id in enumerate(['CO1.PCCNTR.1180445', 'CO1.PCCNTR.3156756'], 1):
         doc = next(d for d in documents if d['doc_id'] == doc_id)
@@ -55,6 +58,7 @@ def create_fixtures(documents, folder):
         fixtures.append({'id': f'visual_dev_{i}', 'path': str(path), 'source_id': doc_id,
                          'question': '¿Qué modalidad y valor aparecen en la ficha de la imagen?',
                          'source_lines_for_human_review': lines, 'font': font.getname(),
+                         'font_sha256': sha(font_path),
                          'origin': 'rendered_public_snapshot_not_real_screenshot'})
         if i == 1:
             changed = folder/'visual_dev_1_contrast.png'
@@ -108,6 +112,7 @@ def main():
         return row
     try:
         import os
+        os.environ.setdefault('USE_TF', '0')
         os.environ['GRADIO_ANALYTICS_ENABLED'] = 'False'
         from sqlite_support import ensure_sqlite
         meta['sqlite'] = ensure_sqlite()
@@ -122,7 +127,7 @@ def main():
                     adapter_sha256=sha(ROOT/'model/contractrisk_robertalex_lora_adapter.zip'),
                     source_hashes={str(p.relative_to(ROOT)): sha(p) for p in (ROOT/'final').glob('*.py')},
                     packages={p: importlib.metadata.version(p) for p in
-                              ['torch','transformers','peft','accelerate','sentence-transformers','chromadb','numpy','wandb']},
+                              ['torch','transformers','peft','accelerate','sentence-transformers','chromadb','numpy','matplotlib','wandb']},
                     memory_policy='classifier CPU; generator and VLM loaded sequentially on GPU',
                     latency_policy='text predict wall time; standalone VLM measured separately; cached visual orchestration excludes VLM; excludes loading; not an efficiency benchmark')
         assert meta['corpus_sha256'] == '7c179b53b87103e6b2992ffda49775bce6118f1ab577c991c4ab5fbb4d234505'
@@ -205,6 +210,9 @@ def main():
         out.close()
         if wb:
             try:
+                wb.summary['execution_status'] = meta['status']
+                wb.summary['case_errors'] = len(meta['failures'])
+                wb.summary['quality_approved'] = False
                 wb.finish()
                 if meta['wandb_status'] == 'connected_not_yet_finished':
                     meta['wandb_status'] = 'finished_check_dashboard'
