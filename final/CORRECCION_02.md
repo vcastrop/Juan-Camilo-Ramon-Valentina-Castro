@@ -1,6 +1,6 @@
 # Corrección 02 — lectura visual y elegibilidad de herramienta
 
-Estado: código y regresiones CPU comprobados; nueva inferencia T4 pendiente. No sustituye el Space actual ni aprueba la entrega final.
+Estado: nueva inferencia T4 completada y auditada el 16/11/2026. [Evidencia original y análisis](evidence/correction_02/ANALISIS.md). Tres lecturas legibles válidas, una imagen uniforme bloqueada sin VLM, cálculo correcto y sin herramienta innecesaria en modalidad. W&B no tuvo acceso al secreto en esta sesión. No sustituye el Space actual ni aprueba la entrega final.
 
 ## Cambios y motivo
 

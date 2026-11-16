@@ -1,0 +1,29 @@
+{
+  "archive_sha256": "6b78efdf559c244f41c21710e7c122827a141a2215f8f37ab01f2a644653614f",
+  "notebook_sha256": "f1d95155e4d3295e38feec36439822c835c9e06cd43e822d70951de5272bb5b3",
+  "commit": "8cda4e8fae6554447e04c6e2e0b1200035ee5d70",
+  "zip_crc_ok": true,
+  "rows": 11,
+  "source_checks": {
+    "final/integration.py": true,
+    "final/adapters.py": true,
+    "final/run_integration.py": true,
+    "final/run_correction02.py": true,
+    "final/__init__.py": true,
+    "final/visual_fields.py": true,
+    "final/config.py": true,
+    "final/tool_policy.py": true
+  },
+  "fixture_checks": {
+    "visual_dev_1": true,
+    "visual_dev_1_contrast": true,
+    "visual_dev_2": true,
+    "visual_blank": true
+  },
+  "notebook_sources_identical": true,
+  "executed_code_cells": 5,
+  "notebook_error_outputs": 0,
+  "limited_token_pattern_scan_hits": 0,
+  "quality_approved": false,
+  "wandb_status": "disabled"
+}

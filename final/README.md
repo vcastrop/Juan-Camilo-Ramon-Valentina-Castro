@@ -1,10 +1,12 @@
 # ContractRisk — entrega integradora en desarrollo
 
-Estado: preparación de infraestructura, no sistema final funcional. [Checklist](CHECKLIST.md).
+Estado: integración de desarrollo probada en T4; despliegue público todavía de infraestructura, no sistema final completo. [Checklist](CHECKLIST.md).
 
 ## Próxima prueba: integración real en Colab
 
-[Notebook vigente de corrección 02](ContractRisk_Final_Correccion_02_Colab.ipynb) y [cambios/metodología](CORRECCION_02.md). Código preparado y regresiones CPU aprobadas; nueva inferencia T4 pendiente. El [ensayo 01](evidence/integration_01/ANALISIS.md) ya se ejecutó y mostró fallos visuales que motivan esta corrección. No subir estos archivos ni sus dependencias al Space inicial todavía.
+[Notebook de corrección 02](ContractRisk_Final_Correccion_02_Colab.ipynb) y [corrida ejecutada/auditada](evidence/correction_02/ANALISIS.md). Se corrigieron los problemas enfocados de lectura y elegibilidad de herramienta; todavía no es evaluación final. El [ensayo 01](evidence/integration_01/ANALISIS.md) se conserva con sus fallos originales. No subir estos archivos ni sus dependencias al Space inicial todavía.
+
+Siguiente paso: [revisión humana de diez candidatos visuales](eval/visual_candidates_v1/REVISION_HUMANA.md). Abrir `index.html` de esa carpeta localmente para ver imágenes y referencias juntas. Todas las aprobaciones siguen pendientes; no se ejecutaron modelos sobre estos nuevos candidatos. Las referencias están separadas del manifiesto de entradas y no deben enviarse al generador.
 
 Objetivo: integrar la señal de suficiencia descriptiva M1, consultas con fuentes/herramienta M3 y lectura de capturas contractuales, medir eficiencia y desplegar una aplicación observada.
 

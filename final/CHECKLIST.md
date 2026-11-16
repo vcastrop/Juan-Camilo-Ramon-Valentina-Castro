@@ -62,7 +62,11 @@ Avance de preparación: se añadieron `integration.py`, `adapters.py`, `run_inte
 
 Actualización: integración 01 ejecutada en T4 con código `753e05e`, 14 filas y cero excepciones de caso. [Auditoría y hallazgos](evidence/integration_01/ANALISIS.md). Texto, cálculo y carga M1 comprobados en desarrollo; extracción visual válida 0/4 y preguntas visuales abstienen por formato. Calidad visual no aprobada, no sustituir Space ni marcar integración completa. La corrección de fuentes se ejecutó; siguen pendientes separación OCR/campos y restricción del router.
 
-Corrección 02 preparada: [protocolo y límites](CORRECCION_02.md), [notebook vigente](ContractRisk_Final_Correccion_02_Colab.ipynb). Se separó transcripción/campos, se agregó guard de píxeles uniformes y se restringió elegibilidad de herramienta. Las regresiones incluyen las salidas reales previas y campos faltantes; inferencia nueva T4 pendiente. No confundir replay estructural post-hoc con mejora visual demostrada.
+Corrección 02 ejecutada y auditada: [evidencia original](evidence/correction_02/ANALISIS.md), [protocolo y límites](CORRECCION_02.md). Once registros, sin excepciones, tres lecturas nuevas válidas y una imagen uniforme bloqueada sin VLM; tres respuestas visuales correctas en esta muestra y una abstención. Cálculo correcto con una herramienta; consulta simple sin router. W&B desactivado por secreto inaccesible. Las respuestas visuales reutilizan lecturas; no es medición fresca de extremo a extremo ni aprobación final. 34 pruebas CPU final y 128 M3 pasan tras preparar candidatos; los logs de T4 contienen las 32 final y 128 M3 vigentes en aquella corrida.
+
+- [x] Conservar sin editar ZIP y notebook ejecutado de corrección 02; verificar hashes y fuentes.
+- [x] Preparar diez candidatos visuales con cinco fichas diferentes, dos variantes invariantes y casos ausente/vacío/adversarial, sin nueva inferencia. [Revisión humana pendiente](eval/visual_candidates_v1/REVISION_HUMANA.md).
+- [ ] Recibir revisión humana de cada candidato antes de congelar el conjunto visual y ejecutarlo.
 
 - [ ] Conectar el clasificador RoBERTalex+LoRA de M1 con un caso de uso real y visible; mantener sus etiquetas y límites.
 - [ ] Conectar corpus/indexación, recuperación híbrida, reranking y herramienta M3 en el mismo servicio.

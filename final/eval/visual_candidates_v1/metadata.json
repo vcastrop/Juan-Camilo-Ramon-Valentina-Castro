@@ -1,0 +1,10 @@
+{
+  "status": "candidates_pending_human_review_not_frozen_gold",
+  "model_inference_performed": false,
+  "selection": "First five lexicographically sorted corpus IDs, excluding the two integration-01 fixture IDs; chosen before new inference.",
+  "corpus_sha256": "7c179b53b87103e6b2992ffda49775bce6118f1ab577c991c4ab5fbb4d234505",
+  "font_sha256": "3fdf69cabf06049ea70a00b5919340e2ce1e6d02b0cc3c4b44fb6801bd1e0d22",
+  "count": 10,
+  "new_record_count": 5,
+  "caveat": "Synthetic records, not real screenshots. Corpus and prior QA gold already inspected; not a blind dataset."
+}
