@@ -31,6 +31,10 @@ def verify_review(pack):
         raise ValueError('Code differs from reviewed calibration package')
     if approval.get('anchors_canonical_sha256')!=canonical_hash(anchors) or approval.get('rules_canonical_sha256')!=canonical_hash(rules):
         raise ValueError('Calibration package changed after approval')
+    from final.judge_final import rubric_fingerprint
+    config=json.loads((ROOT/'final/judge_calibration_config.json').read_text(encoding='utf-8'))
+    if approval.get('rubric_sha256')!=rubric_fingerprint() or approval.get('judge_config_canonical_sha256')!=canonical_hash(config):
+        raise ValueError('Rubric/configuration differs from approval')
     return approval
 
 
@@ -79,6 +83,17 @@ def main():
             raise RuntimeError('bitsandbytes version differs from pinned calibration configuration')
         random.seed(config['seed']);np.random.seed(config['seed']);torch.manual_seed(config['seed']);torch.cuda.manual_seed_all(config['seed'])
         meta.update(gpu=torch.cuda.get_device_name(0),packages={n:importlib.metadata.version(n) for n in ['torch','transformers','accelerate','bitsandbytes','wandb']})
+        # Verify the real pinned CUDA kernel before downloading/loading the 7B checkpoint.
+        import bitsandbytes as bnb
+        probe=bnb.nn.Linear4bit(16,16,bias=False,compute_dtype=torch.float16,
+                               compress_statistics=True,quant_type='nf4').to('cuda')
+        with torch.inference_mode():
+            probe_output=probe(torch.ones((1,16),device='cuda',dtype=torch.float16))
+        torch.cuda.synchronize()
+        if not torch.isfinite(probe_output).all().item():raise RuntimeError('NF4 CUDA preflight returned nonfinite values')
+        meta['nf4_cuda_kernel_preflight_passed']=True
+        del probe,probe_output
+        torch.cuda.empty_cache();save()
         from final.generators import CausalGenerator
         from final.judge_final import FinalJudge
         start=time.perf_counter()

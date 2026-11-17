@@ -1,6 +1,6 @@
 # Evaluación común y calibración del juez — preparación v1
 
-Estado: código y pruebas CPU preparados; **sin nueva inferencia del juez, sin calibración aprobada y sin comparación de eficiencia**. La revisión humana de las anclas sintéticas está pendiente. No se modifican main, Space, modelos originales ni resultados históricos.
+Estado al 17/11/2026: veinte anclas aprobadas (19 en archivo y una por confirmación posterior), código y pruebas CPU preparados; **sin inferencia nueva del juez, sin calibración superada y sin comparación de eficiencia**. [Original y cierre](evidence/calibration_review_01/CIERRE.md). No se modifican main, Space, modelos originales ni resultados históricos.
 
 ## Conjunto común ensamblado
 
@@ -24,7 +24,7 @@ La tabla evolutiva deberá ejecutar las mismas entradas/harness: baseline QA sin
 
 Es otro checkpoint/tamaño que el generador 3B, pero la misma familia Qwen: no independencia plena, ni garantía de mejor juicio por ser más grande. La cuantización del **juez** se mantendrá igual para ambos sistemas comparados y no se reportará como la mejora de eficiencia del generador. La carga real aún no se ha probado en T4; el código rechaza fallback a CPU o ausencia de capas Linear4bit reales.
 
-La rúbrica completa está en [`judge_final.py`](judge_final.py), versión `final-judge-candidate-1`: 1 incorrecto/inventado; 2 error importante/explicación falsa o ausente; 3 parcialmente útil/incompleto; 4 sustentado con omisiones menores; 5 preciso/completo/con límites y fuentes. Una abstención justificada puede obtener 5; una cifra correcta con explicación falsa no merece nota alta por coincidir casualmente.
+La rúbrica completa está en [`judge_final.py`](judge_final.py), versión `final-judge-candidate-1.1`: 1 incorrecto/inventado; 2 error importante/explicación falsa o ausente; 3 parcialmente útil/incompleto; 4 sustentado con omisiones menores; 5 preciso/completo/con límites y fuentes. Se explicitó antes de inferencia la regla aprobada «sin explicación, nota máxima 2 aunque la respuesta corta sea correcta». No hay clamp programático: si el juez devuelve 5 en un caso así, se conserva el 5 y falla su calibración. Una abstención justificada puede obtener 5; una cifra correcta con explicación falsa no merece nota alta por coincidir casualmente.
 
 ## Anclas sintéticas para revisar antes de ejecutar
 
@@ -32,7 +32,7 @@ La rúbrica completa está en [`judge_final.py`](judge_final.py), versión `fina
 
 Las etiquetas `good`/`bad` y rangos solo se usan para auditoría posterior; **no entran en el prompt**. El payload del juez es una whitelist de pregunta, respuesta propuesta, fuentes y evidencia aritmética. Las fuentes son datos no confiables como instrucciones.
 
-Antes de GPU se requiere revisión humana de esos veinte ejemplos y rangos. El ejecutor comprueba la aprobación y hashes; aún no existe `human_approval.json`, deliberadamente. No se publica una aprobación ficticia. Después de GPU hará falta revisar razones reales: superar una regla numérica no asegura que el juez haya razonado correctamente.
+La revisión humana ya se recibió: el archivo original aprueba diecinueve ejemplos y deja uno pendiente. El usuario aprobó después empty_explanation_bad con la aclaración explícita del nivel 2. `human_approval.json` distingue las dos fuentes de aprobación y fija hashes de anclas, reglas, rúbrica y configuración. El original permanece intacto; su fecha declarada 16/11 se conserva, y el cierre posterior se registra con fecha del cliente 17/11. Después de GPU hará falta revisar razones reales: superar una regla numérica no asegura que el juez haya razonado correctamente. Las citas mantienen chunk_id exacto, sin colapsarlas por doc_id.
 
 ## Criterios fijados antes de observar puntuaciones
 
@@ -49,12 +49,10 @@ Se informa antes/después aunque no mejore; no afirmar que desaparece el sesgo. 
 
 ## Ejecutable y pruebas actuales
 
-`run_judge_calibration.py` está preparado para una sesión T4 separada, solo juez y no VLM/generador contractual. Primero aprobación humana, luego W&B y paquetes; después carga e inferencia. Guarda cada salida original y metadata, sin corrección de notas; finaliza W&B también al fallar. No envía preguntas/respuestas a W&B. El futuro notebook se habilitará tras incorporar la revisión real.
+[`ContractRisk_Final_Calibracion_Juez_Colab.ipynb`](ContractRisk_Final_Calibracion_Juez_Colab.ipynb) está preparado para sesión T4 separada, solo juez y no VLM/generador contractual. Primero aprobación humana y hashes, luego W&B y paquetes, un kernel CUDA NF4 pequeño y finalmente carga e inferencia. Si el kernel falla no se descarga/carga el checkpoint 7B. Guarda cada salida original y metadata, sin corrección de notas; finaliza W&B también al fallar. No envía preguntas/respuestas a W&B. Dependencias dedicadas en `requirements-calibration.txt`, sin cargar Chroma, reranker ni clasificador.
 
-83 pruebas final CPU y 128 M3 pasan. Incluyen no fuga de expected/rangos, reintentos solo de formato, puntuaciones ausentes sin inventarlas, gate de calibración, paquete común de 22 entradas y bloqueo sin aprobación humana. Los tests de carga usan dobles sintéticos: **no prueban CUDA/NF4 real ni calidad del juez**.
+85 pruebas final CPU y 128 M3 pasan. Incluyen no fuga de expected/rangos, reintentos solo de formato, puntuaciones ausentes sin inventarlas, gate de calibración, paquete común de 22 entradas y bloqueo sin aprobación humana. Las dos nuevas regresiones comprueban que la regla de explicación vacía no reajusta notas y que las citas conservan chunk_id aunque compartan doc_id. Los tests de carga usan dobles sintéticos: **no prueban CUDA/NF4 real ni calidad del juez**.
 
 ## Próximo paso del equipo
 
-Extraer el ZIP de revisión de calibración, abrir `index.html`, comparar fuentes/respuesta/explicación con el rango propuesto y marcar cada caso APROBADO o CORREGIR en `REVISION_CALIBRACION.md`, con nombre y fecha. Aprobar un caso `bad` significa aprobarlo como ejemplo de respuesta mala que debe obtener nota baja, no aprobar su contenido.
-
-Después se incorporará el dictamen y se preparará la ejecución T4. Si pasa calibración y auditoría, se termina/congela el harness común y se ejecuta la comparación con los [umbrales aprobados](EFICIENCIA.md).
+Ejecutar el notebook en sesión T4 nueva, habilitando su acceso a `WANDB_API_KEY`, y conservar ZIP + notebook ejecutado. No repetir buscando mejores notas. Si pasa calibración y auditoría de razones, se termina/congela el harness común y se ejecuta la comparación con los [umbrales aprobados](EFICIENCIA.md).

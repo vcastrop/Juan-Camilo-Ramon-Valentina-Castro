@@ -4,6 +4,8 @@ Plan preparado el 15/11/2026 tras leer las seis páginas de la guía `STAI_Final
 
 Este archivo es un plan operativo, no promesa de nota. Ya está incorporado en `final/CHECKLIST.md` en la rama `Entrega/contractrisk-final`; las fechas y responsables de ejecuciones se completarán con evidencia real. No se modifica main ni se reescriben entregas anteriores.
 
+Actualización 17/11/2026: avance estimado **40–45 % de la entrega final**; [desglose ponderado y pendientes](PROGRESO_FINAL.md). No es nota ni conteo bruto de casillas. Calibración preparada con veinte anclas aprobadas y 213 tests CPU pasando; inferencia del juez, comparación común/eficiencia, servicio contractual público y reporte/presentación finales pendientes.
+
 ## Fechas y reglas de la guía
 
 - Repositorio y reporte: jueves 19/11/2026 a las 23:59. Confirmar la zona horaria publicada en Interactiva; planificación del equipo en Bogotá.
@@ -45,11 +47,11 @@ Aceptación: base identificada, sin cambios ajenos perdidos, inventario y respon
 
 ## Fase 1 — definir el producto y desplegar un esqueleto temprano
 
-- [ ] Confirmar usuario: analista/auditor que consulta fichas y prioriza información insuficiente para revisión humana.
+- [x] Usuario objetivo documentado en README raíz: analista/auditor que consulta fichas y prioriza revisión humana, sin decisión automática de fraude. No supone validación externa con usuarios.
 - [ ] Definir una decisión y una métrica de éxito de usuario: proporción de consultas con respuesta respaldada y sin afirmaciones indebidas; alertas omitidas y abstención reportadas aparte. Congelar definición operativa.
-- [ ] Definir interfaz común textual/visual y un único punto de entrada `sistema(...)` con resultado estructurado.
-- [ ] Definir modos: consulta, comparación numérica, suficiencia descriptiva y consulta con imagen.
-- [ ] Definir formato de citas, errores, incertidumbre y abstención.
+- [x] Interfaz de desarrollo común `IntegratedSystem.predict(question, image, mode, description)` con resultado estructurado y regresiones CPU; ejecución de texto/visión T4 conservada. Publicación del mismo punto de entrada pendiente.
+- [x] Modos definidos/implementados: QA, comparación numérica por herramienta, suficiencia M1 y QA con imagen; no todos están expuestos aún en Space.
+- [x] Formatos de citas, errores, incertidumbre y abstención implementados/validados por esquema; detectar soporte semántico de todas las citas continúa pendiente.
 - [x] Crear Space mínimo y comprobar arranque de interfaz y operación GPU según capturas del usuario. [Prueba inicial](evidence/SPACE_SMOKE_CONFIRMADO.md). Todavía no ejecuta el pipeline contractual.
 - [ ] Probar instalación y carga en el hardware elegido; medir memoria y arranque.
 - [ ] Registrar la decisión si se requiere una versión reducida, con exclusiones exactas; no presentarla como idéntica al sistema completo.
@@ -75,30 +77,30 @@ Corrección 02 ejecutada y auditada: [evidencia original](evidence/correction_02
 
 - [ ] Conectar el clasificador RoBERTalex+LoRA de M1 con un caso de uso real y visible; mantener sus etiquetas y límites.
 - [ ] Conectar corpus/indexación, recuperación híbrida, reranking y herramienta M3 en el mismo servicio.
-- [ ] Revisar recuperación de campos completos para cálculos y respuestas; ficha correcta no equivale a evidencia completa.
+- [x] Revisar campos completos en desarrollo: cálculo de corrección 02 cita ambos operandos; en vis_04 el monto correcto sí llegó y la causa fue lectura/propagación, no recuperación. Evaluación general común todavía pendiente.
 - [ ] Implementar controles de respuesta sustentada: comprobar disponibilidad del dato, citas y ausencia de afirmaciones fuera del corpus.
 - [ ] Tratar preguntas de cláusulas o auditorías ausentes y entradas fuera de alcance; corregir o reportar el fallo de abstención con pruebas reales.
 - [ ] Incorporar extracción desde imágenes con validación de ID, montos y legibilidad.
 - [ ] Evitar que instrucciones maliciosas en preguntas o imágenes se ejecuten como instrucciones de sistema.
 - [ ] Mantener esquema de herramienta, tolerancia de JSON y límites de pasos, tiempo e intentos.
 - [ ] Pruebas de regresión para falsos positivos de números, negaciones y acusaciones.
-- [ ] Conservar resultados M3 originales; cambios nuevos llevan versión y metadata nuevas.
+- [x] Conservar resultados M3 originales y corridas finales de desarrollo sin editar; cambios en `final/` con versiones/metadata y auditorías separadas.
 
 Aceptación: texto e imagen se procesan de punta a punta; el usuario puede ver qué dato provino de qué fuente. Una advertencia no equivale a solucionar una alucinación.
 
 ## Fase 3 — evaluación común y criterios antes de optimizar
 
-Preparación posterior a visual 03: [protocolo de juez y conjunto común](JUEZ_Y_EVALUACION_FINAL.md). 22 entradas ensambladas (12 QA + 10 visuales) con referencias separadas; no se cambiaron vis_04 ni notas previas para favorecer el control. Veinte anclas ficticias y 38 juicios previstos con criterios de calibración fijados; revisión humana todavía pendiente, carga 7B NF4 y calibración T4 no ejecutadas. Total 83 pruebas final CPU + 128 M3 aprobadas; no son resultados de modelos nuevos.
+Preparación posterior a visual 03: [protocolo de juez y conjunto común](JUEZ_Y_EVALUACION_FINAL.md). 22 entradas ensambladas (12 QA + 10 visuales) con referencias separadas; no se cambiaron vis_04 ni notas previas para favorecer el control. Veinte anclas aprobadas: 19 por archivo con fecha declarada 16/11 y una por confirmación posterior del 17/11. Se explicitó la regla de explicación vacía máxima 2 en rúbrica 1.1, sin clamp de notas, y la cita por chunk_id. [Notebook de calibración preparado](ContractRisk_Final_Calibracion_Juez_Colab.ipynb): 38 juicios previstos, carga/kernel NF4 reales y calibración T4 no ejecutados aún. 85 pruebas final CPU + 128 M3 aprobadas; no son resultados del modelo nuevo.
 
 - [x] Ensamblar candidato común con procedencia/hashes y sin respuestas esperadas en entradas del sistema. No está congelado aún el protocolo/harness completo.
 - [x] Preparar rúbrica nueva y calibración sintética separada, sin indicadores de acierto enviados al juez y sin sustituir notas.
-- [ ] Recibir [revisión humana de las veinte anclas de calibración](eval/calibration_review_v1/REVISION_CALIBRACION.md).
+- [x] Recibir [revisión humana de veinte anclas](eval/calibration_review_v1/REVISION_CALIBRACION.md); conservar original y [confirmación posterior de empty_explanation_bad](evidence/calibration_review_01/CIERRE.md), sin simular veinte aprobaciones en el archivo recibido.
 - [ ] Ejecutar filtro de calibración T4 y auditar razones antes de usar el juez en aceptación de calidad/eficiencia.
 
-- [ ] Diseñar ejemplos de desarrollo/calibración separados del conjunto final; documentar que el gold M3 ya fue inspeccionado históricamente.
-- [ ] Definir ampliación del gold con casos textuales, imágenes, adversariales y no respondibles, sin elegir casos solo para favorecer el sistema.
+- [x] Diseñar veinte anclas sintéticas separadas de los 22 casos comunes; revisión humana recibida y conocimiento previo del gold M3/visual declarado. Inferencia y auditoría del juez pendientes.
+- [x] Ensamblar ampliación candidata de 22 entradas con casos textuales/visuales, adversariales, ausentes y pares; selección visual documentada antes de inferir, referencias conservadas incluso ante vis_04. Protocolo/harness completos por congelar.
 - [x] Revisión humana de imágenes, respuestas esperadas/criterios, procedencia y privacidad del subconjunto visual v1: diez casos aprobados por el usuario el 16/11. Representaciones sintéticas marcadas; no incluye aprobación de respuestas del modelo ni del conjunto final completo.
-- [x] Definir prueba de invarianza visual v1: contraste 0.85 y rotación de 1 grado; dos pares revisados y aprobados por el usuario. Ejecución nueva y comparación pendientes; el campo ausente es adversarial, no invarianza.
+- [x] Definir/ejecutar invarianza visual v1: contraste 0.85 y rotación de 1 grado, dos pares revisados por usuario y medidos en visual 03. Ambos conservan campos/respuestas, incluso las tildes añadidas erróneamente en uno; invarianza no equivale a corrección. Repetición en versión eficiente pendiente.
 - [ ] Definir cómo reciben la misma entrada las líneas base sin visión; documentar limitación, no ocultar casos ni cambiar denominadores por fila.
 - [ ] Elegir tamaño de muestra y repeticiones compatibles con tiempo; registrar warm-up, parámetros, caché y condiciones. p95 de muestras pequeñas es inestable: declararlo.
 - [ ] Congelar gold, harness, prompts de evaluación, métricas y hashes antes de ejecutar la comparación final.
@@ -113,7 +115,7 @@ Aceptación: protocolo versionado, sin sustitución de notas ni mezclas de métr
 ## Fase 4 — perfilado, técnica de eficiencia y medición
 
 - [ ] Perfilar latencia y memoria por componente sobre el sistema integrado previo a optimizar; si no existe M4 anterior, declarar esta nueva base visual.
-- [ ] Elegir una técnica admitida: cuantización int8/int4, destilación o LoRA/QLoRA en modelo más pequeño. LoRA histórico de M1 por sí solo no prueba una mejora nueva.
+- [x] Elegir NF4 a 4 bits como técnica candidata sobre el mismo generador, cómputo FP16; loader preparado con verificación de capas y sin fallback. No se ha medido/aceptado ni desplegado. LoRA histórico M1 no se usa como evidencia de mejora nueva.
 - [ ] Conservar una versión antes sin la técnica y una después; no cambiar recuperación/prompt/modelo base y atribuir todo a cuantización.
 - [ ] Validar compatibilidad real de la técnica con el hardware y licencias de distribución.
 - [ ] Ejecutar ambas en la misma máquina y mismo conjunto, con condiciones de medición documentadas.

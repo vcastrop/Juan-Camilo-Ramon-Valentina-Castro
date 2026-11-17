@@ -2,6 +2,8 @@
 
 Estado: integración de desarrollo probada en T4; despliegue público todavía de infraestructura, no sistema final completo. [Checklist](CHECKLIST.md).
 
+Avance estimado al 17/11: **40–45 % de la entrega final**. [Desglose y ruta pendiente](PROGRESO_FINAL.md). El porcentaje reconoce preparación parcial; no sustituye resultados finales.
+
 ## Estado de la integración visual
 
 [Visual 03 ejecutada y auditada](evidence/visual_03/ANALISIS.md): diez lecturas/rutas nuevas, carga conjunta en T4 y W&B con cierre confirmado por log. Un monto con cero adicional se propagó pese a contradecir el snapshot; se conserva el fallo, no se aprueba calidad global. [Control nuevo de consistencia 0.3](CONTROL_CONSISTENCIA.md) y reproducción CPU comprobados, sin cambiar respuestas históricas. Siguiente hito: protocolo común y evaluación/eficiencia, no repetir el ensayo para seleccionar mejores resultados.
@@ -14,7 +16,7 @@ La [revisión humana de diez casos visuales](eval/visual_candidates_v1/REVISION_
 
 Objetivo: integrar la señal de suficiencia descriptiva M1, consultas con fuentes/herramienta M3 y lectura de capturas contractuales, medir eficiencia y desplegar una aplicación observada.
 
-[Evaluación común y juez candidato](JUEZ_Y_EVALUACION_FINAL.md): 22 entradas ensambladas con referencias separadas y veinte anclas sintéticas de calibración. Código/pruebas CPU preparados; revisión humana de anclas y ejecución T4 pendientes. No hay nuevo scorecard ni juez validado todavía.
+[Evaluación común y juez candidato](JUEZ_Y_EVALUACION_FINAL.md): 22 entradas ensambladas con referencias separadas y veinte anclas aprobadas mediante archivo + confirmación posterior. [Notebook de calibración listo](ContractRisk_Final_Calibracion_Juez_Colab.ipynb), rúbrica 1.1 y pruebas CPU comprobadas. Ejecución T4/auditoría pendientes; no hay nuevo scorecard ni juez validado todavía.
 
 [Reglas de eficiencia aprobadas](EFICIENCIA.md): máximo 5 puntos porcentuales de pérdida de cumplimiento, ningún fallo crítico nuevo ni regresión en controles, y al menos 20 % menos memoria pico CUDA asignada. Comprobación de aceptación preparada; comparación real y juez calibrado pendientes. No se desplegó cuantización ni se aceptó un resultado todavía.
 

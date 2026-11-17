@@ -10,6 +10,7 @@ from final.run_judge_calibration import verify_review,main
 from final.generators import CausalGenerator
 from final.prepare_eval_final import canonical_hash
 from final.calibration_final import cases,ACCEPTANCE
+from final.judge_final import rubric_fingerprint
 
 ROOT=Path(__file__).resolve().parents[2]
 
@@ -34,7 +35,9 @@ class CalibrationRunnerTests(unittest.TestCase):
             for name,data in [('anchors.json',cases()),('rules.json',ACCEPTANCE)]:
                 (pack/name).write_text(json.dumps(data),encoding='utf-8')
             approval={'status':'approved','approved_ids':[c['id'] for c in cases()],
-                      'anchors_canonical_sha256':canonical_hash(cases()),'rules_canonical_sha256':canonical_hash(ACCEPTANCE)}
+                      'anchors_canonical_sha256':canonical_hash(cases()),'rules_canonical_sha256':canonical_hash(ACCEPTANCE),
+                      'rubric_sha256':rubric_fingerprint(),
+                      'judge_config_canonical_sha256':canonical_hash(json.loads((ROOT/'final/judge_calibration_config.json').read_text(encoding='utf-8')))}
             (pack/'human_approval.json').write_text(json.dumps(approval),encoding='utf-8')
             verify_review(pack)
             changed=cases();changed[0]['expected_score_range']=[1,2]

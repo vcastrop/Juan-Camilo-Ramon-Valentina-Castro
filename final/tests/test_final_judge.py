@@ -1,7 +1,7 @@
 import json
 import unittest
 
-from final.judge_final import FinalJudge
+from final.judge_final import FinalJudge,BASE_SYSTEM,RUBRIC
 from final.calibration_final import cases,verbose,schedule,summarize
 from final.generators import precision_settings
 
@@ -77,3 +77,19 @@ class FinalJudgeTests(unittest.TestCase):
         self.assertEqual(precision_settings('nf4')['compute_dtype'],'float16')
         self.assertTrue(precision_settings('nf4')['double_quantization'])
         with self.assertRaises(ValueError):precision_settings('auto')
+
+    def test_empty_explanation_rule_is_prompt_not_score_clamp(self):
+        self.assertIn('nota máxima 2',BASE_SYSTEM)
+        self.assertIn('nota máxima 2',RUBRIC[2])
+        record=next(c['record'] for c in cases() if c['id']=='empty_explanation_bad')
+        result=FinalJudge(FakeGenerator(['{"puntaje":5,"razon":"Synthetic deliberately wrong judge"}'])).evaluate(record)
+        self.assertEqual(result['score'],5) # Preserve a wrong judgement; calibration must reject it, not edit it.
+        self.assertFalse(result['score_adjusted'])
+
+    def test_chunk_ids_not_collapsed_into_doc_id(self):
+        record=next(c['record'] for c in cases() if c['id']=='citation_bad')
+        gen=FakeGenerator(['{"puntaje":2,"razon":"Cita no respalda"}'])
+        FinalJudge(gen).evaluate(record)
+        evidence=gen.calls[0][1]['fragmentos']
+        self.assertEqual({c['chunk_id'] for c in evidence},{'SYNTH::ficha','OTHER::nota'})
+        self.assertEqual(len({c['doc_id'] for c in evidence}),1)

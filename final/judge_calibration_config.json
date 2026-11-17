@@ -1,5 +1,7 @@
 {
   "protocol": "final-judge-calibration-1",
+  "rubric_version": "final-judge-candidate-1.1",
+  "max_score_without_explanation": 2,
   "status": "prepared_not_executed",
   "model": "Qwen/Qwen2.5-7B-Instruct",
   "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
