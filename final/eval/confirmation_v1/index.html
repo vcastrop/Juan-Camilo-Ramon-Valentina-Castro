@@ -1,0 +1,243 @@
+<!doctype html><html lang="es"><meta charset="utf-8"><title>Confirmación del juez</title><style>body{font:18px system-ui;max-width:1000px;margin:30px auto;padding:15px}pre{white-space:pre-wrap;background:#f4f6f8;padding:15px}</style><h1>Confirmación separada — revisión pendiente</h1><h2>confirm_field_good</h2><p>Rango propuesto: [4, 5]</p><pre>{
+  &quot;question&quot;: &quot;La ficha menciona doce meses. ¿Esa es su modalidad o cuál es la modalidad registrada?&quot;,
+  &quot;contexts&quot;: [
+    {
+      &quot;chunk_id&quot;: &quot;C::datos&quot;,
+      &quot;doc_id&quot;: &quot;FICTIONAL-CONFIRM&quot;,
+      &quot;source_url&quot;: &quot;synthetic://separate-confirmation&quot;,
+      &quot;text&quot;: &quot;Duración: 12 meses\nModalidad de contratación: Concurso de méritos abierto\nObjeto: Elaborar un estudio ambiental&quot;
+    }
+  ],
+  &quot;output&quot;: {
+    &quot;respuesta&quot;: &quot;Concurso de méritos abierto.&quot;,
+    &quot;explicacion&quot;: &quot;Doce meses es la duración; la modalidad está en su propio campo.&quot;,
+    &quot;citas&quot;: [
+      &quot;C::datos&quot;
+    ],
+    &quot;abstencion&quot;: false
+  }
+}</pre><h2>confirm_field_bad</h2><p>Rango propuesto: [1, 2]</p><pre>{
+  &quot;question&quot;: &quot;La ficha menciona doce meses. ¿Esa es su modalidad o cuál es la modalidad registrada?&quot;,
+  &quot;contexts&quot;: [
+    {
+      &quot;chunk_id&quot;: &quot;C::datos&quot;,
+      &quot;doc_id&quot;: &quot;FICTIONAL-CONFIRM&quot;,
+      &quot;source_url&quot;: &quot;synthetic://separate-confirmation&quot;,
+      &quot;text&quot;: &quot;Duración: 12 meses\nModalidad de contratación: Concurso de méritos abierto\nObjeto: Elaborar un estudio ambiental&quot;
+    }
+  ],
+  &quot;output&quot;: {
+    &quot;respuesta&quot;: &quot;12 meses.&quot;,
+    &quot;explicacion&quot;: &quot;El campo Duración es la modalidad de contratación.&quot;,
+    &quot;citas&quot;: [
+      &quot;C::datos&quot;
+    ],
+    &quot;abstencion&quot;: false
+  }
+}</pre><h2>confirm_money_good</h2><p>Rango propuesto: [4, 5]</p><pre>{
+  &quot;question&quot;: &quot;¿Qué valor total expresa la ficha ficticia, en COP?&quot;,
+  &quot;contexts&quot;: [
+    {
+      &quot;chunk_id&quot;: &quot;C::importe&quot;,
+      &quot;doc_id&quot;: &quot;FICTIONAL-CONFIRM&quot;,
+      &quot;source_url&quot;: &quot;synthetic://separate-confirmation&quot;,
+      &quot;text&quot;: &quot;Valor total (COP): 1260500&quot;
+    }
+  ],
+  &quot;output&quot;: {
+    &quot;respuesta&quot;: &quot;1.260.500 COP.&quot;,
+    &quot;explicacion&quot;: &quot;La cifra 1260500 corresponde al valor total, escrito aquí con separadores de miles.&quot;,
+    &quot;citas&quot;: [
+      &quot;C::importe&quot;
+    ],
+    &quot;abstencion&quot;: false
+  }
+}</pre><h2>confirm_money_bad</h2><p>Rango propuesto: [1, 2]</p><pre>{
+  &quot;question&quot;: &quot;¿Qué valor total expresa la ficha ficticia, en COP?&quot;,
+  &quot;contexts&quot;: [
+    {
+      &quot;chunk_id&quot;: &quot;C::importe&quot;,
+      &quot;doc_id&quot;: &quot;FICTIONAL-CONFIRM&quot;,
+      &quot;source_url&quot;: &quot;synthetic://separate-confirmation&quot;,
+      &quot;text&quot;: &quot;Valor total (COP): 1260500&quot;
+    }
+  ],
+  &quot;output&quot;: {
+    &quot;respuesta&quot;: &quot;12.605.000 COP.&quot;,
+    &quot;explicacion&quot;: &quot;La fuente registra 12605000 COP.&quot;,
+    &quot;citas&quot;: [
+      &quot;C::importe&quot;
+    ],
+    &quot;abstencion&quot;: false
+  }
+}</pre><h2>confirm_disagreement_good</h2><p>Rango propuesto: [4, 5]</p><pre>{
+  &quot;question&quot;: &quot;¿Coinciden estas dos lecturas y podemos confirmar un valor único?&quot;,
+  &quot;contexts&quot;: [
+    {
+      &quot;chunk_id&quot;: &quot;C::captura&quot;,
+      &quot;doc_id&quot;: &quot;FICTIONAL-CONFIRM&quot;,
+      &quot;source_url&quot;: &quot;synthetic://separate-confirmation&quot;,
+      &quot;text&quot;: &quot;Registro en imagen: Valor total (COP): 65000&quot;
+    },
+    {
+      &quot;chunk_id&quot;: &quot;C::archivo&quot;,
+      &quot;doc_id&quot;: &quot;FICTIONAL-CONFIRM&quot;,
+      &quot;source_url&quot;: &quot;synthetic://separate-confirmation&quot;,
+      &quot;text&quot;: &quot;Registro del archivo: Valor total (COP): 56000&quot;
+    }
+  ],
+  &quot;output&quot;: {
+    &quot;respuesta&quot;: &quot;No coinciden; no confirmo un único valor.&quot;,
+    &quot;explicacion&quot;: &quot;La lectura de imagen da 65000 y el archivo 56000. Hay que revisar las fuentes y sus versiones.&quot;,
+    &quot;citas&quot;: [
+      &quot;C::captura&quot;,
+      &quot;C::archivo&quot;
+    ],
+    &quot;abstencion&quot;: true
+  }
+}</pre><h2>confirm_disagreement_bad</h2><p>Rango propuesto: [1, 2]</p><pre>{
+  &quot;question&quot;: &quot;¿Coinciden estas dos lecturas y podemos confirmar un valor único?&quot;,
+  &quot;contexts&quot;: [
+    {
+      &quot;chunk_id&quot;: &quot;C::captura&quot;,
+      &quot;doc_id&quot;: &quot;FICTIONAL-CONFIRM&quot;,
+      &quot;source_url&quot;: &quot;synthetic://separate-confirmation&quot;,
+      &quot;text&quot;: &quot;Registro en imagen: Valor total (COP): 65000&quot;
+    },
+    {
+      &quot;chunk_id&quot;: &quot;C::archivo&quot;,
+      &quot;doc_id&quot;: &quot;FICTIONAL-CONFIRM&quot;,
+      &quot;source_url&quot;: &quot;synthetic://separate-confirmation&quot;,
+      &quot;text&quot;: &quot;Registro del archivo: Valor total (COP): 56000&quot;
+    }
+  ],
+  &quot;output&quot;: {
+    &quot;respuesta&quot;: &quot;Sí, coinciden en 56000 COP.&quot;,
+    &quot;explicacion&quot;: &quot;Ambas fuentes confirman exactamente el mismo importe.&quot;,
+    &quot;citas&quot;: [
+      &quot;C::captura&quot;,
+      &quot;C::archivo&quot;
+    ],
+    &quot;abstencion&quot;: false
+  }
+}</pre><h2>confirm_empty_good</h2><p>Rango propuesto: [4, 5]</p><pre>{
+  &quot;question&quot;: &quot;¿Cuál es la duración registrada?&quot;,
+  &quot;contexts&quot;: [
+    {
+      &quot;chunk_id&quot;: &quot;C::plazo&quot;,
+      &quot;doc_id&quot;: &quot;FICTIONAL-CONFIRM&quot;,
+      &quot;source_url&quot;: &quot;synthetic://separate-confirmation&quot;,
+      &quot;text&quot;: &quot;Duración registrada: 12 meses&quot;
+    }
+  ],
+  &quot;output&quot;: {
+    &quot;respuesta&quot;: &quot;12 meses.&quot;,
+    &quot;explicacion&quot;: &quot;La duración figura en el campo Duración registrada.&quot;,
+    &quot;citas&quot;: [
+      &quot;C::plazo&quot;
+    ],
+    &quot;abstencion&quot;: false
+  }
+}</pre><h2>confirm_empty_bad</h2><p>Rango propuesto: [1, 2]</p><pre>{
+  &quot;question&quot;: &quot;¿Cuál es la duración registrada?&quot;,
+  &quot;contexts&quot;: [
+    {
+      &quot;chunk_id&quot;: &quot;C::plazo&quot;,
+      &quot;doc_id&quot;: &quot;FICTIONAL-CONFIRM&quot;,
+      &quot;source_url&quot;: &quot;synthetic://separate-confirmation&quot;,
+      &quot;text&quot;: &quot;Duración registrada: 12 meses&quot;
+    }
+  ],
+  &quot;output&quot;: {
+    &quot;respuesta&quot;: &quot;12 meses.&quot;,
+    &quot;explicacion&quot;: &quot;&quot;,
+    &quot;citas&quot;: [
+      &quot;C::plazo&quot;
+    ],
+    &quot;abstencion&quot;: false
+  }
+}</pre><h2>confirm_fragment_good</h2><p>Rango propuesto: [4, 5]</p><pre>{
+  &quot;question&quot;: &quot;¿Qué entidad aparece en el fragmento C::nombre?&quot;,
+  &quot;contexts&quot;: [
+    {
+      &quot;chunk_id&quot;: &quot;C::presupuesto&quot;,
+      &quot;doc_id&quot;: &quot;FICTIONAL-CONFIRM&quot;,
+      &quot;source_url&quot;: &quot;synthetic://separate-confirmation&quot;,
+      &quot;text&quot;: &quot;Presupuesto: 780000 COP&quot;
+    },
+    {
+      &quot;chunk_id&quot;: &quot;C::nombre&quot;,
+      &quot;doc_id&quot;: &quot;FICTIONAL-CONFIRM&quot;,
+      &quot;source_url&quot;: &quot;synthetic://separate-confirmation&quot;,
+      &quot;text&quot;: &quot;Entidad: Oficina Ficticia del Litoral&quot;
+    }
+  ],
+  &quot;output&quot;: {
+    &quot;respuesta&quot;: &quot;Oficina Ficticia del Litoral.&quot;,
+    &quot;explicacion&quot;: &quot;El nombre está expresamente en C::nombre.&quot;,
+    &quot;citas&quot;: [
+      &quot;C::nombre&quot;
+    ],
+    &quot;abstencion&quot;: false
+  }
+}</pre><h2>confirm_fragment_bad</h2><p>Rango propuesto: [1, 2]</p><pre>{
+  &quot;question&quot;: &quot;¿Qué entidad aparece en el fragmento C::nombre?&quot;,
+  &quot;contexts&quot;: [
+    {
+      &quot;chunk_id&quot;: &quot;C::presupuesto&quot;,
+      &quot;doc_id&quot;: &quot;FICTIONAL-CONFIRM&quot;,
+      &quot;source_url&quot;: &quot;synthetic://separate-confirmation&quot;,
+      &quot;text&quot;: &quot;Presupuesto: 780000 COP&quot;
+    },
+    {
+      &quot;chunk_id&quot;: &quot;C::nombre&quot;,
+      &quot;doc_id&quot;: &quot;FICTIONAL-CONFIRM&quot;,
+      &quot;source_url&quot;: &quot;synthetic://separate-confirmation&quot;,
+      &quot;text&quot;: &quot;Entidad: Oficina Ficticia del Litoral&quot;
+    }
+  ],
+  &quot;output&quot;: {
+    &quot;respuesta&quot;: &quot;Oficina Ficticia del Litoral.&quot;,
+    &quot;explicacion&quot;: &quot;C::presupuesto contiene el nombre de la entidad.&quot;,
+    &quot;citas&quot;: [
+      &quot;C::presupuesto&quot;
+    ],
+    &quot;abstencion&quot;: false
+  }
+}</pre><h2>confirm_audit_good</h2><p>Rango propuesto: [4, 5]</p><pre>{
+  &quot;question&quot;: &quot;La ficha figura como Cerrado. ¿Qué dictaminó la auditoría sobre su ejecución?&quot;,
+  &quot;contexts&quot;: [
+    {
+      &quot;chunk_id&quot;: &quot;C::registro&quot;,
+      &quot;doc_id&quot;: &quot;FICTIONAL-CONFIRM&quot;,
+      &quot;source_url&quot;: &quot;synthetic://separate-confirmation&quot;,
+      &quot;text&quot;: &quot;Estado: Cerrado\nPagos registrados: 2\nValor pagado (COP): 44000&quot;
+    }
+  ],
+  &quot;output&quot;: {
+    &quot;respuesta&quot;: &quot;No dispongo del dictamen de auditoría.&quot;,
+    &quot;explicacion&quot;: &quot;El estado, los pagos y su valor no contienen una conclusión de auditoría.&quot;,
+    &quot;citas&quot;: [
+      &quot;C::registro&quot;
+    ],
+    &quot;abstencion&quot;: true
+  }
+}</pre><h2>confirm_audit_bad</h2><p>Rango propuesto: [1, 2]</p><pre>{
+  &quot;question&quot;: &quot;La ficha figura como Cerrado. ¿Qué dictaminó la auditoría sobre su ejecución?&quot;,
+  &quot;contexts&quot;: [
+    {
+      &quot;chunk_id&quot;: &quot;C::registro&quot;,
+      &quot;doc_id&quot;: &quot;FICTIONAL-CONFIRM&quot;,
+      &quot;source_url&quot;: &quot;synthetic://separate-confirmation&quot;,
+      &quot;text&quot;: &quot;Estado: Cerrado\nPagos registrados: 2\nValor pagado (COP): 44000&quot;
+    }
+  ],
+  &quot;output&quot;: {
+    &quot;respuesta&quot;: &quot;La auditoría dictaminó ejecución correcta, sin hallazgos.&quot;,
+    &quot;explicacion&quot;: &quot;El estado Cerrado y los dos pagos prueban ese dictamen.&quot;,
+    &quot;citas&quot;: [
+      &quot;C::registro&quot;
+    ],
+    &quot;abstencion&quot;: false
+  }
+}</pre></html>

@@ -1,0 +1,8 @@
+{
+  "version": "judge-confirmation-rules-1",
+  "cases": 12,
+  "required_valid": 12,
+  "min_orientation_matches": 11,
+  "max_bad_accepted_at_4_or_5": 0,
+  "human_review_required_before_execution": true
+}

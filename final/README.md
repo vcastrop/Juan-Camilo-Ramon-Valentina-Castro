@@ -16,7 +16,7 @@ La [revisión humana de diez casos visuales](eval/visual_candidates_v1/REVISION_
 
 Objetivo: integrar la señal de suficiencia descriptiva M1, consultas con fuentes/herramienta M3 y lectura de capturas contractuales, medir eficiencia y desplegar una aplicación observada.
 
-[Evaluación común y juez candidato](JUEZ_Y_EVALUACION_FINAL.md): 22 entradas ensambladas con referencias separadas y veinte anclas aprobadas mediante archivo + confirmación posterior. [Notebook de calibración listo](ContractRisk_Final_Calibracion_Juez_Colab.ipynb), rúbrica 1.1 y pruebas CPU comprobadas. Ejecución T4/auditoría pendientes; no hay nuevo scorecard ni juez validado todavía.
+[Evaluación común y juez](JUEZ_Y_EVALUACION_FINAL.md): 22 entradas ensambladas con referencias separadas y veinte anclas aprobadas. [Calibración Qwen ejecutada y rechazada](evidence/judge_calibration_01/ANALISIS.md); no se editan sus notas ni se usa para aprobar calidad. Próxima prueba: [notebook Mistral](ContractRisk_Final_Juez_02_Mistral_Colab.ipynb), mismo filtro y [confirmación separada posterior](JUEZ_02.md). No hay nuevo scorecard ni juez validado todavía.
 
 [Reglas de eficiencia aprobadas](EFICIENCIA.md): máximo 5 puntos porcentuales de pérdida de cumplimiento, ningún fallo crítico nuevo ni regresión en controles, y al menos 20 % menos memoria pico CUDA asignada. Comprobación de aceptación preparada; comparación real y juez calibrado pendientes. No se desplegó cuantización ni se aceptó un resultado todavía.
 

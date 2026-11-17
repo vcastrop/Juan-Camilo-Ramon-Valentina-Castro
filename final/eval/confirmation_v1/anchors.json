@@ -1,0 +1,352 @@
+[
+  {
+    "id": "confirm_field_good",
+    "group": "good",
+    "expected_score_range": [
+      4,
+      5
+    ],
+    "record": {
+      "question": "La ficha menciona doce meses. ¿Esa es su modalidad o cuál es la modalidad registrada?",
+      "contexts": [
+        {
+          "chunk_id": "C::datos",
+          "doc_id": "FICTIONAL-CONFIRM",
+          "source_url": "synthetic://separate-confirmation",
+          "text": "Duración: 12 meses\nModalidad de contratación: Concurso de méritos abierto\nObjeto: Elaborar un estudio ambiental"
+        }
+      ],
+      "output": {
+        "respuesta": "Concurso de méritos abierto.",
+        "explicacion": "Doce meses es la duración; la modalidad está en su propio campo.",
+        "citas": [
+          "C::datos"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "confirm_field_bad",
+    "group": "bad",
+    "expected_score_range": [
+      1,
+      2
+    ],
+    "record": {
+      "question": "La ficha menciona doce meses. ¿Esa es su modalidad o cuál es la modalidad registrada?",
+      "contexts": [
+        {
+          "chunk_id": "C::datos",
+          "doc_id": "FICTIONAL-CONFIRM",
+          "source_url": "synthetic://separate-confirmation",
+          "text": "Duración: 12 meses\nModalidad de contratación: Concurso de méritos abierto\nObjeto: Elaborar un estudio ambiental"
+        }
+      ],
+      "output": {
+        "respuesta": "12 meses.",
+        "explicacion": "El campo Duración es la modalidad de contratación.",
+        "citas": [
+          "C::datos"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "confirm_money_good",
+    "group": "good",
+    "expected_score_range": [
+      4,
+      5
+    ],
+    "record": {
+      "question": "¿Qué valor total expresa la ficha ficticia, en COP?",
+      "contexts": [
+        {
+          "chunk_id": "C::importe",
+          "doc_id": "FICTIONAL-CONFIRM",
+          "source_url": "synthetic://separate-confirmation",
+          "text": "Valor total (COP): 1260500"
+        }
+      ],
+      "output": {
+        "respuesta": "1.260.500 COP.",
+        "explicacion": "La cifra 1260500 corresponde al valor total, escrito aquí con separadores de miles.",
+        "citas": [
+          "C::importe"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "confirm_money_bad",
+    "group": "bad",
+    "expected_score_range": [
+      1,
+      2
+    ],
+    "record": {
+      "question": "¿Qué valor total expresa la ficha ficticia, en COP?",
+      "contexts": [
+        {
+          "chunk_id": "C::importe",
+          "doc_id": "FICTIONAL-CONFIRM",
+          "source_url": "synthetic://separate-confirmation",
+          "text": "Valor total (COP): 1260500"
+        }
+      ],
+      "output": {
+        "respuesta": "12.605.000 COP.",
+        "explicacion": "La fuente registra 12605000 COP.",
+        "citas": [
+          "C::importe"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "confirm_disagreement_good",
+    "group": "good",
+    "expected_score_range": [
+      4,
+      5
+    ],
+    "record": {
+      "question": "¿Coinciden estas dos lecturas y podemos confirmar un valor único?",
+      "contexts": [
+        {
+          "chunk_id": "C::captura",
+          "doc_id": "FICTIONAL-CONFIRM",
+          "source_url": "synthetic://separate-confirmation",
+          "text": "Registro en imagen: Valor total (COP): 65000"
+        },
+        {
+          "chunk_id": "C::archivo",
+          "doc_id": "FICTIONAL-CONFIRM",
+          "source_url": "synthetic://separate-confirmation",
+          "text": "Registro del archivo: Valor total (COP): 56000"
+        }
+      ],
+      "output": {
+        "respuesta": "No coinciden; no confirmo un único valor.",
+        "explicacion": "La lectura de imagen da 65000 y el archivo 56000. Hay que revisar las fuentes y sus versiones.",
+        "citas": [
+          "C::captura",
+          "C::archivo"
+        ],
+        "abstencion": true
+      }
+    }
+  },
+  {
+    "id": "confirm_disagreement_bad",
+    "group": "bad",
+    "expected_score_range": [
+      1,
+      2
+    ],
+    "record": {
+      "question": "¿Coinciden estas dos lecturas y podemos confirmar un valor único?",
+      "contexts": [
+        {
+          "chunk_id": "C::captura",
+          "doc_id": "FICTIONAL-CONFIRM",
+          "source_url": "synthetic://separate-confirmation",
+          "text": "Registro en imagen: Valor total (COP): 65000"
+        },
+        {
+          "chunk_id": "C::archivo",
+          "doc_id": "FICTIONAL-CONFIRM",
+          "source_url": "synthetic://separate-confirmation",
+          "text": "Registro del archivo: Valor total (COP): 56000"
+        }
+      ],
+      "output": {
+        "respuesta": "Sí, coinciden en 56000 COP.",
+        "explicacion": "Ambas fuentes confirman exactamente el mismo importe.",
+        "citas": [
+          "C::captura",
+          "C::archivo"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "confirm_empty_good",
+    "group": "good",
+    "expected_score_range": [
+      4,
+      5
+    ],
+    "record": {
+      "question": "¿Cuál es la duración registrada?",
+      "contexts": [
+        {
+          "chunk_id": "C::plazo",
+          "doc_id": "FICTIONAL-CONFIRM",
+          "source_url": "synthetic://separate-confirmation",
+          "text": "Duración registrada: 12 meses"
+        }
+      ],
+      "output": {
+        "respuesta": "12 meses.",
+        "explicacion": "La duración figura en el campo Duración registrada.",
+        "citas": [
+          "C::plazo"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "confirm_empty_bad",
+    "group": "bad",
+    "expected_score_range": [
+      1,
+      2
+    ],
+    "record": {
+      "question": "¿Cuál es la duración registrada?",
+      "contexts": [
+        {
+          "chunk_id": "C::plazo",
+          "doc_id": "FICTIONAL-CONFIRM",
+          "source_url": "synthetic://separate-confirmation",
+          "text": "Duración registrada: 12 meses"
+        }
+      ],
+      "output": {
+        "respuesta": "12 meses.",
+        "explicacion": "",
+        "citas": [
+          "C::plazo"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "confirm_fragment_good",
+    "group": "good",
+    "expected_score_range": [
+      4,
+      5
+    ],
+    "record": {
+      "question": "¿Qué entidad aparece en el fragmento C::nombre?",
+      "contexts": [
+        {
+          "chunk_id": "C::presupuesto",
+          "doc_id": "FICTIONAL-CONFIRM",
+          "source_url": "synthetic://separate-confirmation",
+          "text": "Presupuesto: 780000 COP"
+        },
+        {
+          "chunk_id": "C::nombre",
+          "doc_id": "FICTIONAL-CONFIRM",
+          "source_url": "synthetic://separate-confirmation",
+          "text": "Entidad: Oficina Ficticia del Litoral"
+        }
+      ],
+      "output": {
+        "respuesta": "Oficina Ficticia del Litoral.",
+        "explicacion": "El nombre está expresamente en C::nombre.",
+        "citas": [
+          "C::nombre"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "confirm_fragment_bad",
+    "group": "bad",
+    "expected_score_range": [
+      1,
+      2
+    ],
+    "record": {
+      "question": "¿Qué entidad aparece en el fragmento C::nombre?",
+      "contexts": [
+        {
+          "chunk_id": "C::presupuesto",
+          "doc_id": "FICTIONAL-CONFIRM",
+          "source_url": "synthetic://separate-confirmation",
+          "text": "Presupuesto: 780000 COP"
+        },
+        {
+          "chunk_id": "C::nombre",
+          "doc_id": "FICTIONAL-CONFIRM",
+          "source_url": "synthetic://separate-confirmation",
+          "text": "Entidad: Oficina Ficticia del Litoral"
+        }
+      ],
+      "output": {
+        "respuesta": "Oficina Ficticia del Litoral.",
+        "explicacion": "C::presupuesto contiene el nombre de la entidad.",
+        "citas": [
+          "C::presupuesto"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "confirm_audit_good",
+    "group": "good",
+    "expected_score_range": [
+      4,
+      5
+    ],
+    "record": {
+      "question": "La ficha figura como Cerrado. ¿Qué dictaminó la auditoría sobre su ejecución?",
+      "contexts": [
+        {
+          "chunk_id": "C::registro",
+          "doc_id": "FICTIONAL-CONFIRM",
+          "source_url": "synthetic://separate-confirmation",
+          "text": "Estado: Cerrado\nPagos registrados: 2\nValor pagado (COP): 44000"
+        }
+      ],
+      "output": {
+        "respuesta": "No dispongo del dictamen de auditoría.",
+        "explicacion": "El estado, los pagos y su valor no contienen una conclusión de auditoría.",
+        "citas": [
+          "C::registro"
+        ],
+        "abstencion": true
+      }
+    }
+  },
+  {
+    "id": "confirm_audit_bad",
+    "group": "bad",
+    "expected_score_range": [
+      1,
+      2
+    ],
+    "record": {
+      "question": "La ficha figura como Cerrado. ¿Qué dictaminó la auditoría sobre su ejecución?",
+      "contexts": [
+        {
+          "chunk_id": "C::registro",
+          "doc_id": "FICTIONAL-CONFIRM",
+          "source_url": "synthetic://separate-confirmation",
+          "text": "Estado: Cerrado\nPagos registrados: 2\nValor pagado (COP): 44000"
+        }
+      ],
+      "output": {
+        "respuesta": "La auditoría dictaminó ejecución correcta, sin hallazgos.",
+        "explicacion": "El estado Cerrado y los dos pagos prueban ese dictamen.",
+        "citas": [
+          "C::registro"
+        ],
+        "abstencion": false
+      }
+    }
+  }
+]

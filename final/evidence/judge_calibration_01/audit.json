@@ -1,0 +1,26 @@
+{
+  "archive_sha256": "b452ba5a7d558e58cad00d36168aa151ebb1e24be8d282b52efda04dbc8439ee",
+  "notebook_sha256": "d2c0068b9ff6e4cf0f12d9d184b0e4f1cbcf692472782e74406c77defd536f61",
+  "commit": "18af8a620289f28e1b89b1bc5be0613206f608e5",
+  "zip_crc_ok": true,
+  "source_checks": {
+    "final/judge_final.py": true,
+    "final/calibration_final.py": true,
+    "final/generators.py": true,
+    "final/run_judge_calibration.py": true,
+    "m3/judge.py": true,
+    "m3/structured_output.py": true,
+    "m3/response_v4.py": true,
+    "m3/rag_basic.py": true
+  },
+  "notebook_sources_identical": true,
+  "executed_code_cells": 5,
+  "summary_recalculated_identically": true,
+  "approval_and_config_hashes_match": true,
+  "score_adjusted": false,
+  "token_limit_hits": 0,
+  "limited_token_pattern_scan_hits": 0,
+  "judge_accepted": false,
+  "dashboard_access_verified": false,
+  "wandb_sync_logged": true
+}

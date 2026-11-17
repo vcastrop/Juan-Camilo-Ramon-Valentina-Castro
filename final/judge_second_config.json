@@ -1,0 +1,21 @@
+{
+  "protocol": "second-judge-regression-1",
+  "status": "prepared_not_executed",
+  "model": "mistralai/Mistral-7B-Instruct-v0.3",
+  "revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+  "precision": "nf4",
+  "compute_dtype": "float16",
+  "double_quantization": true,
+  "bitsandbytes_version": "0.50.2",
+  "max_new_tokens": 320,
+  "seed": 42,
+  "rubric_version": "final-judge-candidate-1.1",
+  "rubric_changed_from_qwen_calibration": false,
+  "anchor_set": "same 20 human-approved synthetic cases, 38 judgements including verbosity",
+  "acceptance_rules_changed": false,
+  "case_results_already_inspected": true,
+  "final_validation_requires": "passing regression plus separate human-reviewed confirmation and audit of reasons",
+  "confirmation_set": "12 fictional cases prepared separately before second-candidate inference; human review pending",
+  "license": "Apache-2.0 as declared in official model metadata",
+  "model_source": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3"
+}

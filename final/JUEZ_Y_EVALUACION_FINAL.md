@@ -1,6 +1,6 @@
 # Evaluación común y calibración del juez — preparación v1
 
-Estado al 17/11/2026: veinte anclas aprobadas (19 en archivo y una por confirmación posterior), código y pruebas CPU preparados; **sin inferencia nueva del juez, sin calibración superada y sin comparación de eficiencia**. [Original y cierre](evidence/calibration_review_01/CIERRE.md). No se modifican main, Space, modelos originales ni resultados históricos.
+Estado al 17/11/2026: veinte anclas aprobadas; **Qwen 7B ejecutado y rechazado** (15/20 en rango, cinco malos con nota alta y sesgo fuera de umbral). [Auditoría de corrida original](evidence/judge_calibration_01/ANALISIS.md). No hay juez validado ni comparación de eficiencia. [Segundo candidato Mistral y confirmación separada](JUEZ_02.md) preparados, no ejecutados. No se modifican main ni Space ni las notas históricas.
 
 ## Conjunto común ensamblado
 
@@ -55,4 +55,4 @@ Se informa antes/después aunque no mejore; no afirmar que desaparece el sesgo. 
 
 ## Próximo paso del equipo
 
-Ejecutar el notebook en sesión T4 nueva, habilitando su acceso a `WANDB_API_KEY`, y conservar ZIP + notebook ejecutado. No repetir buscando mejores notas. Si pasa calibración y auditoría de razones, se termina/congela el harness común y se ejecuta la comparación con los [umbrales aprobados](EFICIENCIA.md).
+No repetir el notebook Qwen esperando mejores notas. Ejecutar el [nuevo notebook Mistral](ContractRisk_Final_Juez_02_Mistral_Colab.ipynb) en T4 nueva y conservar ZIP + notebook con salidas. Si supera regresión, revisar/ejecutar confirmación separada y auditar razones. Solo después se cierra el harness común y se compara con los [umbrales aprobados](EFICIENCIA.md).

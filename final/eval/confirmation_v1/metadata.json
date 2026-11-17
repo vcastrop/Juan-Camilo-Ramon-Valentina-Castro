@@ -1,0 +1,9 @@
+{
+  "status": "human_review_pending",
+  "purpose": "separate_confirmation_before_second_candidate_results",
+  "cases": 12,
+  "anchors_canonical_sha256": "2b432b3af47fd16de7af30bed14006eb9ad8f887005aef76659e5689098eaba3",
+  "rules_canonical_sha256": "4fcc3d9d0869776d401713b4337e1b63b1da526492303d837e6aa9281a8c57aa",
+  "model_inference_performed": false,
+  "blindness_limit": "Designed after Qwen diagnostic; fixed before Mistral inference. Not an untouched population sample."
+}
