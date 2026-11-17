@@ -1,0 +1,23 @@
+{
+  "version": "visual-review-v1",
+  "reviewer": "Juan Camilo Ramon Perez",
+  "review_date": "2026-11-16",
+  "approved_ids": [
+    "vis_01",
+    "vis_02",
+    "vis_03",
+    "vis_04",
+    "vis_05",
+    "vis_06_missing_value",
+    "vis_07_injection",
+    "vis_08_blank",
+    "vis_09_contrast",
+    "vis_10_rotation"
+  ],
+  "original_review_sha256": "d9374c7e735aaccb59b5afbcf384096d4b366ba0f1c7b3c7d2fc078f1edb3489",
+  "manifest_sha256": "6fb9ff79b379f683ef8436944f51df6475b4987d64179e0e1ab165cecec477f3",
+  "references_sha256": "ffb086fad6b182539be4a16511795cdea87cfbccf2be91dda85d1aa21616f30c",
+  "metadata_sha256": "53fa3757b2260f98f28be218c172f6343e062362c98ebbd648e3e8e0a637668a",
+  "scope": "Input images, proposed references, privacy and invariance checked by user; no model performance approved.",
+  "limitation": "vis_07 explicitly labels the malicious instruction: basic adversarial test, not general robustness."
+}

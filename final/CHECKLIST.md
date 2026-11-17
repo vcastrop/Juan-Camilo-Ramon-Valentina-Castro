@@ -31,7 +31,7 @@ La técnica de eficiencia y el hardware de publicación se eligen tras perfilar 
 
 - [x] Leer la guía completa, incluidas rúbrica, mínimos, uso de IA y sustentación.
 - [x] Consultar main y las ramas remotas sin modificarlas.
-- [ ] Recibir cualquier trabajo de M4/M5 no publicado y comentarios adicionales relevantes.
+- [x] Confirmar trabajo M4/M5 externo: el usuario indica que no hay desarrollo fuera de GitHub. No equivale a módulos M4/M5 completados.
 - [ ] Recibir los materiales/labs de sesiones 13 y 15 y, si existen, los de visión e invarianza de M4.
 - [x] Confirmar disponibilidad de Colab GPU para comparar antes/después: usuario confirma T4 el 16/11; acceso efectivo se registrará al ejecutar.
 - [x] Confirmar cuentas y acceso inicial: Space `Juanoff/contractrisk-colombia` ejecuta prueba real ZeroGPU; W&B `jcramonp-eanit/contractrisk-final` muestra una run. [Evidencia y límites](evidence/SPACE_SMOKE_CONFIRMADO.md). Acceso externo W&B y series de métricas pendientes; no se autorizaron pagos.
@@ -66,7 +66,9 @@ Corrección 02 ejecutada y auditada: [evidencia original](evidence/correction_02
 
 - [x] Conservar sin editar ZIP y notebook ejecutado de corrección 02; verificar hashes y fuentes.
 - [x] Preparar diez candidatos visuales con cinco fichas diferentes, dos variantes invariantes y casos ausente/vacío/adversarial, sin nueva inferencia. [Revisión humana pendiente](eval/visual_candidates_v1/REVISION_HUMANA.md).
-- [ ] Recibir revisión humana de cada candidato antes de congelar el conjunto visual y ejecutarlo.
+- [x] Recibir revisión humana de cada candidato: Juan Camilo Ramon Perez, 16/11/2026; diez aprobados. [Original y dictamen](VISUAL_03.md). Se congelaron hashes de las entradas y referencias de este subconjunto, no el protocolo final completo.
+- [x] Preparar [prueba visual 03](ContractRisk_Final_Visual_03_Colab.ipynb): lecturas nuevas, carga conjunta por comprobar, memoria/latencia sincronizadas, evaluación separada de inferencia. 42 pruebas final CPU + 128 M3 pasan; incluye comprobación de fallo temprano sin secreto. [Protocolo y límites](VISUAL_03.md).
+- [ ] Ejecutar prueba visual 03 en T4 y auditar resultados reales; comprobar W&B y carga conjunta antes de modificar el Space.
 
 - [ ] Conectar el clasificador RoBERTalex+LoRA de M1 con un caso de uso real y visible; mantener sus etiquetas y límites.
 - [ ] Conectar corpus/indexación, recuperación híbrida, reranking y herramienta M3 en el mismo servicio.
@@ -85,8 +87,8 @@ Aceptación: texto e imagen se procesan de punta a punta; el usuario puede ver q
 
 - [ ] Diseñar ejemplos de desarrollo/calibración separados del conjunto final; documentar que el gold M3 ya fue inspeccionado históricamente.
 - [ ] Definir ampliación del gold con casos textuales, imágenes, adversariales y no respondibles, sin elegir casos solo para favorecer el sistema.
-- [ ] Revisar humanamente respuestas y criterios visuales, procedencia y privacidad de imágenes; marcar las imágenes generadas.
-- [ ] Definir prueba de invarianza: pares equivalentes de la misma ficha con cambios no semánticos (resolución, rotación leve o formato); no asumir que borrar un monto es transformación invariante.
+- [x] Revisión humana de imágenes, respuestas esperadas/criterios, procedencia y privacidad del subconjunto visual v1: diez casos aprobados por el usuario el 16/11. Representaciones sintéticas marcadas; no incluye aprobación de respuestas del modelo ni del conjunto final completo.
+- [x] Definir prueba de invarianza visual v1: contraste 0.85 y rotación de 1 grado; dos pares revisados y aprobados por el usuario. Ejecución nueva y comparación pendientes; el campo ausente es adversarial, no invarianza.
 - [ ] Definir cómo reciben la misma entrada las líneas base sin visión; documentar limitación, no ocultar casos ni cambiar denominadores por fila.
 - [ ] Elegir tamaño de muestra y repeticiones compatibles con tiempo; registrar warm-up, parámetros, caché y condiciones. p95 de muestras pequeñas es inestable: declararlo.
 - [ ] Congelar gold, harness, prompts de evaluación, métricas y hashes antes de ejecutar la comparación final.

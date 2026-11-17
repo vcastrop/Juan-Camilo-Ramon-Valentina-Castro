@@ -2,11 +2,13 @@
 
 Estado: integración de desarrollo probada en T4; despliegue público todavía de infraestructura, no sistema final completo. [Checklist](CHECKLIST.md).
 
-## Próxima prueba: integración real en Colab
+## Próxima prueba: visión nueva de extremo a extremo
+
+[Notebook visual 03](ContractRisk_Final_Visual_03_Colab.ipynb) y [protocolo previo a inferencia](VISUAL_03.md). Diez casos aprobados por Juan Camilo Ramon Perez el 16/11/2026. Lecturas nuevas por solicitud y carga conjunta VLM/generador por comprobar en T4; no usa lecturas guardadas. Referencias en proceso posterior; diagnósticos no sustituyen el juez ni el scorecard final. Acceso a secreto W&B de este notebook obligatorio antes de cargar modelos.
 
 [Notebook de corrección 02](ContractRisk_Final_Correccion_02_Colab.ipynb) y [corrida ejecutada/auditada](evidence/correction_02/ANALISIS.md). Se corrigieron los problemas enfocados de lectura y elegibilidad de herramienta; todavía no es evaluación final. El [ensayo 01](evidence/integration_01/ANALISIS.md) se conserva con sus fallos originales. No subir estos archivos ni sus dependencias al Space inicial todavía.
 
-Siguiente paso: [revisión humana de diez candidatos visuales](eval/visual_candidates_v1/REVISION_HUMANA.md). Abrir `index.html` de esa carpeta localmente para ver imágenes y referencias juntas. Todas las aprobaciones siguen pendientes; no se ejecutaron modelos sobre estos nuevos candidatos. Las referencias están separadas del manifiesto de entradas y no deben enviarse al generador.
+La [revisión humana de diez casos visuales](eval/visual_candidates_v1/REVISION_HUMANA.md) ya se recibió y se preservó. Los hashes de entradas/referencias están en `human_approval.json`; todavía no hay resultados de modelos sobre estos casos. Las referencias están separadas del manifiesto de entradas y no deben enviarse al generador.
 
 Objetivo: integrar la señal de suficiencia descriptiva M1, consultas con fuentes/herramienta M3 y lectura de capturas contractuales, medir eficiencia y desplegar una aplicación observada.
 
