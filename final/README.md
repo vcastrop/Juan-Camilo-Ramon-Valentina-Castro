@@ -14,6 +14,8 @@ La [revisión humana de diez casos visuales](eval/visual_candidates_v1/REVISION_
 
 Objetivo: integrar la señal de suficiencia descriptiva M1, consultas con fuentes/herramienta M3 y lectura de capturas contractuales, medir eficiencia y desplegar una aplicación observada.
 
+[Reglas de eficiencia aprobadas](EFICIENCIA.md): máximo 5 puntos porcentuales de pérdida de cumplimiento, ningún fallo crítico nuevo ni regresión en controles, y al menos 20 % menos memoria pico CUDA asignada. Comprobación de aceptación preparada; comparación real y juez calibrado pendientes. No se desplegó cuantización ni se aceptó un resultado todavía.
+
 Space objetivo: https://huggingface.co/spaces/Juanoff/contractrisk-colombia
 
 Equipo W&B: `jcramonp-eanit`; proyecto: `contractrisk-final`. Las capturas del usuario confirman una run y asignación GPU real. La visualización de métricas, acceso del evaluador y observabilidad de consultas reales están pendientes. [Evidencia y límites](evidence/SPACE_SMOKE_CONFIRMADO.md).

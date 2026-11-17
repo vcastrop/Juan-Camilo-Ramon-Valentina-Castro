@@ -1,0 +1,16 @@
+{
+  "version": "final-efficiency-policy-1",
+  "status": "approved_before_comparison",
+  "approval_source": "User confirmed in chat: Sí, usar esos umbrales",
+  "recorded_utc": "2026-11-17T04:10:28Z",
+  "comparison_already_executed": false,
+  "max_domain_drop_absolute": "0.05",
+  "max_new_critical_failures": 0,
+  "max_control_regressions": 0,
+  "min_peak_cuda_memory_reduction": "0.20",
+  "memory_definition": "Maximum torch CUDA allocated peak across the same evaluated cases, bytes, same hardware; reserved memory and latency reported separately",
+  "quality_definition": "Domain-pass proportion under one frozen common harness with independent calibrated judge; not visual03 literal proxy",
+  "control_definition": "Per-case abstention, adversarial and invariance controls; a pass-to-fail regression cannot be hidden by global averages",
+  "candidate_technique": "NF4 4-bit generator weights, same generator model/revision, FP16 compute; unmeasured candidate, not accepted or deployed",
+  "readiness_warning": "Relative efficiency acceptance does not certify baseline quality, safety or readiness for real contractual decisions"
+}

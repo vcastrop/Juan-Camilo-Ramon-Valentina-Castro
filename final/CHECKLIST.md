@@ -70,7 +70,8 @@ Corrección 02 ejecutada y auditada: [evidencia original](evidence/correction_02
 - [x] Preparar [prueba visual 03](ContractRisk_Final_Visual_03_Colab.ipynb): lecturas nuevas, carga conjunta por comprobar, memoria/latencia sincronizadas, evaluación separada de inferencia. 42 pruebas final CPU + 128 M3 pasan; incluye comprobación de fallo temprano sin secreto. [Protocolo y límites](VISUAL_03.md).
 - [x] Ejecutar visual 03 en T4 y auditar resultados: diez casos, carga conjunta sin OOM, memoria y tiempos registrados; W&B sincronizado según logs. [Evidencia](evidence/visual_03/ANALISIS.md). Acceso externo/dashboard pendiente. Un error monetario crítico se conserva; no se modificó Space.
 - [x] Añadir [control de contradicciones 0.3](CONTROL_CONSISTENCIA.md), posterior a inspección del fallo, y reproducir diez lecturas guardadas en CPU: vis_04 se bloquea, las otras nueve salidas se conservan. 53 pruebas final + 128 M3 pasan. No es nueva inferencia ni reparación del OCR.
-- [ ] Acordar antes de medir la propuesta de aceptación eficiente: pérdida máxima 5 puntos porcentuales de cumplimiento, cero fallos críticos nuevos ni regresiones en controles, reducción mínima 20 % de memoria pico CUDA; consulta enviada al usuario, todavía no aprobada ni medida. No son umbrales impuestos por la guía.
+- [x] Umbrales aprobados por el usuario antes de comparar: pérdida máxima 5 puntos porcentuales de cumplimiento, cero fallos críticos nuevos ni regresiones en controles, ahorro mínimo 20 % de memoria pico CUDA asignada. [Política y condiciones](EFICIENCIA.md). Medición pendiente; no son exigencias numéricas de la guía.
+- [x] Preparar decisión de aceptación que rechaza datos incompletos/no comparables y juez sin calibración. Pruebas sintéticas de límites y regresiones: total 66 final CPU + 128 M3 aprobadas; no son resultados de modelos cuantizados.
 
 - [ ] Conectar el clasificador RoBERTalex+LoRA de M1 con un caso de uso real y visible; mantener sus etiquetas y límites.
 - [ ] Conectar corpus/indexación, recuperación híbrida, reranking y herramienta M3 en el mismo servicio.
@@ -98,7 +99,7 @@ Aceptación: texto e imagen se procesan de punta a punta; el usuario puede ver q
 - [ ] Corregir/validar el juez y parsers con ejemplos de calibración separados, incluido rechazo de respuestas inventadas y evaluación de afirmaciones cortas.
 - [ ] Si se modifica el evaluador, recalificar todas las filas con la misma versión; las notas antiguas no se renombran como nuevas.
 - [ ] Registrar calidad automática, calidad sustentada según juez, dominio, abstención, adversariales, invarianza y casos con imagen.
-- [ ] Fijar por escrito la pérdida máxima de calidad y la ganancia mínima de eficiencia aceptables antes de medir. Umbrales numéricos a acordar con el equipo, no inventar como exigencia de la guía.
+- [x] Fijar pérdida máxima y ganancia mínima antes de medir: aprobación explícita del usuario, registrada en `efficiency_policy.json`. El gold/harness comunes y la calibración aún no están cerrados; la política no puede aplicarse al proxy literal de visual 03.
 
 Aceptación: protocolo versionado, sin sustitución de notas ni mezclas de métricas/hardware. Si el juez falla calibración, no usarlo como evidencia de calidad validada.
 
