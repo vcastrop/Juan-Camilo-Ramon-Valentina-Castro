@@ -2,13 +2,15 @@
 
 Estado: integración de desarrollo probada en T4; despliegue público todavía de infraestructura, no sistema final completo. [Checklist](CHECKLIST.md).
 
-## Próxima prueba: visión nueva de extremo a extremo
+## Estado de la integración visual
 
-[Notebook visual 03](ContractRisk_Final_Visual_03_Colab.ipynb) y [protocolo previo a inferencia](VISUAL_03.md). Diez casos aprobados por Juan Camilo Ramon Perez el 16/11/2026. Lecturas nuevas por solicitud y carga conjunta VLM/generador por comprobar en T4; no usa lecturas guardadas. Referencias en proceso posterior; diagnósticos no sustituyen el juez ni el scorecard final. Acceso a secreto W&B de este notebook obligatorio antes de cargar modelos.
+[Visual 03 ejecutada y auditada](evidence/visual_03/ANALISIS.md): diez lecturas/rutas nuevas, carga conjunta en T4 y W&B con cierre confirmado por log. Un monto con cero adicional se propagó pese a contradecir el snapshot; se conserva el fallo, no se aprueba calidad global. [Control nuevo de consistencia 0.3](CONTROL_CONSISTENCIA.md) y reproducción CPU comprobados, sin cambiar respuestas históricas. Siguiente hito: protocolo común y evaluación/eficiencia, no repetir el ensayo para seleccionar mejores resultados.
+
+[Notebook histórico visual 03](ContractRisk_Final_Visual_03_Colab.ipynb) y [protocolo original](VISUAL_03.md). El notebook clona la rama vigente: para reproducir exactamente la corrida original usar el commit `0935f20`, no suponer que una ejecución futura de la rama equivale a integración 0.2.
 
 [Notebook de corrección 02](ContractRisk_Final_Correccion_02_Colab.ipynb) y [corrida ejecutada/auditada](evidence/correction_02/ANALISIS.md). Se corrigieron los problemas enfocados de lectura y elegibilidad de herramienta; todavía no es evaluación final. El [ensayo 01](evidence/integration_01/ANALISIS.md) se conserva con sus fallos originales. No subir estos archivos ni sus dependencias al Space inicial todavía.
 
-La [revisión humana de diez casos visuales](eval/visual_candidates_v1/REVISION_HUMANA.md) ya se recibió y se preservó. Los hashes de entradas/referencias están en `human_approval.json`; todavía no hay resultados de modelos sobre estos casos. Las referencias están separadas del manifiesto de entradas y no deben enviarse al generador.
+La [revisión humana de diez casos visuales](eval/visual_candidates_v1/REVISION_HUMANA.md) se preservó. Los hashes están en `human_approval.json`; ya hay resultados auditados de visual 03. Las referencias están separadas del manifiesto de entradas y no deben enviarse al generador.
 
 Objetivo: integrar la señal de suficiencia descriptiva M1, consultas con fuentes/herramienta M3 y lectura de capturas contractuales, medir eficiencia y desplegar una aplicación observada.
 

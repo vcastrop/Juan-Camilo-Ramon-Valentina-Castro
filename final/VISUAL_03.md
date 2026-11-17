@@ -2,6 +2,8 @@
 
 Estado 16/11/2026: implementación y pruebas CPU preparadas; inferencia nueva de este protocolo NO ejecutada. No es el protocolo común final de M2–final ni cierra eficiencia/producción.
 
+Actualización posterior: [corrida real de integración 0.2 auditada](evidence/visual_03/ANALISIS.md), código `0935f20`. El texto siguiente conserva el protocolo previo, no se cambian criterios tras ver resultados. La [protección nueva 0.3](CONTROL_CONSISTENCIA.md) es posterior y tiene reproducción CPU separada; no se atribuye a esta corrida histórica.
+
 ## Revisión y procedencia
 
 Juan Camilo Ramon Perez revisó y aprobó los diez casos el 16/11/2026. [Dictamen incorporado](eval/visual_candidates_v1/REVISION_HUMANA.md), [original sin editar](evidence/visual_review_01/original_review.md), [aprobación con hashes](eval/visual_candidates_v1/human_approval.json).

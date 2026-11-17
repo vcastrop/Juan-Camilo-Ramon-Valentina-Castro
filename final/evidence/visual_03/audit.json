@@ -1,0 +1,28 @@
+{
+  "archive_sha256": "726b612ae3a09be703cfa2ab3609d2ef90ca3b1de208a1dd2298980e34931d00",
+  "notebook_sha256": "5881885e87f0dd8b780f364e53ad36486d33113875fb99ddc804ddacaaae1ec4",
+  "commit": "0935f2037eb44ca5c135a70ce4b3923386c9950b",
+  "source_checks": {
+    "__init__.py": true,
+    "visual_probe.py": true,
+    "integration.py": true,
+    "run_integration.py": true,
+    "adapters.py": true,
+    "tool_policy.py": true,
+    "config.py": true,
+    "prepare_visual_review.py": true,
+    "visual_fields.py": true,
+    "score_visual_probe.py": true,
+    "run_correction02.py": true
+  },
+  "zip_crc_ok": true,
+  "review_and_image_hashes_match": true,
+  "notebook_sources_identical": true,
+  "executed_code_cells": 6,
+  "notebook_error_outputs": 0,
+  "diagnostics_recalculated_identically": true,
+  "limited_token_pattern_scan_hits": 0,
+  "wandb_sync_logged": true,
+  "dashboard_access_verified": false,
+  "quality_approved": false
+}

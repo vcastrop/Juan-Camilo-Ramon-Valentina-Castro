@@ -61,6 +61,7 @@ class IntegratedSystem:
             record.update(output=output, guard=guard, latency_seconds=time.perf_counter()-start)
             return record
         visual = None
+        visual_context = None
         if image is not None:
             if self.vision is None:
                 raise RuntimeError('Vision component not loaded')
@@ -79,6 +80,23 @@ class IntegratedSystem:
             if mode == 'qa' and missing:
                 record['missing_visual_fields'] = missing
                 return finish(abstain('La lectura de la imagen no permite verificar todos los campos solicitados.'), 'missing_visual_fields')
+            visual_context = {'doc_id': visual['id_contrato'] or 'IMAGE', 'chunk_id': 'IMAGE::input',
+                              'text': json.dumps(visual, ensure_ascii=False), 'source_url': 'uploaded-image',
+                              'evidence_type': 'unverified_visual_extraction'}
+            record['visual_evidence_warning'] = 'Lectura del modelo, no verificación del documento ni autenticidad.'
+            if mode == 'qa':
+                from final.source_consistency import compare_visual_source, conflict_explanation
+                document = self.documents.get(visual['id_contrato'])
+                consistency = compare_visual_source(visual, document)
+                record['source_consistency'] = consistency
+                if consistency['status'] == 'conflict':
+                    source_context = {'doc_id': document['doc_id'], 'chunk_id': document['doc_id']+'::full_record',
+                                      'text': document['text'], 'source_url': document['source_url'],
+                                      'evidence_type': 'complete_source_record'}
+                    record['contexts'] = [visual_context,source_context]
+                    output = abstain(conflict_explanation(consistency))
+                    output['citas'] = [visual_context['chunk_id'], source_context['chunk_id']]
+                    return finish(output, 'visual_source_conflict')
         if mode == 'sufficiency':
             text = description if description is not None else (visual or {}).get('objeto')
             if not isinstance(text, str) or not text.strip():
@@ -99,12 +117,6 @@ class IntegratedSystem:
         wanted = contract_ids(question)
         if image is None and wanted - set(self.documents):
             return finish(abstain('El contrato solicitado no pertenece al snapshot disponible.'), 'unknown_contract')
-        visual_context = None
-        if visual:
-            visual_context = {'doc_id': visual['id_contrato'] or 'IMAGE', 'chunk_id': 'IMAGE::input',
-                              'text': json.dumps(visual, ensure_ascii=False), 'source_url': 'uploaded-image',
-                              'evidence_type': 'unverified_visual_extraction'}
-            record['visual_evidence_warning'] = 'Lectura del modelo, no verificación del documento ni autenticidad.'
         # Only user inputs/source evidence, never expected answers or judge scores.
         result = self.answer(question, visual_context)
         record.update({k: v for k, v in result.items() if k not in {'question', 'latency_seconds'}})

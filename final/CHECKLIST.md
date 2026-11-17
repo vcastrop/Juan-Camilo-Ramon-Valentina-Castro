@@ -68,7 +68,9 @@ Corrección 02 ejecutada y auditada: [evidencia original](evidence/correction_02
 - [x] Preparar diez candidatos visuales con cinco fichas diferentes, dos variantes invariantes y casos ausente/vacío/adversarial, sin nueva inferencia. [Revisión humana pendiente](eval/visual_candidates_v1/REVISION_HUMANA.md).
 - [x] Recibir revisión humana de cada candidato: Juan Camilo Ramon Perez, 16/11/2026; diez aprobados. [Original y dictamen](VISUAL_03.md). Se congelaron hashes de las entradas y referencias de este subconjunto, no el protocolo final completo.
 - [x] Preparar [prueba visual 03](ContractRisk_Final_Visual_03_Colab.ipynb): lecturas nuevas, carga conjunta por comprobar, memoria/latencia sincronizadas, evaluación separada de inferencia. 42 pruebas final CPU + 128 M3 pasan; incluye comprobación de fallo temprano sin secreto. [Protocolo y límites](VISUAL_03.md).
-- [ ] Ejecutar prueba visual 03 en T4 y auditar resultados reales; comprobar W&B y carga conjunta antes de modificar el Space.
+- [x] Ejecutar visual 03 en T4 y auditar resultados: diez casos, carga conjunta sin OOM, memoria y tiempos registrados; W&B sincronizado según logs. [Evidencia](evidence/visual_03/ANALISIS.md). Acceso externo/dashboard pendiente. Un error monetario crítico se conserva; no se modificó Space.
+- [x] Añadir [control de contradicciones 0.3](CONTROL_CONSISTENCIA.md), posterior a inspección del fallo, y reproducir diez lecturas guardadas en CPU: vis_04 se bloquea, las otras nueve salidas se conservan. 53 pruebas final + 128 M3 pasan. No es nueva inferencia ni reparación del OCR.
+- [ ] Acordar antes de medir la propuesta de aceptación eficiente: pérdida máxima 5 puntos porcentuales de cumplimiento, cero fallos críticos nuevos ni regresiones en controles, reducción mínima 20 % de memoria pico CUDA; consulta enviada al usuario, todavía no aprobada ni medida. No son umbrales impuestos por la guía.
 
 - [ ] Conectar el clasificador RoBERTalex+LoRA de M1 con un caso de uso real y visible; mantener sus etiquetas y límites.
 - [ ] Conectar corpus/indexación, recuperación híbrida, reranking y herramienta M3 en el mismo servicio.
