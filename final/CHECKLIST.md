@@ -88,6 +88,13 @@ Aceptación: texto e imagen se procesan de punta a punta; el usuario puede ver q
 
 ## Fase 3 — evaluación común y criterios antes de optimizar
 
+Preparación posterior a visual 03: [protocolo de juez y conjunto común](JUEZ_Y_EVALUACION_FINAL.md). 22 entradas ensambladas (12 QA + 10 visuales) con referencias separadas; no se cambiaron vis_04 ni notas previas para favorecer el control. Veinte anclas ficticias y 38 juicios previstos con criterios de calibración fijados; revisión humana todavía pendiente, carga 7B NF4 y calibración T4 no ejecutadas. Total 83 pruebas final CPU + 128 M3 aprobadas; no son resultados de modelos nuevos.
+
+- [x] Ensamblar candidato común con procedencia/hashes y sin respuestas esperadas en entradas del sistema. No está congelado aún el protocolo/harness completo.
+- [x] Preparar rúbrica nueva y calibración sintética separada, sin indicadores de acierto enviados al juez y sin sustituir notas.
+- [ ] Recibir [revisión humana de las veinte anclas de calibración](eval/calibration_review_v1/REVISION_CALIBRACION.md).
+- [ ] Ejecutar filtro de calibración T4 y auditar razones antes de usar el juez en aceptación de calidad/eficiencia.
+
 - [ ] Diseñar ejemplos de desarrollo/calibración separados del conjunto final; documentar que el gold M3 ya fue inspeccionado históricamente.
 - [ ] Definir ampliación del gold con casos textuales, imágenes, adversariales y no respondibles, sin elegir casos solo para favorecer el sistema.
 - [x] Revisión humana de imágenes, respuestas esperadas/criterios, procedencia y privacidad del subconjunto visual v1: diez casos aprobados por el usuario el 16/11. Representaciones sintéticas marcadas; no incluye aprobación de respuestas del modelo ni del conjunto final completo.

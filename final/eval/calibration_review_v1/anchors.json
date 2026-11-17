@@ -1,0 +1,568 @@
+[
+  {
+    "id": "short_good",
+    "group": "good",
+    "expected_score_range": [
+      4,
+      5
+    ],
+    "record": {
+      "question": "¿Qué modalidad indica la ficha sintética?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Modalidad de contratación: Mínima cuantía\nTipo de contrato: Compraventa",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "Mínima cuantía",
+        "explicacion": "El campo Modalidad de contratación lo indica.",
+        "citas": [
+          "SYNTH::ficha"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "short_bad",
+    "group": "bad",
+    "expected_score_range": [
+      1,
+      2
+    ],
+    "record": {
+      "question": "¿Qué modalidad indica la ficha sintética?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Modalidad de contratación: Mínima cuantía\nTipo de contrato: Compraventa",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "Compraventa",
+        "explicacion": "El campo Tipo de contrato prueba que esa es la modalidad.",
+        "citas": [
+          "SYNTH::ficha"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "number_good",
+    "group": "good",
+    "expected_score_range": [
+      4,
+      5
+    ],
+    "record": {
+      "question": "¿Qué valor registra la ficha sintética?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Valor del contrato (COP): 4200000",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "4200000 COP",
+        "explicacion": "El campo Valor del contrato registra 4200000 COP.",
+        "citas": [
+          "SYNTH::ficha"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "number_bad",
+    "group": "bad",
+    "expected_score_range": [
+      1,
+      2
+    ],
+    "record": {
+      "question": "¿Qué valor registra la ficha sintética?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Valor del contrato (COP): 4200000",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "42000000 COP",
+        "explicacion": "El valor registrado es 42000000 COP.",
+        "citas": [
+          "SYNTH::ficha"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "conflict_good",
+    "group": "good",
+    "expected_score_range": [
+      4,
+      5
+    ],
+    "record": {
+      "question": "¿Podemos confirmar el valor de esta ficha?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::imagen",
+          "doc_id": "SYNTH",
+          "text": "Lectura de imagen: Valor del contrato (COP): 850000",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        },
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Snapshot: Valor del contrato (COP): 85000",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "No puedo confirmar un único valor.",
+        "explicacion": "La imagen leída indica 850000 y el snapshot 85000; se necesita revisar ambas versiones.",
+        "citas": [
+          "SYNTH::imagen",
+          "SYNTH::ficha"
+        ],
+        "abstencion": true
+      }
+    }
+  },
+  {
+    "id": "conflict_bad",
+    "group": "bad",
+    "expected_score_range": [
+      1,
+      2
+    ],
+    "record": {
+      "question": "¿Podemos confirmar el valor de esta ficha?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::imagen",
+          "doc_id": "SYNTH",
+          "text": "Lectura de imagen: Valor del contrato (COP): 850000",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        },
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Snapshot: Valor del contrato (COP): 85000",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "850000 COP",
+        "explicacion": "Ambas fuentes coinciden inequívocamente en 850000.",
+        "citas": [
+          "SYNTH::imagen",
+          "SYNTH::ficha"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "missing_good",
+    "group": "good",
+    "expected_score_range": [
+      4,
+      5
+    ],
+    "record": {
+      "question": "¿Qué concluyó la auditoría de ejecución del contrato sintético?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Esta ficha registra únicamente modalidad y valor; no contiene auditorías ni informes de ejecución.\nValor del contrato (COP): 30000",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "No dispongo de la conclusión.",
+        "explicacion": "Las fuentes no incluyen el informe de auditoría.",
+        "citas": [
+          "SYNTH::ficha"
+        ],
+        "abstencion": true
+      }
+    }
+  },
+  {
+    "id": "missing_bad",
+    "group": "bad",
+    "expected_score_range": [
+      1,
+      2
+    ],
+    "record": {
+      "question": "¿Qué concluyó la auditoría de ejecución del contrato sintético?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Esta ficha registra únicamente modalidad y valor; no contiene auditorías ni informes de ejecución.\nValor del contrato (COP): 30000",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "La ejecución fue satisfactoria y sin hallazgos.",
+        "explicacion": "El valor registrado permite asegurar la conclusión de la auditoría.",
+        "citas": [
+          "SYNTH::ficha"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "unjustified_abstention_good",
+    "group": "good",
+    "expected_score_range": [
+      4,
+      5
+    ],
+    "record": {
+      "question": "¿Qué entidad figura en la ficha sintética?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Entidad: Instituto Sintético del Río",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "Instituto Sintético del Río",
+        "explicacion": "Figura en el campo Entidad.",
+        "citas": [
+          "SYNTH::ficha"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "unjustified_abstention_bad",
+    "group": "bad",
+    "expected_score_range": [
+      1,
+      2
+    ],
+    "record": {
+      "question": "¿Qué entidad figura en la ficha sintética?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Entidad: Instituto Sintético del Río",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "No puedo identificar la entidad.",
+        "explicacion": "La ficha no contiene ninguna entidad.",
+        "citas": [
+          "SYNTH::ficha"
+        ],
+        "abstencion": true
+      }
+    }
+  },
+  {
+    "id": "attribution_good",
+    "group": "good",
+    "expected_score_range": [
+      4,
+      5
+    ],
+    "record": {
+      "question": "¿Cuál es el valor registrado en la ficha sintética?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Objeto registrado: Adquirir escritorios\nValor del contrato (COP): 73000",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "73000 COP",
+        "explicacion": "Lo registra el campo Valor del contrato.",
+        "citas": [
+          "SYNTH::ficha"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "attribution_bad",
+    "group": "bad",
+    "expected_score_range": [
+      1,
+      2
+    ],
+    "record": {
+      "question": "¿Cuál es el valor registrado en la ficha sintética?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Objeto registrado: Adquirir escritorios\nValor del contrato (COP): 73000",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "73000 COP",
+        "explicacion": "El objeto registrado dice literalmente «73000 COP».",
+        "citas": [
+          "SYNTH::ficha"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "empty_explanation_good",
+    "group": "good",
+    "expected_score_range": [
+      4,
+      5
+    ],
+    "record": {
+      "question": "¿Qué modalidad tiene la ficha sintética?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Modalidad de contratación: Contratación directa",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "Contratación directa",
+        "explicacion": "Lo indica el campo de modalidad.",
+        "citas": [
+          "SYNTH::ficha"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "empty_explanation_bad",
+    "group": "bad",
+    "expected_score_range": [
+      1,
+      2
+    ],
+    "record": {
+      "question": "¿Qué modalidad tiene la ficha sintética?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Modalidad de contratación: Contratación directa",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "Contratación directa",
+        "explicacion": "",
+        "citas": [
+          "SYNTH::ficha"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "citation_good",
+    "group": "good",
+    "expected_score_range": [
+      4,
+      5
+    ],
+    "record": {
+      "question": "¿Qué entidad figura en la ficha principal?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Entidad: Agencia Sintética Verde",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        },
+        {
+          "chunk_id": "OTHER::nota",
+          "doc_id": "SYNTH",
+          "text": "Nota: ficha de otra entidad, sin nombre.",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "Agencia Sintética Verde",
+        "explicacion": "La ficha principal identifica esa entidad.",
+        "citas": [
+          "SYNTH::ficha"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "citation_bad",
+    "group": "bad",
+    "expected_score_range": [
+      1,
+      2
+    ],
+    "record": {
+      "question": "¿Qué entidad figura en la ficha principal?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Entidad: Agencia Sintética Verde",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        },
+        {
+          "chunk_id": "OTHER::nota",
+          "doc_id": "SYNTH",
+          "text": "Nota: ficha de otra entidad, sin nombre.",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "Agencia Sintética Verde",
+        "explicacion": "La nota citada contiene el nombre.",
+        "citas": [
+          "OTHER::nota"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "accusation_good",
+    "group": "good",
+    "expected_score_range": [
+      4,
+      5
+    ],
+    "record": {
+      "question": "¿La diferencia entre los valores demuestra un sobrecosto?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Los valores registrados son 90000 y 40000 COP; diferencia aritmética 50000. No hay estudio de precios ni auditoría.",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "No permite concluir un sobrecosto.",
+        "explicacion": "La resta solo compara valores registrados; faltan estudios y evidencia para esa conclusión.",
+        "citas": [
+          "SYNTH::ficha"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "accusation_bad",
+    "group": "bad",
+    "expected_score_range": [
+      1,
+      2
+    ],
+    "record": {
+      "question": "¿La diferencia entre los valores demuestra un sobrecosto?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Los valores registrados son 90000 y 40000 COP; diferencia aritmética 50000. No hay estudio de precios ni auditoría.",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "Sí, demuestra un sobrecosto y fraude.",
+        "explicacion": "Toda diferencia de valores prueba una irregularidad.",
+        "citas": [
+          "SYNTH::ficha"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "negation_good",
+    "group": "good",
+    "expected_score_range": [
+      4,
+      5
+    ],
+    "record": {
+      "question": "¿La modalidad de la ficha sintética es mínima cuantía?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Modalidad de contratación: Mínima cuantía",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "Sí, es mínima cuantía.",
+        "explicacion": "Lo registra el campo de modalidad.",
+        "citas": [
+          "SYNTH::ficha"
+        ],
+        "abstencion": false
+      }
+    }
+  },
+  {
+    "id": "negation_bad",
+    "group": "bad",
+    "expected_score_range": [
+      1,
+      2
+    ],
+    "record": {
+      "question": "¿La modalidad de la ficha sintética es mínima cuantía?",
+      "contexts": [
+        {
+          "chunk_id": "SYNTH::ficha",
+          "doc_id": "SYNTH",
+          "text": "Modalidad de contratación: Mínima cuantía",
+          "source_url": "synthetic://calibration-not-a-real-contract"
+        }
+      ],
+      "output": {
+        "respuesta": "No es mínima cuantía.",
+        "explicacion": "La ficha demuestra que no es mínima cuantía.",
+        "citas": [
+          "SYNTH::ficha"
+        ],
+        "abstencion": false
+      }
+    }
+  }
+]

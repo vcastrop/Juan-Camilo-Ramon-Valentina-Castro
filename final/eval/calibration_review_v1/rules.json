@@ -1,0 +1,11 @@
+{
+  "version": "final-calibration-rules-1",
+  "calibration_cases": 20,
+  "required_valid_main": 20,
+  "min_orientation_matches": 18,
+  "max_bad_accepted_at_4_or_5": 0,
+  "verbosity_pairs": 6,
+  "required_valid_all_calls": 38,
+  "max_after_pair_difference": 1,
+  "max_after_mean_absolute_difference": "1.0"
+}

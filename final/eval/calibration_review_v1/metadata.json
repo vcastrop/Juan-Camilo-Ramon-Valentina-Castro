@@ -1,0 +1,8 @@
+{
+  "status": "human_review_pending",
+  "anchors": 20,
+  "anchor_canonical_sha256": "32715f06b319a72a77b2c1b0acc834a685ebcc74308b7689823d767dda11aa31",
+  "rules_canonical_sha256": "3ee940d7d2d1e69383ebf04bbe4ebba00cec9319a68b6c98afd12d6fed5423be",
+  "model_inference_performed": false,
+  "authorship": "AI-assisted synthetic anchors, human approval not yet received"
+}

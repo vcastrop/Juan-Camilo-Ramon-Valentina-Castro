@@ -14,6 +14,8 @@ La [revisión humana de diez casos visuales](eval/visual_candidates_v1/REVISION_
 
 Objetivo: integrar la señal de suficiencia descriptiva M1, consultas con fuentes/herramienta M3 y lectura de capturas contractuales, medir eficiencia y desplegar una aplicación observada.
 
+[Evaluación común y juez candidato](JUEZ_Y_EVALUACION_FINAL.md): 22 entradas ensambladas con referencias separadas y veinte anclas sintéticas de calibración. Código/pruebas CPU preparados; revisión humana de anclas y ejecución T4 pendientes. No hay nuevo scorecard ni juez validado todavía.
+
 [Reglas de eficiencia aprobadas](EFICIENCIA.md): máximo 5 puntos porcentuales de pérdida de cumplimiento, ningún fallo crítico nuevo ni regresión en controles, y al menos 20 % menos memoria pico CUDA asignada. Comprobación de aceptación preparada; comparación real y juez calibrado pendientes. No se desplegó cuantización ni se aceptó un resultado todavía.
 
 Space objetivo: https://huggingface.co/spaces/Juanoff/contractrisk-colombia

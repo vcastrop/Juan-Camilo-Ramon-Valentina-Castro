@@ -1,0 +1,15 @@
+{
+  "version": "common-eval-candidate-1",
+  "status": "assembled_not_frozen",
+  "cases": 22,
+  "text_cases": 12,
+  "image_cases": 10,
+  "independent_contract_count_not_22": true,
+  "inputs_canonical_sha256": "da677d46731d5205a4b664b0c3f3155c138fac9b799115d53e753a1204b13dd6",
+  "references_canonical_sha256": "6103fb2177c1f3d17efdaec7958549e96f179731dfd49bc16c986cd53df00f93",
+  "qa_source_canonical_sha256": "58b6c4422b2684c6aabf961323a1f2708abcaae414a6813dfd111b819a28a0f1",
+  "visual_refs_source_canonical_sha256": "f42ab5df5a3009ea68a7bbe6782eb4c2e061ad6f48d26d692ceb8735ae0b0393",
+  "new_human_labels_created": false,
+  "model_inference_performed": false,
+  "caveat": "Derived from approved references, not new blind gold. Common harness/control definitions still to freeze; no change to historical artifacts."
+}

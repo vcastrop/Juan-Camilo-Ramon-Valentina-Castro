@@ -1,0 +1,22 @@
+{
+  "protocol": "final-judge-calibration-1",
+  "status": "prepared_not_executed",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "precision": "nf4",
+  "compute_dtype": "float16",
+  "double_quantization": true,
+  "bitsandbytes_version": "0.50.2",
+  "max_new_tokens": 320,
+  "seed": 42,
+  "max_attempts_per_judgement": 2,
+  "cases": 20,
+  "total_judgements": 38,
+  "min_orientation_matches": 18,
+  "required_valid_judgements": 38,
+  "max_bad_answers_scored_4_or_5": 0,
+  "verbosity_pairs": 6,
+  "max_mitigated_pair_absolute_difference": 1,
+  "calibration_inputs": "Synthetic fictional records, no real SECOP IDs or final QA answers",
+  "independence_limit": "Different checkpoint/size from generator but same Qwen family; human review still required"
+}

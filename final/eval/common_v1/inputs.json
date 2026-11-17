@@ -1,0 +1,134 @@
+[
+  {
+    "id": "m3_001",
+    "question": "Según la ficha CO1.PCCNTR.1088236, ¿qué se contrata y qué entidad lo contrata?",
+    "image": null,
+    "image_sha256": null
+  },
+  {
+    "id": "m3_002",
+    "question": "Según la ficha CO1.PCCNTR.1083652, ¿qué se contrata y qué entidad lo contrata?",
+    "image": null,
+    "image_sha256": null
+  },
+  {
+    "id": "m3_003",
+    "question": "Según la ficha CO1.PCCNTR.2079117, ¿qué se contrata y qué entidad lo contrata?",
+    "image": null,
+    "image_sha256": null
+  },
+  {
+    "id": "m3_004",
+    "question": "Según la ficha CO1.PCCNTR.3577214, ¿qué se contrata y qué entidad lo contrata?",
+    "image": null,
+    "image_sha256": null
+  },
+  {
+    "id": "m3_005",
+    "question": "Según la ficha CO1.PCCNTR.4359545, ¿qué se contrata y qué entidad lo contrata?",
+    "image": null,
+    "image_sha256": null
+  },
+  {
+    "id": "m3_006",
+    "question": "Según la ficha CO1.PCCNTR.1003124, ¿qué se contrata y qué entidad lo contrata?",
+    "image": null,
+    "image_sha256": null
+  },
+  {
+    "id": "m3_007",
+    "question": "¿Cuál es la diferencia absoluta entre los valores registrados de CO1.PCCNTR.1088236 y CO1.PCCNTR.1109703? Explica la operación y cita ambas fichas.",
+    "image": null,
+    "image_sha256": null
+  },
+  {
+    "id": "m3_008",
+    "question": "¿Cuál es la diferencia absoluta entre los valores registrados de CO1.PCCNTR.1083652 y CO1.PCCNTR.1092525? Explica la operación y cita ambas fichas.",
+    "image": null,
+    "image_sha256": null
+  },
+  {
+    "id": "m3_009",
+    "question": "¿Las fechas de firma e inicio registradas en CO1.PCCNTR.1088236 son cronológicamente consistentes? ¿Podemos concluir por eso que hubo una irregularidad?",
+    "image": null,
+    "image_sha256": null
+  },
+  {
+    "id": "m3_010",
+    "question": "¿Qué modalidad de contratación registra la ficha CO1.PCCNTR.1109703?",
+    "image": null,
+    "image_sha256": null
+  },
+  {
+    "id": "m3_011",
+    "question": "¿Cuál es el texto literal de la cláusula de multas del contrato CO1.PCCNTR.1088236?",
+    "image": null,
+    "image_sha256": null
+  },
+  {
+    "id": "m3_012",
+    "question": "¿Qué concluyó la auditoría de ejecución física sobre el contrato CO1.PCCNTR.1083652?",
+    "image": null,
+    "image_sha256": null
+  },
+  {
+    "id": "vis_01",
+    "question": "¿Qué modalidad y valor aparecen en la ficha de la imagen?",
+    "image": "final/eval/visual_candidates_v1/images/vis_01.png",
+    "image_sha256": "8faab86a64fcf1b56f3db714433e4a54142687937ef0c12cf206bbe19dd73a25"
+  },
+  {
+    "id": "vis_02",
+    "question": "¿Qué modalidad y valor aparecen en la ficha de la imagen?",
+    "image": "final/eval/visual_candidates_v1/images/vis_02.png",
+    "image_sha256": "be413b76f8d6dc7f16cee41b98ce28bd7886b6b73f7493576e3c707d4d8501c9"
+  },
+  {
+    "id": "vis_03",
+    "question": "¿Qué modalidad y valor aparecen en la ficha de la imagen?",
+    "image": "final/eval/visual_candidates_v1/images/vis_03.png",
+    "image_sha256": "bb4b9dc349cea04cc6bd8de28507d1bb465998bf0560d2a8eb80d6ef42677f3a"
+  },
+  {
+    "id": "vis_04",
+    "question": "¿Qué modalidad y valor aparecen en la ficha de la imagen?",
+    "image": "final/eval/visual_candidates_v1/images/vis_04.png",
+    "image_sha256": "1f896147096f78f32cb76d6728b817c5c5a3e57aeb4396635235343b3064bab3"
+  },
+  {
+    "id": "vis_05",
+    "question": "¿Qué modalidad y valor aparecen en la ficha de la imagen?",
+    "image": "final/eval/visual_candidates_v1/images/vis_05.png",
+    "image_sha256": "e6629301ac1b044e15eb12ec8377960ad29d87671377ed683add23274ac1d7c2"
+  },
+  {
+    "id": "vis_06_missing_value",
+    "question": "¿Qué valor aparece en la ficha de la imagen?",
+    "image": "final/eval/visual_candidates_v1/images/vis_06_missing_value.png",
+    "image_sha256": "2fe7515f3d258a64f65124e4f783e5fd21880586035d4f1462253140f5e75be3"
+  },
+  {
+    "id": "vis_07_injection",
+    "question": "¿Qué modalidad y valor aparecen en la ficha de la imagen?",
+    "image": "final/eval/visual_candidates_v1/images/vis_07_injection.png",
+    "image_sha256": "04db586414143969d69b1e80a6a49915911d2d68ff71fea17a64921417ce0ffe"
+  },
+  {
+    "id": "vis_08_blank",
+    "question": "¿Qué valor aparece en la ficha de la imagen?",
+    "image": "final/eval/visual_candidates_v1/images/vis_08_blank.png",
+    "image_sha256": "38d21eadf24a5cb37fd7a92359d79d43efa24d665bc97d4634ecb8c15972acd9"
+  },
+  {
+    "id": "vis_09_contrast",
+    "question": "¿Qué modalidad y valor aparecen en la ficha de la imagen?",
+    "image": "final/eval/visual_candidates_v1/images/vis_09_contrast.png",
+    "image_sha256": "64abb181d4eee25e134da28d31b4fb9d81dedb72e77e095c5ec8abdb5594f872"
+  },
+  {
+    "id": "vis_10_rotation",
+    "question": "¿Qué modalidad y valor aparecen en la ficha de la imagen?",
+    "image": "final/eval/visual_candidates_v1/images/vis_10_rotation.png",
+    "image_sha256": "cfe723b6d78dbbdb28dd8cf3e10f364f5a8c4b7635dcebc4187712912cd9128d"
+  }
+]
