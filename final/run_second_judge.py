@@ -30,7 +30,7 @@ def verify_second_config(config,reference):
         raise ValueError('Regression rules must not be relaxed')
 
 
-def main():
+def main(generator_class=None,controlled_comparison=None):
     parser=argparse.ArgumentParser()
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--require-wandb',action='store_true')
@@ -41,6 +41,9 @@ def main():
           'started_utc':datetime.now(timezone.utc).isoformat(),'wandb_status':'disabled',
           'regression_gate_passed':False,'confirmation_executed':False,'judge_validated_for_final':False,
           'final_gold_loaded':False,'score_adjusted':False,'human_semantic_audit_required':True}
+    if controlled_comparison is not None:
+        meta['purpose']='mistral_tokenization_controlled_comparison'
+        meta['controlled_comparison']=controlled_comparison
     generator=wb=None
     def save():
         (args.output/'metadata.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
@@ -64,10 +67,14 @@ def main():
                                    for p in [ROOT/'final/run_second_judge.py',ROOT/'final/judge_final.py',ROOT/'final/calibration_final.py',
                                              ROOT/'final/generators.py',ROOT/'final/run_judge_calibration.py',ROOT/'m3/judge.py',
                                              ROOT/'m3/structured_output.py',ROOT/'m3/response_v4.py',ROOT/'m3/rag_basic.py']})
+        if controlled_comparison is not None:
+            for name in ['chat_encoding.py','run_mistral_tokenfix.py','tokenization_preflight.py']:
+                path=ROOT/'final'/name
+                meta['source_hashes'][str(path.relative_to(ROOT))]=hashlib.sha256(path.read_bytes()).hexdigest()
         if os.environ.get('WANDB_API_KEY'):
             try:
                 import wandb
-                wb=wandb.init(entity='jcramonp-eanit',project='contractrisk-final',job_type='second-family-judge-regression',
+                wb=wandb.init(entity='jcramonp-eanit',project='contractrisk-final',job_type='mistral-tokenization-comparison' if controlled_comparison is not None else 'second-family-judge-regression',
                     config={'protocol':config['protocol'],'model':config['model'],'revision':config['revision'],'commit':meta['git_commit']},
                     settings=wandb.Settings(disable_git=True,disable_code=True,disable_job_creation=True,x_disable_stats=True,init_timeout=30))
                 meta.update(wandb_status='connected',wandb_run_id=wb.id,wandb_url=wb.url)
@@ -80,6 +87,8 @@ def main():
             raise RuntimeError('Unexpected bitsandbytes version')
         random.seed(config['seed']);np.random.seed(config['seed']);torch.manual_seed(config['seed']);torch.cuda.manual_seed_all(config['seed'])
         meta.update(gpu=torch.cuda.get_device_name(0),packages={n:importlib.metadata.version(n) for n in ['torch','transformers','accelerate','bitsandbytes','wandb']})
+        if controlled_comparison is not None and (meta['gpu']!=controlled_comparison['reference_gpu'] or meta['packages']!=controlled_comparison['reference_packages']):
+            raise RuntimeError('Hardware/runtime profile differs from original Mistral run; do not claim a tokenization-only comparison')
         import bitsandbytes as bnb
         probe=bnb.nn.Linear4bit(16,16,bias=False,compute_dtype=torch.float16,compress_statistics=True,quant_type='nf4').to('cuda')
         with torch.inference_mode():check=probe(torch.ones((1,16),device='cuda',dtype=torch.float16))
@@ -90,9 +99,10 @@ def main():
         meta['nf4_cuda_kernel_preflight_passed']=True;save()
         from final.generators import CausalGenerator
         started=time.perf_counter()
-        generator=CausalGenerator(config['model'],config['revision'],precision=config['precision'],max_new_tokens=config['max_new_tokens'])
+        generator=(generator_class or CausalGenerator)(config['model'],config['revision'],precision=config['precision'],max_new_tokens=config['max_new_tokens'])
         torch.cuda.synchronize()
         meta.update(load_seconds=time.perf_counter()-started,load_settings=generator.load_settings,
+                    generator_class=type(generator).__name__,
                     cuda_allocated_bytes=torch.cuda.memory_allocated(),cuda_reserved_bytes=torch.cuda.memory_reserved())
         save()
         by_id={c['id']:c for c in cases()};rows=[]

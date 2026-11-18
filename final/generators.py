@@ -43,3 +43,24 @@ class CausalGenerator(TrackedGenerator):
     def close(self):
         if hasattr(self,'model'):del self.model
         gc.collect();self.torch.cuda.empty_cache()
+
+
+class NativeChatGenerator(CausalGenerator):
+    """Same loader/generation settings; corrected encoding, leaving legacy class behavior intact."""
+    def generate(self,system,user):
+        from final.chat_encoding import encode_chat
+        inputs,audit=encode_chat(self.tokenizer,system,user,return_tensors='pt')
+        inputs=inputs.to('cuda')
+        length=inputs['input_ids'].shape[-1]
+        if length+self.max_new_tokens>self.model.config.max_position_embeddings:
+            raise ValueError('Prompt exceeds generator context limit')
+        with self.torch.inference_mode():
+            output=self.model.generate(**inputs,do_sample=False,max_new_tokens=self.max_new_tokens,
+                                       pad_token_id=self.tokenizer.eos_token_id)
+        tokens=output[0,length:]
+        eos=self.model.generation_config.eos_token_id
+        eos=eos if isinstance(eos,list) else [eos]
+        self.last_generation={'input_tokens':length,'output_tokens':len(tokens),'max_new_tokens':self.max_new_tokens,
+                              'ended_with_eos':bool(len(tokens) and tokens[-1].item() in eos),
+                              'reached_token_limit':len(tokens)>=self.max_new_tokens,'chat_encoding':audit}
+        return self.tokenizer.decode(tokens,skip_special_tokens=True).strip()

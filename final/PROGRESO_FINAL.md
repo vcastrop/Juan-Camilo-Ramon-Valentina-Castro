@@ -1,4 +1,4 @@
-# Avance de la entrega final — 17/11/2026
+# Avance de la entrega final — 18/11/2026
 
 Estimación operativa: **40–45 % (punto de referencia ~43 %)** de la entrega final integradora. No es nota, madurez para uso real ni porcentaje del curso completo. M1–M3 sirven de base, pero no sustituyen evaluación común, eficiencia, despliegue y documentos finales.
 
@@ -11,7 +11,7 @@ Se ponderan hitos del checklist por esfuerzo/resultado, reconociendo avance parc
 | Fase 0: insumos/base | 10 % | 80 % | Guía, rama, materiales disponibles, corpus/modelos y cuentas; inventario completo y responsabilidades pendientes. |
 | Fase 1: producto e infraestructura | 10 % | 60 % | Modos/interfaz en código, Space inicial y GPU; servicio contractual público todavía no integrado. |
 | Fase 2: integración de desarrollo | 20 % | 75 % | Texto/herramienta/M1 y visión probados en T4; guard de conflictos en CPU; seguridad/calidad y servicio final pendientes. |
-| Fase 3: evaluación común | 15 % | 50 % | 22 entradas y 20 anclas aprobadas; Qwen ejecutado y rechazado, segundo candidato preparado; todavía sin juez validado ni harness común cerrado. |
+| Fase 3: evaluación común | 15 % | 50 % | 22 entradas y 20 anclas aprobadas; Qwen/Mistral no pasaron, defecto de entrada Mistral confirmado y corrección controlada lista; aún sin juez validado ni harness común cerrado. |
 | Fase 4: eficiencia | 15 % | 15 % | Política aprobada y loader NF4 preparado; no hay medición antes/después ni decisión de aceptación. |
 | Fase 5: comparativas/ablación/análisis | 10 % | 10 % | Fallos de desarrollo auditados; tabla común y ablación nuevas pendientes. |
 | Fase 6: producción/observabilidad | 10 % | 25 % | Space de infraestructura y W&B de pruebas; faltan consultas contractuales reales desde despliegue. |
@@ -29,11 +29,12 @@ Suma ponderada: ~42,95 %, redondeada a rango 40–45 % para no atribuir precisi�
 - Error monetario de OCR y propagación documentado; mitigación de conflicto verificada por reproducción CPU sin reescribir la corrida original.
 - Umbrales de eficiencia aprobados antes de comparar; 22 entradas comunes ensambladas, anclas sintéticas y rúbrica preparadas. Revisión humana de anclas cerrada con archivo + confirmación posterior.
 - Calibración Qwen 7B NF4 ejecutada: carga técnica comprobada, juicio rechazado por el filtro. No se aprueba calidad por 38 JSON válidos. Segundo candidato de otra familia preparado y confirmación nueva no ejecutada.
-- 93 pruebas final CPU y 128 M3 aprobadas. No prueban calidad del nuevo candidato ni eficiencia del generador.
+- Mistral anterior tampoco pasó. Se reprodujo un BOS extra en 38/38 entradas y se verificaron tokens corregidos contra nativo sin GPU; su efecto sobre juicio aún no se midió. Corridas anteriores intactas.
+- 100 pruebas final CPU y 128 M3 aprobadas. No prueban calidad del juez corregido ni eficiencia del generador.
 
 ## Ruta inmediata
 
-1. Ejecutar el [notebook Mistral](ContractRisk_Final_Juez_02_Mistral_Colab.ipynb), misma regresión; si pasa, revisar/ejecutar confirmación nueva y auditar razones. No repetir Qwen para seleccionar mejores notas.
+1. Ejecutar el [notebook corregido de Mistral](ContractRisk_Final_Juez_03_Tokenizacion_Colab.ipynb), misma regresión; si pasa, revisar/ejecutar confirmación nueva y auditar razones. No repetir otras corridas para seleccionar mejores notas.
 2. Cerrar/fijar harness y controles comunes; ejecutar sistemas comparables, antes/después FP16/NF4 y ablación, con hashes y mismas condiciones.
 3. Elegir la configuración a desplegar según evidencia, integrar el Space real y comprobar salud/logs/W&B sin datos personales.
 4. Escribir reporte/tablas/errores/ética/uso de IA, portada y diapositivas; acordar sustentación.

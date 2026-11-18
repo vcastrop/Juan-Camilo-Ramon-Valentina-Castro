@@ -1,6 +1,7 @@
 # Dedicated judge environment: no Chroma, reranker, VLM or classifier loading.
 # Torch comes from Colab; actual CUDA/torch versions are recorded.
 transformers==4.57.6
+tokenizers==0.22.2
 accelerate==1.10.1
 huggingface-hub==0.36.2
 sentencepiece==0.2.1

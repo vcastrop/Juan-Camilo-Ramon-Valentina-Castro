@@ -2,6 +2,8 @@
 
 Estado: preparado y comprobado en CPU; **no ejecutado en T4**. El [primer juez falló](evidence/judge_calibration_01/ANALISIS.md) y no se acepta ni se cambian sus notas. El objetivo aquí es mejorar y comprobar el juicio, no solo obtener JSON válido.
 
+Actualización 18/11: [Mistral fue ejecutado y esa corrida no pasó](evidence/judge02_legacy/ANALISIS.md). Después se confirmó un defecto de símbolos duplicados en la entrada. Se conserva el protocolo original siguiente; la [corrección y comparación vigentes](MISTRAL_TOKENFIX.md) no cambian rúbrica/anclas/criterios ni prueban aún mejor juicio. No volver a ejecutar el notebook histórico como si incluyera la corrección.
+
 ## Candidato y cambio controlado
 
 [`judge_second_config.json`](judge_second_config.json): `mistralai/Mistral-7B-Instruct-v0.3`, revisión `c170c708c41dac9275d15a8fff4eca08d52bab71`, NF4, cálculo FP16, doble cuantización, semilla 42, máximo 320 tokens. Otra familia que Qwen; no garantía de mejor juicio ni prueba de independencia estadística respecto a los datos.

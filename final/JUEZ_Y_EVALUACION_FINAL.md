@@ -2,6 +2,8 @@
 
 Estado al 17/11/2026: veinte anclas aprobadas; **Qwen 7B ejecutado y rechazado** (15/20 en rango, cinco malos con nota alta y sesgo fuera de umbral). [Auditoría de corrida original](evidence/judge_calibration_01/ANALISIS.md). No hay juez validado ni comparación de eficiencia. [Segundo candidato Mistral y confirmación separada](JUEZ_02.md) preparados, no ejecutados. No se modifican main ni Space ni las notas históricas.
 
+Actualización 18/11: Mistral tampoco pasó en la ruta anterior; después se confirmó en CPU un BOS duplicado en sus 38 mensajes. La [comparación corregida vigente](MISTRAL_TOKENFIX.md) preserva criterios y resultados viejos. El cambio de tokens aún no se ha evaluado con pesos: no afirmar que resuelve el mal juicio.
+
 ## Conjunto común ensamblado
 
 [`eval/common_v1/inputs.json`](eval/common_v1/inputs.json) contiene 22 entradas: las doce preguntas QA de M3 y las diez imágenes ya revisadas. [`references.json`](eval/common_v1/references.json) conserva sus hechos/criterios por separado. En preguntas de cronología se transcriben los dos timestamps del esperado original como hechos a comprobar; no se inventan nuevas fechas.
@@ -55,4 +57,4 @@ Se informa antes/después aunque no mejore; no afirmar que desaparece el sesgo. 
 
 ## Próximo paso del equipo
 
-No repetir el notebook Qwen esperando mejores notas. Ejecutar el [nuevo notebook Mistral](ContractRisk_Final_Juez_02_Mistral_Colab.ipynb) en T4 nueva y conservar ZIP + notebook con salidas. Si supera regresión, revisar/ejecutar confirmación separada y auditar razones. Solo después se cierra el harness común y se compara con los [umbrales aprobados](EFICIENCIA.md).
+No repetir los notebooks históricos buscando mejores notas. Ejecutar el [notebook corregido de Mistral](ContractRisk_Final_Juez_03_Tokenizacion_Colab.ipynb), que verifica tokens antes de pesos y mantiene el mismo criterio. Si supera regresión, revisar/ejecutar confirmación separada y auditar razones. Solo después se cierra el harness común y se compara con los [umbrales aprobados](EFICIENCIA.md).

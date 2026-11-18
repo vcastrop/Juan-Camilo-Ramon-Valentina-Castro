@@ -1,0 +1,2092 @@
+{
+  "purpose": "CPU tokenization equivalence only, no model inference, no judgement improvement measured",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "python": "3.12.14",
+  "packages": {
+    "transformers": "4.57.6",
+    "tokenizers": "0.22.2",
+    "huggingface-hub": "0.36.2"
+  },
+  "model_inference_performed": false,
+  "gpu_used": false,
+  "source_sha256": {
+    "final\\chat_encoding.py": "54c7a8911b5ddfb413f23b95fe8d8a94ca7adf4398d78c5aff747e4a65bfe976",
+    "m3\\response_v4.py": "f0ff4c0ff3f114b7cfe01e6eeaceb687b31a53c9deb4fed6ebae129009b60921"
+  },
+  "models": [
+    {
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+      "tokenizer_class": "LlamaTokenizerFast",
+      "tokenizer_backend_sha256": "6a29b21cd60345826c6fa6c3346879b89263f09ecece51117f832e1e879c2783",
+      "cases": 38,
+      "legacy_native_mismatches": 38,
+      "corrected_native_matches": 38,
+      "rows": [
+        {
+          "id": "short_good",
+          "condition": "main_mitigated",
+          "legacy_length": 967,
+          "corrected_length": 966,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 966,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "5c84f1f9f3b8c2dd2bc229466fc9816a57ecaa584bd3abed1dc65393416c3f4e"
+          }
+        },
+        {
+          "id": "short_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 970,
+          "corrected_length": 969,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 969,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "c40aff95095f18fafb650195a78fb56a360f8dedcdcc25f2b047a9fdab87367c"
+          }
+        },
+        {
+          "id": "number_good",
+          "condition": "main_mitigated",
+          "legacy_length": 968,
+          "corrected_length": 967,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 967,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "c8770c863eb47809b926ea4a0bccc0036fb64cc25d5aa69513ad02ffa1128bd2"
+          }
+        },
+        {
+          "id": "number_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 965,
+          "corrected_length": 964,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 964,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "743a45e6237bae22799f2d37e45845ccd83fd3f56e0e4c0dc431c693bc867d45"
+          }
+        },
+        {
+          "id": "conflict_good",
+          "condition": "main_mitigated",
+          "legacy_length": 1062,
+          "corrected_length": 1061,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 1061,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "27a799d87f3bccb8ac6883aee234076a511b69d9c674bb9f0bd4249a3710dbf3"
+          }
+        },
+        {
+          "id": "conflict_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 1044,
+          "corrected_length": 1043,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 1043,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "56bc8831d8b1aa6900fe1ea96af9bfa19901777aed0eb4712e7e987583842970"
+          }
+        },
+        {
+          "id": "missing_good",
+          "condition": "main_mitigated",
+          "legacy_length": 999,
+          "corrected_length": 998,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 998,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "46406f6c1d057041dc2241b981f77116275c22d63c188102d80dd3339c28e33e"
+          }
+        },
+        {
+          "id": "missing_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 1010,
+          "corrected_length": 1009,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 1009,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "e43ebea4f2a363be445bf7616a7e6927a48d11e615b76c26c0cc8caac2fb3765"
+          }
+        },
+        {
+          "id": "unjustified_abstention_good",
+          "condition": "main_mitigated",
+          "legacy_length": 952,
+          "corrected_length": 951,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 951,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "c9012007f894d03812345a61f99bf068bd5fbc295fe7af8fbf68912e4884573a"
+          }
+        },
+        {
+          "id": "unjustified_abstention_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 957,
+          "corrected_length": 956,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 956,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "f6322b973c0431ec598545f54444c0a9b21ef6db626bbc3eefb4ed1cb8fb7193"
+          }
+        },
+        {
+          "id": "attribution_good",
+          "condition": "main_mitigated",
+          "legacy_length": 972,
+          "corrected_length": 971,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 971,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "e7b74bab4dc8c5fb873c43f219facce819f2f172700d2081ae250741040fc9ab"
+          }
+        },
+        {
+          "id": "attribution_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 977,
+          "corrected_length": 976,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 976,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "881a2372ef2960fa513b4e4db9c01b780fdf90334227667fe3b6502b95356e48"
+          }
+        },
+        {
+          "id": "empty_explanation_good",
+          "condition": "main_mitigated",
+          "legacy_length": 950,
+          "corrected_length": 949,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 949,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "e0c0cd7723ae6228d25bc9f14d7b2f69b30c013e57e7b078de79020394dac69c"
+          }
+        },
+        {
+          "id": "empty_explanation_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 941,
+          "corrected_length": 940,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 940,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "969293a62f6e5f3a5274477ab4bbd2fec27a067a09d4c0c8e85be3d63df486ee"
+          }
+        },
+        {
+          "id": "citation_good",
+          "condition": "main_mitigated",
+          "legacy_length": 1013,
+          "corrected_length": 1012,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 1012,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "41b9cea73145d91241500ea79262321a80449789cdd32a25418f14431b470c1f"
+          }
+        },
+        {
+          "id": "citation_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 1009,
+          "corrected_length": 1008,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 1008,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "78f50c80fe4278302121b27118741e0dfce10483636e89324ac95ebc86b3174d"
+          }
+        },
+        {
+          "id": "accusation_good",
+          "condition": "main_mitigated",
+          "legacy_length": 1007,
+          "corrected_length": 1006,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 1006,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "65578b1fee942e3308e72dd320abbf2d8589598d304c477a59bcdf2735c33657"
+          }
+        },
+        {
+          "id": "accusation_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 998,
+          "corrected_length": 997,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 997,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "e890f6575598b83475924e0de386c67d628f42c7e22d5a4fba2343ccfd349b52"
+          }
+        },
+        {
+          "id": "negation_good",
+          "condition": "main_mitigated",
+          "legacy_length": 961,
+          "corrected_length": 960,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 960,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "4b0e68b9a5b09657da53dc570da12f3d6b14727309b4c9c41a0b983e0f79bbc7"
+          }
+        },
+        {
+          "id": "negation_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 966,
+          "corrected_length": 965,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 965,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "d1b5cd641f732423de1988cef1f17c3b1cb58fa06b6f32af5f4d7bc1169513a5"
+          }
+        },
+        {
+          "id": "short_good",
+          "condition": "before_concise",
+          "legacy_length": 919,
+          "corrected_length": 918,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 918,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "328bf79e4ecfd3cfdefa3351aa296b8faf258c3063b8b4d23ed26b78cb27a41b"
+          }
+        },
+        {
+          "id": "short_good",
+          "condition": "before_verbose",
+          "legacy_length": 976,
+          "corrected_length": 975,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 975,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "1735c5ed34287a2272584c55bb98238f95f313de515151e44bea24da1e7f5f0b"
+          }
+        },
+        {
+          "id": "short_bad",
+          "condition": "before_verbose",
+          "legacy_length": 988,
+          "corrected_length": 987,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 987,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "71fc17be3be059a3404d9f3fad5bdb090d344c3b30495374a14434651b79e7d3"
+          }
+        },
+        {
+          "id": "short_bad",
+          "condition": "before_concise",
+          "legacy_length": 922,
+          "corrected_length": 921,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 921,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "8faa63d30eb5e8af579488b753c47c3502e1b8e3a39ef955d1d2553eb184d1c5"
+          }
+        },
+        {
+          "id": "number_good",
+          "condition": "before_concise",
+          "legacy_length": 920,
+          "corrected_length": 919,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 919,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "ada7addf75a1632ba423e3820492dca5d4af619ec8fdd6d17f61d1aed8dbd84a"
+          }
+        },
+        {
+          "id": "number_good",
+          "condition": "before_verbose",
+          "legacy_length": 1007,
+          "corrected_length": 1006,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 1006,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "dbc35c3a532350e6f8f08f2f3e99db2fc71748fb4ad89b1a1f6ef2ce691eb9f8"
+          }
+        },
+        {
+          "id": "number_bad",
+          "condition": "before_verbose",
+          "legacy_length": 995,
+          "corrected_length": 994,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 994,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "e116b73026bfc161becf35470af4f3811991b903cf73e58203d58ce9b5ea5ff4"
+          }
+        },
+        {
+          "id": "number_bad",
+          "condition": "before_concise",
+          "legacy_length": 917,
+          "corrected_length": 916,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 916,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "a9a88bf6b88c7f8dbcb2a8d75110d3b7a29dba435279cbdf628a6cc6bcc87310"
+          }
+        },
+        {
+          "id": "conflict_good",
+          "condition": "before_concise",
+          "legacy_length": 1014,
+          "corrected_length": 1013,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 1013,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "a905f87799c88daf0a9f1e483e6818ba706f44b255bbc5c892e5a82d2e465dd5"
+          }
+        },
+        {
+          "id": "conflict_good",
+          "condition": "before_verbose",
+          "legacy_length": 1152,
+          "corrected_length": 1151,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 1151,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "8ea58ac1308153109065deedf1ea4312d6bd48f478915fc79be4f08c0f32fb5e"
+          }
+        },
+        {
+          "id": "conflict_bad",
+          "condition": "before_verbose",
+          "legacy_length": 1077,
+          "corrected_length": 1076,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 1076,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "4141a85a63874cbd8d932381f2eae26331fe6d3965bc5889e5cd95c719f9989f"
+          }
+        },
+        {
+          "id": "conflict_bad",
+          "condition": "before_concise",
+          "legacy_length": 996,
+          "corrected_length": 995,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 995,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "0a3b7c5981a88465a892823eadfe48827dc803f21e6eb077507a9a0690123329"
+          }
+        },
+        {
+          "id": "short_good",
+          "condition": "after_verbose",
+          "legacy_length": 1024,
+          "corrected_length": 1023,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 1023,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "060b583f15877a1342d99abf9f2607be33a8a9b560dcaeed78b598c5a5251f44"
+          }
+        },
+        {
+          "id": "short_bad",
+          "condition": "after_verbose",
+          "legacy_length": 1036,
+          "corrected_length": 1035,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 1035,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "7150b16c849deb4f0582b2ca6d540de2637e788f0d2f67a8f29146c2fefd52ae"
+          }
+        },
+        {
+          "id": "number_good",
+          "condition": "after_verbose",
+          "legacy_length": 1055,
+          "corrected_length": 1054,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 1054,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "553d3cdb0c953ebff4d44cca437d8b3f9147fad8fa34a2912f2f9f88b55a45ad"
+          }
+        },
+        {
+          "id": "number_bad",
+          "condition": "after_verbose",
+          "legacy_length": 1043,
+          "corrected_length": 1042,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 1042,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "a37fab5e22c055e0cc6945c700e1e79fa814927ea46ff9f55ee2fdf12a689d38"
+          }
+        },
+        {
+          "id": "conflict_good",
+          "condition": "after_verbose",
+          "legacy_length": 1200,
+          "corrected_length": 1199,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 1199,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "25f4209eb5345000bc67c061475ab9d47df55e0736ba09c750f76ff31f1724d6"
+          }
+        },
+        {
+          "id": "conflict_bad",
+          "condition": "after_verbose",
+          "legacy_length": 1125,
+          "corrected_length": 1124,
+          "legacy_prefix": [
+            1,
+            1,
+            3,
+            24991
+          ],
+          "corrected_prefix": [
+            1,
+            3,
+            24991,
+            29631
+          ],
+          "legacy_equals_native": false,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 1124,
+            "leading_bos_count": 1,
+            "input_ids_sha256": "710f615776b2f794791a25f8302e622ad5cf988a24c07ff439a2d0d7b6b928d4"
+          }
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+      "tokenizer_class": "Qwen2TokenizerFast",
+      "tokenizer_backend_sha256": "f884026e05f6dfffe68b72d580b588006d98b3bc0a128bb1ac425c76f7fc438c",
+      "cases": 38,
+      "legacy_native_mismatches": 0,
+      "corrected_native_matches": 38,
+      "rows": [
+        {
+          "id": "short_good",
+          "condition": "main_mitigated",
+          "legacy_length": 791,
+          "corrected_length": 791,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 791,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "63d031ec7e0d34e416052e3d447d703e8c0601f626984b5558c0c2b3c93b9a28"
+          }
+        },
+        {
+          "id": "short_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 791,
+          "corrected_length": 791,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 791,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "3700f5518b53c0540a3647cdbe440e54b30b967107ec83104fa650f3a966088f"
+          }
+        },
+        {
+          "id": "number_good",
+          "condition": "main_mitigated",
+          "legacy_length": 792,
+          "corrected_length": 792,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 792,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "bbdf8f9a48cdddc163e3d63ecb58ed6f2cb2e21871b90a5bfa5ed1c574237648"
+          }
+        },
+        {
+          "id": "number_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 791,
+          "corrected_length": 791,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 791,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "07de0755f17783c02f0eebb2d57290ec6f608923ff2df76732a79754afb2d3be"
+          }
+        },
+        {
+          "id": "conflict_good",
+          "condition": "main_mitigated",
+          "legacy_length": 874,
+          "corrected_length": 874,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 874,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "4c5ca99581825ec76c959a347cc167119e3e7d0a94a287823de59f48b1a1d036"
+          }
+        },
+        {
+          "id": "conflict_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 863,
+          "corrected_length": 863,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 863,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "c2b3478df307f7b1dea900da5239f9dea5b89630aff4efa4f2683e86d7ff9cc9"
+          }
+        },
+        {
+          "id": "missing_good",
+          "condition": "main_mitigated",
+          "legacy_length": 815,
+          "corrected_length": 815,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 815,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "fd15e28b608af09830d0e127185248f1977b2d3c57a65a2d2b89183d60283a47"
+          }
+        },
+        {
+          "id": "missing_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 821,
+          "corrected_length": 821,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 821,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "a41a870de3ce49dd47e53b8669a5f85b11654e377c28e5cf6fbe2a5ce3234d4b"
+          }
+        },
+        {
+          "id": "unjustified_abstention_good",
+          "condition": "main_mitigated",
+          "legacy_length": 779,
+          "corrected_length": 779,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 779,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "12461c11619a9330c04d2b02388942176cfa0544275688ec861dc8a6130d123c"
+          }
+        },
+        {
+          "id": "unjustified_abstention_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 776,
+          "corrected_length": 776,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 776,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "d1166beafae6d8291e8ecd97240c363df96ee999ab958f9cfcae4fa7be640992"
+          }
+        },
+        {
+          "id": "attribution_good",
+          "condition": "main_mitigated",
+          "legacy_length": 794,
+          "corrected_length": 794,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 794,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "b4e495e233144bf65fc1de60d4fbbbd802a8e2dd43688a53016ae86b5edf4b26"
+          }
+        },
+        {
+          "id": "attribution_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 800,
+          "corrected_length": 800,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 800,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "ff88012d3ea18c6f132a92b8ddd22e0605373cc957620bbb7c9ea0d41a18c9de"
+          }
+        },
+        {
+          "id": "empty_explanation_good",
+          "condition": "main_mitigated",
+          "legacy_length": 777,
+          "corrected_length": 777,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 777,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "471e5f9187b7537d656596400f4ecf8c5c6df4d8a66bddf39479a5c82127a631"
+          }
+        },
+        {
+          "id": "empty_explanation_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 769,
+          "corrected_length": 769,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 769,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "927bd33336d831e4cb01363ef99c7310237a87c9cc6458ce5b0381213f74af5e"
+          }
+        },
+        {
+          "id": "citation_good",
+          "condition": "main_mitigated",
+          "legacy_length": 824,
+          "corrected_length": 824,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 824,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "59c292b22a02ec5b88b991f72d1f8ccd5f8362193387cfde87e84e4acd600aeb"
+          }
+        },
+        {
+          "id": "citation_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 820,
+          "corrected_length": 820,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 820,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "1fb4ba9ed2d845874264d8355c4870b9ec5f10d19c9515cee71458fa86fc6486"
+          }
+        },
+        {
+          "id": "accusation_good",
+          "condition": "main_mitigated",
+          "legacy_length": 823,
+          "corrected_length": 823,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 823,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "8ac7721cd3c26db9816eee6bf877ed37e4b39c2f10aa7b5298cb72cce23dbd95"
+          }
+        },
+        {
+          "id": "accusation_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 815,
+          "corrected_length": 815,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 815,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "3b298728afb011c35a3ae0968070edc9ce64cf44e390ed6e9bb20707c6f16a0e"
+          }
+        },
+        {
+          "id": "negation_good",
+          "condition": "main_mitigated",
+          "legacy_length": 789,
+          "corrected_length": 789,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 789,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "ae154327b1346a6f4c5ff4aacff05effdf48c7ceb2da1cde22c9d53777bc1c6f"
+          }
+        },
+        {
+          "id": "negation_bad",
+          "condition": "main_mitigated",
+          "legacy_length": 792,
+          "corrected_length": 792,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 792,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "3226d99aa198b73fc7fc7d8cf3d838f1b31d328a1c7c5c138262fdb00c0347bf"
+          }
+        },
+        {
+          "id": "short_good",
+          "condition": "before_concise",
+          "legacy_length": 757,
+          "corrected_length": 757,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 757,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "a7c51643729768f80405ebbe4c1d399d3f68f25ce2f39e78ec0bcfc963d58225"
+          }
+        },
+        {
+          "id": "short_good",
+          "condition": "before_verbose",
+          "legacy_length": 808,
+          "corrected_length": 808,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 808,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "268922c9865f5389fdd83291eb648684de67cdd2b576b2c47876e78eb7b97319"
+          }
+        },
+        {
+          "id": "short_bad",
+          "condition": "before_verbose",
+          "legacy_length": 808,
+          "corrected_length": 808,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 808,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "404754b8f90f071a7ccc90206690496fa05ce52fdf83c8abd21bf7fdba405157"
+          }
+        },
+        {
+          "id": "short_bad",
+          "condition": "before_concise",
+          "legacy_length": 757,
+          "corrected_length": 757,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 757,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "272cacd25f7d018478d4305df30b1075f6eadbbf6f7dd375f1cc723f95d018be"
+          }
+        },
+        {
+          "id": "number_good",
+          "condition": "before_concise",
+          "legacy_length": 758,
+          "corrected_length": 758,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 758,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "c5f4ecac1ee9ded6ae09f021bff370bbe0e7b3fab3144f6c7a73795119d0b06b"
+          }
+        },
+        {
+          "id": "number_good",
+          "condition": "before_verbose",
+          "legacy_length": 836,
+          "corrected_length": 836,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 836,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "a9d833f5c84890f65eaa1e468fca17aa41d13b276782c6bbd33fe3c8a0507284"
+          }
+        },
+        {
+          "id": "number_bad",
+          "condition": "before_verbose",
+          "legacy_length": 832,
+          "corrected_length": 832,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 832,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "99c5201adbd2e2cf831e3da8154cd6caef20ff1e56043df7aeddd29424c6a267"
+          }
+        },
+        {
+          "id": "number_bad",
+          "condition": "before_concise",
+          "legacy_length": 757,
+          "corrected_length": 757,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 757,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "f2b7ef03846f8ea4f6bc4cbe31e5dd6c6d89ec7e45a84c1855d7415002878acd"
+          }
+        },
+        {
+          "id": "conflict_good",
+          "condition": "before_concise",
+          "legacy_length": 840,
+          "corrected_length": 840,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 840,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "6b2548102a32644526816d7dadabfaeede07e9697865a47fbb5c494e0d921811"
+          }
+        },
+        {
+          "id": "conflict_good",
+          "condition": "before_verbose",
+          "legacy_length": 957,
+          "corrected_length": 957,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 957,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "627085b12f78d4561760a4b95620027469394c4d885fa2b5c50f9e545bd6b77c"
+          }
+        },
+        {
+          "id": "conflict_bad",
+          "condition": "before_verbose",
+          "legacy_length": 913,
+          "corrected_length": 913,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 913,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "dc16de9a5921a0ac82a1d31bf7e23179da526f14d226caedc271c9c4203c282c"
+          }
+        },
+        {
+          "id": "conflict_bad",
+          "condition": "before_concise",
+          "legacy_length": 829,
+          "corrected_length": 829,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 829,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "954dc21a41dc0945dcafaaac103d574897350cb20fefbbfa9f016d64f03f32ea"
+          }
+        },
+        {
+          "id": "short_good",
+          "condition": "after_verbose",
+          "legacy_length": 842,
+          "corrected_length": 842,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 842,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "58335137691f088f83372c35f76def12db987ca9dc661f0ea0e95dfc226e62f5"
+          }
+        },
+        {
+          "id": "short_bad",
+          "condition": "after_verbose",
+          "legacy_length": 842,
+          "corrected_length": 842,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 842,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "62df3a14560a49996a596218e35437629c859c0ccec1a6f67f50a85a9a8d6fde"
+          }
+        },
+        {
+          "id": "number_good",
+          "condition": "after_verbose",
+          "legacy_length": 870,
+          "corrected_length": 870,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 870,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "341fcd9d0e1ff4be8790dcf12e80f61d862797c75c4e4b1b1a45e66944ea2ae2"
+          }
+        },
+        {
+          "id": "number_bad",
+          "condition": "after_verbose",
+          "legacy_length": 866,
+          "corrected_length": 866,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 866,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "682c27cd9b734727bfa50720fca80f8d5ab4c616b5fbbc6777ebac68627919d6"
+          }
+        },
+        {
+          "id": "conflict_good",
+          "condition": "after_verbose",
+          "legacy_length": 991,
+          "corrected_length": 991,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 991,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "5c117780d4c7374ff68edde8b736e1d5bdc75156bf6cfb633faafa30d5cce34f"
+          }
+        },
+        {
+          "id": "conflict_bad",
+          "condition": "after_verbose",
+          "legacy_length": 947,
+          "corrected_length": 947,
+          "legacy_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "corrected_prefix": [
+            151644,
+            8948,
+            198,
+            54469
+          ],
+          "legacy_equals_native": true,
+          "corrected_encoding": {
+            "protocol": "native-chat-1",
+            "add_special_tokens": false,
+            "native_equivalent": true,
+            "input_token_count": 947,
+            "leading_bos_count": 0,
+            "input_ids_sha256": "446fa786dd47bb626158032c8739d524f33aa694cbc7c228b7ba5aff12f7caa7"
+          }
+        }
+      ]
+    }
+  ]
+}

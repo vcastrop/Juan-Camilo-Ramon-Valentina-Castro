@@ -4,7 +4,7 @@ Plan preparado el 15/11/2026 tras leer las seis páginas de la guía `STAI_Final
 
 Este archivo es un plan operativo, no promesa de nota. Ya está incorporado en `final/CHECKLIST.md` en la rama `Entrega/contractrisk-final`; las fechas y responsables de ejecuciones se completarán con evidencia real. No se modifica main ni se reescriben entregas anteriores.
 
-Actualización 17/11/2026: avance estimado **40–45 % de la entrega final**; [desglose ponderado y pendientes](PROGRESO_FINAL.md). No es nota ni conteo bruto de casillas. Calibración Qwen ejecutada pero rechazada, Mistral preparado y 221 tests CPU pasando. Juez validado, comparación común/eficiencia, servicio contractual público y reporte/presentación finales pendientes; añadir tests no completa esos hitos.
+Actualización 18/11/2026: avance estimado **40–45 % de la entrega final**; [desglose ponderado y pendientes](PROGRESO_FINAL.md). No es nota ni conteo bruto de casillas. Qwen y Mistral anteriores no superaron filtro; se confirmó un defecto de tokenización en Mistral y se preparó corrección controlada, sin nueva inferencia. 228 tests CPU pasan. Juez validado, comparación común/eficiencia, servicio contractual público y reporte/presentación finales pendientes; añadir tests no completa esos hitos.
 
 ## Fechas y reglas de la guía
 
@@ -97,7 +97,10 @@ Preparación posterior a visual 03: [protocolo de juez y conjunto común](JUEZ_Y
 - [x] Recibir [revisión humana de veinte anclas](eval/calibration_review_v1/REVISION_CALIBRACION.md); conservar original y [confirmación posterior de empty_explanation_bad](evidence/calibration_review_01/CIERRE.md), sin simular veinte aprobaciones en el archivo recibido.
 - [x] Ejecutar primer filtro T4 y auditar razones: [Qwen 7B rechazado](evidence/judge_calibration_01/ANALISIS.md), 38/38 válidos, 15/20 en rango, cinco respuestas malas con 4–5 y dos pares fuera de límite. Notas intactas; no se aprueba calidad/eficiencia.
 - [x] Preparar [regresión Mistral](JUEZ_02.md), modelo de otra familia, sin cambiar rúbrica/anclas/umbrales; fijar doce ejemplos nuevos de confirmación antes de observar Mistral. 93 pruebas final CPU + 128 M3 aprobadas; no inferencia nueva.
-- [ ] Ejecutar regresión Mistral una vez y revisar razones/salidas originales; no implica validación final por sí sola.
+- [x] Ejecutar Mistral y auditar resultados: [corrida conservada](evidence/judge02_legacy/ANALISIS.md), 11/20 en rango, ocho respuestas malas con notas altas y máximo 3 de diferencia. No valida al juez.
+- [x] Diagnosticar entrada con tokenizers reales sin GPU: Mistral 38/38 mensajes con BOS extra y Qwen 0/38; corregidos 38/38 nativos en ambos. Conteos antiguos Mistral reconstruidos coinciden con registros originales. No demuestra cuánto explica las notas.
+- [x] Preparar [comparación controlada Mistral corregida](MISTRAL_TOKENFIX.md): mismo modelo/rúbrica/anclas/umbrales, preflight real obligatorio antes de pesos y equivalencia nativa en cada llamada. Cargador y M3 históricos preservados. 100 pruebas final CPU + 128 M3 aprobadas; ninguna nueva inferencia.
+- [ ] Ejecutar notebook corregido una vez y auditar razones, tokens y comparabilidad del entorno; no aceptar juicio por equivalencia de tokens solamente.
 - [ ] Si supera regresión: recibir revisión humana de doce ejemplos nuevos, ejecutar confirmación y auditar razones antes de aceptar juez final. No se ha aprobado ni ejecutado ese conjunto.
 
 - [x] Diseñar veinte anclas sintéticas separadas de los 22 casos comunes; revisión humana recibida y conocimiento previo del gold M3/visual declarado. Inferencia y auditoría del juez pendientes.
