@@ -4,7 +4,7 @@ Plan preparado el 15/11/2026 tras leer las seis páginas de la guía `STAI_Final
 
 Este archivo es un plan operativo, no promesa de nota. Ya está incorporado en `final/CHECKLIST.md` en la rama `Entrega/contractrisk-final`; las fechas y responsables de ejecuciones se completarán con evidencia real. No se modifica main ni se reescriben entregas anteriores.
 
-Actualización 18/11/2026: avance estimado **40–45 % de la entrega final**; [desglose ponderado y pendientes](PROGRESO_FINAL.md). No es nota ni conteo bruto de casillas. Mistral corregido también fue rechazado: 13/20 en rango, siete malos con nota alta y diferencia de verbosidad máxima 3. [Nuevo piloto por criterios y razonamiento](JUEZ_RAZONAMIENTO.md) preparado, sin inferencia todavía. 240 tests CPU pasan (112 final + 128 M3). Juez validado, comparación común/eficiencia, servicio contractual público y reporte/presentación finales pendientes; añadir tests no completa esos hitos.
+Actualización 18/11/2026: avance estimado **40–45 % de la entrega final**; [desglose ponderado y pendientes](PROGRESO_FINAL.md). No es nota ni conteo bruto de casillas. [Corrida 04](evidence/reasoning_04/ANALISIS.md) mejora a 19/20 en rango, pero falla por atribución falsa aprobada y verbosidad. [Protocolo 05 con respaldo literal](JUEZ_RESPALDO_LITERAL.md) preparado, sin inferencia todavía. 250 tests CPU pasan (122 final + 128 M3). Juez validado, comparación común/eficiencia, servicio contractual público y reporte/presentación finales pendientes; añadir tests no completa esos hitos.
 
 ## Fechas y reglas de la guía
 
@@ -102,7 +102,9 @@ Preparación posterior a visual 03: [protocolo de juez y conjunto común](JUEZ_Y
 - [x] Preparar [comparación controlada Mistral corregida](MISTRAL_TOKENFIX.md): mismo modelo/rúbrica/anclas/umbrales, preflight real obligatorio antes de pesos y equivalencia nativa en cada llamada. Cargador y M3 históricos preservados. 100 pruebas final CPU + 128 M3 aprobadas; ninguna nueva inferencia.
 - [x] Ejecutar notebook corregido una vez y auditar razones, tokens y comparabilidad del entorno: [original y auditoría](evidence/mistral_tokenfix/ANALISIS.md), 38 entradas nativas pero calibración rechazada. No aceptar juicio por equivalencia de tokens solamente.
 - [x] Preparar [juez por criterios y razonamiento](JUEZ_RAZONAMIENTO.md), piloto de siete con parada al primer fallo, conservación de notas y regresión completa condicionada; tokenizer real comprobado en CPU, sin pesos.
-- [ ] Ejecutar piloto Qwen3-8B en T4; solo si pasa, completar los 38 juicios y auditar razones. No hay resultado de este candidato todavía.
+- [x] Ejecutar piloto Qwen3-8B y 38 juicios en T4: [corrida 04 auditada](evidence/reasoning_04/ANALISIS.md), piloto aprobado, regresión rechazada; 19/20 no basta por falsa atribución aprobada, verbosidad y defectos de razones.
+- [x] Preparar [versión 05 con respaldo literal](JUEZ_RESPALDO_LITERAL.md), sin cambiar notas ni umbrales. Normalización solo de bloques enteros idénticos; 38 entradas nativas y seis pares normalizados idénticos comprobados sin pesos.
+- [ ] Ejecutar piloto 05 de nueve anclas; completar regresión solo si pasa, auditar soportes/razones. Todavía no ejecutado.
 - [ ] Si supera regresión: recibir revisión humana de doce ejemplos nuevos, ejecutar confirmación y auditar razones antes de aceptar juez final. No se ha aprobado ni ejecutado ese conjunto.
 
 - [x] Diseñar veinte anclas sintéticas separadas de los 22 casos comunes; revisión humana recibida y conocimiento previo del gold M3/visual declarado. Inferencia y auditoría del juez pendientes.

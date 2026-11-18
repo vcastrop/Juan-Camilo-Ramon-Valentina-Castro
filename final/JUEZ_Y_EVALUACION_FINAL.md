@@ -1,5 +1,7 @@
 # Evaluación común y calibración del juez — preparación v1
 
+Estado vigente al 18/11: [corrida 04](evidence/reasoning_04/ANALISIS.md) ejecutada y rechazada, pese a 19/20 en rango. Siguiente paso: [protocolo 05 con respaldo literal y control de repetición](JUEZ_RESPALDO_LITERAL.md), preparado y no ejecutado con pesos. 250 tests CPU pasan. Las descripciones siguientes conservan el historial de etapas; no constituyen aprobación del juez ni del harness común.
+
 Estado al 17/11/2026: veinte anclas aprobadas; **Qwen 7B ejecutado y rechazado** (15/20 en rango, cinco malos con nota alta y sesgo fuera de umbral). [Auditoría de corrida original](evidence/judge_calibration_01/ANALISIS.md). No hay juez validado ni comparación de eficiencia. [Segundo candidato Mistral y confirmación separada](JUEZ_02.md) preparados, no ejecutados. No se modifican main ni Space ni las notas históricas.
 
 Actualización 18/11: [Mistral corregido ejecutado y auditado](evidence/mistral_tokenfix/ANALISIS.md): 38 entradas nativas, 13/20 en rango, siete malos con nota alta y diferencia de verbosidad máxima 3. La corrección de tokens no bastó para superar el filtro. [Nuevo protocolo por criterios y razonamiento](JUEZ_RAZONAMIENTO.md) preparado, aún sin inferencia. Se conservan todas las corridas y sus notas originales; no hay juez validado.

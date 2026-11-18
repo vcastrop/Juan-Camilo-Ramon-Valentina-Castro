@@ -1,0 +1,20 @@
+{
+  "commit": "50281e90d3492f7b74bb70010f50b383f0c9efc5",
+  "archive_sha256": "7f42fa78aabc94cb00bbbfa98508afe87b292440347cb0e35d2b8738d8e53c3e",
+  "notebook_sha256": "94800b1a9fd841b9808f2b6ca06fc54badc00ff591531687a6a185b8eacbb0d0",
+  "crc_ok": true,
+  "source_files_verified": 13,
+  "notebook_sources_identical": true,
+  "executed_code_cells": 5,
+  "notebook_errors": 0,
+  "pilot_recalculated_identically": true,
+  "regression_recalculated_identically": true,
+  "valid_native_complete_generations": 38,
+  "score_adjusted": false,
+  "judge_validated": false,
+  "thinking_token_range": [
+    265,
+    1077
+  ],
+  "dashboard_access_verified": false
+}

@@ -11,7 +11,7 @@ Se ponderan hitos del checklist por esfuerzo/resultado, reconociendo avance parc
 | Fase 0: insumos/base | 10 % | 80 % | Guía, rama, materiales disponibles, corpus/modelos y cuentas; inventario completo y responsabilidades pendientes. |
 | Fase 1: producto e infraestructura | 10 % | 60 % | Modos/interfaz en código, Space inicial y GPU; servicio contractual público todavía no integrado. |
 | Fase 2: integración de desarrollo | 20 % | 75 % | Texto/herramienta/M1 y visión probados en T4; guard de conflictos en CPU; seguridad/calidad y servicio final pendientes. |
-| Fase 3: evaluación común | 15 % | 50 % | 22 entradas y 20 anclas aprobadas; Mistral corregido tampoco pasó. Piloto por criterios y razonamiento preparado; aún sin juez validado ni harness común cerrado. |
+| Fase 3: evaluación común | 15 % | 50 % | 22 entradas y 20 anclas aprobadas; Qwen3 dio 19/20 pero falló otros criterios. Protocolo 05 preparado; aún sin juez validado ni harness común cerrado. |
 | Fase 4: eficiencia | 15 % | 15 % | Política aprobada y loader NF4 preparado; no hay medición antes/después ni decisión de aceptación. |
 | Fase 5: comparativas/ablación/análisis | 10 % | 10 % | Fallos de desarrollo auditados; tabla común y ablación nuevas pendientes. |
 | Fase 6: producción/observabilidad | 10 % | 25 % | Space de infraestructura y W&B de pruebas; faltan consultas contractuales reales desde despliegue. |
@@ -35,7 +35,9 @@ Suma ponderada: ~42,95 %, redondeada a rango 40–45 % para no atribuir precisi�
 
 ## Ruta inmediata
 
-1. Ejecutar el [piloto por criterios y razonamiento](ContractRisk_Final_Juez_04_Razonamiento_Colab.ipynb); solo si pasa continuará a 38 juicios. Si supera regresión, revisar/ejecutar confirmación nueva y auditar razones. No repetir corridas para seleccionar mejores notas.
+La corrida 04 ya fue ejecutada: piloto aprobado y 19/20 en rango, pero falla por atribución falsa aprobada, verbosidad y defectos semánticos. Se conserva íntegra. Protocolo 05 preparado; 122 pruebas final + 128 M3 pasan. El porcentaje no sube: sigue pendiente un juez validado y los hitos finales.
+
+1. Ejecutar el [piloto 05 con respaldo literal](ContractRisk_Final_Juez_05_Respaldo_Literal_Colab.ipynb); solo si pasa continuará a 38 juicios. Si supera regresión, revisar/ejecutar confirmación nueva y auditar razones. No repetir corridas para seleccionar mejores notas.
 2. Cerrar/fijar harness y controles comunes; ejecutar sistemas comparables, antes/después FP16/NF4 y ablación, con hashes y mismas condiciones.
 3. Elegir la configuración a desplegar según evidencia, integrar el Space real y comprobar salud/logs/W&B sin datos personales.
 4. Escribir reporte/tablas/errores/ética/uso de IA, portada y diapositivas; acordar sustentación.
