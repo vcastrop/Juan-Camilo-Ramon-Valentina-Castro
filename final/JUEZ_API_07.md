@@ -1,5 +1,7 @@
 # Juez API 07 — calibración sintética preparada
 
+Actualización de ejecución: [el intento 07 recibió HTTP 503 sin notas](evidence/api_07/ANALISIS.md). No repetir este notebook. Después de auditarlo se preparó una [única recuperación 08](JUEZ_API_08_REINTENTO.md), con las marcas y reserva originales intactas. La preparación siguiente documenta el protocolo original, no una calibración aprobada.
+
 Estado 18/11/2026: cliente REST, runner, notebook y pruebas con transportes simulados preparados. **Sin llamadas de inferencia desde este entorno, sin API validada ni calidad aprobada.** El usuario confirma que guardó GEMINI_API_KEY en Colab; no se conoce su valor. [Notebook](ContractRisk_Final_Juez_07_API_Colab.ipynb), [configuración](gemini_calibration_config.json), [política de presupuesto](api_budget_policy.json).
 
 ## Modelo y procedimiento fijados antes de observar notas

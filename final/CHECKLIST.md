@@ -8,7 +8,7 @@ Actualización 18/11/2026: avance estimado **40–45 % de la entrega final**; [d
 
 ## Fechas y reglas de la guía
 
-Verificación local actual: **164 pruebas final + 128 M3 = 292 aprobadas**. Incluyen harness, presupuesto y cliente API con transportes simulados; no equivalen a acceso al servicio ni aceptación del juez. Véase estado de [API 07](JUEZ_API_07.md).
+Verificación local actual: **173 pruebas final + 128 M3 = 301 aprobadas**. API 07 llegó al servicio pero recibió 503 en la primera generación, sin notas. [Reintento único 08](JUEZ_API_08_REINTENTO.md) preparado; simulaciones no prueban disponibilidad ni buen juicio real.
 
 - Repositorio y reporte: jueves 19/11/2026 a las 23:59. Confirmar la zona horaria publicada en Interactiva; planificación del equipo en Bogotá.
 - Sustentación individual: a más tardar lunes 23/11/2026. El equipo debe acordar fecha, hora y modalidad con anticipación.
@@ -112,7 +112,9 @@ Preparación posterior a visual 03: [protocolo de juez y conjunto común](JUEZ_Y
 - [x] Auditar continuación 06: un juicio nuevo, attribution_bad=4 pese a explicación falsa reconocida; detención correcta. El último piloto y los 29 juicios no se ejecutaron; no se acepta el juez ni se repite buscando mejores notas.
 - [x] Registrar autorización de API hasta USD 5 totales, sin recargas; preparar registro local persistente de reservas y pruebas. No hay cliente de pago conectado ni llamadas realizadas.
 - [x] Preparar cliente REST y [notebook API 07](ContractRisk_Final_Juez_07_API_Colab.ipynb), candidato fijo, sin pago habilitado, sin retries de red ni fallback, confirmación explícita de proyecto gratuito y registro/marca persistentes en Drive. Clave confirmada por usuario como guardada en Colab, valor no conocido.
-- [ ] Ejecutar calibración API 07 con anclas sintéticas; comprobar acceso/cuotas, notas/razones, verbosidad y consumo estimado antes de decidir si pasa a confirmación. No se ha inferido con este servicio todavía.
+- [x] Auditar intento API 07: primera generación HTTP 503, cero notas y reserva USD 0,3072 conservada. No permite concluir calidad ni demostrar cargo. [Original y auditoría](evidence/api_07/ANALISIS.md).
+- [x] Preparar [reintento único API 08](JUEZ_API_08_REINTENTO.md) tras autorización de continuación: mismo cuerpo/modelo/prompt/umbrales, marcas antiguas intactas y presupuesto de calibración acumulado, sin modo pagado.
+- [ ] Ejecutar recuperación 08 y, si responde, calibración sintética completa; auditar motivos/verbosidad/consumo antes de decidir confirmación. Si reaparece indisponibilidad, detenerse sin otra repetición.
 - [ ] Configurar acceso a candidato de API, probar primero nivel gratuito con anclas sintéticas y auditar calibración. No activar facturación sin verificar controles y techo total.
 - [ ] Si supera regresión: recibir revisión humana de doce ejemplos nuevos, ejecutar confirmación y auditar razones antes de aceptar juez final. No se ha aprobado ni ejecutado ese conjunto.
 

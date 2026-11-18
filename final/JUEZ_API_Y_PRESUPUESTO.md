@@ -1,10 +1,10 @@
 # Ruta alternativa del juez — autorización y controles
 
-18/11/2026: el usuario autoriza **USD 5 totales** para la API, manteniendo preferencia por gratuito. Sin recargas automáticas. [Política](api_budget_policy.json). **No se han realizado llamadas API ni activado cobros desde este trabajo.** La autorización no significa que el proveedor garantice ese techo.
+18/11/2026: el usuario autoriza **USD 5 totales** para la API, manteniendo preferencia por gratuito. Sin recargas automáticas. [Política](api_budget_policy.json). API 07 intentó una generación y recibió 503, sin nota; mantiene una reserva conservadora de USD 0,3072, no una factura. No se habilitó modo pagado; facturación real no verificada. [Única recuperación 08 preparada](JUEZ_API_08_REINTENTO.md). La autorización no significa que el proveedor garantice ese techo.
 
 ## Candidato preparado, ejecución pendiente
 
-[Notebook API 07 y protocolo](JUEZ_API_07.md): cliente REST integrado con reservas, solo modo gratuito confirmado por el titular, marca persistente de una corrida y sin claves en el repositorio. Todavía no se ha probado acceso real ni juicio del servicio. El usuario confirmó guardar GEMINI_API_KEY en Colab.
+[Notebook API 07 y protocolo](JUEZ_API_07.md): cliente REST integrado con reservas, solo modo gratuito confirmado por el titular, marca persistente de una corrida y sin claves en el repositorio. En la ejecución real, catálogo y conteo respondieron pero generateContent devolvió 503, sin juicio. El usuario confirmó guardar GEMINI_API_KEY en Colab. [Recuperación 08](JUEZ_API_08_REINTENTO.md) pendiente de ejecutar.
 
 Google AI Studio/Gemini es una alternativa a comprobar en la cuenta del usuario. La [documentación oficial de precios](https://aistudio.google.com/docs/pricing#gemini-3.8-flash), consultada el 18/11, presenta gemini-3.8-flash con nivel gratuito y, para Standard pagado hasta 31/12/2026, USD 0,75 por millón de tokens de entrada y USD 3,75 por millón de salida incluidos tokens de pensamiento. El candidato se fijó en ese modelo, pero disponibilidad, cuotas y precios se deben verificar antes de ejecutar; no se ha demostrado que juzgue mejor. No usar modelos retirados o alias que redirijan silenciosamente.
 

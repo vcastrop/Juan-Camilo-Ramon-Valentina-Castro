@@ -37,9 +37,9 @@ Suma ponderada: ~42,95 %, redondeada a rango 40–45 % para no atribuir precisi�
 
 La continuación 06 confirmó fallo real del juez: una atribución falsa recibe 4 aunque el motivo la reconoce. Se conservaron las siete notas previas y la nueva; no hubo error técnico. Harness común candidato y cliente API 07 con registro persistente preparados, sin inferencia API ni aceptación de calidad. El usuario guardó la clave en Colab y autoriza USD 5 totales, con preferencia por gratuito; el runner solo admite proyecto gratuito confirmado. El porcentaje no sube: falta cerrar y ejecutar los hitos, no solo preparar más código.
 
-Verificación local vigente: 164 pruebas final y 128 M3 aprobadas (292). Las cifras menores de los avances anteriores corresponden a etapas históricas; las pruebas del cliente usan transporte simulado.
+Verificación local vigente: 173 pruebas final y 128 M3 aprobadas (301). API 07 recibió 503 sin notas; recuperación única 08 preparada, sin ejecutarse. Las cifras menores de los avances anteriores corresponden a etapas históricas; las pruebas del cliente usan transporte simulado. No se aumenta el avance por un servicio todavía sin evaluar.
 
-1. Ejecutar [notebook API 07](ContractRisk_Final_Juez_07_API_Colab.ipynb), cliente ya preparado y clave guardada por usuario: solo proyecto gratuito confirmado con anclas sintéticas, dentro del [presupuesto autorizado](JUEZ_API_Y_PRESUPUESTO.md). Auditar calibración/confirmación antes de aceptar calidad; no repetir el juez local fallido ni seleccionar mejores notas.
+1. Ejecutar [recuperación única API 08](ContractRisk_Final_Juez_08_API_Reintento_Colab.ipynb) tras el 503 de 07: mismo protocolo y registro Drive, solo proyecto gratuito confirmado, dentro del [presupuesto acumulado autorizado](JUEZ_API_08_REINTENTO.md). Si vuelve a fallar disponibilidad, detenerse; no repetir ni seleccionar notas. Auditar calibración/confirmación antes de aceptar calidad.
 2. Completar/congelar [harness común candidato](HARNESS_COMUN.md) y controles; ejecutar sistemas comparables, antes/después FP16/NF4 y ablación, con hashes y mismas condiciones.
 3. Elegir la configuración a desplegar según evidencia, integrar el Space real y comprobar salud/logs/W&B sin datos personales.
 4. Escribir reporte/tablas/errores/ética/uso de IA, portada y diapositivas; acordar sustentación.

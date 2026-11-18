@@ -1,0 +1,16 @@
+{
+  "zip_sha256": "c59cf4064c5dab7888b480c4f4f012bdf7b52658292e87275d55fb4260bb20fe",
+  "notebook_sha256": "9e169188e016736f3697a0d8738814f704297de2e0b751e3c9aec9e97e3d9609",
+  "source_hashes_verified": 10,
+  "notebook_sources_identical": true,
+  "notebook_errors": 0,
+  "executed_code_cells": 6,
+  "pilot_summary_recalculated": true,
+  "budget_snapshot_hash_verified": true,
+  "generation_http_attempts": 1,
+  "valid_judgements": 0,
+  "http_status": 503,
+  "reservation_usd": "0.3072",
+  "actual_invoice_verified": false,
+  "no_model_quality_conclusion_possible": true
+}
