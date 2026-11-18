@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "501f2ab9a2be78f599ff8b5468bc94597fb00de2d8b0621d89b7a16817a51c4f",
+  "notebook_sha256": "d021371892d61c3656ae00b366e2e49f8ce005cc383748c35ccc87235d70749e",
+  "source_hashes_verified": 12,
+  "notebook_sources_identical": true,
+  "notebook_errors": 0,
+  "pilot_summary_recalculated": true,
+  "budget_snapshot_verified": true,
+  "valid_judgements": 1,
+  "first_score": 2,
+  "second_http_status": 503,
+  "estimated_or_reserved_usd": "1.2418725",
+  "invoice_verified": false
+}

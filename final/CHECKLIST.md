@@ -8,7 +8,12 @@ Actualización 18/11/2026: avance estimado **40–45 % de la entrega final**; [d
 
 ## Fechas y reglas de la guía
 
-Verificación local actual: **182 pruebas final + 128 M3 = 310 aprobadas**. API 07/08 recibieron 503, con cero notas y USD 0,6144 conservados como reservas, no cargos confirmados. [Candidato Hydrogen 09](JUEZ_HYDROGEN_09.md) preparado; simulaciones no prueban disponibilidad ni buen juicio real. Techo total USD 5 intacto, nueva fase de calibración con sublímite acumulado de estimación USD 2, solo modo gratuito confirmado.
+Verificación local actual: **193 pruebas final + 128 M3 = 321 aprobadas**. [Hydrogen 09 auditado](evidence/hydrogen_09/ANALISIS.md): una nota válida 2; siguiente juicio sin respuesta por 503. Registro acumulado estimado/reservado USD 1,2418725, no cargos confirmados. [Continuación 10](JUEZ_HYDROGEN_10_CONTINUACION.md) preparada con checkpoint y dos reintentos 503 globales; simulaciones no prueban disponibilidad ni calidad real. Techo total USD 5 intacto, sublímite acumulado de estimación USD 3,50, solo modo gratuito confirmado. No repetir 07–09 ni borrar registros Drive.
+
+- [x] Conservar ZIP/notebook originales de Hydrogen 09 y auditar la nota válida y el 503.
+- [x] Preparar continuación sin regenerar notas válidas, con reintentos acotados, reservas acumuladas y pruebas de regresión técnicas.
+- [ ] Ejecutar continuación 10, auditar razones y completar confirmación separada antes de validar el juez.
+- [ ] Congelar/ejecutar comparación común, ablación y eficiencia; integrar despliegue contractual real y cerrar reporte/presentación/reproducción/entrega. El detalle de cada fase se conserva abajo.
 
 - Repositorio y reporte: jueves 19/11/2026 a las 23:59. Confirmar la zona horaria publicada en Interactiva; planificación del equipo en Bogotá.
 - Sustentación individual: a más tardar lunes 23/11/2026. El equipo debe acordar fecha, hora y modalidad con anticipación.

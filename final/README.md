@@ -2,7 +2,7 @@
 
 Estado: integración de desarrollo probada en T4; despliegue público todavía de infraestructura, no sistema final completo. [Checklist](CHECKLIST.md).
 
-Última actualización: [API 08 auditada](evidence/api_08/ANALISIS.md) recibió un segundo 503, sin notas. No repetir 07/08. **Siguiente ejecución: [notebook Hydrogen 09](ContractRisk_Final_Juez_09_Hydrogen_Colab.ipynb)** en runtime CPU, con [controles y límites](JUEZ_HYDROGEN_09.md): candidato nuevo, proyecto gratuito, misma cuenta/registro de Drive, dos reservas previas intactas y techo total USD 5. [Harness común candidato](HARNESS_COMUN.md) preparado sin comparación de modelos. No hay juez validado ni scorecard final.
+Última actualización: [Hydrogen 09 auditado](evidence/hydrogen_09/ANALISIS.md) devolvió una nota válida 2 y luego HTTP 503 sin nota. **Siguiente ejecución: [notebook de continuación 10](ContractRisk_Final_Juez_10_Hydrogen_Continuacion_Colab.ipynb)** en CPU: reutiliza esa nota, reanuda solo pendientes y permite hasta dos reintentos 503 en total. [Controles y límites](JUEZ_HYDROGEN_10_CONTINUACION.md): mismo registro Drive, reservas intactas, sublímite acumulado de estimación USD 3,50 dentro del techo total USD 5, solo proyecto gratuito confirmado. No repetir 07–09. [Harness común candidato](HARNESS_COMUN.md) preparado sin comparación de modelos. No hay juez validado ni scorecard final.
 
 Avance estimado al 18/11: **40–45 % de la entrega final**. [Desglose y ruta pendiente](PROGRESO_FINAL.md). El porcentaje reconoce preparación parcial; no sustituye resultados finales.
 
