@@ -2,7 +2,7 @@
 
 Estado al 17/11/2026: veinte anclas aprobadas; **Qwen 7B ejecutado y rechazado** (15/20 en rango, cinco malos con nota alta y sesgo fuera de umbral). [Auditoría de corrida original](evidence/judge_calibration_01/ANALISIS.md). No hay juez validado ni comparación de eficiencia. [Segundo candidato Mistral y confirmación separada](JUEZ_02.md) preparados, no ejecutados. No se modifican main ni Space ni las notas históricas.
 
-Actualización 18/11: Mistral tampoco pasó en la ruta anterior; después se confirmó en CPU un BOS duplicado en sus 38 mensajes. La [comparación corregida vigente](MISTRAL_TOKENFIX.md) preserva criterios y resultados viejos. El cambio de tokens aún no se ha evaluado con pesos: no afirmar que resuelve el mal juicio.
+Actualización 18/11: [Mistral corregido ejecutado y auditado](evidence/mistral_tokenfix/ANALISIS.md): 38 entradas nativas, 13/20 en rango, siete malos con nota alta y diferencia de verbosidad máxima 3. La corrección de tokens no bastó para superar el filtro. [Nuevo protocolo por criterios y razonamiento](JUEZ_RAZONAMIENTO.md) preparado, aún sin inferencia. Se conservan todas las corridas y sus notas originales; no hay juez validado.
 
 ## Conjunto común ensamblado
 
@@ -57,4 +57,4 @@ Se informa antes/después aunque no mejore; no afirmar que desaparece el sesgo. 
 
 ## Próximo paso del equipo
 
-No repetir los notebooks históricos buscando mejores notas. Ejecutar el [notebook corregido de Mistral](ContractRisk_Final_Juez_03_Tokenizacion_Colab.ipynb), que verifica tokens antes de pesos y mantiene el mismo criterio. Si supera regresión, revisar/ejecutar confirmación separada y auditar razones. Solo después se cierra el harness común y se compara con los [umbrales aprobados](EFICIENCIA.md).
+No repetir los notebooks históricos buscando mejores notas. Ejecutar el [piloto por criterios y razonamiento](ContractRisk_Final_Juez_04_Razonamiento_Colab.ipynb): se detiene al primer fallo; solo si pasan los siete casos continúa hasta 38 juicios, sin repetir ni seleccionar las notas del piloto. Mantiene umbrales numéricos y añade coherencia interna, sin reajustar notas. Si supera regresión, revisar/ejecutar confirmación separada y auditar razones. Solo después se cierra el harness común y se compara con los [umbrales aprobados](EFICIENCIA.md). Estado local actual: 112 pruebas final y 128 M3 aprobadas; las cifras menores de las secciones anteriores describen etapas históricas.
