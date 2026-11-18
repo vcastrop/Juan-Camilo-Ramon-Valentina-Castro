@@ -2,7 +2,7 @@
 
 Estado: integración de desarrollo probada en T4; despliegue público todavía de infraestructura, no sistema final completo. [Checklist](CHECKLIST.md).
 
-Última actualización del juez: [corrida 04 auditada](evidence/reasoning_04/ANALISIS.md), piloto 7/7 pero regresión rechazada pese a 19/20 en rango. Siguiente ejecución: [notebook 05, respaldo literal](ContractRisk_Final_Juez_05_Respaldo_Literal_Colab.ipynb). [Cambios y límites](JUEZ_RESPALDO_LITERAL.md): mismo modelo, respaldo por campo y normalización conservadora de repeticiones; no hay juez validado. Pasan 250 pruebas CPU (122 final + 128 M3).
+Última actualización del juez: [piloto 05 auditado](evidence/literal_05/ANALISIS.md), siete notas en rango y detención por restricción excesiva del evaluador. Recálculo CPU 1.1 terminado sin cambiar notas ni regenerarlas. Siguiente ejecución: [notebook 06, continuación](ContractRisk_Final_Juez_06_Continuacion_Colab.ipynb). [Protocolo y límites](JUEZ_CONTINUACION_06.md): reutiliza las siete, prueba las dos pendientes y solo si pasan completa regresión. No hay juez validado. Pasan 258 pruebas CPU (130 final + 128 M3).
 
 Avance estimado al 18/11: **40–45 % de la entrega final**. [Desglose y ruta pendiente](PROGRESO_FINAL.md). El porcentaje reconoce preparación parcial; no sustituye resultados finales.
 
@@ -18,7 +18,7 @@ La [revisión humana de diez casos visuales](eval/visual_candidates_v1/REVISION_
 
 Objetivo: integrar la señal de suficiencia descriptiva M1, consultas con fuentes/herramienta M3 y lectura de capturas contractuales, medir eficiencia y desplegar una aplicación observada.
 
-[Evaluación común y juez](JUEZ_Y_EVALUACION_FINAL.md): 22 entradas ensambladas con referencias separadas y veinte anclas aprobadas. Qwen y Mistral anteriores no pasaron; sus notas se conservan. [Mistral corregido](evidence/mistral_tokenfix/ANALISIS.md) dio 13/20 en rango; [Qwen3 con razonamiento](evidence/reasoning_04/ANALISIS.md), 19/20, pero ambos fallaron otros criterios obligatorios. El [protocolo 05 vigente](JUEZ_RESPALDO_LITERAL.md) todavía requiere ejecución. No hay juez validado ni nuevo scorecard; confirmación separada y auditoría humana siguen pendientes.
+[Evaluación común y juez](JUEZ_Y_EVALUACION_FINAL.md): 22 entradas ensambladas con referencias separadas y veinte anclas aprobadas. Qwen y Mistral anteriores no pasaron; sus notas se conservan. [Mistral corregido](evidence/mistral_tokenfix/ANALISIS.md) dio 13/20 en rango; [Qwen3 con razonamiento](evidence/reasoning_04/ANALISIS.md), 19/20, pero ambos fallaron otros criterios obligatorios. El [protocolo de continuación vigente](JUEZ_CONTINUACION_06.md) reutiliza el prefijo del piloto 05 con evaluador corregido. No hay juez validado ni nuevo scorecard; confirmación separada y auditoría humana siguen pendientes.
 
 [Reglas de eficiencia aprobadas](EFICIENCIA.md): máximo 5 puntos porcentuales de pérdida de cumplimiento, ningún fallo crítico nuevo ni regresión en controles, y al menos 20 % menos memoria pico CUDA asignada. Comprobación de aceptación preparada; comparación real y juez calibrado pendientes. No se desplegó cuantización ni se aceptó un resultado todavía.
 

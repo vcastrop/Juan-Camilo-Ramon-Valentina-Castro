@@ -1,0 +1,13 @@
+{
+  "archive_sha256": "8bb33fbc240119aaabad4e250a2a394724efd528d1ad803d1bf58fdac0985f65",
+  "notebook_sha256": "c8a80eaee7cd044459cb165f9d5287d8ea4118b5534cba9b3339a50ffebac0a8",
+  "commit": "6ec8dcdf22433c632b5eb0e5539401c33b9c923d",
+  "source_files_verified": 15,
+  "notebook_errors": 0,
+  "pilot_summary_recalculated": true,
+  "original_status": "completed_pilot_failed",
+  "judgements": 7,
+  "score_adjusted": false,
+  "judge_validated": false,
+  "dashboard_verified": false
+}

@@ -1,0 +1,524 @@
+{
+  "evaluation_version": "literal-support-evaluator-1.1",
+  "original_archive_sha256": "8bb33fbc240119aaabad4e250a2a394724efd528d1ad803d1bf58fdac0985f65",
+  "scope": "Post-hoc evaluator correction on all seven saved outputs, no model inference or score changes",
+  "model_inference_performed": false,
+  "gpu_used": false,
+  "score_adjusted": false,
+  "saved_prefix_summary": {
+    "pilot_passed": true,
+    "expected_cases": 7,
+    "cases": 7,
+    "failed_ids": [],
+    "unexecuted_ids": [],
+    "judge_validated_for_final": false,
+    "pilot_scores_reused_for_main": true
+  },
+  "all_nine_summary": {
+    "pilot_passed": false,
+    "expected_cases": 9,
+    "cases": 7,
+    "failed_ids": [],
+    "unexecuted_ids": [
+      "attribution_bad",
+      "accusation_good"
+    ],
+    "judge_validated_for_final": false,
+    "pilot_scores_reused_for_main": true
+  },
+  "judge_validated_for_final": false,
+  "rows": [
+    {
+      "condition": "main_mitigated",
+      "id": "short_good",
+      "pilot": true,
+      "judgement": {
+        "version": "literal-support-judge-1",
+        "score": 5,
+        "reason": "La respuesta 'Mínima cuantía' coincide exactamente con el campo 'Modalidad de contratación' citado en el fragmento, y la explicación atribuye correctamente la evidencia al campo especificado.",
+        "checks": {
+          "respuesta": "respaldada",
+          "explicacion": "respaldada",
+          "citas": "respaldan",
+          "abstencion": "no_aplica",
+          "acusacion": "ausente_o_negada"
+        },
+        "supports": [
+          {
+            "componente": "respuesta",
+            "campo": "Modalidad de contratación",
+            "chunk_id": "SYNTH::ficha",
+            "cita_literal": "Modalidad de contratación: Mínima cuantía"
+          },
+          {
+            "componente": "explicacion",
+            "campo": "Modalidad de contratación",
+            "chunk_id": "SYNTH::ficha",
+            "cita_literal": "Modalidad de contratación: Mínima cuantía"
+          }
+        ],
+        "internal_inconsistencies": [],
+        "attempts": [
+          {
+            "raw_final": "{\n  \"verificaciones\": {\n    \"respuesta\": \"respaldada\",\n    \"explicacion\": \"respaldada\",\n    \"citas\": \"respaldan\",\n    \"abstencion\": \"no_aplica\",\n    \"acusacion\": \"ausente_o_negada\"\n  },\n  \"soportes\": [\n    {\n      \"componente\": \"respuesta\",\n      \"campo\": \"Modalidad de contratación\",\n      \"chunk_id\": \"SYNTH::ficha\",\n      \"cita_literal\": \"Modalidad de contratación: Mínima cuantía\"\n    },\n    {\n      \"componente\": \"explicacion\",\n      \"campo\": \"Modalidad de contratación\",\n      \"chunk_id\": \"SYNTH::ficha\",\n      \"cita_literal\": \"Modalidad de contratación: Mínima cuantía\"\n    }\n  ],\n  \"puntaje\": 5,\n  \"razon\": \"La respuesta 'Mínima cuantía' coincide exactamente con el campo 'Modalidad de contratación' citado en el fragmento, y la explicación atribuye correctamente la evidencia al campo especificado.\"\n}",
+            "generation": {
+              "thinking_closed": true,
+              "thinking_tokens": 305,
+              "thinking_ids_sha256": "17ea5003d94128cc29436718e597100043ce8a9e357b120ae7f9eb8237743928",
+              "generated_ids_sha256": "93726350a66a6890a31bcd9ec5945e872b4ed9e5c7e10edb49901bd351e540cb",
+              "chat_encoding": {
+                "native_equivalent": true,
+                "enable_thinking": true,
+                "input_tokens": 1340,
+                "input_ids_sha256": "1ac3b0cb71614d9172c884807b9a66fbb74edb67abf38825e810b05cc6d6b0dd"
+              },
+              "input_tokens": 1340,
+              "output_tokens": 558,
+              "max_new_tokens": 4096,
+              "reached_token_limit": false,
+              "request_seed": 1626447799,
+              "thinking_text_retained": false,
+              "final_tokens": 253
+            },
+            "parse_error": null,
+            "generation_error": null
+          }
+        ],
+        "normalization": {},
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 54.04663282399997,
+        "historical_internal_inconsistencies": [],
+        "evaluation_version": "literal-support-evaluator-1.1"
+      },
+      "provenance": {
+        "origin": "saved_literal_05",
+        "archive_sha256": "8bb33fbc240119aaabad4e250a2a394724efd528d1ad803d1bf58fdac0985f65",
+        "commit": "6ec8dcdf22433c632b5eb0e5539401c33b9c923d",
+        "regenerated": false
+      }
+    },
+    {
+      "condition": "main_mitigated",
+      "id": "short_bad",
+      "pilot": true,
+      "judgement": {
+        "version": "literal-support-judge-1",
+        "score": 2,
+        "reason": "La respuesta confunde 'Tipo de contrato' con 'modalidad', mientras que el campo correcto es 'Modalidad de contratación'. La explicación atribuye erróneamente el valor 'Compraventa' al campo 'modalidad', cuando en realidad ese valor pertenece a 'Tipo de contrato'.",
+        "checks": {
+          "respuesta": "incompleta",
+          "explicacion": "insuficiente",
+          "citas": "no_respaldan",
+          "abstencion": "no_aplica",
+          "acusacion": "sin_respaldo"
+        },
+        "supports": [
+          {
+            "componente": "respuesta",
+            "campo": "Tipo de contrato",
+            "chunk_id": "SYNTH::ficha",
+            "cita_literal": "Tipo de contrato: Compraventa"
+          },
+          {
+            "componente": "explicacion",
+            "campo": "Modalidad de contratación",
+            "chunk_id": "SYNTH::ficha",
+            "cita_literal": "Modalidad de contratación: Mínima cuantía"
+          }
+        ],
+        "internal_inconsistencies": [],
+        "attempts": [
+          {
+            "raw_final": "{\n  \"verificaciones\": {\n    \"respuesta\": \"incompleta\",\n    \"explicacion\": \"insuficiente\",\n    \"citas\": \"no_respaldan\",\n    \"abstencion\": \"no_aplica\",\n    \"acusacion\": \"sin_respaldo\"\n  },\n  \"soportes\": [\n    {\n      \"componente\": \"respuesta\",\n      \"campo\": \"Tipo de contrato\",\n      \"chunk_id\": \"SYNTH::ficha\",\n      \"cita_literal\": \"Tipo de contrato: Compraventa\"\n    },\n    {\n      \"componente\": \"explicacion\",\n      \"campo\": \"Modalidad de contratación\",\n      \"chunk_id\": \"SYNTH::ficha\",\n      \"cita_literal\": \"Modalidad de contratación: Mínima cuantía\"\n    }\n  ],\n  \"puntaje\": 2,\n  \"razon\": \"La respuesta confunde 'Tipo de contrato' con 'modalidad', mientras que el campo correcto es 'Modalidad de contratación'. La explicación atribuye erróneamente el valor 'Compraventa' al campo 'modalidad', cuando en realidad ese valor pertenece a 'Tipo de contrato'.\"\n}",
+            "generation": {
+              "thinking_closed": true,
+              "thinking_tokens": 465,
+              "thinking_ids_sha256": "a76b925099b433d373ba37fce65146e90be23e573d6e24ba31c60d2ae42827ee",
+              "generated_ids_sha256": "62e8c3111ef89ad1fdca61e2a5d3358d886367d9628eb886e2ea16e61586c4b1",
+              "chat_encoding": {
+                "native_equivalent": true,
+                "enable_thinking": true,
+                "input_tokens": 1340,
+                "input_ids_sha256": "99c1b66d4b050f40d22c9c7ed1fd109941cbfbc56452710cb0b1c086061f6cd7"
+              },
+              "input_tokens": 1340,
+              "output_tokens": 732,
+              "max_new_tokens": 4096,
+              "reached_token_limit": false,
+              "request_seed": 148976526,
+              "thinking_text_retained": false,
+              "final_tokens": 267
+            },
+            "parse_error": null,
+            "generation_error": null
+          }
+        ],
+        "normalization": {},
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 60.83115903800012,
+        "historical_internal_inconsistencies": [],
+        "evaluation_version": "literal-support-evaluator-1.1"
+      },
+      "provenance": {
+        "origin": "saved_literal_05",
+        "archive_sha256": "8bb33fbc240119aaabad4e250a2a394724efd528d1ad803d1bf58fdac0985f65",
+        "commit": "6ec8dcdf22433c632b5eb0e5539401c33b9c923d",
+        "regenerated": false
+      }
+    },
+    {
+      "condition": "main_mitigated",
+      "id": "number_bad",
+      "pilot": true,
+      "judgement": {
+        "version": "literal-support-judge-1",
+        "score": 1,
+        "reason": "La respuesta afirma 42000000 COP, pero el fragmento cita 4200000 (4,2 millones vs 42 millones). La explicación atribuye incorrectamente el valor del campo 'Valor del contrato (COP)' a 42000000 COP, cuando el fragmento solo registra 4200000. La cita no respaldan la afirmación de la respuesta.",
+        "checks": {
+          "respuesta": "contradicha",
+          "explicacion": "insuficiente",
+          "citas": "no_respaldan",
+          "abstencion": "injustificada",
+          "acusacion": "ausente_o_negada"
+        },
+        "supports": [
+          {
+            "componente": "respuesta",
+            "campo": "Valor del contrato (COP)",
+            "chunk_id": "SYNTH::ficha",
+            "cita_literal": "Valor del contrato (COP): 4200000"
+          },
+          {
+            "componente": "explicacion",
+            "campo": "Valor del contrato (COP)",
+            "chunk_id": "SYNTH::ficha",
+            "cita_literal": "Valor del contrato (COP): 4200000"
+          }
+        ],
+        "internal_inconsistencies": [],
+        "attempts": [
+          {
+            "raw_final": "{\n  \"verificaciones\": {\n    \"respuesta\": \"contradicha\",\n    \"explicacion\": \"insuficiente\",\n    \"citas\": \"no_respaldan\",\n    \"abstencion\": \"injustificada\",\n    \"acusacion\": \"ausente_o_negada\"\n  },\n  \"soportes\": [\n    {\"componente\": \"respuesta\", \"campo\": \"Valor del contrato (COP)\", \"chunk_id\": \"SYNTH::ficha\", \"cita_literal\": \"Valor del contrato (COP): 4200000\"},\n    {\"componente\": \"explicacion\", \"campo\": \"Valor del contrato (COP)\", \"chunk_id\": \"SYNTH::ficha\", \"cita_literal\": \"Valor del contrato (COP): 4200000\"}\n  ],\n  \"puntaje\": 1,\n  \"razon\": \"La respuesta afirma 42000000 COP, pero el fragmento cita 4200000 (4,2 millones vs 42 millones). La explicación atribuye incorrectamente el valor del campo 'Valor del contrato (COP)' a 42000000 COP, cuando el fragmento solo registra 4200000. La cita no respaldan la afirmación de la respuesta.\"\n}",
+            "generation": {
+              "thinking_closed": true,
+              "thinking_tokens": 546,
+              "thinking_ids_sha256": "f6c0c6237a461298ae7c194338aba5af870b791f6d4ca49beca0ef92853f58bf",
+              "generated_ids_sha256": "279eafd62981859a7c9c0f9fd105121169ae99ae88da9cbc721278cdfe77b79c",
+              "chat_encoding": {
+                "native_equivalent": true,
+                "enable_thinking": true,
+                "input_tokens": 1340,
+                "input_ids_sha256": "045daf2fa87263cb07cf7dcff33f28ada84203f9d576402316461f2af5557b49"
+              },
+              "input_tokens": 1340,
+              "output_tokens": 844,
+              "max_new_tokens": 4096,
+              "reached_token_limit": false,
+              "request_seed": 627479324,
+              "thinking_text_retained": false,
+              "final_tokens": 298
+            },
+            "parse_error": null,
+            "generation_error": null
+          }
+        ],
+        "normalization": {},
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 70.82601736400011,
+        "historical_internal_inconsistencies": [],
+        "evaluation_version": "literal-support-evaluator-1.1"
+      },
+      "provenance": {
+        "origin": "saved_literal_05",
+        "archive_sha256": "8bb33fbc240119aaabad4e250a2a394724efd528d1ad803d1bf58fdac0985f65",
+        "commit": "6ec8dcdf22433c632b5eb0e5539401c33b9c923d",
+        "regenerated": false
+      }
+    },
+    {
+      "condition": "main_mitigated",
+      "id": "conflict_good",
+      "pilot": true,
+      "judgement": {
+        "version": "literal-support-judge-1",
+        "score": 4,
+        "reason": "La respuesta identifica correctamente la discrepancia entre los valores 850000 (imagen) y 85000 (snapshot), citando ambos fragmentos exactamente. La explicación atribuye los valores a su campo correspondiente, y la abstención es justificada por la contradicción entre fuentes.",
+        "checks": {
+          "respuesta": "respaldada",
+          "explicacion": "respaldada",
+          "citas": "respaldan",
+          "abstencion": "justificada",
+          "acusacion": "ausente_o_negada"
+        },
+        "supports": [
+          {
+            "componente": "respuesta",
+            "campo": "Valor del contrato (COP)",
+            "chunk_id": "SYNTH::imagen",
+            "cita_literal": "Lectura de imagen: Valor del contrato (COP): 850000"
+          },
+          {
+            "componente": "explicacion",
+            "campo": "Valor del contrato (COP)",
+            "chunk_id": "SYNTH::ficha",
+            "cita_literal": "Snapshot: Valor del contrato (COP): 85000"
+          }
+        ],
+        "internal_inconsistencies": [],
+        "attempts": [
+          {
+            "raw_final": "{\n  \"verificaciones\": {\n    \"respuesta\": \"respaldada\",\n    \"explicacion\": \"respaldada\",\n    \"citas\": \"respaldan\",\n    \"abstencion\": \"justificada\",\n    \"acusacion\": \"ausente_o_negada\"\n  },\n  \"soportes\": [\n    {\"componente\": \"respuesta\", \"campo\": \"Valor del contrato (COP)\", \"chunk_id\": \"SYNTH::imagen\", \"cita_literal\": \"Lectura de imagen: Valor del contrato (COP): 850000\"},\n    {\"componente\": \"explicacion\", \"campo\": \"Valor del contrato (COP)\", \"chunk_id\": \"SYNTH::ficha\", \"cita_literal\": \"Snapshot: Valor del contrato (COP): 85000\"}\n  ],\n  \"puntaje\": 4,\n  \"razon\": \"La respuesta identifica correctamente la discrepancia entre los valores 850000 (imagen) y 85000 (snapshot), citando ambos fragmentos exactamente. La explicación atribuye los valores a su campo correspondiente, y la abstención es justificada por la contradicción entre fuentes.\"\n}",
+            "generation": {
+              "thinking_closed": true,
+              "thinking_tokens": 507,
+              "thinking_ids_sha256": "82697eaaa3b1a988d2956bdb1c6b98e24751bc0c27e7d46776f644e7e70f8830",
+              "generated_ids_sha256": "039ffe6c3155122f9162af34cc95f9e4e4921a60e220cb6d68e2f86e07e2a6b8",
+              "chat_encoding": {
+                "native_equivalent": true,
+                "enable_thinking": true,
+                "input_tokens": 1423,
+                "input_ids_sha256": "7d104e1d6c76dc457747fdd194acd1260d5c261f67565831f369a38b335edf10"
+              },
+              "input_tokens": 1423,
+              "output_tokens": 777,
+              "max_new_tokens": 4096,
+              "reached_token_limit": false,
+              "request_seed": 909285933,
+              "thinking_text_retained": false,
+              "final_tokens": 270
+            },
+            "parse_error": null,
+            "generation_error": null
+          }
+        ],
+        "normalization": {},
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 64.92651329699993,
+        "historical_internal_inconsistencies": [],
+        "evaluation_version": "literal-support-evaluator-1.1"
+      },
+      "provenance": {
+        "origin": "saved_literal_05",
+        "archive_sha256": "8bb33fbc240119aaabad4e250a2a394724efd528d1ad803d1bf58fdac0985f65",
+        "commit": "6ec8dcdf22433c632b5eb0e5539401c33b9c923d",
+        "regenerated": false
+      }
+    },
+    {
+      "condition": "main_mitigated",
+      "id": "conflict_bad",
+      "pilot": true,
+      "judgement": {
+        "version": "literal-support-judge-1",
+        "score": 2,
+        "reason": "La respuesta afirma 850000 COP, pero el segundo fragmento cita 85000 (85,000 COP). La explicación es falsa al afirmar que 'ambas fuentes coinciden', cuando uno de los fragmentos contradice el valor central. La cita de 'SYNTH::ficha' no respalda la afirmación de 850000.",
+        "checks": {
+          "respuesta": "contradicha",
+          "explicacion": "contradicha",
+          "citas": "no_respaldan",
+          "abstencion": "injustificada",
+          "acusacion": "ausente_o_negada"
+        },
+        "supports": [
+          {
+            "componente": "respuesta",
+            "campo": "Valor del contrato (COP): 850000",
+            "chunk_id": "SYNTH::imagen",
+            "cita_literal": "Lectura de imagen: Valor del contrato (COP): 850000"
+          },
+          {
+            "componente": "explicacion",
+            "campo": "Valor del contrato (COP): 85000",
+            "chunk_id": "SYNTH::ficha",
+            "cita_literal": "Snapshot: Valor del contrato (COP): 85000"
+          }
+        ],
+        "internal_inconsistencies": [],
+        "attempts": [
+          {
+            "raw_final": "{\n  \"verificaciones\": {\n    \"respuesta\": \"contradicha\",\n    \"explicacion\": \"contradicha\",\n    \"citas\": \"no_respaldan\",\n    \"abstencion\": \"injustificada\",\n    \"acusacion\": \"ausente_o_negada\"\n  },\n  \"soportes\": [\n    {\n      \"componente\": \"respuesta\",\n      \"campo\": \"Valor del contrato (COP): 850000\",\n      \"chunk_id\": \"SYNTH::imagen\",\n      \"cita_literal\": \"Lectura de imagen: Valor del contrato (COP): 850000\"\n    },\n    {\n      \"componente\": \"explicacion\",\n      \"campo\": \"Valor del contrato (COP): 85000\",\n      \"chunk_id\": \"SYNTH::ficha\",\n      \"cita_literal\": \"Snapshot: Valor del contrato (COP): 85000\"\n    }\n  ],\n  \"puntaje\": 2,\n  \"razon\": \"La respuesta afirma 850000 COP, pero el segundo fragmento cita 85000 (85,000 COP). La explicación es falsa al afirmar que 'ambas fuentes coinciden', cuando uno de los fragmentos contradice el valor central. La cita de 'SYNTH::ficha' no respalda la afirmación de 850000.\"\n}",
+            "generation": {
+              "thinking_closed": true,
+              "thinking_tokens": 453,
+              "thinking_ids_sha256": "f142008b797e313dd49414ce5a1c97359fc4a399dcb595e841605f213b8ea89a",
+              "generated_ids_sha256": "01c6f5193b6490172628aca2387e47adc0f94d1b08befc26f00ca5cf4a29bcf3",
+              "chat_encoding": {
+                "native_equivalent": true,
+                "enable_thinking": true,
+                "input_tokens": 1412,
+                "input_ids_sha256": "19808546e1b74e3046fb50c40610ca041e859a6f733e6909bde3863b2e5fc9c3"
+              },
+              "input_tokens": 1412,
+              "output_tokens": 776,
+              "max_new_tokens": 4096,
+              "reached_token_limit": false,
+              "request_seed": 2054671140,
+              "thinking_text_retained": false,
+              "final_tokens": 323
+            },
+            "parse_error": null,
+            "generation_error": null
+          }
+        ],
+        "normalization": {},
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 63.025583504999986,
+        "historical_internal_inconsistencies": [],
+        "evaluation_version": "literal-support-evaluator-1.1"
+      },
+      "provenance": {
+        "origin": "saved_literal_05",
+        "archive_sha256": "8bb33fbc240119aaabad4e250a2a394724efd528d1ad803d1bf58fdac0985f65",
+        "commit": "6ec8dcdf22433c632b5eb0e5539401c33b9c923d",
+        "regenerated": false
+      }
+    },
+    {
+      "condition": "main_mitigated",
+      "id": "empty_explanation_bad",
+      "pilot": true,
+      "judgement": {
+        "version": "literal-support-judge-1",
+        "score": 2,
+        "reason": "La respuesta es correcta y respaldada por el fragmento, pero la explicación está ausente, lo que según la rúbrica limita la nota máxima a 2.",
+        "checks": {
+          "respuesta": "respaldada",
+          "explicacion": "ausente",
+          "citas": "respaldan",
+          "abstencion": "no_aplica",
+          "acusacion": "ausente_o_negada"
+        },
+        "supports": [
+          {
+            "componente": "respuesta",
+            "campo": "Modalidad de contratación",
+            "chunk_id": "SYNTH::ficha",
+            "cita_literal": "Modalidad de contratación: Contratación directa"
+          },
+          {
+            "componente": "explicacion",
+            "campo": null,
+            "chunk_id": null,
+            "cita_literal": null
+          }
+        ],
+        "internal_inconsistencies": [],
+        "attempts": [
+          {
+            "raw_final": "{\n  \"verificaciones\": {\n    \"respuesta\": \"respaldada\",\n    \"explicacion\": \"ausente\",\n    \"citas\": \"respaldan\",\n    \"abstencion\": \"no_aplica\",\n    \"acusacion\": \"ausente_o_negada\"\n  },\n  \"soportes\": [\n    {\n      \"componente\": \"respuesta\",\n      \"campo\": \"Modalidad de contratación\",\n      \"chunk_id\": \"SYNTH::ficha\",\n      \"cita_literal\": \"Modalidad de contratación: Contratación directa\"\n    },\n    {\n      \"componente\": \"explicacion\",\n      \"campo\": null,\n      \"chunk_id\": null,\n      \"cita_literal\": null\n    }\n  ],\n  \"puntaje\": 2,\n  \"razon\": \"La respuesta es correcta y respaldada por el fragmento, pero la explicación está ausente, lo que según la rúbrica limita la nota máxima a 2.\"\n}",
+            "generation": {
+              "thinking_closed": true,
+              "thinking_tokens": 1030,
+              "thinking_ids_sha256": "7c0440a769c0324d94576dd149d8e1a827f301dc2eb9171d33f54e856287c23f",
+              "generated_ids_sha256": "19ba32b7f0f534b63bd8fa0433aa50801b730be9a452ff98201c268c6fe04ebe",
+              "chat_encoding": {
+                "native_equivalent": true,
+                "enable_thinking": true,
+                "input_tokens": 1318,
+                "input_ids_sha256": "0c6f6d38e430bed4dd5caa3c74916ad9bb0faf82b0a062c818c4c6f2cf8966e7"
+              },
+              "input_tokens": 1318,
+              "output_tokens": 1249,
+              "max_new_tokens": 4096,
+              "reached_token_limit": false,
+              "request_seed": 1185477099,
+              "thinking_text_retained": false,
+              "final_tokens": 219
+            },
+            "parse_error": null,
+            "generation_error": null
+          }
+        ],
+        "normalization": {},
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 100.91171110200003,
+        "historical_internal_inconsistencies": [],
+        "evaluation_version": "literal-support-evaluator-1.1"
+      },
+      "provenance": {
+        "origin": "saved_literal_05",
+        "archive_sha256": "8bb33fbc240119aaabad4e250a2a394724efd528d1ad803d1bf58fdac0985f65",
+        "commit": "6ec8dcdf22433c632b5eb0e5539401c33b9c923d",
+        "regenerated": false
+      }
+    },
+    {
+      "condition": "main_mitigated",
+      "id": "citation_bad",
+      "pilot": true,
+      "judgement": {
+        "version": "literal-support-judge-1",
+        "score": 2,
+        "reason": "La respuesta es correcta pero la explicación atribuye la cita al fragmento equivocado. La nota contradice la entidad mencionada en la ficha principal, pero la respuesta no cita el chunk correcto (SYNTH::ficha) que contiene el valor. La explicación insuficiente y la atribución falsa de evidencia reducen la puntuación.",
+        "checks": {
+          "respuesta": "contradicha",
+          "explicacion": "insuficiente",
+          "citas": "no_respaldan",
+          "abstencion": "no_aplica",
+          "acusacion": "ausente_o_negada"
+        },
+        "supports": [
+          {
+            "componente": "respuesta",
+            "campo": "Entidad",
+            "chunk_id": "SYNTH::ficha",
+            "cita_literal": "Entidad: Agencia Sintética Verde"
+          },
+          {
+            "componente": "explicacion",
+            "campo": "Nota",
+            "chunk_id": "OTHER::nota",
+            "cita_literal": "Nota: ficha de otra entidad, sin nombre"
+          }
+        ],
+        "internal_inconsistencies": [],
+        "attempts": [
+          {
+            "raw_final": "{\n  \"verificaciones\": {\n    \"respuesta\": \"contradicha\",\n    \"explicacion\": \"insuficiente\",\n    \"citas\": \"no_respaldan\",\n    \"abstencion\": \"no_aplica\",\n    \"acusacion\": \"ausente_o_negada\"\n  },\n  \"soportes\": [\n    {\"componente\": \"respuesta\", \"campo\": \"Entidad\", \"chunk_id\": \"SYNTH::ficha\", \"cita_literal\": \"Entidad: Agencia Sintética Verde\"},\n    {\"componente\": \"explicacion\", \"campo\": \"Nota\", \"chunk_id\": \"OTHER::nota\", \"cita_literal\": \"Nota: ficha de otra entidad, sin nombre\"}\n  ],\n  \"puntaje\": 2,\n  \"razon\": \"La respuesta es correcta pero la explicación atribuye la cita al fragmento equivocado. La nota contradice la entidad mencionada en la ficha principal, pero la respuesta no cita el chunk correcto (SYNTH::ficha) que contiene el valor. La explicación insuficiente y la atribución falsa de evidencia reducen la puntuación.\"\n}",
+            "generation": {
+              "thinking_closed": true,
+              "thinking_tokens": 690,
+              "thinking_ids_sha256": "472c9a8ea194e4b9532fd718267cd3845fef03ff3efb2dea6d47160f78dffa11",
+              "generated_ids_sha256": "6d09eb9c181bdc1ae8fcf2fb51680fe48b3bfbc7c02f6545efcafa7e9bb5aceb",
+              "chat_encoding": {
+                "native_equivalent": true,
+                "enable_thinking": true,
+                "input_tokens": 1369,
+                "input_ids_sha256": "88de49389bc83ba590691a19e49a441d4d88d160b53c06295a924f11b6f4f39d"
+              },
+              "input_tokens": 1369,
+              "output_tokens": 943,
+              "max_new_tokens": 4096,
+              "reached_token_limit": false,
+              "request_seed": 2146409132,
+              "thinking_text_retained": false,
+              "final_tokens": 253
+            },
+            "parse_error": null,
+            "generation_error": null
+          }
+        ],
+        "normalization": {},
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 75.51180264300001,
+        "historical_internal_inconsistencies": [
+          "respuesta:unknown_or_uncited_chunk"
+        ],
+        "evaluation_version": "literal-support-evaluator-1.1"
+      },
+      "provenance": {
+        "origin": "saved_literal_05",
+        "archive_sha256": "8bb33fbc240119aaabad4e250a2a394724efd528d1ad803d1bf58fdac0985f65",
+        "commit": "6ec8dcdf22433c632b5eb0e5539401c33b9c923d",
+        "regenerated": false
+      }
+    }
+  ]
+}

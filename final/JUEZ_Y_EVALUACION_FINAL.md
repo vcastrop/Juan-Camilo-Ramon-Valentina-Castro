@@ -1,6 +1,6 @@
 # Evaluación común y calibración del juez — preparación v1
 
-Estado vigente al 18/11: [corrida 04](evidence/reasoning_04/ANALISIS.md) ejecutada y rechazada, pese a 19/20 en rango. Siguiente paso: [protocolo 05 con respaldo literal y control de repetición](JUEZ_RESPALDO_LITERAL.md), preparado y no ejecutado con pesos. 250 tests CPU pasan. Las descripciones siguientes conservan el historial de etapas; no constituyen aprobación del juez ni del harness común.
+Estado vigente al 18/11: [piloto 05](evidence/literal_05/ANALISIS.md) ejecutado parcialmente; siete notas en rango, detenido por restricción excesiva del evaluador. Corrección 1.1 y recálculo CPU terminados sin cambiar notas. [Continuación 06](JUEZ_CONTINUACION_06.md) preparada, todavía sin las dos anclas pendientes ni regresión completa. 258 tests CPU pasan. Las descripciones siguientes conservan el historial de etapas; no constituyen aprobación del juez ni del harness común.
 
 Estado al 17/11/2026: veinte anclas aprobadas; **Qwen 7B ejecutado y rechazado** (15/20 en rango, cinco malos con nota alta y sesgo fuera de umbral). [Auditoría de corrida original](evidence/judge_calibration_01/ANALISIS.md). No hay juez validado ni comparación de eficiencia. [Segundo candidato Mistral y confirmación separada](JUEZ_02.md) preparados, no ejecutados. No se modifican main ni Space ni las notas históricas.
 

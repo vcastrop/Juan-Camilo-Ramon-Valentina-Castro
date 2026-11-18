@@ -4,7 +4,7 @@ Plan preparado el 15/11/2026 tras leer las seis páginas de la guía `STAI_Final
 
 Este archivo es un plan operativo, no promesa de nota. Ya está incorporado en `final/CHECKLIST.md` en la rama `Entrega/contractrisk-final`; las fechas y responsables de ejecuciones se completarán con evidencia real. No se modifica main ni se reescriben entregas anteriores.
 
-Actualización 18/11/2026: avance estimado **40–45 % de la entrega final**; [desglose ponderado y pendientes](PROGRESO_FINAL.md). No es nota ni conteo bruto de casillas. [Corrida 04](evidence/reasoning_04/ANALISIS.md) mejora a 19/20 en rango, pero falla por atribución falsa aprobada y verbosidad. [Protocolo 05 con respaldo literal](JUEZ_RESPALDO_LITERAL.md) preparado, sin inferencia todavía. 250 tests CPU pasan (122 final + 128 M3). Juez validado, comparación común/eficiencia, servicio contractual público y reporte/presentación finales pendientes; añadir tests no completa esos hitos.
+Actualización 18/11/2026: avance estimado **40–45 % de la entrega final**; [desglose ponderado y pendientes](PROGRESO_FINAL.md). No es nota ni conteo bruto de casillas. [Piloto 05](evidence/literal_05/ANALISIS.md) se detuvo tras siete notas en rango por una restricción excesiva del evaluador; originales intactos. Recálculo CPU 1.1 sin cambiar notas: siete comprobados, dos pendientes. [Continuación 06](JUEZ_CONTINUACION_06.md) preparada, no ejecutada. 258 tests CPU pasan (130 final + 128 M3). Juez validado, comparación común/eficiencia, servicio contractual público y reporte/presentación finales pendientes; añadir tests no completa esos hitos.
 
 ## Fechas y reglas de la guía
 
@@ -104,7 +104,10 @@ Preparación posterior a visual 03: [protocolo de juez y conjunto común](JUEZ_Y
 - [x] Preparar [juez por criterios y razonamiento](JUEZ_RAZONAMIENTO.md), piloto de siete con parada al primer fallo, conservación de notas y regresión completa condicionada; tokenizer real comprobado en CPU, sin pesos.
 - [x] Ejecutar piloto Qwen3-8B y 38 juicios en T4: [corrida 04 auditada](evidence/reasoning_04/ANALISIS.md), piloto aprobado, regresión rechazada; 19/20 no basta por falsa atribución aprobada, verbosidad y defectos de razones.
 - [x] Preparar [versión 05 con respaldo literal](JUEZ_RESPALDO_LITERAL.md), sin cambiar notas ni umbrales. Normalización solo de bloques enteros idénticos; 38 entradas nativas y seis pares normalizados idénticos comprobados sin pesos.
-- [ ] Ejecutar piloto 05 de nueve anclas; completar regresión solo si pasa, auditar soportes/razones. Todavía no ejecutado.
+- [x] Auditar ejecución 05: siete anclas ejecutadas en rango; detención por fuente diagnóstica disponible no citada por la respuesta. [Original y diagnóstico](evidence/literal_05/ANALISIS.md); no se ejecutaron las otras dos ni la regresión.
+- [x] Versionar evaluador 1.1 y recalcular las siete salidas en CPU sin generar ni cambiar notas. No confundir fragmento diagnóstico con cita de la respuesta; seguir rechazando fuentes desconocidas y citas inventadas. [Recálculo](evidence/literal_05/replay_1_1.json).
+- [x] Preparar [continuación 06](JUEZ_CONTINUACION_06.md), mismo modelo/prompt/decodificación y entorno comprobado, siete salidas reutilizadas sin selección.
+- [ ] Ejecutar dos anclas pendientes y, solo si pasan, los otros 29 juicios. Revisar atribución, verbosidad, citas y razones antes de decidir aceptación.
 - [ ] Si supera regresión: recibir revisión humana de doce ejemplos nuevos, ejecutar confirmación y auditar razones antes de aceptar juez final. No se ha aprobado ni ejecutado ese conjunto.
 
 - [x] Diseñar veinte anclas sintéticas separadas de los 22 casos comunes; revisión humana recibida y conocimiento previo del gold M3/visual declarado. Inferencia y auditoría del juez pendientes.
