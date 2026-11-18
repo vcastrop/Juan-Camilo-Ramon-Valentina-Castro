@@ -8,11 +8,12 @@ Actualización 18/11/2026: avance estimado **40–45 % de la entrega final**; [d
 
 ## Fechas y reglas de la guía
 
-Verificación local actual: **193 pruebas final + 128 M3 = 321 aprobadas**. [Hydrogen 09 auditado](evidence/hydrogen_09/ANALISIS.md): una nota válida 2; siguiente juicio sin respuesta por 503. Registro acumulado estimado/reservado USD 1,2418725, no cargos confirmados. [Continuación 10](JUEZ_HYDROGEN_10_CONTINUACION.md) preparada con checkpoint y dos reintentos 503 globales; simulaciones no prueban disponibilidad ni calidad real. Techo total USD 5 intacto, sublímite acumulado de estimación USD 3,50, solo modo gratuito confirmado. No repetir 07–09 ni borrar registros Drive.
+Verificación local actual: **193 pruebas final + 128 M3 = 321 aprobadas**. [Hydrogen 10 auditado](evidence/hydrogen_10/ANALISIS.md): nota 2 reutilizada sin cambios, 503 y un reintento con fallo de transporte/JSON, cero notas nuevas. Total acumulado estimado/reservado USD 2,4706725, no cargos confirmados; techo total USD 5 intacto. No repetir 07–10 ni borrar registros Drive. [Revisión humana separada pendiente](REVISION_CONFIRMACION_PASOS.md), sin costo ni API.
 
 - [x] Conservar ZIP/notebook originales de Hydrogen 09 y auditar la nota válida y el 503.
 - [x] Preparar continuación sin regenerar notas válidas, con reintentos acotados, reservas acumuladas y pruebas de regresión técnicas.
-- [ ] Ejecutar continuación 10, auditar razones y completar confirmación separada antes de validar el juez.
+- [x] Ejecutar y auditar continuación 10; conservar nota previa y fallos técnicos sin inventar resultados.
+- [ ] Resolver disponibilidad con diagnóstico controlado; completar calibración, auditar razones y confirmar 12 casos revisados antes de validar el juez. La corrida 10 no superó el piloto porque quedó incompleta, no por una nota incorrecta.
 - [ ] Congelar/ejecutar comparación común, ablación y eficiencia; integrar despliegue contractual real y cerrar reporte/presentación/reproducción/entrega. El detalle de cada fase se conserva abajo.
 
 - Repositorio y reporte: jueves 19/11/2026 a las 23:59. Confirmar la zona horaria publicada en Interactiva; planificación del equipo en Bogotá.

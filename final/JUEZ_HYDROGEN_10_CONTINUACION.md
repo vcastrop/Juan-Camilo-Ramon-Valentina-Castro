@@ -1,6 +1,6 @@
 # Continuación 10: conservar respuestas y acotar indisponibilidad
 
-Estado 18/11/2026: preparado y probado con transporte simulado; ejecución real pendiente. [Notebook CPU](ContractRisk_Final_Juez_10_Hydrogen_Continuacion_Colab.ipynb).
+Estado 18/11/2026: ejecutado, [resultado auditado](evidence/hydrogen_10/ANALISIS.md). Nota anterior intacta, 503 seguido de error de transporte/JSON en el reintento, cero notas nuevas. No repetir. Las instrucciones siguientes documentan la corrida histórica, no autorizan reiniciarla. [Notebook CPU histórico](ContractRisk_Final_Juez_10_Hydrogen_Continuacion_Colab.ipynb).
 
 La [corrida 09](evidence/hydrogen_09/ANALISIS.md) produjo una nota válida 2 y luego HTTP 503. Se reutiliza esa nota sin regenerarla; la continuación empieza en `attribution_good`. Mismo modelo, instrucciones, semillas, rúbrica, referencias y criterios de aceptación. Se verifican los hashes del ZIP, los archivos originales del candidato, el catálogo del modelo y el registro persistente.
 
