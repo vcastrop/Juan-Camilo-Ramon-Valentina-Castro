@@ -2,7 +2,7 @@
 
 Estado: integración de desarrollo probada en T4; despliegue público todavía de infraestructura, no sistema final completo. [Checklist](CHECKLIST.md).
 
-Última actualización: [continuación 06 auditada](evidence/continuation_06/ANALISIS.md), juez rechazado por aprobar una atribución falsa pese a reconocerla. No repetir el notebook para elegir notas. [Harness común candidato](HARNESS_COMUN.md) implementado y probado sin modelos; dominio todavía desconocido, no cumplimiento validado. [Alternativa API y presupuesto máximo USD 5](JUEZ_API_Y_PRESUPUESTO.md) preparados, sin llamadas ni cobros iniciados; se prioriza nivel gratuito. No hay juez validado ni scorecard final.
+Última actualización: [continuación 06 auditada](evidence/continuation_06/ANALISIS.md), juez rechazado por aprobar una atribución falsa pese a reconocerla. No repetir el notebook para elegir notas. [Harness común candidato](HARNESS_COMUN.md) implementado y probado sin modelos; dominio todavía desconocido. **Siguiente ejecución: [notebook API 07](ContractRisk_Final_Juez_07_API_Colab.ipynb)** en runtime CPU, con [protocolo y controles](JUEZ_API_07.md): solo proyecto gratuito confirmado, sin modo pagado ni inferencia ejecutada todavía. No hay juez validado ni scorecard final.
 
 Avance estimado al 18/11: **40–45 % de la entrega final**. [Desglose y ruta pendiente](PROGRESO_FINAL.md). El porcentaje reconoce preparación parcial; no sustituye resultados finales.
 

@@ -1,0 +1,5 @@
+# REST transport uses Python standard library. No GPU/model/SDK installation.
+numpy==2.1.3
+pillow==11.3.0
+matplotlib==3.10.6
+wandb==0.31.0
