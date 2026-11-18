@@ -1,5 +1,7 @@
 # Revisión humana pendiente: 12 casos separados
 
+Actualización 18/11: [revisión recibida y cerrada](evidence/confirmation_review_01/CIERRE.md). No hace falta repetirla. Las instrucciones siguientes se conservan como procedimiento; inferencia y validación del juez siguen pendientes.
+
 Esta revisión sí puede adelantarse mientras la API está indisponible. No requiere Colab, claves, GPU ni pagos. Los casos ya estaban fijados antes de los resultados del segundo candidato; no se cambian para lograr notas favorables. Revisarlos no valida por sí mismo al juez.
 
 1. Descargar los archivos de `final/eval/confirmation_v1/` juntos o usar el ZIP de revisión proporcionado por este chat. Extraer el ZIP; no abrir el HTML dentro del archivo comprimido.

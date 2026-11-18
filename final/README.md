@@ -2,7 +2,9 @@
 
 Estado: integración de desarrollo probada en T4; despliegue público todavía de infraestructura, no sistema final completo. [Checklist](CHECKLIST.md).
 
-Última actualización: [Hydrogen 10 ejecutado y auditado](evidence/hydrogen_10/ANALISIS.md): la nota histórica 2 quedó intacta; hubo 503, espera de 30,353 s y reintento terminado por error de transporte/JSON, sin notas nuevas. **No repetir notebooks 07–10 ni borrar registros Drive.** Acumulado estimado/reservado USD 2,4706725, no factura; techo total USD 5 intacto, solo proyecto gratuito confirmado. Siguiente tarea humana: [revisar los 12 casos separados](REVISION_CONFIRMACION_PASOS.md), sin API ni costo. Falta resolver disponibilidad antes de otra reanudación controlada. [Harness común candidato](HARNESS_COMUN.md) preparado sin comparación de modelos. No hay juez validado ni scorecard final.
+Siguiente ejecución al 18/11: [Comparación 01 en T4](ContractRisk_Final_Comparacion_01_Colab.ipynb), con [instrucciones y límites](COMPARACION_01.md): cinco perfiles, 22 entradas por perfil, respuestas y mediciones reales sin Gemini. Preparado, todavía sin ejecutar. La [revisión de 12 ejemplos](evidence/confirmation_review_01/CIERRE.md) está cerrada; no prueba calidad del juez. Dominio y eficiencia seguirán pendientes de evaluación semántica. Main/Space y presupuesto API no se modifican.
+
+Estado de API: [Hydrogen 10 ejecutado y auditado](evidence/hydrogen_10/ANALISIS.md): nota histórica 2 intacta, 503 y reintento terminado por transporte/JSON, sin notas nuevas. **No repetir 07–10 ni borrar registros Drive.** USD 2,4706725 estimados/reservados, no factura; techo USD 5 y proyecto gratuito intactos. Falta resolver disponibilidad antes de otra reanudación controlada. El juez sigue sin validar; esto no impide recoger respuestas y mediciones mediante Comparación 01.
 
 Avance estimado al 18/11: **40–45 % de la entrega final**. [Desglose y ruta pendiente](PROGRESO_FINAL.md). El porcentaje reconoce preparación parcial; no sustituye resultados finales.
 

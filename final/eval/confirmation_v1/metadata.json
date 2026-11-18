@@ -1,5 +1,5 @@
 {
-  "status": "human_review_pending",
+  "status": "human_review_approved_model_inference_pending",
   "purpose": "separate_confirmation_before_second_candidate_results",
   "cases": 12,
   "anchors_canonical_sha256": "2b432b3af47fd16de7af30bed14006eb9ad8f887005aef76659e5689098eaba3",

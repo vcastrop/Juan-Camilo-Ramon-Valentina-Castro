@@ -8,7 +8,14 @@ Actualización 18/11/2026: avance estimado **40–45 % de la entrega final**; [d
 
 ## Fechas y reglas de la guía
 
-Verificación local actual: **193 pruebas final + 128 M3 = 321 aprobadas**. [Hydrogen 10 auditado](evidence/hydrogen_10/ANALISIS.md): nota 2 reutilizada sin cambios, 503 y un reintento con fallo de transporte/JSON, cero notas nuevas. Total acumulado estimado/reservado USD 2,4706725, no cargos confirmados; techo total USD 5 intacto. No repetir 07–10 ni borrar registros Drive. [Revisión humana separada pendiente](REVISION_CONFIRMACION_PASOS.md), sin costo ni API.
+Actualización de preparación: [revisión de doce ejemplos cerrada](evidence/confirmation_review_01/CIERRE.md), sin inferencia de confirmación. [Comparación 01](COMPARACION_01.md) preparada con cinco perfiles, mediciones sincronizadas, ablación y reglas predeclaradas de dominio/controles. **No ejecutada todavía ni aceptada eficiencia.** Verificación actual: 206 pruebas final + 128 M3 = 334 aprobadas. Nuevas pruebas CPU no son resultados GPU.
+
+- [x] Recibir revisión de doce ejemplos: once aprobados en archivo y cierre posterior explícito del caso de explicación ausente; conservar ambos registros.
+- [x] Preparar ejecutor sin API para 22 casos por perfil, campos de memoria/latencia, errores retenidos y resultados separados por modalidad.
+- [x] Predeclarar reglas de dominio y daño antes de la comparación; ejecución semántica y enlace de juez siguen pendientes.
+- [ ] Ejecutar y auditar Comparación 01 en sesión nueva T4; no convertir diagnósticos literales en cumplimiento.
+
+Verificación registrada en Hydrogen 10: **193 pruebas final + 128 M3 = 321 aprobadas**. [Corrida auditada](evidence/hydrogen_10/ANALISIS.md): nota 2 reutilizada, 503 y reintento con fallo de transporte/JSON, cero notas nuevas. USD 2,4706725 estimados/reservados, no cargos confirmados; techo USD 5 intacto. No repetir 07–10 ni borrar registros Drive. La revisión humana separada se cerró después; no se ha ejecutado la confirmación.
 
 - [x] Conservar ZIP/notebook originales de Hydrogen 09 y auditar la nota válida y el 503.
 - [x] Preparar continuación sin regenerar notas válidas, con reintentos acotados, reservas acumuladas y pruebas de regresión técnicas.
@@ -124,7 +131,8 @@ Preparación posterior a visual 03: [protocolo de juez y conjunto común](JUEZ_Y
 - [x] Leer catálogo aportado por usuario y documentación oficial; fijar Hydrogen como candidato NUEVO tras dos errores de disponibilidad, sin seleccionar entre notas. Preparar [notebook 09](ContractRisk_Final_Juez_09_Hydrogen_Colab.ipynb), mismo gold sintético/rúbrica/umbrales, historia y Drive verificados.
 - [ ] Ejecutar calibración Hydrogen 09, auditar notas/razones/verbosidad y consumo; solo si supera regresión revisar/ejecutar confirmación nueva. No se ha probado inferencia de Hydrogen todavía.
 - [ ] Configurar acceso a candidato de API, probar primero nivel gratuito con anclas sintéticas y auditar calibración. No activar facturación sin verificar controles y techo total.
-- [ ] Si supera regresión: recibir revisión humana de doce ejemplos nuevos, ejecutar confirmación y auditar razones antes de aceptar juez final. No se ha aprobado ni ejecutado ese conjunto.
+- [x] Recibir y cerrar revisión humana de doce ejemplos separados; [original y cierre](evidence/confirmation_review_01/CIERRE.md), hashes en el paquete de confirmación.
+- [ ] Si supera regresión: ejecutar confirmación y auditar razones antes de aceptar juez final. Los doce ejemplos están aprobados, pero no ejecutados.
 
 - [x] Diseñar veinte anclas sintéticas separadas de los 22 casos comunes; revisión humana recibida y conocimiento previo del gold M3/visual declarado. Inferencia y auditoría del juez pendientes.
 - [x] Ensamblar ampliación candidata de 22 entradas con casos textuales/visuales, adversariales, ausentes y pares; selección visual documentada antes de inferir, referencias conservadas incluso ante vis_04. Protocolo/harness completos por congelar.
