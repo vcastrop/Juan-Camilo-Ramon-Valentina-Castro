@@ -1,0 +1,23 @@
+{
+  "version": "api-budget-policy-1",
+  "authorization_date_bogota": "2026-11-18",
+  "currency": "USD",
+  "user_authorized_total_max": "5.00",
+  "initial_calibration_reserve_max": "1.00",
+  "prefer_free_colab": true,
+  "automatic_topups_allowed": false,
+  "paid_calls_performed_by_this_workflow": 0,
+  "provider_and_account": "pending_user_setup_and_current_rate_verification",
+  "api_key_handling": "Colab secret only; never chat, source, notebook output, Git or W&B",
+  "controls_required_before_any_paid_call": [
+    "Dedicated project and API key, not shared with other usage",
+    "Provider-side spending limit/prepaid balance within authorization; stop if required minimum deposit exceeds USD 5",
+    "Persistent shared local cost ledger across calibration and evaluation, reserving full worst-case request cost before dispatch",
+    "Include input, final output and billed reasoning tokens in rate estimate; verify current prices and model identity",
+    "Serial requests, bounded output, no SDK automatic retries, no search/tools/caching/storage charges",
+    "Ambiguous network failure remains reserved; never assume zero cost or retry blindly",
+    "First run only synthetic approved calibration anchors, no final gold sent to judge",
+    "No final evaluation until judge calibration and independent confirmation are audited"
+  ],
+  "limit_caveat": "Authorization is not a guarantee from a provider. Billing delays, taxes, changed prices and other account usage must be considered; do not enable paid usage until safe controls are verified. No charges have been initiated."
+}

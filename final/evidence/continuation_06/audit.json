@@ -1,0 +1,15 @@
+{
+  "zip_sha256": "03bb1899b0872790acfb4d0a03fbef704ea67bbe7897d90cfc3e4cbdcc53638c",
+  "notebook_sha256": "f78866b1ed6dbaec4c7af89714c4ddcddeef4ff6900d2c8a7330bbe0882f2e20",
+  "source_hashes_verified": 16,
+  "notebook_sources_identical": true,
+  "notebook_errors": 0,
+  "saved_seven_identical": true,
+  "pilot_summary_recalculated_identically": true,
+  "matching_environment": true,
+  "new_judgements": 1,
+  "judge_validated": false,
+  "score_adjusted": false,
+  "original_status": "completed_pilot_failed",
+  "dashboard_verified": false
+}

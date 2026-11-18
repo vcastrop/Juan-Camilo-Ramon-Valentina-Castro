@@ -4,9 +4,11 @@ Plan preparado el 15/11/2026 tras leer las seis páginas de la guía `STAI_Final
 
 Este archivo es un plan operativo, no promesa de nota. Ya está incorporado en `final/CHECKLIST.md` en la rama `Entrega/contractrisk-final`; las fechas y responsables de ejecuciones se completarán con evidencia real. No se modifica main ni se reescriben entregas anteriores.
 
-Actualización 18/11/2026: avance estimado **40–45 % de la entrega final**; [desglose ponderado y pendientes](PROGRESO_FINAL.md). No es nota ni conteo bruto de casillas. [Piloto 05](evidence/literal_05/ANALISIS.md) se detuvo tras siete notas en rango por una restricción excesiva del evaluador; originales intactos. Recálculo CPU 1.1 sin cambiar notas: siete comprobados, dos pendientes. [Continuación 06](JUEZ_CONTINUACION_06.md) preparada, no ejecutada. 258 tests CPU pasan (130 final + 128 M3). Juez validado, comparación común/eficiencia, servicio contractual público y reporte/presentación finales pendientes; añadir tests no completa esos hitos.
+Actualización 18/11/2026: avance estimado **40–45 % de la entrega final**; [desglose ponderado y pendientes](PROGRESO_FINAL.md). No es nota ni conteo bruto de casillas. [Continuación 06 auditada](evidence/continuation_06/ANALISIS.md): siete notas reutilizadas, una nueva con atribución falsa aprobada, juez rechazado. [Harness común candidato](HARNESS_COMUN.md) implementado y probado en CPU, no ejecutado con modelos ni congelado. [API y presupuesto](JUEZ_API_Y_PRESUPUESTO.md): USD 5 totales autorizados, sin cobros iniciados; se prioriza gratuito. Juez validado, comparación común/eficiencia, servicio contractual público y reporte/presentación finales pendientes; añadir tests no completa esos hitos.
 
 ## Fechas y reglas de la guía
+
+Verificación local actual: **151 pruebas final + 128 M3 = 279 aprobadas**. Incluyen harness candidato y guard de presupuesto; no equivalen a evaluación de modelos ni aceptación del juez.
 
 - Repositorio y reporte: jueves 19/11/2026 a las 23:59. Confirmar la zona horaria publicada en Interactiva; planificación del equipo en Bogotá.
 - Sustentación individual: a más tardar lunes 23/11/2026. El equipo debe acordar fecha, hora y modalidad con anticipación.
@@ -107,11 +109,15 @@ Preparación posterior a visual 03: [protocolo de juez y conjunto común](JUEZ_Y
 - [x] Auditar ejecución 05: siete anclas ejecutadas en rango; detención por fuente diagnóstica disponible no citada por la respuesta. [Original y diagnóstico](evidence/literal_05/ANALISIS.md); no se ejecutaron las otras dos ni la regresión.
 - [x] Versionar evaluador 1.1 y recalcular las siete salidas en CPU sin generar ni cambiar notas. No confundir fragmento diagnóstico con cita de la respuesta; seguir rechazando fuentes desconocidas y citas inventadas. [Recálculo](evidence/literal_05/replay_1_1.json).
 - [x] Preparar [continuación 06](JUEZ_CONTINUACION_06.md), mismo modelo/prompt/decodificación y entorno comprobado, siete salidas reutilizadas sin selección.
-- [ ] Ejecutar dos anclas pendientes y, solo si pasan, los otros 29 juicios. Revisar atribución, verbosidad, citas y razones antes de decidir aceptación.
+- [x] Auditar continuación 06: un juicio nuevo, attribution_bad=4 pese a explicación falsa reconocida; detención correcta. El último piloto y los 29 juicios no se ejecutaron; no se acepta el juez ni se repite buscando mejores notas.
+- [x] Registrar autorización de API hasta USD 5 totales, sin recargas; preparar registro local persistente de reservas y pruebas. No hay cliente de pago conectado ni llamadas realizadas.
+- [ ] Configurar acceso a candidato de API, probar primero nivel gratuito con anclas sintéticas y auditar calibración. No activar facturación sin verificar controles y techo total.
 - [ ] Si supera regresión: recibir revisión humana de doce ejemplos nuevos, ejecutar confirmación y auditar razones antes de aceptar juez final. No se ha aprobado ni ejecutado ese conjunto.
 
 - [x] Diseñar veinte anclas sintéticas separadas de los 22 casos comunes; revisión humana recibida y conocimiento previo del gold M3/visual declarado. Inferencia y auditoría del juez pendientes.
 - [x] Ensamblar ampliación candidata de 22 entradas con casos textuales/visuales, adversariales, ausentes y pares; selección visual documentada antes de inferir, referencias conservadas incluso ante vis_04. Protocolo/harness completos por congelar.
+- [x] Implementar base candidata de harness común: hashes de imágenes/paquete, frontera sin gold, errores en denominador, cobertura literal conservadora, notas brutas y dominio desconocido sin validación. Pruebas CPU no son corrida de modelos ni scorecard final.
+- [ ] Completar y congelar protocolo de dominio/controles y runner comparativo GPU; ejecutar los 22 casos en cada sistema, sin reemplazar null por cumplimiento automático.
 - [x] Revisión humana de imágenes, respuestas esperadas/criterios, procedencia y privacidad del subconjunto visual v1: diez casos aprobados por el usuario el 16/11. Representaciones sintéticas marcadas; no incluye aprobación de respuestas del modelo ni del conjunto final completo.
 - [x] Definir/ejecutar invarianza visual v1: contraste 0.85 y rotación de 1 grado, dos pares revisados por usuario y medidos en visual 03. Ambos conservan campos/respuestas, incluso las tildes añadidas erróneamente en uno; invarianza no equivale a corrección. Repetición en versión eficiente pendiente.
 - [ ] Definir cómo reciben la misma entrada las líneas base sin visión; documentar limitación, no ocultar casos ni cambiar denominadores por fila.

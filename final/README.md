@@ -2,7 +2,7 @@
 
 Estado: integración de desarrollo probada en T4; despliegue público todavía de infraestructura, no sistema final completo. [Checklist](CHECKLIST.md).
 
-Última actualización del juez: [piloto 05 auditado](evidence/literal_05/ANALISIS.md), siete notas en rango y detención por restricción excesiva del evaluador. Recálculo CPU 1.1 terminado sin cambiar notas ni regenerarlas. Siguiente ejecución: [notebook 06, continuación](ContractRisk_Final_Juez_06_Continuacion_Colab.ipynb). [Protocolo y límites](JUEZ_CONTINUACION_06.md): reutiliza las siete, prueba las dos pendientes y solo si pasan completa regresión. No hay juez validado. Pasan 258 pruebas CPU (130 final + 128 M3).
+Última actualización: [continuación 06 auditada](evidence/continuation_06/ANALISIS.md), juez rechazado por aprobar una atribución falsa pese a reconocerla. No repetir el notebook para elegir notas. [Harness común candidato](HARNESS_COMUN.md) implementado y probado sin modelos; dominio todavía desconocido, no cumplimiento validado. [Alternativa API y presupuesto máximo USD 5](JUEZ_API_Y_PRESUPUESTO.md) preparados, sin llamadas ni cobros iniciados; se prioriza nivel gratuito. No hay juez validado ni scorecard final.
 
 Avance estimado al 18/11: **40–45 % de la entrega final**. [Desglose y ruta pendiente](PROGRESO_FINAL.md). El porcentaje reconoce preparación parcial; no sustituye resultados finales.
 

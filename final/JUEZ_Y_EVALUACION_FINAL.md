@@ -1,6 +1,6 @@
 # Evaluación común y calibración del juez — preparación v1
 
-Estado vigente al 18/11: [piloto 05](evidence/literal_05/ANALISIS.md) ejecutado parcialmente; siete notas en rango, detenido por restricción excesiva del evaluador. Corrección 1.1 y recálculo CPU terminados sin cambiar notas. [Continuación 06](JUEZ_CONTINUACION_06.md) preparada, todavía sin las dos anclas pendientes ni regresión completa. 258 tests CPU pasan. Las descripciones siguientes conservan el historial de etapas; no constituyen aprobación del juez ni del harness común.
+Estado vigente al 18/11: [continuación 06](evidence/continuation_06/ANALISIS.md) ejecutada y rechazada por atribución falsa con nota 4; no se repite. [Harness común candidato](HARNESS_COMUN.md) implementado sin modelos y [alternativa API](JUEZ_API_Y_PRESUPUESTO.md) pendiente de acceso, presupuesto USD 5 autorizado, sin cobros. Las descripciones siguientes conservan el historial de etapas; no constituyen aprobación del juez ni del harness común.
 
 Estado al 17/11/2026: veinte anclas aprobadas; **Qwen 7B ejecutado y rechazado** (15/20 en rango, cinco malos con nota alta y sesgo fuera de umbral). [Auditoría de corrida original](evidence/judge_calibration_01/ANALISIS.md). No hay juez validado ni comparación de eficiencia. [Segundo candidato Mistral y confirmación separada](JUEZ_02.md) preparados, no ejecutados. No se modifican main ni Space ni las notas históricas.
 
@@ -59,4 +59,4 @@ Se informa antes/después aunque no mejore; no afirmar que desaparece el sesgo. 
 
 ## Próximo paso del equipo
 
-No repetir los notebooks históricos buscando mejores notas. Ejecutar el [piloto por criterios y razonamiento](ContractRisk_Final_Juez_04_Razonamiento_Colab.ipynb): se detiene al primer fallo; solo si pasan los siete casos continúa hasta 38 juicios, sin repetir ni seleccionar las notas del piloto. Mantiene umbrales numéricos y añade coherencia interna, sin reajustar notas. Si supera regresión, revisar/ejecutar confirmación separada y auditar razones. Solo después se cierra el harness común y se compara con los [umbrales aprobados](EFICIENCIA.md). Estado local actual: 112 pruebas final y 128 M3 aprobadas; las cifras menores de las secciones anteriores describen etapas históricas.
+No repetir los notebooks históricos buscando mejores notas. Configurar un candidato de API con [calibración y control de presupuesto](JUEZ_API_Y_PRESUPUESTO.md), probar primero nivel gratuito y auditar razones/confirmación antes de aceptación. En paralelo cerrar el [harness común candidato](HARNESS_COMUN.md). No aplicar los [umbrales aprobados de eficiencia](EFICIENCIA.md) a notas de un juez que falló ni a proxies literales. Las cifras de pruebas en secciones anteriores describen etapas históricas.
