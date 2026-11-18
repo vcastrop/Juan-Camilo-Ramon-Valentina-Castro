@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "2ad8056f6b266783233dd5d1f144544a454e3571a304404ddb4a8e6afaf69e0e",
+  "notebook_sha256": "5e231535c1995dfa4b25ba3c58ac8179f8aae8dad8f07dec19c3a63716a88d5d",
+  "source_hashes_verified": 12,
+  "notebook_sources_identical": true,
+  "notebook_errors": 0,
+  "pilot_summary_recalculated": true,
+  "budget_snapshot_verified": true,
+  "valid_judgements": 0,
+  "new_generation_http_calls": 1,
+  "historical_generation_http_calls": 1,
+  "reserved_usd": "0.6144",
+  "invoice_verified": false
+}

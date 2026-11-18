@@ -1,0 +1,13 @@
+{
+  "version": "hydrogen-budget-policy-1",
+  "date_bogota": "2026-11-18",
+  "scope": "New Hydrogen synthetic calibration candidate only; supersedes initial USD 1 calibration estimate sub-limit for this phase, not the user's total ceiling",
+  "user_authorized_total_usd": "5.00",
+  "accumulated_calibration_estimate_limit_usd": "2.00",
+  "prior_reservations_retained_usd": "0.6144",
+  "billing_mode": "free_project_attested_only",
+  "automatic_topups_allowed": false,
+  "automatic_transport_retries": 0,
+  "invoice_verified": false,
+  "note": "Reference-tariff estimates and reservations, not charges. Same persistent ledger, no reset/refund of unknown historical calls. New sub-limit fixed before receiving Hydrogen scores. Paid mode remains disabled."
+}

@@ -1,6 +1,6 @@
 # Evaluación común y calibración del juez — preparación v1
 
-Estado vigente al 18/11: [API 07](evidence/api_07/ANALISIS.md) recibió 503 en una generación, sin notas; no demuestra mal juicio. [Recuperación única 08](JUEZ_API_08_REINTENTO.md) preparada, sin ejecutarse, con modelo/prompt/umbrales intactos y reserva acumulada. [Harness común candidato](HARNESS_COMUN.md) sigue sin comparación de modelos. Presupuesto USD 5 autorizado, pero el runner solo admite proyecto gratuito confirmado. Las descripciones siguientes conservan el historial de etapas; no constituyen aprobación del juez ni del harness común.
+Estado vigente al 18/11: [API 08](evidence/api_08/ANALISIS.md) recibió un segundo 503 sin notas; no demuestra mal juicio. [Hydrogen 09](JUEZ_HYDROGEN_09.md) preparado como candidato nuevo tras revisar catálogo y documentación, todavía sin inferencia. Historia y reservas conservadas, mismo techo total USD 5 y solo proyecto gratuito confirmado. [Harness común candidato](HARNESS_COMUN.md) sigue sin comparación de modelos. Las descripciones siguientes conservan el historial; no constituyen aprobación del juez ni del harness común.
 
 Estado al 17/11/2026: veinte anclas aprobadas; **Qwen 7B ejecutado y rechazado** (15/20 en rango, cinco malos con nota alta y sesgo fuera de umbral). [Auditoría de corrida original](evidence/judge_calibration_01/ANALISIS.md). No hay juez validado ni comparación de eficiencia. [Segundo candidato Mistral y confirmación separada](JUEZ_02.md) preparados, no ejecutados. No se modifican main ni Space ni las notas históricas.
 

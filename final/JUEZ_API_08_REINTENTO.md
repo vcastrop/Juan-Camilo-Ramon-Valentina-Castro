@@ -1,5 +1,7 @@
 # API 08 — recuperación única tras HTTP 503
 
+Actualización de ejecución: [08 también recibió 503 sin notas](evidence/api_08/ANALISIS.md). No repetirlo. Se preparó [Hydrogen 09 como candidato nuevo](JUEZ_HYDROGEN_09.md), conservando ambos intentos y sus reservas. El texto siguiente documenta la preparación original, no una recuperación exitosa.
+
 Estado 18/11/2026: código, notebook y simulación local preparados; **sin reintento real ejecutado**. [Notebook](ContractRisk_Final_Juez_08_API_Reintento_Colab.ipynb), [evidencia original 07](evidence/api_07/ANALISIS.md). No se modifica main ni Space.
 
 ## Motivo y alcance

@@ -1,6 +1,6 @@
 # Ruta alternativa del juez — autorización y controles
 
-18/11/2026: el usuario autoriza **USD 5 totales** para la API, manteniendo preferencia por gratuito. Sin recargas automáticas. [Política](api_budget_policy.json). API 07 intentó una generación y recibió 503, sin nota; mantiene una reserva conservadora de USD 0,3072, no una factura. No se habilitó modo pagado; facturación real no verificada. [Única recuperación 08 preparada](JUEZ_API_08_REINTENTO.md). La autorización no significa que el proveedor garantice ese techo.
+18/11/2026: el usuario autoriza **USD 5 totales** para la API, manteniendo preferencia por gratuito. Sin recargas automáticas. [Política inicial](api_budget_policy.json). API 07/08 intentaron dos generaciones y recibieron 503, sin notas; conservan reservas de USD 0,6144, no una factura. No se habilitó modo pagado; facturación real no verificada. [Hydrogen 09 preparado](JUEZ_HYDROGEN_09.md), con sublímite acumulado de estimación de USD 2 para esta fase dentro del mismo techo USD 5. La autorización no significa que el proveedor garantice ese techo.
 
 ## Candidato preparado, ejecución pendiente
 

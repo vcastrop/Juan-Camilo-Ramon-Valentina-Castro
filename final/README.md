@@ -2,7 +2,7 @@
 
 Estado: integración de desarrollo probada en T4; despliegue público todavía de infraestructura, no sistema final completo. [Checklist](CHECKLIST.md).
 
-Última actualización: [API 07 auditada](evidence/api_07/ANALISIS.md) recibió 503 en la primera generación, sin ninguna nota. **Siguiente ejecución: [notebook API 08, recuperación única](ContractRisk_Final_Juez_08_API_Reintento_Colab.ipynb)** en runtime CPU, con [controles y límites](JUEZ_API_08_REINTENTO.md). No borrar marcas ni registro de Drive; se conserva la reserva original y no se habilita modo pagado. [Harness común candidato](HARNESS_COMUN.md) preparado sin comparación de modelos. No hay juez validado ni scorecard final.
+Última actualización: [API 08 auditada](evidence/api_08/ANALISIS.md) recibió un segundo 503, sin notas. No repetir 07/08. **Siguiente ejecución: [notebook Hydrogen 09](ContractRisk_Final_Juez_09_Hydrogen_Colab.ipynb)** en runtime CPU, con [controles y límites](JUEZ_HYDROGEN_09.md): candidato nuevo, proyecto gratuito, misma cuenta/registro de Drive, dos reservas previas intactas y techo total USD 5. [Harness común candidato](HARNESS_COMUN.md) preparado sin comparación de modelos. No hay juez validado ni scorecard final.
 
 Avance estimado al 18/11: **40–45 % de la entrega final**. [Desglose y ruta pendiente](PROGRESO_FINAL.md). El porcentaje reconoce preparación parcial; no sustituye resultados finales.
 
