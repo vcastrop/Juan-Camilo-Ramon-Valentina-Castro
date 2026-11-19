@@ -1,6 +1,6 @@
 # Avance de la entrega final — 18/11/2026
 
-Estimación operativa: **40–45 % (punto de referencia ~43 %)** de la entrega final integradora. No es nota, madurez para uso real ni porcentaje del curso completo. M1–M3 sirven de base, pero no sustituyen evaluación común, eficiencia, despliegue y documentos finales.
+Estimación operativa: **55–60 % (punto de referencia ~57 %)** de la entrega final integradora. No es nota, madurez para uso real ni porcentaje del curso completo. M1–M3 sirven de base, pero no sustituyen evaluación común, eficiencia, despliegue y documentos finales.
 
 ## Cómo se estima
 
@@ -10,15 +10,15 @@ Se ponderan hitos del checklist por esfuerzo/resultado, reconociendo avance parc
 |---|---:|---:|---|
 | Fase 0: insumos/base | 10 % | 80 % | Guía, rama, materiales disponibles, corpus/modelos y cuentas; inventario completo y responsabilidades pendientes. |
 | Fase 1: producto e infraestructura | 10 % | 60 % | Modos/interfaz en código, Space inicial y GPU; servicio contractual público todavía no integrado. |
-| Fase 2: integración de desarrollo | 20 % | 75 % | Texto/herramienta/M1 y visión probados en T4; guard de conflictos en CPU; seguridad/calidad y servicio final pendientes. |
-| Fase 3: evaluación común | 15 % | 50 % | 22 entradas y 20 anclas aprobadas; continuación 06 rechazada. Harness candidato implementado en CPU, alternativa API preparada; aún sin juez validado ni protocolo/ejecución común cerrados. |
-| Fase 4: eficiencia | 15 % | 15 % | Política aprobada y loader NF4 preparado; no hay medición antes/después ni decisión de aceptación. |
-| Fase 5: comparativas/ablación/análisis | 10 % | 10 % | Fallos de desarrollo auditados; tabla común y ablación nuevas pendientes. |
+| Fase 2: integración de desarrollo | 20 % | 75 % | Texto/herramienta/M1 y visión probados en T4; control de conflictos observado en Comparación 02; seguridad/calidad y servicio final pendientes. |
+| Fase 3: evaluación común | 15 % | 60 % | 110 registros auditados, 22 casos por perfil. Juez, revisión semántica y dominio definitivos pendientes. |
+| Fase 4: eficiencia | 15 % | 60 % | Antes/después real en T4: 37,6 % menos memoria y 42,7 % más latencia mediana con NF4. Calidad/controles no aprobados; NF4 no aceptado para despliegue. |
+| Fase 5: comparativas/ablación/análisis | 10 % | 60 % | Cinco perfiles y ablación medidos; siete observaciones de fallos documentadas. Falta cierre semántico y tabla definitiva con juez/dominio. |
 | Fase 6: producción/observabilidad | 10 % | 25 % | Space de infraestructura y W&B de pruebas; faltan consultas contractuales reales desde despliegue. |
-| Fase 7: reporte/presentación | 7 % | 10 % | Documentación de desarrollo disponible; faltan reporte integrador, portada, ética/IA y diapositivas finales. |
+| Fase 7: reporte/presentación | 7 % | 25 % | Borrador integrador con resultados reales, límites y ética/IA. Faltan versión definitiva, roles confirmados, portada y diapositivas. |
 | Fase 8: cierre verificable | 3 % | 0 % | Pendientes clon limpio, revisión integral, PR/merge autorizado y entrega. |
 
-Suma ponderada: ~42,95 %, redondeada a rango 40–45 % para no atribuir precisión falsa a estimaciones de esfuerzo. Se actualizará al cerrar hitos, no por número de pruebas añadidas.
+Suma ponderada: ~57,25 %, redondeada a rango 55–60 % para no atribuir precisión falsa a estimaciones de esfuerzo. Sube por la comparación real y el análisis documentado, no por número de pruebas. No significa calidad aprobada ni proximidad equivalente a producción.
 
 ## Avances comprobados hasta aquí
 
@@ -35,14 +35,16 @@ Suma ponderada: ~42,95 %, redondeada a rango 40–45 % para no atribuir precisi�
 
 ## Ruta inmediata
 
-Estado más reciente: [Comparación 01 auditada](evidence/comparison_01/ANALISIS.md), falló en calentamiento por interfaz del adaptador; cero filas evaluadas. [Comparación 02](COMPARACION_02.md) corrige llamadas a funciones M3 y agrega comprobación de evidencia/configuración. Verificación local: 210 pruebas final + 128 M3 = 338 aprobadas; las nuevas pruebas usan fábrica/wrappers reales con modelos simulados. Falta ejecución real de la corrección; avance global 40–45 %. No equivale a juez validado, cuantización aceptada, scorecard final o despliegue real.
+Actualización vigente: [Comparación 02 auditada](evidence/comparison_02/ANALISIS.md), con [recálculo sin modelos](evidence/comparison_02/recalculated.json). No repetir inferencia. Completar [revisión humana de 44 respuestas reales](eval/review_comparison02/LEEME.md), resolver el juez para calificar las mismas respuestas, conectar dominio/controles, elegir configuración y desplegar el sistema real. El [reporte integrador](reporte.md) es borrador. Las notas anteriores de preparación se conservan como historial, no como tareas para volver a ejecutar.
+
+Comparación 01 se conserva como fallo de interfaz. Comparación 02 sí completó la colección con la corrección; sus 110 registros no prueban por sí solos corrección semántica. Los porcentajes anteriores de 40–45 % correspondían a preparación sin esa evidencia. Verificación local vigente: 214 pruebas final y 128 M3 (342), sin nuevas inferencias para recalcular ni corregir telemetría.
 
 La continuación 06 confirmó fallo real de aquel juez: una atribución falsa recibió 4 aunque el motivo la reconocía. Las pruebas API posteriores no lo validan: 07/08 quedaron sin notas, Hydrogen 09 produjo una nota adecuada en un único caso y 10 no agregó notas. El usuario autoriza USD 5 totales con preferencia por gratuito; no se activa facturación. El porcentaje no sube: falta cerrar los hitos, no solo preparar código o resolver formatos.
 
 Verificación histórica de Hydrogen 10: 193 pruebas final y 128 M3 aprobadas (321), registradas en Colab. [Evidencia](evidence/hydrogen_10/ANALISIS.md): nota 2 conservada, 503 y reintento terminado por transporte/JSON, sin notas nuevas. USD 2,4706725 estimados/reservados, no factura. Las pruebas del cliente usan transporte simulado; no se aumenta el avance por una calibración todavía incompleta.
 
-1. Ejecutar [Comparación 02 en T4](ContractRisk_Final_Comparacion_02_Colab.ipynb) y auditar respuestas/mediciones tras corregir la interfaz. No repetir Comparación 01. En tarea separada resolver disponibilidad de API con diagnóstico sanitizado; no repetir 07–10, seleccionar entre notas, borrar registros ni activar facturación. Preservar nota válida y USD 2,4706725 acumulados. Los doce ejemplos están revisados, pero calibración/confirmación ejecutadas y auditoría del juez siguen pendientes antes de aceptar calidad.
-2. Completar/congelar [harness común candidato](HARNESS_COMUN.md) y controles; ejecutar sistemas comparables, antes/después FP16/NF4 y ablación, con hashes y mismas condiciones.
+1. Completar [revisión humana de 44 respuestas](eval/review_comparison02/LEEME.md). En tarea separada resolver disponibilidad de API con diagnóstico sanitizado; no repetir 07–10, seleccionar entre notas, borrar registros ni activar facturación. Preservar nota válida y USD 2,4706725 acumulados. Las doce anclas están aprobadas, pero su ejecución y validación del juez siguen pendientes.
+2. Conectar juicio validado y auditoría semántica/controles al harness común, recalificar las mismas respuestas guardadas y decidir eficiencia. No repetir Comparación 02 para buscar mejores resultados ni sustituir cobertura literal por dominio.
 3. Elegir la configuración a desplegar según evidencia, integrar el Space real y comprobar salud/logs/W&B sin datos personales.
 4. Escribir reporte/tablas/errores/ética/uso de IA, portada y diapositivas; acordar sustentación.
 5. Reproducir desde limpio, revisar privacidad/accesos, PR y merge solo autorizado; entregar y conservar comprobante.

@@ -1,0 +1,8 @@
+{
+  "status": "human_review_pending",
+  "cases": 44,
+  "archive_sha256": "34a5b0616c77b790489d3ecf37469cf312a0de6ea950ce39a193b72027c22de9",
+  "manifest_canonical_sha256": "912e4689f929453e0a6f9ecb4f8108fcf4b93e86178921cbcbbe1a2e6536b37c",
+  "human_verdicts_created": false,
+  "model_judge_grades_created": false
+}

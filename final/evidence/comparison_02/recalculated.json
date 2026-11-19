@@ -1,0 +1,124 @@
+{
+  "archive_sha256": "34a5b0616c77b790489d3ecf37469cf312a0de6ea950ce39a193b72027c22de9",
+  "collection_commit": "8cbeb36ebdf3dde472920ffd7a655c0a5c5af38e",
+  "tables": [
+    {
+      "profile": "qa_no_rag_fp16",
+      "cases": 22,
+      "valid_schema": 15,
+      "literal_coverage_mean": 0.18181818181818182,
+      "automatic_checks_rate": 0.18181818181818182,
+      "p50_seconds": 2.3139377785000192,
+      "p95_seconds": 6.410468630149995,
+      "peak_cuda_allocated_bytes": 6263561216,
+      "judge_mean": null,
+      "domain_rate": null
+    },
+    {
+      "profile": "m3_text_fp16",
+      "cases": 22,
+      "valid_schema": 22,
+      "literal_coverage_mean": 0.28030303030303033,
+      "automatic_checks_rate": 0.18181818181818182,
+      "p50_seconds": 6.005581343500012,
+      "p95_seconds": 10.915700662649954,
+      "peak_cuda_allocated_bytes": 6312325632,
+      "judge_mean": null,
+      "domain_rate": null
+    },
+    {
+      "profile": "integrated_fp16",
+      "cases": 22,
+      "valid_schema": 22,
+      "literal_coverage_mean": 0.6666666666666666,
+      "automatic_checks_rate": 0.5909090909090909,
+      "p50_seconds": 7.533351320500003,
+      "p95_seconds": 13.366733769650034,
+      "peak_cuda_allocated_bytes": 10925277696,
+      "judge_mean": null,
+      "domain_rate": null
+    },
+    {
+      "profile": "integrated_nf4",
+      "cases": 22,
+      "valid_schema": 22,
+      "literal_coverage_mean": 0.5303030303030303,
+      "automatic_checks_rate": 0.2727272727272727,
+      "p50_seconds": 10.749957168500032,
+      "p95_seconds": 15.154968828350093,
+      "peak_cuda_allocated_bytes": 6816844288,
+      "judge_mean": null,
+      "domain_rate": null
+    },
+    {
+      "profile": "integrated_no_tool_fp16",
+      "cases": 22,
+      "valid_schema": 22,
+      "literal_coverage_mean": 0.6666666666666666,
+      "automatic_checks_rate": 0.5909090909090909,
+      "p50_seconds": 7.175667403499915,
+      "p95_seconds": 13.439284660399926,
+      "peak_cuda_allocated_bytes": 10925277696,
+      "judge_mean": null,
+      "domain_rate": null
+    }
+  ],
+  "corrected_tool_usage": {
+    "qa_no_rag_fp16": {
+      "case_count": 22,
+      "router_cases": 0,
+      "tool_requested_cases": 0,
+      "tool_result_cases": 0,
+      "successful_tool_cases": 0,
+      "successful_tool_results": 0,
+      "definition": "Router activity is not tool execution. A recorded failed/blocked result is not successful execution. No inference from answer text."
+    },
+    "m3_text_fp16": {
+      "case_count": 22,
+      "router_cases": 12,
+      "tool_requested_cases": 3,
+      "tool_result_cases": 3,
+      "successful_tool_cases": 2,
+      "successful_tool_results": 2,
+      "definition": "Router activity is not tool execution. A recorded failed/blocked result is not successful execution. No inference from answer text."
+    },
+    "integrated_fp16": {
+      "case_count": 22,
+      "router_cases": 2,
+      "tool_requested_cases": 2,
+      "tool_result_cases": 2,
+      "successful_tool_cases": 2,
+      "successful_tool_results": 2,
+      "definition": "Router activity is not tool execution. A recorded failed/blocked result is not successful execution. No inference from answer text."
+    },
+    "integrated_nf4": {
+      "case_count": 22,
+      "router_cases": 2,
+      "tool_requested_cases": 2,
+      "tool_result_cases": 2,
+      "successful_tool_cases": 2,
+      "successful_tool_results": 2,
+      "definition": "Router activity is not tool execution. A recorded failed/blocked result is not successful execution. No inference from answer text."
+    },
+    "integrated_no_tool_fp16": {
+      "case_count": 22,
+      "router_cases": 0,
+      "tool_requested_cases": 0,
+      "tool_result_cases": 0,
+      "successful_tool_cases": 0,
+      "successful_tool_results": 0,
+      "definition": "Router activity is not tool execution. A recorded failed/blocked result is not successful execution. No inference from answer text."
+    }
+  },
+  "original_wandb_series_rewritten": false,
+  "memory_reduction_fraction": 0.37604841930051747,
+  "median_latency_change_fraction": 0.4269820576729104,
+  "visual_extractions_identical": true,
+  "ablation_changed_outputs": [
+    "m3_007",
+    "m3_008"
+  ],
+  "judge_validated": false,
+  "efficiency_status": "not_evaluable_pending_validated_judge_and_semantic_audit",
+  "deployment_decision": "NF4 not accepted for deployment; FP16 is only a development baseline, not globally validated quality."
+}

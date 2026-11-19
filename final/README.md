@@ -2,11 +2,11 @@
 
 Estado: integración de desarrollo probada en T4; despliegue público todavía de infraestructura, no sistema final completo. [Checklist](CHECKLIST.md).
 
-Siguiente ejecución al 18/11: [Comparación 02 en T4](ContractRisk_Final_Comparacion_02_Colab.ipynb), con [instrucciones y límites](COMPARACION_02.md). [Comparación 01 auditada](evidence/comparison_01/ANALISIS.md) se detuvo por error del adaptador en calentamiento, con cero filas evaluadas. Corregida la llamada a las funciones de M3; modelos y evaluación intactos. Cinco perfiles y 22 entradas por perfil, sin Gemini. La corrección requiere ejecución real; dominio y eficiencia permanecen pendientes. Main/Space y presupuesto API no se modifican.
+Actualización al 18/11: [Comparación 02 completa y auditada](evidence/comparison_02/ANALISIS.md), cinco perfiles y 110 registros; 103 salidas con estructura válida, no 103 aciertos. NF4 ahorró 37,6 % de memoria, fue más lento y omitió montos. No está aceptado para despliegue. Siguiente tarea: [revisión humana de 44 respuestas reales](eval/review_comparison02/LEEME.md), sin GPU ni API. No repetir la colección. [Reporte integrador en borrador](reporte.md). Juez, dominio y aceptación formal siguen pendientes. Main/Space y presupuesto API intactos.
 
 Estado de API: [Hydrogen 10 ejecutado y auditado](evidence/hydrogen_10/ANALISIS.md): nota histórica 2 intacta, 503 y reintento terminado por transporte/JSON, sin notas nuevas. **No repetir 07–10 ni borrar registros Drive.** USD 2,4706725 estimados/reservados, no factura; techo USD 5 y proyecto gratuito intactos. Falta resolver disponibilidad antes de otra reanudación controlada. El juez sigue sin validar; esto no impide recoger respuestas y mediciones mediante Comparación 01.
 
-Avance estimado al 18/11: **40–45 % de la entrega final**. [Desglose y ruta pendiente](PROGRESO_FINAL.md). El porcentaje reconoce preparación parcial; no sustituye resultados finales.
+Avance estimado al 18/11: **55–60 % de la entrega final**. [Desglose y ruta pendiente](PROGRESO_FINAL.md). Reconoce comparación real y borrador; no sustituye evaluación semántica, producción ni cierre.
 
 ## Estado de la integración visual
 

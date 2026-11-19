@@ -1,0 +1,83 @@
+{
+  "source_hashes_verified": 88,
+  "notebook_sources_identical": true,
+  "notebook_error_outputs": 0,
+  "records_total": 110,
+  "all_scorecards_recalculated": true,
+  "schema_valid_total": 103,
+  "all_system_exception_counts_zero": true,
+  "memory_reduction_fraction": 0.37604841930051747,
+  "nf4_median_latency_change_fraction": 0.4269820576729104,
+  "same_visual_extractions_fp16_nf4": true,
+  "ablation_output_changes": [
+    "m3_007",
+    "m3_008"
+  ],
+  "judge_validated": false,
+  "domain_and_efficiency_acceptance_pending": true,
+  "telemetry_caveat": "tool_used logs bool(tool_trace); M3 has 12 router traces but only 2 real successful tool-use cases",
+  "archive_sha256": "34a5b0616c77b790489d3ecf37469cf312a0de6ea950ce39a193b72027c22de9",
+  "notebook_sha256": "9bc36629e468d9146863385705ce22705b7c9c42ecaf50b77bf1b827df470ffe",
+  "table": [
+    {
+      "profile": "qa_no_rag_fp16",
+      "records": 22,
+      "valid_schema": 15,
+      "literal_coverage_mean": 0.18181818181818182,
+      "automatic_checks_rate": 0.18181818181818182,
+      "p50_seconds": 2.3139377785000192,
+      "p95_seconds": 6.410468630149995,
+      "peak_allocated_bytes": 6263561216,
+      "peak_gib": 5.833395957946777,
+      "verified_tool_use_cases": 0
+    },
+    {
+      "profile": "m3_text_fp16",
+      "records": 22,
+      "valid_schema": 22,
+      "literal_coverage_mean": 0.28030303030303033,
+      "automatic_checks_rate": 0.18181818181818182,
+      "p50_seconds": 6.005581343500012,
+      "p95_seconds": 10.915700662649954,
+      "peak_allocated_bytes": 6312325632,
+      "peak_gib": 5.878811359405518,
+      "verified_tool_use_cases": 2
+    },
+    {
+      "profile": "integrated_fp16",
+      "records": 22,
+      "valid_schema": 22,
+      "literal_coverage_mean": 0.6666666666666666,
+      "automatic_checks_rate": 0.5909090909090909,
+      "p50_seconds": 7.533351320500003,
+      "p95_seconds": 13.366733769650034,
+      "peak_allocated_bytes": 10925277696,
+      "peak_gib": 10.174957752227783,
+      "verified_tool_use_cases": 2
+    },
+    {
+      "profile": "integrated_nf4",
+      "records": 22,
+      "valid_schema": 22,
+      "literal_coverage_mean": 0.5303030303030303,
+      "automatic_checks_rate": 0.2727272727272727,
+      "p50_seconds": 10.749957168500032,
+      "p95_seconds": 15.154968828350093,
+      "peak_allocated_bytes": 6816844288,
+      "peak_gib": 6.3486809730529785,
+      "verified_tool_use_cases": 2
+    },
+    {
+      "profile": "integrated_no_tool_fp16",
+      "records": 22,
+      "valid_schema": 22,
+      "literal_coverage_mean": 0.6666666666666666,
+      "automatic_checks_rate": 0.5909090909090909,
+      "p50_seconds": 7.175667403499915,
+      "p95_seconds": 13.439284660399926,
+      "peak_allocated_bytes": 10925277696,
+      "peak_gib": 10.174957752227783,
+      "verified_tool_use_cases": 0
+    }
+  ]
+}

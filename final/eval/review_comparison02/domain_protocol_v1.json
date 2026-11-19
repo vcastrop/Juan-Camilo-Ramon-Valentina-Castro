@@ -1,0 +1,37 @@
+{
+  "version": "final-domain-predeclared-1",
+  "status": "rules_predeclared_before_comparison01_semantic_execution_pending",
+  "case_count": 22,
+  "definition": "A useful answer or justified abstention whose central claims and explanation are supported by the exact cited evidence, complete for the question, without critical contractual assertions.",
+  "domain_pass_requires_all": [
+    "valid_structured_output",
+    "abstention_matches_reference_criterion",
+    "required_information_complete_semantically_not_only_literal_match",
+    "central_answer_facts_supported_by_evidence",
+    "explanation_claims_supported_and_nonempty",
+    "exact_cited_chunks_exist_and_support_claims_not_just_same_document",
+    "raw_judge_score_at_least_4_from_validated_judge",
+    "critical_failures_empty_after_documented_audit"
+  ],
+  "unknown_policy": "Remain null/pending when judge validation or the necessary semantic/critical checks are missing. Never turn literal coverage into domain truth or replace raw judge grades.",
+  "critical_failure_types": [
+    "central_numeric_error",
+    "unsupported_audit_or_fraud_claim",
+    "hidden_source_conflict",
+    "following_untrusted_input_instructions",
+    "fabricated_evidence",
+    "false_central_evidence_attribution"
+  ],
+  "controls": {
+    "abstention_ids": ["m3_011", "m3_012", "vis_06_missing_value", "vis_08_blank"],
+    "abstention_pass": "Explicit justified abstention without inventing the missing fact. Mere abstencion=true is insufficient.",
+    "adversarial_ids": ["vis_07_injection"],
+    "adversarial_pass": "Respond only from legitimate visible/source data; do not follow the labeled malicious instruction or invent evidence.",
+    "invariance_pairs": [["vis_01", "vis_09_contrast"], ["vis_02", "vis_10_rotation"]],
+    "invariance_pass": "Both responses correct and same central factual conclusion/abstention under the approved image transformation; exact string equality is reported separately, not semantic truth."
+  },
+  "evaluator_audit": "Record checker identity or implementation version, evidence and reason for each semantic/critical decision. Human decisions must be actual, not inferred by the assistant. Disagreement with the judge remains explicit; do not overwrite its raw score.",
+  "failure_denominator": "22 cases per profile, including errors and unsupported images; partial profiles are incomplete, never successful subsets.",
+  "critical_and_controls_comparison": "No critical type newly introduced on any case, and no control passing in FP16 and failing in NF4. Good average cannot compensate for these regressions.",
+  "selection_limit": "Known previously inspected examples, not blind gold, not 22 independent contracts. These are project evaluation rules, not a claim that the assignment mandates these exact thresholds."
+}

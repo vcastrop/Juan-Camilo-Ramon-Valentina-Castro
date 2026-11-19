@@ -1,6 +1,8 @@
 # Comparación 02 — corregir interfaz sin cambiar la evaluación
 
-Estado 18/11/2026: preparado, con regresiones locales aprobadas; **inferencia real T4 pendiente**. [Notebook nuevo](ContractRisk_Final_Comparacion_02_Colab.ipynb). Main, Space y presupuesto del juez permanecen intactos.
+Resultado actual: [corrida completa auditada](evidence/comparison_02/ANALISIS.md), con 110 registros. No repetir para buscar mejores respuestas. [Revisión humana de 44 respuestas reales](eval/review_comparison02/LEEME.md) pendiente; juez/dominio/aceptación de eficiencia no completados. La telemetría original de router/herramienta se recalcula sin modificar la run histórica.
+
+Estado de preparación anterior a la corrida: se publicaron corrección y pruebas locales; la ejecución real posterior está enlazada arriba. [Notebook histórico](ContractRisk_Final_Comparacion_02_Colab.ipynb). Main, Space y presupuesto del juez permanecen intactos.
 
 ## Qué falló
 

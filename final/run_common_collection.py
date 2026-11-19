@@ -146,9 +146,12 @@ def main():
             write_json(folder/'warmup_excluded.json',warmup(system,folder));torch.cuda.synchronize()
             def observer(row):
                 if wb:
+                    from final.tool_usage import metrics
+                    usage=metrics(row['record'])
                     try:wb.log({name+'/latency_seconds':row['wall_seconds'],name+'/peak_cuda_allocated_bytes':row['peak_cuda_allocated_bytes'],
                         name+'/system_error':int(row['system_error_type'] is not None),name+'/vision_used':int(bool(row['record'].get('components',{}).get('vision'))),
-                        name+'/tool_used':int(bool(row['record'].get('tool_trace')))})
+                        name+'/router_used':int(usage['router_used']),name+'/tool_requested':int(usage['tool_requested']),
+                        name+'/tool_result_recorded':int(usage['tool_result_recorded']),name+'/tool_success':int(usage['tool_success'])})
                     except Exception:meta['wandb_status']='logging_error'
             stage(name+':collect')
             rows=collect(inputs,system,CudaMeter(torch),folder,observer=observer)

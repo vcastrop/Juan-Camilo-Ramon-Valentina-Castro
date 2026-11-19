@@ -4,9 +4,18 @@ Plan preparado el 15/11/2026 tras leer las seis páginas de la guía `STAI_Final
 
 Este archivo es un plan operativo, no promesa de nota. Ya está incorporado en `final/CHECKLIST.md` en la rama `Entrega/contractrisk-final`; las fechas y responsables de ejecuciones se completarán con evidencia real. No se modifica main ni se reescriben entregas anteriores.
 
-Actualización 18/11/2026: avance estimado **40–45 % de la entrega final**; [desglose ponderado y pendientes](PROGRESO_FINAL.md). No es nota ni conteo bruto de casillas. [Continuación 06 auditada](evidence/continuation_06/ANALISIS.md): siete notas reutilizadas, una nueva con atribución falsa aprobada, juez rechazado. [Harness común candidato](HARNESS_COMUN.md) implementado y probado en CPU, no ejecutado con modelos ni congelado. [API y presupuesto](JUEZ_API_Y_PRESUPUESTO.md): USD 5 totales autorizados, sin cobros iniciados; se prioriza gratuito. Juez validado, comparación común/eficiencia, servicio contractual público y reporte/presentación finales pendientes; añadir tests no completa esos hitos.
+Actualización 18/11/2026: avance estimado **55–60 % de la entrega final**; [desglose ponderado y pendientes](PROGRESO_FINAL.md). No es nota ni conteo de casillas. Comparación 02 completa con 110 registros, antes/después NF4 y ablación reales; resultados semánticos y aceptación de eficiencia pendientes. Juez sin validar, servicio contractual público no integrado y reporte/presentación finales incompletos. El presupuesto API no cambió: USD 2,4706725 estimados/reservados, no factura, dentro del techo autorizado USD 5.
 
 ## Fechas y reglas de la guía
+
+Actualización vigente: avance estimado **55–60 %**, según [desglose](PROGRESO_FINAL.md). [Comparación 02 completa y auditada](evidence/comparison_02/ANALISIS.md): 110 registros, memoria/latencia y ablación reales; diagnóstico recalculado, no scorecard semántico final. NF4 no aceptado para despliegue. Revisión humana de 44 respuestas y juez/dominio pendientes. [Reporte integrador](reporte.md) en borrador. Verificación actual: 214 pruebas final + 128 M3 = 342 aprobadas.
+
+- [x] Conservar ZIP/notebook de Comparación 02, verificar 88 hashes, manifiestos y recalcular tablas por caso sin inferencia.
+- [x] Documentar ahorro 37,6 % de memoria y aumento 42,7 % de mediana NF4, sin convertirlos en aprobación global.
+- [x] Auditar ablación: dos cálculos correctos también sin herramienta; no atribuir mejora de exactitud no demostrada.
+- [x] Corregir métricas de router/resultado/éxito para futuras ejecuciones y derivar cifras históricas sin reescribir W&B ni respuestas.
+- [x] Preparar borrador de reporte y revisión humana de 44 respuestas reales, sin inventar revisiones ni notas LLM.
+- [ ] Recibir revisión de respuestas, completar juez validado/dominio y decidir versión final; no aceptar cuantización solo por ahorrar memoria.
 
 Actualización: [Comparación 01 auditada](evidence/comparison_01/ANALISIS.md), error del adaptador durante calentamiento; cero filas evaluadas. [Comparación 02](COMPARACION_02.md) corrige la interfaz de funciones M3 sin cambiar modelos/datos/reglas. Preparada, todavía sin inferencia real. Verificación actual: 210 pruebas final + 128 M3 = 338 aprobadas, incluyendo fábrica y wrappers reales con modelos simulados. No hay eficiencia aceptada ni juez validado. Revisión humana de doce ejemplos cerrada, sin inferencia de confirmación.
 
@@ -15,7 +24,7 @@ Actualización: [Comparación 01 auditada](evidence/comparison_01/ANALISIS.md), 
 - [x] Predeclarar reglas de dominio y daño antes de la comparación; ejecución semántica y enlace de juez siguen pendientes.
 - [x] Ejecutar y auditar Comparación 01: carga y prueba pequeña NF4 reales; fallo de interfaz en calentamiento, sin evaluar casos. No equivale a comparación completada.
 - [x] Reproducir/corregir fallo de funciones M3 y reemplazar el doble de prueba incorrecto; conservar originales y verificar configuración sin cambios semánticos.
-- [ ] Ejecutar y auditar Comparación 02 en T4; comprobar los cinco perfiles antes de completar tablas o aceptar eficiencia.
+- [x] Ejecutar y auditar Comparación 02 en T4: cinco perfiles, 110 registros. Tablas técnicas completas; calidad semántica y aceptación de eficiencia siguen pendientes.
 
 Verificación registrada en Hydrogen 10: **193 pruebas final + 128 M3 = 321 aprobadas**. [Corrida auditada](evidence/hydrogen_10/ANALISIS.md): nota 2 reutilizada, 503 y reintento con fallo de transporte/JSON, cero notas nuevas. USD 2,4706725 estimados/reservados, no cargos confirmados; techo USD 5 intacto. No repetir 07–10 ni borrar registros Drive. La revisión humana separada se cerró después; no se ha ejecutado la confirmación.
 
@@ -157,9 +166,9 @@ Aceptación: protocolo versionado, sin sustitución de notas ni mezclas de métr
 
 - [ ] Perfilar latencia y memoria por componente sobre el sistema integrado previo a optimizar; si no existe M4 anterior, declarar esta nueva base visual.
 - [x] Elegir NF4 a 4 bits como técnica candidata sobre el mismo generador, cómputo FP16; loader preparado con verificación de capas y sin fallback. No se ha medido/aceptado ni desplegado. LoRA histórico M1 no se usa como evidencia de mejora nueva.
-- [ ] Conservar una versión antes sin la técnica y una después; no cambiar recuperación/prompt/modelo base y atribuir todo a cuantización.
+- [x] Conservar antes FP16 y después NF4 de Comparación 02: mismos casos/modelos/recuperación/prompt y VLM, salvo precisión del generador; respuestas sin editar.
 - [ ] Validar compatibilidad real de la técnica con el hardware y licencias de distribución.
-- [ ] Ejecutar ambas en la misma máquina y mismo conjunto, con condiciones de medición documentadas.
+- [x] Ejecutar FP16/NF4 en la misma T4 y conjunto, con memoria, tiempos, condiciones y calentamientos registrados. Esto no cierra la evaluación semántica.
 - [ ] Guardar por petición calidad, latencia y componentes; medir p50/p95, memoria pico o tamaño con unidades claras.
 - [ ] Repetir válvula, adversariales e invarianza sobre la versión eficiente; no inferir seguridad de una calidad media similar.
 - [ ] Comparar con el umbral fijado; aceptar o rechazar la técnica de forma explícita.
@@ -172,7 +181,7 @@ Aceptación: tabla antes/después calculada desde registros, umbral previo traza
 - [ ] Ejecutar línea base sin RAG adaptada de M2, M3, nueva base visual M4 y final eficiente sobre el mismo eval set/harness.
 - [ ] Mantener el clasificador original M1/M2 como resultado histórico aparte cuando sus métricas no sean comparables a QA; no mezclar Macro F1 de clasificación con cobertura de hechos.
 - [ ] Registrar mediana y resultados del subconjunto de imagen con denominadores; todas las filas se someten al protocolo común.
-- [ ] Hacer al menos una ablación medida (por ejemplo sin reranking o sin herramienta), idealmente reutilizar el antes/después como evidencia adicional sin confundir ambas preguntas.
+- [x] Ablación de herramienta medida en Comparación 02: 20 salidas idénticas y dos cálculos correctos también sin herramienta; aporta traza explícita, no mejora de exactitud demostrada en estos dos casos.
 - [ ] Analizar al menos cinco fallos reales agrupados por extracción visual, recuperación, generación, herramienta o evaluación; indicar componente y reparación propuesta.
 - [ ] Reevaluar RAGAS si se comparan respuestas nuevas y se reporta su delta; no atribuir métricas M3 a la versión final.
 - [ ] Guardar respuestas, contextos, imágenes/referencias permitidas, trazas, versiones y resultados por caso.
