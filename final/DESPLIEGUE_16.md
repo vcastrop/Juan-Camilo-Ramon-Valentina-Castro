@@ -1,5 +1,9 @@
 # Candidato público FP16 y verificación 16
 
+**Histórico:** esta prueba falló en instalación por versiones incompatibles.
+No llegó a modelos reales. Continuar con [Despliegue 17](DESPLIEGUE_17.md),
+no repetir las instrucciones de ejecución 16. [Auditoría](evidence/deployment16_failed/ANALISIS.md).
+
 Estado: **preparado, no desplegado ni verificado con modelos reales todavía**.
 El Space de infraestructura y main permanecen sin cambios. No se repite la
 evaluación de 110 respuestas ni se consume API del juez.

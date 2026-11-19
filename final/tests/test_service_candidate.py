@@ -199,7 +199,8 @@ class PayloadTests(unittest.TestCase):
             with patch.object(module.demo, 'launch', return_value='fake') as launch:
                 self.assertEqual(module.launch(), 'fake')
                 self.assertFalse(launch.call_args.kwargs['ssr_mode'])
-                self.assertFalse(launch.call_args.kwargs['run_history'])
+                import inspect
+                self.assertTrue(set(launch.call_args.kwargs) <= set(inspect.signature(gradio.Blocks.launch).parameters))
         finally:
             module.demo.close()
 

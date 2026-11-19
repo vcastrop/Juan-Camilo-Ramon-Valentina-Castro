@@ -45,8 +45,10 @@ pesos de la rúbrica académica ni garantía de resultados.
    no desplegar NF4. Integrar el sistema
    contractual público y verificar texto, imagen, cálculo, abstención, errores,
    salud/listo, privacidad y W&B accesible. El Space comprobado sigue siendo infraestructura.
-   [Candidato 16 y notebook](DESPLIEGUE_16.md) preparados y comprobados localmente
-   con dobles de modelos; faltan la prueba real T4 y la verificación en ZeroGPU.
+   [Prueba 16 fallida](evidence/deployment16_failed/ANALISIS.md): instalación
+   incompatible, sin respuestas. Continuar con [prueba 17](DESPLIEGUE_17.md),
+   versiones de interfaz corregidas y bloqueo si la preparación falla.
+   Faltan la prueba real T4 y la verificación en ZeroGPU.
    Esta preparación no se cuenta como despliegue terminado ni eleva el porcentaje.
 3. Terminar reporte, contribuciones/uso de IA y presentación.
 4. Reproducción desde limpio, revisión de tablas/accesos/licencias y cierre de

@@ -4,7 +4,7 @@ emoji: 📋
 colorFrom: blue
 colorTo: green
 sdk: gradio
-sdk_version: 6.32.0
+sdk_version: 6.16.0
 python_version: 3.12
 app_file: app.py
 pinned: false
@@ -22,7 +22,8 @@ servicio certificado para decisiones legales o contractuales.
 ## Archivos y arranque
 
 El paquete generado contiene `app.py`, `requirements.txt`, este `README.md` y
-`runtime_payload.zip`. No subir la plantilla `app.py` directamente: requiere el
+`runtime_payload.zip`. Gradio 6.16.0 es la versión fijada compatible con el
+`huggingface-hub==0.36.2` del conjunto de modelos; 6.32.0 no lo es. No subir la plantilla `app.py` directamente: requiere el
 hash y commit que inserta `final/build_space_candidate.py`.
 No sustituir todavía el Space de infraestructura sin la prueba de modelos reales.
 

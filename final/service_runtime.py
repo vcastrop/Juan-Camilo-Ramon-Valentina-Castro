@@ -48,6 +48,8 @@ class Runtime:
 def load_runtime():
     # Called once at Space startup AFTER importing spaces. ZeroGPU supplies CUDA
     # emulation during startup. Ordinary Colab requires a real GPU here.
+    from final.service_environment import require_environment
+    require_environment()
     from sqlite_support import ensure_sqlite
     ensure_sqlite()
     import numpy as np

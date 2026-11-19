@@ -2,6 +2,14 @@
 
 ## Estado vigente — dominio de los cinco perfiles cerrado
 
+**Despliegue: ruta actual [prueba 17](DESPLIEGUE_17.md).** La prueba 16 falló
+instalando dependencias; se conserva [evidencia original](evidence/deployment16_failed/ANALISIS.md).
+No produjo respuestas de modelos ni afecta las métricas anteriores.
+
+- [x] Diagnosticar conflicto Gradio/Hub y conservar fallo sin presentarlo como éxito.
+- [x] Fijar versiones compatibles y añadir comprobación de entorno, bloqueo y metadata de fallos tempranos.
+- [ ] Ejecutar y auditar el notebook **Despliegue 17** en T4 antes de publicar.
+
 [Recepción de 46 revisiones y cierre explícito](evidence/domain_review46/RECEPCION.md).
 El único DUDOSO se conserva en el original y se resuelve como NO en registro de
 chat separado. Dominio: Sin RAG 3/22, M3 7/22, FP16 16/22, NF4 11/22 y sin
@@ -22,7 +30,7 @@ servicio público real](DESPLIEGUE_SIGUIENTE.md). No hace falta otra revisión d
 - [x] Integrar M1, QA/RAG/herramienta y visión con límites y registros sin contenido de entrada.
 - [x] Probar localmente interfaz Gradio 6.32.0, errores, metadatos y verificación del ZIP con dobles de modelos.
 - [x] Preparar notebook T4 sin API del juez ni cambios al Space.
-- [ ] Ejecutar y auditar [verificación 16](DESPLIEGUE_16.md) con modelos reales.
+- [ ] Verificar modelos reales: 16 falló en instalación; continuar con [17](DESPLIEGUE_17.md).
 - [ ] Comprobar después ciclo de vida ZeroGPU, URLs y observabilidad pública real.
 
 ## Estado vigente — evaluación 14 recibida y recálculo cerrado

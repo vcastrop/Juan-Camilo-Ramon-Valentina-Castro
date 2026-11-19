@@ -101,7 +101,7 @@ def launch(server_port=7860, prevent_thread_lock=False):
     return demo.queue(max_size=4, default_concurrency_limit=1).launch(
         server_name='0.0.0.0', server_port=server_port, ssr_mode=False,
         prevent_thread_lock=prevent_thread_lock, max_file_size='10mb',
-        run_history=False, show_error=False, enable_monitoring=False,
+        show_error=False, enable_monitoring=False,
         blocked_paths=[str(runtime_dir), '/proc', '/home/user/.cache'],
         app_kwargs={'routes': [Route('/healthz', healthz), Route('/readyz', readyz)]})
 

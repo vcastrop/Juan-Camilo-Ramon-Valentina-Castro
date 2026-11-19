@@ -17,6 +17,25 @@ os.environ.setdefault('TOKENIZERS_PARALLELISM', 'false')
 
 
 def run(candidate, output):
+    from final.service_environment import inspect_environment
+    output = Path(output)
+    if output.exists() and any(output.iterdir()): raise ValueError('Use a new empty output directory')
+    output.mkdir(parents=True, exist_ok=True)
+    meta = {'status': 'started', 'python': sys.version,
+            'purpose': 'real_models_preflight_not_semantic_benchmark_or_ZeroGPU_validation'}
+    try:
+        report = inspect_environment()
+        meta.update(environment=report, packages=report['packages'])
+        if not report['ready']: raise RuntimeError('software_environment_not_ready')
+        return _run(candidate, output, meta)
+    except Exception as exc:
+        meta.update(status='failed_partial_evidence_retained', error_type=type(exc).__name__)
+        raise
+    finally:
+        (output/'metadata.json').write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding='utf-8')
+
+
+def _run(candidate, output, meta):
     from final.space_payload import unpack
     archive = Path(candidate)/'runtime_payload.zip'
     sha = hashlib.sha256(archive.read_bytes()).hexdigest()
@@ -36,13 +55,8 @@ def run(candidate, output):
     import torch
     if not torch.cuda.is_available() or 'T4' not in torch.cuda.get_device_name(0):
         raise RuntimeError('Select Colab T4')
-    output = Path(output)
-    if output.exists() and any(output.iterdir()): raise ValueError('Use a new empty output directory')
-    output.mkdir(parents=True, exist_ok=True)
-    meta = {'status': 'started', 'purpose': 'real_models_preflight_not_semantic_benchmark_or_ZeroGPU_validation',
-            'source_commit': manifest['source_commit'], 'payload_sha256': sha,
-            'gpu': torch.cuda.get_device_name(0), 'python': sys.version,
-            'packages': {k: importlib.metadata.version(k) for k in ['torch', 'transformers', 'chromadb', 'gradio', 'wandb']}}
+    meta.update(source_commit=manifest['source_commit'], payload_sha256=sha,
+                gpu=torch.cuda.get_device_name(0))
     started = time.perf_counter()
     try:
         service = Service(load_runtime(), manifest['source_commit'])
