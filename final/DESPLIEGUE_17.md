@@ -1,5 +1,11 @@
 # Verificación de despliegue 17 — instalación compatible y parada segura
 
+**Actualización de recepción:** la instalación y T4 ya pasaron en la corrida
+17 recibida. Las pruebas se detuvieron porque el clon superficial omitía
+historial necesario. [Auditoría y originales](evidence/deployment17_failed/ANALISIS.md).
+Se corrigió la clonación y se añadió `prepare_test_history.py`; no se cambia
+el código de inferencia ni se saltan pruebas.
+
 La [prueba 16](evidence/deployment16_failed/ANALISIS.md) no llegó a inferencia:
 Gradio 6.32.0 y Hub 0.36.2 eran incompatibles. No hay nuevas respuestas que
 evaluar ni cambios en las métricas anteriores. No cambiar la API del juez.
@@ -28,3 +34,21 @@ Después de revisar T4, queda probar el ciclo de vida real de ZeroGPU y las
 peticiones/telemetría desde URL pública. La instalación local de la interfaz no
 demuestra esas etapas. No hay cambios a main ni a los cuatro archivos del
 Space de infraestructura en esta corrección.
+
+## Reutilizar la sesión 17 que ya instaló las dependencias
+
+Antes de repetir la celda de preparación, completar el historial en una celda:
+
+```python
+antes = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
+if subprocess.check_output(['git', 'rev-parse', '--is-shallow-repository'], cwd=ROOT, text=True).strip() == 'true':
+    run_visible(['git', 'fetch', '--unshallow', 'origin', 'Entrega/contractrisk-final'], 'deployment17_history.log')
+assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip() == antes
+print('Historial completado sin cambiar el código.')
+```
+
+Repetir después la celda de preparación; no la primera de clonación. Si termina
+sin error y habilita `SETUP_OK`, ejecutar inferencia y descarga. Conservar ZIP
+y notebook con salidas, incluida esta celda de reparación. No requiere reiniciar,
+cambiar bibliotecas, claves ni facturación. Si la sesión ya terminó, usar el
+notebook 17 actualizado desde GitHub en una sesión nueva con T4.

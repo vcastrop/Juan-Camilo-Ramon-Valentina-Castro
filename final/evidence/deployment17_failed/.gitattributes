@@ -1,0 +1,3 @@
+*.zip -text
+*.ipynb -text
+*.png -text

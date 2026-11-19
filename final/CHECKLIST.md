@@ -9,6 +9,9 @@ No produjo respuestas de modelos ni afecta las métricas anteriores.
 - [x] Diagnosticar conflicto Gradio/Hub y conservar fallo sin presentarlo como éxito.
 - [x] Fijar versiones compatibles y añadir comprobación de entorno, bloqueo y metadata de fallos tempranos.
 - [ ] Ejecutar y auditar el notebook **Despliegue 17** en T4 antes de publicar.
+- [x] Recibir corrida 17: instalación/entorno/T4 correctos; conservar errores de historial en auditoría.
+- [x] Corregir clon superficial y comprobar las suites en copia limpia con historial completo.
+- [ ] Completar historial en sesión T4 y volver a pasar preparación antes de inferencia real.
 
 [Recepción de 46 revisiones y cierre explícito](evidence/domain_review46/RECEPCION.md).
 El único DUDOSO se conserva en el original y se resuelve como NO en registro de

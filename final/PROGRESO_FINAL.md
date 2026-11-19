@@ -49,6 +49,8 @@ pesos de la rúbrica académica ni garantía de resultados.
    incompatible, sin respuestas. Continuar con [prueba 17](DESPLIEGUE_17.md),
    versiones de interfaz corregidas y bloqueo si la preparación falla.
    Faltan la prueba real T4 y la verificación en ZeroGPU.
+   Recepción 17: instalación y T4 correctas; pruebas bloqueadas por historial
+   superficial, ya corregido en el notebook. [Reparación de la misma sesión](DESPLIEGUE_17.md).
    Esta preparación no se cuenta como despliegue terminado ni eleva el porcentaje.
 3. Terminar reporte, contribuciones/uso de IA y presentación.
 4. Reproducción desde limpio, revisión de tablas/accesos/licencias y cierre de
