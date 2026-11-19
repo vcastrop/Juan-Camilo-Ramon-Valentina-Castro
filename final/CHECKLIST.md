@@ -1,5 +1,18 @@
 # ContractRisk — plan y checklist de entrega final
 
+Estado vigente tras recibir archivos humanos del 19/11/2026:
+[cierre humano documentado](evidence/human_closure_19/RECEPCION.md).
+Juez aceptado para la tarea/configuración con límites; la aceptación condicionada
+de explicación vacía se verifica en la rúbrica original sin editar la revisión.
+Ocho dudas anteriores cerradas (once criterios), NF4 sigue vetado. Plan offline
+de 110 payloads preparado, sin llamadas, gold ni notas inventadas. Presupuesto
+USD 5 intacto: falta resolver margen antes de ejecutar evaluación del producto.
+
+- [x] Recibir revisión humana de doce motivos y del anexo de calibración, con condiciones y límites preservados.
+- [x] Cerrar únicamente once criterios DUDOSO de las ocho entradas anteriores.
+- [x] Preparar los 110 registros guardados para el juez sin selección de casos ni regeneración.
+- [ ] Resolver techo/conciliación de presupuesto y ejecutar evaluación completa del producto.
+
 Última actualización 19/11/2026: [confirmación 13 recibida y auditada](evidence/confirmation_13/ANALISIS.md),
 12/12 válidos dentro de rango, cero respuestas malas aprobadas. Revisión técnica
 de motivos favorable; cierre humano pendiente. Acumulado USD 4,1974125
