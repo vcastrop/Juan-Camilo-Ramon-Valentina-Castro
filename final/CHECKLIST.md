@@ -1,5 +1,18 @@
 # ContractRisk — plan y checklist de entrega final
 
+Último paso preparado: [Juez 12 en pago](JUEZ_12_PAGO.md), tras capturas de
+prepago y Spend con costes demorados. No ejecutado contra Google. Conserva
+ocho asientos y USD 5 totales; sin reintentos de transporte. No cambia la rúbrica,
+las respuestas ni el estado de juez sin validar. No usar Juez 11 para continuar.
+
+Actualización prioritaria 19/11/2026: [transición de facturación del juez](TRANSICION_FACTURACION.md).
+Recuperación 11 ejecutada: dos 503, cero notas nuevas; ocho asientos por USD
+3,6994725 estimados/reservados, no factura. Reejecución tras activar facturación
+comunicada por el usuario: bloqueada antes de consultar API. No repetir Juez 11
+ni borrar registros. Pendientes gasto real/estado del proyecto y continuación
+versionada de pago; ejecución deshabilitada. Este estado reemplaza las cifras
+de seis asientos y las referencias a facturación no activada de notas anteriores.
+
 Plan preparado el 15/11/2026 tras leer las seis páginas de la guía `STAI_Final_Asignacion_Proyecto_integrador (1).pdf` y consultar GitHub. Estado remoto: main en `afe471739a3d9192ffb32fbb78158d473dd0d619`; M1–M3 presentes, sin carpetas M4 ni final publicadas. Esto no descarta trabajo local del equipo no compartido.
 
 Este archivo es un plan operativo, no promesa de nota. Ya está incorporado en `final/CHECKLIST.md` en la rama `Entrega/contractrisk-final`; las fechas y responsables de ejecuciones se completarán con evidencia real. No se modifica main ni se reescriben entregas anteriores.

@@ -1,5 +1,19 @@
 # Avance de la entrega final — 18/11/2026
 
+Preparación posterior 19/11/2026: [Juez 12](JUEZ_12_PAGO.md) reconoce el
+prepago mostrado por el usuario y los costes aún demorados. Cliente y notebook
+preparados, sin consultas pagadas locales. Pruebas de transporte simulado,
+presupuesto acumulado, bloqueo de repetición y preservación de nota; no son
+validación de disponibilidad/calidad. Avance global sin cambios: 55–60 %.
+
+Actualización 19/11/2026: [transición de facturación](TRANSICION_FACTURACION.md)
+documentada sin nuevas consultas. Primera recuperación 11 con dos 503 y cero
+notas nuevas; reejecución bloqueada antes de API por historial actualizado.
+USD 3,6994725 estimados/reservados, gasto real no verificado. Activación de
+facturación comunicada por el usuario; falta verificar estado y consumo antes
+de una continuación de pago. El avance general permanece en 55–60 %: ni la
+facturación ni una prueba local validan la calidad del juez o el producto.
+
 Estimación operativa: **55–60 % (punto de referencia ~57 %)** de la entrega final integradora. No es nota, madurez para uso real ni porcentaje del curso completo. M1–M3 sirven de base, pero no sustituyen evaluación común, eficiencia, despliegue y documentos finales.
 
 ## Cómo se estima
