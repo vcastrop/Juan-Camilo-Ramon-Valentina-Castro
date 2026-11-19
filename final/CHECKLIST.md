@@ -15,6 +15,16 @@ servicio público real](DESPLIEGUE_SIGUIENTE.md). No hace falta otra revisión d
 - [ ] Preparar, probar y publicar candidato contractual FP16 con M1, RAG/herramienta y visión.
 - [ ] Verificar health/readiness, peticiones reales y W&B del servicio público.
 
+### Candidato de despliegue 16 — preparado, ejecución real pendiente
+
+- [x] Separar candidato de los archivos públicos de infraestructura.
+- [x] Preparar empaquetado mínimo con corpus/adaptador verificados y manifiesto.
+- [x] Integrar M1, QA/RAG/herramienta y visión con límites y registros sin contenido de entrada.
+- [x] Probar localmente interfaz Gradio 6.32.0, errores, metadatos y verificación del ZIP con dobles de modelos.
+- [x] Preparar notebook T4 sin API del juez ni cambios al Space.
+- [ ] Ejecutar y auditar [verificación 16](DESPLIEGUE_16.md) con modelos reales.
+- [ ] Comprobar después ciclo de vida ZeroGPU, URLs y observabilidad pública real.
+
 ## Estado vigente — evaluación 14 recibida y recálculo cerrado
 
 [Auditoría](evidence/product_14/ANALISIS.md): 110/110 notas reales, sin nuevas
