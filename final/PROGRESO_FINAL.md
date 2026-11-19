@@ -1,5 +1,11 @@
 # Avance de la entrega final — 18/11/2026
 
+Última autorización 19/11/2026: **USD 7 total**, aprobados explícitamente por el
+usuario. [Evaluación 14](EVALUACION_14.md) preparada con el mismo juez validado,
+sin regenerar sistemas ni enviar consultas en esta preparación. Pendiente la
+ejecución real de las 110 notas, auditoría/join semántico y scorecard del producto.
+No confundir autorización o código probado con ejecución o mejora del sistema.
+
 Cierre humano posterior 19/11/2026: [recepción](evidence/human_closure_19/RECEPCION.md).
 Motivos aceptados para esta tarea con condiciones comprobadas y límites explícitos;
 ocho dudas de las 44 revisiones cerradas. Plan offline completo de 110 salidas,

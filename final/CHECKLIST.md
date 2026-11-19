@@ -1,5 +1,17 @@
 # ContractRisk — plan y checklist de entrega final
 
+Autorización vigente 19/11/2026: el usuario eleva el techo a **USD 7 TOTALES**.
+[Evaluación 14 preparada](EVALUACION_14.md), sin consultas pagadas locales.
+Migración con copia del registro USD 5, 57 asientos históricos intactos,
+autorización registrada, 110 filas guardadas, resultados progresivos en Drive.
+Conserva configuración del juez y detiene errores sin reintento de transporte.
+Las referencias USD 5 anteriores quedan como historial previo, no techo vigente
+de esta nueva ejecución. Pendiente ejecutar, auditar motivos y cerrar dominio.
+
+- [x] Registrar autorización explícita de USD 7 totales, sin recarga ni liberación de reservas.
+- [x] Preparar migración verificable y evaluación de los cinco perfiles completos.
+- [ ] Ejecutar evaluación 14 y recibir ZIP/notebook, sin repetir corridas anteriores.
+
 Estado vigente tras recibir archivos humanos del 19/11/2026:
 [cierre humano documentado](evidence/human_closure_19/RECEPCION.md).
 Juez aceptado para la tarea/configuración con límites; la aceptación condicionada
