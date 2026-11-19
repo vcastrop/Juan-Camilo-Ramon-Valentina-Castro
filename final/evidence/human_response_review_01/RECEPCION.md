@@ -1,6 +1,6 @@
 # Revisión de respuestas recibida, con dudas preservadas
 
-El archivo declarado por Juan Camilo Ramon Perez, fecha 18/11/2026, contiene las 44 respuestas revisadas. Se conserva [el original sin editar](original_review.md), incluidos su estado PENDIENTE y comentarios. [Transcripción estructurada](received.json), [análisis derivado sin notas del juez](analysis.json).
+El archivo declarado por Juan Camilo Ramon Perez, fecha 18/11/2026, contiene las 44 respuestas revisadas. Se conserva [el original sin editar](original_review.md), incluidos su estado PENDIENTE y comentarios. [Transcripción estructurada](parsed_review.json), [análisis derivado sin notas del juez](summary.json).
 
 Hay ocho casos con al menos un DUDOSO: FP16 m3_004, NF4 m3_005, FP16 m3_006, FP16 m3_009, NF4 m3_009, vis_04 de ambos perfiles y FP16 vis_05. No se los cierra en nombre del revisor; tampoco se amplían retrospectivamente las categorías críticas para forzar un resultado. Las observaciones de revisión son humanas declaradas; el análisis estructurado y esta recepción son asistencia técnica de IA, no una segunda revisión humana.
 
