@@ -1,5 +1,19 @@
 # ContractRisk — plan y checklist de entrega final
 
+Última actualización 19/11/2026: [confirmación 13 recibida y auditada](evidence/confirmation_13/ANALISIS.md),
+12/12 válidos dentro de rango, cero respuestas malas aprobadas. Revisión técnica
+de motivos favorable; cierre humano pendiente. Acumulado USD 4,1974125
+estimados/reservados. No iniciar evaluación de 110 respuestas sin resolver
+presupuesto y firma humana; techo USD 5 intacto. Paquete de revisión preparado
+con doce motivos nuevos y solo las ocho dudas anteriores, sin sustituir decisiones.
+
+- [x] Conservar originales de confirmación y verificar código, notas y 57 asientos.
+- [x] Recalcular confirmación con reglas previas y preparar revisión humana sin API.
+- [ ] Recibir revisión humana de los doce motivos del juez.
+- [ ] Recibir cierre humano del anexo de 38 motivos de calibración, sin sustituirlo por la revisión técnica de IA.
+- [ ] Recibir adjudicación de las ocho dudas previas de dominio.
+- [ ] Resolver presupuesto para evaluación completa sin eliminar reservas desconocidas.
+
 Actualización vigente 19/11/2026: [Juez 12 ejecutado y auditado](evidence/paid_12/ANALISIS.md).
 Calibración: 38/38 válidos, 20/20 dentro del rango, cero respuestas malas con
 4–5, diferencias de longitud mitigadas 0 en seis pares. Código y notas verificadas;

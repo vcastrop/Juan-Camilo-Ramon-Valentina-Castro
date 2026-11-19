@@ -1,5 +1,12 @@
 # Avance de la entrega final — 18/11/2026
 
+Resultado más reciente 19/11/2026: [confirmación 13](evidence/confirmation_13/ANALISIS.md)
+aprobada 12/12 bajo reglas previas; revisión humana de motivos aún pendiente.
+Preparados dos formularios para cerrar doce motivos y ocho dudas anteriores,
+sin nuevas llamadas. Presupuesto estimado/reservado USD 4,1974125; el margen
+no permite prometer 110 evaluaciones bajo el protocolo actual. La validación
+y el scorecard del producto no se declaran completos por pasar pruebas sintéticas.
+
 Último resultado 19/11/2026: [calibración Juez 12 aprobada](evidence/paid_12/ANALISIS.md),
 38 notas válidas y 20/20 orientaciones. No equivale a nota del producto. Presupuesto
 estimado/reservado USD 4,0800825. [Confirmación 13](JUEZ_13_CONFIRMACION.md) preparada
