@@ -1,5 +1,26 @@
 # ContractRisk — plan y checklist de entrega final
 
+## Estado vigente — evaluación 14 recibida y recálculo cerrado
+
+[Auditoría](evidence/product_14/ANALISIS.md): 110/110 notas reales, sin nuevas
+consultas en este recálculo. Dominio FP16 16/22 y NF4 11/22; aceptación relativa
+NF4 **rechazada** por caída 22,73 puntos, un crítico nuevo y dos regresiones, aunque
+ahorra 37,60 % de memoria. Las notas no se ajustan para coincidir con humanos.
+64 resultados semánticos cubiertos: 44 directos y veinte equivalencias exactas
+documentadas. Quedan 46 salidas distintas pendientes de revisión de otros perfiles.
+Reporte actualizado, no entrega completa. Ver [progreso vigente](PROGRESO_FINAL.md).
+Los bloques cronológicos siguientes conservan estados anteriores: no son permiso
+para repetir notebooks ni instrucciones vigentes de gasto. Techo actual USD 7.
+
+- [x] Conservar y auditar ZIP/notebook 14, código, payloads, notas y presupuesto.
+- [x] Recalcular dominio FP16/NF4 y controles con adjudicaciones reales.
+- [x] Resolver aceptación NF4 bajo umbrales previos, sin cambiarlos.
+- [x] Registrar transferencias exactas sin atribuir nuevas revisiones al usuario.
+- [ ] Recibir revisión semántica de 46 salidas restantes para cerrar las tasas de otros perfiles.
+- [ ] Integrar/probar servicio contractual público y observabilidad; no desplegar NF4.
+
+## Registro cronológico de preparación y autorizaciones
+
 Autorización vigente 19/11/2026: el usuario eleva el techo a **USD 7 TOTALES**.
 [Evaluación 14 preparada](EVALUACION_14.md), sin consultas pagadas locales.
 Migración con copia del registro USD 5, 57 asientos históricos intactos,
@@ -220,15 +241,15 @@ Preparación posterior a visual 03: [protocolo de juez y conjunto común](JUEZ_Y
 - [x] Diseñar veinte anclas sintéticas separadas de los 22 casos comunes; revisión humana recibida y conocimiento previo del gold M3/visual declarado. Inferencia y auditoría del juez pendientes.
 - [x] Ensamblar ampliación candidata de 22 entradas con casos textuales/visuales, adversariales, ausentes y pares; selección visual documentada antes de inferir, referencias conservadas incluso ante vis_04. Protocolo/harness completos por congelar.
 - [x] Implementar base candidata de harness común: hashes de imágenes/paquete, frontera sin gold, errores en denominador, cobertura literal conservadora, notas brutas y dominio desconocido sin validación. Pruebas CPU no son corrida de modelos ni scorecard final.
-- [ ] Completar y congelar protocolo de dominio/controles y runner comparativo GPU; ejecutar los 22 casos en cada sistema, sin reemplazar null por cumplimiento automático.
+- [x] Ejecutar 22 casos por perfil y conservar protocolos/hashes de colección y evaluación por separado. El cruce semántico se implementa después; no afirmar una congelación ciega completa previa a la colección.
 - [x] Revisión humana de imágenes, respuestas esperadas/criterios, procedencia y privacidad del subconjunto visual v1: diez casos aprobados por el usuario el 16/11. Representaciones sintéticas marcadas; no incluye aprobación de respuestas del modelo ni del conjunto final completo.
 - [x] Definir/ejecutar invarianza visual v1: contraste 0.85 y rotación de 1 grado, dos pares revisados por usuario y medidos en visual 03. Ambos conservan campos/respuestas, incluso las tildes añadidas erróneamente en uno; invarianza no equivale a corrección. Repetición en versión eficiente pendiente.
-- [ ] Definir cómo reciben la misma entrada las líneas base sin visión; documentar limitación, no ocultar casos ni cambiar denominadores por fila.
-- [ ] Elegir tamaño de muestra y repeticiones compatibles con tiempo; registrar warm-up, parámetros, caché y condiciones. p95 de muestras pequeñas es inestable: declararlo.
+- [x] Documentar abstención explícita de líneas base sin visión, sin transcripción gold ni cambios de denominador.
+- [x] Registrar 22 casos, una pasada ordenada, warm-up, parámetros/caché y limitación de p95; no garantizar estabilidad de latencia.
 - [ ] Congelar gold, harness, prompts de evaluación, métricas y hashes antes de ejecutar la comparación final.
-- [ ] Mantener tres dimensiones distintas; no convertir nota del juez en función del acierto.
-- [ ] Corregir/validar el juez y parsers con ejemplos de calibración separados, incluido rechazo de respuestas inventadas y evaluación de afirmaciones cortas.
-- [ ] Si se modifica el evaluador, recalificar todas las filas con la misma versión; las notas antiguas no se renombran como nuevas.
+- [x] Mantener cobertura literal, nota cruda LLM y dominio como dimensiones distintas. Dominio aún pendiente para perfiles sin revisión completa.
+- [x] Validar el juez con calibración/confirmación separadas y cierre humano con límites documentados.
+- [x] Aplicar la misma versión de juez a las 110 salidas guardadas sin renombrar notas históricas ni regenerar sistemas.
 - [ ] Registrar calidad automática, calidad sustentada según juez, dominio, abstención, adversariales, invarianza y casos con imagen.
 - [x] Fijar pérdida máxima y ganancia mínima antes de medir: aprobación explícita del usuario, registrada en `efficiency_policy.json`. El gold/harness comunes y la calibración aún no están cerrados; la política no puede aplicarse al proxy literal de visual 03.
 
@@ -241,22 +262,22 @@ Aceptación: protocolo versionado, sin sustitución de notas ni mezclas de métr
 - [x] Conservar antes FP16 y después NF4 de Comparación 02: mismos casos/modelos/recuperación/prompt y VLM, salvo precisión del generador; respuestas sin editar.
 - [ ] Validar compatibilidad real de la técnica con el hardware y licencias de distribución.
 - [x] Ejecutar FP16/NF4 en la misma T4 y conjunto, con memoria, tiempos, condiciones y calentamientos registrados. Esto no cierra la evaluación semántica.
-- [ ] Guardar por petición calidad, latencia y componentes; medir p50/p95, memoria pico o tamaño con unidades claras.
-- [ ] Repetir válvula, adversariales e invarianza sobre la versión eficiente; no inferir seguridad de una calidad media similar.
-- [ ] Comparar con el umbral fijado; aceptar o rechazar la técnica de forma explícita.
-- [ ] Conservar un resultado negativo si la técnica no sirvió y explicar qué versión se despliega.
+- [x] Guardar por petición notas, latencia/memoria y componentes; p50/p95 y pico CUDA con unidades y origen de hardware claros.
+- [x] Evaluar abstención, resistencia a inyección e invarianza en NF4 y FP16. No confundir falta de completitud con obedecer una inyección.
+- [x] Aplicar los umbrales previos: NF4 rechazada por dominio, crítico nuevo e invarianza.
+- [x] Conservar resultado negativo y excluir NF4 del despliegue. FP16 sigue como candidato, no aprobación global ni servicio ya publicado.
 
 Aceptación: tabla antes/después calculada desde registros, umbral previo trazable y decisión basada en evidencia. No prometer mejora antes de medir.
 
 ## Fase 5 — tabla evolutiva, ablación y análisis
 
-- [ ] Ejecutar línea base sin RAG adaptada de M2, M3, nueva base visual M4 y final eficiente sobre el mismo eval set/harness.
-- [ ] Mantener el clasificador original M1/M2 como resultado histórico aparte cuando sus métricas no sean comparables a QA; no mezclar Macro F1 de clasificación con cobertura de hechos.
-- [ ] Registrar mediana y resultados del subconjunto de imagen con denominadores; todas las filas se someten al protocolo común.
+- [x] Ejecutar cinco perfiles sobre las mismas 22 entradas; 110 notas de juez. Mantener pendientes las tasas de dominio aún sin revisión completa.
+- [x] Mantener métricas M1/M2 de clasificación separadas de QA, sin mezclar Macro F1 y cobertura de hechos.
+- [x] Registrar medianas y subconjuntos texto/imagen con denominadores; explicar notas altas por abstención de modelos sin visión.
 - [x] Ablación de herramienta medida en Comparación 02: 20 salidas idénticas y dos cálculos correctos también sin herramienta; aporta traza explícita, no mejora de exactitud demostrada en estos dos casos.
 - [ ] Analizar al menos cinco fallos reales agrupados por extracción visual, recuperación, generación, herramienta o evaluación; indicar componente y reparación propuesta.
 - [ ] Reevaluar RAGAS si se comparan respuestas nuevas y se reporta su delta; no atribuir métricas M3 a la versión final.
-- [ ] Guardar respuestas, contextos, imágenes/referencias permitidas, trazas, versiones y resultados por caso.
+- [x] Conservar respuestas, contextos, imágenes/referencias permitidas, trazas, versiones y resultados reales por caso, con recálculo sin inferencia.
 
 Aceptación: tablas recalculables y resultados honestos, no selección de mejores corridas. Si hay menos de cinco fallos, ampliar diagnóstico y describir selección sin fabricar errores.
 
