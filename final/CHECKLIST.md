@@ -1,5 +1,17 @@
 # ContractRisk — plan y checklist de entrega final
 
+Actualización vigente 19/11/2026: [Juez 12 ejecutado y auditado](evidence/paid_12/ANALISIS.md).
+Calibración: 38/38 válidos, 20/20 dentro del rango, cero respuestas malas con
+4–5, diferencias de longitud mitigadas 0 en seis pares. Código y notas verificadas;
+USD 4,0800825 acumulados estimados/reservados, no factura. [Confirmación 13](JUEZ_13_CONFIRMACION.md)
+preparada con los doce casos aprobados, sin repetir calibración ni evaluar el
+producto. Pendiente ejecutarla y auditar motivos. No se declara juez validado.
+
+- [x] Preservar ZIP y notebook ejecutado de Juez 12 y recalcular sus métricas.
+- [x] Verificar notas originales, once hashes de código y conservación de presupuesto.
+- [x] Preparar confirmación independiente con reglas originales y bloqueo de repetición.
+- [ ] Ejecutar los doce casos, revisar motivos y conciliar presupuesto antes de evaluar el producto.
+
 Último paso preparado: [Juez 12 en pago](JUEZ_12_PAGO.md), tras capturas de
 prepago y Spend con costes demorados. No ejecutado contra Google. Conserva
 ocho asientos y USD 5 totales; sin reintentos de transporte. No cambia la rúbrica,

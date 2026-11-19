@@ -1,5 +1,11 @@
 # Avance de la entrega final — 18/11/2026
 
+Último resultado 19/11/2026: [calibración Juez 12 aprobada](evidence/paid_12/ANALISIS.md),
+38 notas válidas y 20/20 orientaciones. No equivale a nota del producto. Presupuesto
+estimado/reservado USD 4,0800825. [Confirmación 13](JUEZ_13_CONFIRMACION.md) preparada
+sin consultas locales; siguen pendientes su ejecución/auditoría y evaluación del
+producto, despliegue y cierre. No convertir el número de pruebas en avance académico.
+
 Preparación posterior 19/11/2026: [Juez 12](JUEZ_12_PAGO.md) reconoce el
 prepago mostrado por el usuario y los costes aún demorados. Cliente y notebook
 preparados, sin consultas pagadas locales. Pruebas de transporte simulado,
