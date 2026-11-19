@@ -1,6 +1,6 @@
 # ContractRisk Colombia — borrador de reporte integrador
 
-**Estado: BORRADOR EN DESARROLLO, no entrega cerrada.** Recolección y 110 notas LLM auditadas; juez aceptado para esta tarea tras calibración, confirmación y revisión humana. Dominio cerrado para FP16/NF4 y eficiencia NF4 rechazada con evidencia. Quedan 46 revisiones semánticas de otros perfiles, despliegue contractual real, atribución final de tareas, presentación y reproducción completa. No se presentan pendientes como resultados completos.
+**Estado: BORRADOR EN DESARROLLO, no entrega cerrada.** Recolección, 110 notas LLM y dominio de los cinco perfiles auditados; juez aceptado para esta tarea tras calibración, confirmación y revisión humana. Eficiencia NF4 rechazada con evidencia. Quedan despliegue contractual real, atribución final de tareas, presentación y reproducción completa. No se presenta la evaluación como prueba de producción funcionando.
 
 ## Problema, usuario y alcance
 
@@ -40,15 +40,17 @@ La [evaluación 14](evidence/product_14/ANALISIS.md) aplicó el juez validado a 
 
 | Perfil | Juez /5 global | Texto /5 (12) | Imagen /5 (10) | Dominio |
 |---|---:|---:|---:|---:|
-| Sin RAG | 3,500 | 2,250 | 5,000 | Pendiente |
-| M3 textual | 4,273 | 3,667 | 5,000 | Pendiente |
+| Sin RAG | 3,500 | 2,250 | 5,000 | 3/22 (13,64 %) |
+| M3 textual | 4,273 | 3,667 | 5,000 | 7/22 (31,82 %) |
 | Integrado FP16 | 4,364 | 4,167 | 4,600 | 16/22 (72,73 %) |
 | Integrado NF4 | 3,773 | 4,083 | 3,400 | 11/22 (50,00 %) |
-| Integrado FP16 sin herramienta | 4,227 | 3,917 | 4,600 | Pendiente |
+| Integrado FP16 sin herramienta | 4,227 | 3,917 | 4,600 | 15/22 (68,18 %) |
 
 **La nota del juez no equivale a resolver la tarea.** Los perfiles textuales obtienen 5 por abstenerse honestamente ante imágenes que no pueden procesar; no son diez tareas visuales resueltas. El juez recibe texto/evidencia registrada, no los píxeles, y puede premiar una lectura visual equivocada o una justificación que un humano rechaza. FP16 m3_006 recibe 4 pese a respaldo humano NO, y vis_05 recibe 5 pese a explicación humana NO; NF4 m3_006 recibe 4 pese a respaldo humano NO. Se conservan esas discrepancias y el dominio falla: no se corrigen notas para hacerlas coincidir.
 
-El dominio completo de la pareja usa 44 anotaciones reales y el cierre de once criterios de ocho dudas. Otras veinte anotaciones se transfieren a la ablación por igualdad comprobada del mismo caso, respuesta y payload de evidencia, sin afirmar una nueva revisión humana. Quedan 46 salidas distintas sin auditoría semántica cerrada; sus tasas son pendientes/null, no cero. [Recálculo JSON](evidence/product_14/scorecard_derived.json) y [CSV](evidence/product_14/scorecard_derived.csv).
+El dominio completo usa 90 revisiones directas: 44 de FP16/NF4, cierre separado de once criterios de ocho dudas y 46 de los perfiles restantes. Otras veinte anotaciones se transfieren a la ablación por igualdad comprobada del mismo caso, respuesta y payload de evidencia, sin afirmar una nueva revisión humana. La única duda de las últimas 46, Sin RAG m3_011, fue cerrada expresamente como NO por el usuario en el chat, sin editar su archivo original. [Recepción y cierre](evidence/domain_review46/RECEPCION.md), [recálculo completo JSON](evidence/domain_review46/scorecard_complete.json) y [CSV](evidence/domain_review46/scorecard_complete.csv). La tabla parcial previa permanece como evidencia histórica, no es la tabla vigente.
+
+Los perfiles sin visión aciertan la salida de imagen vacía o valor ausente por abstención genérica: no demuestra detección visual de esos problemas. Tampoco demuestra resistencia a una nota adversarial que no recibieron. En M3 m3_012 el revisor identifica una auditoría inventada; en la ablación m3_007 identifica un error numérico crítico en la explicación. Se conservan estos fallos sin retocar notas del juez ni ocultar intentos bloqueados.
 
 NF4 verificó 252 capas de cuatro bits y redujo la memoria pico un 37,60 %, pero fue un 42,70 % más lenta en mediana en esta pasada. Con umbrales aprobados antes de medir (≤5 puntos de pérdida de dominio, cero fallos críticos nuevos/retrocesos de controles y ≥20 % menos memoria), el resultado ahora es **rechazado**: pierde 22,73 puntos de dominio, introduce un fallo crítico en m3_001 y dos regresiones de invarianza. Solo pasa el ahorro de memoria. La resistencia a la instrucción adversarial pasa en ambos; la omisión de monto de NF4 en ese caso falla completitud, no demuestra obediencia a la inyección. NF4 no se selecciona para despliegue; FP16 conserva seis fallos de dominio y no queda certificado para decisiones reales.
 
@@ -66,13 +68,13 @@ Las imágenes con cifras y las preguntas de varios campos muestran riesgo: una l
 
 ## Contribuciones humanas y uso de IA — por completar con el equipo
 
-Juan Camilo realizó revisiones humanas de conjuntos/rangos, 44 respuestas, cierre de ocho dudas y motivos de calibración/confirmación, con originales conservados. Las demás contribuciones y las de Valentina deben confirmarse antes de atribuirlas. La IA apoyó código, pruebas, auditoría técnica, el cruce reproducible y este borrador; la lectura técnica de los 110 motivos no se presenta como revisión humana. No se inventan ejecuciones, notas o resultados.
+Juan Camilo realizó revisiones humanas de conjuntos/rangos, 90 salidas directas, cierre de dudas y motivos de calibración/confirmación, con originales conservados. Otras veinte salidas reutilizan criterios por equivalencia exacta; no se atribuye una nueva revisión humana. Las demás contribuciones y las de Valentina deben confirmarse antes de atribuirlas. La IA apoyó código, pruebas, auditoría técnica, el cruce reproducible y este borrador; la lectura técnica de los 110 motivos no se presenta como revisión humana. No se inventan ejecuciones, notas o resultados.
 
 ## Cierre pendiente
 
-Revisión humana original de 18/11/2026 y [cierre firmado de 19/11](evidence/human_closure_19/RECEPCION.md) conservados por separado. Evaluación 14 completa en su dimensión LLM; dominio/eficiencia cerrados para la pareja FP16/NF4, no para todos los perfiles. La decisión relativa de NF4 es rechazo, sin aprobar globalmente FP16. El acumulado USD 5,7954525 estimado/reservado queda dentro de USD 7 totales autorizados; no se presenta como factura y no se liberan reservas desconocidas.
+Revisión humana original de 18/11/2026, [cierre de 19/11](evidence/human_closure_19/RECEPCION.md) y [46 revisiones posteriores con cierre de chat](evidence/domain_review46/RECEPCION.md) conservados por separado. Evaluación LLM y dominio cerrados para los cinco perfiles; comparación de eficiencia FP16/NF4 rechazada sin aprobar globalmente FP16. El acumulado USD 5,7954525 estimado/reservado queda dentro de USD 7 totales autorizados; no se presenta como factura y no se liberan reservas desconocidas.
 
-- Cerrar 46 revisiones semánticas pendientes para las tasas de dominio de otros perfiles; conservar discrepancias con el juez.
+- Conservar el scorecard completo y sus discrepancias sin repetir las corridas para obtener mejores resultados.
 - Preparar configuración viable a partir de FP16 y verificar sus fallos, sin desplegar NF4 ni cambiar umbrales para aprobarla.
 - Publicar y probar sistema contractual real y observabilidad accesible.
 - Completar portada, diagrama final, enlaces de reproducción, tareas reales por integrante y diapositivas.

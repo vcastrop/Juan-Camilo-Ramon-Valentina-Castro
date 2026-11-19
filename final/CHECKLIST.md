@@ -1,5 +1,20 @@
 # ContractRisk — plan y checklist de entrega final
 
+## Estado vigente — dominio de los cinco perfiles cerrado
+
+[Recepción de 46 revisiones y cierre explícito](evidence/domain_review46/RECEPCION.md).
+El único DUDOSO se conserva en el original y se resuelve como NO en registro de
+chat separado. Dominio: Sin RAG 3/22, M3 7/22, FP16 16/22, NF4 11/22 y sin
+herramienta 15/22. Noventa revisiones directas y veinte equivalencias, 110 filas
+resueltas sin alterar notas o gastar API. NF4 sigue rechazada. [Siguiente hito:
+servicio público real](DESPLIEGUE_SIGUIENTE.md). No hace falta otra revisión de estos casos.
+
+- [x] Recibir las 46 anotaciones humanas y preservar original y cierre de la única duda.
+- [x] Recalcular los cinco perfiles con el mismo criterio y denominador 22.
+- [x] Conservar tablas anteriores como historia y actualizar el reporte con tabla completa.
+- [ ] Preparar, probar y publicar candidato contractual FP16 con M1, RAG/herramienta y visión.
+- [ ] Verificar health/readiness, peticiones reales y W&B del servicio público.
+
 ## Estado vigente — evaluación 14 recibida y recálculo cerrado
 
 [Auditoría](evidence/product_14/ANALISIS.md): 110/110 notas reales, sin nuevas

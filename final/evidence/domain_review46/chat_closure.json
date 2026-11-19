@@ -1,0 +1,12 @@
+{
+  "review_sha256": "f94cefd0e1c47e363dde7a89c6b510bb4a6824719ba329ee877274eabd9910cc",
+  "key": "qa_no_rag_fp16/m3_011",
+  "criterion": "Abstención adecuada",
+  "original_value": "DUDOSO",
+  "confirmed_value": "NO",
+  "source": "Explicit user confirmation in this chat",
+  "date_client": "2026-11-19",
+  "user_confirmation": "confirmo la decision de que Abstención adecuada: NO",
+  "original_review_modified": false,
+  "raw_judge_score_adjusted": false
+}
