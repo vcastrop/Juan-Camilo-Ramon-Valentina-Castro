@@ -46,6 +46,8 @@ La serie original `tool_used` medía `bool(tool_trace)`: M3 tiene doce trazas de
 
 ## Qué sigue
 
+Actualización posterior: [revisión humana recibida](../human_response_review_01/RECEPCION.md). Confirma un fallo crítico nuevo y dos regresiones de invarianza para NF4; se veta su despliegue. Ocho dudas se conservan abiertas y no se inventan notas LLM. El original de la corrida y sus métricas no cambian; esta nota es auditoría documental posterior.
+
 Revisión humana de las [44 respuestas reales](../../eval/review_comparison02/LEEME.md), separada de las doce anclas ya aprobadas; completar calibración/confirmación del juez y evaluar estas mismas respuestas guardadas. Cerrar controles/dominio antes de aceptar eficiencia. La base FP16 es candidata de desarrollo, no producto seguro aprobado. Integración pública M1+RAG+visión, reporte/presentación, reproducción y entrega siguen pendientes. La API del juez y su presupuesto no participaron en esta corrida.
 
 Recalcular localmente sin GPU ni red: `python -m final.comparison02_audit` desde el repositorio, con dependencias de pruebas instaladas.

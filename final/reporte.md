@@ -54,6 +54,8 @@ Juan Camilo realizó revisiones humanas de los conjuntos y rangos registradas co
 
 ## Cierre pendiente
 
+Revisión humana posterior recibida: Juan Camilo Ramon Perez, 18/11/2026, 44 respuestas cubiertas y ocho casos con dudas conservadas. [Original, procedencia y análisis](evidence/human_response_review_01/RECEPCION.md). Confirma un fallo crítico nuevo en NF4 m3_001 y regresiones semánticas de invarianza. Por esos vetos predeclarados NF4 no se acepta para despliegue; esto no equivale a completar la tasa de dominio o la nota LLM, ni a aprobar FP16. Se mantiene separada la decisión de no publicar NF4 del estado numérico `not_evaluable` por juez/auditoría incompletos. Las cifras originales no se reescriben y las dudas no se cierran por la IA.
+
 - Completar revisión semántica de respuestas y evaluación LLM validada, con discrepancias y límites explícitos.
 - Decidir configuración viable según calidad/seguridad y eficiencia, sin modificar umbrales para aprobarla.
 - Publicar y probar sistema contractual real y observabilidad accesible.

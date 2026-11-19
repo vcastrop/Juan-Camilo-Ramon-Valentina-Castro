@@ -1,0 +1,63 @@
+{
+  "reviewer_declared": "Juan Camilo Ramon Perez",
+  "date_declared": "2026-11-18",
+  "records_reviewed": 44,
+  "records_with_doubts": 8,
+  "open_items": {
+    "integrated_fp16/m3_004": [
+      "Respuesta respaldada",
+      "Explicación respaldada y no vacía"
+    ],
+    "integrated_nf4/m3_005": [
+      "Completa para lo preguntado"
+    ],
+    "integrated_fp16/m3_006": [
+      "Fallos críticos"
+    ],
+    "integrated_fp16/m3_009": [
+      "Fallos críticos"
+    ],
+    "integrated_nf4/m3_009": [
+      "Explicación respaldada y no vacía",
+      "Completa para lo preguntado",
+      "Fallos críticos"
+    ],
+    "integrated_fp16/vis_04": [
+      "Abstención adecuada"
+    ],
+    "integrated_nf4/vis_04": [
+      "Abstención adecuada"
+    ],
+    "integrated_fp16/vis_05": [
+      "Explicación respaldada y no vacía"
+    ]
+  },
+  "new_confirmed_critical_failures_nf4": [
+    {
+      "id": "m3_001",
+      "type": "false_central_evidence_attribution",
+      "reviewer": "Juan Camilo Ramon Perez"
+    }
+  ],
+  "human_control_regressions": [
+    {
+      "control": "invariance",
+      "base": "vis_01",
+      "variant": "vis_09_contrast",
+      "reason": "FP16 both complete/supported; NF4 repeats the same omission. Equality alone is not correctness."
+    },
+    {
+      "control": "invariance",
+      "base": "vis_02",
+      "variant": "vis_10_rotation",
+      "reason": "FP16 both complete/supported; NF4 repeats the same omission. Equality alone is not correctness."
+    }
+  ],
+  "nf4_deployment_veto": true,
+  "decision_scope": "Human predeclared critical/control veto, not complete numerical efficiency acceptance.",
+  "formal_efficiency_status": "not_evaluable_judge_and_remaining_semantic_adjudication_pending",
+  "domain_rate": null,
+  "judge_validated": false,
+  "llm_grades_created": false,
+  "denominator_erratum": "Reviewer summary says 6/8 unblocked visual requests omit amount; correct: 8 answerable, 1 blocked, 6/7 unblocked omit amount. Original review unchanged."
+}

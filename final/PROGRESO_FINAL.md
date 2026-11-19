@@ -35,6 +35,8 @@ Suma ponderada: ~57,25 %, redondeada a rango 55–60 % para no atribuir precisi�
 
 ## Ruta inmediata
 
+Actualización de revisión: se recibió [el dictamen de 44 respuestas](evidence/human_response_review_01/RECEPCION.md), con ocho dudas abiertas. NF4 queda vetado para despliegue por fallos confirmados; la evaluación numérica total continúa pendiente. [Recuperación 11 del juez](JUEZ_11_RECUPERACION.md) lista para CPU, sin inferencia nueva local ni gastos iniciados; es el siguiente ensayo técnico acotado, no una repetición para cambiar notas. Verificación local: 226 pruebas final y 128 M3 (354). El avance se mantiene 55–60 %; no se aumenta por otra preparación del juez.
+
 Actualización vigente: [Comparación 02 auditada](evidence/comparison_02/ANALISIS.md), con [recálculo sin modelos](evidence/comparison_02/recalculated.json). No repetir inferencia. Completar [revisión humana de 44 respuestas reales](eval/review_comparison02/LEEME.md), resolver el juez para calificar las mismas respuestas, conectar dominio/controles, elegir configuración y desplegar el sistema real. El [reporte integrador](reporte.md) es borrador. Las notas anteriores de preparación se conservan como historial, no como tareas para volver a ejecutar.
 
 Comparación 01 se conserva como fallo de interfaz. Comparación 02 sí completó la colección con la corrección; sus 110 registros no prueban por sí solos corrección semántica. Los porcentajes anteriores de 40–45 % correspondían a preparación sin esa evidencia. Verificación local vigente: 214 pruebas final y 128 M3 (342), sin nuevas inferencias para recalcular ni corregir telemetría.
@@ -43,7 +45,7 @@ La continuación 06 confirmó fallo real de aquel juez: una atribución falsa re
 
 Verificación histórica de Hydrogen 10: 193 pruebas final y 128 M3 aprobadas (321), registradas en Colab. [Evidencia](evidence/hydrogen_10/ANALISIS.md): nota 2 conservada, 503 y reintento terminado por transporte/JSON, sin notas nuevas. USD 2,4706725 estimados/reservados, no factura. Las pruebas del cliente usan transporte simulado; no se aumenta el avance por una calibración todavía incompleta.
 
-1. Completar [revisión humana de 44 respuestas](eval/review_comparison02/LEEME.md). En tarea separada resolver disponibilidad de API con diagnóstico sanitizado; no repetir 07–10, seleccionar entre notas, borrar registros ni activar facturación. Preservar nota válida y USD 2,4706725 acumulados. Las doce anclas están aprobadas, pero su ejecución y validación del juez siguen pendientes.
+1. Ejecutar [recuperación 11 del juez en CPU](ContractRisk_Final_Juez_11_Recuperacion_Colab.ipynb), con secretos existentes y el mismo Drive. No repetir 07–10, seleccionar entre notas, borrar registros ni activar facturación. Preservar nota válida y USD 2,4706725 acumulados, dentro del techo TOTAL USD 5. La revisión de 44 respuestas fue recibida; adjudicar las ocho dudas sin rehacer el archivo completo. Las doce anclas están aprobadas, pero su ejecución y validación del juez siguen pendientes.
 2. Conectar juicio validado y auditoría semántica/controles al harness común, recalificar las mismas respuestas guardadas y decidir eficiencia. No repetir Comparación 02 para buscar mejores resultados ni sustituir cobertura literal por dominio.
 3. Elegir la configuración a desplegar según evidencia, integrar el Space real y comprobar salud/logs/W&B sin datos personales.
 4. Escribir reporte/tablas/errores/ética/uso de IA, portada y diapositivas; acordar sustentación.

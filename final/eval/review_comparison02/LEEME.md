@@ -1,5 +1,7 @@
 # Revisión de 44 respuestas reales
 
+Actualización: [revisión recibida](../../evidence/human_response_review_01/RECEPCION.md), 44 casos cubiertos y ocho con dudas abiertas. No hace falta repetir todo el archivo. Las instrucciones siguientes se conservan como procedimiento de la plantilla inicial.
+
 Esta revisión es distinta de las doce anclas sintéticas ya aprobadas. Ahora revisamos 22 respuestas reales del sistema FP16 y las mismas 22 de NF4. No hace falta Colab, GPU, claves ni pagos.
 
 1. Extraer el ZIP completo y abrir index.html. Mantener la carpeta images al lado.

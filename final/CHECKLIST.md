@@ -8,6 +8,14 @@ Actualización 18/11/2026: avance estimado **55–60 % de la entrega final**; [d
 
 ## Fechas y reglas de la guía
 
+Último estado: [44 respuestas revisadas por el usuario](evidence/human_response_review_01/RECEPCION.md), con ocho dudas explícitas sin adjudicar. NF4 vetado para despliegue por un fallo crítico nuevo y dos regresiones de invarianza confirmadas; FP16 no se declara aprobado. [Juez 11](JUEZ_11_RECUPERACION.md) preparado con diagnóstico de transporte y presupuesto acumulado dentro de USD 5, sin facturación habilitada ni nuevas llamadas locales. Verificación actual: **226 pruebas final + 128 M3 = 354 aprobadas**; no prueban disponibilidad ni calidad del servicio de API.
+
+- [x] Recibir/preservar revisión humana de 44 salidas, transcribir criterios y conservar dudas; no sustituir el dictamen por notas LLM.
+- [x] Registrar veto de selección NF4 bajo reglas previas, separado del `not_evaluable` de la evaluación numérica completa.
+- [ ] Adjudicar ocho dudas y conciliar pertinencia de citas frente al respaldo de afirmaciones; no cambiar referencias para aprobar resultados.
+- [x] Preparar recuperación 11: nota válida intacta, ledger con seis asientos anteriores, marcador exclusivo, timeout/red/JSON/HTTP diferenciados y un reintento 503 global.
+- [ ] Ejecutar recuperación 11 en CPU, conservar resultados y auditar notas; solo tras aprobar regresión y razones continuar con confirmación independiente.
+
 Actualización vigente: avance estimado **55–60 %**, según [desglose](PROGRESO_FINAL.md). [Comparación 02 completa y auditada](evidence/comparison_02/ANALISIS.md): 110 registros, memoria/latencia y ablación reales; diagnóstico recalculado, no scorecard semántico final. NF4 no aceptado para despliegue. Revisión humana de 44 respuestas y juez/dominio pendientes. [Reporte integrador](reporte.md) en borrador. Verificación actual: 214 pruebas final + 128 M3 = 342 aprobadas.
 
 - [x] Conservar ZIP/notebook de Comparación 02, verificar 88 hashes, manifiestos y recalcular tablas por caso sin inferencia.
