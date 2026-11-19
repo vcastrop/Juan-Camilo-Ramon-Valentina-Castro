@@ -1,0 +1,24 @@
+{
+  "archive_sha256": "7863af2a4126fd5f445d1912a94210538a018d2727516f7b65ae204f61473a11",
+  "notebook_sha256": "04237fb4da60483a66d12513fcccbacb6c5f7c0a095d769691cad6c0bc73f2c8",
+  "source_commit": "882985171cc4a70d37857f59f78483a7bb76a012",
+  "source_hashes_verified": 87,
+  "notebook_sources_identical": true,
+  "executed_code_cells": 5,
+  "expected_handled_error_outputs": 1,
+  "profiles_completed": 0,
+  "evaluation_predictions_saved": 0,
+  "judge_used": false,
+  "real_t4_kernel_probe_passed": true,
+  "generator_fp16_load_completed": true,
+  "failure_stage": "qa_no_rag_fp16:warmup",
+  "failure_root_cause_reproduced": "'function' object has no attribute 'predict'",
+  "failure_owner": "new_collection_adapter_not_user_credentials_or_judge_API",
+  "corrected_adapter_tested_with_real_m3_factory_and_fake_ml": true,
+  "tests_logged": {
+    "final": 206,
+    "m3": 128
+  },
+  "quality_or_efficiency_accepted": false,
+  "credential_pattern_matches": 0
+}

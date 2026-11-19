@@ -6,7 +6,7 @@ sys.path[:0]=[str(ROOT),str(ROOT/'m3')]
 from final.config import MODELS
 
 PROFILES=['qa_no_rag_fp16','m3_text_fp16','integrated_fp16','integrated_nf4','integrated_no_tool_fp16']
-SETTINGS={'version':'common-collection-1','seed':42,'max_new_tokens':512,'do_sample':False,
+SETTINGS={'version':'common-collection-1.0.1-callable-fix','seed':42,'max_new_tokens':512,'do_sample':False,
     'chunk_chars':220,'overlap_chars':30,'identity_in_embeddings':True,'top_k':3,
     'profile_order':PROFILES,'repetitions':1,'judge_used':False,'semantic_protocol_frozen':False,
     'quantization':{'type':'nf4','double_quantization':True,'compute_dtype':'float16','bitsandbytes':'0.50.2'},
@@ -31,6 +31,14 @@ class PathSystem:
             return self.system.predict(question,image=opened.convert('RGB'))
 
 
+class HistoricalCallable:
+    """M3 construir returns question -> record functions, not objects with predict."""
+    def __init__(self,callback):
+        if not callable(callback):raise TypeError('M3 variant must be callable')
+        self.callback=callback
+    def predict(self,question):return self.callback(question)
+
+
 def build_profile(name,documents,dense,scorer):
     if name not in PROFILES:raise ValueError('Unknown comparison profile')
     from final.generators import CausalGenerator,NativeChatGenerator
@@ -46,11 +54,9 @@ def build_profile(name,documents,dense,scorer):
         if not visual:
             from sistemas_m3 import construir
             historical=construir(dense,list(dense.chunks.values()),scorer,generator,documents)
-            if name=='qa_no_rag_fp16':
-                class NoRAG:
-                    def predict(self,question):return historical['sin_rag'].predict(question,retrieve=False)
-                system=NoRAG()
-            else:system=historical['sistema_final']
+            # M3's sin_rag wrapper already passes retrieve=False internally.
+            key='sin_rag' if name=='qa_no_rag_fp16' else 'sistema_final'
+            system=HistoricalCallable(historical[key])
         else:
             class InjectedAnswer(AnswerAdapter):
                 def __init__(self):

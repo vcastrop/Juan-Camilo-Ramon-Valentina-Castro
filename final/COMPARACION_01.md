@@ -1,6 +1,6 @@
 # Comparación 01: recolección sin depender de la API del juez
 
-Estado 18/11/2026: código preparado y probado en CPU con dobles de prueba. **Sin ejecución real de estos perfiles todavía.** No se cambian M1–M3 históricos, main ni Space. [Notebook T4](ContractRisk_Final_Comparacion_01_Colab.ipynb).
+Estado 18/11/2026: [ejecutado y auditado](evidence/comparison_01/ANALISIS.md), detenido por error del adaptador en calentamiento, sin respuestas evaluadas. No repetir esta versión. [Comparación 02 corregida](COMPARACION_02.md) es la siguiente ejecución. Las secciones siguientes conservan el protocolo y límites, no certifican resultados completos.
 
 ## Qué ejecuta
 

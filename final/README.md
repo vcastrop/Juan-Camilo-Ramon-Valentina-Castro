@@ -2,7 +2,7 @@
 
 Estado: integración de desarrollo probada en T4; despliegue público todavía de infraestructura, no sistema final completo. [Checklist](CHECKLIST.md).
 
-Siguiente ejecución al 18/11: [Comparación 01 en T4](ContractRisk_Final_Comparacion_01_Colab.ipynb), con [instrucciones y límites](COMPARACION_01.md): cinco perfiles, 22 entradas por perfil, respuestas y mediciones reales sin Gemini. Preparado, todavía sin ejecutar. La [revisión de 12 ejemplos](evidence/confirmation_review_01/CIERRE.md) está cerrada; no prueba calidad del juez. Dominio y eficiencia seguirán pendientes de evaluación semántica. Main/Space y presupuesto API no se modifican.
+Siguiente ejecución al 18/11: [Comparación 02 en T4](ContractRisk_Final_Comparacion_02_Colab.ipynb), con [instrucciones y límites](COMPARACION_02.md). [Comparación 01 auditada](evidence/comparison_01/ANALISIS.md) se detuvo por error del adaptador en calentamiento, con cero filas evaluadas. Corregida la llamada a las funciones de M3; modelos y evaluación intactos. Cinco perfiles y 22 entradas por perfil, sin Gemini. La corrección requiere ejecución real; dominio y eficiencia permanecen pendientes. Main/Space y presupuesto API no se modifican.
 
 Estado de API: [Hydrogen 10 ejecutado y auditado](evidence/hydrogen_10/ANALISIS.md): nota histórica 2 intacta, 503 y reintento terminado por transporte/JSON, sin notas nuevas. **No repetir 07–10 ni borrar registros Drive.** USD 2,4706725 estimados/reservados, no factura; techo USD 5 y proyecto gratuito intactos. Falta resolver disponibilidad antes de otra reanudación controlada. El juez sigue sin validar; esto no impide recoger respuestas y mediciones mediante Comparación 01.
 

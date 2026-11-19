@@ -1,5 +1,5 @@
 """Collect real predictions and GPU measurements, without API/judge or fabricated quality scores."""
-import argparse,gc,hashlib,importlib.metadata,json,os,platform,random,subprocess,sys,time
+import argparse,gc,hashlib,importlib.metadata,json,os,platform,random,subprocess,sys,time,traceback
 from datetime import datetime,timezone
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -12,6 +12,16 @@ from final.config import MODELS
 
 
 def write_json(path,data):path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+
+
+def error_frames(exc):
+    """Code locations only; no exception body, source text, private paths or locals."""
+    result=[]
+    for frame in traceback.extract_tb(exc.__traceback__)[-8:]:
+        path=Path(frame.filename).resolve()
+        name=str(path.relative_to(ROOT)).replace('\\','/') if path.is_relative_to(ROOT) else path.name
+        result.append({'file':name,'line':frame.lineno,'function':frame.name})
+    return result
 
 
 class CudaMeter:
@@ -66,6 +76,8 @@ def main():
         # Hashes checked before model loading. References only reach post-inference diagnostics.
         inputs,references,pack=load_common()
         domain_rules=json.loads((ROOT/'final/domain_protocol_v1.json').read_text(encoding='utf-8'))
+        from final.comparison_recovery import verify
+        meta['recovery']=verify(ROOT,SETTINGS,pack,domain_rules)
         write_json(args.output/'domain_protocol_v1.json',domain_rules)
         meta['domain_rules_sha256']=canonical_hash(domain_rules)
         meta['semantic_execution_status']='pending_validated_judge_and_documented_semantic_audit'
@@ -159,7 +171,7 @@ def main():
             generator.close();generator=None;gc.collect();torch.cuda.empty_cache();torch.cuda.synchronize()
         meta['status']='collection_completed_semantic_evaluation_pending'
     except Exception as exc:
-        meta.update(status='failed_partial_evidence_retained',error_type=type(exc).__name__)
+        meta.update(status='failed_partial_evidence_retained',error_type=type(exc).__name__,error_frames=error_frames(exc))
         print('Stopped; exception type:',type(exc).__name__,flush=True)
     finally:
         if wb:

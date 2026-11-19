@@ -8,12 +8,14 @@ Actualización 18/11/2026: avance estimado **40–45 % de la entrega final**; [d
 
 ## Fechas y reglas de la guía
 
-Actualización de preparación: [revisión de doce ejemplos cerrada](evidence/confirmation_review_01/CIERRE.md), sin inferencia de confirmación. [Comparación 01](COMPARACION_01.md) preparada con cinco perfiles, mediciones sincronizadas, ablación y reglas predeclaradas de dominio/controles. **No ejecutada todavía ni aceptada eficiencia.** Verificación actual: 206 pruebas final + 128 M3 = 334 aprobadas. Nuevas pruebas CPU no son resultados GPU.
+Actualización: [Comparación 01 auditada](evidence/comparison_01/ANALISIS.md), error del adaptador durante calentamiento; cero filas evaluadas. [Comparación 02](COMPARACION_02.md) corrige la interfaz de funciones M3 sin cambiar modelos/datos/reglas. Preparada, todavía sin inferencia real. Verificación actual: 210 pruebas final + 128 M3 = 338 aprobadas, incluyendo fábrica y wrappers reales con modelos simulados. No hay eficiencia aceptada ni juez validado. Revisión humana de doce ejemplos cerrada, sin inferencia de confirmación.
 
 - [x] Recibir revisión de doce ejemplos: once aprobados en archivo y cierre posterior explícito del caso de explicación ausente; conservar ambos registros.
 - [x] Preparar ejecutor sin API para 22 casos por perfil, campos de memoria/latencia, errores retenidos y resultados separados por modalidad.
 - [x] Predeclarar reglas de dominio y daño antes de la comparación; ejecución semántica y enlace de juez siguen pendientes.
-- [ ] Ejecutar y auditar Comparación 01 en sesión nueva T4; no convertir diagnósticos literales en cumplimiento.
+- [x] Ejecutar y auditar Comparación 01: carga y prueba pequeña NF4 reales; fallo de interfaz en calentamiento, sin evaluar casos. No equivale a comparación completada.
+- [x] Reproducir/corregir fallo de funciones M3 y reemplazar el doble de prueba incorrecto; conservar originales y verificar configuración sin cambios semánticos.
+- [ ] Ejecutar y auditar Comparación 02 en T4; comprobar los cinco perfiles antes de completar tablas o aceptar eficiencia.
 
 Verificación registrada en Hydrogen 10: **193 pruebas final + 128 M3 = 321 aprobadas**. [Corrida auditada](evidence/hydrogen_10/ANALISIS.md): nota 2 reutilizada, 503 y reintento con fallo de transporte/JSON, cero notas nuevas. USD 2,4706725 estimados/reservados, no cargos confirmados; techo USD 5 intacto. No repetir 07–10 ni borrar registros Drive. La revisión humana separada se cerró después; no se ha ejecutado la confirmación.
 

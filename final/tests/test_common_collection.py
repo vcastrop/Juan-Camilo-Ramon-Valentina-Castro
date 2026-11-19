@@ -117,19 +117,62 @@ class CollectionTests(unittest.TestCase):
             with self.assertRaises(ValueError):collect([inputs[0],inputs[0]],System(),Meter(),temp)
             self.assertFalse((Path(temp)/'predictions.jsonl').exists())
 
-    def test_baselines_construct_real_historical_variant_without_retrieval(self):
+    def exercise_real_factory(self,profile):
+        """Keep the real construir/wrap functions, CandidateRAG and CandidateAgent."""
         from final import generators
-        spy=System()
-        class Rag:
-            def predict(self,question,retrieve=True):spy.calls.append(retrieve);return {'output':None}
+        from final.collection_profiles import warmup
+        import sistemas_m3
+        context={'chunk_id':'CO1.PCCNTR.991::p0','doc_id':'CO1.PCCNTR.991',
+                 'text':'Modalidad: Concurso ficticio','source_url':'synthetic://test'}
         class Generator:
-            def __init__(self,*args,**kwargs):self.precision=kwargs['precision']
+            def __init__(self,*args,**kwargs):self.precision=kwargs['precision'];self.last_generation={};self.calls=[]
+            def generate(self,system,user):
+                self.calls.append((system,json.loads(user)))
+                if 'Selecciona una acción' in system:return '{"action":"answer"}'
+                citations=json.loads(user).get('citas_permitidas',[])
+                return json.dumps({'respuesta':'Dato ficticio' if citations else 'Sin evidencia',
+                    'explicacion':'Fuente ficticia' if citations else 'No hay fuentes',
+                    'citas':citations,'abstencion':not bool(citations)})
             def close(self):pass
-        class Dense:chunks={}
-        with patch.object(generators,'CausalGenerator',Generator),patch('sistemas_m3.construir',return_value={'sin_rag':Rag(),'sistema_final':System()}):
-            system,gen,vision=build_profile('qa_no_rag_fp16',[],Dense(),None)
-            system.predict('Q');self.assertEqual(spy.calls,[False]);self.assertIsNone(vision)
-            self.assertEqual(gen.precision,'fp16')
+        class Dense:
+            chunks={context['chunk_id']:context}
+            def __init__(self):self.calls=[]
+            def search(self,question,k):self.calls.append(question);return [context]
+        class Passthrough:
+            def __init__(self,base,*args,**kwargs):self.base=base
+            def search(self,q,k):return self.base.search(q,k)
+        dense=Dense()
+        # Mock only unavailable ML retrieval backends. Do NOT mock construir's callable interface.
+        with patch.object(generators,'CausalGenerator',Generator),\
+                patch.object(sistemas_m3,'HybridRetriever',Passthrough),\
+                patch.object(sistemas_m3,'RerankedRetriever',Passthrough):
+            system,gen,vision=build_profile(profile,[],dense,None)
+            self.assertTrue(callable(system.system.callback));self.assertFalse(hasattr(system.system.callback,'predict'))
+            with tempfile.TemporaryDirectory() as temp:
+                warmed=warmup(system,temp)
+                self.assertEqual(warmed[1]['guard'],'unsupported_image')
+                inputs,_,_=load_common()
+                rows=collect(inputs,system,Meter(),temp)
+            self.assertEqual(len(rows),22)
+            self.assertTrue(all(row['system_error_type'] is None for row in rows))
+            self.assertTrue(all(row['record']['guard']=='unsupported_image' for row in rows[12:]))
+            self.assertEqual(gen.precision,'fp16');self.assertIsNone(vision)
+            if profile=='qa_no_rag_fp16':
+                self.assertFalse(dense.calls)
+                self.assertTrue(all(not payload.get('evidencia') for _,payload in gen.calls))
+            else:
+                self.assertTrue(dense.calls)
+                self.assertTrue(any(payload.get('evidencia') for _,payload in gen.calls))
+
+    def test_no_rag_uses_real_factory_function_in_warmup_and_all_inputs(self):
+        self.exercise_real_factory('qa_no_rag_fp16')
+
+    def test_m3_uses_real_factory_function_in_warmup_and_all_inputs(self):
+        self.exercise_real_factory('m3_text_fp16')
+
+    def test_callable_adapter_rejects_old_inaccurate_object_double(self):
+        from final.collection_profiles import HistoricalCallable
+        with self.assertRaises(TypeError):HistoricalCallable(System())
 
     def test_visual_pair_changes_only_precision_and_ablation_bypasses_tool_route(self):
         from final import generators,adapters
@@ -164,6 +207,22 @@ class CollectionTests(unittest.TestCase):
         with patch.object(generators,'NativeChatGenerator',Generator),patch.object(adapters,'Vision',side_effect=RuntimeError('failure')):
             with self.assertRaises(RuntimeError):build_profile('integrated_nf4',[],None,None)
         self.assertTrue(loaded[0].closed);self.assertEqual(len(loaded),1)
+
+    def test_failed_checkpoint_and_settings_unchanged_except_version(self):
+        from final.comparison_recovery import verify
+        _,_,pack=load_common()
+        rules=json.loads((ROOT/'final/domain_protocol_v1.json').read_text(encoding='utf-8'))
+        self.assertEqual(verify(ROOT,SETTINGS,pack,rules)['previous_evaluated_rows'],0)
+        changed=copy.deepcopy(SETTINGS);changed['max_new_tokens']=1024
+        with self.assertRaises(ValueError):verify(ROOT,changed,pack,rules)
+
+    def test_error_locations_do_not_include_exception_body_or_locals(self):
+        from final.run_common_collection import error_frames
+        try:raise AttributeError('FAKE_SECRET PRIVATE_INPUT')
+        except AttributeError as error:frames=error_frames(error)
+        self.assertTrue(frames)
+        self.assertNotIn('FAKE_SECRET',json.dumps(frames));self.assertNotIn('C:',json.dumps(frames))
+        self.assertEqual(set(frames[-1]),{'file','line','function'})
 
 
 if __name__=='__main__':unittest.main()
