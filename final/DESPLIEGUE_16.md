@@ -27,6 +27,14 @@ consola/código; ZIP sin rutas escapadas, archivos extra o hashes incorrectos.
 La interfaz se construye con Gradio 6.32.0 sin cargar Torch. Esto **no** verifica
 pesos, calidad semántica, memoria real, disponibilidad o aislamiento de ZeroGPU.
 
+Comprobación local 19/11/2026: **305 pruebas final + 128 M3 = 433 aprobadas**;
+18 corresponden al nuevo candidato. Se generó además el paquete real de cuatro
+archivos, se verificó/descomprimió su manifiesto de 28 archivos y se construyó
+su aplicación con componentes sustitutos. Hubo avisos no fatales de cierre de
+bucles de Gradio/asyncio en Windows; no errores de pruebas. No se cargaron pesos
+ni se hicieron llamadas al juez. El último refuerzo de validación de tipos se
+volvió a comprobar con las 18 pruebas del candidato.
+
 ## Prueba real en Colab
 
 1. Abrir `ContractRisk_Final_Despliegue_16_Colab.ipynb` en una sesión nueva.

@@ -44,7 +44,7 @@ class InputError(ValueError):
 
 def validate(question, mode, description, image, consent):
     if consent is not True: raise InputError('Confirma el aviso de uso y privacidad antes de consultar.')
-    if mode not in {'qa', 'sufficiency'}: raise InputError('Modo no permitido.')
+    if not isinstance(mode, str) or mode not in {'qa', 'sufficiency'}: raise InputError('Modo no permitido.')
     if not isinstance(description, str) or len(description) > 8000:
         raise InputError('La descripción debe tener como máximo 8000 caracteres.')
     if not isinstance(question, str) or len(question) > 1200:
@@ -72,7 +72,7 @@ def event(version, seconds, mode='qa', record=None, error='none'):
     use = metrics(record) if known else None
     return {'timestamp_utc': datetime.now(timezone.utc).isoformat(), 'request_id': str(uuid.uuid4()),
             'event_type': 'contract_request', 'latency_seconds': seconds, 'success': known and error == 'none',
-            'mode': mode if mode in {'qa', 'sufficiency'} else 'unknown',
+            'mode': mode if isinstance(mode, str) and mode in {'qa', 'sufficiency'} else 'unknown',
             'rag_used': bool(c.get('rag')) if known else None,
             'tool_used': use['tool_success'] if known else None,
             'vision_used': bool(c.get('vision')) if known else None,
@@ -90,6 +90,7 @@ class Service:
     def health(self):
         try: models = self.backend.model_state() if self.backend else {}
         except Exception: models = {}
+        if not isinstance(models, dict): models = {}
         try: index = bool(self.backend and self.backend.index_probe())
         except Exception: index = False
         required = {'generator', 'vision', 'classifier', 'embedding', 'reranker'}

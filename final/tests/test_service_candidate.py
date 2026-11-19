@@ -72,9 +72,11 @@ class ServiceTests(unittest.TestCase):
     def test_input_limits_and_consent(self):
         for q, mode, desc, consent in [('x', 'qa', '', False), ('', 'qa', '', True),
                 ('x'*1201, 'qa', '', True), ('x', 'qa', 'x'*8001, True),
-                ('', 'sufficiency', '', True), ('x', 'evil', '', True)]:
+                ('', 'sufficiency', '', True), ('x', 'evil', '', True), ('x', [], '', True)]:
             with self.assertRaises(InputError): validate(q, mode, desc, None, consent)
         self.assertTrue(validate('', 'sufficiency', 'text', None, True))
+        _, metadata = Service(Backend(), VERSION).compute('x', [], '', None, True)
+        self.assertEqual(metadata['mode'], 'unknown')
 
     def test_pixel_limit_and_type(self):
         from PIL import Image
