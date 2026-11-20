@@ -1,6 +1,6 @@
 # Avance de la entrega final — 19/11/2026
 
-Estimación operativa: **74–78 % (~76 %)** de la entrega final integradora. No es
+Estimación operativa: **83–87 % (~85 %)** de la entrega final integradora. No es
 nota, madurez para uso real ni porcentaje de todo el curso. El aumento reconoce
 ejecución y evaluación reales, no cantidad de notebooks o pruebas.
 
@@ -9,8 +9,10 @@ ejecución y evaluación reales, no cantidad de notebooks o pruebas.
 - [OCR23 publicado y salud lista según usuario](evidence/space_ocr23_cpu/SALUD_LISTA.md):
   cuatro modelos, índice y OCR5.5.0; fallos de carga corregidos.
   [Siete peticiones funcionales recibidas](evidence/space_ocr23_cpu/SMOKE_RECIBIDO.md),
-  sin errores. Faltan salud posterior, observabilidad confirmada y acceso externo.
-  Estas pruebas no son otro benchmark ni validación general de calidad.
+  sin errores. Salud posterior lista y [acceso sin sesión HF/W&B comprobado por
+  el usuario](evidence/space_ocr23_cpu/ACCESO_PUBLICO.md). RunW&B/métricas identificadas,
+  pero su estado Crashed/continuidad permanece como incidencia no resuelta.
+  Las pruebas no son otro benchmark ni validación general de calidad.
 
 - Comparación 02: cinco perfiles × 22 entradas, 110 respuestas conservadas.
 - Juez aceptado para esta tarea/configuración tras calibración 20/20,
@@ -41,36 +43,28 @@ ejecución y evaluación reales, no cantidad de notebooks o pruebas.
 | Hito | Peso | Avance | Pendiente principal |
 |---|---:|---:|---|
 | Fase 0: insumos/base | 10 % | 80 % | Inventario/roles definitivos. |
-| Fase 1: producto/infraestructura | 10 % | 60 % | Integración contractual pública. |
-| Fase 2: integración de desarrollo | 20 % | 75 % | Corregir/verificar fallos y servicio final. |
+| Fase 1: producto/infraestructura | 10 % | 95 % | Mantener servicio y acceso; no garantiza cuota/permanencia. |
+| Fase 2: integración de desarrollo | 20 % | 95 % | Despliegue OCR verificado en casos concretos; conservar límites conocidos. |
 | Fase 3: evaluación común | 15 % | 95 % | Cierre completo reproducible; reproducción final desde limpio pendiente. |
 | Fase 4: eficiencia | 15 % | 90 % | Publicación de configuración final; resultado NF4 negativo ya medido y decidido. |
 | Fase 5: comparativas/ablación | 10 % | 90 % | Tablas completas; diagrama/lectura final y ensayo de presentación pendientes. |
-| Fase 6: producción/observabilidad | 10 % | 25 % | Peticiones contractuales reales, salud y acceso externo. |
+| Fase 6: producción/observabilidad | 10 % | 80 % | Peticiones/salud/acceso comprobados; continuidad W&B Crashed sin resolver. |
 | Fase 7: reporte/presentación | 7 % | 50 % | Reporte con resultados completos; faltan roles, portada y diapositivas. |
-| Fase 8: cierre verificable | 3 % | 0 % | Clon limpio, accesos/licencias, PR/merge y entrega. |
+| Fase 8: cierre verificable | 3 % | 20 % | Accesos listos; faltan clon limpio, auditoría final, PR/merge y entrega. |
 
-La tabla ponderada anterior daba ~71,75 %; el rango vigente incorpora además la
-recepción visual21, corrección de portabilidad y cierre semántico OCR21; no cuenta
-el despliegue público como completo. La aproximación no pretende precisión estadística. No son
+Suma ponderada vigente85,35%, expresada como rango para evitar falsa precisión.
+Reconoce OCR21, despliegue funcional y accesos, no estabilidad continua W&B ni
+cierre académico completo. La aproximación no pretende precisión estadística. No son
 pesos de la rúbrica académica ni garantía de resultados.
 
 ## Ruta inmediata — no repetir inferencia anterior
 
 1. Conservar [scorecard completo](evidence/domain_review46/RECEPCION.md), originales
    y discrepancias. No repetir evaluaciones ni revisiones para buscar mejores notas.
-2. Seguir [la preparación del servicio](DESPLIEGUE_SIGUIENTE.md): FP16 como candidato;
-   no desplegar NF4. Integrar el sistema
-   contractual público y verificar texto, imagen, cálculo, abstención, errores,
-   salud/listo, privacidad y W&B accesible. El Space comprobado sigue siendo infraestructura.
-   Las [fallas de instalación 16](evidence/deployment16_failed/ANALISIS.md) y de
-   historial 17 son antecedentes resueltos. [La corrida 17 posterior completó
-   inferencia real](evidence/deployment17_completed/ANALISIS.md), con un fallo OCR
-   bloqueado. [Visual 18](evidence/visual18_completed/ANALISIS.md) confirmó falta
-    de utilidad. OCR19 aportó extracción útil; [integración20](INTEGRACION_20.md)
-   ya recogida sobre el mismo conjunto y [evaluación21](EVALUACION_21.md)
-   ya cerrada por equivalencia exacta y revisión visual nueva. No repetir 17–21. ZeroGPU sigue
-   pendiente. No contar estos diagnósticos como despliegue público terminado.
+2. Conservar [servicioOCR23 y evidencia pública](evidence/space_ocr23_cpu/ACCESO_PUBLICO.md),
+   siete smoke y tres rechazos de entrada. No repetir17–23 ni desplegarNF4.
+   Mantener separada la incidencia W&B Crashed: evidencia visible no equivale a
+   conexión viva o monitoreo continuo estable. No ocultarla ni resetear historial.
 3. Terminar reporte, contribuciones/uso de IA y presentación.
 4. Reproducción desde limpio, revisión de tablas/accesos/licencias y cierre de
    PR/merge solo autorizado; entrega y comprobante en Interactiva.

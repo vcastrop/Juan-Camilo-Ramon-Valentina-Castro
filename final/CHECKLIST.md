@@ -26,7 +26,7 @@ Dominio histórico cerrado no significa dominio del nuevo OCR ni servicio públi
   - [x] Identificar [run W&B f7ljlxip](evidence/space_ocr23_cpu/WANDB_RECIBIDO.md): config/job_type coinciden; métricas visibles y último summary coincide con M1.
   - [x] Auditar10 eventos de logs y salud actual:7 peticiones válidas exitosas,3 rechazos de entrada (2 consentimiento,1 M1 vacío); backend sigue listo. No son fallos de inferencia ni exactitud70%.
   - [ ] Diagnosticar continuidad W&B/Crashed con datos SDK: causa no aparece en Container logs; queued_check_dashboard no prueba conexión viva. Conservar run y rechazos, no alterar estado para ocultarlos.
-  - [ ] Comprobar acceso externo de Space y W&B; las capturas de propietario no lo prueban.
+  - [x] Comprobar [acceso externo HF/W&B](evidence/space_ocr23_cpu/ACCESO_PUBLICO.md) con capturas del usuario sin sesión: gráficos W&B visibles y salud HFlista. No es nueva inferencia anónima ni prueba de disponibilidad permanente.
 
 ### Ruta actual: OCR19 recibido; integración20 separada preparada
 
