@@ -2,12 +2,20 @@
 
 ## Estado vigente — dominio de los cinco perfiles cerrado
 
+### Ruta actual: visual 18 rechazado; candidato OCR 19 separado
+
+- [x] Conservar ZIP/notebook [18](evidence/visual18_completed/ANALISIS.md), verificar ocho PNG y recalcular diagnósticos.
+- [x] Reconocer 0/5 legibles útiles y que dos abstenciones de controles no demostraron la detección esperada.
+- [x] Preparar un candidato OCR distinto, sin alterar Qwen ni métricas previas; doce imágenes congeladas y prueba CPU sin API.
+- [ ] Ejecutar y revisar [OCR 19](OCR_19.md). Es extracción de píxeles, no evaluación de respuestas QA.
+- [ ] Si aporta utilidad, integrar/versionar y verificar controles/casos afectados antes de desplegar.
+
 ### Última recepción: despliegue 17 completado, diagnóstico visual 18 preparado
 
 - [x] Conservar y verificar [ZIP/notebook 17 completados](evidence/deployment17_completed/ANALISIS.md): 441 pruebas, cinco modelos/índice, siete casos.
 - [x] Comprobar M1, QA, cálculo y controles; reconocer error visual de un cero extra y falsa abstención.
 - [x] Fijar ocho imágenes y expectativas diagnósticas antes de otra inferencia; modelos/prompts/guardas sin cambios.
-- [ ] Ejecutar una sola tanda [visual 18](VISUAL_DESPLIEGUE_18.md), revisar todos los resultados y decidir alcance visual.
+- [x] Ejecutar y revisar una sola tanda [visual 18](VISUAL_DESPLIEGUE_18.md): utilidad visual rechazada; no repetir.
 - [ ] Verificar después ZeroGPU real y telemetría de peticiones públicas; Colab no demuestra estos hitos.
 
 **Despliegue: ruta actual [prueba 17](DESPLIEGUE_17.md).** La prueba 16 falló

@@ -1,5 +1,9 @@
 # Diagnóstico visual acotado 18
 
+**Cerrado: utilidad visual rechazada (0/5 legibles).** [Resultados originales y
+auditoría](evidence/visual18_completed/ANALISIS.md). No repetir esta tanda.
+Continuar con el candidato separado [OCR 19](OCR_19.md), sin cambiar cifras previas.
+
 La [corrida 17 completada](evidence/deployment17_completed/ANALISIS.md) prueba
 inferencia técnica real de M1/RAG/herramienta/visión, pero la captura produjo un
 cero extra. Este diagnóstico conserva modelos, revisiones, prompts, extracción,

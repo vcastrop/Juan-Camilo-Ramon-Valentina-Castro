@@ -66,9 +66,14 @@ inválida activaron sus controles. En la imagen el OCR convirtió 250000000 en
 2500000000 y la comparación con el snapshot bloqueó la respuesta: prevención
 de una afirmación errónea, no lectura correcta. Este diagnóstico no reemplaza
 el scorecard, no valida calidad general ni representa observabilidad pública.
-[Ocho entradas visuales congeladas](VISUAL_DESPLIEGUE_18.md) preparadas para
-una sola tanda post-hoc sin cambiar modelos/prompts/guardas. No se afirma que
-esas entradas hayan sido ejecutadas todavía.
+[La tanda visual 18](evidence/visual18_completed/ANALISIS.md), post-hoc y sin
+cambios de modelos/prompts/guardas, completó ocho casos y 449 pruebas de código,
+pero **0/5 imágenes legibles útiles**. Repitió el cero extra y las cuatro fichas
+compactas solo produjeron el encabezado. Hubo tres abstenciones de controles,
+pero dos se debieron a esquema incompleto, no al mecanismo esperado. Se rechaza
+utilidad visual en esta muestra sin afirmar que fallan todas las imágenes del
+dominio. [OCR 19](OCR_19.md) es un candidato distinto y aún no ejecutado con
+motor real; no se le atribuyen mejoras ni las métricas del perfil FP16 anterior.
 
 Space objetivo: https://huggingface.co/spaces/Juanoff/contractrisk-colombia. La versión pública comprobada es de infraestructura; no afirmar que ejecuta aún el sistema contractual completo. W&B registra pruebas de infraestructura y Colab: https://forge.coreweave.com/wandb/jcramonp-eanit/contractrisk-final. Falta comprobar acceso del evaluador y peticiones reales de producción.
 

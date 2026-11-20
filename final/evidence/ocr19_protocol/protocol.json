@@ -1,0 +1,168 @@
+{
+  "version": "ocr-only-pilot-19",
+  "post_hoc": true,
+  "settings": {
+    "version": "ocr-candidate-19",
+    "language": "spa+eng",
+    "oem": 1,
+    "psm": [
+      3,
+      6
+    ],
+    "min_word_confidence": 80.0,
+    "timeout_per_pass_seconds": 30,
+    "max_pixels": 12000000,
+    "retries": 0,
+    "note": "Two layouts of ONE engine; not independent readers or calibrated confidence."
+  },
+  "cases": [
+    {
+      "id": "full_original_once",
+      "file": "final/evidence/visual18_protocol/full_original_once.png",
+      "sha256": "7e958d22ea26cfde9d1ff340c65f87c3c94c702ff961d8edeb8bbde0d2d907af",
+      "expected": {
+        "id_contrato": "CO1.PCCNTR.1088236",
+        "valor_cop": "250000000",
+        "modalidad": "Selección Abreviada de Menor Cuantía"
+      },
+      "expected_route": "needs_source_and_answer_validation",
+      "complete": true,
+      "source": "same frozen pixels from failed Qwen18; altered amount means reading test only, not verified source truth"
+    },
+    {
+      "id": "compact_plain_a",
+      "file": "final/evidence/visual18_protocol/compact_plain_a.png",
+      "sha256": "97d7bae373db281cea128c92a0c4a818d5f6ead97e42ded2d231b2f472b0c1aa",
+      "expected": {
+        "id_contrato": "CO1.PCCNTR.1088236",
+        "valor_cop": "250000000",
+        "modalidad": "Selección Abreviada de Menor Cuantía"
+      },
+      "expected_route": "needs_source_and_answer_validation",
+      "complete": true,
+      "source": "same frozen pixels from failed Qwen18; altered amount means reading test only, not verified source truth"
+    },
+    {
+      "id": "compact_grouped_a",
+      "file": "final/evidence/visual18_protocol/compact_grouped_a.png",
+      "sha256": "47560cccdb649f457c47da0d21cd4085f5e2d88507e914e2c3e130b03b6e17df",
+      "expected": {
+        "id_contrato": "CO1.PCCNTR.1088236",
+        "valor_cop": "250000000",
+        "modalidad": "Selección Abreviada de Menor Cuantía"
+      },
+      "expected_route": "needs_source_and_answer_validation",
+      "complete": true,
+      "source": "same frozen pixels from failed Qwen18; altered amount means reading test only, not verified source truth"
+    },
+    {
+      "id": "compact_plain_b",
+      "file": "final/evidence/visual18_protocol/compact_plain_b.png",
+      "sha256": "3bd47eac10d2008fb8e73c6bc583203a72069a2451263a0ccffaa5245b217c59",
+      "expected": {
+        "id_contrato": "CO1.PCCNTR.1109703",
+        "valor_cop": "82000000",
+        "modalidad": "Mínima cuantía"
+      },
+      "expected_route": "needs_source_and_answer_validation",
+      "complete": true,
+      "source": "same frozen pixels from failed Qwen18; altered amount means reading test only, not verified source truth"
+    },
+    {
+      "id": "compact_grouped_b",
+      "file": "final/evidence/visual18_protocol/compact_grouped_b.png",
+      "sha256": "a843b109c609f4b7367e9c752ec6f9f98d212cc2d1a047d3ce0547c4d2debc74",
+      "expected": {
+        "id_contrato": "CO1.PCCNTR.1109703",
+        "valor_cop": "82000000",
+        "modalidad": "Mínima cuantía"
+      },
+      "expected_route": "needs_source_and_answer_validation",
+      "complete": true,
+      "source": "same frozen pixels from failed Qwen18; altered amount means reading test only, not verified source truth"
+    },
+    {
+      "id": "altered_amount",
+      "file": "final/evidence/visual18_protocol/altered_amount.png",
+      "sha256": "370b95160d3559c581d618f83c3fa279797705bdc23be0f229ddd1eddcbc3574",
+      "expected": {
+        "id_contrato": "CO1.PCCNTR.1088236",
+        "valor_cop": "251000000",
+        "modalidad": "Selección Abreviada de Menor Cuantía"
+      },
+      "expected_route": "needs_source_and_answer_validation",
+      "complete": true,
+      "source": "same frozen pixels from failed Qwen18; altered amount means reading test only, not verified source truth"
+    },
+    {
+      "id": "missing_amount",
+      "file": "final/evidence/visual18_protocol/missing_amount.png",
+      "sha256": "0acaa485f1a514144159e4e009b250a7fc9a6d60e6c8034818e7e64ae91bfeb8",
+      "expected": {
+        "id_contrato": "CO1.PCCNTR.1088236",
+        "valor_cop": null,
+        "modalidad": "Selección Abreviada de Menor Cuantía"
+      },
+      "expected_route": "missing_visual_fields",
+      "complete": false,
+      "source": "same frozen pixels from failed Qwen18; altered amount means reading test only, not verified source truth"
+    },
+    {
+      "id": "blank",
+      "file": "final/evidence/visual18_protocol/blank.png",
+      "sha256": "d2b8be3b4231f3b86a70339dc3050d6d888b2f313253c6f57493a719aa536053",
+      "expected": null,
+      "expected_route": "unreadable",
+      "complete": false,
+      "source": "same frozen pixels from failed Qwen18; altered amount means reading test only, not verified source truth"
+    },
+    {
+      "id": "new_fictional_plain",
+      "file": "final/evidence/ocr19_protocol/new_fictional_plain.png",
+      "sha256": "f030adb4422015df1029e3eb8f928a8febee7dcc36d97b7135d776610ef97857",
+      "expected": {
+        "id_contrato": "CO1.PCCNTR.999000111",
+        "modalidad": "Contratación directa",
+        "valor_cop": "15387424"
+      },
+      "expected_route": "needs_source_and_answer_validation",
+      "complete": true,
+      "source": "new fictional fixture; no corpus or final evaluation example"
+    },
+    {
+      "id": "new_fictional_grouped",
+      "file": "final/evidence/ocr19_protocol/new_fictional_grouped.png",
+      "sha256": "6f6b07c7b867444b314158763029852ac4bb15f8b52e74c3cbb56446087ca9af",
+      "expected": {
+        "id_contrato": "CO1.PCCNTR.999000111",
+        "modalidad": "Contratación directa",
+        "valor_cop": "15387424"
+      },
+      "expected_route": "needs_source_and_answer_validation",
+      "complete": true,
+      "source": "new fictional fixture; no corpus or final evaluation example"
+    },
+    {
+      "id": "missing_id",
+      "file": "final/evidence/ocr19_protocol/missing_id.png",
+      "sha256": "81a18afcca9a4e924dbe2faded96e2f7a7d16f5df1acce5185ba065d19840f6f",
+      "expected": null,
+      "expected_route": "visual_schema",
+      "complete": false,
+      "source": "new fictional fixture; no corpus or final evaluation example"
+    },
+    {
+      "id": "ambiguous_amount",
+      "file": "final/evidence/ocr19_protocol/ambiguous_amount.png",
+      "sha256": "6b89d8880da5e6062cc9be40cf56d99515f293ba91d845beeaca802b757cd218",
+      "expected": null,
+      "expected_route": "visual_schema",
+      "complete": false,
+      "source": "new fictional fixture; no corpus or final evaluation example"
+    }
+  ],
+  "corpus_used_in_reading": false,
+  "qa_or_public_service_tested": false,
+  "font_sha256": "3fdf69cabf06049ea70a00b5919340e2ce1e6d02b0cc3c4b44fb6801bd1e0d22",
+  "interpretation": "8 complete reading cases + missing-value partial, blank, missing-ID and ambiguous-value controls. Two layouts share an engine; confidence is not probability of correctness."
+}
