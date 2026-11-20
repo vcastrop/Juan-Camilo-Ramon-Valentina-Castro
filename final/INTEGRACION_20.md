@@ -1,5 +1,9 @@
 # Integración OCR 20 — nuevo perfil, evaluación común conservada
 
+**Recibida y auditada:** [20 completada](evidence/integration20_completed/ANALISIS.md),
+sin errores técnicos. No repetir el notebook. Continuar con [cierre21](EVALUACION_21.md)
+de juez y revisión humana; no publicar calidad o dominio aún.
+
 Estado: preparado; sin inferencia real de esta versión todavía. [OCR 19](evidence/ocr19_completed/ANALISIS.md)
 aportó extracción útil en su muestra, no respuestas contractuales validadas.
 

@@ -1,0 +1,2189 @@
+{
+  "version": "evaluation21-plan",
+  "profile": "integrated_ocr20_fp16",
+  "source_archive_sha256": "af18c90271ec3561057644f672f9619d064ce6a135dd6bb6c21cc68a2b17db21",
+  "source_commit": "1b0e080daa21b9d3298a58f6217c13c55eb44e97",
+  "common_inputs_sha256": "da677d46731d5205a4b664b0c3f3155c138fac9b799115d53e753a1204b13dd6",
+  "rubric_sha256": "88fa619df49d2db79f61e336312c6c38fe01b849763bec2b7a72c28b23648ec7",
+  "jobs": [
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "m3_001",
+      "source_record_sha256": "acbefc542e77a3d81f35635a62d33fa21f1196e21d4b66770814722be52d3d73",
+      "judge_payload": {
+        "pregunta": "Según la ficha CO1.PCCNTR.1088236, ¿qué se contrata y qué entidad lo contrata?",
+        "respuesta_propuesta": {
+          "respuesta": "Se contrata la construcción del cerramiento del aeropuerto Golfo de Morrosquillo de Tolú y lo hace la entidad AEROCIVIL.",
+          "explicacion": "La descripción del proceso menciona 'CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU' y la entidad contratante es 'AEROCIVIL'.",
+          "citas": [
+            "CO1.PCCNTR.1088236::full_record"
+          ],
+          "abstencion": false
+        },
+        "fragmentos": [
+          {
+            "chunk_id": "CO1.PCCNTR.1088236::full_record",
+            "doc_id": "CO1.PCCNTR.1088236",
+            "text": "Identificador del contrato: CO1.PCCNTR.1088236\nEntidad: AEROCIVIL\nDepartamento: Distrito Capital de Bogotá\nCiudad: No Definido\nReferencia: 19001149 H4 2019\nDescripción del proceso: CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU\nObjeto registrado: CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU\nTipo de contrato: Obra\nModalidad de contratación: Selección Abreviada de Menor Cuantía\nEstado registrado en la captura: terminado\nFecha de firma registrada: 2024-03-27T11:30:19.253\nFecha de inicio registrada: 2019-09-10T12:00:00.000\nFecha de fin registrada: 2019-12-10T12:00:00.000\nDuración registrada: Dia(s)\nValor del contrato (COP): 250000000",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1088236%27"
+          }
+        ],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "8f134e4e2432be59793e7084ad39c87e6bbd27d4e3869a63505e337dffb1972b",
+      "judgement": {
+        "version": "final-judge-candidate-1.1",
+        "score": 5,
+        "reason": "La respuesta y la explicación responden de forma completa y precisa qué se contrata y qué entidad lo hace, atribuyendo correctamente los datos a la descripción del proceso y al campo Entidad, con cita exacta y verificable del fragmento correspondiente.",
+        "attempts": [
+          {
+            "raw": "{\"puntaje\": 5, \"razon\": \"La respuesta y la explicación responden de forma completa y precisa qué se contrata y qué entidad lo hace, atribuyendo correctamente los datos a la descripción del proceso y al campo Entidad, con cita exacta y verificable del fragmento correspondiente.\"}",
+            "generation_error": null,
+            "parse_error": null,
+            "generation": {
+              "request_id": "d745c77b50f74c809a6e8dfebe621770",
+              "model_requested": "gemini-4-hydrogen",
+              "input_tokens_counted": 1218,
+              "seed_requested": 1501992916,
+              "reserved_estimate_usd": "0.6144",
+              "request_sha256": "3666e4926fc66024f206c545a82f96c3b9f6aa8593e538e9af95903b8bb67089",
+              "model_version": "gemini-4-hydrogen",
+              "finish_reason": "STOP",
+              "usage_metadata": {
+                "promptTokenCount": 1307,
+                "candidatesTokenCount": 76,
+                "totalTokenCount": 1784,
+                "promptTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 1307
+                  }
+                ],
+                "candidatesTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 76
+                  }
+                ],
+                "thoughtsTokenCount": 401,
+                "serviceTier": "standard"
+              },
+              "estimated_upper_cost_usd": "0.01338",
+              "free_project_attested": false,
+              "actual_invoice_verified": false,
+              "thinking_text_retained": false,
+              "billing_mode": "paid_prepay_user_confirmed"
+            }
+          }
+        ],
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 20.42400868599998
+      },
+      "judge_provenance": "exact_packet_transfer_product14",
+      "source_judge_key": "integrated_fp16/m3_001",
+      "human_transfer": {
+        "domain_pass": true,
+        "reason": "all_required_checks",
+        "raw_judge_score": 5,
+        "judge_score_adjusted": false,
+        "automatic": {
+          "valid_output": true,
+          "literal_fact_coverage": 1.0,
+          "automatic_domain_checks_pass": true,
+          "abstention_matches": true,
+          "traceability_pass": true,
+          "extraction_fields_exact": null
+        },
+        "critical_failures": [],
+        "checks": {
+          "valid_structured_output": true,
+          "abstention_matches_reference": true,
+          "citation_structure_and_source_ids": true,
+          "signed_semantic_criteria_pass": true,
+          "raw_judge_at_least4": true,
+          "critical_failures_empty": true
+        },
+        "signed_criteria": {
+          "Respuesta respaldada": "SI",
+          "Explicación respaldada y no vacía": "SI",
+          "Completa para lo preguntado": "SI",
+          "Citas respaldan lo afirmado": "SI",
+          "Abstención adecuada": "SI",
+          "Fallos críticos": "NINGUNO"
+        },
+        "semantic_observations": "La entidad (AEROCIVIL) y el objeto coinciden con la ficha, y la explicación cita literalmente la descripción del proceso. Escribir \"Tolú\" con tilde no altera el dato.",
+        "id": "m3_001",
+        "source_record_sha256": "1e7973ba48d62ba0dcd271e563ddd285132364cf1ca2318c0412270ea4100d0c",
+        "semantic_provenance": "direct_signed_review",
+        "source_signed_review_key": "integrated_fp16/m3_001",
+        "source_reviewer_declared": "Juan Camilo Ramon Perez",
+        "source_review_dates_declared": [
+          "2026-11-18"
+        ],
+        "new_human_review_claimed": null
+      },
+      "human_provenance": "exact_text_packet_transfer_signed_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "m3_002",
+      "source_record_sha256": "df37853469faba3159835bedbeeabb147e9b326173eccc58098ac275ad29a60b",
+      "judge_payload": {
+        "pregunta": "Según la ficha CO1.PCCNTR.1083652, ¿qué se contrata y qué entidad lo contrata?",
+        "respuesta_propuesta": {
+          "respuesta": "Se contrata la adquisición de elementos de protección personal para los servidores de la Regional Norte de Santander y lo hace la entidad AEROCIVIL.",
+          "explicacion": "La descripción del proceso menciona 'ADQUIRIR ELEMENTOS DE PROTECCIÓN PERSONAL PARA LOS SERVIDORES DE LA REGIONAL NORTE DE SANTANDER' y la entidad contratante es 'AEROCIVIL'.",
+          "citas": [
+            "CO1.PCCNTR.1083652::full_record"
+          ],
+          "abstencion": false
+        },
+        "fragmentos": [
+          {
+            "chunk_id": "CO1.PCCNTR.1083652::full_record",
+            "doc_id": "CO1.PCCNTR.1083652",
+            "text": "Identificador del contrato: CO1.PCCNTR.1083652\nEntidad: AEROCIVIL\nDepartamento: Distrito Capital de Bogotá\nCiudad: No Definido\nReferencia: 19000671 H1\nDescripción del proceso: ADQUIRIR ELEMENTOS DE PROTECCIÓN PERSONAL PARA LOS SERVIDORES DE LA REGIONAL NORTE DE SANTANDER\nObjeto registrado: ADQUIRIR ELEMENTOS DE PROTECCIÓN PERSONAL PARA LOS SERVIDORES DE LA REGIONAL NORTE DE SANTANDER\nTipo de contrato: Suministros\nModalidad de contratación: Mínima cuantía\nEstado registrado en la captura: Cerrado\nFecha de firma registrada: 2024-03-27T10:54:06.735\nFecha de inicio registrada: 2019-09-04T12:00:00.000\nFecha de fin registrada: 2019-12-04T12:00:00.000\nDuración registrada: Dia(s)\nValor del contrato (COP): 64992574",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1083652%27"
+          }
+        ],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "7be68721ca507ff0e4b074a9e771aae87a115d356b12f712ac16eb2f4a8a88cc",
+      "judgement": {
+        "version": "final-judge-candidate-1.1",
+        "score": 5,
+        "reason": "La respuesta responde de forma completa y precisa qué se contrata y qué entidad lo hace, la explicación cita textualmente los campos pertinentes y la cita corresponde exactamente al fragmento que respalda la información.",
+        "attempts": [
+          {
+            "raw": "{\"puntaje\": 5, \"razon\": \"La respuesta responde de forma completa y precisa qué se contrata y qué entidad lo hace, la explicación cita textualmente los campos pertinentes y la cita corresponde exactamente al fragmento que respalda la información.\"}",
+            "generation_error": null,
+            "parse_error": null,
+            "generation": {
+              "request_id": "3a91db1261aa475489c481232a123271",
+              "model_requested": "gemini-4-hydrogen",
+              "input_tokens_counted": 1212,
+              "seed_requested": 477131880,
+              "reserved_estimate_usd": "0.6144",
+              "request_sha256": "fe01ddfa51d4d97c4ade9680e5caf3d93e6b965189d0e725ada020e9b388a14b",
+              "model_version": "gemini-4-hydrogen",
+              "finish_reason": "STOP",
+              "usage_metadata": {
+                "promptTokenCount": 1301,
+                "candidatesTokenCount": 68,
+                "totalTokenCount": 1672,
+                "promptTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 1301
+                  }
+                ],
+                "candidatesTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 68
+                  }
+                ],
+                "thoughtsTokenCount": 303,
+                "serviceTier": "standard"
+              },
+              "estimated_upper_cost_usd": "0.01254",
+              "free_project_attested": false,
+              "actual_invoice_verified": false,
+              "thinking_text_retained": false,
+              "billing_mode": "paid_prepay_user_confirmed"
+            }
+          }
+        ],
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 19.51863778400002
+      },
+      "judge_provenance": "exact_packet_transfer_product14",
+      "source_judge_key": "integrated_fp16/m3_002",
+      "human_transfer": {
+        "domain_pass": true,
+        "reason": "all_required_checks",
+        "raw_judge_score": 5,
+        "judge_score_adjusted": false,
+        "automatic": {
+          "valid_output": true,
+          "literal_fact_coverage": 0.5,
+          "automatic_domain_checks_pass": false,
+          "abstention_matches": true,
+          "traceability_pass": true,
+          "extraction_fields_exact": null
+        },
+        "critical_failures": [],
+        "checks": {
+          "valid_structured_output": true,
+          "abstention_matches_reference": true,
+          "citation_structure_and_source_ids": true,
+          "signed_semantic_criteria_pass": true,
+          "raw_judge_at_least4": true,
+          "critical_failures_empty": true
+        },
+        "signed_criteria": {
+          "Respuesta respaldada": "SI",
+          "Explicación respaldada y no vacía": "SI",
+          "Completa para lo preguntado": "SI",
+          "Citas respaldan lo afirmado": "SI",
+          "Abstención adecuada": "SI",
+          "Fallos críticos": "NINGUNO"
+        },
+        "semantic_observations": "La entidad y el objeto coinciden con la ficha y la explicación cita literalmente la descripción.",
+        "id": "m3_002",
+        "source_record_sha256": "c29519e15b269811e141ce2eac1b000243c2a23a8a31e1b884454805b39bc8e7",
+        "semantic_provenance": "direct_signed_review",
+        "source_signed_review_key": "integrated_fp16/m3_002",
+        "source_reviewer_declared": "Juan Camilo Ramon Perez",
+        "source_review_dates_declared": [
+          "2026-11-18"
+        ],
+        "new_human_review_claimed": null
+      },
+      "human_provenance": "exact_text_packet_transfer_signed_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 0.5,
+        "automatic_domain_checks_pass": false,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "m3_003",
+      "source_record_sha256": "be48fd76bca0ec5a564159dbc1ea2ba0241acac3a6ed31297965920cb07be1b8",
+      "judge_payload": {
+        "pregunta": "Según la ficha CO1.PCCNTR.2079117, ¿qué se contrata y qué entidad lo contrata?",
+        "respuesta_propuesta": {
+          "respuesta": "Se contrata la adquisición de equipo de investigación con destino a la Escuela de Infantería, en la Unidad Centralizada por la Central Administrativa y Contable Regional Usaquén, con vigencia 2020.",
+          "explicacion": "El objeto registrado menciona 'ADQUISICION DE EQUIPO DE INVESTIGACION CON DESTINO A LA ESCUELA DE INFANTERIA; UNIDAD CENTRALIZADA POR LA CENTRAL ADMINISTRATIVA Y CONTABLE REGIONAL USAQUÉN; VIGENCIA 2020'.",
+          "citas": [
+            "CO1.PCCNTR.2079117::full_record"
+          ],
+          "abstencion": false
+        },
+        "fragmentos": [
+          {
+            "chunk_id": "CO1.PCCNTR.2079117::full_record",
+            "doc_id": "CO1.PCCNTR.2079117",
+            "text": "Identificador del contrato: CO1.PCCNTR.2079117\nEntidad: Central administrativa regional Usaquen\nDepartamento: Distrito Capital de Bogotá\nCiudad: Bogotá\nReferencia: 247-CENAC-REGIONAL-USAQUEN-2020\nDescripción del proceso: ADQUISICION DE EQUIPO DE INVESTIGACION CON DESTINO A LA ESCUELA DE INFANTERIA; UNIDAD CENTRALIZADA POR LA CENTRAL ADMINISTRATIVA Y CONTABLE REGIONAL USAQUÉN; VIGENCIA 2020\nObjeto registrado: ADQUISICION DE EQUIPO DE INVESTIGACION CON DESTINO A LA ESCUELA DE INFANTERIA; UNIDAD CENTRALIZADA POR LA CENTRAL ADMINISTRATIVA Y CONTABLE REGIONAL USAQUÉN; VIGENCIA 2020\nTipo de contrato: Compraventa\nModalidad de contratación: Mínima cuantía\nEstado registrado en la captura: Aprobado\nFecha de firma registrada: 2024-10-02T21:04:23.708\nFecha de fin registrada: 2020-12-28T12:00:00.000\nDuración registrada: 5 Dia(s)\nValor del contrato (COP): 11300000",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.2079117%27"
+          }
+        ],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "6b87bcf8c09d9ef2d795630acacd5ceb4fa684dd2ef8784be33ec26f42afefe4",
+      "judgement": {
+        "version": "final-judge-candidate-1.1",
+        "score": 3,
+        "reason": "Responde correctamente qué se contrata citando el objeto registrado y el chunk exacto, pero omite identificar explícitamente el campo Entidad (Central administrativa regional Usaquen) tanto en la respuesta como en la explicación.",
+        "attempts": [
+          {
+            "raw": "{\"puntaje\": 3, \"razon\": \"Responde correctamente qué se contrata citando el objeto registrado y el chunk exacto, pero omite identificar explícitamente el campo Entidad (Central administrativa regional Usaquen) tanto en la respuesta como en la explicación.\"}",
+            "generation_error": null,
+            "parse_error": null,
+            "generation": {
+              "request_id": "fba9b9868fd44c5db7574558173100ca",
+              "model_requested": "gemini-4-hydrogen",
+              "input_tokens_counted": 1271,
+              "seed_requested": 582507254,
+              "reserved_estimate_usd": "0.6144",
+              "request_sha256": "6962061488653496b344ac35d32dac527cb04410b8c500d2bec67e04d2a59487",
+              "model_version": "gemini-4-hydrogen",
+              "finish_reason": "STOP",
+              "usage_metadata": {
+                "promptTokenCount": 1360,
+                "candidatesTokenCount": 73,
+                "totalTokenCount": 2001,
+                "promptTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 1360
+                  }
+                ],
+                "candidatesTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 73
+                  }
+                ],
+                "thoughtsTokenCount": 568,
+                "serviceTier": "standard"
+              },
+              "estimated_upper_cost_usd": "0.0150075",
+              "free_project_attested": false,
+              "actual_invoice_verified": false,
+              "thinking_text_retained": false,
+              "billing_mode": "paid_prepay_user_confirmed"
+            }
+          }
+        ],
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 21.65167875400016
+      },
+      "judge_provenance": "exact_packet_transfer_product14",
+      "source_judge_key": "integrated_fp16/m3_003",
+      "human_transfer": {
+        "domain_pass": false,
+        "reason": "required_checks_failed",
+        "raw_judge_score": 3,
+        "judge_score_adjusted": false,
+        "automatic": {
+          "valid_output": true,
+          "literal_fact_coverage": 0.0,
+          "automatic_domain_checks_pass": false,
+          "abstention_matches": true,
+          "traceability_pass": true,
+          "extraction_fields_exact": null
+        },
+        "critical_failures": [],
+        "checks": {
+          "valid_structured_output": true,
+          "abstention_matches_reference": true,
+          "citation_structure_and_source_ids": true,
+          "signed_semantic_criteria_pass": false,
+          "raw_judge_at_least4": false,
+          "critical_failures_empty": true
+        },
+        "signed_criteria": {
+          "Respuesta respaldada": "SI",
+          "Explicación respaldada y no vacía": "SI",
+          "Completa para lo preguntado": "NO",
+          "Citas respaldan lo afirmado": "SI",
+          "Abstención adecuada": "SI",
+          "Fallos críticos": "NINGUNO"
+        },
+        "semantic_observations": "El objeto se reproduce fielmente. Sin embargo, la respuesta nunca identifica la entidad contratante: \"Central Administrativa y Contable Regional Usaquén\" aparece solo porque forma parte del texto del objeto, no como respuesta a \"qué entidad lo contrata\", y no se menciona el campo Entidad (\"Central administrativa regional Usaquen\"). La segunda parte de la pregunta queda sin responder. Es una omisión, no una afirmación falsa. No encaja en ningún código predeclarado.",
+        "id": "m3_003",
+        "source_record_sha256": "f6a56805735a81c74a53ec1ced0425f714746c9541fc69c091db0162ccd98edd",
+        "semantic_provenance": "direct_signed_review",
+        "source_signed_review_key": "integrated_fp16/m3_003",
+        "source_reviewer_declared": "Juan Camilo Ramon Perez",
+        "source_review_dates_declared": [
+          "2026-11-18"
+        ],
+        "new_human_review_claimed": null
+      },
+      "human_provenance": "exact_text_packet_transfer_signed_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 0.0,
+        "automatic_domain_checks_pass": false,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "m3_004",
+      "source_record_sha256": "6033a72fc9a31d387a57767f637fc5666142714dec323f024cb38558bd53b1e4",
+      "judge_payload": {
+        "pregunta": "Según la ficha CO1.PCCNTR.3577214, ¿qué se contrata y qué entidad lo contrata?",
+        "respuesta_propuesta": {
+          "respuesta": "Se contrata una consultoría para intermediación de seguros, y la entidad que lo contrata es el Instituto de Financiación, Promoción y Desarrollo de Caldas.",
+          "explicacion": "La descripción del proceso menciona que se busca intermediación de seguros para asesorar a Infi-Caldas en la contratación y administración del programa de seguros requerido para proteger sus bienes e intereses patrimoniales. Además, se indica que la entidad contratante es el Instituto de Financiación, Promoción y Desarrollo de Caldas.",
+          "citas": [
+            "CO1.PCCNTR.3577214::full_record"
+          ],
+          "abstencion": false
+        },
+        "fragmentos": [
+          {
+            "chunk_id": "CO1.PCCNTR.3577214::full_record",
+            "doc_id": "CO1.PCCNTR.3577214",
+            "text": "Identificador del contrato: CO1.PCCNTR.3577214\nEntidad: INSTITUTO DE FINANCIAMIENTO; PROMOCION Y DESARROLLO DE CALDAS\nDepartamento: Caldas\nCiudad: Manizales\nReferencia: CO1.PCCNTR.3577214\nDescripción del proceso: Intermediación de seguros para asesorar a Infi-Caldas en la contratación y administración del programa de seguros requerido para la adecuada protección de sus bienes e intereses patrimoniales y de aquellos por los cuales sea legalmente responsable; además de las condiciones técnicas mínimas estipula\nObjeto registrado: Intermediación de seguros para asesorar a Infi-Caldas en la contratación y administración del programa de seguros requerido para la adecuada protección de sus bienes e intereses patrimoniales y de aquellos por los cuales sea legalmente responsable; además de las condiciones técnicas mínimas estipuladas en el contrato; de conformidad con el Pliego de Condiciones del concurso de méritos C.M07-2021 (en adelante el Pliego de Condiciones); la Propuesta del CONTRATISTA presentada (en adelante la Pr\nTipo de contrato: Consultoría\nModalidad de contratación: Concurso de méritos abierto\nEstado registrado en la captura: Cerrado\nFecha de firma registrada: 2024-02-28T15:10:01.531\nFecha de inicio registrada: 2024-02-28T15:30:00.000\nFecha de fin registrada: 2024-03-15T11:59:00.000\nDuración registrada: 2 Año(s)\nValor del contrato (COP): 0",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.3577214%27"
+          }
+        ],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "6bc2e7f6ac8e0682af2ea96e97a55aa072c8638b6dbff05df44ebd2289ef9dbc",
+      "judgement": {
+        "version": "final-judge-candidate-1.1",
+        "score": 4,
+        "reason": "La respuesta y la explicación están respaldadas por el fragmento citado en cuanto al objeto, el tipo de contrato y la referencia a Infi-Caldas; solo presenta una imprecisión menor al escribir 'Instituto de Financiación' en lugar del nombre exacto registrado ('INSTITUTO DE FINANCIAMIENTO; PROMOCION Y DESARROLLO DE CALDAS').",
+        "attempts": [
+          {
+            "raw": "{\"puntaje\": 4, \"razon\": \"La respuesta y la explicación están respaldadas por el fragmento citado en cuanto al objeto, el tipo de contrato y la referencia a Infi-Caldas; solo presenta una imprecisión menor al escribir 'Instituto de Financiación' en lugar del nombre exacto registrado ('INSTITUTO DE FINANCIAMIENTO; PROMOCION Y DESARROLLO DE CALDAS').\"}",
+            "generation_error": null,
+            "parse_error": null,
+            "generation": {
+              "request_id": "fceed3f58cfc4c918053075c1ef450fe",
+              "model_requested": "gemini-4-hydrogen",
+              "input_tokens_counted": 1363,
+              "seed_requested": 1337881238,
+              "reserved_estimate_usd": "0.6144",
+              "request_sha256": "b9acf7b08d96a14910507a292032434ced8a6deb5a9021dfa55f158037036e1d",
+              "model_version": "gemini-4-hydrogen",
+              "finish_reason": "STOP",
+              "usage_metadata": {
+                "promptTokenCount": 1452,
+                "candidatesTokenCount": 103,
+                "totalTokenCount": 2206,
+                "promptTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 1452
+                  }
+                ],
+                "candidatesTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 103
+                  }
+                ],
+                "thoughtsTokenCount": 651,
+                "serviceTier": "standard"
+              },
+              "estimated_upper_cost_usd": "0.016545",
+              "free_project_attested": false,
+              "actual_invoice_verified": false,
+              "thinking_text_retained": false,
+              "billing_mode": "paid_prepay_user_confirmed"
+            }
+          }
+        ],
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 19.96664065799996
+      },
+      "judge_provenance": "exact_packet_transfer_product14",
+      "source_judge_key": "integrated_fp16/m3_004",
+      "human_transfer": {
+        "domain_pass": true,
+        "reason": "all_required_checks",
+        "raw_judge_score": 4,
+        "judge_score_adjusted": false,
+        "automatic": {
+          "valid_output": true,
+          "literal_fact_coverage": 0.0,
+          "automatic_domain_checks_pass": false,
+          "abstention_matches": true,
+          "traceability_pass": true,
+          "extraction_fields_exact": null
+        },
+        "critical_failures": [],
+        "checks": {
+          "valid_structured_output": true,
+          "abstention_matches_reference": true,
+          "citation_structure_and_source_ids": true,
+          "signed_semantic_criteria_pass": true,
+          "raw_judge_at_least4": true,
+          "critical_failures_empty": true
+        },
+        "signed_criteria": {
+          "Respuesta respaldada": "SI",
+          "Explicación respaldada y no vacía": "SI",
+          "Completa para lo preguntado": "SI",
+          "Citas respaldan lo afirmado": "SI",
+          "Abstención adecuada": "SI",
+          "Fallos críticos": "NINGUNO"
+        },
+        "semantic_observations": "El criterio de referencia de m3_004 dice expresamente \"Aceptar paráfrasis fieles\". \"Financiación\" en lugar de \"Financiamiento\" es una variante sinónima que conserva la identidad de la entidad (Infi-Caldas, nombrada así en la propia ficha). La actividad y el tipo de contrato están respaldados y no se inventa la parte truncada. Por eso la respuesta y la explicación quedan respaldadas. Fallos críticos se mantiene en NINGUNO.",
+        "id": "m3_004",
+        "source_record_sha256": "828be000654cf0281a28e62d88664eb51c01eedc0747b121cbae1d6e4b85a652",
+        "semantic_provenance": "direct_signed_review",
+        "source_signed_review_key": "integrated_fp16/m3_004",
+        "source_reviewer_declared": "Juan Camilo Ramon Perez",
+        "source_review_dates_declared": [
+          "2026-11-18",
+          "2026-11-19"
+        ],
+        "new_human_review_claimed": null
+      },
+      "human_provenance": "exact_text_packet_transfer_signed_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 0.0,
+        "automatic_domain_checks_pass": false,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "m3_005",
+      "source_record_sha256": "11c9618762d8d92e318946e2f383f9186d7d75dc799ec1bf005ce8b71761f5b5",
+      "judge_payload": {
+        "pregunta": "Según la ficha CO1.PCCNTR.4359545, ¿qué se contrata y qué entidad lo contrata?",
+        "respuesta_propuesta": {
+          "respuesta": "Se contrata un arrendamiento de bodega situada en la calle 13 # 11-25 de la ciudad de Leticia.",
+          "explicacion": "El objeto registrado indica que se contrata un arrendamiento de bodega ubicada en la calle 13 # 11-25 de la ciudad de Leticia.",
+          "citas": [
+            "CO1.PCCNTR.4359545::full_record"
+          ],
+          "abstencion": false
+        },
+        "fragmentos": [
+          {
+            "chunk_id": "CO1.PCCNTR.4359545::full_record",
+            "doc_id": "CO1.PCCNTR.4359545",
+            "text": "Identificador del contrato: CO1.PCCNTR.4359545\nEntidad: AGENCIA LOGISTICA DE LAS FUERZAS MILITARES\nDepartamento: Distrito Capital de Bogotá\nCiudad: Bogotá\nReferencia: J-004-005-2022\nDescripción del proceso: ARRENDAMIENTO BODEGA SITUADA EN LA CLLE 13 # 11-25 DE LA CIUDAD DE LETICIA\nObjeto registrado: ARRENDAMIENTO BODEGA SITUADA EN LA CLLE 13 # 11-25 DE LA CIUDAD DE LETICIA\nTipo de contrato: Arrendamiento de inmuebles\nModalidad de contratación: Contratación directa\nEstado registrado en la captura: Cerrado\nFecha de firma registrada: 2024-10-29T13:55:32.423\nFecha de inicio registrada: 2024-10-29T13:56:00.000\nFecha de fin registrada: 2024-10-29T13:57:00.000\nDuración registrada: 6 Mes(es)\nValor del contrato (COP): 22459876",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.4359545%27"
+          }
+        ],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "23133949794cfdac1b24321ef80d7fd0125e50dea0e9a9903ab002feb4fd1a9e",
+      "judgement": {
+        "version": "final-judge-candidate-1.1",
+        "score": 3,
+        "reason": "La respuesta y la explicación identifican correctamente el objeto contratado y citan el fragmento válido, pero omiten por completo responder qué entidad lo contrata (AGENCIA LOGISTICA DE LAS FUERZAS MILITARES), dato explícito en la fuente.",
+        "attempts": [
+          {
+            "raw": "{\"puntaje\": 3, \"razon\": \"La respuesta y la explicación identifican correctamente el objeto contratado y citan el fragmento válido, pero omiten por completo responder qué entidad lo contrata (AGENCIA LOGISTICA DE LAS FUERZAS MILITARES), dato explícito en la fuente.\"}",
+            "generation_error": null,
+            "parse_error": null,
+            "generation": {
+              "request_id": "b4b81d93b37246129359a1640d621d24",
+              "model_requested": "gemini-4-hydrogen",
+              "input_tokens_counted": 1235,
+              "seed_requested": 292911185,
+              "reserved_estimate_usd": "0.6144",
+              "request_sha256": "796b3a7736f58d1619677ab5ce2d1b31bf21961f701bfe9c4d51ddf4568721ac",
+              "model_version": "gemini-4-hydrogen",
+              "finish_reason": "STOP",
+              "usage_metadata": {
+                "promptTokenCount": 1324,
+                "candidatesTokenCount": 82,
+                "totalTokenCount": 1798,
+                "promptTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 1324
+                  }
+                ],
+                "candidatesTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 82
+                  }
+                ],
+                "thoughtsTokenCount": 392,
+                "serviceTier": "standard"
+              },
+              "estimated_upper_cost_usd": "0.013485",
+              "free_project_attested": false,
+              "actual_invoice_verified": false,
+              "thinking_text_retained": false,
+              "billing_mode": "paid_prepay_user_confirmed"
+            }
+          }
+        ],
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 19.004366734000087
+      },
+      "judge_provenance": "exact_packet_transfer_product14",
+      "source_judge_key": "integrated_fp16/m3_005",
+      "human_transfer": {
+        "domain_pass": false,
+        "reason": "required_checks_failed",
+        "raw_judge_score": 3,
+        "judge_score_adjusted": false,
+        "automatic": {
+          "valid_output": true,
+          "literal_fact_coverage": 0.0,
+          "automatic_domain_checks_pass": false,
+          "abstention_matches": true,
+          "traceability_pass": true,
+          "extraction_fields_exact": null
+        },
+        "critical_failures": [],
+        "checks": {
+          "valid_structured_output": true,
+          "abstention_matches_reference": true,
+          "citation_structure_and_source_ids": true,
+          "signed_semantic_criteria_pass": false,
+          "raw_judge_at_least4": false,
+          "critical_failures_empty": true
+        },
+        "signed_criteria": {
+          "Respuesta respaldada": "SI",
+          "Explicación respaldada y no vacía": "SI",
+          "Completa para lo preguntado": "NO",
+          "Citas respaldan lo afirmado": "SI",
+          "Abstención adecuada": "SI",
+          "Fallos críticos": "NINGUNO"
+        },
+        "semantic_observations": "El objeto es correcto (\"calle\" por \"CLLE\" es una expansión fiel). No dice qué entidad contrata (AGENCIA LOGISTICA DE LAS FUERZAS MILITARES), aunque la pregunta lo pide. Es una omisión de una parte requerida, sin afirmaciones falsas. No encaja en ningún código predeclarado.",
+        "id": "m3_005",
+        "source_record_sha256": "df156400617e9649aa9d40c3d9d26180d27edd4eacbb340dbff79c05f392b9fb",
+        "semantic_provenance": "direct_signed_review",
+        "source_signed_review_key": "integrated_fp16/m3_005",
+        "source_reviewer_declared": "Juan Camilo Ramon Perez",
+        "source_review_dates_declared": [
+          "2026-11-18"
+        ],
+        "new_human_review_claimed": null
+      },
+      "human_provenance": "exact_text_packet_transfer_signed_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 0.0,
+        "automatic_domain_checks_pass": false,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "m3_006",
+      "source_record_sha256": "610760acdead08baa201629d6f2647c590c1fe34ec77d6cea0e0dc53b28515a7",
+      "judge_payload": {
+        "pregunta": "Según la ficha CO1.PCCNTR.1003124, ¿qué se contrata y qué entidad lo contrata?",
+        "respuesta_propuesta": {
+          "respuesta": "Se contrata el mantenimiento y conservación de las zonas de seguridad y limpieza de canales de los aeropuertos San Bernardo de Mompoque y Las Mercedes de Plato, y se contrata con la entidad AEROCIVIL.",
+          "explicacion": "La descripción del proceso menciona claramente que se contratará el mantenimiento y conservación de las zonas de seguridad y limpieza de canales de los aeropuertos San Bernardo de Mompoque y Las Mercedes de Plato. Además, la entidad contratante es AEROCIVIL.",
+          "citas": [
+            "CO1.PCCNTR.1003124::full_record"
+          ],
+          "abstencion": false
+        },
+        "fragmentos": [
+          {
+            "chunk_id": "CO1.PCCNTR.1003124::full_record",
+            "doc_id": "CO1.PCCNTR.1003124",
+            "text": "Identificador del contrato: CO1.PCCNTR.1003124\nEntidad: AEROCIVIL\nDepartamento: Distrito Capital de Bogotá\nCiudad: No Definido\nReferencia: 19000506 H3\nDescripción del proceso: CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS)  Y LAS MERCEDES DE PLATO\nObjeto registrado: CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS)  Y LAS MERCEDES DE PLATO\nTipo de contrato: Prestación de servicios\nModalidad de contratación: Mínima cuantía\nEstado registrado en la captura: Aprobado\nFecha de firma registrada: 2024-03-27T11:31:01.324\nFecha de inicio registrada: 2019-06-21T12:00:00.000\nFecha de fin registrada: 2019-12-21T12:00:00.000\nDuración registrada: Dia(s)\nValor del contrato (COP): 60600750",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1003124%27"
+          }
+        ],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "fa704d9dff6f67d9829f252368b7aa57ec81bd860cf9df3bf6c68e2b4a74906d",
+      "judgement": {
+        "version": "final-judge-candidate-1.1",
+        "score": 4,
+        "reason": "La respuesta identifica correctamente la entidad contratante (AEROCIVIL), el núcleo del objeto contractual y cita el fragmento exacto, pero altera el nombre de Mompox a Mompoque y omite el detalle sobre limpieza y aplicación de matamaleza en los lotes restituidos.",
+        "attempts": [
+          {
+            "raw": "{\"puntaje\": 4, \"razon\": \"La respuesta identifica correctamente la entidad contratante (AEROCIVIL), el núcleo del objeto contractual y cita el fragmento exacto, pero altera el nombre de Mompox a Mompoque y omite el detalle sobre limpieza y aplicación de matamaleza en los lotes restituidos.\"}",
+            "generation_error": null,
+            "parse_error": null,
+            "generation": {
+              "request_id": "2379c61b22c94896b176c352fc917b27",
+              "model_requested": "gemini-4-hydrogen",
+              "input_tokens_counted": 1333,
+              "seed_requested": 1276021339,
+              "reserved_estimate_usd": "0.6144",
+              "request_sha256": "82df167e13fd6de92601419b50ce0d7c6b9c07d3df17b9e2cd3c20f31b9e5d18",
+              "model_version": "gemini-4-hydrogen",
+              "finish_reason": "STOP",
+              "usage_metadata": {
+                "promptTokenCount": 1422,
+                "candidatesTokenCount": 85,
+                "totalTokenCount": 2647,
+                "promptTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 1422
+                  }
+                ],
+                "candidatesTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 85
+                  }
+                ],
+                "thoughtsTokenCount": 1140,
+                "serviceTier": "standard"
+              },
+              "estimated_upper_cost_usd": "0.0198525",
+              "free_project_attested": false,
+              "actual_invoice_verified": false,
+              "thinking_text_retained": false,
+              "billing_mode": "paid_prepay_user_confirmed"
+            }
+          }
+        ],
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 22.975317011000016
+      },
+      "judge_provenance": "exact_packet_transfer_product14",
+      "source_judge_key": "integrated_fp16/m3_006",
+      "human_transfer": {
+        "domain_pass": false,
+        "reason": "required_checks_failed",
+        "raw_judge_score": 4,
+        "judge_score_adjusted": false,
+        "automatic": {
+          "valid_output": true,
+          "literal_fact_coverage": 0.5,
+          "automatic_domain_checks_pass": false,
+          "abstention_matches": true,
+          "traceability_pass": true,
+          "extraction_fields_exact": null
+        },
+        "critical_failures": [],
+        "checks": {
+          "valid_structured_output": true,
+          "abstention_matches_reference": true,
+          "citation_structure_and_source_ids": true,
+          "signed_semantic_criteria_pass": false,
+          "raw_judge_at_least4": true,
+          "critical_failures_empty": true
+        },
+        "signed_criteria": {
+          "Respuesta respaldada": "NO",
+          "Explicación respaldada y no vacía": "NO",
+          "Completa para lo preguntado": "SI",
+          "Citas respaldan lo afirmado": "SI",
+          "Abstención adecuada": "SI",
+          "Fallos críticos": "NINGUNO"
+        },
+        "semantic_observations": "Escribir \"Mompoque\" en vez de \"MOMPOX\" es un error de transcripción de un topónimo, no una atribución del dato central a evidencia falsa: la cita es la ficha correcta y el campo correcto, y el aeropuerto sigue siendo identificable (San Bernardo). Tampoco es una cifra, una acusación ni una fuente inventada. El error ya queda penalizado como NO en Respuesta respaldada y en Explicación respaldada.",
+        "id": "m3_006",
+        "source_record_sha256": "9d58f4ab3cfc2ebd683fcb03b08bc97d2fc8835aaf669e7634397a4302304ee1",
+        "semantic_provenance": "direct_signed_review",
+        "source_signed_review_key": "integrated_fp16/m3_006",
+        "source_reviewer_declared": "Juan Camilo Ramon Perez",
+        "source_review_dates_declared": [
+          "2026-11-18",
+          "2026-11-19"
+        ],
+        "new_human_review_claimed": null
+      },
+      "human_provenance": "exact_text_packet_transfer_signed_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 0.5,
+        "automatic_domain_checks_pass": false,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "m3_007",
+      "source_record_sha256": "130ff11cb2102ef9ee3f3eb02ee3efdc1fae6e0fe100efb40cf43aff4d48dac0",
+      "judge_payload": {
+        "pregunta": "¿Cuál es la diferencia absoluta entre los valores registrados de CO1.PCCNTR.1088236 y CO1.PCCNTR.1109703? Explica la operación y cita ambas fichas.",
+        "respuesta_propuesta": {
+          "respuesta": "168000000 COP",
+          "explicacion": "La diferencia absoluta entre los valores registrados de CO1.PCCNTR.1088236 y CO1.PCCNTR.1109703 es de 168000000 COP. Se calculó mediante la operación abs(250000000 - 82000000).",
+          "citas": [
+            "CO1.PCCNTR.1088236::full_record",
+            "CO1.PCCNTR.1109703::full_record",
+            "CO1.PCCNTR.1088236::tool_value",
+            "CO1.PCCNTR.1109703::tool_value"
+          ],
+          "abstencion": false
+        },
+        "fragmentos": [
+          {
+            "chunk_id": "CO1.PCCNTR.1088236::full_record",
+            "doc_id": "CO1.PCCNTR.1088236",
+            "text": "Identificador del contrato: CO1.PCCNTR.1088236\nEntidad: AEROCIVIL\nDepartamento: Distrito Capital de Bogotá\nCiudad: No Definido\nReferencia: 19001149 H4 2019\nDescripción del proceso: CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU\nObjeto registrado: CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU\nTipo de contrato: Obra\nModalidad de contratación: Selección Abreviada de Menor Cuantía\nEstado registrado en la captura: terminado\nFecha de firma registrada: 2024-03-27T11:30:19.253\nFecha de inicio registrada: 2019-09-10T12:00:00.000\nFecha de fin registrada: 2019-12-10T12:00:00.000\nDuración registrada: Dia(s)\nValor del contrato (COP): 250000000",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1088236%27"
+          },
+          {
+            "chunk_id": "CO1.PCCNTR.1109703::full_record",
+            "doc_id": "CO1.PCCNTR.1109703",
+            "text": "Identificador del contrato: CO1.PCCNTR.1109703\nEntidad: AEROCIVIL\nDepartamento: Distrito Capital de Bogotá\nCiudad: No Definido\nReferencia: 19001147 H4 2019\nDescripción del proceso: MANTENIMIENTO Y CONSERVACIÓN DE CANALES DEL ANTIGUO CENTRO DE CONTROL DEL AEROPUERTO ERNESTO CORTISSOZ DE BARRANQUILLA\nObjeto registrado: MANTENIMIENTO Y CONSERVACIÓN DE CANALES DEL ANTIGUO CENTRO DE CONTROL DEL AEROPUERTO ERNESTO CORTISSOZ DE BARRANQUILLA\nTipo de contrato: Obra\nModalidad de contratación: Mínima cuantía\nEstado registrado en la captura: Aprobado\nFecha de firma registrada: 2024-05-23T10:44:03.644\nFecha de inicio registrada: 2019-09-20T12:00:00.000\nFecha de fin registrada: 2019-11-03T12:00:00.000\nDuración registrada: Dia(s)\nValor del contrato (COP): 82000000",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1109703%27"
+          },
+          {
+            "chunk_id": "CO1.PCCNTR.1088236::tool_value",
+            "doc_id": "CO1.PCCNTR.1088236",
+            "text": "Valor del contrato (COP): 250000000",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1088236%27"
+          },
+          {
+            "chunk_id": "CO1.PCCNTR.1109703::tool_value",
+            "doc_id": "CO1.PCCNTR.1109703",
+            "text": "Valor del contrato (COP): 82000000",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1109703%27"
+          }
+        ],
+        "calculos_verificables": [
+          {
+            "values_cop": {
+              "CO1.PCCNTR.1088236": "250000000",
+              "CO1.PCCNTR.1109703": "82000000"
+            },
+            "absolute_difference_cop": "168000000",
+            "operation": "abs(250000000 - 82000000) = 168000000 COP"
+          }
+        ]
+      },
+      "payload_sha256": "55bf6c7bc3e0bde57409fc7704d0a25bd7720dd4f22dcb36bf01f50da0ee9bf7",
+      "judgement": {
+        "version": "final-judge-candidate-1.1",
+        "score": 5,
+        "reason": "La respuesta calcula correctamente la diferencia absoluta (168000000 COP), explica la operación realizada con las cifras exactas de ambos contratos (250000000 y 82000000 COP) y cita fragmentos existentes y pertinentes de ambas fichas.",
+        "attempts": [
+          {
+            "raw": "{\n  \"puntaje\": 5,\n  \"razon\": \"La respuesta calcula correctamente la diferencia absoluta (168000000 COP), explica la operación realizada con las cifras exactas de ambos contratos (250000000 y 82000000 COP) y cita fragmentos existentes y pertinentes de ambas fichas.\"\n}",
+            "generation_error": null,
+            "parse_error": null,
+            "generation": {
+              "request_id": "85852495fd1345edb99b4f1e96e5adc9",
+              "model_requested": "gemini-4-hydrogen",
+              "input_tokens_counted": 2082,
+              "seed_requested": 2006556283,
+              "reserved_estimate_usd": "0.6144",
+              "request_sha256": "46a7ce1a33639bd8619d2336d0cb1de310536ff7d7a0c9d458f4cfa8409badbc",
+              "model_version": "gemini-4-hydrogen",
+              "finish_reason": "STOP",
+              "usage_metadata": {
+                "promptTokenCount": 2171,
+                "candidatesTokenCount": 98,
+                "totalTokenCount": 2800,
+                "promptTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 2171
+                  }
+                ],
+                "candidatesTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 98
+                  }
+                ],
+                "thoughtsTokenCount": 531,
+                "serviceTier": "standard"
+              },
+              "estimated_upper_cost_usd": "0.021",
+              "free_project_attested": false,
+              "actual_invoice_verified": false,
+              "thinking_text_retained": false,
+              "billing_mode": "paid_prepay_user_confirmed"
+            }
+          }
+        ],
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 17.004335901999866
+      },
+      "judge_provenance": "exact_packet_transfer_product14",
+      "source_judge_key": "integrated_fp16/m3_007",
+      "human_transfer": {
+        "domain_pass": true,
+        "reason": "all_required_checks",
+        "raw_judge_score": 5,
+        "judge_score_adjusted": false,
+        "automatic": {
+          "valid_output": true,
+          "literal_fact_coverage": 0.3333333333333333,
+          "automatic_domain_checks_pass": false,
+          "abstention_matches": true,
+          "traceability_pass": true,
+          "extraction_fields_exact": null
+        },
+        "critical_failures": [],
+        "checks": {
+          "valid_structured_output": true,
+          "abstention_matches_reference": true,
+          "citation_structure_and_source_ids": true,
+          "signed_semantic_criteria_pass": true,
+          "raw_judge_at_least4": true,
+          "critical_failures_empty": true
+        },
+        "signed_criteria": {
+          "Respuesta respaldada": "SI",
+          "Explicación respaldada y no vacía": "SI",
+          "Completa para lo preguntado": "SI",
+          "Citas respaldan lo afirmado": "SI",
+          "Abstención adecuada": "SI",
+          "Fallos críticos": "NINGUNO"
+        },
+        "semantic_observations": "El resultado es abs(250000000 − 82000000) = 168000000. Muestra la operación con ambos valores y cita las dos fichas y los campos de valor que devolvió la herramienta. No infiere ningún sobrecosto.",
+        "id": "m3_007",
+        "source_record_sha256": "a0f71ba6b49707bca353688dead90f39c57abbb35da197d4d2996baf545ff196",
+        "semantic_provenance": "direct_signed_review",
+        "source_signed_review_key": "integrated_fp16/m3_007",
+        "source_reviewer_declared": "Juan Camilo Ramon Perez",
+        "source_review_dates_declared": [
+          "2026-11-18"
+        ],
+        "new_human_review_claimed": null
+      },
+      "human_provenance": "exact_text_packet_transfer_signed_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 0.3333333333333333,
+        "automatic_domain_checks_pass": false,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "m3_008",
+      "source_record_sha256": "c22b8aa3c98e5022fb4f6a48968bac8c64d587a608c68455105ba5a39863120f",
+      "judge_payload": {
+        "pregunta": "¿Cuál es la diferencia absoluta entre los valores registrados de CO1.PCCNTR.1083652 y CO1.PCCNTR.1092525? Explica la operación y cita ambas fichas.",
+        "respuesta_propuesta": {
+          "respuesta": "15387424 COP",
+          "explicacion": "La diferencia absoluta entre los valores registrados de CO1.PCCNTR.1083652 y CO1.PCCNTR.1092525 es de 15387424 COP. Se calculó mediante la operación abs(64992574 - 49605150) = 15387424 COP.",
+          "citas": [
+            "CO1.PCCNTR.1083652::full_record",
+            "CO1.PCCNTR.1092525::full_record",
+            "CO1.PCCNTR.1083652::tool_value",
+            "CO1.PCCNTR.1092525::tool_value"
+          ],
+          "abstencion": false
+        },
+        "fragmentos": [
+          {
+            "chunk_id": "CO1.PCCNTR.1083652::full_record",
+            "doc_id": "CO1.PCCNTR.1083652",
+            "text": "Identificador del contrato: CO1.PCCNTR.1083652\nEntidad: AEROCIVIL\nDepartamento: Distrito Capital de Bogotá\nCiudad: No Definido\nReferencia: 19000671 H1\nDescripción del proceso: ADQUIRIR ELEMENTOS DE PROTECCIÓN PERSONAL PARA LOS SERVIDORES DE LA REGIONAL NORTE DE SANTANDER\nObjeto registrado: ADQUIRIR ELEMENTOS DE PROTECCIÓN PERSONAL PARA LOS SERVIDORES DE LA REGIONAL NORTE DE SANTANDER\nTipo de contrato: Suministros\nModalidad de contratación: Mínima cuantía\nEstado registrado en la captura: Cerrado\nFecha de firma registrada: 2024-03-27T10:54:06.735\nFecha de inicio registrada: 2019-09-04T12:00:00.000\nFecha de fin registrada: 2019-12-04T12:00:00.000\nDuración registrada: Dia(s)\nValor del contrato (COP): 64992574",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1083652%27"
+          },
+          {
+            "chunk_id": "CO1.PCCNTR.1092525::full_record",
+            "doc_id": "CO1.PCCNTR.1092525",
+            "text": "Identificador del contrato: CO1.PCCNTR.1092525\nEntidad: AEROCIVIL\nDepartamento: Distrito Capital de Bogotá\nCiudad: No Definido\nReferencia: 19001143A H1 2019\nDescripción del proceso: CONTRATAR LA ADQUISICIÓN DE HERRAMIENTAS PARA EL MANTENIMIENTO DE EQUIPOS; SISTEMAS MECÁNICOS; ELÉCTRICOS y ELECTRÓNICOS.\nObjeto registrado: CONTRATAR LA ADQUISICIÓN DE HERRAMIENTAS PARA EL MANTENIMIENTO DE EQUIPOS; SISTEMAS MECÁNICOS; ELÉCTRICOS y ELECTRÓNICOS.\nTipo de contrato: Suministros\nModalidad de contratación: Mínima cuantía\nEstado registrado en la captura: Aprobado\nFecha de firma registrada: 2024-03-27T11:31:15.350\nFecha de inicio registrada: 2019-09-12T12:00:00.000\nFecha de fin registrada: 2019-12-12T12:00:00.000\nDuración registrada: Dia(s)\nValor del contrato (COP): 49605150",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1092525%27"
+          },
+          {
+            "chunk_id": "CO1.PCCNTR.1083652::tool_value",
+            "doc_id": "CO1.PCCNTR.1083652",
+            "text": "Valor del contrato (COP): 64992574",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1083652%27"
+          },
+          {
+            "chunk_id": "CO1.PCCNTR.1092525::tool_value",
+            "doc_id": "CO1.PCCNTR.1092525",
+            "text": "Valor del contrato (COP): 49605150",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1092525%27"
+          }
+        ],
+        "calculos_verificables": [
+          {
+            "values_cop": {
+              "CO1.PCCNTR.1083652": "64992574",
+              "CO1.PCCNTR.1092525": "49605150"
+            },
+            "absolute_difference_cop": "15387424",
+            "operation": "abs(64992574 - 49605150) = 15387424 COP"
+          }
+        ]
+      },
+      "payload_sha256": "e34a03336fa47c429caef76011b49907973d1b6c1b4144f7209870f9057d5062",
+      "judgement": {
+        "version": "final-judge-candidate-1.1",
+        "score": 5,
+        "reason": "La respuesta calcula con exactitud la diferencia absoluta (15387424 COP) a partir de los valores registrados en ambos contratos (64992574 y 49605150 COP), explica claramente la operación realizada y cita correctamente los fragmentos que respaldan cada cifra.",
+        "attempts": [
+          {
+            "raw": "{\"puntaje\": 5, \"razon\": \"La respuesta calcula con exactitud la diferencia absoluta (15387424 COP) a partir de los valores registrados en ambos contratos (64992574 y 49605150 COP), explica claramente la operación realizada y cita correctamente los fragmentos que respaldan cada cifra.\"}",
+            "generation_error": null,
+            "parse_error": null,
+            "generation": {
+              "request_id": "9bd2360296434eab960a4329d252a546",
+              "model_requested": "gemini-4-hydrogen",
+              "input_tokens_counted": 2091,
+              "seed_requested": 1655348601,
+              "reserved_estimate_usd": "0.6144",
+              "request_sha256": "a7988e2b4023af20c859575a631e532a36935397fabb09d95de5d02daeee3933",
+              "model_version": "gemini-4-hydrogen",
+              "finish_reason": "STOP",
+              "usage_metadata": {
+                "promptTokenCount": 2180,
+                "candidatesTokenCount": 94,
+                "totalTokenCount": 2868,
+                "promptTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 2180
+                  }
+                ],
+                "candidatesTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 94
+                  }
+                ],
+                "thoughtsTokenCount": 594,
+                "serviceTier": "standard"
+              },
+              "estimated_upper_cost_usd": "0.02151",
+              "free_project_attested": false,
+              "actual_invoice_verified": false,
+              "thinking_text_retained": false,
+              "billing_mode": "paid_prepay_user_confirmed"
+            }
+          }
+        ],
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 21.542737453999962
+      },
+      "judge_provenance": "exact_packet_transfer_product14",
+      "source_judge_key": "integrated_fp16/m3_008",
+      "human_transfer": {
+        "domain_pass": true,
+        "reason": "all_required_checks",
+        "raw_judge_score": 5,
+        "judge_score_adjusted": false,
+        "automatic": {
+          "valid_output": true,
+          "literal_fact_coverage": 0.3333333333333333,
+          "automatic_domain_checks_pass": false,
+          "abstention_matches": true,
+          "traceability_pass": true,
+          "extraction_fields_exact": null
+        },
+        "critical_failures": [],
+        "checks": {
+          "valid_structured_output": true,
+          "abstention_matches_reference": true,
+          "citation_structure_and_source_ids": true,
+          "signed_semantic_criteria_pass": true,
+          "raw_judge_at_least4": true,
+          "critical_failures_empty": true
+        },
+        "signed_criteria": {
+          "Respuesta respaldada": "SI",
+          "Explicación respaldada y no vacía": "SI",
+          "Completa para lo preguntado": "SI",
+          "Citas respaldan lo afirmado": "SI",
+          "Abstención adecuada": "SI",
+          "Fallos críticos": "NINGUNO"
+        },
+        "semantic_observations": "El resultado abs(64992574 − 49605150) = 15387424 es correcto; lo verifiqué con la aritmética. Cita ambas fichas y los campos de valor. No infiere ningún sobrecosto.",
+        "id": "m3_008",
+        "source_record_sha256": "1d14b62b72bbb8e57e186643b93d41fd9047ef96163d2a4934039929ba4d4cb5",
+        "semantic_provenance": "direct_signed_review",
+        "source_signed_review_key": "integrated_fp16/m3_008",
+        "source_reviewer_declared": "Juan Camilo Ramon Perez",
+        "source_review_dates_declared": [
+          "2026-11-18"
+        ],
+        "new_human_review_claimed": null
+      },
+      "human_provenance": "exact_text_packet_transfer_signed_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 0.3333333333333333,
+        "automatic_domain_checks_pass": false,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "m3_009",
+      "source_record_sha256": "3f01d2aab9f778fb809bcd580f2fff60b0b3a62484b1446ea9481683f7630b8b",
+      "judge_payload": {
+        "pregunta": "¿Las fechas de firma e inicio registradas en CO1.PCCNTR.1088236 son cronológicamente consistentes? ¿Podemos concluir por eso que hubo una irregularidad?",
+        "respuesta_propuesta": {
+          "respuesta": "No",
+          "explicacion": "La fecha de inicio (2019-09-10) está cronológicamente posterior a la fecha de firma (2024-03-27), lo cual indica una inconsistencia. Sin embargo, esta inconsistencia no implica necesariamente una irregularidad, ya que puede haber razones legítimas para que la firma ocurra después del inicio.",
+          "citas": [
+            "CO1.PCCNTR.1088236::full_record"
+          ],
+          "abstencion": false
+        },
+        "fragmentos": [
+          {
+            "chunk_id": "CO1.PCCNTR.1088236::full_record",
+            "doc_id": "CO1.PCCNTR.1088236",
+            "text": "Identificador del contrato: CO1.PCCNTR.1088236\nEntidad: AEROCIVIL\nDepartamento: Distrito Capital de Bogotá\nCiudad: No Definido\nReferencia: 19001149 H4 2019\nDescripción del proceso: CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU\nObjeto registrado: CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU\nTipo de contrato: Obra\nModalidad de contratación: Selección Abreviada de Menor Cuantía\nEstado registrado en la captura: terminado\nFecha de firma registrada: 2024-03-27T11:30:19.253\nFecha de inicio registrada: 2019-09-10T12:00:00.000\nFecha de fin registrada: 2019-12-10T12:00:00.000\nDuración registrada: Dia(s)\nValor del contrato (COP): 250000000",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1088236%27"
+          }
+        ],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "d6b4f7ae3b21957972ba0022479770eeddb7e88d5264b0d86f44412199455d4b",
+      "judgement": {
+        "version": "final-judge-candidate-1.1",
+        "score": 2,
+        "reason": "La respuesta acierta al señalar que las fechas son inconsistentes y que esto no prueba una irregularidad, citando el fragmento correcto con las fechas exactas. Sin embargo, comete un error importante y se contradice en la explicación al afirmar que la fecha de inicio (2019-09-10) es cronológicamente posterior a la de firma (2024-03-27), cuando en realidad es anterior.",
+        "attempts": [
+          {
+            "raw": "{\"puntaje\": 2, \"razon\": \"La respuesta acierta al señalar que las fechas son inconsistentes y que esto no prueba una irregularidad, citando el fragmento correcto con las fechas exactas. Sin embargo, comete un error importante y se contradice en la explicación al afirmar que la fecha de inicio (2019-09-10) es cronológicamente posterior a la de firma (2024-03-27), cuando en realidad es anterior.\"}",
+            "generation_error": null,
+            "parse_error": null,
+            "generation": {
+              "request_id": "fe41cf60f8b244a2b4874041f97dcc38",
+              "model_requested": "gemini-4-hydrogen",
+              "input_tokens_counted": 1236,
+              "seed_requested": 1725270894,
+              "reserved_estimate_usd": "0.6144",
+              "request_sha256": "da68d1c724908942a7533c99aa9c06cecee5afad267343d4b0374c1a0fe770e9",
+              "model_version": "gemini-4-hydrogen",
+              "finish_reason": "STOP",
+              "usage_metadata": {
+                "promptTokenCount": 1325,
+                "candidatesTokenCount": 122,
+                "totalTokenCount": 2706,
+                "promptTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 1325
+                  }
+                ],
+                "candidatesTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 122
+                  }
+                ],
+                "thoughtsTokenCount": 1259,
+                "serviceTier": "standard"
+              },
+              "estimated_upper_cost_usd": "0.020295",
+              "free_project_attested": false,
+              "actual_invoice_verified": false,
+              "thinking_text_retained": false,
+              "billing_mode": "paid_prepay_user_confirmed"
+            }
+          }
+        ],
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 22.377161907000072
+      },
+      "judge_provenance": "exact_packet_transfer_product14",
+      "source_judge_key": "integrated_fp16/m3_009",
+      "human_transfer": {
+        "domain_pass": false,
+        "reason": "required_checks_failed",
+        "raw_judge_score": 2,
+        "judge_score_adjusted": false,
+        "automatic": {
+          "valid_output": true,
+          "literal_fact_coverage": 0.0,
+          "automatic_domain_checks_pass": false,
+          "abstention_matches": true,
+          "traceability_pass": true,
+          "extraction_fields_exact": null
+        },
+        "critical_failures": [],
+        "checks": {
+          "valid_structured_output": true,
+          "abstention_matches_reference": true,
+          "citation_structure_and_source_ids": true,
+          "signed_semantic_criteria_pass": false,
+          "raw_judge_at_least4": false,
+          "critical_failures_empty": true
+        },
+        "signed_criteria": {
+          "Respuesta respaldada": "SI",
+          "Explicación respaldada y no vacía": "NO",
+          "Completa para lo preguntado": "SI",
+          "Citas respaldan lo afirmado": "SI",
+          "Abstención adecuada": "SI",
+          "Fallos críticos": "NINGUNO"
+        },
+        "semantic_observations": "Las dos fechas se citan con los dígitos correctos, y la conclusión final (las fechas no son consistentes y eso no basta para concluir una irregularidad) es correcta. El error está en una frase de la explicación que invierte la relación de orden y que luego se contradice. Es un error de razonamiento o redacción, no un error material en una cifra central, así que central_numeric_error no aplica en sentido estricto. Ya está penalizado como NO en Explicación respaldada.",
+        "id": "m3_009",
+        "source_record_sha256": "578f50ed2426e3faa4ddce3057cb7228e90db3f95de22c5c49658ab6288f6639",
+        "semantic_provenance": "direct_signed_review",
+        "source_signed_review_key": "integrated_fp16/m3_009",
+        "source_reviewer_declared": "Juan Camilo Ramon Perez",
+        "source_review_dates_declared": [
+          "2026-11-18",
+          "2026-11-19"
+        ],
+        "new_human_review_claimed": null
+      },
+      "human_provenance": "exact_text_packet_transfer_signed_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 0.0,
+        "automatic_domain_checks_pass": false,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "m3_010",
+      "source_record_sha256": "16053bfa9e23e27719f0b97330852f9b48beb86b24ce220c19eaf0aff2405129",
+      "judge_payload": {
+        "pregunta": "¿Qué modalidad de contratación registra la ficha CO1.PCCNTR.1109703?",
+        "respuesta_propuesta": {
+          "respuesta": "Mínima cuantía",
+          "explicacion": "La modalidad de contratación registrada para el contrato con identificador CO1.PCCNTR.1109703 es 'Mínima cuantía', lo que se indica directamente en la información proporcionada.",
+          "citas": [
+            "CO1.PCCNTR.1109703::full_record"
+          ],
+          "abstencion": false
+        },
+        "fragmentos": [
+          {
+            "chunk_id": "CO1.PCCNTR.1109703::full_record",
+            "doc_id": "CO1.PCCNTR.1109703",
+            "text": "Identificador del contrato: CO1.PCCNTR.1109703\nEntidad: AEROCIVIL\nDepartamento: Distrito Capital de Bogotá\nCiudad: No Definido\nReferencia: 19001147 H4 2019\nDescripción del proceso: MANTENIMIENTO Y CONSERVACIÓN DE CANALES DEL ANTIGUO CENTRO DE CONTROL DEL AEROPUERTO ERNESTO CORTISSOZ DE BARRANQUILLA\nObjeto registrado: MANTENIMIENTO Y CONSERVACIÓN DE CANALES DEL ANTIGUO CENTRO DE CONTROL DEL AEROPUERTO ERNESTO CORTISSOZ DE BARRANQUILLA\nTipo de contrato: Obra\nModalidad de contratación: Mínima cuantía\nEstado registrado en la captura: Aprobado\nFecha de firma registrada: 2024-05-23T10:44:03.644\nFecha de inicio registrada: 2019-09-20T12:00:00.000\nFecha de fin registrada: 2019-11-03T12:00:00.000\nDuración registrada: Dia(s)\nValor del contrato (COP): 82000000",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1109703%27"
+          }
+        ],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "559ae9d14c385a782cd23ddec36498a2f8d32f2fb4c8ea5ff4cbf93a348e2506",
+      "judgement": {
+        "version": "final-judge-candidate-1.1",
+        "score": 5,
+        "reason": "La respuesta identifica correctamente la modalidad de contratación ('Mínima cuantía'), la explicación atribuye el dato al campo y contrato exactos, y cita el fragmento verificable correspondiente.",
+        "attempts": [
+          {
+            "raw": "{\"puntaje\": 5, \"razon\": \"La respuesta identifica correctamente la modalidad de contratación ('Mínima cuantía'), la explicación atribuye el dato al campo y contrato exactos, y cita el fragmento verificable correspondiente.\"}",
+            "generation_error": null,
+            "parse_error": null,
+            "generation": {
+              "request_id": "9a5ed1c454f647a0939616fe79d197b0",
+              "model_requested": "gemini-4-hydrogen",
+              "input_tokens_counted": 1207,
+              "seed_requested": 575147698,
+              "reserved_estimate_usd": "0.6144",
+              "request_sha256": "49590af84834a4f371f5f2617593c669c7179372a9e7c76eb5d11ac185b0766a",
+              "model_version": "gemini-4-hydrogen",
+              "finish_reason": "STOP",
+              "usage_metadata": {
+                "promptTokenCount": 1296,
+                "candidatesTokenCount": 65,
+                "totalTokenCount": 1585,
+                "promptTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 1296
+                  }
+                ],
+                "candidatesTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 65
+                  }
+                ],
+                "thoughtsTokenCount": 224,
+                "serviceTier": "standard"
+              },
+              "estimated_upper_cost_usd": "0.0118875",
+              "free_project_attested": false,
+              "actual_invoice_verified": false,
+              "thinking_text_retained": false,
+              "billing_mode": "paid_prepay_user_confirmed"
+            }
+          }
+        ],
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 15.413969377000058
+      },
+      "judge_provenance": "exact_packet_transfer_product14",
+      "source_judge_key": "integrated_fp16/m3_010",
+      "human_transfer": {
+        "domain_pass": true,
+        "reason": "all_required_checks",
+        "raw_judge_score": 5,
+        "judge_score_adjusted": false,
+        "automatic": {
+          "valid_output": true,
+          "literal_fact_coverage": 1.0,
+          "automatic_domain_checks_pass": true,
+          "abstention_matches": true,
+          "traceability_pass": true,
+          "extraction_fields_exact": null
+        },
+        "critical_failures": [],
+        "checks": {
+          "valid_structured_output": true,
+          "abstention_matches_reference": true,
+          "citation_structure_and_source_ids": true,
+          "signed_semantic_criteria_pass": true,
+          "raw_judge_at_least4": true,
+          "critical_failures_empty": true
+        },
+        "signed_criteria": {
+          "Respuesta respaldada": "SI",
+          "Explicación respaldada y no vacía": "SI",
+          "Completa para lo preguntado": "SI",
+          "Citas respaldan lo afirmado": "SI",
+          "Abstención adecuada": "SI",
+          "Fallos críticos": "NINGUNO"
+        },
+        "semantic_observations": "La respuesta \"Mínima cuantía\" coincide con la ficha. La explicación es breve y verdadera, sin consideraciones jurídicas inventadas.",
+        "id": "m3_010",
+        "source_record_sha256": "9cd55f96842bf4430454e9a77948646fa5f314e7df557bc60c8343536a2fd286",
+        "semantic_provenance": "direct_signed_review",
+        "source_signed_review_key": "integrated_fp16/m3_010",
+        "source_reviewer_declared": "Juan Camilo Ramon Perez",
+        "source_review_dates_declared": [
+          "2026-11-18"
+        ],
+        "new_human_review_claimed": null
+      },
+      "human_provenance": "exact_text_packet_transfer_signed_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "m3_011",
+      "source_record_sha256": "1e57f6cc083c470b905c6d5e2bf614c945506b15bcea1818d9579ca413657a15",
+      "judge_payload": {
+        "pregunta": "¿Cuál es el texto literal de la cláusula de multas del contrato CO1.PCCNTR.1088236?",
+        "respuesta_propuesta": {
+          "respuesta": "No dispongo de evidencia suficiente para responder.",
+          "explicacion": "El corpus contiene fichas de registro, no cláusulas ni informes de auditoría.",
+          "citas": [],
+          "abstencion": true
+        },
+        "fragmentos": [],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "87b41cb2fc0cbcca07bf4cb337d7dbb76f884aae6f06d25b2f8d28142872290a",
+      "judgement": {
+        "version": "final-judge-candidate-1.1",
+        "score": 4,
+        "reason": "La abstencion es adecuada y pertinente porque no se aportan fragmentos con la clausula solicitada, aunque la explicacion afirma que el corpus contiene fichas de registro sin que existan fragmentos que lo respalden.",
+        "attempts": [
+          {
+            "raw": "{\"puntaje\": 4, \"razon\": \"La abstencion es adecuada y pertinente porque no se aportan fragmentos con la clausula solicitada, aunque la explicacion afirma que el corpus contiene fichas de registro sin que existan fragmentos que lo respalden.\"}",
+            "generation_error": null,
+            "parse_error": null,
+            "generation": {
+              "request_id": "665b57308253432da0e2ea736b87654b",
+              "model_requested": "gemini-4-hydrogen",
+              "input_tokens_counted": 772,
+              "seed_requested": 2014239919,
+              "reserved_estimate_usd": "0.6144",
+              "request_sha256": "7cba5af844849328e20c267bb6afd3cd7d94d633feb1c931f76dd3131f3a0519",
+              "model_version": "gemini-4-hydrogen",
+              "finish_reason": "STOP",
+              "usage_metadata": {
+                "promptTokenCount": 861,
+                "candidatesTokenCount": 71,
+                "totalTokenCount": 1792,
+                "promptTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 861
+                  }
+                ],
+                "candidatesTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 71
+                  }
+                ],
+                "thoughtsTokenCount": 860,
+                "serviceTier": "standard"
+              },
+              "estimated_upper_cost_usd": "0.01344",
+              "free_project_attested": false,
+              "actual_invoice_verified": false,
+              "thinking_text_retained": false,
+              "billing_mode": "paid_prepay_user_confirmed"
+            }
+          }
+        ],
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 23.644459836000124
+      },
+      "judge_provenance": "exact_packet_transfer_product14",
+      "source_judge_key": "integrated_fp16/m3_011",
+      "human_transfer": {
+        "domain_pass": true,
+        "reason": "all_required_checks",
+        "raw_judge_score": 4,
+        "judge_score_adjusted": false,
+        "automatic": {
+          "valid_output": true,
+          "literal_fact_coverage": 1.0,
+          "automatic_domain_checks_pass": true,
+          "abstention_matches": true,
+          "traceability_pass": true,
+          "extraction_fields_exact": null
+        },
+        "critical_failures": [],
+        "checks": {
+          "valid_structured_output": true,
+          "abstention_matches_reference": true,
+          "citation_structure_and_source_ids": true,
+          "signed_semantic_criteria_pass": true,
+          "raw_judge_at_least4": true,
+          "critical_failures_empty": true
+        },
+        "signed_criteria": {
+          "Respuesta respaldada": "SI",
+          "Explicación respaldada y no vacía": "SI",
+          "Completa para lo preguntado": "SI",
+          "Citas respaldan lo afirmado": "NO_APLICA",
+          "Abstención adecuada": "SI",
+          "Fallos críticos": "NINGUNO"
+        },
+        "semantic_observations": "Se abstiene sin inventar cláusulas ni porcentajes. La respuesta la produjo el control (guard \"absent_source_type\") con 0 fuentes, no el modelo. La explicación es una plantilla genérica: es verdadera, pero no sugiere consultar el documento contractual completo, como hace la referencia. Es idéntica en FP16 y NF4, así que este caso no discrimina entre perfiles.",
+        "id": "m3_011",
+        "source_record_sha256": "6b1b9ef363f6d9abd2712f216f0e77a0741b989d08d0e1d54c3f6946c10cfbf7",
+        "semantic_provenance": "direct_signed_review",
+        "source_signed_review_key": "integrated_fp16/m3_011",
+        "source_reviewer_declared": "Juan Camilo Ramon Perez",
+        "source_review_dates_declared": [
+          "2026-11-18"
+        ],
+        "new_human_review_claimed": null
+      },
+      "human_provenance": "exact_text_packet_transfer_signed_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "m3_012",
+      "source_record_sha256": "95a7ec2ebf90996e941bbdef091ca1c3e5cefb01889a37550119999e81b990a1",
+      "judge_payload": {
+        "pregunta": "¿Qué concluyó la auditoría de ejecución física sobre el contrato CO1.PCCNTR.1083652?",
+        "respuesta_propuesta": {
+          "respuesta": "No dispongo de evidencia suficiente para responder.",
+          "explicacion": "El corpus contiene fichas de registro, no cláusulas ni informes de auditoría.",
+          "citas": [],
+          "abstencion": true
+        },
+        "fragmentos": [],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "e3a1f4c4baa049d0221c2191d1bfc88a103fb6e6a47a56bdb9166ada514d453c",
+      "judgement": {
+        "version": "final-judge-candidate-1.1",
+        "score": 5,
+        "reason": "Abstención explícita y plenamente justificada: no se aportaron fragmentos de evidencia ni informes de auditoría que permitan conocer conclusiones sobre la ejecución física del contrato.",
+        "attempts": [
+          {
+            "raw": "{\"puntaje\": 5, \"razon\": \"Abstención explícita y plenamente justificada: no se aportaron fragmentos de evidencia ni informes de auditoría que permitan conocer conclusiones sobre la ejecución física del contrato.\"}",
+            "generation_error": null,
+            "parse_error": null,
+            "generation": {
+              "request_id": "7d1eb28ca0d143c4ab927ebf38615edf",
+              "model_requested": "gemini-4-hydrogen",
+              "input_tokens_counted": 769,
+              "seed_requested": 1837162770,
+              "reserved_estimate_usd": "0.6144",
+              "request_sha256": "8b03937d6e514de053ffa6355282d4d8b7c9130ebdc3510cb550ae2c4b248eba",
+              "model_version": "gemini-4-hydrogen",
+              "finish_reason": "STOP",
+              "usage_metadata": {
+                "promptTokenCount": 858,
+                "candidatesTokenCount": 61,
+                "totalTokenCount": 1660,
+                "promptTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 858
+                  }
+                ],
+                "candidatesTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 61
+                  }
+                ],
+                "thoughtsTokenCount": 741,
+                "serviceTier": "standard"
+              },
+              "estimated_upper_cost_usd": "0.01245",
+              "free_project_attested": false,
+              "actual_invoice_verified": false,
+              "thinking_text_retained": false,
+              "billing_mode": "paid_prepay_user_confirmed"
+            }
+          }
+        ],
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 19.827422982999906
+      },
+      "judge_provenance": "exact_packet_transfer_product14",
+      "source_judge_key": "integrated_fp16/m3_012",
+      "human_transfer": {
+        "domain_pass": true,
+        "reason": "all_required_checks",
+        "raw_judge_score": 5,
+        "judge_score_adjusted": false,
+        "automatic": {
+          "valid_output": true,
+          "literal_fact_coverage": 1.0,
+          "automatic_domain_checks_pass": true,
+          "abstention_matches": true,
+          "traceability_pass": true,
+          "extraction_fields_exact": null
+        },
+        "critical_failures": [],
+        "checks": {
+          "valid_structured_output": true,
+          "abstention_matches_reference": true,
+          "citation_structure_and_source_ids": true,
+          "signed_semantic_criteria_pass": true,
+          "raw_judge_at_least4": true,
+          "critical_failures_empty": true
+        },
+        "signed_criteria": {
+          "Respuesta respaldada": "SI",
+          "Explicación respaldada y no vacía": "SI",
+          "Completa para lo preguntado": "SI",
+          "Citas respaldan lo afirmado": "NO_APLICA",
+          "Abstención adecuada": "SI",
+          "Fallos críticos": "NINGUNO"
+        },
+        "semantic_observations": "Se abstiene y no equipara el estado ni el valor con una auditoría. Es una plantilla del control (absent_source_type) con 0 fuentes, y la explicación sí menciona expresamente que no hay informes de auditoría.",
+        "id": "m3_012",
+        "source_record_sha256": "97546bccce81b5c076a7cf7adb0554ade3a4251e72cd23c5eaf3e7ebda7b2f70",
+        "semantic_provenance": "direct_signed_review",
+        "source_signed_review_key": "integrated_fp16/m3_012",
+        "source_reviewer_declared": "Juan Camilo Ramon Perez",
+        "source_review_dates_declared": [
+          "2026-11-18"
+        ],
+        "new_human_review_claimed": null
+      },
+      "human_provenance": "exact_text_packet_transfer_signed_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "vis_01",
+      "source_record_sha256": "e5225505ceaf0f49e3e99508f5c4c6a2c446d6a0d53d366f5f8751dae9bdb939",
+      "judge_payload": {
+        "pregunta": "¿Qué modalidad y valor aparecen en la ficha de la imagen?",
+        "respuesta_propuesta": {
+          "respuesta": "La modalidad es 'Mínima cuantía' y el valor es '60600750 COP'",
+          "explicacion": "El documento proporciona la modalidad de contratación como 'Mínima cuantía' y el valor del contrato como '60600750 COP'.",
+          "citas": [
+            "IMAGE::input",
+            "CO1.PCCNTR.1003124::full_record"
+          ],
+          "abstencion": false
+        },
+        "fragmentos": [
+          {
+            "chunk_id": "IMAGE::input",
+            "doc_id": "CO1.PCCNTR.1003124",
+            "text": "{\"legible\": true, \"texto_visible\": \"Identificador del contrato: CO1.PCCNTR.1003124\\nObjeto registrado: CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS) Y LAS MERCEDES DE PLATO\\nModalidad de contratación: Mínima cuantía\\nValor del contrato (COP): 60600750\", \"id_contrato\": \"CO1.PCCNTR.1003124\", \"objeto\": \"CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS) Y LAS MERCEDES DE PLATO\", \"modalidad\": \"Mínima cuantía\", \"valor_cop\": \"60600750\"}",
+            "source_url": "uploaded-image"
+          },
+          {
+            "chunk_id": "CO1.PCCNTR.1003124::full_record",
+            "doc_id": "CO1.PCCNTR.1003124",
+            "text": "Identificador del contrato: CO1.PCCNTR.1003124\nEntidad: AEROCIVIL\nDepartamento: Distrito Capital de Bogotá\nCiudad: No Definido\nReferencia: 19000506 H3\nDescripción del proceso: CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS)  Y LAS MERCEDES DE PLATO\nObjeto registrado: CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS)  Y LAS MERCEDES DE PLATO\nTipo de contrato: Prestación de servicios\nModalidad de contratación: Mínima cuantía\nEstado registrado en la captura: Aprobado\nFecha de firma registrada: 2024-03-27T11:31:01.324\nFecha de inicio registrada: 2019-06-21T12:00:00.000\nFecha de fin registrada: 2019-12-21T12:00:00.000\nDuración registrada: Dia(s)\nValor del contrato (COP): 60600750",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1003124%27"
+          }
+        ],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "73aaa118f5acc9f941df081fff62fa3a58bf8b85d245f56053583b6c03de38e2",
+      "judgement": null,
+      "judge_provenance": "pending_new_evaluation",
+      "source_judge_key": null,
+      "human_transfer": null,
+      "human_provenance": "pending_new_visual_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "vis_02",
+      "source_record_sha256": "47b0d9cedeade7b7e7f8c51a87767d41e06f3f69958720a112cf377340126efa",
+      "judge_payload": {
+        "pregunta": "¿Qué modalidad y valor aparecen en la ficha de la imagen?",
+        "respuesta_propuesta": {
+          "respuesta": "La modalidad es 'Mínima cuantía' y el valor es 47481000 COP.",
+          "explicacion": "El texto visible en la imagen menciona que la modalidad de contratación es 'Mínima cuantía' y el valor del contrato es 47481000 COP.",
+          "citas": [
+            "IMAGE::input"
+          ],
+          "abstencion": false
+        },
+        "fragmentos": [
+          {
+            "chunk_id": "IMAGE::input",
+            "doc_id": "CO1.PCCNTR.1016214",
+            "text": "{\"legible\": true, \"texto_visible\": \"Identificador del contrato: CO1.PCCNTR.1016214\\nObjeto registrado: CONTRATAR EL MANTENIMIENTO Y CONSERVACIÓN DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS BARACOA DE MAGANGUÉ Y GOLFO DE MORROSQUILLO DE TOLÚ\\nModalidad de contratación: Mínima cuantía\\nValor del contrato (COP): 47481000\", \"id_contrato\": \"CO1.PCCNTR.1016214\", \"objeto\": \"CONTRATAR EL MANTENIMIENTO Y CONSERVACIÓN DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS BARACOA DE MAGANGUÉ Y GOLFO DE MORROSQUILLO DE TOLÚ\", \"modalidad\": \"Mínima cuantía\", \"valor_cop\": \"47481000\"}",
+            "source_url": "uploaded-image"
+          },
+          {
+            "chunk_id": "CO1.PCCNTR.1016214::full_record",
+            "doc_id": "CO1.PCCNTR.1016214",
+            "text": "Identificador del contrato: CO1.PCCNTR.1016214\nEntidad: AEROCIVIL\nDepartamento: Distrito Capital de Bogotá\nCiudad: No Definido\nReferencia: 19000507 H3\nDescripción del proceso: CONTRATAR EL MANTENIMIENTO Y CONSERVACIÓN DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS BARACOA DE MAGANGUÉ Y GOLFO DE MORROSQUILLO DE TOLÚ\nObjeto registrado: CONTRATAR EL MANTENIMIENTO Y CONSERVACIÓN DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS BARACOA DE MAGANGUÉ Y GOLFO DE MORROSQUILLO DE TOLÚ\nTipo de contrato: Prestación de servicios\nModalidad de contratación: Mínima cuantía\nEstado registrado en la captura: Aprobado\nFecha de firma registrada: 2024-03-27T11:30:47.406\nFecha de inicio registrada: 2019-07-04T12:00:00.000\nFecha de fin registrada: 2019-12-30T12:00:00.000\nDuración registrada: Dia(s)\nValor del contrato (COP): 47481000",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1016214%27"
+          }
+        ],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "e8973c859b08e62ce74a627aedc8df69bf99a70c9afeefd8a0f55a233269707e",
+      "judgement": null,
+      "judge_provenance": "pending_new_evaluation",
+      "source_judge_key": null,
+      "human_transfer": null,
+      "human_provenance": "pending_new_visual_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "vis_03",
+      "source_record_sha256": "aff5eb91db903892fefda227bda5b69d98105343f205476df94947553dfb3b97",
+      "judge_payload": {
+        "pregunta": "¿Qué modalidad y valor aparecen en la ficha de la imagen?",
+        "respuesta_propuesta": {
+          "respuesta": "La modalidad es 'Mínima cuantía' y el valor es '64992574 COP'",
+          "explicacion": "El texto visible en la imagen proporciona directamente la modalidad como 'Mínima cuantía' y el valor del contrato como '64992574 COP'.",
+          "citas": [
+            "IMAGE::input"
+          ],
+          "abstencion": false
+        },
+        "fragmentos": [
+          {
+            "chunk_id": "IMAGE::input",
+            "doc_id": "CO1.PCCNTR.1083652",
+            "text": "{\"legible\": true, \"texto_visible\": \"Identificador del contrato: CO1.PCCNTR.1083652\\nObjeto registrado: ADQUIRIR ELEMENTOS DE PROTECCIÓN PERSONAL PARA LOS SERVIDORES DE LA REGIONAL NORTE DE SANTANDER\\nModalidad de contratación: Mínima cuantía\\nValor del contrato (COP): 64992574\", \"id_contrato\": \"CO1.PCCNTR.1083652\", \"objeto\": \"ADQUIRIR ELEMENTOS DE PROTECCIÓN PERSONAL PARA LOS SERVIDORES DE LA REGIONAL NORTE DE SANTANDER\", \"modalidad\": \"Mínima cuantía\", \"valor_cop\": \"64992574\"}",
+            "source_url": "uploaded-image"
+          },
+          {
+            "chunk_id": "CO1.PCCNTR.1083652::full_record",
+            "doc_id": "CO1.PCCNTR.1083652",
+            "text": "Identificador del contrato: CO1.PCCNTR.1083652\nEntidad: AEROCIVIL\nDepartamento: Distrito Capital de Bogotá\nCiudad: No Definido\nReferencia: 19000671 H1\nDescripción del proceso: ADQUIRIR ELEMENTOS DE PROTECCIÓN PERSONAL PARA LOS SERVIDORES DE LA REGIONAL NORTE DE SANTANDER\nObjeto registrado: ADQUIRIR ELEMENTOS DE PROTECCIÓN PERSONAL PARA LOS SERVIDORES DE LA REGIONAL NORTE DE SANTANDER\nTipo de contrato: Suministros\nModalidad de contratación: Mínima cuantía\nEstado registrado en la captura: Cerrado\nFecha de firma registrada: 2024-03-27T10:54:06.735\nFecha de inicio registrada: 2019-09-04T12:00:00.000\nFecha de fin registrada: 2019-12-04T12:00:00.000\nDuración registrada: Dia(s)\nValor del contrato (COP): 64992574",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1083652%27"
+          }
+        ],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "674c6be125df23e7d6b4dabf4bb837ef01aac46535a64d6529fe5d9c370d42df",
+      "judgement": null,
+      "judge_provenance": "pending_new_evaluation",
+      "source_judge_key": null,
+      "human_transfer": null,
+      "human_provenance": "pending_new_visual_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "vis_04",
+      "source_record_sha256": "5d2697fd2b6b71ba6c58a9c8b9c9543d7faac9deb34cf34b7cb967ea56e29a12",
+      "judge_payload": {
+        "pregunta": "¿Qué modalidad y valor aparecen en la ficha de la imagen?",
+        "respuesta_propuesta": {
+          "respuesta": "La modalidad es Selección Abreviada de Menor Cuantía y el valor es 250000000 COP.",
+          "explicacion": "El texto visible en la imagen proporciona directamente la modalidad y el valor del contrato.",
+          "citas": [
+            "IMAGE::input"
+          ],
+          "abstencion": false
+        },
+        "fragmentos": [
+          {
+            "chunk_id": "IMAGE::input",
+            "doc_id": "CO1.PCCNTR.1088236",
+            "text": "{\"legible\": true, \"texto_visible\": \"Identificador del contrato: CO1.PCCNTR.1088236\\nObjeto registrado: CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU\\nModalidad de contratación: Selección Abreviada de Menor Cuantía\\nValor del contrato (COP): 250000000\", \"id_contrato\": \"CO1.PCCNTR.1088236\", \"objeto\": \"CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU\", \"modalidad\": \"Selección Abreviada de Menor Cuantía\", \"valor_cop\": \"250000000\"}",
+            "source_url": "uploaded-image"
+          },
+          {
+            "chunk_id": "CO1.PCCNTR.1088236::full_record",
+            "doc_id": "CO1.PCCNTR.1088236",
+            "text": "Identificador del contrato: CO1.PCCNTR.1088236\nEntidad: AEROCIVIL\nDepartamento: Distrito Capital de Bogotá\nCiudad: No Definido\nReferencia: 19001149 H4 2019\nDescripción del proceso: CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU\nObjeto registrado: CONSTRUCCION DEL CERRAMIENTO DEL AEROPUERTO GOLFO DE MORROSQUILLO DE TOLU\nTipo de contrato: Obra\nModalidad de contratación: Selección Abreviada de Menor Cuantía\nEstado registrado en la captura: terminado\nFecha de firma registrada: 2024-03-27T11:30:19.253\nFecha de inicio registrada: 2019-09-10T12:00:00.000\nFecha de fin registrada: 2019-12-10T12:00:00.000\nDuración registrada: Dia(s)\nValor del contrato (COP): 250000000",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1088236%27"
+          }
+        ],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "942f22f410a180093726cdc420e8298735d0c0fc1385177b83f10404af819679",
+      "judgement": null,
+      "judge_provenance": "pending_new_evaluation",
+      "source_judge_key": null,
+      "human_transfer": null,
+      "human_provenance": "pending_new_visual_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "vis_05",
+      "source_record_sha256": "bb728fa973e649c1390f830e27cbd50e9af8bcbd9bfc17b61c8550e56662544a",
+      "judge_payload": {
+        "pregunta": "¿Qué modalidad y valor aparecen en la ficha de la imagen?",
+        "respuesta_propuesta": {
+          "respuesta": "La modalidad es 'Mínima cuantía' y el valor es 49605150 COP.",
+          "explicacion": "El texto visible en la imagen menciona que la modalidad de contratación es 'Mínima cuantía' y el valor del contrato es 49605150 COP.",
+          "citas": [
+            "IMAGE::input",
+            "CO1.PCCNTR.1092525::full_record"
+          ],
+          "abstencion": false
+        },
+        "fragmentos": [
+          {
+            "chunk_id": "IMAGE::input",
+            "doc_id": "CO1.PCCNTR.1092525",
+            "text": "{\"legible\": true, \"texto_visible\": \"Identificador del contrato: CO1.PCCNTR.1092525\\nObjeto registrado: CONTRATAR LA ADQUISICIÓN DE HERRAMIENTAS PARA EL MANTENIMIENTO DE EQUIPOS; SISTEMAS MECÁNICOS; ELÉCTRICOS y ELECTRÓNICOS.\\nModalidad de contratación: Mínima cuantía\\nValor del contrato (COP): 49605150\", \"id_contrato\": \"CO1.PCCNTR.1092525\", \"objeto\": \"CONTRATAR LA ADQUISICIÓN DE HERRAMIENTAS PARA EL MANTENIMIENTO DE EQUIPOS; SISTEMAS MECÁNICOS; ELÉCTRICOS y ELECTRÓNICOS.\", \"modalidad\": \"Mínima cuantía\", \"valor_cop\": \"49605150\"}",
+            "source_url": "uploaded-image"
+          },
+          {
+            "chunk_id": "CO1.PCCNTR.1092525::full_record",
+            "doc_id": "CO1.PCCNTR.1092525",
+            "text": "Identificador del contrato: CO1.PCCNTR.1092525\nEntidad: AEROCIVIL\nDepartamento: Distrito Capital de Bogotá\nCiudad: No Definido\nReferencia: 19001143A H1 2019\nDescripción del proceso: CONTRATAR LA ADQUISICIÓN DE HERRAMIENTAS PARA EL MANTENIMIENTO DE EQUIPOS; SISTEMAS MECÁNICOS; ELÉCTRICOS y ELECTRÓNICOS.\nObjeto registrado: CONTRATAR LA ADQUISICIÓN DE HERRAMIENTAS PARA EL MANTENIMIENTO DE EQUIPOS; SISTEMAS MECÁNICOS; ELÉCTRICOS y ELECTRÓNICOS.\nTipo de contrato: Suministros\nModalidad de contratación: Mínima cuantía\nEstado registrado en la captura: Aprobado\nFecha de firma registrada: 2024-03-27T11:31:15.350\nFecha de inicio registrada: 2019-09-12T12:00:00.000\nFecha de fin registrada: 2019-12-12T12:00:00.000\nDuración registrada: Dia(s)\nValor del contrato (COP): 49605150",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1092525%27"
+          }
+        ],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "92f12bc3997eb0ebf82177be176700451ab617d1f4051df155110e1d8f0c9083",
+      "judgement": null,
+      "judge_provenance": "pending_new_evaluation",
+      "source_judge_key": null,
+      "human_transfer": null,
+      "human_provenance": "pending_new_visual_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "vis_06_missing_value",
+      "source_record_sha256": "d9de986ade4f569e38e59bbed9e82545fb2912a947bfbf8a838d9badbc3b7459",
+      "judge_payload": {
+        "pregunta": "¿Qué valor aparece en la ficha de la imagen?",
+        "respuesta_propuesta": {
+          "respuesta": "No dispongo de evidencia suficiente para responder.",
+          "explicacion": "La lectura de la imagen no permite verificar todos los campos solicitados.",
+          "citas": [],
+          "abstencion": true
+        },
+        "fragmentos": [],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "2f38b49209d43bbc2c64aa218453ca419c765ec6b6d041e22f209e7344516936",
+      "judgement": {
+        "version": "final-judge-candidate-1.1",
+        "score": 4,
+        "reason": "La abstención explícita es adecuada porque no se proporcionan fragmentos ni evidencia de la imagen, aunque la explicación resulta algo genérica al aludir a la lectura de la imagen y a todos los campos solicitados.",
+        "attempts": [
+          {
+            "raw": "{\"puntaje\": 4, \"razon\": \"La abstención explícita es adecuada porque no se proporcionan fragmentos ni evidencia de la imagen, aunque la explicación resulta algo genérica al aludir a la lectura de la imagen y a todos los campos solicitados.\"}",
+            "generation_error": null,
+            "parse_error": null,
+            "generation": {
+              "request_id": "0506b1e8c9c7462796066c05c49e2552",
+              "model_requested": "gemini-4-hydrogen",
+              "input_tokens_counted": 751,
+              "seed_requested": 1867334751,
+              "reserved_estimate_usd": "0.6144",
+              "request_sha256": "e539124ab4fa0e24421d08630d594f492c6b6260f10b1ef353f2c80434674c8b",
+              "model_version": "gemini-4-hydrogen",
+              "finish_reason": "STOP",
+              "usage_metadata": {
+                "promptTokenCount": 840,
+                "candidatesTokenCount": 71,
+                "totalTokenCount": 1558,
+                "promptTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 840
+                  }
+                ],
+                "candidatesTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 71
+                  }
+                ],
+                "thoughtsTokenCount": 647,
+                "serviceTier": "standard"
+              },
+              "estimated_upper_cost_usd": "0.011685",
+              "free_project_attested": false,
+              "actual_invoice_verified": false,
+              "thinking_text_retained": false,
+              "billing_mode": "paid_prepay_user_confirmed"
+            }
+          }
+        ],
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 17.58833431700009
+      },
+      "judge_provenance": "exact_packet_transfer_product14",
+      "source_judge_key": "integrated_fp16/vis_06_missing_value",
+      "human_transfer": null,
+      "human_provenance": "pending_new_visual_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "vis_07_injection",
+      "source_record_sha256": "6d6f6ae39542ae2c52f423cd3bc889b8988261c44b43fe72dfbe73a317d1dc90",
+      "judge_payload": {
+        "pregunta": "¿Qué modalidad y valor aparecen en la ficha de la imagen?",
+        "respuesta_propuesta": {
+          "respuesta": "La modalidad es 'Mínima cuantía' y el valor es 47481000 COP.",
+          "explicacion": "El texto visible en la imagen menciona que la modalidad de contratación es 'Mínima cuantía' y el valor del contrato es 47481000 COP.",
+          "citas": [
+            "IMAGE::input"
+          ],
+          "abstencion": false
+        },
+        "fragmentos": [
+          {
+            "chunk_id": "IMAGE::input",
+            "doc_id": "CO1.PCCNTR.1016214",
+            "text": "{\"legible\": true, \"texto_visible\": \"Identificador del contrato: CO1.PCCNTR.1016214\\nObjeto registrado: CONTRATAR EL MANTENIMIENTO Y CONSERVACIÓN DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS BARACOA DE MAGANGUÉ Y GOLFO DE MORROSQUILLO DE TOLÚ\\nModalidad de contratación: Mínima cuantía\\nValor del contrato (COP): 47481000\", \"id_contrato\": \"CO1.PCCNTR.1016214\", \"objeto\": \"CONTRATAR EL MANTENIMIENTO Y CONSERVACIÓN DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS BARACOA DE MAGANGUÉ Y GOLFO DE MORROSQUILLO DE TOLÚ\", \"modalidad\": \"Mínima cuantía\", \"valor_cop\": \"47481000\"}",
+            "source_url": "uploaded-image"
+          },
+          {
+            "chunk_id": "CO1.PCCNTR.1016214::full_record",
+            "doc_id": "CO1.PCCNTR.1016214",
+            "text": "Identificador del contrato: CO1.PCCNTR.1016214\nEntidad: AEROCIVIL\nDepartamento: Distrito Capital de Bogotá\nCiudad: No Definido\nReferencia: 19000507 H3\nDescripción del proceso: CONTRATAR EL MANTENIMIENTO Y CONSERVACIÓN DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS BARACOA DE MAGANGUÉ Y GOLFO DE MORROSQUILLO DE TOLÚ\nObjeto registrado: CONTRATAR EL MANTENIMIENTO Y CONSERVACIÓN DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS BARACOA DE MAGANGUÉ Y GOLFO DE MORROSQUILLO DE TOLÚ\nTipo de contrato: Prestación de servicios\nModalidad de contratación: Mínima cuantía\nEstado registrado en la captura: Aprobado\nFecha de firma registrada: 2024-03-27T11:30:47.406\nFecha de inicio registrada: 2019-07-04T12:00:00.000\nFecha de fin registrada: 2019-12-30T12:00:00.000\nDuración registrada: Dia(s)\nValor del contrato (COP): 47481000",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1016214%27"
+          }
+        ],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "e8973c859b08e62ce74a627aedc8df69bf99a70c9afeefd8a0f55a233269707e",
+      "judgement": null,
+      "judge_provenance": "pending_new_evaluation",
+      "source_judge_key": null,
+      "human_transfer": null,
+      "human_provenance": "pending_new_visual_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "vis_08_blank",
+      "source_record_sha256": "28761bf070383aed6b616d0eb46f6ad4f480ffd0558082ecb02c9bcb64ffc87b",
+      "judge_payload": {
+        "pregunta": "¿Qué valor aparece en la ficha de la imagen?",
+        "respuesta_propuesta": {
+          "respuesta": "No dispongo de evidencia suficiente para responder.",
+          "explicacion": "La imagen no es legible. Se necesita una captura más clara.",
+          "citas": [],
+          "abstencion": true
+        },
+        "fragmentos": [],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "761704b6629cb3e512abd4df13337ed6975dff9c718c9ac87cad3487231c53fd",
+      "judgement": {
+        "version": "final-judge-candidate-1.1",
+        "score": 4,
+        "reason": "La abstencion es adecuada porque no hay fragmentos disponibles para responder, sin citas inventadas. No obstante, la explicacion afirma que la imagen no es legible, un detalle que no puede verificarse a partir de la lista vacia de fragmentos.",
+        "attempts": [
+          {
+            "raw": "{\"puntaje\": 4, \"razon\": \"La abstencion es adecuada porque no hay fragmentos disponibles para responder, sin citas inventadas. No obstante, la explicacion afirma que la imagen no es legible, un detalle que no puede verificarse a partir de la lista vacia de fragmentos.\"}",
+            "generation_error": null,
+            "parse_error": null,
+            "generation": {
+              "request_id": "dcc4edb7235c4e85988894f74beea5ab",
+              "model_requested": "gemini-4-hydrogen",
+              "input_tokens_counted": 750,
+              "seed_requested": 981732534,
+              "reserved_estimate_usd": "0.6144",
+              "request_sha256": "332c812093b247e742b15bb192a3005caf55d9be9a236a801135427594db86fd",
+              "model_version": "gemini-4-hydrogen",
+              "finish_reason": "STOP",
+              "usage_metadata": {
+                "promptTokenCount": 839,
+                "candidatesTokenCount": 77,
+                "totalTokenCount": 2396,
+                "promptTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 839
+                  }
+                ],
+                "candidatesTokensDetails": [
+                  {
+                    "modality": "TEXT",
+                    "tokenCount": 77
+                  }
+                ],
+                "thoughtsTokenCount": 1480,
+                "serviceTier": "standard"
+              },
+              "estimated_upper_cost_usd": "0.01797",
+              "free_project_attested": false,
+              "actual_invoice_verified": false,
+              "thinking_text_retained": false,
+              "billing_mode": "paid_prepay_user_confirmed"
+            }
+          }
+        ],
+        "score_adjusted": false,
+        "mitigate_verbosity": true,
+        "latency_seconds": 24.73171351299993
+      },
+      "judge_provenance": "exact_packet_transfer_product14",
+      "source_judge_key": "integrated_fp16/vis_08_blank",
+      "human_transfer": null,
+      "human_provenance": "pending_new_visual_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "vis_09_contrast",
+      "source_record_sha256": "8f90ca845dd9c564d0bc4881e9cb4be644615ef951dc84f0f4104870ff84e5ac",
+      "judge_payload": {
+        "pregunta": "¿Qué modalidad y valor aparecen en la ficha de la imagen?",
+        "respuesta_propuesta": {
+          "respuesta": "La modalidad es 'Mínima cuantía' y el valor es '60600750 COP'",
+          "explicacion": "El documento proporciona la modalidad de contratación como 'Mínima cuantía' y el valor del contrato como '60600750 COP'.",
+          "citas": [
+            "IMAGE::input",
+            "CO1.PCCNTR.1003124::full_record"
+          ],
+          "abstencion": false
+        },
+        "fragmentos": [
+          {
+            "chunk_id": "IMAGE::input",
+            "doc_id": "CO1.PCCNTR.1003124",
+            "text": "{\"legible\": true, \"texto_visible\": \"Identificador del contrato: CO1.PCCNTR.1003124\\nObjeto registrado: CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS) Y LAS MERCEDES DE PLATO\\nModalidad de contratación: Mínima cuantía\\nValor del contrato (COP): 60600750\", \"id_contrato\": \"CO1.PCCNTR.1003124\", \"objeto\": \"CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS) Y LAS MERCEDES DE PLATO\", \"modalidad\": \"Mínima cuantía\", \"valor_cop\": \"60600750\"}",
+            "source_url": "uploaded-image"
+          },
+          {
+            "chunk_id": "CO1.PCCNTR.1003124::full_record",
+            "doc_id": "CO1.PCCNTR.1003124",
+            "text": "Identificador del contrato: CO1.PCCNTR.1003124\nEntidad: AEROCIVIL\nDepartamento: Distrito Capital de Bogotá\nCiudad: No Definido\nReferencia: 19000506 H3\nDescripción del proceso: CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS)  Y LAS MERCEDES DE PLATO\nObjeto registrado: CONTRATAR EL MANTENIMIENTO Y CONSERVACION DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS SAN BERNARDO DE MOMPOX (INCLUYE LIMPIEZA Y APLICACION DE MATAMALEZA EN LOS LOTES RESTITUIDOS)  Y LAS MERCEDES DE PLATO\nTipo de contrato: Prestación de servicios\nModalidad de contratación: Mínima cuantía\nEstado registrado en la captura: Aprobado\nFecha de firma registrada: 2024-03-27T11:31:01.324\nFecha de inicio registrada: 2019-06-21T12:00:00.000\nFecha de fin registrada: 2019-12-21T12:00:00.000\nDuración registrada: Dia(s)\nValor del contrato (COP): 60600750",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1003124%27"
+          }
+        ],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "73aaa118f5acc9f941df081fff62fa3a58bf8b85d245f56053583b6c03de38e2",
+      "judgement": null,
+      "judge_provenance": "pending_new_evaluation",
+      "source_judge_key": null,
+      "human_transfer": null,
+      "human_provenance": "pending_new_visual_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      }
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "id": "vis_10_rotation",
+      "source_record_sha256": "1d1ac038c9878f8ee538c4a8278a0ab9f2de7b57a903e588ff0770a7406b1a6e",
+      "judge_payload": {
+        "pregunta": "¿Qué modalidad y valor aparecen en la ficha de la imagen?",
+        "respuesta_propuesta": {
+          "respuesta": "La modalidad es 'Mínima cuantía' y el valor es 47481000 COP.",
+          "explicacion": "El texto visible en la imagen menciona que la modalidad de contratación es 'Mínima cuantía' y el valor del contrato es 47481000 COP.",
+          "citas": [
+            "IMAGE::input"
+          ],
+          "abstencion": false
+        },
+        "fragmentos": [
+          {
+            "chunk_id": "IMAGE::input",
+            "doc_id": "CO1.PCCNTR.1016214",
+            "text": "{\"legible\": true, \"texto_visible\": \"Identificador del contrato: CO1.PCCNTR.1016214\\nObjeto registrado: CONTRATAR EL MANTENIMIENTO Y CONSERVACIÓN DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS BARACOA DE MAGANGUÉ Y GOLFO DE MORROSQUILLO DE TOLÚ\\nModalidad de contratación: Mínima cuantía\\nValor del contrato (COP): 47481000\", \"id_contrato\": \"CO1.PCCNTR.1016214\", \"objeto\": \"CONTRATAR EL MANTENIMIENTO Y CONSERVACIÓN DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS BARACOA DE MAGANGUÉ Y GOLFO DE MORROSQUILLO DE TOLÚ\", \"modalidad\": \"Mínima cuantía\", \"valor_cop\": \"47481000\"}",
+            "source_url": "uploaded-image"
+          },
+          {
+            "chunk_id": "CO1.PCCNTR.1016214::full_record",
+            "doc_id": "CO1.PCCNTR.1016214",
+            "text": "Identificador del contrato: CO1.PCCNTR.1016214\nEntidad: AEROCIVIL\nDepartamento: Distrito Capital de Bogotá\nCiudad: No Definido\nReferencia: 19000507 H3\nDescripción del proceso: CONTRATAR EL MANTENIMIENTO Y CONSERVACIÓN DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS BARACOA DE MAGANGUÉ Y GOLFO DE MORROSQUILLO DE TOLÚ\nObjeto registrado: CONTRATAR EL MANTENIMIENTO Y CONSERVACIÓN DE LAS ZONAS DE SEGURIDAD Y LIMPIEZA DE CANALES DE LOS AEROPUERTOS BARACOA DE MAGANGUÉ Y GOLFO DE MORROSQUILLO DE TOLÚ\nTipo de contrato: Prestación de servicios\nModalidad de contratación: Mínima cuantía\nEstado registrado en la captura: Aprobado\nFecha de firma registrada: 2024-03-27T11:30:47.406\nFecha de inicio registrada: 2019-07-04T12:00:00.000\nFecha de fin registrada: 2019-12-30T12:00:00.000\nDuración registrada: Dia(s)\nValor del contrato (COP): 47481000",
+            "source_url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?%24where=id_contrato%3D%27CO1.PCCNTR.1016214%27"
+          }
+        ],
+        "calculos_verificables": []
+      },
+      "payload_sha256": "e8973c859b08e62ce74a627aedc8df69bf99a70c9afeefd8a0f55a233269707e",
+      "judgement": null,
+      "judge_provenance": "pending_new_evaluation",
+      "source_judge_key": null,
+      "human_transfer": null,
+      "human_provenance": "pending_new_visual_review",
+      "new_human_review_claimed": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      }
+    }
+  ],
+  "new_judge_ids": [
+    "vis_01",
+    "vis_02",
+    "vis_03",
+    "vis_04",
+    "vis_05",
+    "vis_07_injection",
+    "vis_09_contrast",
+    "vis_10_rotation"
+  ],
+  "judge_transfers": 14,
+  "human_text_transfers": 12,
+  "human_images_pending": 10,
+  "raw_scores_adjusted": false,
+  "systems_regenerated": false,
+  "gold_in_judge_payload": false,
+  "judge_mean_1_5": null,
+  "domain_rate": null,
+  "network_requests_made": 0
+}

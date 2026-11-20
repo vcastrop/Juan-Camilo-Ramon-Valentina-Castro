@@ -26,6 +26,15 @@ Comparación 02: cinco perfiles, 110 registros, cero excepciones de caso y siete
 
 ## Resultados medidos y estado del scorecard
 
+La [integración OCR20](evidence/integration20_completed/ANALISIS.md) es un perfil
+nuevo, no una sustitución retrospectiva del FP16 histórico. Completó los 22 casos
+comunes y 16 controles separados, con cobertura literal media 0,712 y 14/22
+chequeos automáticos (cuatro textuales y diez visuales). Estas cifras no son
+exactitud ni dominio: el [cierre21](EVALUACION_21.md) conserva catorce notas por
+igualdad exacta de paquetes y requiere ocho notas nuevas, más revisión humana de
+las diez imágenes. Su media completa y dominio siguen pendientes. No se atribuye
+a este perfil la medición de eficiencia del modelo visual anterior.
+
 | Perfil | Cobertura literal media | Chequeos automáticos /22 | p50 s | p95 s | Pico CUDA asignado GiB |
 |---|---:|---:|---:|---:|---:|
 | Sin RAG adaptado a QA | 0,182 | 4 | 2,314 | 6,410 | 5,833 |

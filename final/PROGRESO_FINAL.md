@@ -22,7 +22,9 @@ ejecución y evaluación reales, no cantidad de notebooks o pruebas.
 - Visual 18 recibido: 449 pruebas y ocho casos, pero 0/5 legibles útiles; utilidad
   visual rechazada. [OCR 19](evidence/ocr19_completed/ANALISIS.md) completó 8/8 lecturas
   y 12/12 rutas diagnósticas CPU; no es calidad QA ni sustitución del scorecard.
-  [Integración20](INTEGRACION_20.md) preparada: nuevo perfil y nueva recolección común pendientes.
+  [Integración20](evidence/integration20_completed/ANALISIS.md) completó 22+16 casos;
+  los chequeos visuales son positivos, pero [cierre21](EVALUACION_21.md) de ocho
+  notas nuevas y diez revisiones visuales sigue pendiente. No heredar calidad global.
 - Presupuesto estimado/reservado USD 5,7954525 dentro de USD 7 totales autorizados;
   no factura verificada. Este recálculo no consume API.
 
@@ -56,7 +58,8 @@ pesos de la rúbrica académica ni garantía de resultados.
    inferencia real](evidence/deployment17_completed/ANALISIS.md), con un fallo OCR
    bloqueado. [Visual 18](evidence/visual18_completed/ANALISIS.md) confirmó falta
    de utilidad. OCR19 aportó extracción útil; ejecutar [integración20](INTEGRACION_20.md)
-   sobre el mismo conjunto común y revisar su calidad, sin heredar notas anteriores. No repetir 17/18/19. ZeroGPU sigue
+   ya recogida sobre el mismo conjunto: continuar con [evaluación21](EVALUACION_21.md)
+   por equivalencia exacta y revisión visual nueva. No repetir 17/18/19/20. ZeroGPU sigue
    pendiente. No contar estos diagnósticos como despliegue público terminado.
 3. Terminar reporte, contribuciones/uso de IA y presentación.
 4. Reproducción desde limpio, revisión de tablas/accesos/licencias y cierre de

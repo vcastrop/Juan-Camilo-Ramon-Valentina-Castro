@@ -2,12 +2,20 @@
 
 ## Estado vigente — dominio de los cinco perfiles cerrado
 
+### Ruta actual: integración20 recibida; cierre21 de calidad preparado
+
+- [x] Conservar y auditar [20](evidence/integration20_completed/ANALISIS.md): 22+16 casos, 467 pruebas, sin errores técnicos.
+- [x] Verificar 14 paquetes idénticos para transferir notas, sin cambiar las bajas; doce revisiones textuales transferibles.
+- [x] Preparar evaluación de ocho paquetes cambiados bajo el registro USD7 existente y revisión humana nueva de diez imágenes.
+- [ ] Recibir [evaluación21](EVALUACION_21.md), auditar razones del juez y recibir `REVISION_VISUAL_21.md` real.
+- [ ] Recalcular dominio del nuevo perfil; después verificar despliegue OCR/observabilidad pública.
+
 ### Ruta actual: OCR19 recibido; integración20 separada preparada
 
 - [x] Conservar [OCR19](evidence/ocr19_completed/ANALISIS.md): 8/8 lecturas completas y 12/12 rutas diagnósticas, no respuestas QA.
 - [x] Preparar perfil OCR20 con campos acotados y guardas, sin cargar Qwen2-VL ni editar su línea base.
 - [x] Fijar evaluación del perfil nuevo en los 22 casos comunes + 16 comprobaciones separadas.
-- [ ] Ejecutar [integración20](INTEGRACION_20.md), revisar/juzgar nuevas respuestas antes de actualizar calidad.
+- [x] Ejecutar integración20; revisión/juez nuevos preparados, todavía sin actualizar dominio.
 - [ ] Verificar luego despliegue/observabilidad reales; main y Space siguen intactos.
 
 ### Ruta actual: visual 18 rechazado; candidato OCR 19 separado
