@@ -29,7 +29,8 @@ def build(output,license_file):
     commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     names=local_modules(['final/integration_ocr20.py','final/service_ocr.py','final/service_telemetry.py'])
     templates=['final/space_candidate/app.py','final/space_candidate/requirements.txt','final/space_payload.py',
-               'final/space_ocr/README.md','final/space_ocr/packages.txt','final/build_space_ocr.py']
+               'final/space_ocr/README.md','final/space_ocr/packages.txt','final/build_space_ocr.py',
+               'final/startup_diagnostic_patch.py']
     for name in names+templates:
         saved=subprocess.check_output(['git','show',commit+':'+name],cwd=ROOT)
         if saved.replace(b'\r\n',b'\n')!=(ROOT/name).read_bytes().replace(b'\r\n',b'\n'):
@@ -56,6 +57,8 @@ def build(output,license_file):
             info.external_attr=0o100644<<16;z.writestr(info,raw)
     app=render_app((ROOT/'final/space_candidate/app.py').read_text(encoding='utf-8'),
                    (ROOT/'final/space_payload.py').read_text(encoding='utf-8'),digest(archive.read_bytes()),commit)
+    from final.startup_diagnostic_patch import patch_app
+    app=patch_app(app)
     compile(app,'generated_app.py','exec')
     (output/'app.py').write_text(app,encoding='utf-8',newline='\n')
     for name,source in [('README.md','final/space_ocr/README.md'),('packages.txt','final/space_ocr/packages.txt'),

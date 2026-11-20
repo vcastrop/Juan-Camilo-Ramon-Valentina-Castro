@@ -38,7 +38,8 @@ class Classifier:
             MODELS['classifier'][0], revision=MODELS['classifier'][1], num_labels=2,
             id2label={0: 'REQUIERE_REVISION', 1: 'SUFICIENTE'},
             label2id={'REQUIERE_REVISION': 0, 'SUFICIENTE': 1})
-        self.model = PeftModel.from_pretrained(base, path).to('cpu').eval()
+        # M1 runs on CPU. Prevent PEFT from inferring emulated CUDA at ZeroGPU startup.
+        self.model = PeftModel.from_pretrained(base, path, torch_device='cpu').to('cpu').eval()
 
     def classify(self, text):
         encoded = self.tokenizer(text, return_tensors='pt', truncation=True, max_length=256)
