@@ -1,5 +1,60 @@
 # ContractRisk Colombia
 
+## Proyecto integrador final
+
+**Para analistas de contratación pública:** consulta fichas con fuentes, calcula
+diferencias y lee capturas para ayudar a decidir si hay evidencia suficiente o
+si hacen falta documentos. El modo M1 señala suficiencia descriptiva. La decisión
+es humana: el sistema no determina fraude ni autenticidad.
+
+- [Demo pública en Hugging Face](https://huggingface.co/spaces/Juanoff/contractrisk-colombia).
+- [Proyecto W&B](https://forge.coreweave.com/wandb/jcramonp-eanit/contractrisk-final) y
+  [run pública del servicio](https://forge.coreweave.com/wandb/jcramonp-eanit/contractrisk-final/runs/f7ljlxip).
+- [Reporte final](final/reporte.md), [diagrama](final/ARQUITECTURA.mmd),
+  [presentación y demo](final/presentacion/GUIA_DEMO.md), [contribuciones e IA](final/CONTRIBUCIONES.md).
+
+**Resultado de referencia:** dominio18/22 y juez4,455/5 en OCR final. Cuatro fallos
+textuales persisten. NF4 redujo memoria37,60% pero perdió22,73 puntos de dominio,
+por lo que se rechazó. Siete rutas funcionales reales comprobadas, no un nuevo
+benchmark7/7. W&B conserva métricas accesibles pero su run figura Crashed:
+continuidad de seguimiento no resuelta, aunque la salud del Space seguía lista.
+
+### Uso en tres pasos
+
+1. Abrir la demo y elegir consulta o suficiencia M1.
+2. Escribir texto o cargar una ficha pública rotulada, sin datos personales,
+   y aceptar el aviso. Consultar una vez y revisar explicación/fuentes.
+3. Si se abstiene o detecta conflicto, pedir documentos adicionales. El botón de
+   salud no consume GPU. La cuota/cola ZeroGPU puede limitar consultas futuras.
+
+La demo y el recálculo de tablas no requieren clave pagada. Para reproducir:
+clonar este repositorio con historial completo, instalar
+`final/requirements-api-judge.txt` y ejecutar desde la raíz:
+
+```bash
+python -m final.build_delivery_tables --output reproduccion_final
+```
+
+No invoca modelos ni APIs. [Pasos Windows/Linux/Colab y configuración](final/REPRODUCIR.md).
+No repetir evaluaciones pagadas ni borrar registros Drive. Las claves del servicio
+se guardan como secretos y no se entregan al visitante.
+
+### Índice del semestre
+
+| Capa | Material |
+|---|---|
+| M1: ajuste de dominio | [Notebook ejecutado](ContractRisk_M1_FineTuning_LoRA_Colab_Ejecutado.ipynb), [dataset](DATASET_CARD.md), [adaptador](model/) |
+| M2: evaluación | [Carpeta y métricas históricas](m2/) |
+| M3: RAG/herramientas/RAGAS | [Reporte](m3/README.md), [ruta](m3/RUTA_ENTREGA.md) |
+| Aporte visual M4 | [OCR/controles](final/INTEGRACION_20.md), [eval común](final/eval/) |
+| M5 e integración | [Antes/después NF4](final/evidence/delivery_tables/tables.md), [despliegue](final/DESPLIEGUE_OCR_22.md), [código Space](https://huggingface.co/spaces/Juanoff/contractrisk-colombia/tree/main) |
+| Cierre | [Reporte](final/reporte.md), [checklist](final/CHECKLIST.md), [progreso](final/PROGRESO_FINAL.md) |
+
+Lo siguiente conserva el contexto y las entregas históricas. Sus métricas no se
+mezclan con las de QA/imagen del conjunto común final.
+
+---
+
 ContractRisk Colombia es una herramienta de inteligencia artificial orientada a apoyar a analistas y auditores en la detección y priorización de contratos públicos de SECOP II que puedan presentar señales de riesgo o comportamientos potencialmente sospechosos y que, por tanto, merezcan una revisión humana más detallada.
 
 El objetivo final es integrar distintas señales de análisis contractual para generar alertas de priorización. Estas alertas no constituyen una acusación ni una determinación automática de fraude, corrupción o ilegalidad; la interpretación final corresponde siempre a una persona experta. M1 implementa la primera señal del sistema: evaluar si la descripción contractual es suficientemente informativa.

@@ -1,0 +1,24 @@
+flowchart LR
+  U[Usuario: texto o captura pública] --> V[Entrada y consentimiento: M5]
+  V --> Mode{Modo}
+  Mode -->|Consulta| G[Guardas de fuente: M3 y final]
+  Mode -->|Suficiencia| C[RoBERTalex + LoRA CPU: M1]
+  U -->|Captura| O[Tesseract y campos acotados: aporte M4]
+  O --> S[Legibilidad, campos, ID y consistencia]
+  S -->|Datos válidos| G
+  S -->|Objeto legible y modo M1| C
+  S -->|Falta o contradicción| A[Abstención y motivo]
+  G -->|Fuente ausente| A
+  G --> R[Híbrido + reranking + ficha completa: M3]
+  R --> T{¿Cálculo necesario?}
+  T -->|Sí| H[Herramienta determinista: M3]
+  T -->|No| L[Qwen2.5-3B FP16]
+  H --> L
+  L --> J[JSON, citas y controles]
+  C --> J
+  J --> Out[Respuesta o señal M1: decisión humana]
+  A --> Out
+  Out --> E[Evento JSON sin contenido: M5]
+  E --> W[W&B: latencia y uso]
+  M2[Eval22 y harness M2 adaptado] -. mide .-> J
+  M5[Ensayo NF4: rechazado por pérdida de calidad] -. alternativa .-> L

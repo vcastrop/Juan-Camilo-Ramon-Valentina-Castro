@@ -1,6 +1,6 @@
 # Avance de la entrega final — 19/11/2026
 
-Estimación operativa: **83–87 % (~85 %)** de la entrega final integradora. No es
+Estimación operativa: **90–93 % (~91 %)** de la entrega final integradora. No es
 nota, madurez para uso real ni porcentaje de todo el curso. El aumento reconoce
 ejecución y evaluación reales, no cantidad de notebooks o pruebas.
 
@@ -42,17 +42,17 @@ ejecución y evaluación reales, no cantidad de notebooks o pruebas.
 
 | Hito | Peso | Avance | Pendiente principal |
 |---|---:|---:|---|
-| Fase 0: insumos/base | 10 % | 80 % | Inventario/roles definitivos. |
+| Fase 0: insumos/base | 10 % | 95 % | Roles confirmados; conservar insumos históricos. |
 | Fase 1: producto/infraestructura | 10 % | 95 % | Mantener servicio y acceso; no garantiza cuota/permanencia. |
 | Fase 2: integración de desarrollo | 20 % | 95 % | Despliegue OCR verificado en casos concretos; conservar límites conocidos. |
 | Fase 3: evaluación común | 15 % | 95 % | Cierre completo reproducible; reproducción final desde limpio pendiente. |
-| Fase 4: eficiencia | 15 % | 90 % | Publicación de configuración final; resultado NF4 negativo ya medido y decidido. |
-| Fase 5: comparativas/ablación | 10 % | 90 % | Tablas completas; diagrama/lectura final y ensayo de presentación pendientes. |
+| Fase 4: eficiencia | 15 % | 95 % | Antes/después y rechazo NF4 documentados; defensa individual pendiente. |
+| Fase 5: comparativas/ablación | 10 % | 95 % | Tablas y diagrama preparados; lectura final y ensayo pendientes. |
 | Fase 6: producción/observabilidad | 10 % | 80 % | Peticiones/salud/acceso comprobados; continuidad W&B Crashed sin resolver. |
-| Fase 7: reporte/presentación | 7 % | 50 % | Reporte con resultados completos; faltan roles, portada y diapositivas. |
-| Fase 8: cierre verificable | 3 % | 20 % | Accesos listos; faltan clon limpio, auditoría final, PR/merge y entrega. |
+| Fase 7: reporte/presentación | 7 % | 85 % | Reporte, roles, portada y diez diapositivas preparados; revisión final y ensayo pendientes. |
+| Fase 8: cierre verificable | 3 % | 50 % | Recálculo listo; completar clon limpio, publicación y entrega formal. |
 
-Suma ponderada vigente85,35%, expresada como rango para evitar falsa precisión.
+Suma ponderada vigente91,45%, expresada como rango para evitar falsa precisión.
 Reconoce OCR21, despliegue funcional y accesos, no estabilidad continua W&B ni
 cierre académico completo. La aproximación no pretende precisión estadística. No son
 pesos de la rúbrica académica ni garantía de resultados.

@@ -1,50 +1,27 @@
-# ContractRisk — entrega integradora en desarrollo
+# ContractRisk: proyecto integrador
 
-Estado: integración de desarrollo probada en T4; despliegue público todavía de infraestructura, no sistema final completo. [Checklist](CHECKLIST.md).
+[Reporte](reporte.md) · [Reproducción sin pago](REPRODUCIR.md) ·
+[Demo](https://huggingface.co/spaces/Juanoff/contractrisk-colombia) ·
+[Run W&B](https://forge.coreweave.com/wandb/jcramonp-eanit/contractrisk-final/runs/f7ljlxip)
 
-Siguiente paso: [Juez 11 — recuperación en CPU](ContractRisk_Final_Juez_11_Recuperacion_Colab.ipynb), con [reglas y presupuesto acumulado](JUEZ_11_RECUPERACION.md). Preparado, sin ejecución real todavía: distingue HTTP/timeout/red/JSON, conserva la nota válida y todas las reservas, con un único reintento global por 503 y techo TOTAL USD 5. La [revisión humana de 44 respuestas fue recibida](evidence/human_response_review_01/RECEPCION.md): ocho dudas abiertas, un crítico nuevo y dos regresiones de invarianza vetan NF4 para despliegue. No repetir Comparación 02 ni rehacer toda la revisión. El juez y el servicio público siguen pendientes.
+Perfil OCR FP16:18/22 dominio, juez4,455/5. NF4 rechazado por pérdida de calidad.
+Servicio con cuatro modelos y TesseractCPU; siete rutas funcionales verificadas,
+salud/accesos sin sesión comprobados. La run W&B conserva métricas pero figura
+Crashed: continuidad no resuelta. No hay certificación para decisiones legales.
 
-Actualización al 18/11: [Comparación 02 completa y auditada](evidence/comparison_02/ANALISIS.md), cinco perfiles y 110 registros; 103 salidas con estructura válida, no 103 aciertos. NF4 ahorró 37,6 % de memoria, fue más lento y omitió montos. No está aceptado para despliegue. Siguiente tarea: [revisión humana de 44 respuestas reales](eval/review_comparison02/LEEME.md), sin GPU ni API. No repetir la colección. [Reporte integrador en borrador](reporte.md). Juez, dominio y aceptación formal siguen pendientes. Main/Space y presupuesto API intactos.
+## Material vigente
 
-Estado de API: [Hydrogen 10 ejecutado y auditado](evidence/hydrogen_10/ANALISIS.md): nota histórica 2 intacta, 503 y reintento terminado por transporte/JSON, sin notas nuevas. **No repetir 07–10 ni borrar registros Drive.** USD 2,4706725 estimados/reservados, no factura; techo USD 5 y proyecto gratuito intactos. Falta resolver disponibilidad antes de otra reanudación controlada. El juez sigue sin validar; esto no impide recoger respuestas y mediciones mediante Comparación 01.
+- [Tablas de seis perfiles](evidence/delivery_tables/tables.md) y [generador offline](build_delivery_tables.py).
+- [Conjunto común](eval/common_v1/), [política de eficiencia](efficiency_policy.json),
+  [rúbrica](RUBRICA_JUEZ_FINAL.md) y [scorecard OCR](evidence/evaluation21_completed/scorecard.json).
+- [Evidencia visual/semántica](evidence/evaluation21_completed/ANALISIS.md),
+  [smoke público](evidence/space_ocr23_cpu/SMOKE_RECIBIDO.md),
+  [eventos auditados](evidence/space_ocr23_cpu/events_audit.json) y
+  [acceso público](evidence/space_ocr23_cpu/ACCESO_PUBLICO.md).
+- [Código/guía de despliegue](DESPLIEGUE_OCR_22.md), [constructor](build_space_ocr.py).
+- [Diagrama](ARQUITECTURA.mmd), [presentación y demo](presentacion/GUIA_DEMO.md),
+  [contribuciones/IA](CONTRIBUCIONES.md), [checklist](CHECKLIST.md).
 
-Avance estimado al 18/11: **55–60 % de la entrega final**. [Desglose y ruta pendiente](PROGRESO_FINAL.md). Reconoce comparación real y borrador; no sustituye evaluación semántica, producción ni cierre.
-
-## Estado de la integración visual
-
-[Visual 03 ejecutada y auditada](evidence/visual_03/ANALISIS.md): diez lecturas/rutas nuevas, carga conjunta en T4 y W&B con cierre confirmado por log. Un monto con cero adicional se propagó pese a contradecir el snapshot; se conserva el fallo, no se aprueba calidad global. [Control nuevo de consistencia 0.3](CONTROL_CONSISTENCIA.md) y reproducción CPU comprobados, sin cambiar respuestas históricas. Siguiente hito: protocolo común y evaluación/eficiencia, no repetir el ensayo para seleccionar mejores resultados.
-
-[Notebook histórico visual 03](ContractRisk_Final_Visual_03_Colab.ipynb) y [protocolo original](VISUAL_03.md). El notebook clona la rama vigente: para reproducir exactamente la corrida original usar el commit `0935f20`, no suponer que una ejecución futura de la rama equivale a integración 0.2.
-
-[Notebook de corrección 02](ContractRisk_Final_Correccion_02_Colab.ipynb) y [corrida ejecutada/auditada](evidence/correction_02/ANALISIS.md). Se corrigieron los problemas enfocados de lectura y elegibilidad de herramienta; todavía no es evaluación final. El [ensayo 01](evidence/integration_01/ANALISIS.md) se conserva con sus fallos originales. No subir estos archivos ni sus dependencias al Space inicial todavía.
-
-La [revisión humana de diez casos visuales](eval/visual_candidates_v1/REVISION_HUMANA.md) se preservó. Los hashes están en `human_approval.json`; ya hay resultados auditados de visual 03. Las referencias están separadas del manifiesto de entradas y no deben enviarse al generador.
-
-Objetivo: integrar la señal de suficiencia descriptiva M1, consultas con fuentes/herramienta M3 y lectura de capturas contractuales, medir eficiencia y desplegar una aplicación observada.
-
-[Evaluación común y juez](JUEZ_Y_EVALUACION_FINAL.md): 22 entradas ensambladas con referencias separadas y veinte anclas aprobadas. Qwen y Mistral anteriores no pasaron; sus notas se conservan. [Mistral corregido](evidence/mistral_tokenfix/ANALISIS.md) dio 13/20 en rango; [Qwen3 con razonamiento](evidence/reasoning_04/ANALISIS.md), 19/20, pero ambos fallaron otros criterios obligatorios. El [protocolo de continuación vigente](JUEZ_CONTINUACION_06.md) reutiliza el prefijo del piloto 05 con evaluador corregido. No hay juez validado ni nuevo scorecard; confirmación separada y auditoría humana siguen pendientes.
-
-[Reglas de eficiencia aprobadas](EFICIENCIA.md): máximo 5 puntos porcentuales de pérdida de cumplimiento, ningún fallo crítico nuevo ni regresión en controles, y al menos 20 % menos memoria pico CUDA asignada. Comprobación de aceptación preparada; comparación real y juez calibrado pendientes. No se desplegó cuantización ni se aceptó un resultado todavía.
-
-Space objetivo: https://huggingface.co/spaces/Juanoff/contractrisk-colombia
-
-Equipo W&B: `jcramonp-eanit`; proyecto: `contractrisk-final`. Las capturas del usuario confirman una run y asignación GPU real. La visualización de métricas, acceso del evaluador y observabilidad de consultas reales están pendientes. [Evidencia y límites](evidence/SPACE_SMOKE_CONFIRMADO.md).
-
-## Prueba inicial de despliegue
-
-Subir **el contenido de `final/space/` a la raíz del Space**: README.md, requirements.txt, app.py y telemetry.py. No subir credenciales, todo el proyecto ni el material del curso.
-
-En Settings, crear Secret `WANDB_API_KEY` y Variables `WANDB_ENTITY` y `WANDB_PROJECT` según lo indicado en el README del paquete. Un secreto de Colab no se copia automáticamente.
-
-Revisar App y Logs. `/healthz` debe responder 200 y `/readyz` debe responder 503 hasta que modelos e índice estén integrados. Pulsar una vez prueba técnica y comprobar el proyecto W&B; pulsar prueba GPU una vez para verificar asignación. No repetir mientras esté en cola.
-
-`queued_check_dashboard` significa que el SDK aceptó el evento en su cola local, no que la entrega remota ya esté demostrada. Un fallo de W&B no bloquea el estado del proceso ni convierte la prueba en éxito.
-
-## Verificación local sin modelos
-
-```bash
-python -m unittest discover -s final/tests -v
-python -m unittest discover -s m3/tests -v
-```
-
-Los resultados M3 no se atribuyen a esta aplicación inicial. El protocolo final, la visión, la comparación eficiente y el reporte están pendientes. No se ha modificado main.
+No repetir notebooks pagados o de reanudación. El recálculo no requiere claves.
+Originales y fallos quedan en evidence. [README histórico](HISTORIAL_README_DESARROLLO.md)
+conserva estados antiguos, no instrucciones vigentes de ejecución/presupuesto.

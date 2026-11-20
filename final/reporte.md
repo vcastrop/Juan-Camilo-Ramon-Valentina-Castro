@@ -1,141 +1,242 @@
-# ContractRisk Colombia — borrador de reporte integrador
+# ContractRisk Colombia: proyecto integrador
 
-**Estado: BORRADOR EN DESARROLLO, no entrega cerrada.** Recolección, 110 notas LLM y dominio de los cinco perfiles auditados; juez aceptado para esta tarea tras calibración, confirmación y revisión humana. Eficiencia NF4 rechazada con evidencia. Quedan despliegue contractual real, atribución final de tareas, presentación y reproducción completa. No se presenta la evaluación como prueba de producción funcionando.
+**Juan Camilo Ramon y Valentina Castro. SI4006. 19/11/2026.**
 
-## Problema, usuario y alcance
+[Demo](https://huggingface.co/spaces/Juanoff/contractrisk-colombia) ·
+[Run W&B](https://forge.coreweave.com/wandb/jcramonp-eanit/contractrisk-final/runs/f7ljlxip) ·
+[Reproducción](REPRODUCIR.md) · [Tablas recalculadas](evidence/delivery_tables/tables.md)
 
-ContractRisk apoya a una persona analista que consulta fichas públicas contractuales. Integra una señal de suficiencia descriptiva de M1, recuperación y herramientas de M3 y lectura de representaciones visuales de fichas. No detecta ni determina fraude. Un monto, una fecha o un estado contractual no prueban irregularidad o cumplimiento físico.
+## Problema, usuario y decisión
 
-La decisión apoyada es si existe evidencia suficiente y trazable para responder la consulta o si se requiere revisar fuentes/documentos adicionales. El éxito se evalúa por respuesta sustentada y completa, explicación/citas verificables y abstención adecuada. En los dos perfiles con revisión semántica cerrada: 16/22 en FP16 y 11/22 en NF4. No se sustituyen por coincidencia literal ni se generalizan a uso real.
+Una persona analista consulta fichas públicas contractuales y decide si tiene
+evidencia suficiente para responder o debe pedir documentos adicionales.
+ContractRisk responde con citas, calcula diferencias de valores y lee capturas
+rotuladas. El modo M1 señala suficiencia descriptiva. No determina fraude,
+autenticidad, cumplimiento físico ni validez jurídica.
+
+La métrica de éxito del usuario es la proporción de consultas resueltas con
+respuesta completa, explicación sustentada, citas y abstención adecuada, sin
+afirmación crítica inventada. El dominio aproxima esa utilidad:18/22 en OCR final
+frente a16/22 del visual FP16 anterior. No medimos ahorro de tiempo del analista
+ni exactitud de decisiones legales reales. Cobertura literal no es exactitud.
 
 ## Arquitectura y procedencia
 
-Pregunta y, opcionalmente, imagen → extracción visual y campos → recuperación híbrida con filtro de ID y reranking → fuentes completas y herramienta numérica cuando corresponde → respuesta estructurada con citas o abstención. El control de consistencia compara lectura visual/snapshot e informa discrepancias sin afirmar autenticidad. M1 tiene un modo separado de suficiencia; su integración pública visible sigue pendiente.
+```mermaid
+flowchart LR
+  I[Texto o captura pública] --> V[Consentimiento y límites M5]
+  V --> Q[Consulta M3]
+  V --> C[Suficiencia M1: RoBERTalex + LoRA CPU]
+  I --> O[Tesseract y campos, aporte visual M4]
+  O --> G[Legibilidad, campos, ID y consistencia]
+  G --> Q
+  G --> A[Abstención con motivo]
+  Q --> R[Híbrido, reranking y ficha completa M3]
+  R --> T[Herramienta numérica si corresponde]
+  T --> L[Qwen FP16: respuesta y citas]
+  L --> S[JSON y controles]
+  C --> S
+  S --> H[Resultado para revisión humana]
+  A --> H
+  H --> E[Evento JSON y W&B M5]
+```
 
-La base histórica M1–M3 se conserva. No existía una entrega M4/M5 externa publicada: la integración visual y el experimento de eficiencia son desarrollos nuevos. Las fichas visuales son representaciones sintéticas de datos del snapshot, no contratos firmados. Los resultados originales y sus fallos no se reescriben.
+M2 aporta eval set/harness de tres dimensiones adaptado a QA e imagen. M5
+aporta el ensayo NF4, rechazado, y el servicio observado. [Diagrama completo
+editable](ARQUITECTURA.mmd). Sin cálculo no hay herramienta; las guardas pueden
+abstenerse antes del LLM. M1 es un modo separado, no verificación de fraude de
+cada respuesta. Las capas M1–M3 y métricas originales se conservan. No hubo M4
+externo: la pieza visual se incorporó aquí. Las imágenes son fichas sintéticas
+rotuladas del snapshot, no contratos firmados ni fotografías probatorias.
 
-## Diseño de evaluación y reproducibilidad
+## Decisiones técnicas y alternativas
 
-Conjunto común: 22 entradas (12 textuales y 10 visuales), derivadas de referencias revisadas y ya inspeccionadas durante desarrollo; no son 22 contratos independientes ni gold ciego. Se separan entradas y referencias. Se incluyen falta de datos, cláusulas/auditoría ausentes, instrucción adversarial rotulada, imagen blanca y pares de contraste/rotación.
+| Componente | Decisión y alternativa descartada |
+|---|---|
+| M1 | RoBERTalex + LoRA entrenado en CPU. No sustituirlo por cabeza aleatoria ni detector de fraude. El cargador23 fuerza CPU al leer los mismos pesos y hereda la predicción original. |
+| Generador | Qwen2.5-3B-Instruct FP16 con revisión fijada. NF4 perdió demasiada calidad y no se despliega. |
+| Recuperación | Híbrido, filtro de ID, reranking y ficha completa para desambiguar contratos/recuperar campos. M3 textual obtuvo7/22 en el conjunto común. El cambio global no se atribuye a una sola pieza. |
+| Imagen | TesseractCPU con dos segmentaciones y concordancia de campos. Qwen2-VL falló cinco imágenes legibles del diagnóstico18. Difusión se descarta: se necesita extraer evidencia, no generar documentos. |
+| Cálculo | Herramienta determinista con operación y valores trazables. Sin ella hubo explicación numérica incorrecta pese a respuesta corta acertada. |
 
-Tres dimensiones: cobertura automática literal como diagnóstico, juicio LLM de respaldo y chequeo de dominio con reglas/controles explícitos. [Protocolo registrado](domain_protocol_v1.json). Se conservan notas crudas, sin reemplazarlas por aciertos. Tras candidatos locales rechazados e interrupciones API, Gemini 4 Hydrogen obtuvo 20/20 orientaciones de calibración y 12/12 en confirmación separada, sin respuestas malas aceptadas con 4–5. Los motivos fueron revisados por Juan Camilo, con aceptación condicionada comprobada contra la rúbrica original y límites expresos. [Cierre humano](evidence/human_closure_19/RECEPCION.md), [rúbrica legible](RUBRICA_JUEZ_FINAL.md).
+[Modelos/revisiones](config.py), corpus24 fichas, chunks220/solapamiento30,
+identidad de contrato en índice, semilla42, greedy y máximo512 tokens. No hay
+fallback silencioso de modelo/precisión. Coincidir con snapshot no autentica imagen.
 
-En los seis pares sintéticos, la diferencia media por repetición pasó de 0,5 a 0 tras la mitigación. Se repite una frase cuatro veces: no es prueba de neutralidad ante explicaciones largas legítimas, ni mide fluidez o calidad editorial. El juez no es infalible: conserva notas altas en casos que la revisión humana rechaza; el dominio aplica ambos controles sin modificar la nota cruda. La implementación del cruce es posterior a las corridas y adjudicaciones, no una prueba ciega o prospectiva del evaluador.
+## Evaluación y misma vara
 
-Comparación 02: cinco perfiles, 110 registros, cero excepciones de caso y siete salidas inválidas de la base sin RAG, incluidas en el denominador. Tesla T4, mismo conjunto, revisiones de modelos fijadas, torch 2.14.1+cu130 y generación greedy. Carga/calentamiento se separan de inferencia; una pasada ordenada por perfil no garantiza estabilidad general de latencia. [Auditoría y recálculo](evidence/comparison_02/ANALISIS.md).
+Conjunto común:12 consultas textuales y10 visuales,22 entradas relacionadas,
+no22 contratos independientes ni gold ciego. Las referencias ya se inspeccionaron.
+Incluye ausencia de datos/auditoría, instrucción adversarial, blanco y pares de
+contraste/rotación. [Protocolo](domain_protocol_v1.json). Todas las filas reciben
+las mismas entradas y harness/rúbrica. Dimensiones: cobertura automática de
+hechos, juez crudo1–5 y dominio. Dominio exige estructura, abstención, trazabilidad,
+criterios humanos de respaldo/completitud, ausencia de crítico y juez≥4.
 
-## Resultados medidos y estado del scorecard
+Gemini4Hydrogen, distinto de Qwen, superó20/20 orientaciones de calibración y12/12
+en confirmación para esta configuración. No prueba infalibilidad ni transferencia
+a otras tareas. Se conservaron motivos y revisión humana; [rúbrica](RUBRICA_JUEZ_FINAL.md).
+En seis pares sintéticos repetir una frase cuatro veces produjo diferencia media
+0,5 sin mitigación y0 con ella; no demuestra neutralidad ante longitud legítima.
 
-La [integración OCR20](evidence/integration20_completed/ANALISIS.md) es un perfil
-nuevo, no una sustitución retrospectiva del FP16 histórico. Completó los 22 casos
-comunes y 16 controles separados, con cobertura literal media 0,712 y 14/22
-chequeos automáticos (cuatro textuales y diez visuales). Estas cifras no son
-exactitud ni dominio. El [cierre21](evidence/evaluation21_completed/ANALISIS.md)
-conserva catorce notas por igualdad exacta de paquetes, añade ocho notas nuevas
-y cruza diez revisiones humanas visuales nuevas con doce textuales transferidas.
-Su media cruda es **4,4545/5** y dominio **18/22** (8/12 texto y 10/10 imagen),
-frente al 16/22 histórico. Siguen fallando m3_003, m3_005, m3_006 y m3_009.
-En m3_006 la nota 4 no basta: la revisión humana rechaza completitud. Se conserva
-esa discrepancia sin modificar la nota. No se atribuye a este perfil la medición
-de eficiencia del modelo visual anterior. En vis_07 la instrucción adversarial
-no llega al generador; no demuestra su inmunidad. El Space sigue sin verificar
-esta versión como servicio público.
+Comparación02 conservó110 respuestas (cinco perfiles por22), incluidas siete
+salidas inválidas del control sin RAG. Evaluación14 obtuvo110 notas sin regenerar
+respuestas ni dar gold al juez. Dominio histórico:90 revisiones directas y20
+transferencias exactas. El cruce es post-hoc. OCR20 conserva22 respuestas y16
+controles; evaluación21 reutiliza14 paquetes idénticos y añade ocho notas, diez
+revisiones visuales nuevas y doce textuales transferidas, sin promover notas bajas.
 
-| Perfil | Cobertura literal media | Chequeos automáticos /22 | p50 s | p95 s | Pico CUDA asignado GiB |
+## Evolución y ablación
+
+| Perfil sobre22 entradas | Cobertura literal | Juez /5 | Dominio /22 | Imagen |
+|---|---:|---:|---:|---|
+| Control QA sin RAG |0,182|3,500|3|No la procesa|
+| M3 textual reejecutado |0,280|4,273|7|No la procesa|
+| Integrado visual FP16, aporte M4 |0,667|4,364|16|10 entradas|
+| Visual NF4, ensayo M5 |0,530|3,773|11|10 entradas|
+| FP16 sin herramienta |0,667|4,227|15|10 entradas|
+| Final OCR FP16, referencia Colab |0,712|4,455|18|10 entradas,10 cumplen dominio|
+
+El control sin RAG es **adaptación QA**, no el clasificador M2 original
+reejecutado. No se mezcla su MacroF1 con QA: limitación de equivalencia estricta
+entre módulos. Métricas M3/RAGAS siguen en [su reporte](../m3/README.md), sin
+renombrarlas como nuevas. Los textuales se abstienen ante imágenes que no leen:
+las notas5 por honestidad no son diez tareas visuales resueltas.
+
+| Perfil | p50 s | p95 s | Pico CUDA asignado GiB |
+|---|---:|---:|---:|
+| Control sin RAG |2,314|6,410|5,833|
+| M3 textual |6,006|10,916|5,879|
+| Visual FP16 |7,533|13,367|10,175|
+| Visual NF4 |10,750|15,155|6,349|
+| FP16 sin herramienta |7,176|13,439|10,175|
+| OCR FP16, otra sesión T4* |7,045|11,926|No medido|
+
+Primeras cinco filas: misma sesión TeslaT4, versiones fijadas y carga/calentamiento
+separados, una pasada por perfil. *OCR: percentiles descriptivos de wall_seconds
+del harness en otra sesión T4, sin calentamiento/sincronización equivalentes.
+No demuestra aceleración ni ahorro de memoria; solo las primeras cinco filas
+constituyen comparación controlada. No mezclarlas con ZeroGPU/cola pública.
+[Tablas y auditoría](evidence/delivery_tables/tables.md).
+
+**Ablación:** con herramienta16/22 y juez4,364; sin herramienta15/22 y4,227.
+Veinte salidas idénticas. Las dos respuestas cortas de cálculo son correctas,
+pero sin herramienta m3_007 explica16.800.000 frente a168.000.000 en la respuesta.
+Con herramienta expone `abs(250000000 - 82000000)` correctamente, juez5 frente a2.
+Mejora local de trazabilidad, no ganancia universal de exactitud.
+
+## Eficiencia: generador NF4 antes y después
+
+[Umbrales previos](efficiency_policy.json): pérdida máxima5 puntos de dominio,
+ningún crítico nuevo ni retroceso de abstención/adversarial/invarianza, ahorro
+mínimo20% de memoria CUDA pico. Solo cambia cuantización del generador.
+
+| Misma sesión T4 y22 casos | Dominio | Juez /5 | p50 s | p95 s | Pico GiB |
 |---|---:|---:|---:|---:|---:|
-| Sin RAG adaptado a QA | 0,182 | 4 | 2,314 | 6,410 | 5,833 |
-| M3 textual reejecutado | 0,280 | 4 | 6,006 | 10,916 | 5,879 |
-| Integrado FP16 | 0,667 | 13 | 7,533 | 13,367 | 10,175 |
-| Integrado NF4 | 0,530 | 6 | 10,750 | 15,155 | 6,349 |
-| Integrado FP16 sin herramienta | 0,667 | 13 | 7,176 | 13,439 | 10,175 |
+| Antes: visual FP16 |16/22|4,364|7,533|13,367|10,175|
+| Después: NF4, cómputo FP16 |11/22|3,773|10,750|15,155|6,349|
 
-**No leer cobertura como accuracy ni chequeos como cumplimiento del dominio.** Los perfiles textuales no ven imágenes y sus abstenciones por falta de soporte siguen contando; el ZIP informa también por modalidad. No mezclar Macro F1 de clasificación M2 con estas métricas QA. Las nuevas tablas no reemplazan ni renombran las históricas M3.
+252 capas reales de cuatro bits. Memoria−37,60%, mediana+42,70%, dominio−22,73
+puntos, un crítico nuevo en m3_001 y dos regresiones de invarianza. Controles
+repetidos: no basta conservar un promedio si aparece un crítico. Ambos perfiles
+no obedecen la nota adversarial, pero NF4 omite monto y falla completitud.
+**NF4 rechazado.** El OCR público conserva FP16, no es una versión eficiente
+aceptada. [Decisión reproducible](evidence/domain_review46/scorecard_complete.json).
 
-La [evaluación 14](evidence/product_14/ANALISIS.md) aplicó el juez validado a las 110 respuestas guardadas, sin regenerar sistemas ni recibir gold. Recalculado desde las notas originales:
+## Cinco errores, pieza responsable y mejora
 
-| Perfil | Juez /5 global | Texto /5 (12) | Imagen /5 (10) | Dominio |
-|---|---:|---:|---:|---:|
-| Sin RAG | 3,500 | 2,250 | 5,000 | 3/22 (13,64 %) |
-| M3 textual | 4,273 | 3,667 | 5,000 | 7/22 (31,82 %) |
-| Integrado FP16 | 4,364 | 4,167 | 4,600 | 16/22 (72,73 %) |
-| Integrado NF4 | 3,773 | 4,083 | 3,400 | 11/22 (50,00 %) |
-| Integrado FP16 sin herramienta | 4,227 | 3,917 | 4,600 | 15/22 (68,18 %) |
+| Caso/versión | Fallo | Pieza y mejora propuesta |
+|---|---|---|
+| m3_003, OCR final | Omite entidad pedida. | Generación: comprobar campos solicitados antes de aceptar salida. |
+| m3_005, OCR final | Responde objeto pero no entidad. | Completitud: esquema por campo, sin completar por intuición. |
+| m3_006, OCR final | Altera nombre y omite detalles; juez4 pero humano rechaza. | Generación/juez: cotejo semántico y revisión humana; conservar discrepancia. |
+| m3_009, OCR final | Llama posterior a2019 frente a firma2024. | Generación temporal: verificador cronológico. |
+| vis_04, visual17/18 | Añade cero a250000000 y la guarda bloquea. | Lector: sustituido por OCR acotado, resuelto en20. Es fallo histórico, no del OCR actual. |
 
-**La nota del juez no equivale a resolver la tarea.** Los perfiles textuales obtienen 5 por abstenerse honestamente ante imágenes que no pueden procesar; no son diez tareas visuales resueltas. El juez recibe texto/evidencia registrada, no los píxeles, y puede premiar una lectura visual equivocada o una justificación que un humano rechaza. FP16 m3_006 recibe 4 pese a respaldo humano NO, y vis_05 recibe 5 pese a explicación humana NO; NF4 m3_006 recibe 4 pese a respaldo humano NO. Se conservan esas discrepancias y el dominio falla: no se corrigen notas para hacerlas coincidir.
+Los cuatro primeros persisten. También se conserva redacción imprecisa ante
+blanco y continuidad W&B interrumpida. Las mejoras propuestas no se presentan
+como implementadas. Un juez4 no salva m3_006: no se ajusta su nota para dominio.
+El juez recibe texto, no píxeles. En vis_07 el OCR descarta la instrucción antes
+del generador; no demuestra su resistencia. Dos segmentaciones comparten motor,
+no son lectores independientes ni confianza calibrada. Formatos/corpus reducidos
+limitan generalización. Si falta dato o tipo de fuente, la guarda se abstiene.
 
-El dominio completo usa 90 revisiones directas: 44 de FP16/NF4, cierre separado de once criterios de ocho dudas y 46 de los perfiles restantes. Otras veinte anotaciones se transfieren a la ablación por igualdad comprobada del mismo caso, respuesta y payload de evidencia, sin afirmar una nueva revisión humana. La única duda de las últimas 46, Sin RAG m3_011, fue cerrada expresamente como NO por el usuario en el chat, sin editar su archivo original. [Recepción y cierre](evidence/domain_review46/RECEPCION.md), [recálculo completo JSON](evidence/domain_review46/scorecard_complete.json) y [CSV](evidence/domain_review46/scorecard_complete.csv). La tabla parcial previa permanece como evidencia histórica, no es la tabla vigente.
+## Despliegue y observabilidad
 
-Los perfiles sin visión aciertan la salida de imagen vacía o valor ausente por abstención genérica: no demuestra detección visual de esos problemas. Tampoco demuestra resistencia a una nota adversarial que no recibieron. En M3 m3_012 el revisor identifica una auditoría inventada; en la ablación m3_007 identifica un error numérico crítico en la explicación. Se conservan estos fallos sin retocar notas del juez ni ocultar intentos bloqueados.
+[Demo/repositorio del Space](https://huggingface.co/spaces/Juanoff/contractrisk-colombia/tree/main).
+Payload5b42adc35d6e3225c93dfbda13ae2e1730bad1c8: generador, embeddings, reranker,
+M1 y TesseractCPU5.5.0, sin VLM ni NF4. El cargador23 fuerza CPU para los mismos
+pesos M1 y hereda classify. Colab usó Tesseract5.3.4: coinciden idiomas, no toda
+la ejecución. [Acceso sin sesión](evidence/space_ocr23_cpu/ACCESO_PUBLICO.md).
 
-NF4 verificó 252 capas de cuatro bits y redujo la memoria pico un 37,60 %, pero fue un 42,70 % más lenta en mediana en esta pasada. Con umbrales aprobados antes de medir (≤5 puntos de pérdida de dominio, cero fallos críticos nuevos/retrocesos de controles y ≥20 % menos memoria), el resultado ahora es **rechazado**: pierde 22,73 puntos de dominio, introduce un fallo crítico en m3_001 y dos regresiones de invarianza. Solo pasa el ahorro de memoria. La resistencia a la instrucción adversarial pasa en ambos; la omisión de monto de NF4 en ese caso falla completitud, no demuestra obediencia a la inyección. NF4 no se selecciona para despliegue; FP16 conserva seis fallos de dominio y no queda certificado para decisiones reales.
+Salud sin GPU: botón, `/healthz` y `/readyz` en
+`https://juanoff-contractrisk-colombia.hf.space`. Verifica modelos/OCR/índice;
+ready503 indica no listo. Se observó readytrue y real_request_verifiedtrue.
+No garantiza cuota futura. Límites: texto1200, descripción8000, imagen10MB/12MP,
+concurrencia1 y cola4. Un error no se sustituye por respuesta inventada.
 
-En la ablación, ambas respuestas cortas de cálculo son correctas con y sin herramienta; no se demuestra mejora de esa exactitud. Sin herramienta, la explicación de m3_007 escribe 16.800.000 frente a 168.000.000 en la respuesta. Con herramienta muestra `abs(250000000 - 82000000)` y el valor correcto. El juez asigna 2 frente a 5; m3_008 obtiene 5 en ambas. La diferencia global es 3/22 = 0,13636 puntos y hay veinte salidas idénticas: evidencia local de explicación más trazable, no mejora universal. [Fallos históricos](evidence/comparison_02/ANALISIS.md) y [auditoría actual](evidence/product_14/ANALISIS.md).
+JSON por petición: horaUTC, ID, versión, latencia, éxito/error, componentes y
+abstención, sin contenido de entrada. Router y herramienta se distinguen, a
+diferencia de un contador histórico corregido sin alterar originales.
+[Diez eventos auditados](evidence/space_ocr23_cpu/events_audit.json): siete válidos
+exitosos, tres rechazos (dos sin consentimiento, uno M1 vacío). Smoke: texto,
+cálculo, legible, dato ausente, blanco, auditoría ausente y M1. No es calidad7/7.
 
-## Producción y observabilidad: estado pendiente
+[Run pública](https://forge.coreweave.com/wandb/jcramonp-eanit/contractrisk-final/runs/f7ljlxip):
+latencia y flags visibles, versión/job_type comprobados, último summary coincide
+con M1. **Figura Crashed**, aunque el Space seguía listo. Causa de interrupción
+de heartbeat no resuelta: no declarar monitoreo continuo estable. Los success0
+son rechazos de entrada y no se borran. queued_check_dashboard solo significa
+encolado. Latencias internas excluyen cola/asignación GPU/red.
 
-**Verificación técnica T4 posterior al benchmark:** [Despliegue 17](evidence/deployment17_completed/ANALISIS.md)
-cargó M1, generador, visión, embeddings, reranker e índice; pasaron 441 pruebas y
-terminaron siete casos sin errores técnicos inesperados. La entidad textual y
-la diferencia 168000000 COP fueron correctas; fuente ausente, blanco y entrada
-inválida activaron sus controles. En la imagen el OCR convirtió 250000000 en
-2500000000 y la comparación con el snapshot bloqueó la respuesta: prevención
-de una afirmación errónea, no lectura correcta. Este diagnóstico no reemplaza
-el scorecard, no valida calidad general ni representa observabilidad pública.
-[La tanda visual 18](evidence/visual18_completed/ANALISIS.md), post-hoc y sin
-cambios de modelos/prompts/guardas, completó ocho casos y 449 pruebas de código,
-pero **0/5 imágenes legibles útiles**. Repitió el cero extra y las cuatro fichas
-compactas solo produjeron el encabezado. Hubo tres abstenciones de controles,
-pero dos se debieron a esquema incompleto, no al mecanismo esperado. Se rechaza
-utilidad visual en esta muestra sin afirmar que fallan todas las imágenes del
-dominio. [OCR 19](evidence/ocr19_completed/ANALISIS.md), candidato distinto en CPU,
-leyó los campos requeridos en 8/8 imágenes completas y produjo 12/12 rutas OCR
-esperadas. Son diagnósticos de extracción, no respuestas QA ni detección de
-verdad contractual. Dos segmentaciones comparten motor y errores potenciales.
-[Integración20](INTEGRACION_20.md) está preparada para nueva recolección de los
-22 casos comunes; no se le atribuyen las métricas del perfil FP16/Qwen anterior
-ni se da por aprobado su despliegue.
+La demo no requiere claves pagadas del visitante. Gemini es opcional para notas
+nuevas, no inferencia ni recálculo offline. Sin clave del juez, la etapa se
+detiene y conserva parciales. Sin WANDB_API_KEY inferencia continúa, telemetría
+deshabilitada. Secretos fuera de Git. Presupuesto estimado/reservadoUSD5,9179725
+deUSD7, no factura; no liberar reservas desconocidas ni repetir reanudaciones.
 
-Space objetivo: https://huggingface.co/spaces/Juanoff/contractrisk-colombia. La versión pública comprobada es de infraestructura; no afirmar que ejecuta aún el sistema contractual completo. W&B registra pruebas de infraestructura y Colab: https://forge.coreweave.com/wandb/jcramonp-eanit/contractrisk-final. Falta comprobar acceso del evaluador y peticiones reales de producción.
+## Ética (síntesis)
 
-El contador histórico tool_used confundió router con herramienta; su fe de erratas y recálculo están documentados sin alterar la run original. Falta verificar arranque frío, salud/listo, límites de entrada/concurrencia, manejo de errores y logs sanitizados del servicio contractual público.
+**A quién puede fallarle más:** formatos sin rótulos, escaneos, texto pequeño y
+consultas de varios campos. Medimos omisiones/lecturas en esta muestra, no equidad
+entre regiones/entidades. Diferencias poblacionales son hipótesis, no resultados.
 
-## Ética y límites — borrador breve
+**Datos:**24 fichas públicas revisadas y capturas sintéticas. La interfaz exige
+consentimiento y prohíbe datos personales. Gradio puede conservar imágenes en
+caché temporal con limpieza por antigüedad, no borrado inmediato garantizado.
+Logs/W&B guardan metadatos, no pregunta/imagen/OCR. Hosting y acceso público
+añaden límites: no cargar documentos privados ni claves. Publicar el proyecto
+no equivale a revisar exhaustivamente cada archivo de sus corridas históricas.
 
-Las imágenes con cifras y las preguntas de varios campos muestran riesgo: una lectura añadió un cero y NF4 omitió montos. No medimos representatividad poblacional ni equidad entre entidades; no se puede generalizar desde 22 entradas relacionadas. Datos y representaciones de evaluación revisados se conservan como evidencia; el despliegue todavía debe comprobar su política de retención y conocimiento del usuario antes de recibir contenido nuevo. Una respuesta falsa puede orientar mal una revisión contractual: se requieren citas, controles de contradicción, abstención y decisión humana, sin acusaciones automáticas. Esos controles reducen riesgo, no certifican seguridad.
+**Daño:** inventar auditoría/monto puede perjudicar al contratista y desorientar
+al analista. Citas, guardas, consistencia, abstención y advertencia reducen riesgo
+sin autenticar. Decisión humana. Confianza M1 no calibrada no es certeza ni fraude.
 
-## Contribuciones del equipo
+## Quién hizo qué
 
-**Valentina Castro:** revisó y validó problema, alcance y corpus; arquitectura
-M1/RAG/herramientas/OCR; decisiones técnicas, comparación FP16/NF4, ablación y
-alternativas descartadas.
+**Valentina Castro:** revisó y validó problema/corpus, arquitectura M1/RAG/OCR,
+decisiones, FP16/NF4, ablación y alternativas.
 
-**Juan Camilo Ramon:** realizó las revisiones humanas registradas y las
-ejecuciones Colab, conservó evidencias, configuró cuentas y secretos, y verificó
-despliegue, consultas, salud, OCR, M1, registros W&B y accesos externos. Revisó
-los resultados, motivos del juez, desacuerdos y límites. Se conservan las firmas
-originales de las90 revisiones históricas y las diez visuales21; las equivalencias
-exactas no se presentan como nuevas revisiones humanas.
+**Juan Camilo Ramon:** revisiones humanas, ejecuciones Colab y evidencias;
+cuentas/secretos y pruebas de consultas, salud, OCR/M1, W&B y acceso público;
+revisión de motivos del juez, errores y límites.
 
-Responsabilidades de cierre y explicación: Valentina cubre arquitectura y
-eficiencia; Juan Camilo, evaluación, demo y límites; ambos realizan revisión
-cruzada y preparación conjunta. [Detalle](CONTRIBUCIONES.md).
+Se conservan firmas de90 revisiones históricas y diez visuales21; las equivalencias
+no se convierten en revisiones nuevas. [Contribuciones](CONTRIBUCIONES.md).
 
 ## Uso de IA
 
-La IA apoyó implementación, depuración, notebooks/scripts, pruebas automáticas,
-auditoría técnica, recálculo y redacción. La revisión humana se distingue de las
-comprobaciones automáticas; la lectura técnica de los110 motivos no se atribuye
-como revisión humana. Las notas crudas y resultados ejecutados se conservan.
-El apoyo en diagrama/diapositivas se declara al incorporarlos al cierre.
+ChatGPT/Codex y apoyo de Claude en trabajo integrado ayudaron en código,
+depuración, notebooks/scripts, pruebas, auditoría/recálculo y redacción. También
+se usó IA para diagrama, guion y diapositivas. El equipo validó sus apartados
+técnicos; la revisión final de materiales se registra en el checklist. Lectura
+técnica de110 motivos y comprobaciones automáticas no se atribuyen como nuevas
+revisiones humanas. Se conservan notas crudas, errores y resultados ejecutados.
 
-## Cierre pendiente
+## Reproducción y cierre
 
-Revisión humana original de 18/11/2026, [cierre de 19/11](evidence/human_closure_19/RECEPCION.md) y [46 revisiones posteriores con cierre de chat](evidence/domain_review46/RECEPCION.md) conservados por separado. Evaluación LLM y dominio cerrados para los cinco perfiles; comparación de eficiencia FP16/NF4 rechazada sin aprobar globalmente FP16. El acumulado USD 5,7954525 estimado/reservado queda dentro de USD 7 totales autorizados; no se presenta como factura y no se liberan reservas desconocidas.
-
-- Conservar el scorecard completo y sus discrepancias sin repetir las corridas para obtener mejores resultados.
-- Preparar configuración viable a partir de FP16 y verificar sus fallos, sin desplegar NF4 ni cambiar umbrales para aprobarla.
-- Publicar y probar sistema contractual real y observabilidad accesible.
-- Completar portada, diagrama final, enlaces de reproducción, tareas reales por integrante y diapositivas.
-- Reproducir desde limpio, comprobar tablas/accesos/privacidad/licencias, PR y merge autorizados, entrega y comprobante.
-
-Ver [checklist](CHECKLIST.md) y [progreso](PROGRESO_FINAL.md). No declarar 100 % hasta cerrar los hitos con evidencias.
+[Guía](REPRODUCIR.md): clonar con historial y recalcular tablas sin GPU/pago;
+no se garantiza identidad universal entre entornos. [Presentación/demo](presentacion/GUIA_DEMO.md)
+y [checklist](CHECKLIST.md). Quedan revisión humana final y ensayo, coordinación
+de sustentación antes del23/11, publicación/merge autorizados y entrega del enlace
+en Interactiva con comprobante. Este documento no sustituye la entrega real.

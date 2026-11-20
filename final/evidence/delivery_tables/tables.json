@@ -1,0 +1,147 @@
+{
+  "rows": [
+    {
+      "profile": "qa_no_rag_fp16",
+      "label": "Control QA sin RAG",
+      "cases": 22,
+      "literal_coverage": 0.18181818181818182,
+      "judge_mean": 3.5,
+      "domain_pass": 3,
+      "domain_rate": 0.13636363636363635,
+      "p50_seconds": 2.3139377785000192,
+      "p95_seconds": 6.410468630149995,
+      "peak_cuda_gib": 5.833395957946777,
+      "visual_cases_received": 10,
+      "visual_reader": false,
+      "timing_scope": "comparison02_common_T4_single_session"
+    },
+    {
+      "profile": "m3_text_fp16",
+      "label": "M3 textual",
+      "cases": 22,
+      "literal_coverage": 0.28030303030303033,
+      "judge_mean": 4.2727272727272725,
+      "domain_pass": 7,
+      "domain_rate": 0.3181818181818182,
+      "p50_seconds": 6.005581343500012,
+      "p95_seconds": 10.915700662649954,
+      "peak_cuda_gib": 5.878811359405518,
+      "visual_cases_received": 10,
+      "visual_reader": false,
+      "timing_scope": "comparison02_common_T4_single_session"
+    },
+    {
+      "profile": "integrated_fp16",
+      "label": "Integrado visual FP16",
+      "cases": 22,
+      "literal_coverage": 0.6666666666666666,
+      "judge_mean": 4.363636363636363,
+      "domain_pass": 16,
+      "domain_rate": 0.7272727272727273,
+      "p50_seconds": 7.533351320500003,
+      "p95_seconds": 13.366733769650034,
+      "peak_cuda_gib": 10.174957752227783,
+      "visual_cases_received": 10,
+      "visual_reader": true,
+      "timing_scope": "comparison02_common_T4_single_session"
+    },
+    {
+      "profile": "integrated_nf4",
+      "label": "Integrado visual NF4",
+      "cases": 22,
+      "literal_coverage": 0.5303030303030303,
+      "judge_mean": 3.772727272727273,
+      "domain_pass": 11,
+      "domain_rate": 0.5,
+      "p50_seconds": 10.749957168500032,
+      "p95_seconds": 15.154968828350093,
+      "peak_cuda_gib": 6.3486809730529785,
+      "visual_cases_received": 10,
+      "visual_reader": true,
+      "timing_scope": "comparison02_common_T4_single_session"
+    },
+    {
+      "profile": "integrated_no_tool_fp16",
+      "label": "FP16 sin herramienta",
+      "cases": 22,
+      "literal_coverage": 0.6666666666666666,
+      "judge_mean": 4.2272727272727275,
+      "domain_pass": 15,
+      "domain_rate": 0.6818181818181818,
+      "p50_seconds": 7.175667403499915,
+      "p95_seconds": 13.439284660399926,
+      "peak_cuda_gib": 10.174957752227783,
+      "visual_cases_received": 10,
+      "visual_reader": true,
+      "timing_scope": "comparison02_common_T4_single_session"
+    },
+    {
+      "profile": "integrated_ocr20_fp16",
+      "label": "Final OCR FP16 (referencia Colab)",
+      "cases": 22,
+      "literal_coverage": 0.712121212121212,
+      "judge_mean": 4.454545454545454,
+      "domain_pass": 18,
+      "domain_rate": 0.8181818181818182,
+      "p50_seconds": 7.045075549500041,
+      "p95_seconds": 11.925805605350046,
+      "peak_cuda_gib": null,
+      "visual_cases_received": 10,
+      "visual_reader": true,
+      "timing_scope": "integration20_wall_seconds_other_T4_session_no_efficiency_claim"
+    }
+  ],
+  "common_cases": 22,
+  "text_cases": 12,
+  "image_cases": 10,
+  "efficiency_decision": {
+    "policy_version": "final-efficiency-policy-1",
+    "policy_sha256": "218c2595869b3f1f132c43db07a3433127992eb9b126a2b067ea564b35da7909",
+    "status": "rejected",
+    "accepted": false,
+    "reasons": [
+      "domain_drop_exceeds_limit",
+      "new_critical_failures",
+      "control_regressions"
+    ],
+    "warning": "Relative efficiency acceptance does not certify baseline quality, safety or readiness for real contractual decisions",
+    "case_count": 22,
+    "domain_before": 0.7272727272727273,
+    "domain_after": 0.5,
+    "domain_drop_percentage_points": 22.727272727272727,
+    "peak_before_bytes": 10925277696,
+    "peak_after_bytes": 6816844288,
+    "peak_memory_reduction_fraction": 0.3760484193005175,
+    "new_critical_failures": [
+      {
+        "id": "m3_001",
+        "type": "false_central_evidence_attribution"
+      }
+    ],
+    "control_regressions": [
+      {
+        "id": "vis_09_contrast",
+        "control": "invariance"
+      },
+      {
+        "id": "vis_10_rotation",
+        "control": "invariance"
+      }
+    ]
+  },
+  "service_events": {
+    "accepted": 7,
+    "rejected": 3,
+    "total": 10,
+    "runtime_errors": 0
+  },
+  "estimated_reserved_budget_usd": "5.9179725",
+  "paid_calls_made_by_reproduction": 0,
+  "new_inference_performed": false,
+  "limitations": [
+    "Control QA sin RAG adapts the task, not the historical M2 classifier.",
+    "OCR latency is descriptive wall time from another T4 session; no speedup or memory claim.",
+    "Public ZeroGPU measurements are not mixed with Colab efficiency measurements.",
+    "Public W&B run Crashed continuity issue remains unresolved."
+  ]
+}

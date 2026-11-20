@@ -1,9 +1,12 @@
 # ContractRisk — plan y checklist de entrega final
 
-## Estado vigente — dominio de los cinco perfiles cerrado
+## Estado vigente — calidad y servicio verificados; materiales de cierre preparados
 
 **Ventana de cierre:** [ruta priorizada de tres horas](CIERRE_TRES_HORAS.md).
-Dominio histórico cerrado no significa dominio del nuevo OCR ni servicio público listo.
+OCR final: 18/22. Servicio: siete consultas válidas y acceso público recibidos.
+Reporte, diagrama, tablas y presentación preparados: [matriz de requisitos](MATRIZ_CUMPLIMIENTO.md).
+Faltan revisión final del equipo, ensayo y entrega formal. W&B conserva un pendiente
+de continuidad: la corrida recibió métricas pero figura Crashed; no se declara estabilidad.
 
 - [x] Confirmar contribuciones de revisión/validación técnica de ambos integrantes
   y documentarlas en [Contribuciones del equipo](CONTRIBUCIONES.md); mantener
@@ -11,7 +14,7 @@ Dominio histórico cerrado no significa dominio del nuevo OCR ni servicio públi
 - [ ] Completar revisión final conjunta de reporte/diagrama/diapositivas y su
   declaración de IA; esta confirmación de roles no marca esos entregables como terminados.
 
-### Ruta actual: integración20 recibida; cierre21 de calidad preparado
+### Ruta actual: integración20 y evaluación21 cerradas; servicio23 verificado
 
 - [x] Recibir y validar [revisión humana visual21](evidence/visual21_received/RECEPCION.md): diez decisiones completas, fuentes sin editar; salvedades conservadas.
 - [x] Conservar [detención21](evidence/evaluation21_setup_failed/ANALISIS.md) previa a API y corregir verificación CRLF/LF sin modificar contenido ni plan.
@@ -392,16 +395,16 @@ Aceptación: URL pública verificable, health check utilizable, eventos reales v
 
 ## Fase 7 — reporte, portada y presentación
 
-- [ ] `final/reporte.md`: problema, usuario, decisión y métrica de éxito de usuario.
-- [ ] Diagrama desde pregunta/imagen hasta respuesta con procedencia M1–M5 de cada componente.
-- [ ] Decisiones de modelo, recuperación, visión y eficiencia, cada una con alternativa descartada y motivo.
-- [ ] Tabla evolutiva y tabla antes/después con condiciones, p50/p95 y memoria/tamaño.
-- [ ] Ablación, cinco errores, límites y conducta cuando no sabe.
-- [ ] Ética en máximo media página: a quién falla más (medido o sospechado), datos/retención/conocimiento del usuario y daño de un error con mitigaciones concretas.
-- [ ] Una línea por integrante: trabajo humano realmente hecho; sección corta de uso de IA incluyendo código, análisis, texto y diapositivas.
-- [ ] README raíz como portada: frase sencilla, URL demo, W&B, ejecución breve e índice a módulos/reporte.
-- [ ] Scripts de eficiencia, despliegue o enlace a repo del Space, configuraciones y evidencias en `final/`.
-- [ ] Diapositivas claras para máximo 10 minutos: problema, dibujo, demo fácil/difícil/adversarial, comparaciones, eficiencia y peor fallo.
+- [x] `final/reporte.md`: problema, usuario, decisión y métrica de éxito de usuario (preparado; revisión final del equipo pendiente).
+- [x] Diagrama desde pregunta/imagen hasta respuesta con procedencia M1–M5 de cada componente.
+- [x] Decisiones de modelo, recuperación, visión y eficiencia, cada una con alternativa descartada y motivo.
+- [x] Tabla evolutiva y tabla antes/después con condiciones, p50/p95 y memoria/tamaño; memoria OCR no medida y tiempos de otra sesión separados.
+- [x] Ablación, cinco errores, límites y conducta cuando no sabe.
+- [x] Ética en síntesis: a quién falla más (medido o sospechado), datos/retención/conocimiento del usuario y daño de un error con mitigaciones concretas.
+- [x] Una línea por integrante: trabajo humano confirmado; sección corta de uso de IA incluyendo código, análisis, texto y diapositivas.
+- [x] README raíz como portada: frase sencilla, URL demo, W&B, ejecución breve e índice a módulos/reporte.
+- [x] Scripts de eficiencia, despliegue o enlace a repo del Space, configuraciones y evidencias en `final/`.
+- [x] Diapositivas preparadas para máximo 10 minutos: problema, dibujo, demo fácil/difícil/adversarial, comparaciones, eficiencia y peor fallo. Ensayo humano pendiente.
 - [ ] Acordar fecha/hora/modalidad de sustentación antes del 23/11; ambos preparan explicaciones individuales.
 - [ ] Recomendado: video corto de respaldo, con versión y resultados reales.
 

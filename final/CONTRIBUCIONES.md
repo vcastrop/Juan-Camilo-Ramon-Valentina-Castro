@@ -36,4 +36,5 @@ pruebas automáticas, auditoría técnica, recálculo y redacción. Las contribu
 humanas anteriores describen ejecución, revisión y validación; no implican
 programación manual sin ayuda. Las revisiones firmadas, las mediciones reales
 y las notas crudas del juez se conservan sin sustituirlas por resultados generados.
-El apoyo en diagramas o diapositivas se declara al incorporarlos al cierre.
+También se utilizó apoyo de IA para el diagrama, el guion y las diapositivas.
+Su revisión humana final se registra por separado en el checklist.
