@@ -18,6 +18,7 @@ Dominio histórico cerrado no significa dominio del nuevo OCR ni servicio públi
 - [x] Recalcular dominio OCR20 con reglas originales: 18/22 (8/12 texto, 10/10 imagen), media juez 4,4545; cuatro fallos textuales preservados.
 - [x] Preparar [paquete OCR22](evidence/space_ocr22_prepared/ANALISIS.md) separado, cinco archivos y tres imágenes smoke fuera del payload; salud de cuatro modelos + OCR, sin juez ni claves.
 - [ ] Subir y verificar [despliegue OCR22](DESPLIEGUE_OCR_22.md)/W&B públicamente; las pruebas locales simuladas no completan este punto.
+  - Primer build HF correcto pero startup incompleto; [diagnóstico seguro preparado](evidence/space_ocr22_prepared/ARRANQUE_FALLIDO.md). No se declara servicio listo ni causa raíz confirmada.
 
 ### Ruta actual: OCR19 recibido; integración20 separada preparada
 
