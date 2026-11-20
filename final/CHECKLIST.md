@@ -22,7 +22,10 @@ Dominio histórico cerrado no significa dominio del nuevo OCR ni servicio públi
   - Diagnóstico localiza carga safetensors del adaptador M1 bajo ZeroGPU. [Corrección23](evidence/space_ocr23_cpu/ANALISIS.md) fuerza lectura CPU, preserva pesos y diagnóstico; actualización de dos archivos pendiente de verificar en HF.
   - [x] Recibir [salud23 lista](evidence/space_ocr23_cpu/SALUD_LISTA.md): cuatro modelos, OCR5.5.0 e índice listos; versión correcta. Evidencia del usuario, no consulta inferencial ni prueba externa independiente.
   - [x] Recibir [siete rutas reales](evidence/space_ocr23_cpu/SMOKE_RECIBIDO.md): QA/cálculo/tres imágenes/abstención sin fuente/M1, sin errores, con fuentes o guardas pertinentes; limitaciones preservadas.
-  - [ ] Recibir salud posterior, comprobar eventos en run W&B y acceso externo; queued_check_dashboard solo confirma encolado.
+  - [x] Recibir salud posterior con real_request_verifiedtrue y componentes listos.
+  - [x] Identificar [run W&B f7ljlxip](evidence/space_ocr23_cpu/WANDB_RECIBIDO.md): config/job_type coinciden; métricas visibles y último summary coincide con M1.
+  - [ ] Diagnosticar estado Crashed posterior y eventos success0; comprobar salud actual y Container logs sin reiniciar ni repetir smoke. No declarar tasa de éxito global100%.
+  - [ ] Comprobar acceso externo de Space y W&B; las capturas de propietario no lo prueban.
 
 ### Ruta actual: OCR19 recibido; integración20 separada preparada
 
