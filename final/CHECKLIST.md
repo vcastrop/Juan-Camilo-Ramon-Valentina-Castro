@@ -2,13 +2,21 @@
 
 ## Estado vigente — dominio de los cinco perfiles cerrado
 
+### Ruta actual: OCR19 recibido; integración20 separada preparada
+
+- [x] Conservar [OCR19](evidence/ocr19_completed/ANALISIS.md): 8/8 lecturas completas y 12/12 rutas diagnósticas, no respuestas QA.
+- [x] Preparar perfil OCR20 con campos acotados y guardas, sin cargar Qwen2-VL ni editar su línea base.
+- [x] Fijar evaluación del perfil nuevo en los 22 casos comunes + 16 comprobaciones separadas.
+- [ ] Ejecutar [integración20](INTEGRACION_20.md), revisar/juzgar nuevas respuestas antes de actualizar calidad.
+- [ ] Verificar luego despliegue/observabilidad reales; main y Space siguen intactos.
+
 ### Ruta actual: visual 18 rechazado; candidato OCR 19 separado
 
 - [x] Conservar ZIP/notebook [18](evidence/visual18_completed/ANALISIS.md), verificar ocho PNG y recalcular diagnósticos.
 - [x] Reconocer 0/5 legibles útiles y que dos abstenciones de controles no demostraron la detección esperada.
 - [x] Preparar un candidato OCR distinto, sin alterar Qwen ni métricas previas; doce imágenes congeladas y prueba CPU sin API.
-- [ ] Ejecutar y revisar [OCR 19](OCR_19.md). Es extracción de píxeles, no evaluación de respuestas QA.
-- [ ] Si aporta utilidad, integrar/versionar y verificar controles/casos afectados antes de desplegar.
+- [x] Ejecutar y revisar [OCR 19](OCR_19.md): extracción útil en la muestra, no evaluación de respuestas QA.
+- [ ] Integrar/versionar y verificar controles/casos afectados antes de desplegar: perfil20 preparado, prueba real pendiente.
 
 ### Última recepción: despliegue 17 completado, diagnóstico visual 18 preparado
 

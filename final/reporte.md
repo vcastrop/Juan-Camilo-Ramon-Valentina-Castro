@@ -72,8 +72,13 @@ pero **0/5 imágenes legibles útiles**. Repitió el cero extra y las cuatro fic
 compactas solo produjeron el encabezado. Hubo tres abstenciones de controles,
 pero dos se debieron a esquema incompleto, no al mecanismo esperado. Se rechaza
 utilidad visual en esta muestra sin afirmar que fallan todas las imágenes del
-dominio. [OCR 19](OCR_19.md) es un candidato distinto y aún no ejecutado con
-motor real; no se le atribuyen mejoras ni las métricas del perfil FP16 anterior.
+dominio. [OCR 19](evidence/ocr19_completed/ANALISIS.md), candidato distinto en CPU,
+leyó los campos requeridos en 8/8 imágenes completas y produjo 12/12 rutas OCR
+esperadas. Son diagnósticos de extracción, no respuestas QA ni detección de
+verdad contractual. Dos segmentaciones comparten motor y errores potenciales.
+[Integración20](INTEGRACION_20.md) está preparada para nueva recolección de los
+22 casos comunes; no se le atribuyen las métricas del perfil FP16/Qwen anterior
+ni se da por aprobado su despliegue.
 
 Space objetivo: https://huggingface.co/spaces/Juanoff/contractrisk-colombia. La versión pública comprobada es de infraestructura; no afirmar que ejecuta aún el sistema contractual completo. W&B registra pruebas de infraestructura y Colab: https://forge.coreweave.com/wandb/jcramonp-eanit/contractrisk-final. Falta comprobar acceso del evaluador y peticiones reales de producción.
 

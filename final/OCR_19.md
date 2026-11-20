@@ -1,5 +1,8 @@
 # Candidato OCR 19 — comprobación CPU previa a integración
 
+**Cerrado:** [OCR19 completó 8/8 lecturas y 12/12 rutas diagnósticas](evidence/ocr19_completed/ANALISIS.md).
+No repetir este notebook; continuar con [integración20](INTEGRACION_20.md).
+
 La [corrida 18](evidence/visual18_completed/ANALISIS.md) rechaza utilidad visual
 del lector Qwen en esas cinco imágenes legibles. Se conserva la implementación
 histórica y todo su resultado. No se cambia el Space ni el scorecard del final.

@@ -20,8 +20,9 @@ ejecución y evaluación reales, no cantidad de notebooks o pruebas.
 - Despliegue 17 completado en T4: 441 pruebas, cinco modelos/índice y siete casos;
   error OCR bloqueado, no aprobación visual general. [Diagnóstico 18 congelado](VISUAL_DESPLIEGUE_18.md).
 - Visual 18 recibido: 449 pruebas y ocho casos, pero 0/5 legibles útiles; utilidad
-  visual rechazada. [OCR 19](OCR_19.md) es un candidato nuevo pendiente de prueba CPU,
-  no mejora comprobada ni sustitución del scorecard anterior.
+  visual rechazada. [OCR 19](evidence/ocr19_completed/ANALISIS.md) completó 8/8 lecturas
+  y 12/12 rutas diagnósticas CPU; no es calidad QA ni sustitución del scorecard.
+  [Integración20](INTEGRACION_20.md) preparada: nuevo perfil y nueva recolección común pendientes.
 - Presupuesto estimado/reservado USD 5,7954525 dentro de USD 7 totales autorizados;
   no factura verificada. Este recálculo no consume API.
 
@@ -54,8 +55,8 @@ pesos de la rúbrica académica ni garantía de resultados.
    historial 17 son antecedentes resueltos. [La corrida 17 posterior completó
    inferencia real](evidence/deployment17_completed/ANALISIS.md), con un fallo OCR
    bloqueado. [Visual 18](evidence/visual18_completed/ANALISIS.md) confirmó falta
-   de utilidad. Probar el candidato separado [OCR 19](OCR_19.md) en CPU y revisar
-   su integración si funciona; no repetir 17/18 ni el benchmark. ZeroGPU sigue
+   de utilidad. OCR19 aportó extracción útil; ejecutar [integración20](INTEGRACION_20.md)
+   sobre el mismo conjunto común y revisar su calidad, sin heredar notas anteriores. No repetir 17/18/19. ZeroGPU sigue
    pendiente. No contar estos diagnósticos como despliegue público terminado.
 3. Terminar reporte, contribuciones/uso de IA y presentación.
 4. Reproducción desde limpio, revisión de tablas/accesos/licencias y cierre de
