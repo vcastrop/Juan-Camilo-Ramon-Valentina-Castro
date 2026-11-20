@@ -1,1 +1,2 @@
 container_startup_original.txt -text
+container_smoke_original.txt -text -diff

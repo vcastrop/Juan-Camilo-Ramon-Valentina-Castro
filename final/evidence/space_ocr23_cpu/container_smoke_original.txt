@@ -1,0 +1,172 @@
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+merges.txt: 100%|██████████| 1.67M/1.67M [00:00<00:00, 30.1MB/s]
+
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors:  27%|██▋       | 134M/504M [00:01<00:02, 133MB/s]
+tokenizer.json: 100%|██████████| 7.03M/7.03M [00:00<00:00, 29.8MB/s]
+model.safetensors: 100%|██████████| 504M/504M [00:01<00:00, 355MB/s]
+
+config.json:   0%|          | 0.00/661 [00:00<?, ?B/s]
+config.json: 100%|██████████| 661/661 [00:00<00:00, 7.94MB/s]
+`torch_dtype` is deprecated! Use `dtype` instead!
+
+model.safetensors.index.json:   0%|          | 0.00/35.6k [00:00<?, ?B/s]
+model.safetensors.index.json: 100%|██████████| 35.6k/35.6k [00:00<00:00, 226MB/s]
+
+model-00001-of-00002.safetensors:   0%|          | 0.00/3.97G [00:00<?, ?B/s]
+model-00001-of-00002.safetensors:   3%|▎         | 134M/3.97G [00:01<00:35, 107MB/s]
+model-00001-of-00002.safetensors:   8%|▊         | 335M/3.97G [00:03<00:38, 94.2MB/s]
+model-00001-of-00002.safetensors:  70%|███████   | 2.78G/3.97G [00:04<00:01, 831MB/s]
+model-00001-of-00002.safetensors: 100%|██████████| 3.97G/3.97G [00:04<00:00, 831MB/s]
+
+model-00002-of-00002.safetensors:   0%|          | 0.00/2.20G [00:00<?, ?B/s]
+model-00002-of-00002.safetensors:  10%|█         | 225M/2.20G [00:01<00:13, 149MB/s]
+model-00002-of-00002.safetensors:  19%|█▉        | 426M/2.20G [00:02<00:11, 156MB/s]
+model-00002-of-00002.safetensors: 100%|██████████| 2.20G/2.20G [00:03<00:00, 678MB/s]
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.57it/s]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.57it/s]
+
+generation_config.json:   0%|          | 0.00/242 [00:00<?, ?B/s]
+generation_config.json: 100%|██████████| 242/242 [00:00<00:00, 2.80MB/s]
+
+ZeroGPU tensors packing:   0%|          | 0.00/6.17G [00:00<?, ?B/s]
+ZeroGPU tensors packing:  67%|██████▋   | 4.15G/6.17G [00:01<00:00, 4.14GB/s]
+ZeroGPU tensors packing: 100%|██████████| 6.17G/6.17G [00:01<00:00, 4.60GB/s]
+* Running on local URL:  http://0.0.0.0:7860
+* To create a public link, set `share=True` in `launch()`.
+Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+{"timestamp_utc": "2026-11-20T02:45:19.860567+00:00", "request_id": "d239148f-8835-4c96-b2b0-8d1d9b2159a9", "event_type": "contract_request", "latency_seconds": 0.0, "success": false, "mode": "qa", "rag_used": null, "tool_used": null, "vision_used": null, "classifier_used": null, "router_used": null, "abstention": null, "components_known": false, "error_code": "invalid_input", "phase": "contractual_candidate", "version": "5b42adc35d6e3225c93dfbda13ae2e1730bad1c8"}
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from WANDB_API_KEY.
+wandb: Currently logged in as: jcramonp (jcramonp-eanit) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: setting up run f7ljlxip
+wandb: Tracking run with wandb version 0.31.0
+wandb: Run data is saved locally in /app/wandb/run-20261120_034521-f7ljlxip
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run comic-valley-26
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/jcramonp-eanit/contractrisk-final
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/jcramonp-eanit/contractrisk-final/runs/f7ljlxip
+wandb: Detected [huggingface_hub.inference, mcp] in use.
+wandb: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+wandb: For more information, check out the docs at: https://weave-docs.wandb.ai
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/gradio/routes.py", line 1301, in predict
+    output = await route_utils.call_process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gradio/route_utils.py", line 386, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gradio/blocks.py", line 2195, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gradio/blocks.py", line 1652, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2779, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1124, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/spaces/zero/gradio.py", line 138, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gradio/utils.py", line 1061, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "/app/app.py", line 123, in precheck
+    raise gr.Error(str(exc)) from None
+gradio.exceptions.Error: 'Confirma el aviso de uso y privacidad antes de consultar.'
+{"timestamp_utc": "2026-11-20T02:45:26.204647+00:00", "request_id": "db5cafd7-1bd2-44d4-9b5e-0a08150635b5", "event_type": "contract_request", "latency_seconds": 0.0, "success": false, "mode": "qa", "rag_used": null, "tool_used": null, "vision_used": null, "classifier_used": null, "router_used": null, "abstention": null, "components_known": false, "error_code": "invalid_input", "phase": "contractual_candidate", "version": "5b42adc35d6e3225c93dfbda13ae2e1730bad1c8"}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/gradio/routes.py", line 1301, in predict
+    output = await route_utils.call_process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gradio/route_utils.py", line 386, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gradio/blocks.py", line 2195, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gradio/blocks.py", line 1652, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2779, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1124, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/spaces/zero/gradio.py", line 138, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gradio/utils.py", line 1061, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "/app/app.py", line 123, in precheck
+    raise gr.Error(str(exc)) from None
+gradio.exceptions.Error: 'Confirma el aviso de uso y privacidad antes de consultar.'
+/usr/local/lib/python3.12/site-packages/gradio/routes.py:1368: StarletteDeprecationWarning: 'HTTP_422_UNPROCESSABLE_ENTITY' is deprecated. Use 'HTTP_422_UNPROCESSABLE_CONTENT' instead.
+  return await queue_join_helper(body, request, username)
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+{"timestamp_utc": "2026-11-20T02:45:57.170134+00:00", "request_id": "99daad02-dec8-497a-b6f2-7bb359dc6b7e", "event_type": "contract_request", "latency_seconds": 4.09395526399021, "success": true, "mode": "qa", "rag_used": true, "tool_used": false, "vision_used": false, "classifier_used": false, "router_used": false, "abstention": false, "components_known": true, "error_code": "none", "phase": "contractual_candidate", "version": "5b42adc35d6e3225c93dfbda13ae2e1730bad1c8"}
+/usr/local/lib/python3.12/site-packages/gradio/routes.py:1368: StarletteDeprecationWarning: 'HTTP_422_UNPROCESSABLE_ENTITY' is deprecated. Use 'HTTP_422_UNPROCESSABLE_CONTENT' instead.
+  return await queue_join_helper(body, request, username)
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+{"timestamp_utc": "2026-11-20T02:48:47.260720+00:00", "request_id": "f39ccd4c-ffdd-4c32-aad7-a0e0c4c4decb", "event_type": "contract_request", "latency_seconds": 5.756941851985175, "success": true, "mode": "qa", "rag_used": true, "tool_used": true, "vision_used": false, "classifier_used": false, "router_used": true, "abstention": false, "components_known": true, "error_code": "none", "phase": "contractual_candidate", "version": "5b42adc35d6e3225c93dfbda13ae2e1730bad1c8"}
+/usr/local/lib/python3.12/site-packages/gradio/routes.py:1368: StarletteDeprecationWarning: 'HTTP_422_UNPROCESSABLE_ENTITY' is deprecated. Use 'HTTP_422_UNPROCESSABLE_CONTENT' instead.
+  return await queue_join_helper(body, request, username)
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+{"timestamp_utc": "2026-11-20T02:50:46.073418+00:00", "request_id": "d96c6779-5469-4607-b1fa-82df52e8d96f", "event_type": "contract_request", "latency_seconds": 4.459175617987057, "success": true, "mode": "qa", "rag_used": true, "tool_used": false, "vision_used": true, "classifier_used": false, "router_used": false, "abstention": false, "components_known": true, "error_code": "none", "phase": "contractual_candidate", "version": "5b42adc35d6e3225c93dfbda13ae2e1730bad1c8"}
+/usr/local/lib/python3.12/site-packages/gradio/routes.py:1368: StarletteDeprecationWarning: 'HTTP_422_UNPROCESSABLE_ENTITY' is deprecated. Use 'HTTP_422_UNPROCESSABLE_CONTENT' instead.
+  return await queue_join_helper(body, request, username)
+{"timestamp_utc": "2026-11-20T02:53:30.594793+00:00", "request_id": "40b758fc-d5a8-4b32-8b5d-91791487927e", "event_type": "contract_request", "latency_seconds": 0.7827919349947479, "success": true, "mode": "qa", "rag_used": false, "tool_used": false, "vision_used": true, "classifier_used": false, "router_used": false, "abstention": true, "components_known": true, "error_code": "none", "phase": "contractual_candidate", "version": "5b42adc35d6e3225c93dfbda13ae2e1730bad1c8"}
+/usr/local/lib/python3.12/site-packages/gradio/routes.py:1368: StarletteDeprecationWarning: 'HTTP_422_UNPROCESSABLE_ENTITY' is deprecated. Use 'HTTP_422_UNPROCESSABLE_CONTENT' instead.
+  return await queue_join_helper(body, request, username)
+{"timestamp_utc": "2026-11-20T02:56:35.141113+00:00", "request_id": "a30200cc-7661-47d4-8f49-5e671e26caf8", "event_type": "contract_request", "latency_seconds": 0.0014085769944358617, "success": true, "mode": "qa", "rag_used": false, "tool_used": false, "vision_used": true, "classifier_used": false, "router_used": false, "abstention": true, "components_known": true, "error_code": "none", "phase": "contractual_candidate", "version": "5b42adc35d6e3225c93dfbda13ae2e1730bad1c8"}
+/usr/local/lib/python3.12/site-packages/gradio/routes.py:1368: StarletteDeprecationWarning: 'HTTP_422_UNPROCESSABLE_ENTITY' is deprecated. Use 'HTTP_422_UNPROCESSABLE_CONTENT' instead.
+  return await queue_join_helper(body, request, username)
+{"timestamp_utc": "2026-11-20T02:58:55.409571+00:00", "request_id": "84603007-a660-4427-a448-0b05b3be0e7b", "event_type": "contract_request", "latency_seconds": 0.000504135008668527, "success": true, "mode": "qa", "rag_used": false, "tool_used": false, "vision_used": false, "classifier_used": false, "router_used": false, "abstention": true, "components_known": true, "error_code": "none", "phase": "contractual_candidate", "version": "5b42adc35d6e3225c93dfbda13ae2e1730bad1c8"}
+{"timestamp_utc": "2026-11-20T03:00:16.279690+00:00", "request_id": "2b7fa004-b918-473d-b196-11822062b194", "event_type": "contract_request", "latency_seconds": 0.0, "success": false, "mode": "sufficiency", "rag_used": null, "tool_used": null, "vision_used": null, "classifier_used": null, "router_used": null, "abstention": null, "components_known": false, "error_code": "invalid_input", "phase": "contractual_candidate", "version": "5b42adc35d6e3225c93dfbda13ae2e1730bad1c8"}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/gradio/routes.py", line 1301, in predict
+    output = await route_utils.call_process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gradio/route_utils.py", line 386, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gradio/blocks.py", line 2195, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gradio/blocks.py", line 1652, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/anyio/to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2779, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1124, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/spaces/zero/gradio.py", line 138, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gradio/utils.py", line 1061, in wrapper
+    response = f(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^
+  File "/app/app.py", line 123, in precheck
+    raise gr.Error(str(exc)) from None
+gradio.exceptions.Error: 'Introduce una descripción o una imagen con objeto legible.'
+/usr/local/lib/python3.12/site-packages/gradio/routes.py:1368: StarletteDeprecationWarning: 'HTTP_422_UNPROCESSABLE_ENTITY' is deprecated. Use 'HTTP_422_UNPROCESSABLE_CONTENT' instead.
+  return await queue_join_helper(body, request, username)
+{"timestamp_utc": "2026-11-20T03:00:43.836999+00:00", "request_id": "b496f6bd-e569-45a0-a738-41822e2f46a8", "event_type": "contract_request", "latency_seconds": 0.039165898982901126, "success": true, "mode": "sufficiency", "rag_used": false, "tool_used": false, "vision_used": false, "classifier_used": true, "router_used": false, "abstention": false, "components_known": true, "error_code": "none", "phase": "contractual_candidate", "version": "5b42adc35d6e3225c93dfbda13ae2e1730bad1c8"}
+ 

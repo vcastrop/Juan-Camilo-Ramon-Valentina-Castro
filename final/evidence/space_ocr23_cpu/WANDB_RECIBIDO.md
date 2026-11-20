@@ -29,6 +29,28 @@ Solicitar salud actual sin GPU y últimos Container logs desde03:00UTC20/11/2026
 sin reiniciar ni nuevas consultas. No pulsar Stop run ni cambiar versiones.
 Acceso externo de Space/W&B continúa sin comprobación; sesión propietaria no basta.
 
+## Actualización con logs y salud actuales
+
+El usuario volvió a consultar salud: backendreadytrue, real_request_verifiedtrue,
+cuatro modelos/índice/OCR listos, startup_errornull. No se demuestra una caída
+del servicio contractual por el indicador Crashed de la run.
+
+`container_smoke_original.txt` conserva el log aportado. `events_audit.json`,
+reproducible con `final.audit_space23_logs`, identifica10 eventos distintos:
+7 exitosos y3 rechazosinvalid_input. Dos QA sin consentimiento (02:45:19 y
+02:45:26UTC) y uno M1 sin descripción/imagen (03:00:16UTC); los errores Gradio
+adyacentes confirman esas razones. No hay runtime_error ni gpu_dispatch_error en
+estos10 eventos. Los7 IDs exitosos coinciden con los resultados compartidos.
+
+Estos rechazos accidentales muestran los controles de entrada, no una prueba
+prospectiva adicional. No se borran: successtotal7/10 no es exactitud70%, y7/7
+peticiones válidas no demuestra calidad general. Auditoría offline pasó su test.
+
+El log no contiene un error explícito del proceso interno W&B posterior a M1.
+El estado de conexión sigue sin verificarse; queued_check_dashboard es el último
+estado local y no comprueba heartbeat. Causa de Crasheddesconocida, sin atribuirlo
+a inactividad, cuota, reinicio o red sin datos del SDK/proveedor.
+
 ## Salud posterior recibida antes de estas capturas
 
 El usuario envió JSON/capturas con contract_system_readytrue,

@@ -24,7 +24,8 @@ Dominio histórico cerrado no significa dominio del nuevo OCR ni servicio públi
   - [x] Recibir [siete rutas reales](evidence/space_ocr23_cpu/SMOKE_RECIBIDO.md): QA/cálculo/tres imágenes/abstención sin fuente/M1, sin errores, con fuentes o guardas pertinentes; limitaciones preservadas.
   - [x] Recibir salud posterior con real_request_verifiedtrue y componentes listos.
   - [x] Identificar [run W&B f7ljlxip](evidence/space_ocr23_cpu/WANDB_RECIBIDO.md): config/job_type coinciden; métricas visibles y último summary coincide con M1.
-  - [ ] Diagnosticar estado Crashed posterior y eventos success0; comprobar salud actual y Container logs sin reiniciar ni repetir smoke. No declarar tasa de éxito global100%.
+  - [x] Auditar10 eventos de logs y salud actual:7 peticiones válidas exitosas,3 rechazos de entrada (2 consentimiento,1 M1 vacío); backend sigue listo. No son fallos de inferencia ni exactitud70%.
+  - [ ] Diagnosticar continuidad W&B/Crashed con datos SDK: causa no aparece en Container logs; queued_check_dashboard no prueba conexión viva. Conservar run y rechazos, no alterar estado para ocultarlos.
   - [ ] Comprobar acceso externo de Space y W&B; las capturas de propietario no lo prueban.
 
 ### Ruta actual: OCR19 recibido; integración20 separada preparada
