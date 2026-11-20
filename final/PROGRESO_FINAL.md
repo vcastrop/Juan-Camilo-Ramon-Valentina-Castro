@@ -6,6 +6,10 @@ ejecución y evaluación reales, no cantidad de notebooks o pruebas.
 
 ## Evidencia vigente
 
+- [Paquete OCR22 preparado](evidence/space_ocr22_prepared/ANALISIS.md), aún sin
+  publicar ni verificar ZeroGPU/W&B. Cinco archivos de app, cuatro modelos y OCR;
+  la preparación no se cuenta como disponibilidad pública.
+
 - Comparación 02: cinco perfiles × 22 entradas, 110 respuestas conservadas.
 - Juez aceptado para esta tarea/configuración tras calibración 20/20,
   confirmación 12/12 y revisión humana con límites documentados.

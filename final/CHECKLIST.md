@@ -16,7 +16,8 @@ Dominio histórico cerrado no significa dominio del nuevo OCR ni servicio públi
 - [x] Preparar evaluación de ocho paquetes cambiados bajo el registro USD7 existente y revisión humana nueva de diez imágenes.
 - [x] Recibir [evaluación21](EVALUACION_21.md) completa y auditar razones del juez; revisión humana ya recibida.
 - [x] Recalcular dominio OCR20 con reglas originales: 18/22 (8/12 texto, 10/10 imagen), media juez 4,4545; cuatro fallos textuales preservados.
-- [ ] Preparar y verificar despliegue OCR/observabilidad pública; no subir el candidato VLM histórico.
+- [x] Preparar [paquete OCR22](evidence/space_ocr22_prepared/ANALISIS.md) separado, cinco archivos y tres imágenes smoke fuera del payload; salud de cuatro modelos + OCR, sin juez ni claves.
+- [ ] Subir y verificar [despliegue OCR22](DESPLIEGUE_OCR_22.md)/W&B públicamente; las pruebas locales simuladas no completan este punto.
 
 ### Ruta actual: OCR19 recibido; integración20 separada preparada
 
