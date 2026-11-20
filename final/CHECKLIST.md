@@ -418,7 +418,8 @@ Aceptación: URL pública verificable, health check utilizable, eventos reales v
 - [x] Recalcular tablas desde evidencia; no prometer identidad universal entre entornos por fijar semilla.
 - [ ] Revisar privacidad, licencias, secretos, enlaces y acceso público de demo/W&B.
 - [ ] Revisar rúbrica de 40 puntos: problema 4; solidez 8; evaluación 7; integración 4; presentación 7; producción 5; límites 3; ética 2.
-- [ ] Publicar commits claros y abrir PR; fusionar solo con aprobación del equipo.
+- [x] Publicar commits e integrar main con aprobación del equipo: [registro](INTEGRACION_MAIN.md).
+  Integración fast-forward por Git; el conector rechazó crear PR, por lo que no hay PR creado.
 - [ ] Entregar enlace en Interactiva antes del plazo y conservar comprobante real.
 - [x] Preparar [instrucciones finales del equipo](ENTREGA_PASO_A_PASO.md); revisión y ensayo confirmados, entrega formal todavía pendiente.
 - [ ] Comprobar URL el día de la sustentación; verificar acceso o video de respaldo.

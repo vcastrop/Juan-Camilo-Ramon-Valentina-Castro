@@ -239,5 +239,6 @@ revisiones humanas. Se conservan notas crudas, errores y resultados ejecutados.
 no se garantiza identidad universal entre entornos. [Presentación/demo](presentacion/GUIA_DEMO.md)
 y [checklist](CHECKLIST.md). Ambos integrantes aprobaron los materiales finales y
 confirmaron un ensayo satisfactorio de la presentación y demostración. Quedan
-coordinación de sustentación antes del23/11, integración autorizada en main y entrega del enlace
-en Interactiva con comprobante. Este documento no sustituye la entrega real.
+coordinación de sustentación antes del23/11 y entrega del enlace en Interactiva
+con comprobante. La [integración autorizada en main](INTEGRACION_MAIN.md) ya está
+completada. Este documento no sustituye la entrega real.

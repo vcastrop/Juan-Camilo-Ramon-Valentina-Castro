@@ -21,6 +21,7 @@ Estado documental del 19/11/2026. No sustituye revisión del equipo, calificaci�
 | Revisión final humana | Reporte, diagrama y diapositivas | Aprobación de ambos integrantes confirmada |
 | Sustentación | Fecha/hora/modalidad y preguntas individuales | Pendiente de confirmar con el curso; coordinar antes del 23/11 |
 | Video de respaldo / CI opcional | Guion | Recomendado / opcional; no se declara realizado |
-| Publicación y entrega formal | Rama Entrega/contractrisk-final | No equivale a merge ni entrega; conservar comprobante real de Interactiva |
+| Publicación | [Integración en main](INTEGRACION_MAIN.md) | Completada con autorización; portada y guion verificados en GitHub |
+| Entrega formal | Enlace del repositorio en Interactiva | Pendiente de envío y comprobante real del equipo |
 
 La versión pública y los resultados no certifican fraude, autenticidad ni decisiones contractuales reales.

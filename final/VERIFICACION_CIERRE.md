@@ -43,7 +43,8 @@ confirmación no añade otra corrida al benchmark ni una medición de duración.
 ## No se da por completado
 
 Video de respaldo recomendado, coordinación de
-sustentación, merge autorizado y entrega en Interactiva con comprobante.
+sustentación y entrega en Interactiva con comprobante. La posterior
+[integración autorizada en main](INTEGRACION_MAIN.md) está completada.
 W&B conserva la incidencia Crashed sin causa confirmada. No se modifican sus
 registros para aparentar continuidad. El servicio probado sigue siendo académico,
 reducido y con cuatro fallos textuales conocidos; no está certificado para decisiones reales.

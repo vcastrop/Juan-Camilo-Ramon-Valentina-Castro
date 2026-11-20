@@ -50,9 +50,9 @@ ejecución y evaluación reales, no cantidad de notebooks o pruebas.
 | Fase 5: comparativas/ablación | 10 % | 100 % | Tablas, diagrama y lectura final aprobados; conservar límites y evidencia. |
 | Fase 6: producción/observabilidad | 10 % | 80 % | Peticiones/salud/acceso comprobados; continuidad W&B Crashed sin resolver. |
 | Fase 7: reporte/presentación | 7 % | 100 % | Materiales aprobados por ambos; ensayo y demostración satisfactorios confirmados por el equipo. Sustentación no realizada. |
-| Fase 8: cierre verificable | 3 % | 70 % | Clon limpio, recálculo y 495 pruebas comprobados; integración en main y entrega formal pendientes. |
+| Fase 8: cierre verificable | 3 % | 85 % | Clon limpio, recálculo y 495 pruebas comprobados; integración autorizada en main completada. Envío y comprobante de entrega pendientes. |
 
-Suma ponderada vigente93,60%, expresada como rango para evitar falsa precisión.
+Suma ponderada vigente94,05%, expresada como rango para evitar falsa precisión.
 Reconoce OCR21, despliegue funcional y accesos, no estabilidad continua W&B ni
 cierre académico completo. La aproximación no pretende precisión estadística. No son
 pesos de la rúbrica académica ni garantía de resultados.
@@ -67,8 +67,9 @@ pesos de la rúbrica académica ni garantía de resultados.
    conexión viva o monitoreo continuo estable. No ocultarla ni resetear historial.
 3. Conservar aprobación de ambos integrantes y ensayo satisfactorio; no exigir repetición sin un cambio que lo justifique.
 4. [Verificación de cierre](VERIFICACION_CIERRE.md) conserva clon limpio y límites.
-   Seguir [últimos pasos](ENTREGA_PASO_A_PASO.md): PR/merge solo autorizado,
-   entrega y comprobante en Interactiva y coordinación de sustentación.
+   [Integración en main](INTEGRACION_MAIN.md) autorizada y completada. Seguir
+   [últimos pasos](ENTREGA_PASO_A_PASO.md): entrega y comprobante en Interactiva
+   y coordinación de sustentación.
 
 [Scorecard y auditoría](evidence/product_14/ANALISIS.md), [reporte](reporte.md),
 [checklist](CHECKLIST.md). Los estados anteriores se conservaron en
