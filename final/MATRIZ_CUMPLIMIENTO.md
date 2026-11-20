@@ -16,12 +16,12 @@ Estado documental del 19/11/2026. No sustituye revisión del equipo, calificaci�
 | Reproducción sin clave pagada obligatoria | [Instrucciones](REPRODUCIR.md) | Recálculo offline; reejecutar modelos es etapa separada con GPU |
 | Ética, licencias, privacidad e IA | Reporte, NOTICE y licencia en payload | Datos públicos/sintéticos; caché temporal y límites declarados |
 | Contribuciones | [Equipo](CONTRIBUCIONES.md) | Roles confirmados; no se reasignan revisiones firmadas |
-| Diapositivas y demo de hasta diez minutos | [PowerPoint](presentacion/ContractRisk_Final.pptx), [guion](presentacion/GUIA_DEMO.md) | Aprobadas por ambos; ensayo satisfactorio confirmado por el equipo, sin cronometría registrada |
+| Diapositivas y demo de hasta diez minutos | [Presentación HTML portátil con capturas incrustadas](presentacion/ContractRisk_sustentacion.html) | Aprobadas por ambos; ensayo satisfactorio confirmado por el equipo, sin cronometría registrada |
 | Portada e índice | [README raíz](../README.md) | Demo, W&B, ejecución, módulos y reporte enlazados |
 | Revisión final humana | Reporte, diagrama y diapositivas | Aprobación de ambos integrantes confirmada |
 | Sustentación | Fecha/hora/modalidad y preguntas individuales | Pendiente de confirmar con el curso; coordinar antes del 23/11 |
-| Video de respaldo / CI opcional | Guion | Recomendado / opcional; no se declara realizado |
-| Publicación | [Integración en main](INTEGRACION_MAIN.md) | Completada con autorización; portada y guion verificados en GitHub |
+| Video de respaldo / CI opcional | Presentación y documentación de cierre | Recomendado / opcional; no se declara realizado |
+| Publicación | [Integración en main](INTEGRACION_MAIN.md) | Completada con autorización; portada y presentación enlazadas en GitHub |
 | Entrega formal | Enlace del repositorio en Interactiva | Pendiente de envío y comprobante real del equipo |
 
 La versión pública y los resultados no certifican fraude, autenticidad ni decisiones contractuales reales.

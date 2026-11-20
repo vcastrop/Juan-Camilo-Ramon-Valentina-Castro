@@ -6,9 +6,9 @@ realizados satisfactoriamente según confirmación del equipo. Los pasos 1 y 2
 quedan completados; no equivalen a sustentación ni envío formal.
 
 1. Juan Camilo y Valentina: leer [reporte](reporte.md), comprobar nombres,
-   contribuciones y conclusiones. Revisar las [diez diapositivas](presentacion/ContractRisk_Final.pptx).
+   contribuciones y conclusiones. Revisar las [diez diapositivas](presentacion/ContractRisk_sustentacion.html).
    Confirmar que ambos pueden explicar los límites y que la declaración de IA es correcta.
-2. Ensayar con el [guion de aproximadamente nueve minutos](presentacion/GUIA_DEMO.md).
+2. Ensayar con la [presentación HTML portátil](presentacion/ContractRisk_sustentacion.html). Descargar el archivo y abrirlo en un navegador; las capturas están incrustadas.
    Mostrar un caso fácil, uno difícil y una abstención. Si no hay cuota, usar
    evidencia previa identificada como tal; no presentarla como ejecución en vivo.
 3. **Completado:** [integración autorizada en main](INTEGRACION_MAIN.md), sin

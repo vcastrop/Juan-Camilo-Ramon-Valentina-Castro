@@ -236,7 +236,7 @@ revisiones humanas. Se conservan notas crudas, errores y resultados ejecutados.
 ## Reproducción y cierre
 
 [Guía](REPRODUCIR.md): clonar con historial y recalcular tablas sin GPU/pago;
-no se garantiza identidad universal entre entornos. [Presentación/demo](presentacion/GUIA_DEMO.md)
+no se garantiza identidad universal entre entornos. [Presentación HTML portátil](presentacion/ContractRisk_sustentacion.html)
 y [checklist](CHECKLIST.md). Ambos integrantes aprobaron los materiales finales y
 confirmaron un ensayo satisfactorio de la presentación y demostración. Quedan
 coordinación de sustentación antes del23/11 y entrega del enlace en Interactiva

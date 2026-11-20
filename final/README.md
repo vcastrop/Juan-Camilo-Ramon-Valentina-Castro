@@ -19,7 +19,7 @@ Crashed: continuidad no resuelta. No hay certificación para decisiones legales.
   [eventos auditados](evidence/space_ocr23_cpu/events_audit.json) y
   [acceso público](evidence/space_ocr23_cpu/ACCESO_PUBLICO.md).
 - [Código/guía de despliegue](DESPLIEGUE_OCR_22.md), [constructor](build_space_ocr.py).
-- [Diagrama](ARQUITECTURA.mmd), [presentación y demo](presentacion/GUIA_DEMO.md),
+- [Diagrama](ARQUITECTURA.mmd), [presentación HTML portátil](presentacion/ContractRisk_sustentacion.html),
   [contribuciones/IA](CONTRIBUCIONES.md), [checklist](CHECKLIST.md).
 
 No repetir notebooks pagados o de reanudación. El recálculo no requiere claves.

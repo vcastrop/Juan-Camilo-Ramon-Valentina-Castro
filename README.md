@@ -11,7 +11,7 @@ es humana: el sistema no determina fraude ni autenticidad.
 - [Proyecto W&B](https://forge.coreweave.com/wandb/jcramonp-eanit/contractrisk-final) y
   [run pública del servicio](https://forge.coreweave.com/wandb/jcramonp-eanit/contractrisk-final/runs/f7ljlxip).
 - [Reporte final](final/reporte.md), [diagrama](final/ARQUITECTURA.mmd),
-  [presentación y demo](final/presentacion/GUIA_DEMO.md), [contribuciones e IA](final/CONTRIBUCIONES.md).
+  [presentación HTML portátil](final/presentacion/ContractRisk_sustentacion.html), [contribuciones e IA](final/CONTRIBUCIONES.md).
 
 **Resultado de referencia:** dominio18/22 y juez4,455/5 en OCR final. Cuatro fallos
 textuales persisten. NF4 redujo memoria37,60% pero perdió22,73 puntos de dominio,

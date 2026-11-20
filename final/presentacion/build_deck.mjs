@@ -84,7 +84,7 @@ async function image(s,file,x,y,w,h){const b=await fs.readFile(path.join(root,fi
 }
 // 7. Live demonstration script, not a claim of an additional completed run.
 {
- const s=slide('Demostración en vivo','Dos minutos. 1) vis_01 modalidad/valor: observado en smoke3. 2) diferencia 1083652 vs1003124: observado en smoke2. 3) exigir fraude/auditoría no disponible: guion previsto, no otra llamada pública ya observada. La guarda previa debe abstenerse. Abrir Space y conservar evidencias anteriores como respaldo. Fuente: final/presentacion/GUIA_DEMO.md.');
+ const s=slide('Demostración en vivo','Dos minutos. 1) vis_01 modalidad/valor: observado en smoke3. 2) diferencia 1083652 vs1003124: observado en smoke2. 3) exigir fraude/auditoría no disponible: guion previsto, no otra llamada pública ya observada. La guarda previa debe abstenerse. Abrir Space y conservar evidencias anteriores como respaldo. Fuente: final/presentacion/ContractRisk_sustentacion.html.');
  text(s,'Fácil: modalidad y valor en vis_01.png',70,158,1130,65,27,true,c.teal);
  text(s,'Mínima cuantía y 60.600.750 COP, con evidencia visual.',70,230,1130,65,23);
  text(s,'Difícil: diferencia entre dos contratos',70,332,1130,65,27,true,c.teal);
