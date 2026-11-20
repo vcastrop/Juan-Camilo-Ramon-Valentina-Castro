@@ -6,9 +6,9 @@ ejecución y evaluación reales, no cantidad de notebooks o pruebas.
 
 ## Evidencia vigente
 
-- [Paquete OCR22 preparado](evidence/space_ocr22_prepared/ANALISIS.md), aún sin
-  publicar ni verificar ZeroGPU/W&B. Cinco archivos de app, cuatro modelos y OCR;
-  la preparación no se cuenta como disponibilidad pública.
+- [OCR23 publicado y salud lista según usuario](evidence/space_ocr23_cpu/SALUD_LISTA.md):
+  cuatro modelos, índice y OCR5.5.0; fallos de carga corregidos. Faltan peticiones
+  reales, observabilidad y acceso externo. Health no prueba inferencia ni calidad.
 
 - Comparación 02: cinco perfiles × 22 entradas, 110 respuestas conservadas.
 - Juez aceptado para esta tarea/configuración tras calibración 20/20,

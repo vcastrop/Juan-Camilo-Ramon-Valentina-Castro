@@ -1,5 +1,9 @@
 # Despliegue OCR22 — publicación y comprobación reales pendientes
 
+**Estado23:** usuario confirma healthlisto tras la corrección, cuatro modelos,
+índice y OCR5.5.0. No volver a subir archivos ni reinstalar. Continuar directamente
+con las siete pruebas reales de abajo y W&B; lectura pública aún no comprobada.
+
 **Actualización23:** si ya se subieron los cinco archivos22, usar el ZIP de
 corrección CPU23 y subir únicamente app.py y runtime_payload.zip juntos. Los
 otros tres archivos/secretos quedan iguales. Versión esperada
