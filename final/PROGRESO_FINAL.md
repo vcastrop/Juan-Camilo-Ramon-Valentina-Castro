@@ -1,6 +1,6 @@
 # Avance de la entrega final — 19/11/2026
 
-Estimación operativa: **72–76 % (~74 %)** de la entrega final integradora. No es
+Estimación operativa: **74–78 % (~76 %)** de la entrega final integradora. No es
 nota, madurez para uso real ni porcentaje de todo el curso. El aumento reconoce
 ejecución y evaluación reales, no cantidad de notebooks o pruebas.
 
@@ -23,11 +23,12 @@ ejecución y evaluación reales, no cantidad de notebooks o pruebas.
   visual rechazada. [OCR 19](evidence/ocr19_completed/ANALISIS.md) completó 8/8 lecturas
   y 12/12 rutas diagnósticas CPU; no es calidad QA ni sustitución del scorecard.
   [Integración20](evidence/integration20_completed/ANALISIS.md) completó 22+16 casos;
-  los chequeos visuales son positivos, pero [cierre21](EVALUACION_21.md) de ocho
-  notas nuevas sigue pendiente. Diez revisiones visuales ya recibidas y validadas;
-  error21 de CRLF/LF corregido antes de API. No heredar calidad global.
-- Presupuesto estimado/reservado USD 5,7954525 dentro de USD 7 totales autorizados;
-  no factura verificada. Este recálculo no consume API.
+  [cierre21](evidence/evaluation21_completed/ANALISIS.md) ya completo con ocho
+  notas nuevas y catorce idénticas transferidas, media juez 4,4545 y dominio18/22.
+  Diez revisiones visuales nuevas y doce textuales transferidas; cuatro fallos
+  textuales persisten. La auditoría no regenera respuestas ni consume API.
+- Presupuesto estimado/reservado USD 5,9179725 dentro de USD 7 totales autorizados;
+  no factura verificada. No se necesita más gasto para este cierre.
 
 ## Estimación ponderada interna
 
@@ -44,8 +45,8 @@ ejecución y evaluación reales, no cantidad de notebooks o pruebas.
 | Fase 8: cierre verificable | 3 % | 0 % | Clon limpio, accesos/licencias, PR/merge y entrega. |
 
 La tabla ponderada anterior daba ~71,75 %; el rango vigente incorpora además la
-recepción visual21 y la corrección de portabilidad, sin contar API ni despliegue
-como completos. La aproximación no pretende precisión estadística. No son
+recepción visual21, corrección de portabilidad y cierre semántico OCR21; no cuenta
+el despliegue público como completo. La aproximación no pretende precisión estadística. No son
 pesos de la rúbrica académica ni garantía de resultados.
 
 ## Ruta inmediata — no repetir inferencia anterior
@@ -61,8 +62,8 @@ pesos de la rúbrica académica ni garantía de resultados.
    inferencia real](evidence/deployment17_completed/ANALISIS.md), con un fallo OCR
    bloqueado. [Visual 18](evidence/visual18_completed/ANALISIS.md) confirmó falta
     de utilidad. OCR19 aportó extracción útil; [integración20](INTEGRACION_20.md)
-   ya recogida sobre el mismo conjunto: continuar con [evaluación21](EVALUACION_21.md)
-   por equivalencia exacta y revisión visual nueva. No repetir 17/18/19/20. ZeroGPU sigue
+   ya recogida sobre el mismo conjunto y [evaluación21](EVALUACION_21.md)
+   ya cerrada por equivalencia exacta y revisión visual nueva. No repetir 17–21. ZeroGPU sigue
    pendiente. No contar estos diagnósticos como despliegue público terminado.
 3. Terminar reporte, contribuciones/uso de IA y presentación.
 4. Reproducción desde limpio, revisión de tablas/accesos/licencias y cierre de

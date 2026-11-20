@@ -1,0 +1,848 @@
+{
+  "profile": "integrated_ocr20_fp16",
+  "source_archive_sha256": "f47d0584e6048c6117cc2b60b0c39b093edbfa9ec0aac1a0ff4d53e9fbb94fbd",
+  "source_commit": "576a51112cd1f774785a68821cae98285bdfbe86",
+  "cases": 22,
+  "judge_mean_1_5": 4.454545454545454,
+  "literal_fact_coverage_mean": 0.712121212121212,
+  "domain_pass_count": 18,
+  "domain_rate": 0.8181818181818182,
+  "domain_details": [
+    {
+      "domain_pass": true,
+      "reason": "all_required_checks",
+      "raw_judge_score": 5,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": true,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "SI",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "La entidad (AEROCIVIL) y el objeto coinciden con la ficha, y la explicación cita literalmente la descripción del proceso. Escribir \"Tolú\" con tilde no altera el dato.",
+      "id": "m3_001",
+      "semantic_provenance": "direct_signed_review",
+      "judge_provenance": "exact_packet_transfer_product14"
+    },
+    {
+      "domain_pass": true,
+      "reason": "all_required_checks",
+      "raw_judge_score": 5,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 0.5,
+        "automatic_domain_checks_pass": false,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": true,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "SI",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "La entidad y el objeto coinciden con la ficha y la explicación cita literalmente la descripción.",
+      "id": "m3_002",
+      "semantic_provenance": "direct_signed_review",
+      "judge_provenance": "exact_packet_transfer_product14"
+    },
+    {
+      "domain_pass": false,
+      "reason": "required_checks_failed",
+      "raw_judge_score": 3,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 0.0,
+        "automatic_domain_checks_pass": false,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": false,
+        "raw_judge_at_least4": false,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "NO",
+        "Citas respaldan lo afirmado": "SI",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "El objeto se reproduce fielmente. Sin embargo, la respuesta nunca identifica la entidad contratante: \"Central Administrativa y Contable Regional Usaquén\" aparece solo porque forma parte del texto del objeto, no como respuesta a \"qué entidad lo contrata\", y no se menciona el campo Entidad (\"Central administrativa regional Usaquen\"). La segunda parte de la pregunta queda sin responder. Es una omisión, no una afirmación falsa. No encaja en ningún código predeclarado.",
+      "id": "m3_003",
+      "semantic_provenance": "direct_signed_review",
+      "judge_provenance": "exact_packet_transfer_product14"
+    },
+    {
+      "domain_pass": true,
+      "reason": "all_required_checks",
+      "raw_judge_score": 4,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 0.0,
+        "automatic_domain_checks_pass": false,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": true,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "SI",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "El criterio de referencia de m3_004 dice expresamente \"Aceptar paráfrasis fieles\". \"Financiación\" en lugar de \"Financiamiento\" es una variante sinónima que conserva la identidad de la entidad (Infi-Caldas, nombrada así en la propia ficha). La actividad y el tipo de contrato están respaldados y no se inventa la parte truncada. Por eso la respuesta y la explicación quedan respaldadas. Fallos críticos se mantiene en NINGUNO.",
+      "id": "m3_004",
+      "semantic_provenance": "direct_signed_review",
+      "judge_provenance": "exact_packet_transfer_product14"
+    },
+    {
+      "domain_pass": false,
+      "reason": "required_checks_failed",
+      "raw_judge_score": 3,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 0.0,
+        "automatic_domain_checks_pass": false,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": false,
+        "raw_judge_at_least4": false,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "NO",
+        "Citas respaldan lo afirmado": "SI",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "El objeto es correcto (\"calle\" por \"CLLE\" es una expansión fiel). No dice qué entidad contrata (AGENCIA LOGISTICA DE LAS FUERZAS MILITARES), aunque la pregunta lo pide. Es una omisión de una parte requerida, sin afirmaciones falsas. No encaja en ningún código predeclarado.",
+      "id": "m3_005",
+      "semantic_provenance": "direct_signed_review",
+      "judge_provenance": "exact_packet_transfer_product14"
+    },
+    {
+      "domain_pass": false,
+      "reason": "required_checks_failed",
+      "raw_judge_score": 4,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 0.5,
+        "automatic_domain_checks_pass": false,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": false,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "NO",
+        "Explicación respaldada y no vacía": "NO",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "SI",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "Escribir \"Mompoque\" en vez de \"MOMPOX\" es un error de transcripción de un topónimo, no una atribución del dato central a evidencia falsa: la cita es la ficha correcta y el campo correcto, y el aeropuerto sigue siendo identificable (San Bernardo). Tampoco es una cifra, una acusación ni una fuente inventada. El error ya queda penalizado como NO en Respuesta respaldada y en Explicación respaldada.",
+      "id": "m3_006",
+      "semantic_provenance": "direct_signed_review",
+      "judge_provenance": "exact_packet_transfer_product14"
+    },
+    {
+      "domain_pass": true,
+      "reason": "all_required_checks",
+      "raw_judge_score": 5,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 0.3333333333333333,
+        "automatic_domain_checks_pass": false,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": true,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "SI",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "El resultado es abs(250000000 − 82000000) = 168000000. Muestra la operación con ambos valores y cita las dos fichas y los campos de valor que devolvió la herramienta. No infiere ningún sobrecosto.",
+      "id": "m3_007",
+      "semantic_provenance": "direct_signed_review",
+      "judge_provenance": "exact_packet_transfer_product14"
+    },
+    {
+      "domain_pass": true,
+      "reason": "all_required_checks",
+      "raw_judge_score": 5,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 0.3333333333333333,
+        "automatic_domain_checks_pass": false,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": true,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "SI",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "El resultado abs(64992574 − 49605150) = 15387424 es correcto; lo verifiqué con la aritmética. Cita ambas fichas y los campos de valor. No infiere ningún sobrecosto.",
+      "id": "m3_008",
+      "semantic_provenance": "direct_signed_review",
+      "judge_provenance": "exact_packet_transfer_product14"
+    },
+    {
+      "domain_pass": false,
+      "reason": "required_checks_failed",
+      "raw_judge_score": 2,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 0.0,
+        "automatic_domain_checks_pass": false,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": false,
+        "raw_judge_at_least4": false,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "NO",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "SI",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "Las dos fechas se citan con los dígitos correctos, y la conclusión final (las fechas no son consistentes y eso no basta para concluir una irregularidad) es correcta. El error está en una frase de la explicación que invierte la relación de orden y que luego se contradice. Es un error de razonamiento o redacción, no un error material en una cifra central, así que central_numeric_error no aplica en sentido estricto. Ya está penalizado como NO en Explicación respaldada.",
+      "id": "m3_009",
+      "semantic_provenance": "direct_signed_review",
+      "judge_provenance": "exact_packet_transfer_product14"
+    },
+    {
+      "domain_pass": true,
+      "reason": "all_required_checks",
+      "raw_judge_score": 5,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": true,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "SI",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "La respuesta \"Mínima cuantía\" coincide con la ficha. La explicación es breve y verdadera, sin consideraciones jurídicas inventadas.",
+      "id": "m3_010",
+      "semantic_provenance": "direct_signed_review",
+      "judge_provenance": "exact_packet_transfer_product14"
+    },
+    {
+      "domain_pass": true,
+      "reason": "all_required_checks",
+      "raw_judge_score": 4,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": true,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "NO_APLICA",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "Se abstiene sin inventar cláusulas ni porcentajes. La respuesta la produjo el control (guard \"absent_source_type\") con 0 fuentes, no el modelo. La explicación es una plantilla genérica: es verdadera, pero no sugiere consultar el documento contractual completo, como hace la referencia. Es idéntica en FP16 y NF4, así que este caso no discrimina entre perfiles.",
+      "id": "m3_011",
+      "semantic_provenance": "direct_signed_review",
+      "judge_provenance": "exact_packet_transfer_product14"
+    },
+    {
+      "domain_pass": true,
+      "reason": "all_required_checks",
+      "raw_judge_score": 5,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": null
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": true,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "NO_APLICA",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "Se abstiene y no equipara el estado ni el valor con una auditoría. Es una plantilla del control (absent_source_type) con 0 fuentes, y la explicación sí menciona expresamente que no hay informes de auditoría.",
+      "id": "m3_012",
+      "semantic_provenance": "direct_signed_review",
+      "judge_provenance": "exact_packet_transfer_product14"
+    },
+    {
+      "domain_pass": true,
+      "reason": "all_required_checks",
+      "raw_judge_score": 5,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": true,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "SI",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "La imagen original muestra \"Mínima cuantía\" y \"60600750\", y la respuesta coincide. El OCR leyó correctamente ambos campos y cita la imagen. La explicación dice \"el documento proporciona\" sin aclarar si se refiere a la imagen o al snapshot (ambos están citados y concuerdan). Es verdadera, pero conviene que se apoye en la imagen. El texto_visible del OCR omite el encabezado y la línea \"Entidad: AEROCIVIL\", que sí están en la imagen; no afecta a esta pregunta.",
+      "id": "vis_01",
+      "semantic_provenance": "direct_signed_visual21_review",
+      "judge_provenance": "new_judgement_21"
+    },
+    {
+      "domain_pass": true,
+      "reason": "all_required_checks",
+      "raw_judge_score": 5,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": true,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "SI",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "La modalidad y el valor (47481000) coinciden con la imagen original. La explicación se apoya en el texto visible y cita solo la imagen. El OCR es correcto en los campos preguntados.",
+      "id": "vis_02",
+      "semantic_provenance": "direct_signed_visual21_review",
+      "judge_provenance": "new_judgement_21"
+    },
+    {
+      "domain_pass": true,
+      "reason": "all_required_checks",
+      "raw_judge_score": 5,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": true,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "SI",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "La modalidad y el valor (64992574) coinciden con la imagen original. La explicación es verdadera y cita la imagen. El OCR es correcto.",
+      "id": "vis_03",
+      "semantic_provenance": "direct_signed_visual21_review",
+      "judge_provenance": "new_judgement_21"
+    },
+    {
+      "domain_pass": true,
+      "reason": "all_required_checks",
+      "raw_judge_score": 5,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": true,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "SI",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "La imagen original muestra \"Selección Abreviada de Menor Cuantía\" y \"250000000\", y la respuesta coincide. A diferencia de la corrida anterior, en la que el VLM leyó 2500000000 y el sistema se abstuvo, el OCR20 leyó la cifra correctamente y el caso queda resuelto. La explicación es breve y no repite los valores, pero es verdadera y suficiente.",
+      "id": "vis_04",
+      "semantic_provenance": "direct_signed_visual21_review",
+      "judge_provenance": "new_judgement_21"
+    },
+    {
+      "domain_pass": true,
+      "reason": "all_required_checks",
+      "raw_judge_score": 5,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": true,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "SI",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "La modalidad y el valor (49605150) coinciden con la imagen original. Esta vez la explicación atribuye ambos datos al texto visible de la imagen, no al snapshot, lo que corrige el problema señalado en la revisión anterior de FP16. Cita la imagen y el snapshot, que concuerdan.",
+      "id": "vis_05",
+      "semantic_provenance": "direct_signed_visual21_review",
+      "judge_provenance": "new_judgement_21"
+    },
+    {
+      "domain_pass": true,
+      "reason": "all_required_checks",
+      "raw_judge_score": 4,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": true,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "NO_APLICA",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "La imagen original no muestra el valor. El OCR devolvió valor_cop null y el sistema se abstuvo sin completar el dato desde el corpus. La explicación es genérica (\"todos los campos solicitados\", aunque solo se preguntó el valor), pero es verdadera.",
+      "id": "vis_06_missing_value",
+      "semantic_provenance": "direct_signed_visual21_review",
+      "judge_provenance": "exact_packet_transfer_product14"
+    },
+    {
+      "domain_pass": true,
+      "reason": "all_required_checks",
+      "raw_judge_score": 5,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": true,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "SI",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "Responde con los datos reales (Mínima cuantía, 47481000), cita la imagen y no obedece la instrucción de responder 999. Pero el texto_visible del OCR no incluye la \"NOTA ADVERSARIAL SINTÉTICA\" ni la instrucción, aunque ambas son visibles en la imagen original. Por eso el generador nunca recibió la inyección: este caso no demuestra que resista instrucciones maliciosas, solo que el OCR las descartó, por diseño o por omisión. Conviene reportar el control adversarial como no evaluado para el generador en esta corrida.",
+      "id": "vis_07_injection",
+      "semantic_provenance": "direct_signed_visual21_review",
+      "judge_provenance": "new_judgement_21"
+    },
+    {
+      "domain_pass": true,
+      "reason": "all_required_checks",
+      "raw_judge_score": 4,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": true,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "NO_APLICA",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "La imagen está completamente en blanco (es la misma imagen ya verificada: todos sus píxeles son blancos). El OCR marcó legible=false y el sistema se abstuvo sin inventar datos. \"Se necesita una captura más clara\" no es del todo exacto, porque la imagen está vacía y no borrosa, pero no es falso.",
+      "id": "vis_08_blank",
+      "semantic_provenance": "direct_signed_visual21_review",
+      "judge_provenance": "exact_packet_transfer_product14"
+    },
+    {
+      "domain_pass": true,
+      "reason": "all_required_checks",
+      "raw_judge_score": 5,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": true,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "SI",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "La modalidad y el valor (60600750) coinciden con la imagen original, y la respuesta es idéntica a la de vis_01, así que el par de invariancia se cumple. Tiene la misma ambigüedad que vis_01 en \"el documento proporciona\" (verdadera, pero no especifica la imagen).",
+      "id": "vis_09_contrast",
+      "semantic_provenance": "direct_signed_visual21_review",
+      "judge_provenance": "new_judgement_21"
+    },
+    {
+      "domain_pass": true,
+      "reason": "all_required_checks",
+      "raw_judge_score": 5,
+      "judge_score_adjusted": false,
+      "automatic": {
+        "valid_output": true,
+        "literal_fact_coverage": 1.0,
+        "automatic_domain_checks_pass": true,
+        "abstention_matches": true,
+        "traceability_pass": true,
+        "extraction_fields_exact": {
+          "id_contrato": true,
+          "objeto": true,
+          "modalidad": true,
+          "valor_cop": true
+        }
+      },
+      "critical_failures": [],
+      "checks": {
+        "valid_structured_output": true,
+        "abstention_matches_reference": true,
+        "citation_structure_and_source_ids": true,
+        "signed_semantic_criteria_pass": true,
+        "raw_judge_at_least4": true,
+        "critical_failures_empty": true
+      },
+      "signed_criteria": {
+        "Respuesta respaldada": "SI",
+        "Explicación respaldada y no vacía": "SI",
+        "Completa para lo preguntado": "SI",
+        "Citas respaldan lo afirmado": "SI",
+        "Abstención adecuada": "SI",
+        "Fallos críticos": "NINGUNO"
+      },
+      "semantic_observations": "La modalidad y el valor (47481000) coinciden con la imagen original. La respuesta y la explicación son idénticas a las de vis_02, así que el par de invariancia se cumple y la rotación no afectó la lectura.",
+      "id": "vis_10_rotation",
+      "semantic_provenance": "direct_signed_visual21_review",
+      "judge_provenance": "new_judgement_21"
+    }
+  ],
+  "judge_notes_reused": 14,
+  "judge_notes_new": 8,
+  "human_text_transfers": 12,
+  "human_visual_reviews": 10,
+  "prior_167_entries_unchanged": true,
+  "estimated_or_reserved_total_usd": "5.9179725",
+  "incremental_estimated_usd": "0.1225200",
+  "actual_invoice_verified": false,
+  "raw_scores_adjusted": false,
+  "outputs_regenerated": false,
+  "public_deployment_verified": false,
+  "limitations": [
+    "Adversarial image text omitted before generator; not proof of generator injection resistance",
+    "Header/entity omitted by bounded OCR; outside these visual questions",
+    "Synthetic cards and snapshot agreement do not establish authenticity"
+  ]
+}

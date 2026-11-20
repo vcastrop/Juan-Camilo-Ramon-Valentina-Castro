@@ -1,6 +1,11 @@
 # Ruta de cierre con tres horas disponibles
 
-Estado aproximado 74 %, no aprobación ni garantía de terminar. Desarrollo y
+**Actualización:** punto1 completado, no ejecutar más API. OCR20 tiene 22 notas,
+media4,4545 y dominio18/22 auditados. El bloqueo prioritario es ahora punto2:
+despliegue real OCR y comprobación pública/W&B. El resto del cronograma original
+es orientativo y debe ajustarse al tiempo efectivamente restante.
+
+Estado aproximado 76 %, no aprobación ni garantía de terminar. Desarrollo y
 evidencia histórica están avanzados; publicación contractual sigue sin validar.
 Se prioriza completar evidencia y acceso sobre nuevos experimentos.
 

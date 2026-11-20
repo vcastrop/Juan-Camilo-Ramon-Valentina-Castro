@@ -1,5 +1,11 @@
 # Cierre de calidad del perfil OCR20
 
+**CERRADO:** [resultado auditado](evidence/evaluation21_completed/ANALISIS.md):
+22 notas, media 4,4545 y dominio 18/22 tras revisión humana. Se conserva el
+fallo de preparación y el cierre posterior, sin reescribir originales.
+**No volver a ejecutar la API ni las instrucciones históricas de abajo.**
+El pendiente siguiente es despliegue/observabilidad públicos, no más evaluación.
+
 **Actualización:** revisión humana de diez imágenes recibida y validada. La
 primera ejecución21 se detuvo en preparación por CRLF/LF, antes de API. El
 chequeo corregido conserva el mismo contenido y plan. Actualizar el checkout y

@@ -30,10 +30,16 @@ La [integración OCR20](evidence/integration20_completed/ANALISIS.md) es un perf
 nuevo, no una sustitución retrospectiva del FP16 histórico. Completó los 22 casos
 comunes y 16 controles separados, con cobertura literal media 0,712 y 14/22
 chequeos automáticos (cuatro textuales y diez visuales). Estas cifras no son
-exactitud ni dominio: el [cierre21](EVALUACION_21.md) conserva catorce notas por
-igualdad exacta de paquetes y requiere ocho notas nuevas, más revisión humana de
-las diez imágenes. Su media completa y dominio siguen pendientes. No se atribuye
-a este perfil la medición de eficiencia del modelo visual anterior.
+exactitud ni dominio. El [cierre21](evidence/evaluation21_completed/ANALISIS.md)
+conserva catorce notas por igualdad exacta de paquetes, añade ocho notas nuevas
+y cruza diez revisiones humanas visuales nuevas con doce textuales transferidas.
+Su media cruda es **4,4545/5** y dominio **18/22** (8/12 texto y 10/10 imagen),
+frente al 16/22 histórico. Siguen fallando m3_003, m3_005, m3_006 y m3_009.
+En m3_006 la nota 4 no basta: la revisión humana rechaza completitud. Se conserva
+esa discrepancia sin modificar la nota. No se atribuye a este perfil la medición
+de eficiencia del modelo visual anterior. En vis_07 la instrucción adversarial
+no llega al generador; no demuestra su inmunidad. El Space sigue sin verificar
+esta versión como servicio público.
 
 | Perfil | Cobertura literal media | Chequeos automáticos /22 | p50 s | p95 s | Pico CUDA asignado GiB |
 |---|---:|---:|---:|---:|---:|

@@ -9,13 +9,14 @@ Dominio histórico cerrado no significa dominio del nuevo OCR ni servicio públi
 
 - [x] Recibir y validar [revisión humana visual21](evidence/visual21_received/RECEPCION.md): diez decisiones completas, fuentes sin editar; salvedades conservadas.
 - [x] Conservar [detención21](evidence/evaluation21_setup_failed/ANALISIS.md) previa a API y corregir verificación CRLF/LF sin modificar contenido ni plan.
-- [ ] Ejecutar por primera vez las ocho notas API después de actualizar/preparar Colab; mantener USD7 totales y registro Drive.
+- [x] Ejecutar ocho notas API: [cierre21](evidence/evaluation21_completed/ANALISIS.md), 22 notas completas y USD5,9179725 estimados/reservados, sin alterar 167 asientos previos.
 
 - [x] Conservar y auditar [20](evidence/integration20_completed/ANALISIS.md): 22+16 casos, 467 pruebas, sin errores técnicos.
 - [x] Verificar 14 paquetes idénticos para transferir notas, sin cambiar las bajas; doce revisiones textuales transferibles.
 - [x] Preparar evaluación de ocho paquetes cambiados bajo el registro USD7 existente y revisión humana nueva de diez imágenes.
-- [ ] Recibir [evaluación21](EVALUACION_21.md) completa y auditar razones del juez; revisión humana ya recibida.
-- [ ] Recalcular dominio del nuevo perfil; después verificar despliegue OCR/observabilidad pública.
+- [x] Recibir [evaluación21](EVALUACION_21.md) completa y auditar razones del juez; revisión humana ya recibida.
+- [x] Recalcular dominio OCR20 con reglas originales: 18/22 (8/12 texto, 10/10 imagen), media juez 4,4545; cuatro fallos textuales preservados.
+- [ ] Preparar y verificar despliegue OCR/observabilidad pública; no subir el candidato VLM histórico.
 
 ### Ruta actual: OCR19 recibido; integración20 separada preparada
 
