@@ -16,10 +16,17 @@ from m3.judge import evidence_payload
 ROOT=Path(__file__).resolve().parents[1]
 SHA20='af18c90271ec3561057644f672f9619d064ce6a135dd6bb6c21cc68a2b17db21'
 NB20='567a1d43a95a02c4f46bf9b2b2d393503488ce34dad44dbfa681bb303b4323bb'
-DOMAIN_SHA='4c2334e53a4f754cdc3117726fd65ca8770ab9843bb65f8972386f7c0f841e49'
+# SHA of the committed LF bytes, independent of Windows checkout CRLF conversion.
+DOMAIN_SHA='9d0234e0aaf546414a80b594fc4165586194b12cbcd54b4f812012ca1fc9ff6d'
 PROFILE='integrated_ocr20_fp16'
 CRITERIA=['Respuesta respaldada','Explicación respaldada y no vacía','Completa para lo preguntado',
           'Citas respaldan lo afirmado','Abstención adecuada','Fallos críticos']
+
+
+def verify_domain_bytes(raw):
+    # Normalize only CRLF, not JSON values, spaces, ordering or other content.
+    if hashlib.sha256(raw.replace(b'\r\n',b'\n')).hexdigest()!=DOMAIN_SHA:
+        raise ValueError('Signed domain closure differs')
 
 
 def make_jobs(rows,old,notes,refs,humans):
@@ -68,7 +75,7 @@ def plan(root=ROOT):
     old={r['id']:r for r in [json.loads(s) for s in raw['integrated_fp16/predictions.jsonl'].decode().splitlines()]}
     notes={r['id']:r['judgement'] for r in previous['product_rows'] if r['profile']=='integrated_fp16'}
     domain_path=root/'final/evidence/domain_review46/scorecard_complete.json'
-    if hashlib.sha256(domain_path.read_bytes()).hexdigest()!=DOMAIN_SHA:raise ValueError('Signed domain closure differs')
+    verify_domain_bytes(domain_path.read_bytes())
     humans={r['id']:r for r in json.loads(domain_path.read_text(encoding='utf-8'))['domain_details']['integrated_fp16']}
     jobs=make_jobs(rows,old,notes,refs,humans)
     changed=[j['id'] for j in jobs if j['judgement'] is None]

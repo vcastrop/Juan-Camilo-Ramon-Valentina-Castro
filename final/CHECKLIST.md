@@ -2,12 +2,19 @@
 
 ## Estado vigente — dominio de los cinco perfiles cerrado
 
+**Ventana de cierre:** [ruta priorizada de tres horas](CIERRE_TRES_HORAS.md).
+Dominio histórico cerrado no significa dominio del nuevo OCR ni servicio público listo.
+
 ### Ruta actual: integración20 recibida; cierre21 de calidad preparado
+
+- [x] Recibir y validar [revisión humana visual21](evidence/visual21_received/RECEPCION.md): diez decisiones completas, fuentes sin editar; salvedades conservadas.
+- [x] Conservar [detención21](evidence/evaluation21_setup_failed/ANALISIS.md) previa a API y corregir verificación CRLF/LF sin modificar contenido ni plan.
+- [ ] Ejecutar por primera vez las ocho notas API después de actualizar/preparar Colab; mantener USD7 totales y registro Drive.
 
 - [x] Conservar y auditar [20](evidence/integration20_completed/ANALISIS.md): 22+16 casos, 467 pruebas, sin errores técnicos.
 - [x] Verificar 14 paquetes idénticos para transferir notas, sin cambiar las bajas; doce revisiones textuales transferibles.
 - [x] Preparar evaluación de ocho paquetes cambiados bajo el registro USD7 existente y revisión humana nueva de diez imágenes.
-- [ ] Recibir [evaluación21](EVALUACION_21.md), auditar razones del juez y recibir `REVISION_VISUAL_21.md` real.
+- [ ] Recibir [evaluación21](EVALUACION_21.md) completa y auditar razones del juez; revisión humana ya recibida.
 - [ ] Recalcular dominio del nuevo perfil; después verificar despliegue OCR/observabilidad pública.
 
 ### Ruta actual: OCR19 recibido; integración20 separada preparada

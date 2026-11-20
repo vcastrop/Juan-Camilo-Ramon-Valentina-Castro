@@ -1,6 +1,6 @@
 # Avance de la entrega final — 19/11/2026
 
-Estimación operativa: **70–75 % (~72 %)** de la entrega final integradora. No es
+Estimación operativa: **72–76 % (~74 %)** de la entrega final integradora. No es
 nota, madurez para uso real ni porcentaje de todo el curso. El aumento reconoce
 ejecución y evaluación reales, no cantidad de notebooks o pruebas.
 
@@ -24,7 +24,8 @@ ejecución y evaluación reales, no cantidad de notebooks o pruebas.
   y 12/12 rutas diagnósticas CPU; no es calidad QA ni sustitución del scorecard.
   [Integración20](evidence/integration20_completed/ANALISIS.md) completó 22+16 casos;
   los chequeos visuales son positivos, pero [cierre21](EVALUACION_21.md) de ocho
-  notas nuevas y diez revisiones visuales sigue pendiente. No heredar calidad global.
+  notas nuevas sigue pendiente. Diez revisiones visuales ya recibidas y validadas;
+  error21 de CRLF/LF corregido antes de API. No heredar calidad global.
 - Presupuesto estimado/reservado USD 5,7954525 dentro de USD 7 totales autorizados;
   no factura verificada. Este recálculo no consume API.
 
@@ -42,7 +43,9 @@ ejecución y evaluación reales, no cantidad de notebooks o pruebas.
 | Fase 7: reporte/presentación | 7 % | 50 % | Reporte con resultados completos; faltan roles, portada y diapositivas. |
 | Fase 8: cierre verificable | 3 % | 0 % | Clon limpio, accesos/licencias, PR/merge y entrega. |
 
-Suma interna ~71,75 %, expresada como rango para no fingir precisión. No son
+La tabla ponderada anterior daba ~71,75 %; el rango vigente incorpora además la
+recepción visual21 y la corrección de portabilidad, sin contar API ni despliegue
+como completos. La aproximación no pretende precisión estadística. No son
 pesos de la rúbrica académica ni garantía de resultados.
 
 ## Ruta inmediata — no repetir inferencia anterior
@@ -57,7 +60,7 @@ pesos de la rúbrica académica ni garantía de resultados.
    historial 17 son antecedentes resueltos. [La corrida 17 posterior completó
    inferencia real](evidence/deployment17_completed/ANALISIS.md), con un fallo OCR
    bloqueado. [Visual 18](evidence/visual18_completed/ANALISIS.md) confirmó falta
-   de utilidad. OCR19 aportó extracción útil; ejecutar [integración20](INTEGRACION_20.md)
+    de utilidad. OCR19 aportó extracción útil; [integración20](INTEGRACION_20.md)
    ya recogida sobre el mismo conjunto: continuar con [evaluación21](EVALUACION_21.md)
    por equivalencia exacta y revisión visual nueva. No repetir 17/18/19/20. ZeroGPU sigue
    pendiente. No contar estos diagnósticos como despliegue público terminado.

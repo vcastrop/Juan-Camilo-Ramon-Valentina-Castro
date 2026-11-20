@@ -1,5 +1,11 @@
 # Cierre de calidad del perfil OCR20
 
+**Actualización:** revisión humana de diez imágenes recibida y validada. La
+primera ejecución21 se detuvo en preparación por CRLF/LF, antes de API. El
+chequeo corregido conserva el mismo contenido y plan. Actualizar el checkout y
+repetir preparación antes de ejecutar API por primera vez; no borrar marcadores
+Drive. [Diagnóstico](evidence/evaluation21_setup_failed/ANALISIS.md).
+
 La [corrida20](evidence/integration20_completed/ANALISIS.md) quedó preservada.
 El plan reproducible `evaluation21.py` verifica originales, fuentes y conjunto
 común antes de transferir valoraciones. No cambian umbrales ni criterios.

@@ -10,7 +10,7 @@ import unittest
 from unittest.mock import patch
 import zipfile
 
-from final.evaluation21 import plan,make_jobs
+from final.evaluation21 import plan,make_jobs,verify_domain_bytes
 from final.run_evaluation21 import register,EvaluationGenerator,financial_checkpoint,summary,MARKER
 from final.product_judge14 import POLICY
 from final.confirmation13_receipt import SHA13
@@ -23,6 +23,12 @@ ROOT=Path(__file__).resolve().parents[2]
 
 
 class Evaluation21Tests(unittest.TestCase):
+    def test_domain_closure_accepts_only_line_ending_conversion(self):
+        raw=(ROOT/'final/evidence/domain_review46/scorecard_complete.json').read_bytes().replace(b'\r\n',b'\n')
+        verify_domain_bytes(raw)
+        verify_domain_bytes(raw.replace(b'\n',b'\r\n'))
+        with self.assertRaises(ValueError):verify_domain_bytes(raw+b' ')
+
     @classmethod
     def setUpClass(cls):
         cls.p=plan()
