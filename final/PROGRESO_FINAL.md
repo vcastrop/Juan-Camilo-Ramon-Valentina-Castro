@@ -17,6 +17,8 @@ ejecución y evaluación reales, no cantidad de notebooks o pruebas.
 - 90 revisiones directas (44 + 46), ocho dudas originales y la última de m3_011
   adjudicadas; veinte equivalencias exactas documentadas. No quedan filas de dominio pendientes.
 - Reporte actualizado con discrepancias, modalidades separadas y límites del juez.
+- Despliegue 17 completado en T4: 441 pruebas, cinco modelos/índice y siete casos;
+  error OCR bloqueado, no aprobación visual general. [Diagnóstico 18 congelado](VISUAL_DESPLIEGUE_18.md).
 - Presupuesto estimado/reservado USD 5,7954525 dentro de USD 7 totales autorizados;
   no factura verificada. Este recálculo no consume API.
 
@@ -45,13 +47,12 @@ pesos de la rúbrica académica ni garantía de resultados.
    no desplegar NF4. Integrar el sistema
    contractual público y verificar texto, imagen, cálculo, abstención, errores,
    salud/listo, privacidad y W&B accesible. El Space comprobado sigue siendo infraestructura.
-   [Prueba 16 fallida](evidence/deployment16_failed/ANALISIS.md): instalación
-   incompatible, sin respuestas. Continuar con [prueba 17](DESPLIEGUE_17.md),
-   versiones de interfaz corregidas y bloqueo si la preparación falla.
-   Faltan la prueba real T4 y la verificación en ZeroGPU.
-   Recepción 17: instalación y T4 correctas; pruebas bloqueadas por historial
-   superficial, ya corregido en el notebook. [Reparación de la misma sesión](DESPLIEGUE_17.md).
-   Esta preparación no se cuenta como despliegue terminado ni eleva el porcentaje.
+   Las [fallas de instalación 16](evidence/deployment16_failed/ANALISIS.md) y de
+   historial 17 son antecedentes resueltos. [La corrida 17 posterior completó
+   inferencia real](evidence/deployment17_completed/ANALISIS.md), con un fallo OCR
+   bloqueado. Seguir con [diagnóstico visual 18](VISUAL_DESPLIEGUE_18.md), una
+   tanda acotada y post-hoc; no repetir 17 ni el benchmark. Verificación en
+   ZeroGPU sigue pendiente. No contar esta recepción como despliegue público terminado.
 3. Terminar reporte, contribuciones/uso de IA y presentación.
 4. Reproducción desde limpio, revisión de tablas/accesos/licencias y cierre de
    PR/merge solo autorizado; entrega y comprobante en Interactiva.

@@ -1,0 +1,153 @@
+{
+  "version": "visual-deployment-diagnostic-18",
+  "post_hoc": true,
+  "reason": "Investigate extra OCR zero observed in deployment17; not blind or representative.",
+  "baseline_archive_sha256": "7a9146dfa7a3fc6eccf36a727438d7f2a9c5ee4f3ad4723c8b23170fc8c1c72d",
+  "baseline_source_commit": "c966f0aee507fab70d349a9d385445287952c5ce",
+  "source_hashes": {
+    "final/__init__.py": "2605ee7525cd9aaee8de4972f44421301b61138362d5821ae2e741258da5c9f7",
+    "final/adapters.py": "e422132313af404988cbdb13eaf13300b3ebc93edf571ab70bbec9c634ee3c21",
+    "final/chat_encoding.py": "54c7a8911b5ddfb413f23b95fe8d8a94ca7adf4398d78c5aff747e4a65bfe976",
+    "final/config.py": "71806bc625ad1f93594d398a5a91e27a1d952992ac7926f263515eb0c9a61cea",
+    "final/generators.py": "07bf04ce0fbac226bb4843150eb2d83939109ab52b910dbf1c946186f900e215",
+    "final/integration.py": "f5d1463a626525aeefd3ca3a0c2ad4e6b9826c043f8295418d12fabd0dfcf6a6",
+    "final/service_contract.py": "936977e120a08a181d530d08e97465fe7c5df5549abafff81fc1c0825eea0402",
+    "final/service_environment.py": "22c7e318ead00eb4ecea5e7a9c8e3654a4204b15fc4063d53acc960955401e8e",
+    "final/service_runtime.py": "6ed802307e77c9bb028cca4fb1f5677733298484e590fe71820121379136098e",
+    "final/service_telemetry.py": "04a31ff6f5fa1ac6a6ca1504c44e39f58057ede568914e0f5234e9da5bf6b489",
+    "final/source_consistency.py": "378b5798efd36fc1037970cc56357f0de8953cd1de6a2f953b525f946128d223",
+    "final/tool_policy.py": "68fc919e06895c2147eacbbc7c66c1bce190b68c9186a69c64dec242aef819bc",
+    "final/tool_usage.py": "87232dad6fbd4038ed794771676d67a2c64ef547f547a9bc088eb30bdc8b64fa",
+    "final/visual_fields.py": "0cce2720b9bee308c9ce1200ec2757e73afd60ffa8b56991785dbdfef74a1d9b",
+    "m3/agent_v4.py": "0a0a2fc82a3509d2010820da26aac5f275f4d69e7c78aa76611f4177557afb01",
+    "m3/agent_v5.py": "aa9614b99e03eaad8371ddc248d43227f69fea7dae5cf5691664778b663072c2",
+    "m3/contract_tools.py": "48fb7a6ac9e0fcd83ed13460b345b94b7ce907ae449ca7029cfae9faad27c645",
+    "m3/ingest.py": "3366290925ebfa20fca535d5a2ef55a8176c1468278c144b4a74311afca8d9ed",
+    "m3/protocol_probe.py": "697619d6b61ea1b3bca7f89137e5f787dd794b43b36c327bca636b8b80c44445",
+    "m3/rag_basic.py": "456cc765b2e71812efe420e5f3d113d01b6b9c64fbb7ae72dc226117d53a6de6",
+    "m3/response_v4.py": "f0ff4c0ff3f114b7cfe01e6eeaceb687b31a53c9deb4fed6ebae129009b60921",
+    "m3/retrieval_advanced.py": "5361a720943bc7ad7e3878d9d96d030a768c87547e8fb36b18c6e2b10b06d608",
+    "m3/sqlite_support.py": "0a290adc35c0ee45f53cd49656baa1150333bb469d6d903552d81e9ff903d0f2",
+    "m3/structured_output.py": "cdbee93684682555a9de1e7b98f7145229c6c95e31a57c94e935753617df790b",
+    "m3/systems_v5.py": "d72eafe45aa4bd974f92afff177e527372bcb74359fa57f3fcb97f59159048c0"
+  },
+  "font_sha256": "3fdf69cabf06049ea70a00b5919340e2ce1e6d02b0cc3c4b44fb6801bd1e0d22",
+  "cases": [
+    {
+      "id": "full_original_once",
+      "file": "full_original_once.png",
+      "image_sha256": "7e958d22ea26cfde9d1ff340c65f87c3c94c702ff961d8edeb8bbde0d2d907af",
+      "question": "¿Qué modalidad y valor del contrato aparecen en la imagen?",
+      "expected_for_diagnostics_only": {
+        "id_contrato": "CO1.PCCNTR.1088236",
+        "valor_cop": "250000000",
+        "modalidad": "Selección Abreviada de Menor Cuantía"
+      },
+      "expected_guard": null,
+      "origin": "synthetic_source_render_not_real_document",
+      "is_control": false
+    },
+    {
+      "id": "compact_plain_a",
+      "file": "compact_plain_a.png",
+      "image_sha256": "97d7bae373db281cea128c92a0c4a818d5f6ead97e42ded2d231b2f472b0c1aa",
+      "question": "¿Qué modalidad y valor del contrato aparecen en la imagen?",
+      "expected_for_diagnostics_only": {
+        "id_contrato": "CO1.PCCNTR.1088236",
+        "valor_cop": "250000000",
+        "modalidad": "Selección Abreviada de Menor Cuantía"
+      },
+      "expected_guard": null,
+      "origin": "synthetic_source_render_not_real_document",
+      "is_control": false
+    },
+    {
+      "id": "compact_grouped_a",
+      "file": "compact_grouped_a.png",
+      "image_sha256": "47560cccdb649f457c47da0d21cd4085f5e2d88507e914e2c3e130b03b6e17df",
+      "question": "¿Qué modalidad y valor del contrato aparecen en la imagen?",
+      "expected_for_diagnostics_only": {
+        "id_contrato": "CO1.PCCNTR.1088236",
+        "valor_cop": "250000000",
+        "modalidad": "Selección Abreviada de Menor Cuantía"
+      },
+      "expected_guard": null,
+      "origin": "synthetic_source_render_not_real_document",
+      "is_control": false
+    },
+    {
+      "id": "compact_plain_b",
+      "file": "compact_plain_b.png",
+      "image_sha256": "3bd47eac10d2008fb8e73c6bc583203a72069a2451263a0ccffaa5245b217c59",
+      "question": "¿Qué modalidad y valor del contrato aparecen en la imagen?",
+      "expected_for_diagnostics_only": {
+        "id_contrato": "CO1.PCCNTR.1109703",
+        "valor_cop": "82000000",
+        "modalidad": "Mínima cuantía"
+      },
+      "expected_guard": null,
+      "origin": "synthetic_source_render_not_real_document",
+      "is_control": false
+    },
+    {
+      "id": "compact_grouped_b",
+      "file": "compact_grouped_b.png",
+      "image_sha256": "a843b109c609f4b7367e9c752ec6f9f98d212cc2d1a047d3ce0547c4d2debc74",
+      "question": "¿Qué modalidad y valor del contrato aparecen en la imagen?",
+      "expected_for_diagnostics_only": {
+        "id_contrato": "CO1.PCCNTR.1109703",
+        "valor_cop": "82000000",
+        "modalidad": "Mínima cuantía"
+      },
+      "expected_guard": null,
+      "origin": "synthetic_source_render_not_real_document",
+      "is_control": false
+    },
+    {
+      "id": "altered_amount",
+      "file": "altered_amount.png",
+      "image_sha256": "370b95160d3559c581d618f83c3fa279797705bdc23be0f229ddd1eddcbc3574",
+      "question": "¿Qué modalidad y valor del contrato aparecen en la imagen?",
+      "expected_for_diagnostics_only": {
+        "id_contrato": "CO1.PCCNTR.1088236",
+        "valor_cop": "251000000",
+        "modalidad": "Selección Abreviada de Menor Cuantía"
+      },
+      "expected_guard": "visual_source_conflict",
+      "origin": "synthetic_source_render_not_real_document",
+      "is_control": true
+    },
+    {
+      "id": "missing_amount",
+      "file": "missing_amount.png",
+      "image_sha256": "0acaa485f1a514144159e4e009b250a7fc9a6d60e6c8034818e7e64ae91bfeb8",
+      "question": "¿Qué modalidad y valor del contrato aparecen en la imagen?",
+      "expected_for_diagnostics_only": {
+        "id_contrato": "CO1.PCCNTR.1088236",
+        "valor_cop": null,
+        "modalidad": "Selección Abreviada de Menor Cuantía"
+      },
+      "expected_guard": "missing_visual_fields",
+      "origin": "synthetic_source_render_not_real_document",
+      "is_control": true
+    },
+    {
+      "id": "blank",
+      "file": "blank.png",
+      "image_sha256": "d2b8be3b4231f3b86a70339dc3050d6d888b2f313253c6f57493a719aa536053",
+      "question": "¿Qué modalidad y valor del contrato aparecen en la imagen?",
+      "expected_for_diagnostics_only": null,
+      "expected_guard": "unreadable",
+      "origin": "synthetic_source_render_not_real_document",
+      "is_control": true
+    }
+  ],
+  "policy": {
+    "one_pass": true,
+    "semantic_retries": 0,
+    "model_prompt_changes": false,
+    "prior_results_replaced": false,
+    "new_api_calls": 0,
+    "full_original_once": "One explicit replication, never replaces the saved failing result."
+  }
+}

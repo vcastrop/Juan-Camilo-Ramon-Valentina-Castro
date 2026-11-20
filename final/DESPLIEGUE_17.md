@@ -1,5 +1,10 @@
 # Verificación de despliegue 17 — instalación compatible y parada segura
 
+**Estado más reciente:** [corrida 17 completada](evidence/deployment17_completed/ANALISIS.md),
+sin errores de celda. La técnica funciona en T4; OCR añadió un cero, detectado por
+el control. No repetir 17: continuar con [diagnóstico visual 18](VISUAL_DESPLIEGUE_18.md).
+Las instrucciones de reparación siguientes son históricas, ya no pendientes.
+
 **Actualización de recepción:** la instalación y T4 ya pasaron en la corrida
 17 recibida. Las pruebas se detuvieron porque el clon superficial omitía
 historial necesario. [Auditoría y originales](evidence/deployment17_failed/ANALISIS.md).

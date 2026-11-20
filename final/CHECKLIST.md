@@ -2,16 +2,24 @@
 
 ## Estado vigente — dominio de los cinco perfiles cerrado
 
+### Última recepción: despliegue 17 completado, diagnóstico visual 18 preparado
+
+- [x] Conservar y verificar [ZIP/notebook 17 completados](evidence/deployment17_completed/ANALISIS.md): 441 pruebas, cinco modelos/índice, siete casos.
+- [x] Comprobar M1, QA, cálculo y controles; reconocer error visual de un cero extra y falsa abstención.
+- [x] Fijar ocho imágenes y expectativas diagnósticas antes de otra inferencia; modelos/prompts/guardas sin cambios.
+- [ ] Ejecutar una sola tanda [visual 18](VISUAL_DESPLIEGUE_18.md), revisar todos los resultados y decidir alcance visual.
+- [ ] Verificar después ZeroGPU real y telemetría de peticiones públicas; Colab no demuestra estos hitos.
+
 **Despliegue: ruta actual [prueba 17](DESPLIEGUE_17.md).** La prueba 16 falló
 instalando dependencias; se conserva [evidencia original](evidence/deployment16_failed/ANALISIS.md).
 No produjo respuestas de modelos ni afecta las métricas anteriores.
 
 - [x] Diagnosticar conflicto Gradio/Hub y conservar fallo sin presentarlo como éxito.
 - [x] Fijar versiones compatibles y añadir comprobación de entorno, bloqueo y metadata de fallos tempranos.
-- [ ] Ejecutar y auditar el notebook **Despliegue 17** en T4 antes de publicar.
+- [x] Ejecutar y auditar el notebook **Despliegue 17** en T4: completado; límite visual documentado, no aprobación global.
 - [x] Recibir corrida 17: instalación/entorno/T4 correctos; conservar errores de historial en auditoría.
 - [x] Corregir clon superficial y comprobar las suites en copia limpia con historial completo.
-- [ ] Completar historial en sesión T4 y volver a pasar preparación antes de inferencia real.
+- [x] Completar historial y preparación T4; recepción posterior con inferencia real conservada.
 
 [Recepción de 46 revisiones y cierre explícito](evidence/domain_review46/RECEPCION.md).
 El único DUDOSO se conserva en el original y se resuelve como NO en registro de

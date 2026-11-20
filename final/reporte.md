@@ -58,6 +58,18 @@ En la ablación, ambas respuestas cortas de cálculo son correctas con y sin her
 
 ## Producción y observabilidad: estado pendiente
 
+**Verificación técnica T4 posterior al benchmark:** [Despliegue 17](evidence/deployment17_completed/ANALISIS.md)
+cargó M1, generador, visión, embeddings, reranker e índice; pasaron 441 pruebas y
+terminaron siete casos sin errores técnicos inesperados. La entidad textual y
+la diferencia 168000000 COP fueron correctas; fuente ausente, blanco y entrada
+inválida activaron sus controles. En la imagen el OCR convirtió 250000000 en
+2500000000 y la comparación con el snapshot bloqueó la respuesta: prevención
+de una afirmación errónea, no lectura correcta. Este diagnóstico no reemplaza
+el scorecard, no valida calidad general ni representa observabilidad pública.
+[Ocho entradas visuales congeladas](VISUAL_DESPLIEGUE_18.md) preparadas para
+una sola tanda post-hoc sin cambiar modelos/prompts/guardas. No se afirma que
+esas entradas hayan sido ejecutadas todavía.
+
 Space objetivo: https://huggingface.co/spaces/Juanoff/contractrisk-colombia. La versión pública comprobada es de infraestructura; no afirmar que ejecuta aún el sistema contractual completo. W&B registra pruebas de infraestructura y Colab: https://forge.coreweave.com/wandb/jcramonp-eanit/contractrisk-final. Falta comprobar acceso del evaluador y peticiones reales de producción.
 
 El contador histórico tool_used confundió router con herramienta; su fe de erratas y recálculo están documentados sin alterar la run original. Falta verificar arranque frío, salud/listo, límites de entrada/concurrencia, manejo de errores y logs sanitizados del servicio contractual público.

@@ -1,0 +1,2 @@
+*.png -text
+protocol.json text eol=lf
