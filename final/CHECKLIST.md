@@ -26,9 +26,9 @@ de continuidad: la corrida recibió métricas pero figura Crashed; no se declara
 - [x] Recibir [evaluación21](EVALUACION_21.md) completa y auditar razones del juez; revisión humana ya recibida.
 - [x] Recalcular dominio OCR20 con reglas originales: 18/22 (8/12 texto, 10/10 imagen), media juez 4,4545; cuatro fallos textuales preservados.
 - [x] Preparar [paquete OCR22](evidence/space_ocr22_prepared/ANALISIS.md) separado, cinco archivos y tres imágenes smoke fuera del payload; salud de cuatro modelos + OCR, sin juez ni claves.
-- [ ] Subir y verificar [despliegue OCR22](DESPLIEGUE_OCR_22.md)/W&B públicamente; las pruebas locales simuladas no completan este punto.
-  - Primer build HF correcto pero startup incompleto; [diagnóstico seguro preparado](evidence/space_ocr22_prepared/ARRANQUE_FALLIDO.md). No se declara servicio listo ni causa raíz confirmada.
-  - Diagnóstico localiza carga safetensors del adaptador M1 bajo ZeroGPU. [Corrección23](evidence/space_ocr23_cpu/ANALISIS.md) fuerza lectura CPU, preserva pesos y diagnóstico; actualización de dos archivos pendiente de verificar en HF.
+- [x] Subir y verificar [despliegue OCR22/23](DESPLIEGUE_OCR_22.md) y métricas W&B públicamente mediante evidencias recibidas; continuidad W&B sigue pendiente por separado.
+  - Histórico22: primer build HF correcto pero startup incompleto; [diagnóstico seguro](evidence/space_ocr22_prepared/ARRANQUE_FALLIDO.md). No estaba listo en esa etapa.
+  - Diagnóstico localiza carga safetensors del adaptador M1 bajo ZeroGPU. [Corrección23](evidence/space_ocr23_cpu/ANALISIS.md) fuerza lectura CPU, preserva pesos y diagnóstico; salud e inferencia posteriores verificadas según evidencias siguientes.
   - [x] Recibir [salud23 lista](evidence/space_ocr23_cpu/SALUD_LISTA.md): cuatro modelos, OCR5.5.0 e índice listos; versión correcta. Evidencia del usuario, no consulta inferencial ni prueba externa independiente.
   - [x] Recibir [siete rutas reales](evidence/space_ocr23_cpu/SMOKE_RECIBIDO.md): QA/cálculo/tres imágenes/abstención sin fuente/M1, sin errores, con fuentes o guardas pertinentes; limitaciones preservadas.
   - [x] Recibir salud posterior con real_request_verifiedtrue y componentes listos.
@@ -37,13 +37,13 @@ de continuidad: la corrida recibió métricas pero figura Crashed; no se declara
   - [ ] Diagnosticar continuidad W&B/Crashed con datos SDK: causa no aparece en Container logs; queued_check_dashboard no prueba conexión viva. Conservar run y rechazos, no alterar estado para ocultarlos.
   - [x] Comprobar [acceso externo HF/W&B](evidence/space_ocr23_cpu/ACCESO_PUBLICO.md) con capturas del usuario sin sesión: gráficos W&B visibles y salud HFlista. No es nueva inferencia anónima ni prueba de disponibilidad permanente.
 
-### Ruta actual: OCR19 recibido; integración20 separada preparada
+### Histórico: OCR19 recibido; integración20 separada preparada
 
 - [x] Conservar [OCR19](evidence/ocr19_completed/ANALISIS.md): 8/8 lecturas completas y 12/12 rutas diagnósticas, no respuestas QA.
 - [x] Preparar perfil OCR20 con campos acotados y guardas, sin cargar Qwen2-VL ni editar su línea base.
 - [x] Fijar evaluación del perfil nuevo en los 22 casos comunes + 16 comprobaciones separadas.
 - [x] Ejecutar integración20; revisión/juez nuevos preparados, todavía sin actualizar dominio.
-- [ ] Verificar luego despliegue/observabilidad reales; main y Space siguen intactos.
+- [x] Verificación posterior de servicio y métricas recibida en23 (arriba); main no se modificó. Continuidad W&B no resuelta.
 
 ### Ruta actual: visual 18 rechazado; candidato OCR 19 separado
 
@@ -411,11 +411,14 @@ Aceptación: URL pública verificable, health check utilizable, eventos reales v
 ## Fase 8 — cierre verificable
 
 - [ ] Clonar desde cero; ejecutar pruebas, reconstruir índice y seguir portada sin rutas locales.
-- [ ] Recalcular tablas desde evidencia; no prometer identidad universal entre entornos por fijar semilla.
+  - [x] Clon limpio, recálculo y 495 pruebas: [alcance y entorno](VERIFICACION_CIERRE.md).
+  - [ ] Reinstalación vacía de dependencias e índice neural local no realizados en este cierre; evidencia Colab/servicio conservada.
+- [x] Recalcular tablas desde evidencia; no prometer identidad universal entre entornos por fijar semilla.
 - [ ] Revisar privacidad, licencias, secretos, enlaces y acceso público de demo/W&B.
 - [ ] Revisar rúbrica de 40 puntos: problema 4; solidez 8; evaluación 7; integración 4; presentación 7; producción 5; límites 3; ética 2.
 - [ ] Publicar commits claros y abrir PR; fusionar solo con aprobación del equipo.
 - [ ] Entregar enlace en Interactiva antes del plazo y conservar comprobante real.
+- [x] Preparar [instrucciones finales del equipo](ENTREGA_PASO_A_PASO.md), sin marcar entrega, revisión ni ensayo como realizados.
 - [ ] Comprobar URL el día de la sustentación; verificar acceso o video de respaldo.
 
 ## Secuencia temporal propuesta (no constituye evidencia de ejecución)

@@ -53,7 +53,7 @@ rotuladas del snapshot, no contratos firmados ni fotografías probatorias.
 
 | Componente | Decisión y alternativa descartada |
 |---|---|
-| M1 | RoBERTalex + LoRA entrenado en CPU. No sustituirlo por cabeza aleatoria ni detector de fraude. El cargador23 fuerza CPU al leer los mismos pesos y hereda la predicción original. |
+| M1 | RoBERTalex + LoRA entrenado previamente; inferencia pública en CPU. No sustituirlo por cabeza aleatoria ni detector de fraude. El cargador23 fuerza CPU al leer los mismos pesos y hereda la predicción original. |
 | Generador | Qwen2.5-3B-Instruct FP16 con revisión fijada. NF4 perdió demasiada calidad y no se despliega. |
 | Recuperación | Híbrido, filtro de ID, reranking y ficha completa para desambiguar contratos/recuperar campos. M3 textual obtuvo7/22 en el conjunto común. El cambio global no se atribuye a una sola pieza. |
 | Imagen | TesseractCPU con dos segmentaciones y concordancia de campos. Qwen2-VL falló cinco imágenes legibles del diagnóstico18. Difusión se descarta: se necesita extraer evidencia, no generar documentos. |
