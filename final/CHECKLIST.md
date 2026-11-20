@@ -5,6 +5,12 @@
 **Ventana de cierre:** [ruta priorizada de tres horas](CIERRE_TRES_HORAS.md).
 Dominio histórico cerrado no significa dominio del nuevo OCR ni servicio público listo.
 
+- [x] Confirmar contribuciones de revisión/validación técnica de ambos integrantes
+  y documentarlas en [Contribuciones del equipo](CONTRIBUCIONES.md); mantener
+  autorías de las revisiones firmadas y declaración IA separada.
+- [ ] Completar revisión final conjunta de reporte/diagrama/diapositivas y su
+  declaración de IA; esta confirmación de roles no marca esos entregables como terminados.
+
 ### Ruta actual: integración20 recibida; cierre21 de calidad preparado
 
 - [x] Recibir y validar [revisión humana visual21](evidence/visual21_received/RECEPCION.md): diez decisiones completas, fuentes sin editar; salvedades conservadas.

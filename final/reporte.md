@@ -103,9 +103,30 @@ El contador histórico tool_used confundió router con herramienta; su fe de err
 
 Las imágenes con cifras y las preguntas de varios campos muestran riesgo: una lectura añadió un cero y NF4 omitió montos. No medimos representatividad poblacional ni equidad entre entidades; no se puede generalizar desde 22 entradas relacionadas. Datos y representaciones de evaluación revisados se conservan como evidencia; el despliegue todavía debe comprobar su política de retención y conocimiento del usuario antes de recibir contenido nuevo. Una respuesta falsa puede orientar mal una revisión contractual: se requieren citas, controles de contradicción, abstención y decisión humana, sin acusaciones automáticas. Esos controles reducen riesgo, no certifican seguridad.
 
-## Contribuciones humanas y uso de IA — por completar con el equipo
+## Contribuciones del equipo
 
-Juan Camilo realizó revisiones humanas de conjuntos/rangos, 90 salidas directas, cierre de dudas y motivos de calibración/confirmación, con originales conservados. Otras veinte salidas reutilizan criterios por equivalencia exacta; no se atribuye una nueva revisión humana. Las demás contribuciones y las de Valentina deben confirmarse antes de atribuirlas. La IA apoyó código, pruebas, auditoría técnica, el cruce reproducible y este borrador; la lectura técnica de los 110 motivos no se presenta como revisión humana. No se inventan ejecuciones, notas o resultados.
+**Valentina Castro:** revisó y validó problema, alcance y corpus; arquitectura
+M1/RAG/herramientas/OCR; decisiones técnicas, comparación FP16/NF4, ablación y
+alternativas descartadas.
+
+**Juan Camilo Ramon:** realizó las revisiones humanas registradas y las
+ejecuciones Colab, conservó evidencias, configuró cuentas y secretos, y verificó
+despliegue, consultas, salud, OCR, M1, registros W&B y accesos externos. Revisó
+los resultados, motivos del juez, desacuerdos y límites. Se conservan las firmas
+originales de las90 revisiones históricas y las diez visuales21; las equivalencias
+exactas no se presentan como nuevas revisiones humanas.
+
+Responsabilidades de cierre y explicación: Valentina cubre arquitectura y
+eficiencia; Juan Camilo, evaluación, demo y límites; ambos realizan revisión
+cruzada y preparación conjunta. [Detalle](CONTRIBUCIONES.md).
+
+## Uso de IA
+
+La IA apoyó implementación, depuración, notebooks/scripts, pruebas automáticas,
+auditoría técnica, recálculo y redacción. La revisión humana se distingue de las
+comprobaciones automáticas; la lectura técnica de los110 motivos no se atribuye
+como revisión humana. Las notas crudas y resultados ejecutados se conservan.
+El apoyo en diagrama/diapositivas se declara al incorporarlos al cierre.
 
 ## Cierre pendiente
 
