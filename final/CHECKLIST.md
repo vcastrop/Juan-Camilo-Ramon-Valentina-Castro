@@ -21,7 +21,8 @@ Dominio histórico cerrado no significa dominio del nuevo OCR ni servicio públi
   - Primer build HF correcto pero startup incompleto; [diagnóstico seguro preparado](evidence/space_ocr22_prepared/ARRANQUE_FALLIDO.md). No se declara servicio listo ni causa raíz confirmada.
   - Diagnóstico localiza carga safetensors del adaptador M1 bajo ZeroGPU. [Corrección23](evidence/space_ocr23_cpu/ANALISIS.md) fuerza lectura CPU, preserva pesos y diagnóstico; actualización de dos archivos pendiente de verificar en HF.
   - [x] Recibir [salud23 lista](evidence/space_ocr23_cpu/SALUD_LISTA.md): cuatro modelos, OCR5.5.0 e índice listos; versión correcta. Evidencia del usuario, no consulta inferencial ni prueba externa independiente.
-  - [ ] Verificar consultas QA/cálculo/tres imágenes/abstención sin fuente/M1 y eventos W&B; health tenía real_request_verifiedfalse y W&Bnot_tested.
+  - [x] Recibir [siete rutas reales](evidence/space_ocr23_cpu/SMOKE_RECIBIDO.md): QA/cálculo/tres imágenes/abstención sin fuente/M1, sin errores, con fuentes o guardas pertinentes; limitaciones preservadas.
+  - [ ] Recibir salud posterior, comprobar eventos en run W&B y acceso externo; queued_check_dashboard solo confirma encolado.
 
 ### Ruta actual: OCR19 recibido; integración20 separada preparada
 

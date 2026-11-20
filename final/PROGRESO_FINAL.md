@@ -7,8 +7,10 @@ ejecución y evaluación reales, no cantidad de notebooks o pruebas.
 ## Evidencia vigente
 
 - [OCR23 publicado y salud lista según usuario](evidence/space_ocr23_cpu/SALUD_LISTA.md):
-  cuatro modelos, índice y OCR5.5.0; fallos de carga corregidos. Faltan peticiones
-  reales, observabilidad y acceso externo. Health no prueba inferencia ni calidad.
+  cuatro modelos, índice y OCR5.5.0; fallos de carga corregidos.
+  [Siete peticiones funcionales recibidas](evidence/space_ocr23_cpu/SMOKE_RECIBIDO.md),
+  sin errores. Faltan salud posterior, observabilidad confirmada y acceso externo.
+  Estas pruebas no son otro benchmark ni validación general de calidad.
 
 - Comparación 02: cinco perfiles × 22 entradas, 110 respuestas conservadas.
 - Juez aceptado para esta tarea/configuración tras calibración 20/20,
