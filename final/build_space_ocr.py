@@ -13,7 +13,7 @@ def render_app(template,bootstrap,payload_sha,commit):
     replacements={
         'from final.service_contract import Service, InputError, validate, event':
         'from final.service_contract import InputError, validate, event\nfrom final.service_ocr import OCRService as Service',
-        'from final.service_runtime import load_runtime':'from final.integration_ocr20 import load_runtime',
+        'from final.service_runtime import load_runtime':'from final.integration_ocr23 import load_runtime',
         'El candidato FP16 conserva seis fallos de dominio en 22 entradas evaluadas.':
         'Perfil OCR: 18/22 casos de dominio en la evaluación de referencia; cuatro fallos textuales. No certifica este servidor.',
     }
@@ -27,7 +27,7 @@ def build(output,license_file):
     from final.service_runtime import verify_assets
     verify_assets()
     commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
-    names=local_modules(['final/integration_ocr20.py','final/service_ocr.py','final/service_telemetry.py'])
+    names=local_modules(['final/integration_ocr23.py','final/service_ocr.py','final/service_telemetry.py'])
     templates=['final/space_candidate/app.py','final/space_candidate/requirements.txt','final/space_payload.py',
                'final/space_ocr/README.md','final/space_ocr/packages.txt','final/build_space_ocr.py',
                'final/startup_diagnostic_patch.py']

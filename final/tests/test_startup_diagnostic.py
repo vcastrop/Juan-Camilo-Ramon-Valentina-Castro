@@ -34,7 +34,7 @@ class StartupDiagnosticTests(unittest.TestCase):
         self.assertIn("SOURCE_COMMIT = '"+'a'*40+"'",app)
         module=types.ModuleType('diagnostic_ui');module.__file__=str(ROOT/'final/space_ocr/app.py')
         stream=io.StringIO()
-        with patch.dict(sys.modules,{'spaces':types.SimpleNamespace(GPU=lambda **kw:lambda fn:fn)}),patch('final.integration_ocr20.load_runtime',side_effect=ValueError('SECRET_PRIVATE')),contextlib.redirect_stdout(stream):
+        with patch.dict(sys.modules,{'spaces':types.SimpleNamespace(GPU=lambda **kw:lambda fn:fn)}),patch('final.integration_ocr23.load_runtime',side_effect=ValueError('SECRET_PRIVATE')),contextlib.redirect_stdout(stream):
             exec(compile(app,module.__file__,'exec'),module.__dict__)
         try:
             self.assertIn('contractrisk_startup_diagnostic',stream.getvalue())

@@ -6,7 +6,9 @@ from unittest.mock import Mock,patch
 
 class ClassifierCPULoadTests(unittest.TestCase):
     def test_trained_adapter_weights_loaded_on_cpu_before_model_to_cpu(self):
-        from final.adapters import Classifier
+        from final.adapters import Classifier as HistoricalClassifier
+        from final.classifier_cpu23 import CPUClassifier as Classifier
+        self.assertIs(Classifier.classify,HistoricalClassifier.classify)
         from final.config import MODELS
         model=Mock();model.to.return_value=model;model.eval.return_value=model
         base=object()

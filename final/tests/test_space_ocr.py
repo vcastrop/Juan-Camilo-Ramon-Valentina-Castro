@@ -29,7 +29,7 @@ class SpaceOCRTests(unittest.TestCase):
         app=render_app((ROOT/'final/space_candidate/app.py').read_text(encoding='utf-8'),
                        "def unpack(*args): return {'source_commit': SOURCE_COMMIT}",'b'*64,VERSION)
         module=types.ModuleType('ocr22_ui_test');module.__file__=str(ROOT/'final/space_ocr/app.py')
-        with patch.dict(sys.modules,{'spaces':types.SimpleNamespace(GPU=lambda **kw:lambda fn:fn)}),patch('final.integration_ocr20.load_runtime',return_value=OCRBackend()):
+        with patch.dict(sys.modules,{'spaces':types.SimpleNamespace(GPU=lambda **kw:lambda fn:fn)}),patch('final.integration_ocr23.load_runtime',return_value=OCRBackend()):
             exec(compile(app,module.__file__,'exec'),module.__dict__)
         try:
             with TestClient(Starlette(routes=[Route('/healthz',module.healthz),Route('/readyz',module.readyz)])) as client:
@@ -73,7 +73,7 @@ class SpaceOCRTests(unittest.TestCase):
         app=render_app((ROOT/'final/space_candidate/app.py').read_text(encoding='utf-8'),
                        (ROOT/'final/space_payload.py').read_text(encoding='utf-8'),'b'*64,VERSION)
         compile(app,'generated.py','exec')
-        self.assertIn('from final.integration_ocr20 import load_runtime',app)
+        self.assertIn('from final.integration_ocr23 import load_runtime',app)
         self.assertIn('from final.service_ocr import OCRService as Service',app)
         self.assertIn('@spaces.GPU(duration=120)',app)
         self.assertEqual(app.count('launch()'),1)
@@ -81,7 +81,7 @@ class SpaceOCRTests(unittest.TestCase):
         self.assertNotIn('seis fallos',app)
 
     def test_minimal_payload_does_not_import_gold_judge_or_api(self):
-        names=local_modules(['final/integration_ocr20.py','final/service_ocr.py','final/service_telemetry.py'])
+        names=local_modules(['final/integration_ocr23.py','final/service_ocr.py','final/service_telemetry.py'])
         self.assertIn('final/ocr_candidate19.py',names)
         self.assertIn('final/integration_ocr20.py',names)
         for name in names:
