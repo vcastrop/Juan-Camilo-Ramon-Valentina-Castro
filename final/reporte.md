@@ -237,6 +237,7 @@ revisiones humanas. Se conservan notas crudas, errores y resultados ejecutados.
 
 [Guía](REPRODUCIR.md): clonar con historial y recalcular tablas sin GPU/pago;
 no se garantiza identidad universal entre entornos. [Presentación/demo](presentacion/GUIA_DEMO.md)
-y [checklist](CHECKLIST.md). Quedan revisión humana final y ensayo, coordinación
-de sustentación antes del23/11, publicación/merge autorizados y entrega del enlace
+y [checklist](CHECKLIST.md). Ambos integrantes aprobaron los materiales finales y
+confirmaron un ensayo satisfactorio de la presentación y demostración. Quedan
+coordinación de sustentación antes del23/11, integración autorizada en main y entrega del enlace
 en Interactiva con comprobante. Este documento no sustituye la entrega real.

@@ -37,4 +37,5 @@ humanas anteriores describen ejecución, revisión y validación; no implican
 programación manual sin ayuda. Las revisiones firmadas, las mediciones reales
 y las notas crudas del juez se conservan sin sustituirlas por resultados generados.
 También se utilizó apoyo de IA para el diagrama, el guion y las diapositivas.
-Su revisión humana final se registra por separado en el checklist.
+Su revisión humana final fue aprobada por ambos integrantes y se registra en el
+checklist, junto con la confirmación de ensayo satisfactorio del equipo.

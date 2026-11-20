@@ -1,6 +1,9 @@
 # Últimos pasos del equipo
 
 No es necesario ejecutar otro notebook ni repetir llamadas del juez.
+Revisión de materiales aprobada por ambos integrantes. Ensayo y demostración
+realizados satisfactoriamente según confirmación del equipo. Los pasos 1 y 2
+quedan completados; no equivalen a sustentación ni envío formal.
 
 1. Juan Camilo y Valentina: leer [reporte](reporte.md), comprobar nombres,
    contribuciones y conclusiones. Revisar las [diez diapositivas](presentacion/ContractRisk_Final.pptx).

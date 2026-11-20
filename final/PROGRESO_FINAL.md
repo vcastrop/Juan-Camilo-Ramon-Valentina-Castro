@@ -1,6 +1,6 @@
 # Avance de la entrega final — 19/11/2026
 
-Estimación operativa: **90–94 % (~92 %)** de la entrega final integradora. No es
+Estimación operativa: **93–96 % (~94 %)** de la entrega final integradora. No es
 nota, madurez para uso real ni porcentaje de todo el curso. El aumento reconoce
 ejecución y evaluación reales, no cantidad de notebooks o pruebas.
 
@@ -47,12 +47,12 @@ ejecución y evaluación reales, no cantidad de notebooks o pruebas.
 | Fase 2: integración de desarrollo | 20 % | 95 % | Despliegue OCR verificado en casos concretos; conservar límites conocidos. |
 | Fase 3: evaluación común | 15 % | 95 % | Recálculo desde clon limpio comprobado; no es nueva validación ciega. |
 | Fase 4: eficiencia | 15 % | 95 % | Antes/después y rechazo NF4 documentados; defensa individual pendiente. |
-| Fase 5: comparativas/ablación | 10 % | 95 % | Tablas y diagrama preparados; lectura final y ensayo pendientes. |
+| Fase 5: comparativas/ablación | 10 % | 100 % | Tablas, diagrama y lectura final aprobados; conservar límites y evidencia. |
 | Fase 6: producción/observabilidad | 10 % | 80 % | Peticiones/salud/acceso comprobados; continuidad W&B Crashed sin resolver. |
-| Fase 7: reporte/presentación | 7 % | 85 % | Reporte, roles, portada y diez diapositivas preparados; revisión final y ensayo pendientes. |
-| Fase 8: cierre verificable | 3 % | 70 % | Clon limpio, recálculo y 495 pruebas comprobados; entrega/merge y revisión humana pendientes. |
+| Fase 7: reporte/presentación | 7 % | 100 % | Materiales aprobados por ambos; ensayo y demostración satisfactorios confirmados por el equipo. Sustentación no realizada. |
+| Fase 8: cierre verificable | 3 % | 70 % | Clon limpio, recálculo y 495 pruebas comprobados; integración en main y entrega formal pendientes. |
 
-Suma ponderada vigente92,05%, expresada como rango para evitar falsa precisión.
+Suma ponderada vigente93,60%, expresada como rango para evitar falsa precisión.
 Reconoce OCR21, despliegue funcional y accesos, no estabilidad continua W&B ni
 cierre académico completo. La aproximación no pretende precisión estadística. No son
 pesos de la rúbrica académica ni garantía de resultados.
@@ -65,10 +65,10 @@ pesos de la rúbrica académica ni garantía de resultados.
    siete smoke y tres rechazos de entrada. No repetir17–23 ni desplegarNF4.
    Mantener separada la incidencia W&B Crashed: evidencia visible no equivale a
    conexión viva o monitoreo continuo estable. No ocultarla ni resetear historial.
-3. Revisar con ambos integrantes reporte, contribuciones/IA y presentación ya preparados.
+3. Conservar aprobación de ambos integrantes y ensayo satisfactorio; no exigir repetición sin un cambio que lo justifique.
 4. [Verificación de cierre](VERIFICACION_CIERRE.md) conserva clon limpio y límites.
    Seguir [últimos pasos](ENTREGA_PASO_A_PASO.md): PR/merge solo autorizado,
-   entrega y comprobante en Interactiva, ensayo y coordinación de sustentación.
+   entrega y comprobante en Interactiva y coordinación de sustentación.
 
 [Scorecard y auditoría](evidence/product_14/ANALISIS.md), [reporte](reporte.md),
 [checklist](CHECKLIST.md). Los estados anteriores se conservaron en

@@ -34,9 +34,15 @@ neural: se conserva evidencia de su construcción y uso en Colab/servicio.
   coincidencias. No equivale a auditoría exhaustiva de binarios, historial o
   archivos de todas las corridas públicas de W&B.
 
+## Confirmación posterior del equipo
+
+Juan Camilo y Valentina aprobaron los materiales finales. El equipo confirma
+que realizó el ensayo y que la demostración salió satisfactoriamente. Esta
+confirmación no añade otra corrida al benchmark ni una medición de duración.
+
 ## No se da por completado
 
-Revisión final humana, ensayo, video de respaldo recomendado, coordinación de
+Video de respaldo recomendado, coordinación de
 sustentación, merge autorizado y entrega en Interactiva con comprobante.
 W&B conserva la incidencia Crashed sin causa confirmada. No se modifican sus
 registros para aparentar continuidad. El servicio probado sigue siendo académico,

@@ -1,7 +1,8 @@
 # Presentación y demostración: máximo diez minutos
 
 Integrantes: Juan Camilo Ramon y Valentina Castro. [PowerPoint editable](ContractRisk_Final.pptx).
-La revisión final humana y el ensayo siguen pendientes hasta confirmación del equipo.
+Revisión final aprobada por ambos integrantes y ensayo realizado con demostración
+satisfactoria, según confirmación del equipo. La sustentación ante el curso es una etapa distinta.
 
 ## Guion sugerido (aproximadamente nueve minutos)
 
@@ -20,7 +21,7 @@ La revisión final humana y el ensayo siguen pendientes hasta confirmación del 
 
 Total8:55 más transiciones. Ajustar con ensayo, no leer cada celda. Ambos deben
 poder explicar cualquier parte y los límites; dividir diapositivas no sustituye
-comprender el sistema completo. No se afirma haber ensayado ni realizado la sustentación.
+comprender el sistema completo. El ensayo está confirmado; no se afirma haber realizado la sustentación.
 
 ## Demo en vivo: tres casos
 

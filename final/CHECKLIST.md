@@ -5,14 +5,16 @@
 **Ventana de cierre:** [ruta priorizada de tres horas](CIERRE_TRES_HORAS.md).
 OCR final: 18/22. Servicio: siete consultas válidas y acceso público recibidos.
 Reporte, diagrama, tablas y presentación preparados: [matriz de requisitos](MATRIZ_CUMPLIMIENTO.md).
-Faltan revisión final del equipo, ensayo y entrega formal. W&B conserva un pendiente
+Revisión final aprobada por ambos integrantes y ensayo realizado con demostración
+satisfactoria, según confirmación del equipo. Falta entrega formal. W&B conserva un pendiente
 de continuidad: la corrida recibió métricas pero figura Crashed; no se declara estabilidad.
 
 - [x] Confirmar contribuciones de revisión/validación técnica de ambos integrantes
   y documentarlas en [Contribuciones del equipo](CONTRIBUCIONES.md); mantener
   autorías de las revisiones firmadas y declaración IA separada.
-- [ ] Completar revisión final conjunta de reporte/diagrama/diapositivas y su
-  declaración de IA; esta confirmación de roles no marca esos entregables como terminados.
+- [x] Completar revisión final conjunta de reporte/diagrama/diapositivas y su
+  declaración de IA: aprobados por Juan Camilo y Valentina.
+- [x] Ensayar presentación y demostración: el equipo confirma realización y resultados satisfactorios.
 
 ### Ruta actual: integración20 y evaluación21 cerradas; servicio23 verificado
 
@@ -395,7 +397,7 @@ Aceptación: URL pública verificable, health check utilizable, eventos reales v
 
 ## Fase 7 — reporte, portada y presentación
 
-- [x] `final/reporte.md`: problema, usuario, decisión y métrica de éxito de usuario (preparado; revisión final del equipo pendiente).
+- [x] `final/reporte.md`: problema, usuario, decisión y métrica de éxito de usuario; revisión final aprobada por ambos integrantes.
 - [x] Diagrama desde pregunta/imagen hasta respuesta con procedencia M1–M5 de cada componente.
 - [x] Decisiones de modelo, recuperación, visión y eficiencia, cada una con alternativa descartada y motivo.
 - [x] Tabla evolutiva y tabla antes/después con condiciones, p50/p95 y memoria/tamaño; memoria OCR no medida y tiempos de otra sesión separados.
@@ -404,7 +406,7 @@ Aceptación: URL pública verificable, health check utilizable, eventos reales v
 - [x] Una línea por integrante: trabajo humano confirmado; sección corta de uso de IA incluyendo código, análisis, texto y diapositivas.
 - [x] README raíz como portada: frase sencilla, URL demo, W&B, ejecución breve e índice a módulos/reporte.
 - [x] Scripts de eficiencia, despliegue o enlace a repo del Space, configuraciones y evidencias en `final/`.
-- [x] Diapositivas preparadas para máximo 10 minutos: problema, dibujo, demo fácil/difícil/adversarial, comparaciones, eficiencia y peor fallo. Ensayo humano pendiente.
+- [x] Diapositivas para máximo 10 minutos: problema, dibujo, demo fácil/difícil/adversarial, comparaciones, eficiencia y peor fallo. Revisión y ensayo confirmados por el equipo; no se declara una duración medida ni una nueva evaluación independiente.
 - [ ] Acordar fecha/hora/modalidad de sustentación antes del 23/11; ambos preparan explicaciones individuales.
 - [ ] Recomendado: video corto de respaldo, con versión y resultados reales.
 
@@ -418,7 +420,7 @@ Aceptación: URL pública verificable, health check utilizable, eventos reales v
 - [ ] Revisar rúbrica de 40 puntos: problema 4; solidez 8; evaluación 7; integración 4; presentación 7; producción 5; límites 3; ética 2.
 - [ ] Publicar commits claros y abrir PR; fusionar solo con aprobación del equipo.
 - [ ] Entregar enlace en Interactiva antes del plazo y conservar comprobante real.
-- [x] Preparar [instrucciones finales del equipo](ENTREGA_PASO_A_PASO.md), sin marcar entrega, revisión ni ensayo como realizados.
+- [x] Preparar [instrucciones finales del equipo](ENTREGA_PASO_A_PASO.md); revisión y ensayo confirmados, entrega formal todavía pendiente.
 - [ ] Comprobar URL el día de la sustentación; verificar acceso o video de respaldo.
 
 ## Secuencia temporal propuesta (no constituye evidencia de ejecución)
