@@ -1,0 +1,127 @@
+===== Application Startup at 2026-11-20 02:22:25 =====
+
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+modules.json:   0%|          | 0.00/229 [00:00<?, ?B/s]
+modules.json: 100%|██████████| 229/229 [00:00<00:00, 1.28MB/s]
+
+config_sentence_transformers.json:   0%|          | 0.00/122 [00:00<?, ?B/s]
+config_sentence_transformers.json: 100%|██████████| 122/122 [00:00<00:00, 1.10MB/s]
+
+README.md:   0%|          | 0.00/3.89k [00:00<?, ?B/s]
+README.md: 100%|██████████| 3.89k/3.89k [00:00<00:00, 45.8MB/s]
+
+sentence_bert_config.json:   0%|          | 0.00/53.0 [00:00<?, ?B/s]
+sentence_bert_config.json: 100%|██████████| 53.0/53.0 [00:00<00:00, 676kB/s]
+
+config.json:   0%|          | 0.00/645 [00:00<?, ?B/s]
+config.json: 100%|██████████| 645/645 [00:00<00:00, 8.05MB/s]
+
+model.safetensors:   0%|          | 0.00/471M [00:00<?, ?B/s]
+model.safetensors:  85%|████████▌ | 402M/471M [00:01<00:00, 318MB/s]
+model.safetensors: 100%|██████████| 471M/471M [00:01<00:00, 359MB/s]
+
+tokenizer_config.json:   0%|          | 0.00/526 [00:00<?, ?B/s]
+tokenizer_config.json: 100%|██████████| 526/526 [00:00<00:00, 4.55MB/s]
+
+tokenizer.json:   0%|          | 0.00/9.08M [00:00<?, ?B/s]
+tokenizer.json: 100%|██████████| 9.08M/9.08M [00:00<00:00, 44.3MB/s]
+
+special_tokens_map.json:   0%|          | 0.00/239 [00:00<?, ?B/s]
+special_tokens_map.json: 100%|██████████| 239/239 [00:00<00:00, 1.99MB/s]
+
+config.json:   0%|          | 0.00/190 [00:00<?, ?B/s]
+config.json: 100%|██████████| 190/190 [00:00<00:00, 2.00MB/s]
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event CollectionAddEvent: capture() takes 1 positional argument but 3 were given
+
+config.json:   0%|          | 0.00/891 [00:00<?, ?B/s]
+config.json: 100%|██████████| 891/891 [00:00<00:00, 10.2MB/s]
+
+model.safetensors:   0%|          | 0.00/471M [00:00<?, ?B/s]
+model.safetensors:  14%|█▍        | 67.1M/471M [00:01<00:06, 66.6MB/s]
+model.safetensors: 100%|██████████| 471M/471M [00:01<00:00, 340MB/s]  
+
+pytorch_model.bin:   0%|          | 0.00/471M [00:00<?, ?B/s]
+pytorch_model.bin: 100%|██████████| 471M/471M [00:01<00:00, 329MB/s]
+pytorch_model.bin: 100%|██████████| 471M/471M [00:01<00:00, 326MB/s]
+
+sentencepiece.bpe.model:   0%|          | 0.00/5.07M [00:00<?, ?B/s]
+sentencepiece.bpe.model: 100%|██████████| 5.07M/5.07M [00:00<00:00, 29.4MB/s]
+
+special_tokens_map.json:   0%|          | 0.00/239 [00:00<?, ?B/s]
+special_tokens_map.json: 100%|██████████| 239/239 [00:00<00:00, 2.56MB/s]
+
+tokenizer.json:   0%|          | 0.00/17.1M [00:00<?, ?B/s]
+tokenizer.json: 100%|██████████| 17.1M/17.1M [00:00<00:00, 48.3MB/s]
+
+tokenizer_config.json:   0%|          | 0.00/435 [00:00<?, ?B/s]
+tokenizer_config.json: 100%|██████████| 435/435 [00:00<00:00, 4.25MB/s]
+
+config.json:   0%|          | 0.00/638 [00:00<?, ?B/s]
+config.json: 100%|██████████| 638/638 [00:00<00:00, 6.34MB/s]
+
+pytorch_model.bin:   0%|          | 0.00/504M [00:00<?, ?B/s]
+pytorch_model.bin:  66%|██████▋   | 335M/504M [00:01<00:00, 267MB/s]
+pytorch_model.bin: 100%|██████████| 504M/504M [00:01<00:00, 301MB/s]
+
+model.safetensors:   0%|          | 0.00/504M [00:00<?, ?B/s]Some weights of RobertaForSequenceClassification were not initialized from the model checkpoint at BSC-LT/RoBERTalex and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+{"event": "contractrisk_startup_diagnostic", "diagnostic_version": "ocr22-startup-diagnostic-1", "error_type": "RuntimeError", "reason_code": "unclassified_startup_exception", "frames": [{"module_file": "adapters.py", "line": 41, "function": "__init__"}, {"module_file": "peft_model.py", "line": 555, "function": "from_pretrained"}, {"module_file": "peft_model.py", "line": 1320, "function": "load_adapter"}, {"module_file": "save_and_load.py", "line": 652, "function": "load_peft_weights"}, {"module_file": "torch.py", "line": 360, "function": "load_file"}, {"module_file": "patching.py", "line": 201, "function": "__torch_function__"}, {"module_file": "_compile.py", "line": 54, "function": "inner"}, {"module_file": "eval_frame.py", "line": 1446, "function": "_fn"}, {"module_file": "patching.py", "line": 245, "function": "__torch_dispatch__"}, {"module_file": "_ops.py", "line": 875, "function": "__call__"}], "exception_message_retained": false, "private_values_retained": false}
+ContractRisk startup_failed: models_or_index_not_ready
+
+model.safetensors: 100%|██████████| 504M/504M [00:01<00:00, 326MB/s]
+model.safetensors: 100%|██████████| 504M/504M [00:01<00:00, 319MB/s]
+Exception ignored in: <function BaseEventLoop.__del__ at 0x7f16d4488cc0>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 732, in __del__
+    self.close()
+  File "/usr/local/lib/python3.12/asyncio/unix_events.py", line 68, in close
+    super().close()
+  File "/usr/local/lib/python3.12/asyncio/selector_events.py", line 104, in close
+    self._close_self_pipe()
+  File "/usr/local/lib/python3.12/asyncio/selector_events.py", line 111, in _close_self_pipe
+    self._remove_reader(self._ssock.fileno())
+  File "/usr/local/lib/python3.12/asyncio/selector_events.py", line 298, in _remove_reader
+    key = self._selector.get_key(fd)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/selectors.py", line 190, in get_key
+    return mapping[fileobj]
+* Running on local URL:  http://0.0.0.0:7860
+           ~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.12/selectors.py", line 71, in __getitem__
+    fd = self._selector._fileobj_lookup(fileobj)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/selectors.py", line 225, in _fileobj_lookup
+    return _fileobj_to_fd(fileobj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/selectors.py", line 42, in _fileobj_to_fd
+    raise ValueError("Invalid file descriptor: {}".format(fd))
+ValueError: Invalid file descriptor: -1
+Exception ignored in: <function BaseEventLoop.__del__ at 0x7f16d4488cc0>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 732, in __del__
+    self.close()
+  File "/usr/local/lib/python3.12/asyncio/unix_events.py", line 68, in close
+    super().close()
+  File "/usr/local/lib/python3.12/asyncio/selector_events.py", line 104, in close
+    self._close_self_pipe()
+  File "/usr/local/lib/python3.12/asyncio/selector_events.py", line 111, in _close_self_pipe
+    self._remove_reader(self._ssock.fileno())
+  File "/usr/local/lib/python3.12/asyncio/selector_events.py", line 298, in _remove_reader
+    key = self._selector.get_key(fd)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/selectors.py", line 190, in get_key
+    return mapping[fileobj]
+           ~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.12/selectors.py", line 71, in __getitem__
+    fd = self._selector._fileobj_lookup(fileobj)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/selectors.py", line 225, in _fileobj_lookup
+    return _fileobj_to_fd(fileobj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/selectors.py", line 42, in _fileobj_to_fd
+    raise ValueError("Invalid file descriptor: {}".format(fd))
+ValueError: Invalid file descriptor: -1
+* To create a public link, set `share=True` in `launch()`.

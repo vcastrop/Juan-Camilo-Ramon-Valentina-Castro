@@ -1,5 +1,10 @@
 # Despliegue OCR22 — publicación y comprobación reales pendientes
 
+**Actualización23:** si ya se subieron los cinco archivos22, usar el ZIP de
+corrección CPU23 y subir únicamente app.py y runtime_payload.zip juntos. Los
+otros tres archivos/secretos quedan iguales. Versión esperada
+5b42adc35d6e3225c93dfbda13ae2e1730bad1c8. [Diagnóstico](evidence/space_ocr23_cpu/ANALISIS.md).
+
 Usa el perfil OCR20 evaluado en21, no el candidato VLM de17. El paquete se
 genera desde un commit verificable con `final.build_space_ocr`, licencia fijada,
 manifiesto SHA y dependencias mínimas. No contiene gold, notas del juez,
